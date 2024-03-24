@@ -1,0 +1,128 @@
+<!-- squads_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<div class="card card-body">
+<!-- END -->
+
+<!-- squads_head_head -->
+
+<div class="accordion" id="accordion">
+                        
+
+    <div class="c1ard-header" id="heading$squadID"><div class="squadpic" style="background-image: url($icon)">
+            <h5 class="mb-0">
+                
+                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse$squadID"><h4>$name <small>($anzmembers)</small></h4></button>
+            </h5>
+        </div>
+    </div>
+             
+<!-- END -->
+
+<!-- squads_head -->
+<div id="collapse$squadID" class="accordion-collapse collapse" data-bs-parent="#myAccordion">
+        <div class="row">
+<!-- END -->
+
+<!-- squads_content_team_one -->
+            <div class="col-lg-3 col-sm-4 mb-3">
+                <div class="image-flip" ontouchstart="this.classList.toggle(&#39;hover&#39;);">
+                    <div class="mainflip">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class="rounded-circle featured-image" src="images/userpics/$userpic" alt="Userpic"></p>
+                                    <h4 class="card-title"><strong>$squads_nickname: </strong>$nickname</h4>
+                                    <strong>$squads_position: </strong>$position<br>
+                                    <i class="bi bi-plus"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-ti1tle"><strong>$squads_nickname: </strong>$nickname</h4>
+                                    <strong>$squads_status: </strong>$activity $statuspic<br>
+                                    <strong>$squads_contact: $email $pm</strong><br>
+                                    <strong>Discord: $discord</strong><br>
+                                    <strong>$squads_position: </strong>$position<br>
+                                    <a  href="/index.php?site=squads&action=show&squadID=$squadID"><img src="$pic" alt="" class="img-fluid rounded" style="height: 120px"></a><br><br>
+                                    <a  href="/index.php?site=profile&id=$memberID" class="badge bg-primary">$seeprofile <i class="bi bi-person-fill"></i></a>
+                                    <br>
+        <strong>$squads_info $nickname:</strong><br>$userdescription
+                                </div>
+               </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+<!-- END -->
+
+<!-- squads_content_team_two -->
+    <div class="col-lg-3 col-sm-4 mb-3">
+        <div class="card text-center">
+            <a href="/index.php?site=profile&id=$memberID">
+                <img class="card-img-top" src="images/userpics/$userpic" alt="team-member">
+            </a>
+            <div class="card-body card-body-2 pb-0 px-4">
+                <h5 class="card-title">$nickname</h5>
+                <h6 class="text-color mb-30">$position</h6>
+                <a  href="/index.php?site=profile&id=$memberID"><h6 class="text-color mb-30">$seeprofile</h6></a>                
+ 
+                <ul class="list-inline border-top d-inline-block">
+                    <li class="list-inline-item">
+                        <a href="$facebook" class="text-color d-inline-block p-2">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="$steam" class="text-color d-inline-block p-2">
+                            <i class="bi bi-steam"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="$discord" class="text-color d-inline-block p-2">
+                            <i class="bi bi-discord"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="$youtube" class="text-color d-inline-block p-2">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="$twitch" class="text-color d-inline-block p-2">
+                            <i class="bi bi-twitch"></i>
+                        </a>
+                    </li>
+
+                    <li class="list-inline-item">
+                        <a href="$twitch" class="text-color d-inline-block p-2">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+<!-- END -->
+
+<!-- squads_content_foot --> 
+</div></div></div>
+<!-- END -->
+
+
+<!-- squads_foot -->
+</div>
+
+
+<!-- END -->
+

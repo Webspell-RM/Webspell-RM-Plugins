@@ -1,0 +1,43 @@
+﻿<?php
+
+$language_array = array(
+
+  'mc_status'           =>'Minecraft Status',
+  'port'                =>'Port',
+  'random'              =>'Zufällige Streams',
+  'not_found'           =>'Wurde nicht gefunden. ',
+  'not_found_err'       =>'Wurde nicht gefunden. Plugin kann nicht ausgeführt werden.',
+  'new_mc_status'       =>'Neuer Minecraft Status',
+  'name'                =>'Name',
+  'link'                =>'twitch.tv-Name',
+  'save'                =>'Speichern',
+  'success'             =>'Erfolgreich',
+  'failed'              =>'Fehlgeschlagen',
+  'delete'              =>'Entfernen',
+  'js_message'          =>'Bitte gebe den Minecraft Status Link an!',
+  'access_denied'       =>'Zugriff verweigert!',
+  'provider'            =>'Provider',
+  'edit_mc_status'      =>'Minecraft Status ändern',
+  'add_mc_status'       =>'Neuer Minecraft Status',
+  'access_denied'       =>'<h3>Info</h3><div class="alert alert-danger"><span class="sr-only">Error:</span><strong>Zugriff verweigert</strong></div>',
+  'actions'             =>'Aktionen',
+  'back'                =>'Zurück',
+  'delete'              =>'Löschen',
+  'description'         =>'Beschreibung',
+  'edit'                =>'Ändern',
+  'no'                  =>'Nein',
+  'no_entries'          =>'Keine Einträge',
+  'really_delete'       =>'Diese Info wirklich löschen?',
+  'sort'                =>'Sortierung',
+  'transaction_invalid' =>'Transaktions ID ungültig',
+  'to_sort'             =>'Sortieren',
+  'yes'                 =>'Ja',
+  'options'             =>'Optionen',
+  'no_stream'           =>'<blockquote>kein Minecraft Status verfügbar!</blockquote>',
+  'loading'             =>'Loading',
+  'displayed'           =>'Wird angezeigt?',
+  'adresse'             =>'Adresse',
+  'version'             =>'Version',
+  'player'              =>'Spieler'
+
+    );

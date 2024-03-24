@@ -1,0 +1,101 @@
+.sponsors_one {
+    width:100%;
+    color:#FFFFFF;    
+    padding-left:50px;
+    text-align:center;
+}
+
+.sponsors_one img {padding-top:20px;
+padding-bottom: 15px;}
+
+@media (min-width: 768px) {
+  
+}
+
+
+@media (max-width: 768px) {
+    .sponsors_one {
+        width: 100%;
+        color: #FFFFFF;
+        
+        padding-left: 0px;
+        text-align: center;
+    }
+    .sponsors_one img {padding-top:25px;
+        padding-bottom: 5px;}
+}
+
+.sponsors_two {
+    text-align:center;
+}
+
+.sponsors-title h3{
+    font-size: 4em;
+    color: rgba(var(--bs-link-color),1);
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.sponsors{
+    padding: 4em 0 4em 0;
+}
+
+.agileits-sponsors-grids{
+    margin: 4em 0 0 0;
+}
+
+/*-- responsive --*/
+@media(max-width:1080px){
+    
+}
+@media(max-width:991px){  
+    
+}
+@media(max-width:768px){
+    
+}
+@media(max-width:736px){
+    
+}
+@media(max-width:667px){
+    
+}
+@media (max-width:640px) {
+   
+}
+@media(max-width:600px){
+    
+}
+@media(max-width:568px){
+    
+}
+@media(max-width:480px){
+    .sponsors-title h3 {
+        font-size: 3em;
+    }
+}
+@media(max-width:414px){
+    ..agileits-sponsors-grids {
+        margin: 2em 0 0 0;
+    }
+    .sponsors-title h3 {
+        font-size: 3em;
+    }
+}
+@media(max-width:384px){
+  .agileits-sponsors-grids {
+        margin: 1em 0 0 0;
+    }
+    .sponsors-title h3 {
+        font-size: 2.5em;
+    }
+}
+@media(max-width:320px){
+    .agileits-sponsors-grids {
+        margin: 1em 0 0 0;
+    }
+    .sponsors-title h3 {
+        font-size: 2em;
+    }
+}
+/*-- //responsive --*/

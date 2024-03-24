@@ -1,0 +1,56 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "news_manager/install.php",
+				"file2": "news_manager/uninstall.php",
+				"file3": "news_manager/news_manager.php",
+				"file4": "news_manager/news_comments.php",
+				"file5": "news_manager/widget_news_content.php",
+				"file6": "news_manager/news_functions.php",
+				"file7": "news_manager/news_recomments.php",
+				"file8": "news_manager/widget_news_headlines.php",
+				"file9": "news_manager/widget_news_headlines_2.php"
+
+			},
+			{
+				"index": "admin",
+				"file1": "news_manager/admin/admin_news_manager.php"
+			},
+			{
+				"index": "language",
+				"file1": "news_manager/languages/de/news.php",
+				"file2": "news_manager/languages/de/admin_news.php",
+				"file3": "news_manager/languages/de/comments.php",
+				"file4": "news_manager/languages/en/news.php",
+				"file5": "news_manager/languages/en/admin_news.php",
+				"file6": "news_manager/languages/en/comments.php",
+				"file7": "news_manager/languages/it/news.php",
+				"file8": "news_manager/languages/it/admin_news.php",
+				"file9": "news_manager/languages/it/comments.php"
+			},
+			{
+				"index": "templates",
+				"file1": "news_manager/templates/news.html",
+				"file2": "news_manager/templates/widget_news_content.html",
+				"file3": "news_manager/templates/widget_news_headlines.html",
+				"file4": "news_manager/templates/widget_news_headlines_2.html",
+				"file5": "news_manager/templates/comments.html"
+			},
+			{
+				"index": "images",
+				"file1": "news_manager/images/news-pic/no-image.jpg",
+				"file2": "news_manager/images/news-rubrics/no-image.jpg",
+				"file3": "news_manager/images/style/1.jpg",
+				"file4": "news_manager/images/widget_news_content.jpg",
+				"file5": "news_manager/images/widget_news_headlines.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "news_manager/css/news.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

@@ -1,0 +1,40 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "shoutbox/install.php",
+				"file2": "shoutbox/uninstall.php",
+				"file3": "shoutbox/shoutbox.php",
+				"file4": "shoutbox/widget_shoutbox_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "shoutbox/admin/admin_shoutbox.php"
+			},
+			{
+				"index": "languages",
+				"file1": "shoutbox/languages/de/shoutbox.php",
+				"file2": "shoutbox/languages/de/admin_shoutbox.php",
+				"file3": "shoutbox/languages/en/shoutbox.php",
+				"file4": "shoutbox/languages/en/admin_shoutbox.php",
+				"file5": "shoutbox/languages/it/shoutbox.php",
+				"file6": "shoutbox/languages/it/admin_shoutbox.php"
+			},
+			{
+				"index": "templates",
+				"file1": "shoutbox/templates/shoutbox.html"
+			},
+			{
+				"index": "images",
+				"file1": "shoutbox/images/widget_shoutbox_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "shoutbox/css/emojionearea.min.css"
+			},
+			{
+				"index": "js",
+				"file1": "shoutbox/js/emojionearea.min.js"
+			}
+		]
+}

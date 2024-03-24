@@ -1,0 +1,58 @@
+.counter {
+    padding: 20px 0;
+    border-radius: 5px;
+}
+
+.count-title {
+    font-size: 40px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.count-text {
+  color: #fff;
+    font-size: 16px;
+    font-weight: normal;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.facount {
+    color: #fff;
+}
+
+.parallax {
+  background-attachment: fixed !important;
+  -webkit-background-size: cover !important;
+  -moz-background-size: cover !important;
+  -o-background-size: cover !important;
+  background-size: cover !important;
+  overflow: hidden;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+@media (max-width: 767px) {
+  .parallax {
+    -webkit-background-size: auto auto !important;
+    -moz-background-size: auto auto !important;
+    -o-background-size: auto auto !important;
+    background-size: auto auto !important;
+  }
+}
+
+.parallax > .container, .gradient > .container {
+  z-index: 3;
+  position: relative;
+  height: 450px;
+  width: 100%;  
+}
+
+#server {
+  background-image: url("../images/facts_bg.jpg");
+}

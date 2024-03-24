@@ -1,0 +1,43 @@
+<?php
+
+$language_array = array(
+
+    'add_payment'         => 'Aggiungere Pagamento',
+    'edit_payment'        => 'Modificare Pagamento',
+    'amount'              => 'Quantità',
+    'bank_account'        => 'Conto Bancario',
+    'calculate'           => 'Calcolare',
+    'cash_box'            => 'Cassa del Team',
+    'clan'                => 'Team',
+    'clanmembers_only'    => '<blockquote>Accesso solo per i membri</blockquote>',
+    'costs_member'        => 'Costo per Membro',
+    'ddmmyyyy'            => 'gg.mm.anno',
+    'each_squad'          => 'Ogni squadra',
+    'enter_costs_member'  => 'È necessario specificare il costo per Membro.',
+    'enter_date'          => 'È necessario specificare una data',
+    'enter_total_costs'   => 'È necessario immettere il costo totale.',
+    'enter_usage'         => 'È necessario specificare uno scopo.',
+    'info'                => 'Informazioni',
+    'invalid_request'     => 'Richiesta Invalida',
+    'member'              => 'Membro',
+    'new_usage'           => 'Nuovo scopo',
+    'no_entries'          => ' Nessuna voce',
+    'not_paid'            => 'Non ancora Pagato',
+    'paid'                => 'Pagato',
+    'pay_until'           => 'Pagare entro il',
+    'saved_on'            => 'Inserito il',
+    'squad'               => 'Team',
+    'submit'              => 'Salvare',
+    'total_amount'        => 'Importo totale nella Cassa del Team (Team completo)',
+    'total_costs'         => 'Totale',
+    'update'              => 'Conferma Deposito',
+    'usage'               => 'Scopo',
+    'edit'                => 'Edita',
+    'delete'              => 'Elimina',
+    'payment_delete'      => 'Elimina Deposito',
+    'really_delete'       => 'Vuoi eliminare davvero questa Cassa?',
+    'options'             => 'Opzioni',
+    'total_clan'          => '(tutti i membri del Team)',
+    'close'               => 'Chiudi'
+);
+

@@ -1,0 +1,70 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "cup/update.php",
+                "file2": "cup/install.php",
+				"file3": "cup/uninstall.php",
+				"file4": "cup/cup.php",
+				"file5": "cup/widget_cup_nextmatches_content.php",
+				"file6": "cup/cup_abfragen.php",
+				"file7": "cup/cup_abfragen-org.php"
+			},
+			{
+				"index": "admin",
+				"file1": "cup/admin/admin_cup.php"
+				
+			},
+			{
+				"index": "languages",
+				"file1": "cup/languages/de/admin_cup.php",
+				"file2": "cup/languages/de/cup.php",
+				"file3": "cup/languages/en/admin_cup.php",
+				"file4": "cup/languages/en/cup.php",
+				"file5": "cup/languages/it/admin_cup.php",
+				"file6": "cup/languages/it/cup.php"
+			},
+			{
+				"index": "templates",
+				"file1": "cup/templates/cup.html"
+			},
+			{
+				"index": "images",
+				"file1": "cup/images/team/1.png",
+				"file2": "cup/images/team/2.png",
+				"file3": "cup/images/team/3.png",
+				"file4": "cup/images/team/4.png",
+				"file5": "cup/images/team/5.png",
+				"file6": "cup/images/team/6.png",
+				"file7": "cup/images/team/7.png",
+				"file8": "cup/images/team/8.png",
+				"file9": "cup/images/team/9.png",
+				"file10": "cup/images/team/10.png",
+				"file11": "cup/images/team/11.png",
+				"file12": "cup/images/team/12.png",
+				"file13": "cup/images/team/13.png",
+				"file14": "cup/images/team/14.png",
+				"file15": "cup/images/team/15.png",
+				"file16": "cup/images/team/16.png",
+				"file17": "cup/images/icons/admin/cup.png",
+				"file18": "cup/images/icons/admin/cup_admin.png",
+				"file19": "cup/images/icons/admin/lose.png",
+				"file20": "cup/images/icons/admin/medal_b.png",
+				"file21": "cup/images/icons/admin/medal_g.png",
+				"file22": "cup/images/icons/admin/medal_s.png",
+				"file23": "cup/images/icons/admin/question.png",
+				"file24": "cup/images/icons/admin/teams.png",
+				"file25": "cup/images/icons/admin/win.png",
+				"file26": "cup/images/icons/admin/winner.png",
+				"file27": "cup/images/team/0.png",
+				"file28": "cup/images/widget_cup_nextmatches_content.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js",
+				"file1": "cup/js/cCore.js"
+			}
+		]
+}

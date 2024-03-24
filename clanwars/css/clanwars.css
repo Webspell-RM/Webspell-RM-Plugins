@@ -1,0 +1,115 @@
+/* Clanwars */
+
+
+div.clanwars-container {
+    width: 100%;
+    font-family: lato;
+}
+
+div.clanwars-container + div.clanwars-container {
+    border-top: 1px solid #2a3037;
+    padding: 16px 0 0;
+    margin: 16px 0 0;
+}
+
+div.clanwars-container div.cw-row {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+div.clanwars-container div.status {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    left: 0;
+    top: 0;
+}
+
+div.clanwars-container div.infos {
+    margin: 0 14px 0 20px;
+    width: 100%;
+}
+
+div.clanwars-container div.result {
+    width: 100px;
+    border: 1px solid #3d3d3d;
+    padding: 5px 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 16px;
+    /*color: #a8a8a8;*/
+}
+
+div.clanwars-container div.status.win {
+    background-color: #0f6d00;
+}
+
+div.clanwars-container div.status.lost {
+    background-color: #780000;
+}
+
+div.clanwars-container div.status.draw {
+    background-color: #ac7500;
+}
+
+/* Clanwars Ends */
+
+/* Matches Overview Begins */
+
+.vertikal-flex-matches {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color:#fff;
+}
+.vertikal-flex-matches-right {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content:flex-end;
+    color:#fff;
+}
+.vertikal-flex-matches-details {
+    text-align: right;
+    vertical-align:middle !important;
+}
+
+/* Matches Overview Ends */
+
+.topmatch{background: #666}
+    
+img.top-match {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -125px;
+    margin-top: -125px;  
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+#img-upload{
+    width: 100%;
+}

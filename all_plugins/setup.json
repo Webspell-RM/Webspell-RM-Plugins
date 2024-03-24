@@ -1,0 +1,29 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "all_plugins/install.php",
+				"file2": "all_plugins/uninstall.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "languages"
+
+			},
+			{
+				"index": "templates"
+			},
+			{
+				"index": "images",
+				"file1": "all_plugins/images/all_plugins.png"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

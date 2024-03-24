@@ -1,0 +1,38 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "fightus/install.php",
+				"file2": "fightus/uninstall.php",
+				"file3": "fightus/fightus.php",
+				"file4": "fightus/fightus_functions.php"
+			},
+			{
+				"index": "admin",
+				"file1": "fightus/admin/admin_fightus.php"
+			},
+			{
+				"index": "language",
+				"file1": "fightus/languages/de/admin_fightus.php",
+				"file2": "fightus/languages/de/fightus.php",
+				"file3": "fightus/languages/en/admin_fightus.php",
+				"file4": "fightus/languages/en/fightus.php",
+				"file5": "fightus/languages/it/admin_fightus.php",
+				"file6": "fightus/languages/it/fightus.php"
+			},
+			{
+				"index": "templates",
+				"file1": "fightus/templates/fightus.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js",
+				"file1": "fightus/js/fightusbb.js"
+			}
+		]
+}

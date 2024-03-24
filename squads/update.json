@@ -1,0 +1,32 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "squads/update.php",
+				"file2": "squads/install.php",
+				"file3": "squads/uninstall.php",
+				"file4": "squads/widget_squads_sidebar.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "squads/languages/de/squads.php",
+				"file2": "squads/languages/en/squads.php"
+			},
+			{
+				"index": "templates",
+				"file1": "squads/templates/switchsquads.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

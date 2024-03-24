@@ -1,0 +1,40 @@
+<?php
+
+$language_array = array(
+
+  'title'               => 'Partner',
+  'access_denied'       => 'Accesso negato',
+  'actions'             => 'Azioni',
+  'add_partner'         => 'Aggiungi Partner',
+  'back'                => 'Indietro',
+  'banner'              => 'Banner',
+  'banner_to_big'       => 'Il Banner è troppo Grosso',
+  'clicks'              => 'Click (per giorno)',
+  'current_banner'      => 'Banner Corrente',
+  'delete'              => 'Cancella',
+  'edit'                => 'Edita',
+  'edit_partner'        => 'Salva Partner',
+  'options'             => 'Opzioni',
+  'format_incorrect'    => 'Il formato del banner era errato. Si prega di caricare solo i banner in formato .gif, .jpg o .png.',
+  'homepage_url'        => 'Homepage URL',
+  'is_displayed'        => 'È visualizzato?',
+  'max_88x31'           => '(max. 88x31)',
+  'new_partner'         => 'Nuovo Partner',
+  'no'                  => 'No',
+  'no_partners'         => '<blockquote>Nessun Partner</blockquote>',
+  'partner_name'        => 'Nome Partner',
+  'partners'            => 'Partner',
+  'really_delete'       => 'Davvero eliminare questo partner?',
+  'sort'                => 'Ordine',
+  'transaction_invalid' => 'ID Transazione invalida',
+  'to_sort'             => 'Ordina',
+  'yes'                 => 'Si',
+  'options'             => 'Opzioni',
+  'settings'            => 'Settaggi Partner',
+  'max_partners'        => 'Partner per Pagina:',
+  'tooltip'             => 'Numero massimo di Partner per pagina',
+  'update'              => 'Aggiorna',
+  'close'               => 'Chiudi',
+  
+);
+

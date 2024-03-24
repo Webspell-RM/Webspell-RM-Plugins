@@ -1,0 +1,46 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "about_us/install.php",
+				"file2": "about_us/uninstall.php",
+				"file3": "about_us/about_us.php",
+				"file4": "about_us/widget_about_sidebar.php",
+				"file5": "about_us/widget_about_content.php",
+				"file6": "about_us/widget_about_sidebar_verdux.php"
+			},
+			{
+				"index": "admin",
+				"file1": "about_us/admin/admin_about_us.php"
+			},
+			{
+				"index": "languages",
+				"file1": "about_us/languages/de/about.php",
+				"file2": "about_us/languages/de/admin_about.php",
+				"file3": "about_us/languages/en/about.php",
+				"file4": "about_us/languages/en/admin_about.php",
+				"file5": "about_us/languages/it/about.php",
+				"file6": "about_us/languages/it/admin_about.php"
+
+			},
+			{
+				"index": "templates",
+				"file1": "about_us/templates/about.html"
+			},
+			{
+				"index": "images",
+				"file1": "about_us/images/about_rights.jpg",
+				"file2": "about_us/images/about_left.jpg",
+				"file3": "about_us/images/widget_about_content.jpg",
+				"file4": "about_us/images/widget_about_sidebar.jpg",
+				"file5": "about_us/images/widget_about_sidebar_verdux.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "about_us/css/about.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

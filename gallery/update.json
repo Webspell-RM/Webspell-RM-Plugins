@@ -1,0 +1,58 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "gallery/update.php",
+                "file2": "gallery/install.php",
+				"file3": "gallery/uninstall.php",
+				"file4": "gallery/gallery.php",
+				"file5": "gallery/gallery_comments.php",
+				"file6": "gallery/gallery_functions.php",
+				"file7": "gallery/usergallery.php",
+				"file8": "gallery/gallery_rating.php",
+				"file9": "gallery/widget_gallery_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "gallery/admin/admin_gallery.php"
+			},
+			{
+				"index": "languages",
+				"file1": "gallery/languages/de/gallery.php",
+				"file2": "gallery/languages/de/admin_gallery.php",
+				"file3": "gallery/languages/de/usergallery.php",
+				"file4": "gallery/languages/de/comments.php",
+				"file5": "gallery/languages/en/gallery.php",
+				"file6": "gallery/languages/en/admin_gallery.php",
+				"file7": "gallery/languages/en/usergallery.php",
+				"file8": "gallery/languages/en/comments.php",
+				"file9": "gallery/languages/it/gallery.php",
+				"file10": "gallery/languages/it/admin_gallery.php",
+				"file11": "gallery/languages/it/usergallery.php",
+				"file12": "gallery/languages/it/comments.php"
+			},
+			{
+				"index": "templates",
+				"file1": "gallery/templates/gallery.html",
+				"file2": "gallery/templates/comments.html"
+			},
+			{
+				"index": "images",
+				"file1": "gallery/images/large/index.php",
+				"file2": "gallery/images/thumb/index.php",
+				"file3": "gallery/icons/rating_0.png",
+				"file4": "gallery/icons/rating_1.png",
+				"file5": "gallery/icons/no-image.jpg",
+				"file6": "gallery/images/widget_gallery_sidebar.jpg",
+				"file7": "gallery/images/pic_update/index.php"
+			},
+			{
+				"index": "css",
+				"file1": "gallery/css/gallery.css"
+			},
+			{
+				"index": "js",
+				"file1": "gallery/js/jquery.fancybox.js"
+			}
+		]
+}

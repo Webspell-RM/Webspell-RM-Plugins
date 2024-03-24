@@ -1,0 +1,34 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "messenger/update.php",
+                "file2": "messenger/install.php",
+				"file3": "messenger/uninstall.php",
+				"file4": "messenger/messenger.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "languages",
+				"index": "languages",
+				"file1": "messenger/languages/de/messenger.php",
+				"file2": "messenger/languages/en/messenger.php",
+				"file3": "messenger/languages/it/messenger.php"
+			},
+			{
+				"index": "templates",
+				"file1": "messenger/templates/messenger.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

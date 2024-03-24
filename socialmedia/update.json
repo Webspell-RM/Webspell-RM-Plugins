@@ -1,0 +1,43 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "socialmedia/update.php",
+				"file2": "socialmedia/install.php",
+				"file3": "socialmedia/uninstall.php",
+				"file4": "socialmedia/widget_follow_us_content.php",
+				"file5": "socialmedia/widget_social-sidebar_content.php",
+				"file6": "socialmedia/widget_socialmedia_content.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "languages",
+				"file1": "socialmedia/languages/de/follow_us.php",
+				"file2": "socialmedia/languages/en/follow_us.php",
+				"file3": "socialmedia/languages/it/follow_us.php"
+			},
+			{
+				"index": "templates",
+				"file1": "socialmedia/templates/sc_follow_us.html",
+				"file2": "socialmedia/templates/socialmedia.html"
+			},
+			{
+				"index": "images",
+				"file1": "socialmedia/images/bg-topmatch.png",
+				"file2": "socialmedia/images/widget_follow_us_content.jpg",
+				"file3": "socialmedia/images/widget_social-sidebar_content.jpg",
+				"file4": "socialmedia/images/widget_socialmedia_content.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "socialmedia/css/follow_us.css",
+				"file2": "socialmedia/css/social-sidebar.css",
+				"file3": "socialmedia/css/socialmedia.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

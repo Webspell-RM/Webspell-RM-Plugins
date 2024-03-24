@@ -1,0 +1,92 @@
+<!-- login_content -->
+
+               <div class="row">
+                        <div class="col-md-5 signup-greeting overlay foto">
+                            <img style="height: 80px;" src="/includes/themes/default/images/logo-signup.png" alt="logo">
+                            <h4 class="reg_pic_text">$info1</h4>
+                            <p class="reg_pic_text">$info2</p>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="signup-form">
+                                <form method="post" name="login" action="$_modulepath/checklogin.php" role="form" class="row">
+                                    <div class="col-12">
+                                        <h4>$login_titel</h4>
+                                        <p class="float-sm-end">$need_account
+                                            <a href="index.php?site=register">$reg</a>
+                                        </p>
+                                    </div>
+                                    <div class="col-12 mb-3">
+                                        <input name="ws_user" type="email" class="form-control input-lg" id="emailAddress" placeholder="$enter_your_email" required>
+                                    </div>
+                                    <link rel="stylesheet" href="/components/css/passtrength.css" media="screen" title="no title">
+                                    <div class="col-12">  
+                                        <script type="text/javascript" src="/components/js/passtrength.js"></script>
+                                    <input name="password" type="password" class="form-control input-lg" id="loginPassword" placeholder="$enter_password" required>
+                               
+                                    <script type="text/javascript">
+                                        $(document).ready(function($) {
+                                            $('#loginPassword').passtrength({
+                                                
+                                                passwordToggle: true,
+                                                tooltip: false
+                                            });
+                                        });
+                                    </script>
+                                    </div>
+                                    <div class="mb-3">
+                                        <button type="submit" name="submit" class="text-uppercase btn btn-primary">$login</button>
+                                        <div id="ws-login-alert" class="alert hidden" style="z-index: 10;"></div><br><br>
+                                        <div class="text-sm-end" style="margin-top: -50px;"><a href="index.php?site=lostpassword">$lost_password</a></div>
+                                    </div>
+                                    
+                                    <div class="col-12 text-sm-start border-top" style="height: 108px;"> 
+                                    <br>    
+                                    <p>$forgotten_your_login
+                                    <br><br>
+                                    $info_login</p>                                    
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+           
+            
+<!-- END -->
+
+<!-- login_cookie_error -->
+<section class="d-flex align-items-center justify-content-center" style="height: 78vh;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto">
+                <div class="card signup">
+                    <div class="row">
+                        <div class="col-md-5 signup-greeting overlay foto">
+                            <img style="height: 80px;" src="/includes/themes/default/images/logo-signup.png" alt="logo">
+                            <h4 class="reg_pic_text">$info3</h4>
+                            <p class="reg_pic_text">$info4</p>
+                        </div>
+                        <div class="col-md-7">
+                            <div class="signup-form">
+                                <form method="post" name="login" action="$_modulepath/checklogin.php" class="row">
+                                    <div class="col-md-12 mb-3">
+                                    <h4>$cookie_title</h4>
+                                    </div>
+                                    <div class="col-md-12 mb-3">
+                                        $cookie_text
+                                    </div>
+                                    <div class="col-sm-4 mb-3">
+                                                
+                                    </div>
+                                    <div class="col-sm-8 text-sm-end">
+                                        $return_to <a href="index.php?site=login">$log_in</a>
+                                    </div>
+                                </form>  
+                            </div> 
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>                                  
+<!-- END -->

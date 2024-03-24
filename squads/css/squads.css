@@ -1,0 +1,161 @@
+.squadpic {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 3px;
+  height: 250px;
+  margin: 10px 0;
+  position: relative
+}
+
+.squadpic h4 {
+    width: 100%;
+    color: #FFF;
+    font-size: 20px;
+    background: linear-gradient(90deg, rgba(15,15,15,1) 0%, rgba(15,15,15,0.23011211320465685) 100%);
+    padding: 20px;
+    border: 0px;
+    position: absolute;
+    bottom: 0;
+    margin: 10px 0px 10px -13px;
+}
+
+#squad-bar {
+    padding: 10px; 
+    background-color: rgba(var(--bs-rm-foot-bg-rgb), 1);
+    border-top:1px solid rgba(var(--bs-card-border-color-rgb), 1);
+}
+
+#squad-bar img {
+    -moz-transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+    -webkit-filter: grayscale(100%);
+    /* Chrome, Safari, Opera */
+    filter: grayscale(100%);
+    
+     }
+
+#squad-bar img:hover {
+      -webkit-filter: grayscale(0);
+      /* Chrome, Safari, Opera */
+      filter: grayscale(0);
+}
+
+
+section .section-title {
+    text-align: center;
+    margin-bottom: 50px;
+    text-transform: uppercase;
+}
+
+#team .card {
+    border: none;
+
+}
+
+.image-flip:hover .backside,
+.image-flip.hover .backside {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+    border-radius: .25rem; 
+}
+
+.image-flip:hover .frontside,
+.image-flip.hover .frontside {
+   /* -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);*/
+    transform: rotateY(180deg);
+}
+
+.mainflip {
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -moz-transition: 1s;
+    -moz-transform: perspective(1000px);
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+    position: relative;
+}
+
+.frontside {
+    position: relative;
+    -webkit-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    z-index: 2;
+    margin-bottom: 30px;
+  height: 420px;/*
+  -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);*/
+}
+
+.backside {
+    position: absolute;
+    top: 0px;
+    left: 0;
+   background: ;
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);/*
+    -webkit-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    -moz-box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);
+    box-shadow: 5px 7px 9px -4px rgb(158, 158, 158);*/
+  min-width: 100%;
+  height: 420px;
+}
+
+.frontside,
+.backside {
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: 1s;
+    -webkit-transform-style: preserve-3d;
+    -moz-transition: 1s;
+    -moz-transform-style: preserve-3d;
+    -o-transition: 1s;
+    -o-transform-style: preserve-3d;
+    -ms-transition: 1s;
+    -ms-transform-style: preserve-3d;
+    transition: 1s;
+    transform-style: preserve-3d;
+}
+
+.frontside .card {
+    height: 420px;
+}
+
+.backside .card {
+   height: 420px;
+
+}
+
+.backside .card a {
+    font-size: 18px;
+ 
+}
+
+.frontside .card .card-title,
+.backside .card .card-title {
+ 
+}
+
+
+.featured-image {
+  width: 100%;
+  max-height: 225px;
+  max-width: 225px;
+  object-fit: cover;
+  height: auto;
+}

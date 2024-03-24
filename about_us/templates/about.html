@@ -1,0 +1,96 @@
+<!-- about_head -->
+<div class="head-boxes">
+	<span class="head-boxes-head">$title</span>
+	<h2 class="head-h2">
+		<span class="head-boxes-title">$title</span>
+	</h2>
+	<p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- about_content -->
+<div class="card">
+	<div class="card-body"> $text</div>
+</div>
+<!-- END -->
+
+
+
+<!-- about_admin_content -->
+			<div class="card">
+				<div class="card-header">
+					<i class="bi bi-person-vcard-fill"></i> $lang_about
+				</div>
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item active" aria-current="page">$lang_about</li>
+						<li class="breadcrumb-item active" aria-current="page">new & edit</li>
+					</ol>
+				</nav>
+				<div class="card-body">
+					<script type="text/javascript">
+						function chkFormular() {
+							if(!validbbcode(document.getElementById('message').value, 'admin')){
+							return false;
+							}
+						}
+					</script>
+					<form method="post" id="post" name="post" action="admincenter.php?site=admin_about_us" enctype="multipart/form-data" onsubmit="return chkFormular();">
+					<div class="form-group row">
+						<label for="title" class="col-md-2 col-form-label">$lang_title_head:</label>
+						<div class="col-md-12">
+							<input type="text" class="form-control" name="title"	value="$title">
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="message" class="col-md-2 col-form-label">$lang_description:</label>
+						<div class="col-md-12">
+							<textarea class="ckeditor" id="ckeditor" name="message" rows="25" cols="" style="width: 100%;">$text</textarea>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="aboutchars" class="col-md-2 col-form-label">$lang_max_sc:</label>
+						<div class="col-md-12">
+							<input class="form-control" type="text" name="aboutchars" value="$aboutchars" size="35">
+						</div>
+					</div>
+					<div class="form-group row">
+					<label for="aboutchars" class="col-md-2 col-form-label"></label>
+						<div class="col-md-12">
+							<input type="hidden" name="captcha_hash" value="$hash" />
+							<button class="btn btn-success" type="submit" name="submit"  />$lang_update</button>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
+<!-- END -->
+
+<!-- about_widget_head -->
+<div class="head-boxes">
+	<span class="head-boxes-head">$title</span>
+	<h2 class="head-h2">
+		<span class="head-boxes-title">$title</span>
+	</h2>
+	<p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- about_widget_content -->
+<div class="card">
+	<div class="card-body"> $text </div>
+</div>
+<!-- END -->
+
+<!-- about_widget_content_content -->
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-6 about_us-info">
+			<p>About</p>
+			<p class="about_us-headline">$title</p>
+			<span class="about_us-text">$text</span>
+		</div>
+		<div class="col-md-6 about-pic"></div>
+	</div>
+</div>
+<!-- END -->

@@ -1,0 +1,32 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "messenger/install.php",
+				"file2": "messenger/uninstall.php",
+				"file3": "messenger/messenger.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "languages",
+				"file1": "messenger/languages/de/messenger.php",
+				"file2": "messenger/languages/en/messenger.php",
+				"file3": "messenger/languages/it/messenger.php"
+			},
+			{
+				"index": "templates",
+				"file1": "messenger/templates/messenger.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

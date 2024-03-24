@@ -1,0 +1,49 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "blog/update.php",
+				"file2": "blog/install.php",
+				"file3": "blog/uninstall.php",
+				"file4": "blog/blog.php",
+				"file5": "blog/blog_comments.php",
+				"file6": "blog/blog_functions.php",
+				"file7": "blog/widget_blog_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "blog/admin/admin_blog.php"
+			},
+			{
+				"index": "language",
+				"file1": "blog/languages/de/blog.php",
+				"file2": "blog/languages/de/comments.php",
+				"file3": "blog/languages/de/admin_blog.php",
+				"file4": "blog/languages/en/blog.php",
+				"file5": "blog/languages/en/comments.php",
+				"file6": "blog/languages/en/admin_blog.php",
+				"file7": "blog/languages/it/blog.php",
+				"file8": "blog/languages/it/comments.php",
+				"file9": "blog/languages/it/admin_blog.php"
+			},
+			{
+				"index": "templates",
+				"file1": "blog/templates/blog.html",
+				"file2": "blog/templates/blog_widget.html",
+				"file3": "blog/templates/comments.html"
+			},
+			{
+				"index": "images",
+				"file1": "blog/images/widget_blog_sidebar.jpg",
+				"file2": "blog/images/no-image.jpg",
+				"file3": "blog/images/article/no-image.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "blog/css/blog.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

@@ -1,0 +1,48 @@
+<!-- streams_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- streams_row_head -->
+
+<div class="container">
+<div class="row">
+<!-- END -->
+<!-- streams_row -->
+<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+<div class="col" id="$name"></div><br>
+<script type="text/javascript">
+  var options = {
+    width: "100%",
+    height: "300",
+    channel: "$name",
+	//autoplay: false,
+  };
+  var player = new Twitch.Player("$name", options);
+  player.setVolume(0.5);
+</script>
+<!-- END -->
+<!-- streams_videos -->
+<script src= "https://player.twitch.tv/js/embed/v1.js"></script>
+<div class="" id="$name"></div><br>
+<script type="text/javascript">
+  var options = {
+    width: "100%",
+    height: "300",
+    video: "$name",
+    
+	//autoplay: false,
+  };
+  var player = new Twitch.Player("$name", options);
+  player.setVolume(0.5);
+</script>
+<!-- END -->
+<!-- streams_row_foot -->
+</div>
+</div>
+
+<!-- END -->

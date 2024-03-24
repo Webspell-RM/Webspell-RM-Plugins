@@ -1,0 +1,81 @@
+<!-- faq_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- faq_question_breadcrumb -->  
+<h3 class="card-header border-bottom-0">$categories: $faqcatname</h3>
+<!-- END -->
+<!-- faq_body_head -->
+    <!-- Row -->
+<div class="row">        
+<!-- END -->
+<!-- faq_category_head_head -->
+    <div class="col-md-4">
+        <div class="card">
+            <h3 class="card-header">
+               $categories
+            </h3>
+            <ul class="list-group list-group-flush">
+<!-- END -->
+<!-- faq_category -->
+                <li class="list-group-item">
+                    $faqcatname <span class="badge bg-secondary badge-pill ml-15 float-right">$anzfaqs</span> <br><small>$description</small>
+                </li>
+<!-- END -->
+<!-- faq_category_foot_foot -->
+            </ul>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card">                           
+<!-- END -->
+<!-- faq_content_title_head -->
+<!-- END -->
+<!-- faq_question_content_head_head -->
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse$faqID" aria-expanded="true" aria-controls="collapse$faqID">
+                        $question
+                    </button>
+                </h2>
+                <div id="collapse$faqID" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+<!-- END -->
+
+<!-- faq_question_content_head -->
+<!-- END -->
+<!-- faq_question_content -->
+                        $answer
+                        <br><small>($saved_on $date)</small>
+<!-- END -->
+<!-- faq_question_content_foot -->
+                    </div>
+                </div>
+            </div>
+<!-- END -->
+<!-- faq_question_content_foot_foot --> 
+        </div>
+        <script type="text/javascript">$('.collapse').collapse()</script>
+<!-- END -->
+<!-- faq_content_title_foot --> 
+    </div>
+</div>
+<!-- END -->
+
+<!-- faq_body_foot -->
+            </div>
+        </div>
+    </div>
+
+<!-- END -->
+<!-- faq_body_foot_foot -->
+        </div>
+    </div>
+</div>
+<!-- END -->

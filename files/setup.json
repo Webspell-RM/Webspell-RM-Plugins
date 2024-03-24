@@ -1,0 +1,44 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "files/install.php",
+				"file2": "files/uninstall.php",
+				"file3": "files/files.php",
+				"file4": "files/download.php",
+				"file5": "files/files_rating.php",
+				"file6": "files/widget_files_sidebar.php",
+				"file7": "files/files_functions.php",
+				"file8": "files/downloads/index.php"
+			},
+			{
+				"index": "admin",
+				"file1": "files/admin/admin_files.php"
+			},
+			{
+				"index": "language",
+				"file1": "files/languages/de/files.php",
+				"file2": "files/languages/en/files.php",
+				"file3": "files/languages/it/files.php"
+			},
+			{
+				"index": "templates",
+				"file1": "files/templates/files.html",
+				"file2": "files/templates/admin_files.html",
+				"file3": "files/templates/sc_files.html"
+			},
+			{
+				"index": "images",
+				"file1": "files/images/rating_0.png",
+				"file2": "files/images/rating_1.png",
+				"file3": "files/images/widget_files_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "files/css/files.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

@@ -1,0 +1,91 @@
+<!-- servers_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- servers_content_head -->
+
+		
+<!-- END -->
+<!-- servers_content -->
+<style type="text/css">
+.gametracker {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+</style>
+
+<div class="card">
+    <div class="card-body">
+        <h4>$servername</h4>   
+	        <div class="row">
+                <div class="col-md-2">
+                    <img class="img-fluid" src="$gameicon" alt="$game">
+                </div>
+                <div class="col-md-10">
+                    <div class="row"> 
+                    <div class="col-md-4">
+                        <div class="row">   
+                            <div class="col-4">$server_ip:</div>
+                            <div class="col-8">$ip</div>
+                            <div class="col-4">$server_status:</div>
+                            <div class="col-8">$status</div>
+                            <div class="col-4">$server_game:</div>
+                            <div class="col-8">$showgame</div>
+                            <div class="col-4">$server_link:</div>
+                            <div class="col-8"><a href="hlsw://$ip">$ip</a></div>
+                        </div>
+                    </div>
+                    <div class="col-md-8 d-none d-sm-block">
+                        <a href="https://www.gametracker.com/server_info/$ip/" target="_blank">$pic</a>
+                    </div>
+                    <div class="col-md-12"><b>$server_information:</b>
+                        $info
+                    </div> 
+                </div>
+                </div>   
+            </div>
+    </div>
+</div>
+
+<!-- END -->
+<!-- servers_foot -->
+
+<!-- END -->
+
+<!-- servers_widget_head_content -->
+<div class="card">
+    <div class="card-body widget" style="margin: -12px -12px -12px -12px;">
+<!-- END -->
+<!-- servers_widget_content --> 
+        <div class="row">      
+            <div class="col-4">
+                <img src="$gameicon" class="img-fluid" alt="..."> 
+            </div>
+            <div class="col">
+                <a href="index.php?site=servers">$servername</a><br>
+                IP/Link :<a href="steam://connect/$serverip">$serverip</a><br>
+                $server_status: $status
+            </div>
+        </div> 
+<!-- END -->
+<!-- servers_widget_foot_content -->
+    </div>
+</div>
+<!-- END -->
+
+<!-- servers_gametracker_head_content -->
+<div class="card">
+    <div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+<!-- END -->
+<!-- servers_gametracker_content -->
+        $pic           
+<!-- END -->
+<!-- servers_gametracker_foot_content -->        
+    </div>
+</div>
+<!-- END -->

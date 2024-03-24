@@ -1,0 +1,72 @@
+<!-- whoisonline_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- whoisonline_head -->
+<div class="card">
+    <div class="card-body">
+    <h4>$title_is</h4>
+    <div class="row">
+        <div class="col-lg-3">$sorter</div>
+        <div class="col-lg-9 text-end">$online</div>
+    </div>
+<div class="table-responsive">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>$nickname:</th>
+            <th width="35%">$contact:</th>
+            <th width="20%">$status:</th>
+            <th width="20%"></th>
+        </tr>
+    </thead>
+    <tbody>
+<!-- END -->
+<!-- whoisonline_content -->
+        <tr>
+            <td>$avatar $nickname $member</td>
+            <td>$email $pm $homepage</td>
+            <td>$status</td>
+            <td></td>
+        </tr>
+<!-- END -->
+<!-- whoisonline_foot -->
+    </tbody>
+</table>
+</div>   
+<!-- END -->
+<!-- whoisonline_whowasonline_head -->
+
+    <h4>$title_was</h4>$sorter
+<div class="table-responsive">  
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th><a href="index.php?site=whoisonline&amp;sort=nickname&amp;type=$type">$nickname:</a></th>
+        <th>$contact:</th>
+        <th>$latest_action:</th>
+        <th><a href="index.php?site=whoisonline&amp;sort=time&amp;type=$type">$date:</a></th>
+    </tr>
+    </thead>
+    <tbody>
+<!-- END -->
+<!-- whoisonline_whowasonline_content -->
+    <tr>
+        <td>$avatar $nickname $member</td>
+        <td width="35%">$email $pm $homepage</td>
+        <td width="20%">$status</td>
+        <td width="20%">$date</td>
+    </tr>
+<!-- END -->
+<!-- whoisonline_whowasonline_foot -->
+    </tbody>
+</table>
+</div>
+    </div>
+</div>
+<!-- END -->

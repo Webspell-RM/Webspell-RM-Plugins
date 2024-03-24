@@ -1,0 +1,175 @@
+.news-box h4 {
+  margin: 15px 0 5px 0;
+  font-weight: 600;
+}
+
+.news-box .card-body {
+  padding: 6px;
+}
+
+.news-rubric {
+  width: 100%;
+  max-height: 350px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.news-poster {
+  color: #8a8a8a;
+  margin: 5px 0 10px 0;
+  font-weight: 600;
+  font-size: 12px;
+  height: 35px;
+}
+
+.news-block {
+  display: block;
+  padding: 6px 3px 6px 3px;
+  margin-bottom: 0px;
+}
+
+.news-day {
+  font-size: 20px;
+  font-weight: 600;
+}
+.news-month {
+  display: block;
+}
+.news-year {
+  display: block;
+}
+.news-box .news-badge-left {
+  position: absolute !important;
+  padding: 12px !important; 
+  font-weight: 400;
+  font-size: 100%;
+  left: 0px; 
+  top: 0px;
+  border-top-left-radius: var(--bs-border-radius);
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: var(--bs-border-radius);
+}
+.news-box .news-badge-right {
+  position: absolute !important;
+  padding: 12px !important; 
+  font-weight: 400;
+  font-size: 100%;
+  right: 0px; 
+  bottom: 0px;
+  border-top-left-radius: var(--bs-border-radius);
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+/*------------ WIDGET --------------*/
+.b-0 {
+    bottom: 0;
+}
+.bg-shadow {
+    background: rgba(76, 76, 76, 0);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179, 171, 171, 0)), color-stop(49%, rgba(48, 48, 48, 0.37)), color-stop(100%, rgba(19, 19, 19, 0.8)));
+    background: linear-gradient(to bottom, rgba(179, 171, 171, 0) 0%, rgba(48, 48, 48, 0.71) 49%, rgba(19, 19, 19, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+.top-indicator {
+    right: 0;
+    top: 1rem;
+    bottom: inherit;
+    left: inherit;
+    margin-right: 1rem;
+}
+.overflow {
+    position: relative;
+    overflow: hidden;
+}
+.zoom img {
+    transition: all 0.2s linear;
+    height: 100px;
+    width: 100%;
+}
+.zoom:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+/*------------WIDGET headline-------------*/
+
+.b-0 {
+    bottom: 0;
+}
+.bg-shadow {
+    background: rgba(76, 76, 76, 0);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(179, 171, 171, 0)), color-stop(49%, rgba(48, 48, 48, 0.37)), color-stop(100%, rgba(19, 19, 19, 0.8)));
+    background: linear-gradient(to bottom, rgba(179, 171, 171, 0) 0%, rgba(48, 48, 48, 0.71) 49%, rgba(19, 19, 19, 0.8) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313', GradientType=0 );
+}
+.top-indicator {
+    right: 0;
+    top: 1rem;
+    bottom: inherit;
+    left: inherit;
+    margin-right: 1rem;
+}
+.overflow {
+    position: relative;
+    overflow: hidden;
+}
+.zoom_headline img {
+    transition: all 0.2s linear;
+    height: 250px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50%
+}
+.zoom_headline:hover img {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+/*.headline-news{border-bottom: 0px solid #fff;
+   font-size: 36px;
+   color: #fff;
+    color:rgba(var(--bs-link-color),1);
+    text-align: left;
+    font-weight: 500;
+    margin-bottom: 30px;
+    margin-top:30px;
+    text-decoration:none;
+    text-transform:uppercase;
+               text-align:center;}*/
+.news-title h3{
+    font-size: 4em;
+    color: rgba(var(--bs-link-color),1);
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+} 
+
+.news{
+  padding: 4em 0 4em 0;
+} 
+
+.agileits-news-grids{
+    margin: 4em 0 0 0;
+}                 
+
+.headline { color: rgba(var(--bs-body-color),1);}
+
+.card .date_col {margin-bottom: 143px;width: 54px;background-color: rgba(var(--bs-link-color),1);}
+
+.date_line {height: 2px;background-color: #000}
+
+.date_number {text-align: center;}
+
+.date_month  {text-align: center;}               
+
+@media (min-width: 768px) {
+  
+}
+
+
+@media (max-width: 768px) {
+
+.card .date_col {margin-bottom: 80px;width: 40px}
+
+}

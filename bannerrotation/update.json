@@ -1,0 +1,34 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "bannerrotation/update.php",
+				"file2": "bannerrotation/install.php",
+				"file3": "bannerrotation/uninstall.php",
+				"file4": "bannerrotation/widget_bannerrotation_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "bannerrotation/admin/admin_bannerrotation.php"
+			},
+			{
+				"index": "language",
+				"file1": "bannerrotation/languages/de/bannerrotation.php",
+				"file2": "bannerrotation/languages/en/bannerrotation.php",
+				"file3": "bannerrotation/languages/it/bannerrotation.php"
+			},
+			{
+				"index": "templates"
+			},
+			{
+				"index": "images",
+				"file1": "bannerrotation/images/no-image.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

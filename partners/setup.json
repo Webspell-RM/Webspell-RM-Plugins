@@ -1,0 +1,48 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "partners/install.php",
+				"file2": "partners/uninstall.php",
+				"file3": "partners/partners.php",
+				"file4": "partners/widget_partners_sidebar.php",
+				"file5": "partners/widget_partners_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "partners/admin/admin_partners.php"
+			},
+			{
+				"index": "language",
+				"file1": "partners/languages/de/partners.php",
+				"file2": "partners/languages/en/partners.php",
+				"file3": "partners/languages/it/partners.php"
+			},
+			{
+				"index": "templates",
+				"file1": "partners/templates/partners.html"
+			},
+			{
+				"index": "images",
+				"file1": "partners/images/1.png",
+				"file2": "partners/images/2.png",
+				"file3": "partners/images/3.png",
+				"file4": "partners/images/4.png",
+				"file5": "partners/images/5.png",
+				"file6": "partners/images/6.png",
+				"file7": "partners/images/7.png",
+				"file8": "partners/images/8.png",
+				"file9": "partners/images/no-image.jpg",
+				"file10": "partners/images/widget_partners_content.jpg",
+				"file11": "partners/images/widget_partners_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "partners/css/partners.css"
+			},
+			{
+				"index": "js",
+				"file1": "partners/js/owl.carousel.js"
+			}
+		]
+}

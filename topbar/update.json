@@ -1,0 +1,38 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "carousel/update.php",
+				"file2": "carousel/install.php",
+				"file3": "carousel/uninstall.php",
+				"file4": "topbar/widget_topbar_one.php",
+				"file5": "topbar/widget_topbar_two.php",
+				"file6": "topbar/widget_topbar_three.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "languages",
+				"file1": "topbar/languages/de/topbar.php",
+				"file2": "topbar/languages/en/topbar.php",
+				"file3": "topbar/languages/it/topbar.php"
+			},
+			{
+				"index": "templates",
+				"file1": "topbar/templates/topbar_one.html",
+				"file2": "topbar/templates/topbar_two.html",
+				"file3": "topbar/templates/topbar_three.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css",
+				"file1": "topbar/css/topbar.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

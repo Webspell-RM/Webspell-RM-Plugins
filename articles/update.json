@@ -1,0 +1,47 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "articles/update.php",
+				"file2": "articles/install.php",
+				"file3": "articles/uninstall.php",
+				"file4": "articles/articles.php",
+				"file5": "articles/articles_rating.php",
+				"file6": "articles/articles_comments.php",
+				"file7": "articles/articles_functions.php",
+				"file8": "articles/widget_articles_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "articles/admin/admin_articles.php"
+			},
+			{
+				"index": "languages",
+				"file1": "articles/languages/de/articles.php",
+				"file2": "articles/languages/de/admin_articles.php",
+				"file3": "articles/languages/de/comments.php",
+				"file4": "articles/languages/en/articles.php",
+				"file5": "articles/languages/en/admin_articles.php",
+				"file6": "articles/languages/en/comments.php",
+				"file7": "articles/languages/it/articles.php",
+				"file8": "articles/languages/it/admin_articles.php",
+				"file9": "articles/languages/it/comments.php"
+			},
+			{
+				"index": "templates",
+				"file1": "articles/templates/articles.html",
+				"file2": "articles/templates/comments.html"
+			},
+			{
+				"index": "images",
+				"file1": "articles/images/rating_0.png",
+				"file2": "articles/images/rating_1.png"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

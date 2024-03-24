@@ -1,0 +1,37 @@
+<?php
+
+$language_array = array(
+
+    'contact'              =>'Contact',
+    'country'              =>'Country',
+    'homepage'             =>'website',
+    'last_login'           =>'Last login',
+    'nickname'             =>'nickname',
+    'no_users'             =>'No users registered',
+    'now_on'               =>'Currently online',
+    'registered_users'     =>'Registered Users',
+    'registration'         =>'Registered since',
+    'sort'                 =>'Sorting:',
+    'update'               =>'Update',
+    'settings'             =>'Registered Users',
+    'title'                =>'Registered Users',
+    'max_registered_users' =>'Registered users per page',
+    'tooltip_1'            =>'Registered users per page',
+    'max_users_online'     =>'Users online per page',
+    'tooltip_2'            =>'Users online per page',
+    'transaction_invalid'  =>'Transaction invalid',
+    'n_a'                  =>'n/a',
+    'lastregistered'       =>'Latest members',
+    'today'                =>'Today',
+    'future_date'          =>'Future Date',
+    'tomorrow'             =>'Tomorrow',
+    'long_back'            =>'Long back',
+    'yesterday'            =>'Yesterday',
+    'message'              =>'Message',
+    'userlist_title'       =>'Last activity',
+    'was_online'           =>'Last activity before',
+    'hours_and'            =>'hours and',
+    'hour_and'             =>'hour and',
+    'minutes'              =>'minutes',
+);
+

@@ -1,0 +1,32 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "whoisonline/install.php",
+				"file2": "whoisonline/uninstall.php",
+				"file3": "whoisonline/whoisonline.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "whoisonline/languages/de/whoisonline.php",
+				"file2": "whoisonline/languages/en/whoisonline.php",
+				"file3": "whoisonline/languages/it/whoisonline.php"
+			},
+			{
+				"index": "templates",
+				"file1": "whoisonline/templates/whoisonline.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

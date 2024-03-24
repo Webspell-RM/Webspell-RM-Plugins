@@ -1,0 +1,22 @@
+
+    .size-80 { font-size: 80%; }
+    .size-100 { font-size: 100%; }
+    .size-125 { font-size: 125%; }
+    .size-150 { font-size: 150%; }
+    .size-200 { font-size: 200%; }
+    .size-250 { font-size: 250%; }
+    .size-300 { font-size: 300%; }
+
+.size-100 { font-size: 100%; }
+.size-250 { font-size: 250%; }
+.upp { text-transform: uppercase; }
+/*.color-gray { color: #636e70; }*/
+.backcolor-blue { background-color: rgba(var(--bs-link-color),1); }
+.color-white { color: #ffffff; }
+.lineheight20 { line-height: 1px; }
+
+/*div.fourbox { padding: 50px 0 50px 0; width: 100%; background-color: #fff; }*/
+div.fourbox { padding: 50px 0 50px 0; width: 100%; }
+    div.four-box-pic { width: 20%; float: left; padding: 15px 8px 15px 8px; text-align: center;border-radius: var(--bs-border-radius); }
+    div.four-box-txt { width: 74%; padding: 30px 3% 0 3%; float: left;  }
+

@@ -1,0 +1,40 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "calendar/install.php",
+				"file2": "calendar/uninstall.php",
+				"file3": "calendar/calendar.php",
+				"file4": "calendar/widget_calendar_sidebar.php",
+				"file5": "calendar/widget_upcoming_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "calendar/admin/admin_calendar.php"
+			},
+			{
+				"index": "language",
+				"file1": "calendar/languages/de/calendar.php",
+				"file2": "calendar/languages/en/calendar.php",
+				"file3": "calendar/languages/it/calendar.php"
+			},
+			{
+				"index": "templates",
+				"file1": "calendar/templates/calendar.html",
+				"file2": "calendar/templates/admin_calendar.html",
+				"file3": "calendar/templates/admin_calendar_train.html"
+			},
+			{
+				"index": "images",
+				"file1": "calendar/images/widget_calendar_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "calendar/css/calendar.css"				
+			},
+			{
+				"index": "js",
+				"file1": "calendar/js/calendar_eu.js"
+			}
+		]
+}

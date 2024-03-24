@@ -1,0 +1,46 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "about_box/install.php",
+				"file2": "about_box/uninstall.php",
+				"file3": "about_box/widget_about_sponsor_content.php",
+				"file4": "about_box/uninstall.php",
+				"file5": "about_box/widget_about_us_box.php",
+				"file6": "about_box/widget_about_us_box_content.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "about_box/languages/de/about_sponsor.php",
+				"file2": "about_box/languages/en/about_sponsor.php",
+				"file3": "about_box/languages/it/about_sponsor.php"			
+			},
+			{
+				"index": "templates",
+				"file1": "about_box/templates/sc_about_sponsor.html",
+				"file2": "about_box/templates/about_us_box.html",
+				"file3": "about_box/templates/about_us_box_content.html"
+			},
+			{
+				"index": "css",
+				"file1": "about_box/css/about_box.css",
+				"file2": "about_box/css/about_sponsor.css"
+			},
+			{
+				"index": "images",
+				"file1": "about_box/images/about-img.jpg",
+				"file2": "about_box/images/widget_about_sponsor_content.jpg",
+				"file3": "about_box/images/widget_about_us_box.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "about_box/css/about_sponsor.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

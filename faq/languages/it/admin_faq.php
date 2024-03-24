@@ -1,0 +1,35 @@
+<?php
+
+$language_array = Array(
+
+  'access_denied'           => 'Accesso Negato',
+  'actions'                 => 'Azioni',
+  'add_faq'                 => 'Aggiungi FAQ',
+  'answer'                  => 'Risposta',
+  'category'                => 'Categoria',
+  'delete'                  => 'Cancella',
+  'edit'                    => 'Edita',
+  'edit_faq'                => 'Salva',
+  'description'             => 'Descrizione',
+  'faq'                     => 'FAQ',
+  'information_incomplete'  => 'Mancano alcune informazioni.',
+  'new_faq'                 => 'Nuova FAQ',
+  'no_category_selected'    => 'Hai dimenticato di selezionare una categoria',
+  'no_faq_selected'         => 'Nessuna categoria FAQ selezionata',
+  'really_delete_faq'       => 'Elimina davvero questa FAQ?',
+  'sort'                    => 'Ordine',
+  'to_sort'                 => 'Ordina',
+  'transaction_invalid'     => 'ID transazione non valida',
+  'tags'                    => 'Tag',
+  'new_category'            => 'Nuova categoria',
+  'title'                   => 'FAQ',
+  'options'                 => 'Opzioni',
+  'add_category'            => 'Aggiungi Categoria',
+  'category_name'           => 'Nome Categoria',
+  'description'             => 'Descrizione',
+  'edit_category'           => 'Salva Categoria',
+  'faq_categories'          => 'FAQ Categorie',
+  'really_delete_cat'       => 'Eliminare questa categoria e le domande frequenti sulla categoria?',
+  'close'                   => 'Chiudi',
+  
+  );

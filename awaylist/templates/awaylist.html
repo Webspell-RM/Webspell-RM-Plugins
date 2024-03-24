@@ -1,0 +1,196 @@
+<!-- awaylist_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- awaylist_head -->
+<div class="card">
+            <div class="card-body">
+<table class="table">
+  <thead>
+  <tr> 
+    <th>$lang_nickname:</td>
+    <th>$lang_contact:</td>
+    <th>$lang_from:</td>
+    <th>$lang_to:</td>
+    <th>$lang_action:</td>
+  </tr>
+  </thead>
+        <tbody> 
+<!-- END -->
+<!-- awaylist_content -->
+<tr> 
+  <td>$nickname $member</td>
+  <td>$email $pm</td>
+  <td>$startaway</td>
+  <td>$endaway</td>
+  <td>$action</td>
+  </tr>
+<!-- END -->
+<!-- awaylist_foot -->
+</tbody></table>
+</div></div>
+  <!-- END -->
+<!-- awaylist_show -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php?site=awaylist">$title_awaylist</a></li>
+    <li class="breadcrumb-item active" aria-current="page">$nickname</li>
+  </ol>
+</nav>
+<div class="card">
+            <div class="card-body">
+  <table class="table">          
+          <tr> 
+            <td style="width: 20%">$lang_nickname:</td>
+            <td>$nickname</td> 
+          </tr>
+          <tr> 
+            <td>$lang_from:</td>
+            <td>$awayfrom</td> 
+          </tr>
+          <tr> 
+            <td>$lang_to:</td>
+            <td>$awayto</td></td>
+          </tr>              
+          <tr> 
+            <td>$lang_your_reason:</td>
+            <td>$comment</td>
+          </tr>
+      $action        
+  </table>
+  </div>
+</div>
+<!-- END -->  
+<!-- awaylist_add -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php?site=awaylist">$title_awaylist</a></li>
+    <li class="breadcrumb-item active" aria-current="page">New</li>
+  </ol>
+</nav>
+<div class="card">
+    <div class="card-header">
+        <h5>$set_you_away</h5></div>
+    <div class="card-body">
+
+  <form method="post" id="post" name="post" action="index.php?site=awaylist" enctype="multipart/form-data" onsubmit="return chkFormular();">
+  <table class="table">    
+        $addadmin
+        <tr> 
+          <td>$away_from:</td>
+          <td>
+
+          <div class="row justify-content-center">
+          <div class="col-lg-3 col-sm-6">
+            <label for="startDate">$start</label>
+            <input id="startDate" class="form-control" type="date" name="startaway" value="$startaway" />            
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <label for="endDate">$end</label>
+            <input id="endDate" class="form-control" type="date" name="endaway" value="$endaway"/>            
+        </div>
+    </div>
+
+<script type="text/javascript">
+  let startDate = document.getElementById('startDate')
+let endDate = document.getElementById('endDate')
+
+startDate.addEventListener('change',(e)=>{
+  let startDateVal = e.target.value
+  document.getElementById('startDateSelected').innerText = startDateVal
+})
+
+endDate.addEventListener('change',(e)=>{
+  let endDateVal = e.target.value
+  document.getElementById('endDateSelected').innerText = endDateVal
+})  
+
+</script>
+
+          </td>
+        </tr>
+        <tr> 
+          <td>$your_reason:</td>
+          <td> 
+            <textarea name="comment"  rows="5" cols="35" class="form-control"></textarea>
+          </td>
+        </tr>
+        <tr> 
+          <td><input name="action" type="hidden" value="save"><input name="userID" type="hidden" value="$userID"></td>
+          <td valign="bottom" align="right"> <input class="btn btn-success" name="save" type="submit" value="$send"></td>
+        </tr>
+  </table>
+</form>
+  </div>
+</div>
+<!-- END -->
+<!-- awaylist_edit -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php?site=awaylist">$title_awaylist</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
+<div class="card">
+      <div class="card-header">
+          <h5>$set_you_away</h5></div>
+      <div class="card-body">
+  <form method="post" id="post" name="post" action="index.php?site=awaylist" enctype="multipart/form-data" onsubmit="return chkFormular();">
+  <table class="table">          
+        $addadmin
+          <tr> 
+            <td>$away_from:</td>
+            <td>
+      <div class="row justify-content-center">
+        <div class="col-lg-3 col-sm-6">
+            <label for="startDate">$start</label>
+            <input id="startDate" class="form-control" type="date" name="startaway" value="$startaway" />            
+        </div>
+        <div class="col-lg-3 col-sm-6">
+            <label for="endDate">$end</label>
+            <input id="endDate" class="form-control" type="date" name="endaway" value="$endaway"/>            
+        </div>
+    </div>
+
+<script type="text/javascript">
+  let startDate = document.getElementById('startDate')
+let endDate = document.getElementById('endDate')
+
+startDate.addEventListener('change',(e)=>{
+  let startDateVal = e.target.value
+  document.getElementById('startDateSelected').innerText = startDateVal
+})
+
+endDate.addEventListener('change',(e)=>{
+  let endDateVal = e.target.value
+  document.getElementById('endDateSelected').innerText = endDateVal
+})  
+
+</script>
+
+</td>                
+          </tr>
+          <tr> 
+            <td>$your_reason:</td><td> 
+              <textarea name="comment" rows="5" cols="35" class="form-control">$comment</textarea></td>
+          </tr>
+          <tr> 
+            <td><input name="awayID" type="hidden" value="$awayid">
+              <input name="action" type="hidden" value="saveedit">
+              <input name="userID" type="hidden" value="$id">
+              <input type="hidden" name="captcha_hash" value="$hash" /></td>
+            <td valign="bottom" align="right"> 
+            
+            
+            <input class="btn btn-warning" type="submit" name="saveedit" value="$send" /></td>
+          </tr>
+        
+  </table>
+</form>
+</div></div>
+<!-- END -->  

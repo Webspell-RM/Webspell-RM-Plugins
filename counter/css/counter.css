@@ -1,0 +1,7 @@
+
+.progress {
+    margin-top: 8px;
+}
+.progress .progress-bar {
+    color: transparent;
+}

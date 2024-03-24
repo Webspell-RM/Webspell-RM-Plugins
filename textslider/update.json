@@ -1,0 +1,38 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "textslider/update.php",
+				"file2": "textslider/install.php",
+				"file3": "textslider/uninstall.php",
+				"file4": "textslider/widget_textslider_content.php",
+				"file5": "textslider/widget_textslider_content_two.php"
+			},
+			{
+				"index": "admin",
+				"file1": "textslider/admin/admin_textslider.php"
+			},
+			{
+				"index": "languages",
+				"file1": "textslider/languages/de/textslider.php",
+				"file2": "textslider/languages/en/textslider.php",
+				"file3": "textslider/languages/it/textslider.php"
+			},
+			{
+				"index": "templates",
+				"file1": "textslider/templates/textslider.html",
+				"file2": "textslider/templates/textslider_two.html"
+			},
+			{
+				"index": "images",
+				"file1": "textslider/images/widget_textslider_content.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "textslider/css/textslider.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

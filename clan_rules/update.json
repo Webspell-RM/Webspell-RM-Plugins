@@ -1,0 +1,35 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "clan_rules/update.php",
+                "file2": "clan_rules/install.php",
+				"file3": "clan_rules/uninstall.php",
+				"file4": "clan_rules/clan_rules.php"
+			},
+			{
+				"index": "admin",
+				"file1": "clan_rules/admin/admin_clan_rules.php"
+			},
+			{
+				"index": "languages",
+				"file1": "clan_rules/languages/de/clan_rules.php",
+				"file2": "clan_rules/languages/en/clan_rules.php",
+				"file3": "clan_rules/languages/it/clan_rules.php"
+			},
+			{
+				"index": "templates",
+				"file1": "clan_rules/templates/clan_rules.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css",
+				"file1": "clan_rules/css/clan_rules.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

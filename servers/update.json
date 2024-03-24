@@ -1,0 +1,43 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "servers/update.php",
+				"file2": "servers/install.php",
+				"file3": "servers/uninstall.php",
+				"file4": "servers/servers.php",
+				"file5": "servers/widget_servers_sidebar.php",
+				"file6": "servers/widget_gametracker_server_sidebar.php",
+				"file7": "servers/widget_gametracker_ts_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "servers/admin/admin_servers.php"
+			},
+			{
+				"index": "language",
+				"file1": "servers/languages/de/server.php",
+				"file2": "servers/languages/en/server.php",
+				"file3": "servers/languages/it/server.php"
+			},
+			{
+				"index": "templates",
+				"file1": "servers/templates/servers.html"
+			},
+			{
+				"index": "images",
+				"file1": "servers/images/widget_servers_sidebar.jpg",
+				"file2": "servers/images/server-offline.jpg",
+				"file3": "servers/images/gametracker_offline.png",
+				"file4": "servers/images/widget_gametracker_server_sidebar.jpg",
+				"file5": "servers/images/widget_gametracker_ts_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "servers/css/servers.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

@@ -1,0 +1,422 @@
+<!-- awards_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- awards_head -->
+<div class="card">
+    <div class="card-body">
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>$ranking:</th>
+            <th>$award:</th>
+            <th>$headsquad</th>
+            <th>$headdate</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+<!-- END -->
+
+<!-- awards_content -->
+ <tr>
+    <td><i class="bi bi-trophy" style="font-size: 3rem;">&nbsp;$rang</i>
+    </td>
+    <td>
+        <a href="index.php?site=awards&amp;action=details&amp;awardID=$awardID">
+            <strong>$award</strong>
+        </a>
+    </td>
+    <td>$squad</td>
+    <td>$date</td>
+    
+</tr>
+<!-- END -->
+
+<!-- awards_foot -->
+</tbody></table></div></div></div>
+<!-- END -->
+
+<!-- awards_info -->
+<div class="card">$icon
+    <div class="card-body">
+        <h4>$award</h4>
+        <div class="row">
+            <div class="col-md-2">
+                $pic<br>$ranking: $rang
+            </div>
+        	<div class="col-md-10">
+            
+            $info
+        </div>
+        <div class="col-md-2">
+               $date
+            </div>
+        	<div class="col-md-10">
+            
+            
+            <ul class="text-right">
+                $homepage
+                $facebook
+                $twitter
+                $liga
+                $steam
+                $twitch
+                $youtube
+                $instagram
+            </ul>
+        
+        </div>
+        </div>
+        <button class="btn btn-secondary" onclick="goBack(-1)">Go Back</button>
+    </div>
+</div>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+<!-- END -->
+
+
+
+<!-- awards_admin_title -->
+<div class="head-boxes">
+<h2 class="head-h2">
+    <span class="head-boxes-title">$awards</span>
+</h2>
+</div>
+<!-- END -->
+
+<!-- awards_admin_head -->
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>$ranking:</th>
+            <th>$award:</th>
+            <th>$headsquad</th>
+            <th>$headdate</th>
+            
+        </tr>
+        </thead>
+        <tbody>
+<!-- END -->
+<!-- awards_admin_content -->
+ <tr>
+    <td><i class="bi bi-trophy" style="font-size: 3rem;">&nbsp;$rang</i>
+    </td>
+    <td>
+        <strong>$award</strong>
+        
+    </td>
+    <td>$squad</td>
+    <td>$date</td>
+    <td>$adminaction</td>
+    
+</tr>
+<!-- END -->
+<!-- awards_admin_foot -->
+</tbody></table></div>
+<!-- END -->
+<!-- awards_admin_edit -->
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('award_name').value == "") {
+            alert("%enter_title%");
+            document.getElementById('award_name').focus();
+            return false;
+        }
+        message = document.getElementById('message').value;
+        if (message == "") {
+            alert("%enter_text%");
+            document.getElementById('message').focus();
+            return false;
+        }
+
+        if (!validbbcode(message)) {
+            document.getElementById('message').focus();
+            return false;
+        }
+
+    }
+    -->
+</script>
+ <form action="admincenter.php?site=admin_awards" method="post" enctype="multipart/form-data" onsubmit="return formcheckOnsend();"  role="form" class="form-horizontal">
+    
+    <div class="mb-3 row">
+        <label class="col-md-2" for="banner">$lang_banner:</label>
+    
+        <div class="col-md-10">
+            $pic
+           <input name="banner" type="file" size="40" /> <small>(max. 1000x500)</small></em></span>
+        </div>
+    </div>
+
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="date">$lang_date:</label>
+
+        <div class="col-md-10">
+            <input id="date" name="date" type="date" value="$date" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="squad">$lang_squad:</label>
+
+        <div class="col-md-10">
+            <select id="squad" name="squad" class="form-control">$squads</select>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="range">$lang_ranking:</label>
+
+        <div class="col-md-10">
+            <input id="range" name="rang" type="number" value="$rang" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="award">$lang_award:</label>
+
+        <div class="col-md-10">
+            <input id="award" name="award" type="text" value="$award" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="homepage">$lang_homepage:</label>
+
+        <div class="col-md-10">
+            <input id="homepage" name="homepage" type="url" value="$homepage" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="facebook">$lang_facebook:</label>
+
+        <div class="col-md-10">
+            <input id="facebook" name="facebook" type="url" value="$facebook" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="twitter">$lang_twitter:</label>
+
+        <div class="col-md-10">
+            <input id="twitter" name="twitter" type="url" value="$twitter" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="liga">$lang_liga:</label>
+
+        <div class="col-md-10">
+            <input id="liga" name="liga" type="url" value="$liga" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="steam">$lang_steam:</label>
+
+        <div class="col-md-10">
+            <input id="steam" name="steam" type="url" value="$steam" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="twitch">$lang_twitch:</label>
+
+        <div class="col-md-10">
+            <input id="twitch" name="twitch" type="url" value="$twitch" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="youtube">$lang_youtube:</label>
+
+        <div class="col-md-10">
+            <input id="youtube" name="youtube" type="url" value="$youtube" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="instagram">$lang_instagram:</label>
+
+        <div class="col-md-10">
+            <input id="instagram" name="instagram" type="url" value="$instagram" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="message">$lang_information:</label>
+
+        <div class="col-md-10">
+            <textarea class="ckeditor" id="ckeditor" name="message" rows="25" cols="" style="width: 100%;">$info</textarea>
+        </div>
+    </div>
+
+    
+
+    <div class="form-group">
+        <input name="awardID" type="hidden" value="$awardID">
+        <input type="submit" name="saveedit" value="$update_award" class="btn btn-warning">
+    </div>
+</form>
+<!-- END -->
+
+<!-- awards_admin_new -->
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('award_name').value == "") {
+            alert("%enter_title%");
+            document.getElementById('award_name').focus();
+            return false;
+        }
+        message = document.getElementById('message').value;
+        if (message == "") {
+            alert("%enter_text%");
+            document.getElementById('message').focus();
+            return false;
+        }
+
+        if (!validbbcode(message)) {
+            document.getElementById('message').focus();
+            return false;
+        }
+
+    }
+    -->
+</script>
+<form action="admincenter.php?site=admin_awards" method="post" enctype="multipart/form-data" onsubmit="return formcheckOnsend();" role="form" class="form-horizontal">
+
+    <!-- Banner -->
+    <div class="mb-3 row">
+        <label class="col-md-2" for="input-banner">$lang_banner:</label>
+    
+        <div class="col-md-10">
+            <input type="file" name="banner" id="input-banner">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="date">$lang_date:</label>
+
+        <div class="col-md-10">
+            <input id="date" name="date" type="date" placeholder="yyyy-mm-dd" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="squad">$lang_squad:</label>
+
+        <div class="col-md-10">
+            <select id="squad" name="squad" class="form-control">$squads</select>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="range">$lang_ranking:</label>
+
+        <div class="col-md-10">
+            <input id="range" name="rang" type="number" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="award">$lang_award:</label>
+
+        <div class="col-md-10">
+            <input id="award" name="award" type="text" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="homepage">$lang_homepage:</label>
+
+        <div class="col-md-10">
+            <input id="homepage" name="homepage" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="facebook">$lang_facebook:</label>
+
+        <div class="col-md-10">
+            <input id="facebook" name="facebook" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="twitter">$lang_twitter:</label>
+
+        <div class="col-md-10">
+            <input id="twitter" name="twitter" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="liga">$lang_liga:</label>
+
+        <div class="col-md-10">
+            <input id="liga" name="liga" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="steam">$lang_steam:</label>
+
+        <div class="col-md-10">
+            <input id="steam" name="steam" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="twitch">$lang_twitch:</label>
+
+        <div class="col-md-10">
+            <input id="twitch" name="twitch" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="youtube">$lang_youtube:</label>
+
+        <div class="col-md-10">
+            <input id="youtube" name="youtube" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="instagram">$lang_instagram:</label>
+
+        <div class="col-md-10">
+            <input id="instagram" name="instagram" type="url" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label class="col-md-2" for="message">$lang_information:</label>
+
+        <div class="col-md-10">
+            <textarea class="ckeditor" id="ckeditor" name="message" rows="25" cols="" style="width: 100%;"></textarea>
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <input type="submit" name="save" value="$save_award" class="btn btn-success">
+    </div>
+
+</form>
+<!-- END -->

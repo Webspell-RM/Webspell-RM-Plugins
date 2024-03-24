@@ -1,0 +1,34 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "server_rules/install.php",
+				"file2": "server_rules/uninstall.php",
+				"file3": "server_rules/server_rules.php"
+			},
+			{
+				"index": "admin",
+				"file1": "server_rules/admin/admin_server_rules.php"
+			},
+			{
+				"index": "languages",
+				"file1": "server_rules/languages/de/server_rules.php",
+				"file2": "server_rules/languages/en/server_rules.php",
+				"file3": "server_rules/languages/it/server_rules.php"
+			},
+			{
+				"index": "templates",
+				"file1": "server_rules/templates/server_rules.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css",
+				"file1": "server_rules/css/server_rules.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

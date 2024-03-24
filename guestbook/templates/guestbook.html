@@ -1,0 +1,176 @@
+<!-- guestbook_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- guestbook_head -->
+<div class="card">
+    <div class="card-body">
+<div class="row form-group">
+    <div class="col-md-12">
+        $sorter
+    </div>
+    <div class="col-md-12 col-md-9">
+        $page_link
+    </div>
+    <div class="col-md-12 col-md-3 text-right">
+        <a href="index.php?site=guestbook&action=add" class="btn btn-primary">$lang_new_entry</a>
+    </div>
+</div>
+
+<form method="post" name="form" action="index.php?site=guestbook&amp;delete=true&amp;gbID=2">
+<!-- END -->
+<!-- guestbook_content -->
+<section class="card">
+    <div class="card-header">
+        <strong>$name</strong>
+        <i class="bi bi-calendar"></i> $date
+        <span class="hidden-md">$email $hp</span>
+        <span class="hidden-md">$discord $lang_ip: $ip</span> $quote
+    </div>
+    <div class="card-body">
+        $message
+        $admincomment
+    </div>
+    <div class="card-footer">
+        $actions 
+    </div>
+</section>
+<hr>
+<!-- END -->
+<!-- guestbook_foot -->
+<div class="row">
+    <div class="col-md-6">
+        $page_link
+    </div>
+    <div class="col-md-6 text-end">
+        $submit
+    </div>
+</div>
+</form></div></div>
+<!-- END -->
+<!-- guestbook_loggedin -->
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('guestbookmessage').value === "") {
+            alert("%enter_a_message%");
+            document.getElementById('guestbookmessage').focus();
+
+            return false;
+        }
+        if (!validbbcode(document.getElementById('guestbookmessage').value)) {
+
+            return false;
+        }
+    }
+    -->
+</script>
+<div class="card">
+    <div class="card-body">
+<form id="post" name="post" method="post" action="index.php?site=guestbook" onsubmit="return chkFormular()">
+
+    <h4>$lang_new_entry</h4>
+
+    <div class="mb-3">
+        <label for="guestbookmessage" class="form-label">$lang_your_message:</label>
+        <textarea class="ckeditor" id="ckeditor guestbookmessage" name="message" class="form-control" rows="5" autofocus>$message</textarea>
+    </div>
+    
+    <div class="mb-3">
+        <input class="btn btn-success" name="save" type="submit" value="$lang_submit" class="btn btn-primary">
+    </div>
+</form>
+</div></div>
+<!-- END -->
+<!-- guestbook_notloggedin -->
+<div class="card">
+    <div class="card-body">
+<form id="post" name="post" method="post" action="index.php?site=guestbook" onsubmit="return chkFormular()" class="form-horizontal needs-validation" novalidate>
+
+    $error
+
+    <h4>$lang_new_entry</h4>
+
+    <div class="mb-3">
+        <label for="gbname" class="form-label">$lang_name</label>
+        <input id="gbname" name="gbname" type="text" placeholder="$lang_name" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="gbname" class="form-label">$lang_mail</label>
+        <input name="gbemail" type="email" placeholder="$lang_mail" class="form-control" required>
+    </div>
+
+    <div class="mb-3">
+        <label for="discord" class="form-label">$lang_discord</label>
+        <input name="discord" type="text" placeholder="$lang_discord" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="gburl" class="form-label">http://</label>
+        <input name="gburl" type="url" placeholder="http://" class="form-control">
+    </div>
+
+    <div class="mb-3">
+        <label for="guestbookmessage" class="form-label">$lang_your_message:</label>
+        <textarea id="guestbookmessage" name="message" class="form-control" rows="5" required>$message</textarea>
+    </div>
+
+
+    <!-- Security code -->
+    <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">$lang_security_code:&nbsp;$_captcha</span>
+    </div>
+    
+    <div class="mb-3">
+        <blockquote>
+            <input type="checkbox" class="form-check-input" id="accept_gdpr" value="0" required> <label class="form-check-label" for="invalidCheck">$lang_GDPRinfo</label>
+        </blockquote><br>
+    </div>
+
+     <div class="form-group">
+        <input name="save" type="submit" value="$lang_submit" class="btn btn-success">
+    </div>        
+
+</form>
+</div>
+</div>
+<!-- END -->
+<!-- guestbook_comment -->
+<script>
+    <!--
+    function chkFormular() {
+        if (!validbbcode(document.getElementById('message').value)) {
+
+            return false;
+        }
+        if (!validbbcode(document.getElementById('message').value)) {
+
+            return false;
+        }
+    }
+    -->
+</script>
+<div class="card">
+    <div class="card-body">
+<form id="post" name="post" method="post" action="index.php?site=guestbook" onsubmit="return chkFormular();">
+    <h4>$lang_guestbook_comment</h4>
+
+    <div class="mb-3">
+        <label for="message" class="form-label">$lang_comment:</label>
+        <textarea  class="ckeditor" id="ckeditor message" name="message" name="message" class="form-control" rows="5" autofocus>$admincomment</textarea>
+    </div>
+
+    <div class="form-group">
+        <input name="guestbookID" type="hidden" value="$guestbookID">
+        <input name="savecomment" type="submit" value="$lang_update_comment" class="btn btn-danger">
+    </div>
+</form>
+</div></div>
+<!-- END -->
+

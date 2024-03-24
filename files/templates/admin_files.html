@@ -1,0 +1,263 @@
+<!-- admin_files_details_head -->
+
+
+<div class="card">
+            <div class="card-header">
+                            <i class="bi bi-file-earmark-arrow-down"></i> $title</div>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_files">$title</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New / Edit</li>
+                </ol>
+            </nav>  
+                        <div class="card-body">
+<!-- END -->
+<!-- admin_files_details_header -->
+<table class="table table-striped">
+    <thead>
+      <th><b>$linkname</b></th>
+      <th><b>$homepage</b></th>
+      <th class="hidden-xs hidden-sm"><b>$information</b></th>
+      <th><b>$actions</b></th>
+    </thead>
+<!-- END -->
+<!-- admin_files_details -->
+<tr>
+           <td class="' . $td . '">$name</td>
+           <td class="' . $td . '">$banner</td>
+           <td class="' . $td . '">$info</td>
+           <td class="' . $td . '">$adminaction</td>
+</tr>
+<!-- END -->
+<!-- admin_files_details_foot -->
+</table>
+</div></div>
+<!-- END -->
+<!-- admin_files_edit -->
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('filename').value === "") {
+            alert("$you_have_to_enter_filename");
+            document.getElementById('filename').focus();
+
+            return false;
+        }
+
+        if (!validbbcode(document.getElementById('info').value)) {
+            document.getElementById('info').focus();
+
+            return false;
+        }
+    }
+    -->
+</script>
+<form action="admincenter.php?site=admin_files&amp;action=saveedit" method="post" name="post" enctype="multipart/form-data"
+        onsubmit="return chkFormular()" class="form-horizontal">
+    
+<div class="mb-3 row">
+        <label for="filename" class="col-lg-2 control-label">$filename:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <input type="text" id="filename" name="filename" size="30" value="$name" class="form-control" autofocus></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="filecat" class="col-lg-2 control-label">$category_cl:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <select id="filecat" name="filecat" class="form-select">$filecats</select></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="info" class="col-lg-2 control-label">$info_description:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <textarea class="ckeditor" id="ckeditor" name="info" cols="44" rows="7">$description</textarea></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="accesslevel" class="col-lg-2 control-label">$accesslevel:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <select id="accesslevel" name="accesslevel" class="form-select">$access</select></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="upfile" class="col-lg-2 control-label">$file-upload:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <input class="btn btn-info" id="upfile" type="file" name="upfile" class="form-control"></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="fileurl" class="col-lg-2 control-label">$extern-link:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <input id="fileurl" type="url" placeholder="http://" name="fileurl" size="40" value="$extern" class="form-control"></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="filesize" class="col-lg-2 control-label">$file-size_e:</label>
+
+        <div class="col-lg-5">
+            <input id="filesize" name="filesize" value="$filesize" type="text" maxlength="4" size="4" class="form-control">
+        </div>
+        <div class="col-lg-3">
+            <select name="unit">$unit</select>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="mirror2" class="col-lg-2 control-label">$mirror #2:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <input id="mirror2" type="url" name="mirror2" size="40" value="$mirror2" class="form-control"></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="mirror3" class="col-lg-2 control-label">$mirror #3:</label>
+
+        <div class="col-lg-8"><span class="text-muted small"><em>
+            <input id="mirror3" type="url" name="mirror3" size="40" value="$mirror3" class="form-control"></em></span>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" value="$update" class="btn btn-warning">
+        </div>
+    </div>
+
+    <input type="hidden" name="fileID" value="$fileID">
+</form>
+<!-- END -->
+<!-- admin_files_new -->
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('filename').value == "") {
+            alert("$you_have_to_enter_filename");
+            document.getElementById('filename').focus();
+            return false;
+        }
+        if (
+                document.getElementById('upfile').value === "" &&
+                document.getElementById('fileurl').value == ""
+        ) {
+            alert("$you_have_to_enter_file");
+            document.getElementById('upfile').focus();
+
+            return false;
+        }
+        if (!validbbcode(document.getElementById('info').value)) {
+            document.getElementById('info').focus();
+
+            return false;
+        }
+    }
+    -->
+</script>
+
+<form action="admincenter.php?site=admin_files&amp;action=save" method="post" name="post" enctype="multipart/form-data"
+    onsubmit="return chkFormular()" class="form-horizontal">
+    <input type="hidden" name="poster" value="$userID">
+
+    <div class="mb-3 row">
+        <label for="filename" class="col-lg-2 control-label">$filename:</label>
+
+        <div class="col-lg-8">
+            <input type="text" name="filename" id="filename" size="30" class="form-control" autofocus>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="filecat" class="col-lg-2 control-label">$category_cl:</label>
+
+        <div class="col-lg-8">
+            <select id="filecat" name="filecat" class="form-select">$filecats</select>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="info" class="col-lg-2 control-label">$info_description:</label>
+
+        <div class="col-lg-8">
+            <textarea class="ckeditor" id="ckeditor" name="info" cols="44" rows="7"></textarea>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="accesslevel" class="col-lg-2 control-label">$accesslevel:</label>
+
+        <div class="col-lg-8">
+            <select id="accesslevel" name="accesslevel" class="form-select">$access</select>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="upfile" class="col-lg-2 control-label">$file-upload:</label>
+
+        <div class="col-lg-8">
+            <input class="btn btn-info" id="upfile" type="file" name="upfile" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="fileurl" class="col-lg-2 control-label">$extern-link:</label>
+
+        <div class="col-lg-8">
+            <input type="url" name="fileurl" id="fileurl" size="40" placeholder="http://" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="filesize" class="col-lg-2 control-label">$file-size_e:</label>
+
+        <div class="col-xs-9 col-lg-6">
+            <input id="filesize" name="filesize" type="text" maxlength="4" size="4" class="form-control">
+        </div>
+        <div class="col-xs-3 col-lg-2">
+            <select name="unit">
+                <option value="b">Byte</option>
+                <option value="kb">KByte</option>
+                <option value="mb" selected="selected">MByte</option>
+                <option value="gb">GByte</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="mirror2" class="col-lg-2 control-label">$mirror #2:</label>
+
+        <div class="col-lg-8">
+            <input id="mirror2" type="url" name="mirror2" size="40" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <label for="mirror3" class="col-lg-2 control-label">$mirror #3:</label>
+
+        <div class="col-lg-8">
+            <input id="mirror3" type="url" name="mirror3" size="40" class="form-control">
+        </div>
+    </div>
+
+    <div class="mb-3 row">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" name="submit" value="$upload" class="btn btn-success">
+        </div>
+    </div>
+</form>
+<!-- END -->
+
+
+

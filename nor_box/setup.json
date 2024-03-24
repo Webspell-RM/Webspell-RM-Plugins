@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "nor_box/install.php",
+				"file2": "nor_box/uninstall.php",
+				"file3": "nor_box/widget_one_box_content.php",
+				"file4": "nor_box/widget_two_box_content.php",
+				"file5": "nor_box/widget_footer_box_content.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "nor_box/languages/de/two_box.php",
+				"file2": "nor_box/languages/en/two_box.php",
+				"file3": "nor_box/languages/it/two_box.php"
+			},
+			{
+				"index": "templates",
+				"file1": "nor_box/templates/one_box.html",
+				"file2": "nor_box/templates/two_box.html",
+				"file3": "nor_box/templates/footer_box.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css",
+				"file1": "nor_box/languages/de/two_box.php"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

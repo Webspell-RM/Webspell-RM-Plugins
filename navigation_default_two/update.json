@@ -1,0 +1,32 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "navigation_default_two/update.php",
+				"file2": "navigation_default_two/install.php",
+				"file3": "navigation_default_two/uninstall.php",
+				"file4": "navigation_default_two/widget_navigation_default_two.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language"
+			},
+			{
+				"index": "templates"
+			},
+			{
+				"index": "images",
+				"file1": "navigation_default_two/images/widget_navigation_default_two.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "navigation_default_two/css/styles.css"
+			},
+			{
+				"index": "js",
+				"file1": "navigation_default_two/js/default.js"
+			}
+		]
+}

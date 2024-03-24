@@ -1,0 +1,35 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "search/update.php",
+                "file2": "search/install.php",
+				"file3": "search/uninstall.php",
+				"file4": "search/search.php",
+				"file5": "search/widget_search_sidebar.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "search/languages/de/search.php",
+				"file2": "search/languages/en/search.php",
+				"file3": "search/languages/it/search.php"
+			},
+			{
+				"index": "templates",
+				"file1": "search/templates/search.html"
+			},
+			{
+				"index": "images",
+				"file1": "search/images/widget_search_sidebar.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

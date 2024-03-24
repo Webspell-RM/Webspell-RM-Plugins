@@ -1,0 +1,58 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "portfolio/install.php",
+				"file2": "portfolio/uninstall.php",
+				"file3": "portfolio/portfolio.php",
+				"file4": "portfolio/widget_portfolio_content.php",
+				"file5": "portfolio/widget_portfolio_content_two.php"
+			},
+			{
+				"index": "admin",
+				"file1": "portfolio/admin/admin_portfolio.php"
+			},
+			{
+				"index": "language",
+				"file1": "portfolio/languages/de/portfolio.php",
+				"file2": "portfolio/languages/de/admin_portfolio.php",
+				"file3": "portfolio/languages/en/portfolio.php",
+				"file4": "portfolio/languages/en/admin_portfolio.php",
+				"file5": "portfolio/languages/it/portfolio.php",
+				"file6": "portfolio/languages/it/admin_portfolio.php"
+			},
+			{
+				"index": "templates",
+				"file1": "portfolio/templates/portfolio.html",
+				"file2": "portfolio/templates/admin_portfolio.html",
+				"file3": "portfolio/templates/portfolio_widget.html"
+			},
+			{
+				"index": "images",
+				"file1": "portfolio/images/widget_portfolio_content.jpg",
+				"file2": "portfolio/images/widget_portfolio_content_two.jpg",
+				"file3": "portfolio/images/1.jpg",
+				"file4": "portfolio/images/2.jpg",
+				"file5": "portfolio/images/3.jpg",
+				"file6": "portfolio/images/4.jpg",
+				"file7": "portfolio/images/5.jpg",
+				"file8": "portfolio/images/6.jpg",
+				"file9": "portfolio/images/7.jpg",
+				"file10": "portfolio/images/8.jpg",
+				"file11": "portfolio/images/9.jpg",
+				"file12": "portfolio/images/10.jpg",
+				"file13": "portfolio/images/11.jpg",
+				"file14": "portfolio/images/12.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "portfolio/css/portfolio.css",
+				"file2": "portfolio/css/grid-portfolio.css"
+			},
+			{
+				"index": "js",
+				"file1": "portfolio/js/effects.js",
+				"file2": "portfolio/js/jquery.fancybox.js"
+			}
+		]
+}

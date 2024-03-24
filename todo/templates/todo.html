@@ -1,0 +1,72 @@
+<!-- todo_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- todo_open-start -->
+<div class="card">
+	<div class="card-header" style="background-color: $class">&nbsp;$open
+</div>  
+<div class="card-body">
+	
+<!-- END -->
+
+<!-- todo_sc_li -->
+<li class="list-group-item" style="border-left: 2px solid $class;">
+	<h4>$title<p class="text-end $perc_class">$percent</p></h4> 
+	<p img-ckeditor>$text</p>
+	<div class="progress progress-lg">
+  		<div class="progress-bar $bar_class" role="progressbar" aria-valuenow="$percent" aria-valuemin="20" aria-valuemax="100" style="min-width: 2em; width: $percent;">
+    		<span>$percent</span>
+  		</div>
+	</div>
+	<p><i class="bi bi-person-fill"></i> by $nickname
+        | <i class="bi bi-calendar-week-fill"></i> $date
+        | <i class="bi bi-chat-fills"></i> $progress_by <b>$assigned</b></i></p> 
+</li>	
+<!-- END -->
+
+<!-- todo_open-end -->
+</div></div>
+<!-- END -->
+
+
+<!-- todo_nonums -->
+<div class="card"> 
+	<div style="margin: 6px">
+		$title
+	</div>
+</div>
+<!-- END -->
+<!-- todo_sc_ul-end -->
+	 </ul>
+<!-- END -->
+
+
+<!-- todo_widget_sc_ul-start -->
+<div class="card">
+    <div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+	<ul class="list-group list-group-flush">
+<!-- END -->
+
+<!-- todo_sc_content -->
+<li class="list-group-item">
+    <span>$title</span><span class="float-right"></span>
+	  	<div class="progress">
+  			<div class="progress-bar $bar_class" role="progressbar" aria-valuenow="$percent" aria-valuemin="0" aria-valuemax="100" style="min-width: 2em; width: $percent;">
+    			$percent
+  			</div>
+		</div>
+</li>
+<!-- END -->
+<!-- todo_sc_nonums -->
+	<li class="list-group-item">$title</li>
+<!-- END -->
+<!-- todo_widget_sc_ul-end -->
+	 </ul>
+	</div></div>
+<!-- END -->

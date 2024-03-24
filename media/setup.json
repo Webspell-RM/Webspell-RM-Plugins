@@ -1,0 +1,33 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "media/install.php",
+				"file2": "media/uninstall.php",
+				"file3": "media/widget_media_content.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "media/languages/de/media.php",
+				"file2": "media/languages/en/media.php",
+				"file3": "media/languages/it/media.php"
+			},
+			{
+				"index": "templates",
+				"file1": "media/templates/media.html"
+			},
+			{
+				"index": "images",
+				"file1": "media/images/widget_media_content.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

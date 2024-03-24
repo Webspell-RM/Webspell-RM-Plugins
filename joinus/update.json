@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "joinus/update.php",
+                "file2": "joinus/install.php",
+				"file3": "joinus/uninstall.php",
+				"file4": "joinus/joinus.php",
+				"file5": "joinus/widget_joinus_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "joinus/admin/admin_joinus.php"
+			},
+			{
+				"index": "language",
+				"file1": "joinus/languages/de/joinus.php",
+				"file2": "joinus/languages/en/joinus.php",
+				"file3": "joinus/languages/it/joinus.php"
+			},
+			{
+				"index": "templates",
+				"file1": "joinus/templates/joinus.html"
+			},
+			{
+				"index": "images",
+				"file1": "joinus/images/widget_joinus_content.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "joinus/css/joinus.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

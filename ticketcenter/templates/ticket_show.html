@@ -1,0 +1,324 @@
+<!-- ticket_show_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- ticket_show_new -->
+<div class="card">
+  <div class="card-header">
+  <h3 class="card-title">$new_ticket</h3>
+</div>
+
+  <div class="card-body">
+
+<form action="index.php?site=ticketcenter&amp;action=save" method="post" name="post" role="form" enctype="multipart/form-data" onsubmit="return chkFormular()" class="form-horizontal needs-validation" novalidate>
+<input type="hidden" name="poster" value="$userID" />
+
+      <!-- category -->
+            <div class="form-group">
+                <label for="select-receiver" class="col-xs-12 col-md-3 control-label">$category:</label>
+
+                <div class="col-xs-12 col-md-9">
+                    <select name="ticketcat" class="form-control">$ticketcats</select>
+                </div>
+            </div>
+
+       <!-- priority -->
+            <div class="form-group">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$priority:</label>
+
+                <div class="col-xs-12 col-md-9">
+                    <select name="priority" class="form-control">
+        <option value="1">$low</option>
+        <option value="2" selected="selected">$normal</option>
+        <option value="3">$high</option>
+      </select>
+                </div>
+            </div>  
+
+            <!-- ticketname: -->
+            <div class="form-group">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$ticketname:</label>
+
+                <div class="col-xs-12 col-md-9">
+                    <input type="text" name="ticketname" id="ticketname" class="form-control" required>
+                </div>
+            </div>   
+            <!-- info -->
+            <div class="form-group">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$info:</label>
+
+                <div class="col-xs-12 col-md-9">
+                    <textarea name="message" id="message" rows="15" class="form-control" required></textarea>
+                </div>
+            </div>
+
+            <!-- pn_antwort -->
+            <div class="form-group">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label"></label>
+
+                <div class="col-xs-12 col-md-9">
+                    <input type="checkbox" name="notify[]" value="1"> $pn_antwort
+                </div>
+            </div>
+
+            <!-- mail_antwort -->
+            <div class="form-group">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label"></label>
+
+                <div class="col-xs-12 col-md-9">
+                    <input type="checkbox" name="notify[]" value="2"> $mail_antwort
+                </div>
+            </div>
+
+            <!-- create_ticket -->
+            <div class="form-group">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label"></label>
+
+                <div class="col-xs-12 col-md-9">
+                    <input class="btn btn-primary" type="submit" name="submit" value="$create_ticket">
+                </div>
+            </div>
+
+
+
+</form>
+</div>
+</div>      
+<!-- END -->
+<!-- ticket_show_head -->
+<br>
+<div class="card">
+  <div class="card-header">
+  <h3 class="card-title">$tickedid #$ticketID : $ticketname</h3>
+</div>
+
+  <div class="card-body">
+
+<div class="table-responsive">
+    <table class="table">
+  <tr>
+	<td>&nbsp;$categori:</td>
+	<td colspan="3">$category</td>
+  </tr>
+       
+  <tr>
+	<td>&nbsp;$userinfo:</td>
+	<td>$notify</td>
+	<td>&nbsp;$tickedid:</td>
+	<td>#$ticketID</td>
+  </tr>
+     
+  <tr>
+	<td width="130" style="border-right:5px solid #28a745">&nbsp;$ticketcreator:</td>
+	<td width="25%">$poster</td>		
+	<td width="25%">&nbsp;$priority:</td>
+	<td width="25%">$ticketpriority</td>
+  </tr>
+   
+  <tr>
+	<td style="border-right:5px solid #dc3545">&nbsp;$tickadmin:</td>
+	<td>$ticketadmin</td>
+	<td>&nbsp;$ticketstate:</td>
+	<td>$ticketstatus</td>
+  </tr>
+      
+  <tr>
+	<td>&nbsp;$tickname:</td>
+	<td colspan="3">$ticketname</td>
+  </tr>    
+  </table>
+</div></div>
+  <div class="card-header">
+  <h3 class="card-title">Support</h3>
+</div>
+  <div class="card-body">
+
+<div class="table-responsive">
+    <table class="table">
+<!-- END -->
+
+<!-- ticket_show_content_area -->
+<tr>
+  <td width="20%" valign="top" align="left" style="border-right:5px solid $bgcolor">&nbsp;$autor<br/>&nbsp;$ticketdate</span></td>
+    <td align="left" valign="middle">$ticketinfo</td>
+</tr>
+<tr>
+  <td colspan="4" ></td>
+</tr>
+<!-- END -->
+
+<!-- ticket_show_footer -->
+</table>
+  </div>$adminaction</div>
+</div>
+<!-- END -->
+
+<!-- ticket_show_admin_head -->
+<div class="card">
+  <div class="card-header">
+  <h3 class="card-title">$my_admin_tickets</h3>
+</div>
+
+  <div class="card-body">
+<div class="table-responsive">
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th width="8%">$priority:</th>
+        <th>$date:</th>
+        <th>$ticketname:</th>
+        <th>$ticketstate:</th>        
+    </tr>
+    </thead>
+<!-- END -->
+
+<!-- ticket_show_admin_content_area -->
+<tbody>
+<tr style="cursor:pointer;" onclick="window.location='index.php?site=ticketcenter&amp;action=show&amp;ticketID=$ticketid';">
+  <td align="left">$ticketpriority</td>
+  <td align="left">$ticketdate</td>
+  <td align="left">&nbsp;$ticketlink</td> 
+  <td align="left">&nbsp;$ticketstatus</td>
+</tr>
+<!-- END -->
+
+<!-- ticket_show_admin_footer -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- END -->
+<!-- ticket_show_archive_footer -->
+<br />
+<form action="index.php?site=ticketcenter&amp;action=archive" method="post" name="post" enctype="multipart/form-data">
+<input type="hidden" name="poster" value="$userID" />
+<input type="hidden" name="ticketID" value="$ticketID" />
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+    <tr>
+   <td align="center"><input class="btn btn-primary" type="submit" name="submit" value="$ticket_archivet" /></td>
+  </tr>
+</table>
+</form>
+<!-- END -->
+<!-- ticket_show_reopen_footer -->
+<br />
+<form action="index.php?site=ticketcenter&amp;action=reopen" method="post" name="post" enctype="multipart/form-data">
+<input type="hidden" name="poster" value="$userID" />
+<input type="hidden" name="ticketID" value="$ticketID" />
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+    <tr>
+   <td align="center"><input class="btn btn-primary" type="submit" name="submit" value="$open_ticket" /></td>
+    </tr>
+</table>
+</form>
+<!-- END -->
+<!-- ticket_show_antwort_footer -->
+ <div class="card">
+  <div class="card-header">
+  <h3 class="card-title">$reply</h3>
+</div>
+  <div class="card-body">
+<script language="JavaScript" type="text/javascript">
+<!--
+function chkFormular() {
+  if(document.getElementById('message').value == "" && document.getElementById('closeticket').checked != true) {
+    alert("%you_have_to_enter_ticketinfo%");
+    document.getElementById('message').focus();
+      return false;
+  }
+}
+-->
+</script>
+<br />
+<form action="index.php?site=ticketcenter&amp;action=saveantwort" method="post" name="post" enctype="multipart/form-data" onsubmit="return chkFormular()">  
+<input type="hidden" name="poster" value="$userID" />
+<input type="hidden" name="ticketID" value="$ticketID" />
+<table width="100%" border="0" cellspacing="0" cellpadding="2">
+  <tr>
+    <td><textarea class="form-control" name="message" id="message" rows="15" style="width:100%;"></textarea></td>
+    </tr>
+  <tr><td>&nbsp;</td></tr>
+  <tr>
+  <td align="right">$closeticket <input class="btn btn-primary" type="submit" name="submit" value="$reply" />
+  </td>
+  </tr>
+</table>
+</form></div></div>
+<!-- END -->
+<!-- ticket_show_open_head -->
+<div class="card">
+  <div class="card-header">
+  <h3 class="card-title">$open_tickets</h3>
+</div>
+  <div class="card-body">
+<div class="table-responsive">
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th width="8%">$priority:</th>
+        <th>$date:</th>
+        <th>$category:</th>
+        <th>$ticketname:</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+<!-- END -->
+
+<!-- ticket_show_open_content -->
+<tr style="cursor:pointer;" onclick="window.location='index.php?site=ticketcenter&amp;action=show&amp;ticketID=$ticketid';">
+  <td align="left">$ticketpriority</td>
+  <td align="left">$ticketdate</td>
+  <td align="left">&nbsp;$category</td> 
+  <td align="left">&nbsp;$ticketlink</td>
+</tr>
+<!-- END -->
+
+<!-- ticket_show_open_footer -->
+</tbody></table>
+</div></div></div>
+<!-- END -->
+
+<!-- ticket_show_own_head -->
+<div class="card">
+<div class="card-header">
+  <h3 class="card-title">$my_tickets</h3>
+</div>
+  
+
+  <div class="card-body">
+<div class="table-responsive">
+    <table class="table table-striped">
+    <thead>
+    <tr>
+        <th width="8%">$date:</th>
+        <th>$ticketname:</th>
+        <th>$ticketadmin:</th>
+        <th>$ticketstate:</th>
+        
+    </tr>
+    </thead>
+    <tbody>
+<!-- END -->
+<!-- ticket_show_own_content -->
+<tr style="cursor:pointer;" onclick="window.location='index.php?site=ticketcenter&amp;action=show&amp;ticketID=$ticketid';">
+  <td align="left">$ticketdate</td>
+  <td align="left">&nbsp;$ticketlink</td>
+  <td align="left">$ticketadmin</td>
+  <td align="left">$ticketstatus</td>
+</tr>
+<!-- END -->
+
+<!-- ticket_show_own_footer -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- END -->

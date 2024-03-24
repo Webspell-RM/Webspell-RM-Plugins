@@ -1,0 +1,270 @@
+<!-- candidature_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- candidature_news_head -->
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                  <th scope="col-1">#</th>
+                  <th scope="col-2"><strong>$date</strong></th>
+                  <th scope="col-2"><strong>$joiner</strong></th>
+                  <th scope="col-2"><strong>$subject</strong></th>
+                  <th scope="col-2"><strong>$status</strong></th>
+                  <th scope="col-2"><strong>$option</strong></th>
+
+                </tr>
+            </thead>
+        <tbody>
+<!-- END -->
+<!-- candidature_new_foot -->
+        <a class="btn btn-secondary" href="index.php?site=candidature">$lang_back</a>
+    </div>
+</div>
+
+<!-- END -->
+<!-- candidature_details -->
+<div class="card">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead>
+                <th style="width: 25%">
+                    <b>$lang_information</b>
+                </th>
+                <th>
+                    <b>Info:</b>
+                </th>           
+            </thead>
+            <tbody>
+                <tr>
+                    <td height="25" align="left">$lang_firstname</td>
+                    <td>$vname $nname</td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">$lang_age</td>
+                    <td>$age Jahre </td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">$lang_worben_from</td>
+                    <td>$who</td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">$lang_subject</td>
+                    <td>$squad</td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">$lang_join_text</td>
+                    <td align="left">$text</td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">$lang_imaginations</td>
+                    <td>$objectives</td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">$lang_experience</td>
+                    <td>$history</td>
+                </tr>
+                <tr>
+                  <td colspan="2" height="25"></td>
+                </tr>
+                    <tr>
+                    <td colspan="2" height="25" align="left"><strong>$lang_contact</strong></td>
+                </tr>
+                
+                <tr>
+                    <td height="25" align="left">$lang_e_mail</td>
+                    <td>$email</td>
+                </tr>
+                <tr>
+                    <td height="25" align="left">$lang_discord:</td>
+                    <td>$icq</td>
+                </tr>
+                <tr>
+                    <td colspan="2" height="25"><a class="btn btn-secondary" href="index.php?site=candidature&amp;action=new">$lang_back</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<!-- END -->
+<!-- candidature_logged -->
+<div class="card">
+    <div class="card-body">
+        <h4>$lang_join_formular</h4>
+        <form action="index.php?site=candidature" method="post" name="post" role="form" onsubmit="return validate()" class="form-horizontal needs-validation" novalidate>
+
+        <div class="mb-3">
+            <label for="input-name" class="control-label">$lang_subject</label>
+            <select name="squad" id="select-squad" class="form-select">$squads</select>
+        </div>  
+        <div class="row">
+            <div class="col-md-6"> 
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_firstname <font color="#FF0000">*</font></label>
+                    <input class="form-control" name="vname" id="vname" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_e_mail <font color="#FF0000">*</font></label>
+                    <input class="form-control" name="email" id="email" required>
+                </div> 
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_discord:</label>
+                    <input class="form-control" name="icq" />
+                </div>
+            </div>
+            <div class="col-md-6"> 
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_lastname</label>
+                    <input class="form-control" name="nname" id="nname" />
+                </div>
+
+                
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_age <font color="#FF0000">*</font></label>
+                    <input class="form-control" name="age" id="age" size="5" maxlength="10" style="width: 20%" required>
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="input-name" class="control-label">$lang_join_text <font color="#FF0000">*</font></label>
+            <textarea class="form-control" name="text" rows="6" cols="50" required></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="input-name" class="control-label">$lang_imaginations</label>
+            <textarea class="form-control" name="objectives" rows="6" cols="50"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_experience</label>
+                    <input class="form-control" name="history" id="history" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_worben_from</label>
+                    <input class="form-control" name="who" id="who" />
+                </div>
+            </div>
+        </div>
+        <!-- Submit button -->
+        <div class="mb-3">
+            <!-- Submit button -->
+            <div class="col-xs-12">
+                <blockquote>
+                    <input type="checkbox" class="form-check-input" id="accept_gdpr" value="0" required> <label class="form-check-label" for="invalidCheck">$lang_GDPRinfo</label>
+                </blockquote><br>
+            </div>
+            <div class="col-xs-12">
+                <input type="hidden" name="action" value="send" />
+                <input class="btn btn-success" name="submit" type="submit" value=" $lang_send" />
+                &nbsp;
+                <input class="btn btn-secondary" name="reset" type="reset" value=" $lang_set_back" />
+            </div>
+        </div>
+        </form>
+    </div>  
+</div>
+<!-- END -->
+<!-- candidature_notlogged -->
+<div class="card">
+    <div class="card-body">
+        <h4>$lang_join_formular</h4>
+        <form action="index.php?site=candidature" method="post" name="post" role="form" onsubmit="return validate()" class="form-horizontal">
+        <div class="mb-3">
+            <label for="input-name" class="control-label">$lang_subject</label>
+            <select name="squad" id="select-squad" class="form-select">$squads</select>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_firstname <font color="#FF0000">*</font></label>
+                    <input class="form-control" name="vname" id="vname" />
+                </div>
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_e_mail <font color="#FF0000">*</font></label>
+                    <input class="form-control" name="email" id="email" />
+                </div>
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_discord:</label>
+                    <input class="form-control" name="icq" />
+                </div>
+            </div>
+            <div class="col-md-6"> 
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_lastname</label>
+                    <input class="form-control" name="nname" id="nname" />
+                </div>
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_age <font color="#FF0000">*</font></label>
+                    <input class="form-control" name="age" id="age" size="5" maxlength="3" style="width: 10%" />
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="input-name" class="control-label">$lang_join_text <font color="#FF0000">*</font></label>
+            <textarea class="form-control" name="text" rows="6" cols="50"></textarea>
+        </div>
+        <div class="mb-3">
+            <label for="input-name" class="control-label">$lang_imaginations</label>
+            <textarea class="form-control" name="objectives" rows="6" cols="50"></textarea>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_experience</label>
+                    <input class="form-control" name="history" id="history" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="mb-3">
+                    <label for="input-name" class="control-label">$lang_worben_from</label>
+                    <input class="form-control" name="who" id="who" />
+                </div>
+            </div>
+        </div>
+        <!-- Security code -->
+        <div class="mb-3">
+            <label for="input-security-code" class="control-label">$lang_security_code:</label>
+            <div class="input-group">
+                $_captcha
+            </div>
+        </div>
+        <script type="text/javascript">
+            function validate() {
+                if (document.getElementById('accept_gdpr').checked) {
+                    return true;
+                } else {
+                    alert("$lang_GDPRaccept");
+                    return false;
+                }
+                return false;
+            }
+        </script>
+                
+        <!-- Submit button -->
+        <div class="mb-3">
+            <div class="col-xs-12">
+                <blockquote>
+                    <input type="checkbox" id="accept_gdpr" value="0"> $lang_GDPRinfo
+                </blockquote><br>
+            </div>
+            <div class="col-xs-12">
+                <input type="hidden" name="action" value="send" />
+                <input class="btn btn-success" name="submit" type="submit" value=" $lang_send" />
+                &nbsp;
+                <input class="btn btn-secondary" name="reset" type="reset" value=" $lang_set_back" />
+            </div>
+        </div>
+        </form>
+    </div>
+</div>
+<!-- END -->

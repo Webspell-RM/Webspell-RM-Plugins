@@ -1,0 +1,35 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "linkus/install.php",
+				"file2": "linkus/uninstall.php",
+				"file3": "linkus/linkus.php"
+			},
+			{
+				"index": "admin",
+				"file1": "linkus/admin/admin_linkus.php"
+			},
+			{
+				"index": "language",
+				"file1": "linkus/languages/de/linkus.php",
+				"file2": "linkus/languages/en/linkus.php",
+				"file3": "linkus/languages/it/linkus.php"
+			},
+			{
+				"index": "templates",
+				"file1": "linkus/templates/linkus.html"
+			},
+			{
+				"index": "images",
+				"file1": "linkus/images/no_rubric_pic.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "linkus/css/linkus.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

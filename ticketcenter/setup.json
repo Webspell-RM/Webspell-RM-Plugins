@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "ticketcenter/install.php",
+				"file2": "ticketcenter/uninstall.php",
+				"file3": "ticketcenter/ticketcenter.php"
+
+			},
+			{
+				"index": "admin",
+				"file1": "ticketcenter/admin/admin_ticketcategorys.php"
+			},
+			{
+				"index": "language",
+				"file1": "ticketcenter/languages/de/ticketcenter.php",
+				"file2": "ticketcenter/languages/de/ticketcategorys.php",
+				"file3": "ticketcenter/languages/en/ticketcenter.php",
+				"file4": "ticketcenter/languages/en/ticketcategorys.php",
+				"file5": "ticketcenter/languages/it/ticketcenter.php",
+				"file6": "ticketcenter/languages/it/ticketcategorys.php"
+			},
+			{
+				"index": "templates",
+				"file1": "ticketcenter/templates/ticket_show.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

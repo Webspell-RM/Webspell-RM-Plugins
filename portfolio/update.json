@@ -1,0 +1,47 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "portfolio/update.php",
+				"file2": "portfolio/install.php",
+				"file3": "portfolio/uninstall.php",
+				"file4": "portfolio/portfolio.php",
+				"file5": "portfolio/widget_portfolio_content.php",
+				"file6": "portfolio/widget_portfolio_content_two.php"
+			},
+			{
+				"index": "admin",
+				"file1": "portfolio/admin/admin_portfolio.php"
+			},
+			{
+				"index": "language",
+				"file1": "portfolio/languages/de/portfolio.php",
+				"file2": "portfolio/languages/de/admin_portfolio.php",
+				"file3": "portfolio/languages/en/portfolio.php",
+				"file4": "portfolio/languages/en/admin_portfolio.php",
+				"file5": "portfolio/languages/it/portfolio.php",
+				"file6": "portfolio/languages/it/admin_portfolio.php"
+			},
+			{
+				"index": "templates",
+				"file1": "portfolio/templates/portfolio.html",
+				"file2": "portfolio/templates/admin_portfolio.html",
+				"file3": "portfolio/templates/portfolio_widget.html"
+			},
+			{
+				"index": "images",
+				"file1": "portfolio/images/widget_portfolio_content.jpg",
+				"file2": "portfolio/images/widget_portfolio_content_two.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "portfolio/css/portfolio.css",
+				"file2": "portfolio/css/grid-portfolio.css"
+			},
+			{
+				"index": "js",
+				"file1": "portfolio/js/effects.js",
+				"file2": "portfolio/js/jquery.fancybox.js"
+			}
+		]
+}

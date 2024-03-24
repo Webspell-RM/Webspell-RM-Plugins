@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "summary/install.php",
+				"file2": "summary/uninstall.php",
+				"file3": "summary/widget_summary_news.php",
+				"file4": "summary/widget_summary_article.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "languages",
+				"file1": "summary/languages/de/summary.php",
+				"file2": "summary/languages/en/summary.php",
+				"file3": "summary/languages/it/summary.php"
+			},
+			{
+				"index": "templates",
+				"file1": "summary/templates/sc_summary.html"
+			},
+			{
+				"index": "images",
+				"file1": "summary/images/bg.jpg",
+				"file2": "summary/images/widget_summary_article.jpg",
+				"file3": "summary/images/widget_summary_news.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "summary/css/summary.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

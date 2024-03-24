@@ -1,0 +1,158 @@
+
+<!-- admin_calendar_train_new -->
+<div class="card">
+  <div class="card-header">
+    $lang_addtrain
+  </div>
+  <div class="card-body">
+
+        <form action="admincenter.php?site=admin_calendar&action=savetrain" method="post" name="post" onsubmit="return chkFormular()">
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_start_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input type="datetime-local" name="date-start" id="date-start" class="form-control" value="$date"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_end_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input type="datetime-local" name="date-end" id="date-end" placeholder="yyyy-mm-dd HH:ss" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_shorttitle
+                    <small>($lang_displayed_in)</small></label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="short" id="short" type="text" class="form-control" required></em></span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_server</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="server" type="text" class="form-control"></em></span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_information</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <textarea name="message" id="dateinfo" cols="40" rows="7" class="form-control" required></textarea></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-offset-2 col-sm-10">
+                <input name="post" type="submit" value="$lang_addtrain" class="btn btn-success">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- END -->
+
+<!-- admin_calendar_train_edit -->
+<div class="card">
+  <div class="card-header">
+    $lang_edittrain
+  </div>
+  <div class="card-body">
+    
+        <form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_calendar&action=saveedittrain" onsubmit="return chkFormular();">
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_start_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="date-start" id="date-start" value="$date_start" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_end_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="date-end" id="date-end" value="$date_end" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_shorttitle
+                    <small>($lang_displayed_in)</small></label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="short" id="short" type="text" value="$short" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_server</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="server" id="server" type="text" value="$server" class="form-control"></em></span>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_information</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <textarea name="message" class="ckeditor" id="ckeditor" cols="45" rows="7" class="form-control">$dateinfo</textarea></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="upID" value="$upID">
+                <input name="post" type="submit" value="$lang_updatetrain" class="btn btn-warning">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- END -->
+
+<div class="card-body">
+<!-- END -->
+
+<!-- admin_calendar_train_details -->
+<div class="card">
+  <div class="card-body">
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="2">$lang_headtrain:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>$lang_start_datetime</td>
+            <td>$date - $time</td>
+        </tr>
+        <tr>
+            <td>$lang_end_datetime</td>
+            <td>$enddate - $endtime</td>
+        </tr>
+        <tr>
+            <td>$lang_server</td>
+            <td>$server</td>
+        </tr>
+        <tr>
+            <td>$lang_information</td>
+            <td>$dateinfo</td>
+        </tr>
+       <tr>
+            <td>$lang_announcements</td>
+             <td>$announce</td>
+        </tr>
+        <tr><td colspan="2">$lang_status <span class="badge badge-success">$lang_yes</span>
+            <span class="badge badge-danger">$lang_no</span>
+                <span class="badge badge-warning">$lang_perhaps</span>
+                <br><br>$players $adminaction
+            </td>   
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+<!-- END -->

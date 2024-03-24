@@ -1,0 +1,119 @@
+/*-- markets --*/
+.markets-title h3{
+    font-size: 4em;
+    color: rgba(var(--bs-link-color),1);
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.markets{
+    /*background: #ececec;*/
+    padding: 4em 0 4em 0;
+}
+.agileits-markets-grids{
+    margin: 2em 0 0 0;
+}
+
+
+.agileits-icon-grid {
+    padding: 2em;
+    /*background: #FFFFFF;*/
+    background: rgba(var(--bs-rm-body-bg),1);
+    box-shadow: 0 0px 1px rgb(107, 107, 107), 0 1px 2px rgba(0,0,0,.24);
+    border-radius: var(--bs-border-radius);
+    min-height: 220px
+px
+;
+}
+.icon-left{
+    float: none;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding: 1.0em 0 0 0;
+    margin: 0 auto 1em;
+    background: rgba(var(--bs-link-color),1);
+}
+.icon-left i.fa{
+    color: #FFFFFF;
+    font-size: 2em;
+}
+.icon-right{
+    float: none;
+    width: 100%;
+    text-align: center;
+}
+.icon-right h5{
+    /*color: #212121;*/
+    font-size: 1em;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.icon-right p{
+    color: #999999;
+    font-size: .9em;
+    margin: 1em 0 0 0;
+    line-height: 1.8em;
+}
+.w3ls-markets-grid:nth-child(1),.w3ls-markets-grid:nth-child(2),.w3ls-markets-grid:nth-child(3),.w3ls-markets-grid:nth-child(4),.w3ls-markets-grid:nth-child(5),.w3ls-markets-grid:nth-child(6){
+    margin:3em 0 0 0;
+}
+/*-- //markets --*/
+
+/*-- responsive --*/
+@media(max-width:1080px){
+    
+}
+@media(max-width:991px){  
+    
+}
+@media(max-width:768px){
+    
+}
+@media(max-width:736px){
+    
+}
+@media(max-width:667px){
+    
+}
+@media (max-width:640px) {
+   
+}
+@media(max-width:600px){
+    
+}
+@media(max-width:568px){
+    
+}
+@media(max-width:480px){
+    .markets-title h3 {
+        font-size: 3em;
+    }
+}
+@media(max-width:414px){
+    .agileits-markets-grids {
+        margin: 2em 0 0 0;
+    }
+    .markets-title h3 {
+        font-size: 3em;
+    }
+}
+@media(max-width:384px){
+  .agileits-markets-grids {
+        margin: 1em 0 0 0;
+    }
+    .markets-title h3 {
+        font-size: 2.5em;
+    }
+}
+@media(max-width:320px){
+    .agileits-markets-grids {
+        margin: 1em 0 0 0;
+    }
+    .markets-title h3 {
+        font-size: 2em;
+    }
+}
+/*-- //responsive --*/

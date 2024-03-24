@@ -1,0 +1,648 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "game_server/install.php",
+				"file2": "game_server/uninstall.php",
+				"file3": "game_server/game_server.php",
+				"file4": "game_server/func/lgsl_admin.php",
+				"file5": "game_server/func/lgsl_class.php",
+				"file6": "game_server/func/lgsl_config.php",
+				"file7": "game_server/func/lgsl_protocol.php"
+			},
+			{
+				"index": "admin",
+				"file1": "game_server/admin/admin_game_server.php"
+			},
+			{
+				"index": "language",
+				"file1": "game_server/languages/de/game_server.php",
+				"file2": "game_server/languages/en/game_server.php",
+				"file3": "game_server/languages/it/game_server.php",
+				"file4": "game_server/func/languages/english.php",
+				"file5": "game_server/func/languages/german.php",
+                "file6": "game_server/func/languages/italian.php"
+			},
+			{
+				"index": "templates",
+				"file1": "game_server/templates/game_server.html",
+				"file2": "game_server/func/maps/MAP_IMAGES_GO_HERE.txt",
+				"file3": "game_server/func/other/loader.html"
+			},
+			{
+				"index": "images",
+	"file1": "game_server/func/locations/ZW.png",
+    "file2": "game_server/func/locations/ZM.png",
+    "file3": "game_server/func/locations/ZA.png",
+    "file4": "game_server/func/locations/YT.png",
+    "file5": "game_server/func/locations/YE.png",
+    "file6": "game_server/func/locations/XX.png",
+    "file7": "game_server/func/locations/WS.png",
+    "file8": "game_server/func/locations/WF.png",
+    "file9": "game_server/func/locations/VU.png",
+    "file10": "game_server/func/locations/VN.png",
+    "file11": "game_server/func/locations/VI.png",
+    "file12": "game_server/func/locations/VG.png",
+    "file13": "game_server/func/locations/VE.png",
+    "file14": "game_server/func/locations/VC.png",
+    "file15": "game_server/func/locations/VA.png",
+    "file16": "game_server/func/locations/UZ.png",
+    "file17": "game_server/func/locations/UY.png",
+    "file18": "game_server/func/locations/US.png",
+    "file19": "game_server/func/locations/UM.png",
+    "file20": "game_server/func/locations/UK.png",
+    "file21": "game_server/func/locations/UG.png",
+    "file22": "game_server/func/locations/UA.png",
+    "file23": "game_server/func/locations/TZ.png",
+    "file24": "game_server/func/locations/TW.png",
+    "file25": "game_server/func/locations/TV.png",
+    "file26": "game_server/func/locations/TT.png",
+    "file27": "game_server/func/locations/TR.png",
+    "file28": "game_server/func/locations/TO.png",
+    "file29": "game_server/func/locations/TN.png",
+    "file30": "game_server/func/locations/TM.png",
+    "file31": "game_server/func/locations/TL.png",
+    "file32": "game_server/func/locations/TK.png",
+    "file33": "game_server/func/locations/TJ.png",
+    "file34": "game_server/func/locations/TH.png",
+    "file35": "game_server/func/locations/TG.png",
+    "file36": "game_server/func/locations/TF.png",
+    "file37": "game_server/func/locations/TD.png",
+    "file38": "game_server/func/locations/TC.png",
+    "file39": "game_server/func/locations/SZ.png",
+    "file40": "game_server/func/locations/SY.png",
+    "file41": "game_server/func/locations/SV.png",
+    "file42": "game_server/func/locations/ST.png",
+    "file43": "game_server/func/locations/SR.png",
+    "file44": "game_server/func/locations/SO.png",
+    "file45": "game_server/func/locations/SN.png",
+    "file46": "game_server/func/locations/SM.png",
+    "file47": "game_server/func/locations/SL.png",
+    "file48": "game_server/func/locations/SK.png",
+    "file49": "game_server/func/locations/SJ.png",
+    "file50": "game_server/func/locations/SI.png",
+    "file51": "game_server/func/locations/SH.png",
+    "file52": "game_server/func/locations/SG.png",
+    "file53": "game_server/func/locations/SE.png",
+    "file54": "game_server/func/locations/SD.png",
+    "file55": "game_server/func/locations/SC.png",
+    "file56": "game_server/func/locations/SB.png",
+    "file57": "game_server/func/locations/SA.png",
+    "file58": "game_server/func/locations/RW.png",
+    "file59": "game_server/func/locations/RU.png",
+    "file60": "game_server/func/locations/RS.png",
+    "file61": "game_server/func/locations/RO.png",
+    "file62": "game_server/func/locations/RE.png",
+    "file63": "game_server/func/locations/QA.png",
+    "file64": "game_server/func/locations/PY.png",
+    "file65": "game_server/func/locations/PW.png",
+    "file66": "game_server/func/locations/PT.png",
+    "file67": "game_server/func/locations/PS.png",
+    "file68": "game_server/func/locations/PR.png",
+    "file69": "game_server/func/locations/PN.png",
+    "file70": "game_server/func/locations/PM.png",
+    "file71": "game_server/func/locations/PL.png",
+    "file72": "game_server/func/locations/PK.png",
+    "file73": "game_server/func/locations/PH.png",
+    "file74": "game_server/func/locations/PG.png",
+    "file75": "game_server/func/locations/PF.png",
+    "file76": "game_server/func/locations/PE.png",
+    "file77": "game_server/func/locations/PA.png",
+    "file78": "game_server/func/locations/OM.png",
+    "file79": "game_server/func/locations/OFF.png",
+    "file80": "game_server/func/locations/NZ.png",
+    "file81": "game_server/func/locations/NU.png",
+    "file82": "game_server/func/locations/NR.png",
+    "file83": "game_server/func/locations/NP.png",
+    "file84": "game_server/func/locations/NO.png",
+    "file85": "game_server/func/locations/NL.png",
+    "file86": "game_server/func/locations/NI.png",
+    "file87": "game_server/func/locations/NG.png",
+    "file88": "game_server/func/locations/NF.png",
+    "file89": "game_server/func/locations/NE.png",
+    "file90": "game_server/func/locations/NC.png",
+    "file91": "game_server/func/locations/NA.png",
+    "file92": "game_server/func/locations/MZ.png",
+    "file93": "game_server/func/locations/MY.png",
+    "file94": "game_server/func/locations/MX.png",
+    "file95": "game_server/func/locations/MW.png",
+    "file96": "game_server/func/locations/MV.png",
+    "file97": "game_server/func/locations/MU.png",
+    "file98": "game_server/func/locations/MT.png",
+    "file99": "game_server/func/locations/MS.png",
+    "file100": "game_server/func/locations/MR.png",    
+    "file101": "game_server/func/locations/MP.png",
+    "file102": "game_server/func/locations/MO.png",
+    "file103": "game_server/func/locations/MN.png",
+    "file104": "game_server/func/locations/MM.png",
+    "file105": "game_server/func/locations/ML.png",
+    "file106": "game_server/func/locations/MK.png",
+    "file107": "game_server/func/locations/MH.png",
+    "file108": "game_server/func/locations/MG.png",
+    "file109": "game_server/func/locations/ME.png",
+    "file110": "game_server/func/locations/MD.png",
+    "file111": "game_server/func/locations/MC.png",
+    "file112": "game_server/func/locations/MA.png",
+    "file113": "game_server/func/locations/LY.png",
+    "file114": "game_server/func/locations/LV.png",
+    "file115": "game_server/func/locations/LU.png",
+    "file116": "game_server/func/locations/LT.png",
+    "file117": "game_server/func/locations/LS.png",
+    "file118": "game_server/func/locations/LR.png",
+    "file119": "game_server/func/locations/LK.png",
+    "file120": "game_server/func/locations/LI.png",
+    "file121": "game_server/func/locations/LC.png",
+    "file122": "game_server/func/locations/LB.png",
+    "file123": "game_server/func/locations/LA.png",
+    "file124": "game_server/func/locations/KZ.png",
+    "file125": "game_server/func/locations/KY.png",
+    "file126": "game_server/func/locations/KW.png",
+    "file127": "game_server/func/locations/KR.png",
+    "file128": "game_server/func/locations/KP.png",
+    "file129": "game_server/func/locations/KN.png",
+    "file130": "game_server/func/locations/KM.png",
+    "file131": "game_server/func/locations/KI.png",
+    "file132": "game_server/func/locations/KH.png",
+    "file133": "game_server/func/locations/KG.png",
+    "file134": "game_server/func/locations/KE.png",
+    "file135": "game_server/func/locations/JP.png",
+    "file136": "game_server/func/locations/JO.png",
+    "file137": "game_server/func/locations/JM.png",
+    "file138": "game_server/func/locations/IT.png",
+    "file139": "game_server/func/locations/IS.png",
+    "file140": "game_server/func/locations/IR.png",
+    "file141": "game_server/func/locations/IQ.png",
+    "file142": "game_server/func/locations/IO.png",
+    "file143": "game_server/func/locations/IN.png",
+    "file144": "game_server/func/locations/IL.png",
+    "file145": "game_server/func/locations/IE.png",
+    "file146": "game_server/func/locations/ID.png",
+    "file147": "game_server/func/locations/HU.png",
+    "file148": "game_server/func/locations/HT.png",
+    "file149": "game_server/func/locations/HR.png",
+    "file150": "game_server/func/locations/HN.png",
+    "file151": "game_server/func/locations/HM.png",
+    "file152": "game_server/func/locations/HK.png",
+    "file153": "game_server/func/locations/GY.png",
+    "file154": "game_server/func/locations/GW.png",
+    "file155": "game_server/func/locations/GU.png",
+    "file156": "game_server/func/locations/GT.png",
+    "file157": "game_server/func/locations/GS.png",
+    "file158": "game_server/func/locations/GR.png",
+    "file159": "game_server/func/locations/GQ.png",
+    "file160": "game_server/func/locations/GP.png",
+    "file161": "game_server/func/locations/GN.png",
+    "file162": "game_server/func/locations/GM.png",
+    "file163": "game_server/func/locations/GL.png",
+    "file164": "game_server/func/locations/GI.png",
+    "file165": "game_server/func/locations/GH.png",
+    "file166": "game_server/func/locations/GF.png",
+    "file167": "game_server/func/locations/GE.png",
+    "file168": "game_server/func/locations/GD.png",
+    "file169": "game_server/func/locations/GB.png",
+    "file170": "game_server/func/locations/GA.png",
+    "file171": "game_server/func/locations/FR.png",
+    "file172": "game_server/func/locations/FO.png",
+    "file173": "game_server/func/locations/FM.png",
+    "file174": "game_server/func/locations/FK.png",
+    "file175": "game_server/func/locations/FJ.png",
+    "file176": "game_server/func/locations/FI.png",
+    "file177": "game_server/func/locations/EU.png",
+    "file178": "game_server/func/locations/ET.png",
+    "file179": "game_server/func/locations/ES.png",
+    "file180": "game_server/func/locations/ER.png",
+    "file181": "game_server/func/locations/EH.png",
+    "file182": "game_server/func/locations/EG.png",
+    "file183": "game_server/func/locations/EE.png",
+    "file184": "game_server/func/locations/EC.png",
+    "file185": "game_server/func/locations/DZ.png",
+    "file186": "game_server/func/locations/DO.png",
+    "file187": "game_server/func/locations/DM.png",
+    "file188": "game_server/func/locations/DK.png",
+    "file189": "game_server/func/locations/DJ.png",
+    "file190": "game_server/func/locations/DE.png",
+    "file191": "game_server/func/locations/CZ.png",
+    "file192": "game_server/func/locations/CY.png",
+    "file193": "game_server/func/locations/CX.png",
+    "file194": "game_server/func/locations/CV.png",
+    "file195": "game_server/func/locations/CU.png",
+    "file196": "game_server/func/locations/CS.png",
+    "file197": "game_server/func/locations/CR.png",
+    "file198": "game_server/func/locations/CO.png",
+    "file199": "game_server/func/locations/CN.png",
+    "file200": "game_server/func/locations/CM.png",
+    "file201": "game_server/func/locations/CL.png",
+    "file202": "game_server/func/locations/CK.png",
+    "file203": "game_server/func/locations/CI.png",
+    "file204": "game_server/func/locations/CH.png",
+    "file205": "game_server/func/locations/CG.png",
+    "file206": "game_server/func/locations/CF.png",
+    "file207": "game_server/func/locations/CD.png",
+    "file208": "game_server/func/locations/CC.png",
+    "file209": "game_server/func/locations/CA.png",
+    "file210": "game_server/func/locations/BZ.png",
+    "file211": "game_server/func/locations/BY.png",
+    "file212": "game_server/func/locations/BW.png",
+    "file213": "game_server/func/locations/BV.png",
+    "file214": "game_server/func/locations/BT.png",
+    "file215": "game_server/func/locations/BS.png",
+    "file216": "game_server/func/locations/BR.png",
+    "file217": "game_server/func/locations/BO.png",
+    "file218": "game_server/func/locations/BN.png",
+    "file219": "game_server/func/locations/BM.png",
+    "file220": "game_server/func/locations/BJ.png",
+    "file221": "game_server/func/locations/BI.png",
+    "file222": "game_server/func/locations/BH.png",
+    "file223": "game_server/func/locations/BG.png",
+    "file224": "game_server/func/locations/BF.png",
+    "file225": "game_server/func/locations/BE.png",
+    "file226": "game_server/func/locations/BD.png",
+    "file227": "game_server/func/locations/BB.png",
+    "file228": "game_server/func/locations/BA.png",
+    "file229": "game_server/func/locations/AZ.png",
+    "file230": "game_server/func/locations/AX.png",
+    "file231": "game_server/func/locations/AW.png",
+    "file232": "game_server/func/locations/AU.png",
+    "file233": "game_server/func/locations/AT.png",
+    "file234": "game_server/func/locations/AS.png",
+    "file235": "game_server/func/locations/AR.png",
+    "file236": "game_server/func/locations/AO.png",
+    "file237": "game_server/func/locations/AN.png",
+    "file238": "game_server/func/locations/AM.png",
+    "file239": "game_server/func/locations/AL.png",
+    "file240": "game_server/func/locations/AI.png",
+    "file241": "game_server/func/locations/AG.png",
+    "file242": "game_server/func/locations/AF.png",
+    "file243": "game_server/func/locations/AE.png",
+    "file244": "game_server/func/locations/AD.png",
+    "file245": "game_server/func/locations/MQ.png",
+
+
+
+
+
+
+
+
+
+    "file246": "game_server/func/icons/aarmy/aarmy.gif",
+    "file247": "game_server/func/icons/aarmy/armygame.gif",
+
+    "file248": "game_server/func/icons/aarmy3/aarmy3.gif",
+
+    "file249": "game_server/func/icons/arcasimracing/arcasimracing.gif",
+
+    "file250": "game_server/func/icons/arma/arma.gif",
+
+    "file251": "game_server/func/icons/arma2/arma2.gif",
+    "file252": "game_server/func/icons/arma2/arma2pc.gif",
+
+    "file253": "game_server/func/icons/arma3/arma3.gif",
+    "file254": "game_server/func/icons/arma3/dayz.gif",
+
+    "file255": "game_server/func/icons/avp2/avp2.gif",
+
+    "file256": "game_server/func/icons/avp2010/avp2010.gif",
+
+    "file257": "game_server/func/icons/bf1942/bf1942.gif",
+    "file258": "game_server/func/icons/bf1942/bfield1942.gif",
+    "file259": "game_server/func/icons/bf1942/desertcombat.gif",
+    "file260": "game_server/func/icons/bf1942/interstate.gif",
+
+    "file261": "game_server/func/icons/bf2/bf2.png",
+
+    "file262": "game_server/func/icons/bf2142/bf2142.gif",
+    "file263": "game_server/func/icons/bf2142/stella.gif",
+
+    "file264": "game_server/func/icons/bf3/bf3.gif",
+
+    "file265": "game_server/func/icons/bf4/bf4.gif",
+
+    "file266": "game_server/func/icons/bfbc2/bfbc2.gif",
+
+    "file267": "game_server/func/icons/bfvietnam/bfvietnam.gif",
+
+    "file268": "game_server/func/icons/callofduty/callofduty.gif",
+
+    "file269": "game_server/func/icons/callofduty2/callofduty2.gif",
+
+    "file270": "game_server/func/icons/callofduty4/callofduty4.png",
+
+    "file271": "game_server/func/icons/callofdutybo3/callofdutybo3.png",
+
+    "file272": "game_server/func/icons/callofdutyiw/iw4.png",
+    "file273": "game_server/func/icons/callofdutyiw/iw5.png",
+    "file274": "game_server/func/icons/callofdutyiw/iw6.png",
+
+    "file275": "game_server/func/icons/callofdutyuo/callofdutyuo.gif",
+    "file276": "game_server/func/icons/callofdutyuo/callofdutyuo1.gif",
+
+    "file277": "game_server/func/icons/callofdutywaw/callofdutywaw.gif",
+
+    "file278": "game_server/func/icons/cncrenegade/cncrenegade.gif",
+
+    "file279": "game_server/func/icons/conanexiles/conanexiles.gif",
+
+    "file280": "game_server/func/icons/crysis/crysis.gif",
+
+    "file281": "game_server/func/icons/crysiswars/crysiswars.gif",
+
+    "file282": "game_server/func/icons/cs2d/cs2d.gif",
+
+    "file283": "game_server/func/icons/cube/assaultcube.gif",
+    "file284": "game_server/func/icons/cube/cube.gif",
+    "file285": "game_server/func/icons/cube/cube1.gif",
+    "file286": "game_server/func/icons/cube/cube2.gif",
+    "file287": "game_server/func/icons/cube/sauerbraten.gif",
+
+    "file288": "game_server/func/icons/dh2005/dh2005.gif",
+
+    "file289": "game_server/func/icons/discord/discord.gif",
+
+    "file290": "game_server/func/icons/doom3/basedoom-1.gif",
+    "file291": "game_server/func/icons/doom3/doom3.gif",
+
+    "file292": "game_server/func/icons/doomskulltag/doomskulltag.gif",
+
+    "file293": "game_server/func/icons/doomzdaemon/doomzdaemon.gif",
+
+    "file294": "game_server/func/icons/f1c9902/f1c9902.gif",
+
+    "file295": "game_server/func/icons/factorio/factorio.png",
+
+    "file296": "game_server/func/icons/farcry/farcry.gif",
+    "file297": "game_server/func/icons/farcry/obsidianedge.gif",
+
+    "file298": "game_server/func/icons/farmsim/farmsim.gif",
+
+    "file299": "game_server/func/icons/fear/fear.gif",
+
+    "file300": "game_server/func/icons/fivem/fivem.gif",
+    "file301": "game_server/func/icons/fivem/redm.png",
+
+    "file302": "game_server/func/icons/flashpoint/flashpoint.gif",
+    "file303": "game_server/func/icons/flashpoint/opflashr.gif",
+
+    "file304": "game_server/func/icons/freelancer/freelancer.gif",
+
+    "file305": "game_server/func/icons/frontlines/frontlines.gif",
+
+    "file306": "game_server/func/icons/gamespy1/gamespy1.gif",
+    "file307": "game_server/func/icons/gamespy2/gamespy2.gif",
+    "file308": "game_server/func/icons/gamespy3/gamespy3.gif",
+
+    "file309": "game_server/func/icons/ghostrecon/ghostrecon.gif",
+
+    "file310": "game_server/func/icons/graw/graw.gif",
+
+    "file311": "game_server/func/icons/graw2/graw2.gif",
+    "file312": "game_server/func/icons/gtr2/gtr2.gif",
+    "file313": "game_server/func/icons/had2/had2.gif",
+
+    "file314": "game_server/func/icons/halflife/had2.gif",
+    "file315": "game_server/func/icons/halflife/czero.png",
+    "file316": "game_server/func/icons/halflife/dod.gif",
+    "file317": "game_server/func/icons/halflife/frontline.gif",
+    "file318": "game_server/func/icons/halflife/halflife.gif",
+    "file319": "game_server/func/icons/halflife/ns.gif",
+    "file320": "game_server/func/icons/halflife/nsp.gif",
+    "file321": "game_server/func/icons/halflife/ricochet.gif",
+    "file322": "game_server/func/icons/halflife/svencoop.jpg",
+    "file323": "game_server/func/icons/halflife/tfc.gif",
+    "file324": "game_server/func/icons/halflife/ts.gif",
+    "file325": "game_server/func/icons/halflife/valve.gif",
+
+    "file326": "game_server/func/icons/halflifewon/cstrike.gif",
+    "file327": "game_server/func/icons/halflifewon/halflifewon.gif",
+
+    "file328": "game_server/func/icons/halo/halo.gif",
+
+    "file329": "game_server/func/icons/il2/il2.gif",
+
+    "file330": "game_server/func/icons/jc2mp/jc2mp.png",
+
+    "file331": "game_server/func/icons/jediknight2/basejk.gif",
+    "file332": "game_server/func/icons/jediknight2/jediknight2.gif",
+
+    "file333": "game_server/func/icons/jediknightja/jediknightja.gif",
+
+    "file334": "game_server/func/icons/killingfloor/killing_floor.gif",
+    "file335": "game_server/func/icons/killingfloor/killingfloor.gif",
+
+    "file336": "game_server/func/icons/kingpin/kingpin.gif",
+
+    "file337": "game_server/func/icons/m2mp/m2mp.png",
+
+    "file338": "game_server/func/icons/minecraft/minecraft.gif",
+
+    "file339": "game_server/func/icons/mohaa/mohaa.gif",
+
+    "file340": "game_server/func/icons/mohaab/mohaab.gif",
+
+    "file341": "game_server/func/icons/mohaas/mohaas.gif",
+
+    "file342": "game_server/func/icons/mohpa/mohpa.gif",
+
+    "file343": "game_server/func/icons/mta/mta.png",
+
+    "file344": "game_server/func/icons/nascar2004/nascar2004.gif",
+
+    "file345": "game_server/func/icons/neverwinter/neverwinter.gif",
+
+    "file346": "game_server/func/icons/neverwinter2/neverwinter2.gif",
+
+    "file347": "game_server/func/icons/nexuiz/nexuiz.gif",
+
+    "file348": "game_server/func/icons/openttd/openttd.gif",
+
+    "file349": "game_server/func/icons/painkiller/painkiller.gif",
+
+    "file350": "game_server/func/icons/plainsight/plainsight.gif",
+
+    "file351": "game_server/func/icons/prey/prey.gif",
+
+    "file352": "game_server/func/icons/quake2/quake2.gif",
+
+    "file353": "game_server/func/icons/quake3/quake3.png",
+
+    "file354": "game_server/func/icons/quake4/basequake4-1.gif",
+    "file355": "game_server/func/icons/quake4/quake4.gif",
+
+    "file356": "game_server/func/icons/quakewars/quakewars.gif",
+
+    "file357": "game_server/func/icons/quakeworld/fortress.gif",
+    "file358": "game_server/func/icons/quakeworld/quakeworld.gif",
+    "file359": "game_server/func/icons/quakeworld/qw.gif",
+
+    "file360": "game_server/func/icons/ragemp/ragemp.gif",
+
+    "file361": "game_server/func/icons/ravenshield/ravenshield.gif",
+
+    "file362": "game_server/func/icons/redorchestra/red_orchestra.gif",
+    "file362": "game_server/func/icons/redorchestra/redorchestra.gif",
+
+    "file363": "game_server/func/icons/rfactor/rfactor.gif",
+
+    "file364": "game_server/func/icons/samp/samp.gif",
+
+    "file365": "game_server/func/icons/savage/savage.gif",
+
+    "file366": "game_server/func/icons/savage2/savage2.gif",
+
+    "file367": "game_server/func/icons/scum/scum.png",
+
+    "file368": "game_server/func/icons/serioussam/serioussam.gif",
+
+    "file369": "game_server/func/icons/serioussam2/serioussam2.gif",
+
+    "file370": "game_server/func/icons/sf/sf.png",
+
+    "file371": "game_server/func/icons/shatteredh/shatteredh.gif",
+
+    "file372": "game_server/func/icons/sof2/sof2.gif",
+    "file373": "game_server/func/icons/sof2/sof2mp.gif",
+
+    "file374": "game_server/func/icons/soldat/soldat.gif",
+
+    "file375": "game_server/func/icons/source/7DTD.gif",
+    "file376": "game_server/func/icons/source/SeriousSam3.gif",
+    "file377": "game_server/func/icons/source/SeriousSamHD_TSE.gif",
+    "file378": "game_server/func/icons/source/Space_Engineers.gif",
+    "file379": "game_server/func/icons/source/Unturned.gif",
+    "file380": "game_server/func/icons/source/ageofchivalry.gif",
+    "file381": "game_server/func/icons/source/ark_survival_evolved.gif",
+    "file382": "game_server/func/icons/source/atlas.gif",
+    "file383": "game_server/func/icons/source/basewf.gif",
+    "file384": "game_server/func/icons/source/bms.gif",
+    "file385": "game_server/func/icons/source/chivalrymedievalwarfare.gif",
+    "file386": "game_server/func/icons/source/contagion.gif",
+    "file387": "game_server/func/icons/source/csgo.gif",
+    "file388": "game_server/func/icons/source/cstrike.gif",
+    "file389": "game_server/func/icons/source/dayz.gif",
+    "file390": "game_server/func/icons/source/decadence.gif",
+    "file391": "game_server/func/icons/source/dod.gif",
+    "file392": "game_server/func/icons/source/dystopia.gif",
+    "file393": "game_server/func/icons/source/egs.png",
+    "file394": "game_server/func/icons/source/empires.gif",
+    "file395": "game_server/func/icons/source/esmod.gif",
+    "file396": "game_server/func/icons/source/ex.gif",
+    "file397": "game_server/func/icons/source/fof.gif",
+    "file398": "game_server/func/icons/source/garrysmod.gif",
+    "file399": "game_server/func/icons/source/hidden.gif",
+    "file400": "game_server/func/icons/source/hl2mp.gif",
+    "file401": "game_server/func/icons/source/hurtworld.gif",
+    "file402": "game_server/func/icons/source/insurgency.gif",
+    "file403": "game_server/func/icons/source/kf2.gif",
+    "file404": "game_server/func/icons/source/left4dead.gif",
+    "file405": "game_server/func/icons/source/left4dead2.gif",
+    "file406": "game_server/func/icons/source/modernwarfare3.png",
+    "file407": "game_server/func/icons/source/mordhau.gif",
+    "file408": "game_server/func/icons/source/neotokyosource.gif",
+    "file409": "game_server/func/icons/source/nmrih.gif",
+    "file410": "game_server/func/icons/source/obsidian.gif",
+    "file411": "game_server/func/icons/source/postscriptum.gif",
+    "file412": "game_server/func/icons/source/pvkii.gif",
+    "file413": "game_server/func/icons/source/ro2.png",
+    "file414": "game_server/func/icons/source/rust.gif",
+    "file415": "game_server/func/icons/source/sandstorm.png",
+    "file416": "game_server/func/icons/source/source.gif",
+    "file417": "game_server/func/icons/source/squad.png",
+    "file418": "game_server/func/icons/source/stationeers.png",
+    "file419": "game_server/func/icons/source/svencoop.gif",
+    "file420": "game_server/func/icons/source/synergy.gif",
+    "file421": "game_server/func/icons/source/tf.gif",
+    "file422": "game_server/func/icons/source/theforestds.gif",
+    "file423": "game_server/func/icons/source/valheim.gif",
+    "file424": "game_server/func/icons/source/zombie_master.gif",
+    "file425": "game_server/func/icons/source/zomboid.png",
+    "file426": "game_server/func/icons/source/zps.gif",
+
+
+    "file427": "game_server/func/icons/stalker/stalker.gif",
+
+    "file428": "game_server/func/icons/stalkercop/stalkercop.png",
+
+    "file429": "game_server/func/icons/stalkercs/stalkercs.gif",
+
+    "file430": "game_server/func/icons/startrekef/startrekef.gif",
+
+    "file431": "game_server/func/icons/starwarsbf/starwarsbf.gif",
+
+    "file432": "game_server/func/icons/starwarsbf2/starwarsbf2.gif",
+
+    "file433": "game_server/func/icons/starwarsrc/starwarsrc.gif",
+
+    "file434": "game_server/func/icons/swat4/swat4.gif",
+
+    "file435": "game_server/func/icons/teaspeak/teaspeak.png",
+
+    "file436": "game_server/func/icons/teeworlds/teeworlds.gif",
+
+    "file437": "game_server/func/icons/terraria/terraria.png",
+
+    "file438": "game_server/func/icons/tribes/tribes.gif",
+
+    "file439": "game_server/func/icons/tribes2/tribes2.gif",
+
+    "file440": "game_server/func/icons/tribesv/tribesv.gif",
+
+    "file441": "game_server/func/icons/ts/ts.gif",
+
+    "file442": "game_server/func/icons/ts3/ts3.gif",
+
+    "file443": "game_server/func/icons/urbanterror/urbanterror.gif",
+
+    "file444": "game_server/func/icons/ut/ut.gif",
+
+    "file445": "game_server/func/icons/ut2003/ut2003.gif",
+
+    "file446": "game_server/func/icons/ut2004/killing_floor.gif",
+    "file447": "game_server/func/icons/ut2004/red_orchestra.gif",
+    "file448": "game_server/func/icons/ut2004/ut2004.gif",
+
+    "file449": "game_server/func/icons/ut3/ut3.gif",
+
+    "file450": "game_server/func/icons/vcmp/vcmp.png",
+
+    "file451": "game_server/func/icons/vietcong/vietcong.gif",
+
+    "file452": "game_server/func/icons/vietcong2/vietcong2.gif",
+
+    "file453": "game_server/func/icons/warsow/warsow.png",
+
+    "file454": "game_server/func/icons/warsowold/warsowold.gif",
+
+    "file455": "game_server/func/icons/wolf2009/wolf2009.gif",
+
+    "file456": "game_server/func/icons/wolfet/wolfet.png",
+
+    "file457": "game_server/func/icons/wolfrtcw/wolfrtcw.gif",
+
+    "file458": "game_server/func/icons/wow/wow.png",
+
+
+"file459": "game_server/func/other/magnifier.svg",
+"file460": "game_server/func/other/map_no_image.jpg",
+"file461": "game_server/func/other/map_no_response.jpg",
+"file462": "game_server/func/other/map_overlay_password.gif",
+"file463": "game_server/func/other/overlay.gif"
+
+
+
+
+
+
+			},
+			{
+				"index": "css",
+				"file1": "game_server/func/styles/default.css"
+			},
+			{
+				"index": "js",
+				"file1": "game_server/func/scripts/flag-icon.js",
+				"file2": "game_server/func/scripts/parallax.js",
+				"file3": "game_server/func/scripts/preview.js",
+				"file4": "game_server/func/scripts/refresh.js"
+			}
+		]
+}

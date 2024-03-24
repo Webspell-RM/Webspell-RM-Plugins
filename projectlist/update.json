@@ -1,0 +1,42 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "projectlist/update.php",
+                "file2": "projectlist/install.php",
+				"file3": "projectlist/uninstall.php",
+				"file4": "projectlist/projectlist.php",
+				"file5": "projectlist/projectlist_rating.php"
+			},
+			{
+				"index": "admin",
+				"file1": "projectlist/admin/admin_projectlist.php"
+			},
+			{
+				"index": "language",
+				"file1": "projectlist/languages/de/projectlist.php",
+				"file2": "projectlist/languages/de/admin_projectlist.php",
+				"file3": "projectlist/languages/en/projectlist.php",
+				"file4": "projectlist/languages/en/admin_projectlist.php",
+				"file5": "projectlist/languages/it/projectlist.php",
+				"file6": "projectlist/languages/it/admin_projectlist.php"
+			},
+			{
+				"index": "templates",
+				"file1": "projectlist/templates/projectlist.html"
+			},
+			{
+				"index": "css"			
+			},
+			{
+				"index": "images",
+				"file1": "projectlist/images/no_rubric_pic.jpg",
+				"file2": "projectlist/images/rubriken/no_rubric_pic.jpg",
+				"file3": "projectlist/images/rating_0.png",
+				"file4": "projectlist/images/rating_1.png"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

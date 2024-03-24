@@ -1,0 +1,31 @@
+{"plugin":
+	{
+		"info":
+		{
+			"name":"footer Box",
+			"modulname":"footer_box"
+		},
+		"info1":
+		{
+			"name1":"footer Box",
+			"folder1":"footer_box",
+			"widgetname1":"footer_box_content"
+
+		},
+		"info2":
+		{
+			"name2":"",
+			"folder2":"",
+			"widgetname2":""
+
+		},
+		"info3":
+		{
+			"name3":"",
+			"folder3":"",
+			"widgetname3":""
+
+		},
+		"widgets1":["widget_footer_box_content.php"]
+	}
+}

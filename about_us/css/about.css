@@ -1,0 +1,60 @@
+.about_us-info {
+	/*background-color:#0799dc;*/
+	height:595px;
+	width:50%;
+	padding-left:13%;
+	padding-right:2%;
+	padding-top:5%;
+	margin-top: -5px;
+	color:#FFFFFF;
+	background: url('/includes/plugins/about_us/images/about_left.jpg') no-repeat center center ;
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	background-size: cover;
+  	-o-background-size: cover;
+	background-repeat:no-repeat;
+	width:50%;
+}
+
+.about_us-text {
+	line-height: 2.0;
+	color:#FFFFFF;
+}
+
+.about-pic {
+	background: url('/includes/plugins/about_us/images/about_rights.jpg') no-repeat center center ;
+	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	background-size: cover;
+  	-o-background-size: cover;
+	background-repeat:no-repeat;
+	width:50%;
+	margin-top: -5px;
+}
+			
+.about_us-headline {
+	color:#FFFFFF;
+	font-weight:bold;
+	text-transform:uppercase;
+	font-family:[SourceSansPro];
+	font-size:30px;
+}
+
+
+@media (min-width: 768px) {
+
+}
+
+
+@media (max-width: 768px) {
+	.about_us-info {
+	    background-color: #0799dc;
+	    height: 100%;
+	    width: 100%;
+	    padding-left: 13%;
+	    padding-right: 2%;
+	    padding-top: 5%;
+	    color: #FFFFFF;
+	    padding-bottom: 20px;
+	}
+}

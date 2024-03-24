@@ -1,0 +1,211 @@
+<!-- blog_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- blog_detail -->
+<div class="card">
+  
+    <div class="card-body">
+      <h3>$headline</h3>
+      $by $nickname $on <span class="text-primary mb-0"><b>$day</b></span> $date2
+      <hr>
+      
+<div class="row">
+       <div class="col-lg-4 col-md-6 col-sm-6 border-e1nd py-3 px-4">
+          <!--<div class="py-3 px-4 border-end text-center">
+            <div class="card-img-wrapper overlay-rounded-top">
+              <img class="card-img-top"style="height: 220px;width: 370px;" src="$image" alt="">
+            </div>
+            
+          </div>-->
+          $image   </div>
+          <div class="col-lg-8 col-md-6 col-sm-6 py-3 px-4">
+            $msg
+          </div>
+    </div>     
+
+
+
+      <div class="col text-end">$adm</div>
+  </div>
+</div>
+<!-- END -->
+
+<!-- blog_all_detail -->
+<!--<div class="card">
+    <div class="card-body">
+      <h3>$headline</h3>
+      $msg
+      <a type="button" class="btn btn-primary btn-sm" href="index.php?site=blog&action=show&blogID=$blogID">READMORE</a>
+  <hr>
+      <span class="text-end">
+        <i class="bi bi-calendar"></i> $date 
+        <i class="bi bi-person-fill"></i> $nickname
+      </span>
+      
+  </div>
+</div>-->
+
+
+
+    <!-- blog-item 2 -->
+    <div class="col-lg-4 col-md-6 col-sm-6">
+            <div class="card card-2">
+                <div class="card-img-wrapper overlay-rounded-top">
+                    <img class="card-img-top"style="height: 220px;width: 100%;" src="$image" alt="">
+                </div>
+                <div class="card-body p-0">
+                    <div class="d-flex">
+                        <div class="py-3 px-4 border-end text-center">
+                            <h4 class="text-primary mb-0">$date</h4>
+                            <p class="mb-0"></p>$date2
+                        </div>
+                        <div class="p-3">
+                        <a href="index.php?site=blog&action=show&blogID=$blogID" class="h5 font-primary">$headline</a>
+                        <p>$by $nickname</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+                                
+
+
+
+
+
+<!-- END -->
+
+<!-- blog_archiv -->
+<tr>
+  <td>$date</td>
+  <td><a href="index.php?site=blog&action=show&amp;blogID=$blogID">$headline</a>
+  <td>$nickname</td>
+  </td>
+</tr>
+<!-- END -->
+
+<!-- blog_edit -->
+
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.php?site=blog">Blog</a></li>
+      <li class="breadcrumb-item active" aria-current="page">$edit_entry</li>
+    </ol>
+  </nav> 
+
+<div class="card">
+    <div class="card-body">
+
+<form class="form-horizontal" method="post" action="index.php?site=blog" enctype="multipart/form-data"> 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mb-3">
+        <label for="headlin" class="form-label">$title</label>
+        <input  name="headline" type="text" class="form-control" id="headlin" aria-describedby="headlin" value="$headline">
+    </div>
+    <div class="mb-3">
+      <label for="ckeditor" class="form-label">$text</label>
+      <textarea class="form-control ckeditor" id="ckeditor" name="message" rows="20">$msg</textarea>
+    </div>
+
+    <div class="mb-3 row">
+    <label class="col-sm-2 control-label">$current_banner:</label>
+    <div class="col-sm-10">
+      $pic
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label class="col-sm-2 control-label">$lang_banner:</label>
+    <div class="col-sm-10"><span class="text-muted small"><em>
+      <input class="btn btn-info" name="banner" type="file" size="40" /> <small>(max. 370x220)</small></em></span>
+    </div>
+  </div>
+
+    <div class="mb-3">
+        <input type="hidden" name="blogID" value="$blogID">
+        <select name="comments" class="form-select">$comments</select>
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="captcha_hash" value="$hash" /><input type="hidden" name="blogID" value="$blogID" />
+        <input type="submit" name="saveedit" value="$edit" class="btn btn-warning" />
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+  <!-- END -->
+
+  <!-- blog_new -->
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.php?site=blog">Blog</a></li>
+      <li class="breadcrumb-item active" aria-current="page">$add_entry</li>
+    </ol>
+  </nav> 
+
+<div class="card">
+    <div class="card-body">
+
+<!--<form method="post" name="post" action="index.php?site=blog">-->
+ <form class="form-horizontal" method="post" action="index.php?site=blog" enctype="multipart/form-data"> 
+  <div class="row">
+    <div class="col-md-12">
+      <div class="mb-3">
+        <label for="headlin" class="form-label">$title</label>
+        <input  name="headline" type="text" class="form-control" id="headlin" aria-describedby="headlin">
+    </div>
+    <div class="mb-3">
+      <label for="ckeditor" class="form-label">$text</label>
+      <textarea class="form-control ckeditor" id="ckeditor" name="message" rows="20"></textarea>
+    </div>
+    <div class="mb-3 row">
+    <label class="col-sm-2 control-label">$lang_banner:</label>
+    <div class="col-sm-10"><span class="text-muted small"><em>
+      <input class="btn btn-info" name="banner" type="file" size="40" /> <small>(max. 370x220)</small></em></span>
+    </div>
+  </div>
+      <div class="mb-3">
+        <input type="hidden" name="userID" value="$userID">
+        <select name="comments" class="form-select">$comments</select>
+      </div>
+      <div class="form-group">
+        <input type="hidden" name="captcha_hash" value="$hash" />
+        <input type="submit" name="save" value="$save" class="btn btn-success" />
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+</div>
+<!-- END -->
+
+<!-- blog_widget_blogs_head -->
+<div class="card">
+  <div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+    <div class="agileits_updates_grid_left_grid">
+<!-- END -->
+<!-- blog_widget_content -->
+      <div class="row">      
+        <div class="col-3 agileits_updates_grid_left1">
+          <h4>$day <span>$date2 <i>$year.</i></span></h4>
+        </div>
+        <div class="col agileits_updates_grid_left1">
+          <h5>$title</h5>
+          <p>$text</p>
+        </div>
+      </div>        
+ <!-- END -->
+<!-- blog_widget_blogs_foot -->
+    </div>
+  </div>
+</div>
+<!-- END -->

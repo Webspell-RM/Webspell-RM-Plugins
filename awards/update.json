@@ -1,0 +1,43 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "awards/update.php",
+				"file2": "awards/install.php",
+				"file3": "awards/uninstall.php",
+				"file4": "awards/awards.php",
+				"file5": "awards/widget_awards_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "awards/admin/admin_awards.php"
+			},
+			{
+				"index": "language",
+				"file1": "awards/languages/de/awards.php",
+				"file2": "awards/languages/de/sc_awards.php",
+				"file3": "awards/languages/en/awards.php",
+				"file4": "awards/languages/en/sc_awards.php",
+				"file5": "awards/languages/it/awards.php",
+				"file6": "awards/languages/it/sc_awards.php"
+			},
+			{
+				"index": "templates",
+				"file1": "awards/templates/awards.html",
+				"file2": "awards/templates/sc_awards.html"
+			},
+			{
+				"index": "images",
+				"file1": "awards/images/no-image.jpg",
+				"file2": "awards/images/widget_awards_content.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "awards/css/awards.css"
+			},
+			{
+				"index": "js",
+				"file1": "awards/js/owl.carousel.js"
+			}
+		]
+}

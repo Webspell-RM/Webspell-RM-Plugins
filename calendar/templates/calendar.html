@@ -1,0 +1,284 @@
+<!-- calendar_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- calendar_date_details -->
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">$lang_eventdetails: $title</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="150px">$lang_start_datetime:</td>
+                        <td>$date - $time</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_end_datetime:</td>
+                        <td>$enddate - $endtime</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_location:</td>
+                        <td>$location</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">$lang_information:</td>
+                    </tr>
+                    <tr>    
+                        <td colspan="2">$dateinfo</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_announcements</td>
+                        <td>$announce</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">$lang_status <span class="badge bg-success">$lang_yes</span>
+                            <span class="badge bg-danger">$lang_no</span>
+                            <span class="badge bg-warning">$lang_perhaps</span>
+                            <br><br>$players
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- END -->
+
+<!-- calendar_train_details -->
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">$lang_headtrain:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td width="150px">$lang_start_datetime</td>
+                        <td>$date - $time</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_end_datetime</td>
+                        <td>$enddate - $endtime</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_server</td>
+                        <td>$server</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_information</td>
+                        <td>$dateinfo</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_announcements</td>
+                        <td>$announce</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">$lang_status <span class="badge bg-success">$lang_yes</span>
+                        <span class="badge bg-danger">$lang_no</span>
+                            <span class="badge bg-warning">$lang_perhaps</span>
+                            <br><br>$players
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- END -->
+<!-- calendar_war_details -->
+<div class="card">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="2">$lang_clanwardetails:</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td width="80px">$lang_date_time</td>
+                        <td>$date - $time</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_squad</td>
+                        <td>$squad</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_opponent</td>
+                        <td>$opponent</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_league</td>
+                        <td>$league</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_maps</td>
+                        <td>$maps</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_server</td>
+                        <td>$server</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_information:</td>
+                        <td>$warinfo</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_announcements</td>
+                        <td>$announce</td>
+                    </tr>
+                    <tr><td colspan="2">$lang_status <span class="badge bg-success">$lang_yes</span>
+                        <span class="badge bg-danger">$lang_no</span>
+                            <span class="badge bg-warning">$lang_perhaps</span>
+                            <br><br>$players
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- END -->
+
+<!-- calendar_upcomingactions -->
+<li class="list-group-item">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="$upurl#event">$opponent</a>
+        </div>
+        <div class="col-md-6 text-end">
+            <span class="badge bg-secondary text-end">$date</span>
+        </div>
+    </div>
+</li>
+<!-- END -->
+<!-- calendar_upcomingannounce -->
+<div class="card">
+    <div class="card-body">
+        <h3>$lang_announce_to</h3>
+        <form method="post" id="post" name="post" action="index.php?site=calendar&action=saveannounce" enctype="multipart/form-data" onsubmit="return chkFormular();">
+            <select name="status" class="form-select" aria-label="Default select example">>
+                <option value="y" selected="selected">$lang_yes</option>
+                <option value="n">$lang_no</option>
+                <option value="p">$lang_perhaps</option>
+            </select><br>
+            <span class="input-group-btn">
+                <input type="submit" name="submit" value="$lang_save_announcement" class="btn btn-primary">
+            </span>
+        </div>
+        <input type="hidden" name="upID" value="$upID" class="form-control">
+        </form>
+    </div>
+</div>
+<!-- END -->
+<!-- calendar_upcomingevent -->
+<li class="list-group-item">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="$upurl#event">$short</a>
+        </div>
+        <div class="col-md-6 text-end">
+            <span class="badge bg-secondary text-end">$date</span>
+        </div>
+    </div>
+</li>
+<!-- END -->
+<!-- calendar_widget_content -->
+<div class="card">
+    <div style="margin: 6px">
+        <script language="JavaScript" type="text/javascript">
+            var d=new Date();
+            monthname= new Array("Januar","Februar","März","April","Mai","Juni","Juli","August","September","Oktober","November","Dezember");
+        </script>
+
+        <table class="table">
+            <tr>
+                <td colspan="7" >
+                    <script language="JavaScript" type="text/javascript">
+                        document.write(monthname[d.getMonth()] + " " + d.getFullYear());  
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td width="14%">$day[1]</td>
+                <td width="14%">$day[2]</td>
+                <td width="14%">$day[3]</td>
+                <td width="14%">$day[4]</td>
+                <td width="14%">$day[5]</td>
+                <td width="14%">$day[6]</td>
+                <td width="14%">$day[7]</td>
+            </tr>
+            <tr>
+                <td bgcolor="$bg[8]" width="14%">$day[8]</td>
+                <td bgcolor="$bg[9]" width="14%">$day[9]</td>
+                <td bgcolor="$bg[10]" width="14%">$day[10]</td>
+                <td bgcolor="$bg[11]" width="14%">$day[11]</td>
+                <td bgcolor="$bg[12]" width="14%">$day[12]</td>
+                <td bgcolor="$bg[13]" width="14%">$day[13]</td>
+                <td bgcolor="$bg[14]" width="14%">$day[14]</td>
+            </tr>
+            <tr>
+                <td bgcolor="$bg[15]" width="14%">$day[15]</td>
+                <td bgcolor="$bg[16]" width="14%">$day[16]</td>
+                <td bgcolor="$bg[17]" width="14%">$day[17]</td>
+                <td bgcolor="$bg[18]" width="14%">$day[18]</td>
+                <td bgcolor="$bg[19]" width="14%">$day[19]</td>
+                <td bgcolor="$bg[20]" width="14%">$day[20]</td>
+                <td bgcolor="$bg[21]" width="14%">$day[21]</td>
+            </tr>
+            <tr>
+                <td bgcolor="$bg[22]" width="14%">$day[22]</td>
+                <td bgcolor="$bg[23]" width="14%">$day[23]</td>
+                <td bgcolor="$bg[24]" width="14%">$day[24]</td>
+                <td bgcolor="$bg[25]" width="14%">$day[25]</td>
+                <td bgcolor="$bg[26]" width="14%">$day[26]</td>
+                <td bgcolor="$bg[27]" width="14%">$day[27]</td>
+                <td bgcolor="$bg[28]" width="14%">$day[28]</td>
+            </tr>
+            <tr>
+                <td bgcolor="$bg[29]" width="14%">$day[29]</td>
+                <td bgcolor="$bg[30]" width="14%">$day[30]</td>
+                <td bgcolor="$bg[31]" width="14%">$day[31]</td>
+                <td bgcolor="$bg[32]" width="14%">$day[32]</td>
+                <td bgcolor="$bg[33]" width="14%">$day[33]</td>
+                <td bgcolor="$bg[34]" width="14%">$day[34]</td>
+                <td bgcolor="$bg[35]" width="14%">$day[35]</td>
+            </tr>
+            <tr>
+             <td bgcolor="$bg[36]" width="14%">$day[36]</td>
+             <td bgcolor="$bg[37]" width="14%">$day[37]</td>
+             <td bgcolor="$bg[38]" width="14%">$day[38]</td>
+             <td bgcolor="$bg[39]" width="14%">$day[39]</td>
+             <td bgcolor="$bg[40]" width="14%">$day[40]</td>
+             <td bgcolor="$bg[41]" width="14%">$day[41]</td>
+             <td bgcolor="$bg[42]" width="14%">$day[42]</td>
+            </tr>
+        </table>
+    </div>
+</div>
+<!-- END -->
+<!-- calendar_widget_head -->
+<div class="card">
+    <div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+        <ul class="list-group list-group-flush">
+<!-- END -->
+<!-- calendar_widget_foot -->
+        </ul>
+    </div>
+</div>
+  <!-- END -->   

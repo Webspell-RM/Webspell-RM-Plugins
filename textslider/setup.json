@@ -1,0 +1,40 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "textslider/install.php",
+				"file2": "textslider/uninstall.php",
+				"file3": "textslider/widget_textslider_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "textslider/admin/admin_textslider.php"
+			},
+			{
+				"index": "languages",
+				"file1": "textslider/languages/de/textslider.php",
+				"file2": "textslider/languages/en/textslider.php",
+				"file3": "textslider/languages/it/textslider.php"
+			},
+			{
+				"index": "templates",
+				"file1": "textslider/templates/textslider.html"
+			},
+			{
+				"index": "images",
+				"file1": "textslider/images/1.jpg",
+				"file2": "textslider/images/2.jpg",
+				"file3": "textslider/images/3.jpg",
+				"file4": "textslider/images/4.jpg",
+				"file5": "textslider/images/widget_textslider_content.jpg",
+				"file6": "textslider/images/events-bg.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "textslider/css/textslider.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

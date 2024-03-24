@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "counter/install.php",
+				"file2": "counter/uninstall.php",
+				"file3": "counter/counter.php",
+				"file4": "counter/widget_counter_sidebar.php"
+			},
+			{
+				"index": "admin"
+				
+			},
+			{
+				"index": "languages",
+				"file1": "counter/languages/de/counter.php",
+				"file2": "counter/languages/en/counter.php",
+				"file3": "counter/languages/it/counter.php"
+			},
+			{
+				"index": "templates",
+				"file1": "counter/templates/counter.html"
+			},
+			{
+				"index": "images",
+				"file1": "counter/images/widget_counter_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "counter/css/counter.css"
+			},
+			{
+				"index": "js",
+				"file1": "counter/js/counter.js"
+			}
+		]
+}

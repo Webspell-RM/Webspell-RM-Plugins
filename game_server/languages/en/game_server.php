@@ -1,0 +1,43 @@
+<?php
+
+$language_array = array(
+
+
+  'title'               =>'Servers',
+  'game'                =>'Game',
+  'information'         =>'Informationen',
+  'ip'                  =>'IP',
+  'link'                =>'Link',
+  'online'              =>'Online',
+  'server'              =>'Server',
+  'status'              =>'Status',
+  'timeout'             =>'Timeout',
+  'access_denied'       =>'Access denied',
+  'add_server'          =>'Add server',
+  'actions'             =>'Actions',
+  'delete'              =>'Delete',
+  'edit'                =>'Edit',
+  'edit_server'         =>'Edit server',
+  'game'                =>'Game',
+  'info'                =>'Info',
+  'ip_port'             =>'Server IP:Port',
+  'new_server'          =>'New server',
+  'no_server'           =>'<blockquote>No servers available</blockquote>',
+  'admin_no_server'     =>'<blockquote>No Server available</blockquote>',
+  'not_supported'       =>'Not supported by the server',
+  'really_delete'       =>'Really delete this server?',
+  'servers'             =>'Server',
+  'server_name'         =>'Server Name',
+  'sort'                =>'Sorting',
+  'transaction_invalid' =>'Transaction ID invalid',
+  'to_sort'             =>'Sort',
+  'options'             =>'Options',
+  'yes'                 =>'Yes',
+  'no'                  =>'No',
+  'is_displayed'        =>'Is displayed?',
+  'settings'            =>'Server settings',
+  'max_servers'         =>'Server per side',
+  'tooltip'             =>'Maximum servers that are completely displayed',
+  'update'              =>'Update'
+);
+

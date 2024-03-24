@@ -1,0 +1,198 @@
+<!-- admin_videos_new --> 
+<div class="card">
+            <div class="card-header">
+                            <i class="bi bi-youtube"></i> $video</div>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_videos">$video</a></li>
+                <li class="breadcrumb-item active" aria-current="page">$new_video</li>
+                </ol>
+            </nav>  
+                        <div class="card-body">
+
+<script>
+    function chkFormular() {
+        if (document.getElementById('input-cat').value === "") {
+            alert("Keine katogorie erstellt!");
+            document.getElementById('input-cat').focus();
+
+            return false;
+        }
+    }
+</script>
+        <form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_videos" onsubmit="return chkFormular();">
+
+            
+            <div class="mb-3 row">
+                <label for="input-cat" class="col-xs-12 col-md-3 control-label">$videorubric:</label>
+                <div class="col-xs-12 col-md-9">
+                    <select name="cat" id="input-cat" class="form-select">$linkcats</select>
+                </div>
+            </div>
+
+            
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$vidname:</label>
+                <div class="col-xs-12 col-md-9">
+                    <input type="text" name="videoname" class="form-control" id="input-name">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$videotext:</label>
+                <div class="col-xs-12 col-md-9">
+                    <input type="text" name="description" class="form-control" id="input-text">
+                </div>
+            </div>
+            
+            <div class="mb-3 row">
+                <label for="input-url" class="col-xs-12 col-md-3 control-label">$youtubecode:</label>
+                <div class="col-xs-12 col-md-9">
+                    <input type="youtube" name="youtube" class="form-control" id="input-url">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_displayed:</label>
+                <div class="col-md-3 form-check form-switch" style="padding: 0px 43px;">
+                    <input class="form-check-input" type="checkbox" name="displayed" value="1" checked="checked" />              
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_widget_displayed:</label>
+                <div class="col-md-3 form-check form-switch" style="padding: 0px 43px;">
+                    <input class="form-check-input" type="checkbox" name="widget_displayed" value="1" checked="checked" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_media_widget_displayed:</label>
+                <div class="col-md-3 form-check form-switch" style="padding: 0px 43px;">
+                    <input class="form-check-input" type="checkbox" name="media_widget_displayed" value="1" checked="checked" />
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_comments:</label>
+                <div class="col-md-3">
+                    <select class="form-select" name="comments">$comments</select>
+                </div>
+            </div>
+         
+            
+
+            <div class="mb-3 row">
+                <div class="col-xs-12 col-md-9 col-xs-offset-12 col-md-offset-3">
+                    <input type="hidden" name="captcha_hash" value="'.$hash.'" /><input type="hidden" value="$userID" name="uploader" />
+                    <button type="submit" name="save" class="btn btn-success">$save_video</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<!-- END -->
+
+<!-- admin_videos_edit -->
+<div class="card">
+            <div class="card-header">
+                            <i class="bi bi-youtube"></i> $video</div>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_videos">$video</a></li>
+                <li class="breadcrumb-item active" aria-current="page">$edit_video</li>
+                </ol>
+            </nav>  
+                        <div class="card-body">
+
+ <form
+            action="admincenter.php?site=admin_videos"
+            method="post"
+            enctype="multipart/form-data"
+            onsubmit="return formcheckOnsend('linkname');"
+            role="form"
+            class="form-horizontal">
+
+            
+            <div class="mb-3 row">
+                <label for="input-cat" class="col-xs-12 col-md-3 control-label">$videorubric:</label>
+                <div class="col-xs-12 col-md-9">
+                    <select name="cat" id="input-cat" class="form-select">$linkcats</select>
+                </div>
+            </div>
+
+            
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$vidname:</label>
+                <div class="col-xs-12 col-md-9">
+                    <input type="text" name="videoname" class="form-control" id="input-name" value="$videoname">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$videotext:</label>
+                <div class="col-xs-12 col-md-9">
+                    <input type="text" name="description" class="form-control" id="input-text" value="$description">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-url" class="col-xs-12 col-md-3 control-label">$youtubecode:</label>
+                <div class="col-xs-12 col-md-9">
+                    <input type="youtube" name="youtube" class="form-control" id="input-url" value="$youtube">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-banner" class="col-xs-12 col-md-3 control-label">$video:</label>
+                
+                <div class="col-xs-12 col-md-9">
+                   $pic
+                </div>
+            </div>
+
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_displayed:</label>
+                <div class="col-md-3 form-check form-switch" style="padding: 0px 43px;">
+                  $displayed
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_widget_displayed:</label>
+                <div class="col-md-3 form-check form-switch" style="padding: 0px 43px;">
+                    $widget_displayed
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_media_widget_displayed:</label>
+                <div class="col-md-3 form-check form-switch" style="padding: 0px 43px;">
+                    $media_widget_displayed
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label for="input-name" class="col-xs-12 col-md-3 control-label">$lang_comments:</label>
+                <div class="col-md-3">
+                    <select class="form-select" name="comments">$comments</select>
+                </div>
+            </div>
+
+          <!-- Submit button -->
+            <div class="mb-3 row">
+                <div class="col-xs-12 col-md-9 col-xs-offset-12 col-md-offset-3">
+                    <input type="hidden" name="captcha_hash" value="'.$hash.'" />
+                    <input type="hidden" name="videosID" value="$videosID"><input type="hidden" value="$userID" name="uploader" />
+                    <button type="submit" name="saveedit" class="btn btn-warning">$update_video</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+<!-- END -->

@@ -1,0 +1,52 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "carousel/update.php",
+				"file2": "carousel/install.php",
+				"file3": "carousel/uninstall.php",
+				"file4": "carousel/widget_carousel_only.php",
+				"file5": "carousel/widget_parallax_header.php",
+				"file6": "carousel/widget_sticky_header.php"
+			},
+			{
+				"index": "admin",
+				"file1": "carousel/admin/admin_carousel.php"
+			},
+			{
+				"index": "languages",
+				"file1": "carousel/languages/de/carousel.php",
+				"file2": "carousel/languages/en/carousel.php",
+				"file3": "carousel/languages/it/carousel.php"
+			},
+			{
+				"index": "templates",
+				"file1": "carousel/templates/widget_carousel_only.html",
+				"file2": "carousel/templates/parallax_header.html",
+				"file3": "carousel/templates/sticky_header.html"
+			},
+			{
+				"index": "images",
+				"file1": "carousel/images/1.jpg",
+				"file2": "carousel/images/2.jpg",
+				"file3": "carousel/images/3.jpg",
+				"file4": "carousel/images/4.jpg",
+				"file5": "carousel/images/widget_carousel_only.jpg",
+				"file6": "carousel/images/widget_parallax_header.jpg",
+				"file7": "carousel/images/widget_sticky_header.jpg",
+				"file8": "carousel/videos/5.mp4",
+				"file9": "carousel/images/no-image.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "carousel/css/carousel.css",
+				"file2": "carousel/css/parallax_header.css",
+				"file3": "carousel/css/sticky_header.css"			
+			},
+			{
+				"index": "js",
+				"file1": "carousel/js/carousel.js",
+				"file2": "carousel/js/parallax_header.js"
+			}
+		]
+}

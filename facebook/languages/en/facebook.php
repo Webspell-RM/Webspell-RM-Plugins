@@ -1,0 +1,41 @@
+<?php
+
+$language_array = array(
+
+   'title'                => 'Facebook',
+   'no_facebook'          => 'No Facebook',
+   'access_denied'        => '<h3>Info</h3><div class="alert alert-danger"><span class="sr-only">Error:</span><strong>Access denied</strong> </div>',
+   'request_success'      => '<div class="alert alert-success" role="alert"><strong>Well done!</strong> Request completed successfully.</div>',
+   'fb1_activ'            => 'Display 1',
+   'fb2_activ'            => 'Display 2',
+   'fb3_activ'            => 'Display 3',
+   'fb4_activ'            => 'Display 4',
+   'social_setting'       => 'Enter Facebook address',
+   'options'              => 'Options',
+   'tooltip_1'            => 'Address will be entered in social media settings',
+   'transaction_invalid'  => 'Transaction invalid',
+   'really_delete'        => 'Really delete this information?',
+   'yes'                  => 'Yes',
+   'no'                   => 'No',
+   'delete'               => 'Delete',
+   'options'              => 'Options',
+   'edit'                 => 'Change',
+   'close'                => 'Close',
+   'is_displayed'         => 'Is it displayed?',
+   'to_sort'              => 'Sort',
+   'sort'                 => 'Sorting',
+   'no_entries'           => '<blockquote>No entries</blockquote>',
+   'actions'              => 'Actions',
+   'new_facebook'         => 'New post',
+   'facebook_title'       => 'Post title',
+   'facebook_address_id'  => 'Post ID',
+   'facebook_name'        => 'Facbook Name',
+   'edit_facebook'        => 'Change post',
+   'add_facebook'         => 'Add post',
+   'facebook_setting'     => 'Facebook Setting',
+   'tooltip_2'            => 'Various Facebook representations',
+   'update'               => 'Update',
+   'facebook_height'      => 'Window height',
+   'transaction_invalid'  => 'Transaction invalid'
+);
+

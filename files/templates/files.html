@@ -1,0 +1,341 @@
+<!-- files_title_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle
+</div>
+<!-- END -->
+
+<!-- files_overview_head -->
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <h4>$statistic</h4>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">$files_cl <span class="badge bg-secondary float-end">$totalfiles</span> </li>
+                    <li class="list-group-item">$categories_cl <span class="badge bg-secondary float-end">$totalcats</span> </li>
+                    <li class="list-group-item">$database_cl <span class="badge bg-secondary float-end">$hddspace</span> </li>
+                    <li class="list-group-item">$traffic_cl <span class="badge bg-secondary float-end">$traffic</span> </li>
+                    <li class="list-group-item">$last_uploaded_file <span class="float-end"><b>$lastfile</b></span></li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                $top5
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<div class="card">
+    <div class="card-body">
+        <h4>$file_categories</h4>
+        <div class="row">
+            <div class="col p-2">
+                $category_cl
+            </div>
+            <div class="col-5 p-2">
+                $subcategories
+            </div>
+            <div class="col-1 d-none d-sm-block p-2">
+                $files_cl
+            </div>
+            <div class="col-2 p-2">
+                $dl
+            </div>
+        </div>
+<!-- END -->
+<!-- files_category -->
+        <div class="row border-top">
+            <div class="col p-2">
+                $catname
+            </div>
+            <div class="col-5 p-2">
+                $subcategories
+            </div>
+            <div class="col-1 d-none d-sm-block p-2">
+                $catFileTotal
+            </div>
+            <div class="col-2 p-2">
+                $downloads
+            </div>
+        </div>
+<!-- END -->
+<!-- files_overview_foot -->
+    </div>
+</div>
+<!-- END -->
+<!-- files_category_list_head -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.php?site=files">$files_cl</a></li>
+        <li class="breadcrumb-item active" aria-current="page">$category</li>
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-body">
+        <h4>$file_info</h4>
+       <div class="row">
+            <div class="col p-2">
+                $filename
+            </div>
+            <div class="col-md-7 d-none d-sm-block p-2">
+                $description
+            </div>
+            <div class="col-md-1 d-none d-sm-block p-2">
+                $downloads_cl
+            </div>
+            <div class="col-2 p-2">
+                $dl
+            </div>
+        </div>
+<!-- END -->
+<!-- files_category_list -->
+        <div class="row border-top">
+            <div class="col p-2">
+                $filename
+            </div>
+            <div class="col-md-7 d-none d-sm-block p-2">
+                $fileinfo
+            </div>
+            <div class="col-1 d-none d-sm-block p-2">
+                $fileload
+            </div>
+            <div class="col-2 p-2">
+                $link
+            </div>
+        </div>
+<!-- END -->
+<!-- files_category_list_foot -->
+    </div>
+</div>
+<!-- END -->
+<!-- files_display -->
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.php?site=files">$files_cl</a></li>
+        $category
+        <li class="breadcrumb-item active" aria-current="page">$filename</li>
+    </ol>
+</nav>
+
+<div class="card">
+    <div class="card-body">
+        <h4>$file_info</h4>
+        <div class="row">
+            <div class="col-3 p-2">
+                $file_name:
+            </div>
+            <div class="col-9 p-2">
+                <h6>$filename</h6>
+            </div>
+        </div>    
+        <div class="row border-top">    
+            <div class="col-3 p-2">
+                $category_cl:
+            </div>
+            <div class="col-9 p-2">
+                $categories
+            </div>
+        </div>    
+        <div class="row border-top">     
+            <div class="col-md-3 col-sm-12 p-2">
+                $info_description:
+            </div>
+            <div class="col-md-9 col-sm-12 p-2">
+                $fileinfo
+            </div>
+        </div>    
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $uploader_dl:
+            </div>
+            <div class="col-9 p-2">
+                $uploader
+            </div>
+        </div>    
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $uploaded_on:
+            </div>
+            <div class="col-8 p-2">
+                $date
+            </div>
+        </div> 
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $update_on:
+            </div>
+            <div class="col-9 p-2">
+                $update
+            </div>
+        </div>   
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $size:
+            </div>
+            <div class="col-9 p-2">
+                $filesize
+            </div>
+        </div>    
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $downloads_cl:
+            </div>
+            <div class="col-9 p-2">
+                $downloads x
+            </div>    
+        </div>    
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $traffic_cl:
+            </div>
+            <div class="col-9 p-2">
+                $traffic
+            </div> 
+        </div>    
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $rating:
+            </div>
+            <div class="col-9 p-2">
+                $ratingpic ($votes $lang_votes)
+            </div> 
+        </div>    
+        <div class="row border-top">
+            <div class="col-3 p-2">
+                $rate_now:
+            </div>
+            <div class="col-9 p-2">
+                $rateform
+            </div> 
+        </div>    
+        <div class="row border-top">
+            <div class="col-3 p-2">
+                $download_direct:
+            </div>
+            <div class="col-9 p-2">
+                $link
+            </div>
+        </div>    
+        <div class="row border-top">     
+            <div class="col-3 p-2">
+                $mirrors:
+            </div>
+            <div class="col-9 p-2">
+                $mirrorlist
+            </div>     
+        </div>    
+        <div class="row border-top">
+            <div class="col text-end p-2">
+                $reportlink
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END -->
+<!-- files_category_head -->
+<!--<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php?site=files">$files_cl</a></li>
+    <li class="breadcrumb-item active" aria-current="page">$category</li>
+  </ol>
+</nav>-->
+<!-- END -->
+<!-- files_subcat_list_head -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php?site=files">$files_cl</a></li>
+    <li class="breadcrumb-item active" aria-current="page">$category</li>
+  </ol>
+</nav>
+
+<div class="card">
+    <div class="card-body">
+        <h4>$subcategories</h4>
+        <div class="row">
+            <div class="col p-2">
+                $category_cl
+            </div>
+            <div class="col-5 p-2">
+                $subcategories
+            </div>
+            <div class="col-1 d-none d-sm-block p-2">
+                $files_cl
+            </div>
+            <div class="col-2 p-2">
+                $dl
+            </div>
+        </div>
+<!-- END -->
+<!-- files_subcat_list -->
+        <div class="row border-top">
+            <div class="col p-2">
+                $catname
+            </div>
+            <div class="col-5 p-2">
+                $subcategories
+            </div>
+            <div class="col-1 d-none d-sm-block p-2">
+                $cat_file_total
+            </div>
+            <div class="col-2 p-2">
+                $downloads
+            </div>
+        </div>
+<!-- END -->
+<!-- files_subcat_list_foot -->
+    </div>
+</div> <br>       
+<!-- END -->
+
+<!-- files_report_deadlink_loggedin -->
+<form action="index.php?site=report" name="report_$type_$id" method="post" onsubmit="return validate()" class="form-horizontal">
+    <input type="hidden" name="mode" value="$mode">
+    <input type="hidden" name="type" value="$type">
+    <input type="hidden" name="id" value="$id">
+    <input type="hidden" name="referer" value="$referer">
+    <div class="card">
+        <div class="card-body">
+            <h4>$report_dead_link</h4>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"> $leave_description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
+            </div>
+            <div class="col-md-12 text-end">
+                <input type="submit" name="confirm" value="$report" class="btn btn-primary">
+                <input type="reset" name="reset" value="$reset" class="btn btn-warning">
+            </div>
+        </div>
+    </div>
+</form>
+<!-- END -->
+<!-- files_report_deadlink_notloggedin -->
+<form action="index.php?site=report" name="report_$type_$id" method="post" onsubmit="return validate()" class="form-horizontal">
+    <input type="hidden" name="mode" value="$mode">
+    <input type="hidden" name="type" value="$type">
+    <input type="hidden" name="id" value="$id">
+    <input type="hidden" name="referer" value="$referer">
+    <div class="card">
+        <div class="card-body">
+            <h4>$report_dead_link</h4>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label"> $leave_description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-7">
+                    <span class="input-group-text" style="width: 100%; " id="basic-addon3">$security_code:&nbsp;&nbsp;$_captcha</span>            
+                </div>
+                <div class="col-md-5 text-end">
+                    <input type="submit" name="confirm" value="$report" class="btn btn-primary">
+                    <input type="reset" name="reset" value="$reset" class="btn btn-warning">
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<!-- END -->

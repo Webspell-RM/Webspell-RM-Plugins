@@ -1,0 +1,524 @@
+<!-- admin_calendar_head -->
+<div class="card">
+            <div class="card-header">
+                            <i class="fas fa-calendar-times"></i>  $calendar</div>
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_calendar">$calendar</a></li>
+                <li class="breadcrumb-item active" aria-current="page">New / Edit</li>
+                </ol>
+            </nav>  
+<div class="card-body">
+<!-- END -->
+
+<!-- admin_calendar_date_details -->
+<div class="card">
+  <div class="card-body">
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="2">$lang_eventdetails: $title</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>$lang_start_datetime</td>
+            <td>$date - $time</td>
+        </tr>
+        <tr>
+            <td>$lang_end_datetime</td>
+            <td>$enddate - $endtime</td>
+        </tr>
+        <tr>
+            <td>$lang_location</td>
+            <td>$location</td>
+        </tr>
+        <tr>
+            <td>$lang_information</td>
+            <td>$dateinfo</td>
+        </tr>
+       <tr>
+            <td>$lang_announcements</td>
+             <td>$announce</td>
+        </tr>
+        <tr><td colspan="2">$lang_status <span class="badge badge-bg-success">$lang_yes</span>
+            <span class="badge badge-bg-danger">$lang_no</span>
+                <span class="badge badge-bg-warning">$lang_perhaps</span>
+                <br><br>$players $adminaction
+            </td>   
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+<!-- END -->
+
+<!-- admin_calendar_war_details -->
+<div class="card">
+  <div class="card-body">
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+            <th colspan="2">$lang_clanwardetails:</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>$lang_date_time</td>
+            <td>$date - $time</td>
+        </tr>
+        <tr>
+            <td>$lang_squad</td>
+            <td>$squad</td>
+        </tr>
+        <tr>
+            <td>$lang_opponent</td>
+            <td>$opponent</td>
+        </tr>
+        <tr>
+            <td>$lang_league</td>
+            <td>$league</td>
+        </tr>
+        <tr>
+            <td>$lang_maps</td>
+            <td>$maps</td>
+        </tr>
+        <tr>
+            <td>$lang_server</td>
+            <td>$server</td>
+        </tr>
+        <tr>
+            <td>$lang_information:</td>
+            <td>$warinfo</td>
+        </tr>
+        <tr><td colspan="2">$lang_status <span class="badge badge-bg-success">$lang_yes</span>
+            <span class="badge badge-bg-danger">$lang_no</span>
+                <span class="badge badge-bg-warning">$lang_perhaps</span>
+                <br><br>$players $adminaction
+            </td>   
+        </tr>
+        </tbody>
+    </table>
+</div>
+</div></div>
+
+<!-- END -->
+
+<!-- admin_calendar_war_new -->
+<script>
+    <!--
+    function chkFormular() {
+        if (!validbbcode(document.getElementById('message').value)) {
+
+            return false;
+        }
+        squad_box = document.getElementById("squad");
+        if (squad_box.options.length) {
+            if (squad_box.options[squad_box.selectedIndex].value === "") {
+
+                return false;
+            }
+        }
+        else {
+
+            return false;
+        }
+    }
+    -->
+</script>
+<div class="card">
+  <div class="card-header">
+    $lang_new_war
+  </div>
+  <div class="card-body">
+
+        <form action="admincenter.php?site=admin_calendar&action=savewar" method="post" name="post" onsubmit="return chkFormular();">
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_date_time:</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="date" id="date" value="$date" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_squad:</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <select name="squad" id="squad" class="form-control">$squads</select></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_league</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="league" id="league" type="text" value="$league" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_leaguehp</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="leaguehp" id="leagehp" type="text" value="http://" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_opponenttag</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="opptag" id="opptag" type="text" value="$opptag" class="form-control"></em></span>
+                </div>
+            </div>
+			
+			<div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_opponent</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="opponent" id="opponent" type="text" value="$opponent" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_opponenthp</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="opphp" id="opphp" type="text" value="$opphp" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_maps</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="maps" id="maps" type="text" value="$map" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_server</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="server" id="server" type="text" value="$server" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_information</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <textarea id="message" name="message" cols="45" rows="7" class="form-control">$info</textarea></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_send_message</label>
+                <div class="col-sm-10 form-check form-switch" style="padding: 0px 43px;">
+                <input class="form-check-input" name="messages" type="checkbox" value="true" checked="checked">
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="chID" value="$chID">
+                <input type="hidden" name="userID" value="$userID">
+                <input name="post" type="submit" value="$lang_save_war" class="btn btn-success">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- END -->
+
+<!-- admin_calendar_war_edit -->
+<script>
+    <!--
+    function chkFormular() {
+        if (!validbbcode(document.getElementById('message').value)) {
+
+            return false;
+        }
+        squad_box = document.getElementById("squad");
+        if (squad_box.options.length) {
+            if (squad_box.options[squad_box.selectedIndex].value == "") {
+
+                return false;
+            }
+        } else {
+
+            return false;
+        }
+    }
+    -->
+</script>
+<div class="card">
+  <div class="card-header">
+    $lang_edit_war
+  </div>
+  <div class="card-body">
+
+        <form action="admincenter.php?site=admin_calendar&action=saveeditwar" method="post" name="post" onsubmit="return chkFormular();">
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_date_time:</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="date" id="date" value="$date" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_squad</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <select name="squad" id="squad" class="form-control">$squads</select></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_league</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="league" id="league" type="text" value="$league" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_leaguehp</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="leaguehp" id="leaguehp" type="text" value="$leaguehp" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_opponent</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="opponent" id="opponent" type="text" value="$opponent" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_opponenttag</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="opptag" id="opptag" type="text" value="$opptag" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_opponenthp</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="opphp" id="opphp" type="text" value="$opphp" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_maps</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="maps" id="maps" type="text" value="$maps" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_server</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="server" id="server" type="text" value="$server" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_information</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <textarea id="message" name="message" cols="45" rows="7" class="form-control">$warinfo</textarea></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="upID" value="$upID">
+                <input name="post" type="submit" value="$lang_updatewar" class="btn btn-warning">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- END -->
+
+<!-- admin_calendar_date_new -->
+<div class="card">
+  <div class="card-header">
+    $lang_new_date
+  </div>
+  <div class="card-body">
+
+        <form action="admincenter.php?site=admin_calendar&action=savedate" method="post" name="post" onsubmit="return chkFormular()">
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_start_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input type="datetime-local" name="date-start" id="date-start" class="form-control" value="$date"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_end_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input type="datetime-local" name="date-end" id="date-end" placeholder="yyyy-mm-dd HH:ss" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_shorttitle
+                    <small>($lang_displayed_in)</small></label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="short" id="short" type="text" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_longtitle</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="title" id="title" type="text" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_location</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="location" type="text" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_homepage</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="locationhp" id="locationhp" type="text" value="http://" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_information</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <textarea name="message" id="dateinfo" cols="40" rows="7" class="form-control" required></textarea></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-offset-2 col-sm-10">
+                <input name="post" type="submit" value="$lang_save_event" class="btn btn-success">
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- END -->
+
+<!-- admin_calendar_date_edit -->
+<div class="card">
+  <div class="card-header">
+    $lang_editevent
+  </div>
+  <div class="card-body">
+    
+        <form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_calendar&action=saveeditdate" onsubmit="return chkFormular();">
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_start_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="date-start" id="date-start" value="$date_start" class="form-control" required></em></span>
+				
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_end_datetime</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="date-end" id="date-end" value="$date_end" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_shorttitle
+                    <small>($lang_displayed_in)</small></label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="short" id="short" type="text" value="$short" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_longtitle</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="title" id="title" type="text" value="$title" class="form-control" required></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_location</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="location" type="text" value="$location" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_homepage</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <input name="locationhp" id="locationhp" type="text" value="$locationhp" class="form-control"></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2 control-label">$lang_information</label>
+                <div class="col-sm-10"><span class="text-muted small"><em>
+                <textarea name="message" class="ckeditor" id="ckeditor" cols="45" rows="7" class="form-control">$dateinfo</textarea></em></span>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <div class="col-sm-offset-2 col-sm-10">
+                <input type="hidden" name="upID" value="$upID">
+                <input name="post" type="submit" value="$lang_updateevent" class="btn btn-warning">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<!-- END -->
+
+<!-- admin_calendar_upcomingactions -->
+<li class="list-group-item">
+    <span class="badge">$date</span>
+    <a href="$upurl#event">$opponent</a>
+</li>
+<!-- END -->
+
+<!-- admin_calendar_upcomingannounce -->
+<div class="card">
+  <div class="card-header">
+    $lang_announce_to
+  </div>
+  <div class="card-body">
+    <form method="post" id="post" name="post" action="admincenter.php?site=admin_calendar&action=saveannounce"
+    enctype="multipart/form-data" onsubmit="return chkFormular();">
+
+    <div>
+        <select name="status" class="form-control">
+            <option value="y" selected="selected">$lang_yes</option>
+            <option value="n">$lang_no</option>
+            <option value="p">$lang_perhaps</option>
+        </select><br>
+        <span class="input-group-btn">
+            <input type="submit" name="submit" value="$lang_save_announcement" class="btn btn-success">
+        </span>
+    </div>
+    <input type="hidden" name="upID" value="$upID" class="form-control">
+</form>
+</div></div>
+
+<!-- END -->
+
+<!-- admin_calendar_upcomingevent -->
+<li class="list-group-item">
+    <span class="badge">$date</span>
+        <a href="$upurl#event">$eventtitle</a>
+</li>
+<!-- END -->
+

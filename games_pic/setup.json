@@ -1,0 +1,83 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "games_pic/install.php",
+				"file2": "games_pic/uninstall.php"
+			},
+			{
+				"index": "admin",
+				"file1": "games_pic/admin/admin_games_pic.php"
+			},
+			{
+				"index": "languages",
+				"file1": "games_pic/languages/de/games.php",
+				"file2": "games_pic/languages/en/games.php",
+				"file3": "games_pic/languages/it/games.php"
+			},
+			{
+				"index": "templates"
+			},
+			{
+				"index": "images",
+				"file1": "games_pic/images/apex_l.png",
+				"file2": "games_pic/images/ark_se.png",
+				"file3": "games_pic/images/ac.png",
+				"file4": "games_pic/images/bf_1.png",
+				"file5": "games_pic/images/bf_4.png",
+				"file6": "games_pic/images/bf_5.png",
+				"file7": "games_pic/images/bd.png",
+				"file8": "games_pic/images/cod_mw.png",
+				"file9": "games_pic/images/cod_wz.png",
+				"file10": "games_pic/images/ce.png",
+				"file11": "games_pic/images/cs_go.png",
+				"file12": "games_pic/images/cs_s.png",
+				"file13": "games_pic/images/dbd.png",
+				"file14": "games_pic/images/d_2.png",
+				"file15": "games_pic/images/di_3.png",
+				"file16": "games_pic/images/dac.png",
+				"file17": "games_pic/images/do_2.png",
+				"file18": "games_pic/images/d_ul.png",
+				"file19": "games_pic/images/teso.png",
+				"file20": "games_pic/images/f1_2020.png",
+				"file21": "games_pic/images/fifa_20.png",
+				"file22": "games_pic/images/wow.png",
+				"file23": "games_pic/images/ff_14.png",
+				"file24": "games_pic/images/fort.png",
+				"file25": "games_pic/images/gta_on.png",
+				"file26": "games_pic/images/gw_2.png",
+				"file27": "games_pic/images/hs_how.png",
+				"file28": "games_pic/images/h_sd.png",
+				"file29": "games_pic/images/lol.png",
+				"file30": "games_pic/images/lor.png",
+				"file31": "games_pic/images/mc.png",
+				"file32": "games_pic/images/mc_d.png",
+				"file33": "games_pic/images/mh_w.png",
+				"file34": "games_pic/images/ow.png",
+				"file35": "games_pic/images/poe.png",
+				"file36": "games_pic/images/pd_2.png",
+				"file37": "games_pic/images/pubg.png",
+				"file38": "games_pic/images/rs_s.png",
+				"file39": "games_pic/images/rd_o.png",
+				"file40": "games_pic/images/rl.png",
+				"file41": "games_pic/images/smi.png",
+				"file42": "games_pic/images/sc2_wol.png",
+				"file43": "games_pic/images/swbf2.png",
+				"file44": "games_pic/images/swbf1.png",
+				"file45": "games_pic/images/tf_t.png",
+				"file46": "games_pic/images/td2.png",
+				"file47": "games_pic/images/vt.png",
+				"file48": "games_pic/images/war_f.png",
+				"file49": "games_pic/images/wc3_roc.png",
+				"file50": "games_pic/images/wc3_ref.png",
+				"file51": "games_pic/images/wot.png",
+				"file52": "games_pic/images/no-image.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

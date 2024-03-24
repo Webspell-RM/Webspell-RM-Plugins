@@ -1,0 +1,22 @@
+.calendar-week-day div {
+    display: grid;
+    place-items: center;
+    color: var(--bg-second);
+}
+
+.calendar-day {
+    background-color: #198754;
+}
+
+.calendar-day div {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    background-color: #198754;
+    color: #fff;
+    font-size: 13px;
+}
+

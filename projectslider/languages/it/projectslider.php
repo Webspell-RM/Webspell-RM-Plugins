@@ -1,0 +1,42 @@
+<?php
+
+$language_array = Array(
+
+  'title'                =>'Progetto Slider',
+  'access_denied'        =>'Accesso negato!',
+  'actions'              =>'Azioni',
+  'add_carousel'         =>'Aggiungi Carosello',
+  'back'                 =>'Indietro',
+  'carousel_pic'         =>'Immagine Carossello',
+  'banner_to_big'        =>'L\'immagine è troppo grande',
+  'carousel_upload_info' =>'Caricamento immagine carosello',
+  'current_pic'          =>'Immagine del carosello corrente',
+  'delete'               =>'Cancella',
+  'description'          =>'Descrizione',
+  'edit'                 =>'Edita',
+  'edit_carousel'        =>'Salva Carosello',
+  'format_incorrect'     =>'Il formato dell\'immagine non è corretto. Si prega di caricare le immagini solo in formato .gif, .jpg e .png.',
+  'is_displayed'         =>'Visualizzato?',
+  'new_carousel'         =>'Nuovo Carosello',
+  'no'                   =>'No',
+  'no_upload'            =>'Nessuna immagine caricata',
+  'no_entries'           =>'Nessuna voce',
+  'really_delete'        =>'Voui davvero Cancellare questa Immagine?',
+  'sort'                 =>'Ordine',
+  'carousel'             =>'Carosello',
+  'carousel_link'        =>'Link Carosello',
+  'carousels'            =>'Caroselli',
+  'name'                 =>'Titolo',
+  'transaction_invalid'  =>'Transazione Invalida',
+  'to_sort'              =>'Ordina',
+  'yes'                  =>'Si',
+  'info'                 =>'Informazioni',
+  'sc_description'       =>'sc_Datei Info',
+  'title-ani'            =>'Animazione del Titolo',
+  'link-ani'             =>'Animazione Link',
+  'privacy_policy_title' =>'Titolo dell\'Informativa sulla Privacy',
+  'privacy_policy_text'  =>'Testo dell\'Informativa sulla Privacy',
+  'options'              =>'Opzionii',
+  'description-ani'      =>'Animazione Descrizione'
+);
+

@@ -1,0 +1,33 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "guestbook/install.php",
+				"file2": "guestbook/uninstall.php",
+				"file3": "guestbook/guestbook.php"
+
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "guestbook/languages/de/guestbook.php",
+				"file2": "guestbook/languages/en/guestbook.php",
+				"file3": "guestbook/languages/it/guestbook.php"
+			},
+			{
+				"index": "templates",
+				"file1": "guestbook/templates/guestbook.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

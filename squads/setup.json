@@ -1,0 +1,46 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "squads/install.php",
+				"file2": "squads/uninstall.php",
+				"file3": "squads/squads.php",
+				"file4": "squads/widget_squads_roster.php",
+				"file5": "squads/widget_squads_content.php",
+				"file6": "squads/widget_squads_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "squads/admin/admin_squads.php"
+			},
+			{
+				"index": "language",
+				"file1": "squads/languages/de/squads.php",
+				"file2": "squads/languages/en/squads.php",
+				"file3": "squads/languages/it/squads.php"
+			},
+			{
+				"index": "templates",
+				"file1": "squads/templates/squads.html",
+				"file2": "squads/templates/switchsquads.html"
+			},
+			{
+				"index": "images",
+				"file1": "squads/images/nouserpic.png",
+				"file2": "squads/images/widget_squads_content.jpg",
+				"file3": "squads/images/widget_squads_roster.jpg",
+				"file4": "squads/images/widget_squads_sidebar.jpg",
+				"file5": "squads/images/widget_squads_content_1.jpg",
+				"file6": "squads/images/widget_squads_content_2.jpg",
+				"file7": "squads/images/squadicons/no-image.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "squads/css/squads.css"
+			},
+			{
+				"index": "js",
+				"file1": "squads/js/owl.carousel.js"
+			}
+		]
+}

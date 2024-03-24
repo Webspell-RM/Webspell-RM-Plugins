@@ -1,0 +1,34 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "videos/update.php",
+				"file2": "videos/install.php",
+				"file3": "videos/uninstall.php",
+				"file4": "videos/widget_videos_sidebar.php",
+				"file5": "videos/widget_videos_sidebar_coincidence.php"
+
+			},
+			{
+				"index": "admin",
+				"file1": "videos/admin/admin_videos.php"
+			},
+			{
+				"index": "language"
+			},
+			{
+				"index": "templates",
+				"file1": "videos/templates/videos.html",
+				"file2": "videos/templates/admin_videos.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

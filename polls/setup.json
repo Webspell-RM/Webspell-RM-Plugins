@@ -1,0 +1,45 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "polls/install.php",
+				"file2": "polls/uninstall.php",
+				"file3": "polls/polls.php",
+				"file4": "polls/widget_polls_sidebar.php",
+				"file5": "polls/polls_comments.php",
+				"file6": "polls/polls_functions.php"
+			},
+			{
+				"index": "admin",
+				"file1": "polls/admin/admin_polls.php"
+			},
+			{
+				"index": "languages",
+				"file1": "polls/languages/de/polls.php",
+				"file2": "polls/languages/de/admin_polls.php",
+				"file3": "polls/languages/de/comments.php",
+				"file4": "polls/languages/en/polls.php",
+				"file5": "polls/languages/en/admin_polls.php",
+				"file6": "polls/languages/en/comments.php",
+				"file7": "polls/languages/it/polls.php",
+				"file8": "polls/languages/it/admin_polls.php",
+				"file9": "polls/languages/it/comments.php"
+			},
+			{
+				"index": "templates",
+				"file1": "polls/templates/polls.html",
+				"file2": "polls/templates/admin_polls.html",
+				"file3": "polls/templates/comments.html"
+			},
+			{
+				"index": "images",
+				"file1": "polls/images/widget_polls_sidebar.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

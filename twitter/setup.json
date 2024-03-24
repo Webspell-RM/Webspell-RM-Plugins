@@ -1,0 +1,38 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "twitter/install.php",
+				"file2": "twitter/uninstall.php",
+				"file3": "twitter/twitter.php",
+				"file4": "twitter/widget_twitter_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "twitter/admin/admin_twitter.php"
+			},
+			{
+				"index": "languages",
+				"file1": "twitter/languages/de/twitter.php",
+				"file2": "twitter/languages/en/twitter.php",
+				"file3": "twitter/languages/it/twitter.php"
+			},
+			{
+				"index": "templates",
+				"file1": "twitter/templates/twitter.html"
+			},
+			{
+				"index": "images",
+				"file1": "twitter/images/twitter-logo.png",
+				"file2": "twitter/images/widget_twitter_sidebar.jpg",
+				"file3": "twitter/images/twitter-offline.png"
+			},
+			{
+				"index": "css",
+				"file1": "twitter/css/twitter.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

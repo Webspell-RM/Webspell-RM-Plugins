@@ -1,0 +1,40 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "forum/update.php",
+				"file2": "forum/install.php",
+				"file3": "forum/uninstall.php",
+				"file4": "forum/forum.php",
+				"file5": "forum/forum_topic.php",
+				"file6": "/../modules/myprofile.php",
+				"file7": "/../../system/functions.php",
+				"file8": "/../../system/ckeditor.php",
+				"file9": "/../../components/ckeditor/user_config.js",
+				"file10": "/../../components/ckeditor/admin_config.js",
+				"file11": "forum/widget_forum_sidebar.php"
+
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language"
+			},
+			{
+				"index": "templates",
+				"file1": "forum/templates/widget_forum_sidebar.html"
+			},
+			{
+				"index": "images"
+
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+
+		]
+}

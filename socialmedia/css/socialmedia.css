@@ -1,0 +1,93 @@
+.socialmedia {
+    color: rgba(var(--bs-body-color),1);
+    border-top:1px solid rgba(var(--bs-card-border-color-rgb), 1);
+    /*padding: 10px;*/
+    height:190px;
+    text-align:center;
+    padding-top:40px;
+    padding-left:120px;
+    background-color: #000;
+    background-image: url('/includes/plugins/socialmedia/images/bg-topmatch.png');
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;}
+
+.social-media-text {
+    height:190px;
+    text-align:center;
+    padding-top:5px;
+    font-size:15px;
+    color: #fff;
+}
+         
+.social-headline {
+    font-size:25px;
+    font-weight:bold;
+    font-family:[SourceSansPro];
+    color: #fff;
+}
+
+#social-media-buttons .twitter {
+  color: #fff;  
+}
+#social-media-buttons .twitter:hover {
+  color: #179cf0;
+}
+
+#social-media-buttons .facebook {
+  color: #fff;
+}
+#social-media-buttons .facebook:hover {
+  color: #3b5998;
+}
+
+#social-media-buttons .twitch {
+  color: #fff;
+}
+#social-media-buttons .twitch:hover {
+    color: #9147ff;
+}
+#social-media-buttons .youtube {
+  color: #fff;
+} 
+#social-media-buttons .youtube:hover {
+    color: #ff0000;
+}
+          
+#social-media-buttons {
+    padding-top:20px;
+    padding-right:20px;
+    text-align:left;
+}
+
+
+
+@media (min-width: 768px) {
+  
+}
+
+
+@media (max-width: 768px) {
+.social-media {
+    height: 100%;
+    text-align: center;
+    padding-top: 50px;
+    padding-left: 0px;
+}
+
+.social-media-text {
+    height: 30px;
+    text-align: center;
+    padding-top: 5px;
+    font-size: 15px;
+    color: #FFFFFF;
+}
+
+#social-media-buttons {
+    padding-top: 20px;
+    padding-right: 20px;
+    text-align: left;
+    padding-bottom: 20px;
+}
+}

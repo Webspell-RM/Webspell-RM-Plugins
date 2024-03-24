@@ -1,0 +1,55 @@
+﻿<?php
+
+$language_array = Array(
+
+  'access_denied'           => 'Zugriff verweigert',
+  'actions'                 => 'Aktionen',
+  'add_links'               => 'Links hinzufügen',
+  'answer'                  => 'Antwort',
+  'category'                => 'Kategorie',
+  'delete'                  => 'Löschen',
+  'edit'                    => 'Ändern',
+  'edit_links'              => 'Links ändern',
+  'description'             => 'Beschreibung',
+  'links'                   => 'Links',
+  'information_incomplete'  => 'Angaben unvollständig.',
+  'new_links'               => 'Neue Links',
+  'no_category_selected'    => 'Du hast vergessen eine Kategorie auszuwählen',
+  'no_links_selected'       => 'Keine Links Kategorie ausgewählt',
+  'really_delete_links'     => 'Diese Links wirklich löschen?',
+  'sort'                    => 'Sortierung',
+  'to_sort'                 => 'Sortieren',
+  'transaction_invalid'     => 'Transaktions ID ungültig',
+  'tags'                    => 'Tags',
+  'new_category'            => 'Neue Kategorie',
+  'title'                   => 'Links',
+  'options'                 => 'Optionen',
+  'homepage'                => 'Homepage URL',
+  'banner'                  => 'Banner',
+  'banner_to_big'           => 'Bild ist zu groß',
+  'format_incorrect'        => 'Nicht erlaubtes Bildformat (erlaubt: *.gif, *.jpg oder *.png)',
+  'current_banner'          => 'Aktueller Banner',
+  'name'                    => 'Überschrift',
+  'add_category'            => 'Kategorie hinzufügen',
+  'category_name'           => 'Kategorie Name',
+  'description'             => 'Beschreibung',
+  'edit_category'           => 'Kategorie ändern',
+  'links_categorys'         => 'Links Kategorien',
+  'new_category'            => 'Neue Kategorie',
+  'really_delete_cat'       => 'Diese Kategorie inkl. aller Links wirklich löschen?',
+  'is_displayed'            => 'Wird angezeigt?',
+  'no'                      => 'Nein',
+  'yes'                     => 'Ja',
+  'settings'                => 'Links-Einstellungen',
+  'max_links'               => 'Links pro Seite',
+  'tooltip_1'               => 'Maximale Links pro Seite',
+  'max_content'             => 'Max. Länge der Links',
+  'tooltip_2'               => 'Maximale Länge für die Links',
+  'update'                  => '&Auml;ndern',
+  'close'                   => 'Close',
+
+
+  
+);
+
+

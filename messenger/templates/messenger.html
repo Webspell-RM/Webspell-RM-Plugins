@@ -1,0 +1,351 @@
+<!-- messenger_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- messenger_incoming_head -->
+<div class="card">
+    <div class="card-body">
+<form method="post" action="index.php?site=messenger&amp;action=incoming">
+    <div class="row">
+        <div class="col-md-4">
+            $sorter $page_link
+        
+        </div>
+       
+    <div class="col-md-6" style="text-align: right; margin-top: 5px">$messages_per_page</div>
+        <div class="form-group col-md-2">
+            <div class="input-group">
+                    <input style="width: 50px;margin-right: 8px;" type="text" name="entries" size="2" value="$max" class="form-control mr-1" autofocus>
+                <span class="input-group-btn text-end">
+                    <input type="submit" value="$show" class="btn btn-primary messenger sl-btn">
+                </span>
+            </div>
+        </div>
+    </div>
+</form><br>
+
+<form method="post" name="form" action="index.php?site=messenger&action=incoming">
+    <div class="btn-group btn-group-justified">
+        <span class="btn btn-primary messenger">$incoming</span>
+        <a href="index.php?site=messenger&amp;action=outgoing" class="btn btn-secondary  messenger">$outgoing</a>
+        <a href="index.php?site=messenger&amp;action=newmessage" class="btn btn-secondary  messenger">$new_message</a>
+    </div>
+    <br>
+
+    <table class="table mt-3">
+        <tr>
+            <td></td>
+            <th><strong>$message</strong></th>
+            <th><strong>$from</strong></th>
+            <th><strong>$date</strong></th>
+        </tr>
+<!-- END -->
+<!-- messenger_incoming_content -->
+<tr>
+    <td><input type="checkbox" name="messageID[]" value="$messageID"> $icon</td>
+    <td>$title</td>
+    <td>$sender $member $statuspic</td>
+    <td>$date</td>
+</tr>
+<!-- END -->
+<!-- messenger_incoming_foot -->
+</table>
+<div class="row">
+    <div class="col-lg-8">
+        <input style="margin: 8px" type="checkbox" name="ALL" value="ALL" onclick="SelectAll(this.form);"> $select_all
+    </div>
+
+    <div class="col-lg-4">
+        <div class="row">
+            <div class="col-lg-8 text-end"><select style="width: 280px" name="quickactiontype" class="form-select mr-2">
+                <option value="viewed">$mark_viewed</option>
+                <option value="notviewed">$mark_not_viewed</option>
+                <option value="delete">$delete</option>
+            </select>
+            </div>
+            <div class="col-lg-2 text-end">
+                <input style="margin-left: 15px" type="submit" name="quickaction" value="$execute" class="btn btn-primary messenger sl-btn">
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+</div>
+</div>
+<!-- END -->
+<!-- messenger_outgoing_head -->
+<div class="card">
+    <div class="card-body">
+<form method="post" action="index.php?site=messenger&amp;action=outgoing">
+    <div class="row">
+        <div class="col-md-4">
+            $sorter $page_link
+        </div>
+
+        <div class="col-md-6" style="text-align: right; margin-top: 5px">$messages_per_page</div>
+        <div class="form-group col-md-2">
+            <div class="input-group">
+                    <input style="width: 50px" type="text" name="entries" size="2" value="$max" class="form-control mr-1" autofocus>
+                <span class="input-group-btn">
+                    <input type="submit" value="$show" class="btn btn-primary messenger sl-btn">
+                </span>
+            </div>
+        </div>
+    </div>
+</form><br>
+
+<form method="post" name="form" action="index.php?site=messenger">
+    <div class="btn-group btn-group-justified">
+        <a href="index.php?site=messenger" class="btn btn-secondary  messenger">$incoming</a>
+        <span class="btn btn-primary messenger">$outgoing</span>
+        <a href="index.php?site=messenger&amp;action=newmessage" class="btn btn-secondary  messenger">
+            $new_message
+        </a>
+    </div>
+    <br>
+
+    <table class="table mt-3">
+        <tr>
+            <td></td>
+            <th><strong>$message</strong></th>
+            <th><strong>$receptionist</strong></th>
+            <th><strong>$date</strong></th>
+        </tr>
+<!-- END -->
+<!-- messenger_outgoing_content -->
+<tr>
+    <td><input type="checkbox" name="messageID[]" value="$messageID"></td>
+    <td>$title</td>
+    <td>$receptionist $member $statuspic</td>
+    <td>$date</td>
+</tr>
+<!-- END -->
+<!-- messenger_outgoing_foot -->
+</table>
+<div class="row">
+    <div class="col-lg-6">
+        <input style="margin: 8px" type="checkbox" name="ALL" value="ALL" onclick="SelectAll(this.form);"> $select_all
+    </div>
+
+    <div class="col-lg-6 text-end">
+        <input type="submit" name="delete" value="$delete_selected" class="btn btn-danger messenger">
+    </div>
+</div></form></div></div>
+<!-- END -->
+<!-- messenger_show -->
+<div class="card">
+    <div class="card-body">
+<form method="post" action="index.php?site=messenger">
+
+    <div class="btn-group btn-group-justified">
+        <a href="index.php?site=messenger" class="btn btn-secondary  messenger">$incoming</a>
+        <a href="index.php?site=messenger&amp;action=outgoing" class="btn btn-secondary  messenger">$outgoing</a>
+        <a href="index.php?site=messenger&amp;action=newmessage" class="btn btn-secondary  messenger">$new_message</a>
+        <span class="btn btn-primary messenger"><strong>&nbsp;$read&nbsp;</strong></span>
+    </div>
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-6"><h4><i class="bi bi-chat-fills"></i> $title</h4></div>
+        <div class="col-md-6 text-end">$date $by $sender</div>
+    </div>
+    <div class="" style="background-color: #fff; padding: 10px;border: 1px solid rgb(170,170,170) !important; border-radius: 0px;">
+            $message
+        
+    </div>
+    <br>
+    <div class="row">
+    <div class="col-lg-6">
+        
+    </div>
+
+    <div class="col-lg-6 text-end">
+        <input type="hidden" name="quickaction" value="true">
+    <input type="hidden" name="quickactiontype" value="delete">
+    <input type="hidden" name="messageID[]" value="$id">
+    <a href="index.php?site=messenger&action=reply&id=$id" class="btn btn-primary messenger">$reply</a>
+    <input type="submit" value="$delete" class="btn btn-danger messenger">
+    </div>
+</div>
+    
+</form>
+</div>
+</div>
+<!-- END -->
+<!-- messenger_new_touser -->
+<div class="card">
+    <div class="card-body">
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('message').value == "") {
+            alert("You have to enter a message!");
+            document.getElementById('message').focus();
+
+            return false;
+        }
+    }
+    -->
+</script>
+
+<form method="post" action="index.php?site=messenger" id="post" name="post" onsubmit="return chkFormular()">
+    <div class="btn-group btn-group-justified">
+        <a href="index.php?site=messenger" class="btn btn-secondary  messenger">$incoming</a>
+        <a href="index.php?site=messenger&action=outgoing" class="btn btn-secondary  messenger">$outgoing</a>
+        <span class="btn btn-primary messenger"><strong>&nbsp;$new_message&nbsp;</strong></span>
+    </div>
+    <br><br>
+
+    <div class="row">
+        <div class="col-md-1 col-lg-2 col-msg"><strong>$recipient:</strong></div>
+        <div class="col-md-2"><H5>$tousernick</H5></div>
+    </div>
+
+<div class="row">
+        <div class="col-md-6 mb-3"><strong>$title_head:</strong> <input name="title" type="text" size="60" class="form-control"></div>
+        <div class="col-md-6 text-end"></div>
+   <br><br>
+
+<div class="col-md-12">  
+<strong>$your_message</strong><br>
+                            <textarea class="ckeditor" id="ckeditor" name="message" cols="35" rows="15"></textarea>
+</div>
+ </div>
+    <br>
+<div class="row">
+    <div class="col-lg-6">
+        
+    </div>
+
+    <div class="col-lg-6 text-end">
+     <input type="hidden" name="id" value="$touser">
+                            <input class="btn btn-primary messenger" name="reply" type="submit" value="$send_message">
+    </div>
+</div>
+    
+</form>
+</div>
+</div>
+<!-- END -->
+<!-- messenger_reply -->
+<div class="card">
+    <div class="card-body">
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('message').value === "") {
+            alert("You have to enter a message!");
+            document.getElementById('message').focus();
+
+            return false;
+        }
+    }
+    -->
+</script>
+
+<form method="post" action="index.php?site=messenger" id="post" name="post" onsubmit="return chkFormular()">
+    <div class="btn-group btn-group-justified">
+        <a href="index.php?site=messenger" class="btn btn-secondary  messenger">$incoming</a>
+        <a href="index.php?site=messenger&action=outgoing" class="btn btn-secondary  messenger">$outgoing</a>
+        <span class="btn btn-primary messenger"><strong>&nbsp;$reply&nbsp;</strong></span>
+    </div>
+     <br><br>
+
+    <div class="row">
+        <div class="col-md-2 col-lg-2 col-msg"><strong>$recipient:</strong></div>
+        <div class="col-md-4"><H5>&nbsp;&nbsp;$tousernick</H5></div>
+    </div>
+
+<div class="row">
+        <div class="col-md-2 col-lg-2 col-msg"><strong>$title_head:</strong></div>
+        <div class="col-md-4">
+        <input type="text" name="title" size="60" value="$title" class="form-control"></div>
+   
+<div class="col-md-12">  
+<strong>$your_message</strong><br>
+                            <textarea class="ckeditor" id="ckeditor" name="message" rows="10">$message</textarea>
+</div>
+ </div>
+    <br>
+<div class="row">
+    <div class="col-lg-6">
+        
+    </div>
+
+    <div class="col-lg-6 text-end">
+     <input type="hidden" name="id" value="$replytouser">
+        <input class="btn btn-primary messenger" name="reply" type="submit" value="$send_message">
+    </div>
+</div>
+    
+</form>
+</div>
+</div>
+<!-- END -->
+<!-- messenger_new -->
+<div class="card">
+    <div class="card-body">
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('message').value == "") {
+            alert("%enter_message%");
+            document.getElementById('message').focus();
+
+            return false;
+        }
+    }
+
+    -->
+</script>
+
+<form method="post" action="index.php?site=messenger" id="post" name="post" onsubmit="return chkFormular()">
+    <div class="btn-group btn-group-justified">
+        <a href="index.php?site=messenger" class="btn btn-secondary  messenger">$incoming</a>
+        <a href="index.php?site=messenger&amp;action=outgoing" class="btn btn-secondary  messenger">$outgoing</a>
+        <span class="btn btn-primary messenger">$new_message</span>
+    </div>
+     <br>
+$error <br>
+    <div class="row">
+
+        <div class="col-md-2 col-lg-2 col-msg"><strong>$recipient:</strong></div>
+        <div class="col-md-4">
+            <input id="recipient" name="touser_field" type="text" class="form-control" placeholder="$enter_username">
+            </div>
+            $or
+            <div class="col-md-4">
+        <select name="touser[]" size="1" class="form-control">$user</select>
+        </div>
+    </div>
+<br>
+<div class="row">
+        <div class="col-md-2 col-lg-2 col-msg"><strong>$title_head:</strong></div>
+        <div class="col-md-4 text-right">
+        <input id="title" name="title" value="$subject" type="text" class="form-control mr-2" autofocus></div>
+   
+<div class="col-md-12">  
+<strong>$your_message</strong><br>
+                            <textarea class="ckeditor" id="ckeditor" name="message" rows="10">$message</textarea>
+</div>
+ </div>
+    <br>
+<div class="row">
+    <div class="col-lg-6">
+       $admin  
+    </div>
+
+    <div class="col-lg-6 text-end">
+     <input type="submit" name="send" value="$send_message" class="btn btn-primary messenger">
+    </div>
+</div>
+  
+</form>
+</div>
+</div>
+<!-- END -->

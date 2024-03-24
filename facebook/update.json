@@ -1,0 +1,48 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "facebook/update.php",
+				"file2": "facebook/install.php",
+				"file3": "facebook/uninstall.php",
+				"file4": "facebook/widget_facebook_sidebar.php",
+				"file5": "facebook/widget_facebook_sidebar_verdux.php",
+				"file6": "facebook/facebook.php"
+			},
+			{
+				"index": "admin",
+				"file1": "facebook/admin/admin_facebook.php"
+			},
+			{
+				"index": "languages",
+				"file1": "facebook/languages/de/facebook.php",
+				"file2": "facebook/languages/en/facebook.php",
+				"file3": "facebook/languages/it/facebook.php"
+			},
+			{
+				"index": "templates",
+				"file1": "facebook/templates/facebook.html",
+				"file2": "facebook/templates/facebook_verdux.html"
+			},
+			{
+				"index": "images",
+				"file1": "facebook/images/fb1.png",
+				"file2": "facebook/images/fb2.png",
+				"file3": "facebook/images/fb3.png",
+				"file4": "facebook/images/fb4.png",
+				"file5": "facebook/images/widget_facebook_sidebar.jpg",
+				"file6": "facebook/images/widget_facebook_sidebar_verdux.jpg",
+				"file7": "facebook/images/facebook-offline.png",
+				"file8": "facebook/images/facebook.png",
+				"file9": "facebook/images/facebook.svg"
+			},
+			{
+				"index": "css",
+				"file1": "facebook/css/facebook.css"
+			},
+			{
+				"index": "js",
+				"file1": "facebook/js/facebook.js"
+			}
+		]
+}

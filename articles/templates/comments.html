@@ -1,0 +1,175 @@
+<!-- comments_title -->
+<h2><span><i class="bi bi-chat-fills"></i>&nbsp;$comments</span></h2>
+<!-- END -->
+<!-- comments_head -->
+<div class="card">
+    <div class="card-body">
+        <form name="form" method="post" action="index.php?site=articles_comments&delete=true">
+    <!--$sorter-->
+<!-- END -->
+<!-- comments_content_area -->
+        <div class="row">
+            <div class="col-md-3">
+                $avatar $poster $member
+            </div>
+            <div class="col-md-9">
+            <div style="background-color: #fff; padding: 10px;">
+                $contents
+            </div>
+        </div>
+        </div>    
+        <div class="text-end">  <small>$date</small>            
+            $edit $actions
+        </div>     
+        <hr>
+<!-- END -->
+<!-- comments_foot -->
+    <div class="row">
+        <div class="col-md-2">$page_link</div>
+        <div class="col-md-10 text-end">$submit</div>
+    </div>
+</form>
+</div>
+</div>
+<!-- END --> 
+<!-- comments_add_user -->
+<div class="card">
+    <div class="card-body">
+        <script>
+            <!--
+            var comment_submit = false;
+
+            function chkFormular() {
+                if (document.getElementById('message').value === "") {
+                    alert('%enter_message%');
+                    document.getElementById('message').focus();
+
+                    return false;
+                }
+                if (!validbbcode(document.getElementById('message').value)) {
+
+                    return false;
+                }
+                if (comment_submit) {
+
+                    return false;
+                }
+                comment_submit = true;
+            }
+            -->
+        </script>
+
+        <form id="post" name="post" action="index.php?site=articles_comments" method="post" onsubmit="return chkFormular()">
+            <h4>$title_comment</h4>
+            <div class="mb-3">
+                <textarea name="message" id="message" rows="3" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">
+                <input type="submit" name="saveusercomment" value="$post_comment" class="btn btn-primary">
+            </div>
+            <input type="hidden" name="userID" value="$userID">
+            <input type="hidden" name="referer" value="$referer">
+            <input type="hidden" name="parentID" value="$parentID">
+            <input type="hidden" name="type" value="$type">
+        </form>
+    </div>
+</div>
+<!-- END -->
+<!-- comments_edit -->
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('message').value == "") {
+            alert('%enter_message%');
+            document.getElementById('message').focus();
+
+            return false;
+        }
+        if (!validbbcode(document.getElementById('message').value)) {
+
+            return false;
+        }
+
+    }
+    -->
+</script>
+<div class="head-boxes">
+    <h2 class="head-h2">
+        <span class="head-boxes-title">$title_editcomment</span>
+    </h2>
+</div>
+<div class="card">
+    <div class="card-body">
+        <form id="post" name="post" action="index.php?site=articles" method="post" onsubmit="return chkFormular()">
+        <div class="form-group">
+            <textarea name="message" id="message" rows="5" cols="35" class="form-control">$message</textarea>
+        </div>
+        <div>
+            <input type="hidden" name="authorID" value="$authorID">
+            <input type="hidden" name="commentID" value="$id">
+            <input type="hidden" name="referer" value="$referer">
+            <input type="hidden" name="userID" value="$userID">
+            <input type="submit" name="saveeditcomment" value="$edit_comment" class="btn btn-warning">
+        </div>
+        </form>
+    </div>
+</div>
+<!-- END --> 
+<!-- comments_add_visitor -->
+<div class="card">
+    <div class="card-body">
+        <script>
+            <!--
+            var comment_submit = false;
+
+            function chkFormular() {
+                if (document.getElementById('message').value === "") {
+                    alert('%enter_message%');
+                    document.getElementById('message').focus();
+
+                    return false;
+                }
+                if (!validbbcode(document.getElementById('message').value)) {
+
+                    return false;
+                }
+                if (comment_submit) {
+
+                    return false;
+                }
+                comment_submit = true;
+            }
+            -->
+        </script>
+
+        <form id="post" name="post" action="index.php?site=articles_comments" method="post" onsubmit="return chkFormular()">            
+            <h4>$title_comment</h4>
+            <div class="mb-3">
+                <input class="form-control" type="text" name="name" placeholder="$lang_name" class="form-control">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="text" name="mail" placeholder="$lang_mail" class="form-control">
+            </div>
+            <div class="mb-3">
+                <input class="form-control" type="text" name="homepage" placeholder="$lang_homepage" class="form-control">
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" name="message" id="message" rows="3" class="form-control"></textarea>
+            </div>
+            <div class="mb-3">                    
+                <div class="input-group">
+                    $_captcha
+                </div>
+            </div>
+            <div class="mb-3">
+                <input type="submit" name="savevisitorcomment" value="$post_comment" class="btn btn-primary">
+            </div>        
+            <input type="hidden" name="userID" value="$userID">
+            <input type="hidden" name="referer" value="$referer">
+            <input type="hidden" name="parentID" value="$parentID">
+            <input type="hidden" name="type" value="$type">
+            <input type="hidden" name="ip" value="$visitorip">
+        </form>
+    </div>
+</div>   
+<!-- END --> 

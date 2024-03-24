@@ -1,0 +1,33 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "navigation_skewed/update.php",
+				"file2": "navigation_skewed/install.php",
+				"file3": "navigation_skewed/uninstall.php",
+				"file4": "navigation_skewed/widget_navigation_skewed.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language"
+			},
+			{
+				"index": "templates"
+			},
+			{
+				"index": "images",
+				"file1": "navigation_skewed/images/header-bg.jpg",
+				"file2": "navigation_skewed/images/widget_navigation_skewed.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "navigation_skewed/css/styles.css"
+			},
+			{
+				"index": "js",
+				"file1": "navigation_skewed/js/skewed.js"
+			}
+		]
+}

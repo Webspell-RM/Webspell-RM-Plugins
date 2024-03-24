@@ -1,0 +1,38 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "faq/update.php",
+                "file2": "faq/install.php",
+				"file3": "faq/uninstall.php",
+				"file4": "faq/faq.php"
+			},
+			{
+				"index": "admin",
+				"file1": "faq/admin/admin_faq.php"
+			},
+			{
+				"index": "language",
+				"file1": "faq/languages/de/faq.php",
+				"file2": "faq/languages/de/admin_faq.php",
+				"file3": "faq/languages/en/faq.php",
+				"file4": "faq/languages/en/admin_faq.php",
+				"file5": "faq/languages/it/faq.php",
+				"file6": "faq/languages/it/admin_faq.php"
+			},
+			{
+				"index": "templates",
+				"file1": "faq/templates/faq.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css",
+				"file1": "faq/css/faq.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

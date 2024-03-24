@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "userlist/install.php",
+				"file2": "userlist/uninstall.php",
+				"file3": "userlist/userlist.php",
+				"file4": "userlist/widget_lastregistered.php",
+				"file5": "userlist/widget_useronline_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "userlist/admin/admin_userlist.php"
+			},
+			{
+				"index": "languages",
+				"file1": "userlist/languages/de/userlist.php",
+				"file2": "userlist/languages/en/userlist.php",
+				"file3": "userlist/languages/it/userlist.php"
+			},
+			{
+				"index": "templates",
+				"file1": "userlist/templates/userlist.html"
+			},
+			{
+				"index": "images",
+				"file1": "userlist/images/widget_lastregistered.jpg",
+				"file2": "userlist/images/widget_useronline_sidebar.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

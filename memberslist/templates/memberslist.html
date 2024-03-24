@@ -1,0 +1,70 @@
+<!-- memberslist_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- memberslist_header -->
+<div class="card">
+    <div class="card-body">
+      <div class="col-xs-12">
+            <!--$sorter-->
+            <strong>$gesamt</strong> $registered_users
+        </div>
+        <div class="table-responsive">
+            <table id="plugini" class="table" style="width:100%">
+                <thead>
+                    <tr>
+                        <th style="width: 20%">$nickname:</th>
+                        <th>
+                            <div class="col-md-11 row">
+                                <div class="col-md-8">
+                                    $squad/$position:
+                                </div>
+                                <div class="col-md-3">
+                                    $banner
+                                </div>
+                            </div>    
+                        </th>
+                        <th>$contact:</th>
+                        <th style="width: 20%">$last_login:</th>
+                    </tr>
+                </thead>
+                <tbody>
+<!-- END -->
+<!-- memberslist_content_head -->
+                    <tr>
+                        <td>
+                            <img style="height:30px" class="img-fluid rounded-circle" src="$avatar"> $nickname $member<br>$activity
+                        </td>
+                        <!--<td>$position</td>
+                        <td>$name</td>-->
+                        <td>
+                            <div class="col-md-11 row">
+<!-- END -->
+<!-- memberslist_position -->
+                                <div class="col-md-8">
+                                    <b>$lang_squad:</b> $name<br><b>$lang_position:</b> $position<br><br>
+                                </div>
+                                <div class="col-md-3"> 
+                                    <img  style="height:30px" class="img-fluid" src="$banner" alt="">
+                                </div>
+<!-- END -->
+<!-- memberslist_content_foot -->
+                            </div>
+                        </td>
+                        <td class="hidden-xs">$email $pm</td>
+                        <td>$login</td>
+                    </tr>
+<!-- END -->
+<!-- memberslist_foot -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<br>
+<!-- END -->

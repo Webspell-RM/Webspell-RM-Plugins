@@ -1,0 +1,6 @@
+<?php
+$name = "footer_box";
+// Name Tabelle | Where Klause | ID name
+DeleteData("plugins","modulname",$name);
+DeleteData("plugins_widgets","modulname",$name);
+?>

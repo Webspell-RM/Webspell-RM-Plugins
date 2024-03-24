@@ -1,0 +1,38 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "instagram/update.php",
+				"file2": "instagram/install.php",
+				"file3": "instagram/uninstall.php",
+				"file4": "instagram/instagram.php",
+				"file5": "instagram/widget_instagram_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "instagram/admin/admin_instagram.php"
+			},
+			{
+				"index": "languages",
+				"file1": "instagram/languages/de/instagram.php",
+				"file2": "instagram/languages/en/instagram.php",
+				"file3": "instagram/languages/it/instagram.php"
+			},
+			{
+				"index": "templates",
+				"file1": "instagram/templates/instagram.html"
+			},
+			{
+				"index": "images",
+				"file1": "instagram/images/instagram-offline.png",
+				"file2": "instagram/images/instagram.svg"
+			},
+			{
+				"index": "css",
+				"file1": "instagram/css/instagram.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

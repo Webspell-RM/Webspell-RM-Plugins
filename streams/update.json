@@ -1,0 +1,40 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "streams/update.php",
+				"file2": "streams/install.php",
+				"file3": "streams/uninstall.php",
+				"file4": "streams/streams.php",
+				"file5": "streams/widget_streams_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "streams/admin/admin_streams.php"
+			},
+			{
+				"index": "languages",
+				"file1": "streams/languages/de/streams.php",
+				"file2": "streams/languages/en/streams.php",
+				"file3": "streams/languages/it/streams.php"
+			},
+			{
+				"index": "templates",
+				"file1": "streams/templates/streams.html",
+				"file2": "streams/templates/widget_streams.html"
+			},
+			{
+				"index": "images",
+				"file1": "streams/images/streams-bg.jpg",
+				"file2": "streams/images/widget_streams_content.jpg",
+				"file3": "streams/images/twitch_offline.png"
+			},
+			{
+				"index": "css",
+				"file1": "streams/css/streams.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

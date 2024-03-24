@@ -1,0 +1,40 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "links/update.php",
+                "file2": "links/install.php",
+				"file3": "links/uninstall.php",
+				"file4": "links/links.php",
+				"file5": "links/links_rating.php"
+			},
+			{
+				"index": "admin",
+				"file1": "links/admin/admin_links.php"
+			},
+			{
+				"index": "language",
+				"file1": "links/languages/de/links.php",
+				"file2": "links/languages/de/admin_links.php",
+				"file3": "links/languages/en/links.php",
+				"file4": "links/languages/en/admin_links.php",
+				"file5": "links/languages/it/links.php",
+				"file6": "links/languages/it/admin_links.php"
+			},
+			{
+				"index": "templates",
+				"file1": "links/templates/links.html"
+			},
+			{
+				"index": "images",
+				"file1": "links/images/rating_0.png",
+				"file2": "links/images/rating_1.png"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

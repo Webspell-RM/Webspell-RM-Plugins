@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "reddit/install.php",
+				"file2": "reddit/uninstall.php",
+				"file3": "reddit/reddit.php",
+				"file4": "reddit/widget_reddit_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "reddit/admin/admin_reddit.php"
+			},
+			{
+				"index": "languages",
+				"file1": "reddit/languages/de/reddit.php",
+				"file2": "reddit/languages/en/reddit.php",
+				"file3": "reddit/languages/it/reddit.php"
+			},
+			{
+				"index": "templates",
+				"file1": "reddit/templates/reddit.html"
+			},
+			{
+				"index": "images",
+				"file1": "reddit/images/reddit-offline.png",
+				"file2": "reddit/images/widget_reddit_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "reddit/css/reddit.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

@@ -1,0 +1,54 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "ts3viewer/install.php",
+				"file2": "ts3viewer/uninstall.php",
+				"file3": "ts3viewer/widget_ts3viewer_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "ts3viewer/admin/admin_ts3viewer.php",
+				"file2": "ts3viewer/libraries/TeamSpeak3/Exception.php",
+				"file3": "ts3viewer/libraries/TeamSpeak3/TeamSpeak3.php",
+				"file4": "ts3viewer/libraries/TeamSpeak3/Adapter/Abstract.php",
+				"file5": "ts3viewer/libraries/TeamSpeak3/Adapter/Exception.php",
+				"file6": "ts3viewer/libraries/TeamSpeak3/Adapter/ServerQuery.php",
+				"file7": "ts3viewer/libraries/TeamSpeak3/Adapter/ServerQuery/Exception.php",
+				"file8": "ts3viewer/libraries/TeamSpeak3/Adapter/ServerQuery/Reply.php",
+				"file9": "ts3viewer/libraries/TeamSpeak3/Helper/Profiler.php",
+				"file10": "ts3viewer/libraries/TeamSpeak3/Helper/Signal.php",
+				"file11": "ts3viewer/libraries/TeamSpeak3/Helper/String.php",
+				"file12": "ts3viewer/libraries/TeamSpeak3/Helper/Uri.php",
+				"file13": "ts3viewer/libraries/TeamSpeak3/Helper/Profiler/Timer.php",
+				"file14": "ts3viewer/libraries/TeamSpeak3/Node/Abstract.php",
+				"file15": "ts3viewer/libraries/TeamSpeak3/Node/Host.php",
+				"file16": "ts3viewer/libraries/TeamSpeak3/Node/Server.php",
+				"file17": "ts3viewer/libraries/TeamSpeak3/Transport/Abstract.php",
+				"file18": "ts3viewer/libraries/TeamSpeak3/Transport/Exception.php",
+				"file19": "ts3viewer/libraries/TeamSpeak3/Transport/TCP.php"
+			},
+			{
+				"index": "languages",
+				"file1": "ts3viewer/languages/de/ts3viewer.php",
+				"file2": "ts3viewer/languages/en/ts3viewer.php",
+				"file3": "ts3viewer/languages/it/ts3viewer.php"
+			},
+			{
+				"index": "templates",
+				"file1": "ts3viewer/templates/ts3viewer.html"
+			},
+			{
+				"index": "images",
+				"file1": "ts3viewer/images/ts-icon.png",
+				"file2": "ts3viewer/images/widget_ts3viewer_content.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "ts3viewer/css/ts3viewer.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

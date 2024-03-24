@@ -1,0 +1,166 @@
+<!-- projectlist_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- projectlist_category -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page">$title_categories ($anzcats $categories)</li>
+  </ol>
+</nav>
+<!-- END -->
+<!-- projectlist_content_head -->
+<div class="card">
+  <div class="card-body">
+    <div class="table-responsive">
+    <table class="table">
+        <thead>
+        <tr>
+          <th class="col-md-2">#</th>
+            <th class="col-md-2">$title_categories</th>
+            <th scope="col">$link_description</th>
+            <th class="col-md-2">$link_number</th>
+        </tr>
+        </thead>
+        <tbody>
+<!-- END -->
+<!-- projectlist_content -->
+<tr>
+    <th scope="row">$image</th>
+    <th scope="row">$projectlistcatname</th>
+    <td>$description</td>
+    <td>($links: $anzlinks) <i class="bi bi-chevron-double-right"></i></td>
+</tr>
+
+<!-- END -->
+<!-- projectlist_content_foot -->
+        </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+<!-- END -->
+
+<!-- projectlist_details_head -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php?site=projectlist">$title_categories</a></li>
+    <li class="breadcrumb-item active" aria-current="page">$projectlistcatname</li>
+  </ol>
+</nav>
+<!-- END -->
+<!-- projectlist_details_header -->
+<div class="row">
+
+<!-- END -->
+<!-- projectlist_details -->
+<div class="col-md-6">
+<div class="card">
+      <div class="card-body">
+<div class="row">
+
+  <div class="col-md-8">
+  <div class="col-md-12">
+    <h4><strong>$project:</strong> $todolist</h4>
+  </div>
+
+  <div class="col-md-12">
+    $lang_status: <i>$status</i>
+  </div>
+ <div class="col-md-12">
+    $expected_completion: $date
+  </div>
+  <div class="col-md-12">
+    $completed:&nbsp;
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="$prozent" aria-valuemin="0" aria-valuemax="100" style="width:$prozent%">
+        <span>$prozent% Complete</span>
+      </div>
+    </div>
+  </div> 
+  <br> 
+  <div class="col-md-12">  
+$button
+  </div>
+  </div>
+  <div class="col-md-4"> 
+    $pic <br><br>
+  </div>
+</div>
+
+</div>
+</div>
+</div>
+<!-- END -->
+<!-- projectlist_content_details_head -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="index.php?site=projectlist">$title_categories</a></li>
+    <li class="breadcrumb-item"><a href="index.php?site=projectlist&action=show&projectlistcatID=$projectlistcatID">$projectlistcatname</a></li>
+    <li class="breadcrumb-item active" aria-current="page">$question</li>
+  </ol>
+</nav>
+<!-- END -->
+<!-- projectlist_content_details -->
+<div class="card">
+    $banner
+      <div class="card-body">
+
+
+
+<div class="row">
+
+  <div class="col-md-8">
+  <div class="col-md-12">
+    <h4><strong>$project:</strong> $question</h4>
+  </div>
+
+  <div class="col-md-12">
+    $lang_status: <i>$status</i>
+  </div>
+ <div class="col-md-12">
+    $expected_completion: $date
+  </div>
+  <div class="col-md-12">
+    $completed:&nbsp;
+    <div class="progress">
+      <div class="progress-bar" role="progressbar" aria-valuenow="$prozent" aria-valuemin="0" aria-valuemax="100" style="width:$prozent%">
+        <span>$prozent% Complete</span>
+      </div>
+    </div>
+
+  </div>
+<div class="col-md-12">
+        <small>$lang_poster: $poster</small>
+      </div>
+
+  <div class="col-md-12"> 
+    $information:<br />
+          <div class="col-md-12" style="border:1px dotted #666666; padding-top:3px; padding-bottom:3px; padding-left:2px;min-height: 180px;">$answer</div>
+  </div> 
+
+  </div>
+  <div class="col-md-4"> 
+    $pic <br><br>
+  </div>
+</div>
+
+      </div>  
+      <div class="card-footer text-muted">
+       <!-- <strong>$lang_links:</strong> $link<br>-->
+    <small>($views $lang_views)</small>
+    <p>$lang_rating: $ratingpic ($votes $lang_votes)<br>$rateform
+        </p><small>$info $poster $stand $date2</small>
+      </div>
+  </div>
+
+<!-- END -->
+<!-- projectlist_details_foot -->
+</div>
+<!-- END -->

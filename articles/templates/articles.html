@@ -1,0 +1,124 @@
+<!-- articles_head -->
+<div class="head-boxes">
+	<span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+	<span class="head-boxes-title">$title</span>
+</h2>
+	<p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- articles_category -->
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+
+	<li class="breadcrumb-item active" aria-current="page">$title_categories ($anzcats $categories)</li>
+  </ol>
+</nav>
+<!-- END -->
+<!-- articles_content_head -->
+<div class="card">
+	<div class="card-body">
+
+<div class="row">
+			<div class="col p-2">
+				$title_categories
+			</div>
+			<div class="col-5 d-none d-sm-block p-2">
+				$article_description
+			</div>
+			<div class="col-4 p-2">
+				$articles_number
+			</div>
+		</div>
+<!-- END -->
+<!-- articles_content -->
+
+<div class="row border-top">
+			<div class="col p-2">
+				$articlecatname
+			</div>
+			<div class="col-5 d-none d-sm-block p-2">
+				$description
+			</div>
+			<div class="col-4 p-2">
+				($articles: $anzarticles) <i class="bi bi-chevron-double-right"></i>
+			</div>
+		</div>
+<!-- END -->
+<!-- articles_content_foot -->
+	</div>
+</div>
+<!-- END -->
+<!-- articles_details_head -->
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="index.php?site=articles">$title_categories</a></li>
+		<li class="breadcrumb-item active" aria-current="page">$articlecatname</li>
+	</ol>
+</nav>
+<!-- END -->
+<!-- articles_details_header -->
+
+
+<!-- END -->
+<!-- articles_details -->
+<div class="card">
+	<div class="card-body">
+		<h4>$question</h4>
+		$answer
+		<hr>
+		<small>$info $poster $stand $date</small>
+	</div>
+</div>
+<!-- END -->
+<!-- articles_content_details_head -->
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+		<li class="breadcrumb-item"><a href="index.php?site=articles">$title_categories</a></li>
+		<li class="breadcrumb-item"><a href="index.php?site=articles&action=show&articlecatID=$articlecatID">$articlecatname</a></li>
+		<li class="breadcrumb-item active" aria-current="page">$question</li>
+	</ol>
+</nav>
+<!-- END -->
+<!-- articles_content_details -->
+<div class="card">
+	<div class="card-body">
+		<h4>$question</h4>
+		$answer
+		<hr>
+		<small>($views $lang_views)</small>
+		$lang_rating: $ratingpic ($votes $lang_votes)<br><br>$rateform
+		<small>$info $poster $stand $date</small>
+	</div>
+</div>
+<!-- END -->
+<!-- articles_content_details_foot -->
+
+<!-- END -->
+
+<!-- articles_content_foot -->
+
+<!-- END -->
+
+<!-- articles_widget_articles_head -->
+<div class="card">
+	<div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+		<div class="agileits_updates_grid_left_grid">
+   <!-- END -->
+
+<!-- articles_widget_content -->
+			<div class="row">
+				<div class="col-3 agileits_updates_grid_left1">
+					<h4>$day <span>$date2 <i>$year.</i></span></h4>
+				</div>
+				<div class="col agileits_updates_grid_left1">
+					<h5>$title</h5>
+					<p>$text</p>
+				</div>
+			</div> 
+<!-- END -->
+<!-- articles_widget_articles_foot -->
+		</div>
+	</div>
+</div>
+  <!-- END -->

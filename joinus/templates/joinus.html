@@ -1,0 +1,247 @@
+<!-- joinus_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- joinus_loggedin -->
+<div class="card">
+    <div class="card-body">
+        <h4>$lang_joinus_form</h4>
+    
+        <form action="index.php?site=joinus&amp;action=save" method="post" name="post" role="form" onsubmit="$termsofuse" class="form-horizontal needs-validation" novalidate>
+            <!-- Error Box -->
+            $showerror
+
+            <!-- Squad -->
+             <div class="mb-3">
+                <label for="select-squad" class="control-label">$lang_squad:</label>
+                <select name="squad" id="select-squad" class="form-select" aria-label="Default select example">
+                        $squads
+                    </select>
+            </div>
+
+        <div class="row">
+        <div class="col-md-6">
+
+
+            <!-- Nick -->
+            <div class="mb-3">
+                <label for="input-nick" class="control-label">$lang_nick:</label>
+                <input type="text" name="nick" class="form-control" id="input-nick" placeholder="$lang_nick"
+                        value="$nickname" required>
+            </div>
+
+            <!-- Name -->
+            <div class="mb-3">
+                <label for="input-name" class="control-label">$lang_name:</label>
+                <input type="text" name="name" class="form-control" id="input-name" placeholder="$lang_name"
+                        value="$name">
+            </div>
+
+            <!-- Mail -->
+            <div class="mb-3">
+                <label for="input-mail" class="control-label">$lang_mail:</label>
+                <input type="email" name="email" class="form-control" id="input-mail" placeholder="$lang_mail"
+                        value="$email">
+            </div>
+
+            <!-- Messenger -->
+            <div class="mb-3">
+                <label for="input-messenger" class="control-label">$lang_discord:</label>
+                <input type="text" name="messenger" class="form-control" id="input-messenger"
+                        placeholder="$lang_discord" value="$messenger">
+            </div>
+
+        </div>
+        <div class="col-md-6">
+
+            <!-- Age -->
+            <div class="mb-3">
+                <label for="input-age" class="control-label">$lang_age:</label>
+                <input type="number" name="age" class="form-control" id="input-age" placeholder="$lang_age"
+                        value="$age" required>
+            </div>
+
+            <!-- City -->
+            <div class="mb-3">
+                <label for="input-city" class="control-label">$lang_city:</label>
+                <input type="text" name="city" class="form-control" id="input-city" placeholder="$lang_city"
+                        value="$city">
+            </div>
+
+            <!-- Clan history -->
+            <div class="mb-3">
+                <label for="input-clan-history" class="control-label">$lang_clan_history:</label>
+                <input type="text" name="clanhistory" class="form-control"
+                        id="input-clan-history" placeholder="$lang_clan_history" value="$clanhistory">
+            </div>
+
+        </div>
+        </div>
+            <!-- Info -->
+            <div class="mb-3">
+                <label for="textarea-info" class="control-label">$lang_additional_info:</label>
+                <textarea name="info" id="textarea-info" class="form-control" rows="5" required>$info</textarea>
+            </div>
+            
+            <!-- Submit button -->
+            <div class="mb-3">                
+                <div class="col-xs-12">
+                    <blockquote>
+                        <!-- Datenschutz -->
+                        <input type="checkbox" class="form-check-input" id="accept_gdpr" value="0" required> <label class="form-check-label" for="invalidCheck">$lang_GDPRinfo</label>
+                        <!-- Clanregeln -->
+                        $terms_of_use
+                    </blockquote>
+                </div>
+                <div class="col-xs-12 text-right">
+                    <button type="submit" name="post" class="btn btn-primary">$lang_send</button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+</div>
+<!-- END -->
+<!-- joinus_notloggedin -->
+<div class="card">
+    <div class="card-body">
+        <h4>$lang_joinus_form</h4>
+    
+        <form action="index.php?site=joinus&amp;action=save" method="post" name="post" role="form" onsubmit="$termsofuse" class="form-horizontal needs-validation" novalidate>
+
+            <!-- Error Box -->
+            $showerror
+
+            <!-- Squad -->
+            <div class="mb-3">
+                <label for="select-squad" class="control-label">$lang_squad:</label>
+                <select name="squad" id="select-squad" class="form-select" aria-label="Default select example">
+                        $squads
+                    </select>
+            </div>
+
+        <div class="row">
+        <div class="col-md-6">    
+
+            <!-- Nick -->
+            <div class="mb-3">
+                <label for="input-nick" class="control-label">$lang_nick:</label>
+                <input type="text" name="nick" class="form-control" id="input-nick"
+                        placeholder="$lang_nick" required>
+            </div>
+
+            <!-- Name -->
+            <div class="mb-3">
+                <label for="input-name" class="control-label">$lang_name:</label>
+                <input type="text" name="name" class="form-control" id="input-name" placeholder="$lang_name" required>
+            </div>
+
+            <!-- Mail -->
+            <div class="mb-3">
+                <label for="input-mail" class="control-label">$lang_mail:</label>
+                <input type="email" name="email" class="form-control" id="input-mail" placeholder="$lang_mail" required>
+            </div>
+
+            <!-- Messenger -->
+            <div class="mb-3">
+                <label for="input-messenger" class="control-label">$lang_discord:</label>
+                <input type="text" name="messenger" class="form-control" id="input-messenger"
+                        placeholder="$lang_discord">
+            </div>
+
+        </div>
+        <div class="col-md-6">    
+
+            <!-- Age -->
+            <div class="mb-3">
+                <label for="input-age" class="control-label">$lang_age:</label>
+                <input type="number" name="age" class="form-control" id="input-age" placeholder="$lang_age" required>
+            </div>
+
+            <!-- City -->
+            <div class="mb-3">
+                <label for="input-city" class="control-label">$lang_city:</label>
+                <input type="text" name="city" class="form-control" id="input-city" placeholder="$lang_city">
+            </div>
+
+            <!-- Clan history -->
+            <div class="mb-3">
+                <label for="input-clan-history" class="control-label">$lang_clan_history:</label>
+                <input type="text" name="clanhistory" class="form-control" id="input-clan-history"
+                        placeholder="$lang_clan_history">
+            </div>
+
+        </div>
+        </div>
+
+            <!-- Info -->
+            <div class="mb-3">
+                <label for="textarea-info" class="control-label">$lang_additional_info:</label>
+                <textarea name="info" id="textarea-info" class="form-control" rows="5" required>$info</textarea>
+            </div>
+
+            <!-- Security code -->
+            <div class="mb-3">
+                <label for="input-security-code" class="control-label">$lang_security_code:</label>
+                <div class="input-group">
+                   $_captcha
+                </div>
+            </div>
+
+            <!-- Submit button -->
+            <div class="mb-3">
+                <div class="col-xs-12"><blockquote>
+                        <!-- Datenschutz -->
+                        <input type="checkbox" class="form-check-input" id="accept_gdpr" value="0" required> <label class="form-check-label" for="invalidCheck">$lang_GDPRinfo</label>
+                        <!-- Clanregeln -->
+                        $terms_of_use
+                    </blockquote>
+                </div>
+                <div class="col-xs-12 text-right">
+                    <button type="submit" name="post" class="btn btn-primary">$lang_send</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<!-- END -->
+<!-- joinus_failure -->
+<div class="card">
+    <div class="card-body">
+        <h3>$lang_joinus_form</h3>
+    
+            <!-- Error Box -->
+            $showerror   
+    </div>
+</div>
+<!-- END -->
+<!-- joinus_content -->
+<div class="card">
+    <div class="card-body">
+ <div class="sc_join1us col-md-12">
+            <div class="container">
+                <div class="sc_joinus-con1tent row">
+                <div class="col-md-8">
+                    <h2>$title</h2>
+                    <p>$text</p>
+                </div>
+                <div class="col-md text-center">
+                    <a href="/index.php?site=joinus" target="_self" rel="external" class="joinus  joinus-card" style="text-decoration: none; ">
+                        
+                                <svg class="svg-inline bi bi-people-fill fa-w-65" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="users" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg="" width="39px" height="36px"><path fill="currentColor" d="M96 224c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm448 0c35.3 0 64-28.7 64-64s-28.7-64-64-64-64 28.7-64 64 28.7 64 64 64zm32 32h-64c-17.6 0-33.5 7.1-45.1 18.6 40.3 22.1 68.9 62 75.1 109.4h66c17.7 0 32-14.3 32-32v-32c0-35.3-28.7-64-64-64zm-256 0c61.9 0 112-50.1 112-112S381.9 32 320 32 208 82.1 208 144s50.1 112 112 112zm76.8 32h-8.3c-20.8 10-43.9 16-68.5 16s-47.6-6-68.5-16h-8.3C179.6 288 128 339.6 128 403.2V432c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48v-28.8c0-63.6-51.6-115.2-115.2-115.2zm-223.7-13.4C161.5 263.1 145.6 256 128 256H64c-35.3 0-64 28.7-64 64v32c0 17.7 14.3 32 32 32h65.9c6.3-47.4 34.9-87.3 75.2-109.4z"></path></svg>
+                    <span class=" text-center right">$become_a_member <span>$completely_free </span></span>
+                            
+                    </a>
+                </div>
+                </div>
+            </div><br />
+</div>
+</div></div>
+<!-- END -->

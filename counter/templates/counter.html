@@ -1,0 +1,90 @@
+<!-- counter_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- counter_content_stats -->
+<div class="card">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-lg-3">
+                <strong>$lang_visits</strong>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_today <span class="badge bg-secondary"><span class="counter">$today</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_yesterday <span class="badge bg-secondary"><span class="counter"></span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_this_month <span class="badge bg-secondary"><span class="counter">$month</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_total <span class="badge bg-secondary"><span class="counter">$total</span></span></li>
+                </ul>
+                <br>
+                <strong>$lang_total_statistic</strong>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $online_since_then <span class="badge bg-secondary">$since</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_daysonline <span class="badge bg-secondary"><span class="counter">$days_online</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_visits_month <span class="badge bg-secondary"><span class="counter">$permonth</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_visits_day <span class="badge bg-secondary"><span class="counter">$perday</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_visits_hour <span class="badge bg-secondary"><span class="counter">$perhour</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_max_day <span class="badge bg-secondary"><span class="counter">$maxvisits</span></span></li>
+                </ul>
+                <br>
+                <strong>$lang_online</strong>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_now <span class="badge bg-secondary"><span class="counter">$online</span> ($user_on / $guests_on)</span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_maximum <span class="badge bg-secondary"><span class="counter">$maxonline</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_lasthour <span class="badge bg-secondary"><span class="counter">$online_lasthour</span></span></li>
+                </ul>
+                <br>
+                <strong>$lang_user_statistic</strong>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_avg_age <span class="badge bg-secondary"><span class="counter">$avg_age_user</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_avg_age_clanmember <span class="badge bg-secondary"><span class="counter">$avg_age_member</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_youngest_user: <a href="index.php?site=profile&amp;id=$youngest_id">$youngest_nickname</a> <span class="badge bg-secondary"><span class="counter">$youngest_age</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_oldest_user: <a href="index.php?site=profile&amp;id=$oldest_id">$oldest_nickname</a> <span class="badge bg-secondary"><span class="counter">$oldest_age</span></span></li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center"> $lang_registered_users <span class="badge bg-secondary"><span class="counter">$us</span></span></li>
+                </ul>
+            </div>
+        
+            <div class="col-lg-9">
+                <strong>$lang_this_month</strong>
+                <ul class="list-group">
+                    $monatsstat
+                </ul>
+            </div>
+        
+    </div>
+</div>
+<!-- END -->
+<!-- counter_sc_head_stats -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+<p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- counter_sc_stats -->
+<div class="card">
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item"><span class="badge bg-secondary"><span class="widget_counter">$today</span></span> $lang_visits ($lang_today)</li>
+            <li class="list-group-item"><span class="badge bg-secondary"><span class="widget_counter">$yesterday</span></span> $lang_visits ($lang_yesterday)</li>
+            <li class="list-group-item"><span class="badge bg-secondary"><span class="widget_counter">$month</span></span> $lang_visits ($lang_month)</li>
+            <li class="list-group-item"><span class="badge bg-secondary"><span class="widget_counter">$total</span></span> $lang_visits_total</li>
+            <li class="list-group-item"><span class="badge bg-secondary"><span class="widget_counter">$us</span></span> $lang_registered_users</li>
+            <li class="list-group-item"><span class="badge bg-secondary"><span class="widget_counter">$user_on</span></span>
+                <a href="index.php?site=whoisonline">$user_on_text online</a>
+            </li>
+            <li class="list-group-item"><span class="badge bg-secondary"><span class="cwidget_counter">$guests_on</span></span>
+                <a href="index.php?site=whoisonline">$guests_on_text online</a>
+            </li>
+            <li class="list-group-item text-end">
+                <a href="index.php?site=counter">$lang_statistic</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- END -->

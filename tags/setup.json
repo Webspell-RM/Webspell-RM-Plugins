@@ -1,0 +1,35 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "tags/install.php",
+				"file2": "tags/uninstall.php",
+				"file3": "tags/tags.php",
+				"file4": "tags/widget_tags_sidebar.php",
+				"file5": "tags/widget_tags_button_sidebar.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "tags/languages/de/tags.php",
+				"file2": "tags/languages/en/tags.php",
+				"file3": "tags/languages/it/tags.php"
+			},
+			{
+				"index": "templates",
+				"file1": "tags/templates/tags.html"
+			},
+			{
+				"index": "images",
+				"file1": "tags/images/widget_tags_sidebar.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

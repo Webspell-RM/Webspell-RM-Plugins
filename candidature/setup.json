@@ -1,0 +1,32 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "candidature/install.php",
+				"file2": "candidature/uninstall.php",
+				"file3": "candidature/candidature.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "languages",
+				"file1": "candidature/languages/de/candidature.php",
+				"file2": "candidature/languages/en/candidature.php",
+				"file3": "candidature/languages/it/candidature.php"
+			},
+			{
+				"index": "templates",
+				"file1": "candidature/templates/candidature.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

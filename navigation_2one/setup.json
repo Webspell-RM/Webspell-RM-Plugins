@@ -1,0 +1,31 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "navigation_2one/install.php",
+				"file2": "navigation_2one/uninstall.php",
+				"file3": "navigation_2one/widget_navigation_2one.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language"
+			},
+			{
+				"index": "templates"
+			},
+			{
+				"index": "images",
+				"file1": "navigation_2one/images/header-bg.jpg",
+				"file2": "navigation_2one/images/widget_navigation_2one.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "navigation_2one/css/styles.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

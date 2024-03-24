@@ -1,0 +1,32 @@
+.col-wcsl-sc-projects > h5::before {
+	position: absolute;
+	content: '';
+	display: inline-block;
+	width: 17px;
+	height: 17px;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	border: 3px solid #FFF;
+	border-radius: 15px;
+	background: #f6cf1b;
+	background: -moz-linear-gradient(left, #f6cf1b 0%, #efa80f 100%);
+	background: -webkit-linear-gradient(left, #f6cf1b 0%,#efa80f 100%);
+	background: linear-gradient(to right, #f6cf1b 0%,#efa80f 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f6cf1b', endColorstr='#efa80f',GradientType=1 );
+	margin-right: 10px;
+}
+
+.col-wcsl-sc-projects > h5 > a,
+.col-wcsl-sc-projects > h5 > a:visited {
+	margin-left: 30px;
+	color: #7e7e7e;
+	font-size: 16px;
+}
+
+.col-wcsl-sc-projects > h5 > a:hover {
+	color: #efa80f;
+}
+
+.col-wcsl-sc-projects > p {
+	color: #7e7e7e;
+}

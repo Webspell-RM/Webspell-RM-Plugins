@@ -1,0 +1,34 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "cashbox/install.php",
+				"file2": "cashbox/uninstall.php",
+				"file3": "cashbox/cashbox.php",
+				"file3": "cashbox/update.php"
+			},
+			{
+				"index": "admin",
+				"file1": "cashbox/admin/admin_cashbox.php"
+			},
+			{
+				"index": "languages",
+				"file1": "cashbox/languages/de/cashbox.php",
+				"file2": "cashbox/languages/en/cashbox.php",
+				"file3": "cashbox/languages/it/cashbox.php"
+			},
+			{
+				"index": "templates",
+				"file1": "cashbox/templates/cashbox.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

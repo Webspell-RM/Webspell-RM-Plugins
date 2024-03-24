@@ -1,0 +1,48 @@
+<?php
+
+$language_array = array(
+
+
+    'streams'                  => 'Streams',
+    'random'                   => 'Random Streams',
+    'not_found'                => 'Was not found. ',
+    'not_found_err'            => 'Was not found. Plugin can\'t work.',
+    'new_stream'               => 'New Stream',
+    'name'                     => 'Name',
+    'link'                     => 'Twitch.tv-Name',
+    'save'                     => 'Save',
+    'success'                  => 'Successful',
+    'failed'                   => 'Failed',
+    'delete'                   => 'Delete',
+    'js_message'               => 'Please enter the stream link!',
+    'access_denied'            => 'Access Denied!',
+    'provider'                 => 'Stream / Videos',
+    'edit_streams'             => 'Edit streams',
+    'add_streams'              => 'Add streams',
+    'actions'                  => 'Actions',
+    'access_denied'            => '<h3>Info</h3><div class="alert alert-danger"><span class="sr-only">Error:</span><strong>Access denied</strong></div>',
+    'back'                     => 'Back',
+    'delete'                   => 'Delete',
+    'description'              => 'Description',
+    'edit'                     => 'Edit',
+    'is_displayed'             => 'Is displayed?',
+    'no'                       => 'No',
+    'no_entries'               => 'No entries',
+    'really_delete'            => 'Really delete',
+    'sort'                     => 'Sort',
+    'video'                    => 'Video',
+    'transaction_invalid'      => 'Transaction invalid',
+    'to_sort'                  => 'To sort',
+    'yes'                      => 'Yes',
+    'options'                  => 'Options',
+    'no_stream'                => '<blockquote>No Stream!</blockquote>',
+    'no_video'                 => '<blockquote>No Video!</blockquote>',
+    'loading'                  => 'Loading',
+    'displayed'                => 'Is displayed?',
+    'widget_displayed'         => 'Is displayed in the widget?',
+    'media_widget_displayed_x' => 'Is it displayed in the media widget?:</span>',
+    'media_widget_displayed'   => 'Wird im Media Widget angezeigt?: <br><span style="font-size: 10px">(Must be installed separately.)</span>',
+    'close'                    => 'Close',
+);
+
+

@@ -1,0 +1,71 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "useraward/update.php",
+				"file2": "useraward/install.php",
+				"file3": "useraward/uninstall.php",
+				"file4": "useraward/functions.php"
+			},
+			{
+				"index": "admin",
+				"file1": "useraward/admin/admin_user_awards.php"
+			},
+			{
+				"index": "languages",
+				"file1": "useraward/languages/de/admin_user_awards.php",
+				"file2": "useraward/languages/en/admin_user_awards.php",
+				"file3": "useraward/languages/it/admin_user_awards.php"
+			},
+			{
+				"index": "templates",
+				"file1": "useraward/templates/useraward.html"
+			},
+			{
+				"index": "images",
+				"file1": "useraward/images/userawards/special/1.png",
+				"file2": "useraward/images/userawards/special/2.png",
+				"file3": "useraward/images/userawards/special/3.png",
+				"file4": "useraward/images/userawards/special/4.png",
+				"file5": "useraward/images/userawards/awards_left.png",
+				"file6": "useraward/images/userawards/awards_right.png",
+				"file7": "useraward/images/userawards/awards_spacer.png",
+				"file8": "useraward/images/userawards/community1.png",
+				"file9": "useraward/images/userawards/community2.png",
+				"file10": "useraward/images/userawards/community3.png",
+				"file11": "useraward/images/userawards/dist_com_rib.png",
+				"file12": "useraward/images/userawards/forum1.png",
+				"file13": "useraward/images/userawards/forum2.png",
+				"file14": "useraward/images/userawards/forum3.png",
+				"file15": "useraward/images/userawards/member1.png",
+				"file16": "useraward/images/userawards/member2.png",
+				"file17": "useraward/images/userawards/member3.png",
+				"file18": "useraward/images/userawards/member4.png",
+				"file19": "useraward/images/userawards/news1.png",
+				"file20": "useraward/images/userawards/news2.png",
+				"file21": "useraward/images/userawards/news3.png",
+				"file22": "useraward/images/userawards/pm1.png",
+				"file23": "useraward/images/userawards/pm2.png",
+				"file24": "useraward/images/userawards/pm3.png",
+				"file25": "useraward/images/userawards/war1.png",
+				"file26": "useraward/images/userawards/war2.png",
+				"file27": "useraward/images/userawards/war3.png",
+				"file28": "useraward/images/userawards/war4.png",
+				"file29": "useraward/images/userawards/war5.png",
+				"file30": "useraward/images/userawards/war6.png",
+				"file31": "useraward/images/userawards/war7.png",
+				"file32": "useraward/images/userawards/war8.png",
+				"file33": "useraward/images/userawards/war9.png",
+				"file34": "useraward/images/userawards/war10.png"
+			},
+			{
+				"index": "css",
+				"file1": "useraward/css/select2-bstheme.css",
+				"file2": "useraward/css/select2.min.css"
+			},
+			{
+				"index": "js",
+				"file1": "useraward/js/select2.js"
+			}
+		]
+}

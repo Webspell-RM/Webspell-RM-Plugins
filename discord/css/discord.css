@@ -1,0 +1,20 @@
+/* Customize twitter service colors */
+    div[data-service="discord"]{
+        --im-btn-bg: #1DA1F2;
+        background-image: url('/includes/plugins/discord/images/discord-offline.png');
+        background-repeat: no-repeat; 
+    background-size: 30%;
+    background-position: 50% 0%;
+        /*background-color: #333;
+        height: 450px;*/
+
+    }
+
+    
+
+/* Customize twitter service colors */
+    div[data-service="discord_content"]{
+        --im-btn-bg: #1DA1F2;
+        /*background-color: transparent;*/
+        height: 530px;
+    }

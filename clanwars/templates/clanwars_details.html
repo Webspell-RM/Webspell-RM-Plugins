@@ -1,0 +1,215 @@
+<!-- clanwars_details_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- clanwars_details_content_results -->
+<tr>
+    <td>$map</td>
+    <td>$score_1</td>
+    <td>:</td>
+    <td>$score_2</td>
+    <td></td>
+</tr>
+<!-- END -->
+<!-- clanwars_details_match_details -->
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-6">
+                    <table width="100%" cellspacing="2" cellpadding="2">
+                        <tbody><tr>
+                            <td valign="top" align="left"><b>$squad</b></td>             
+                            <td valign="top" align="right"><b>$opp_team</b></td>
+                        </tr>
+                    </tbody></table>
+                    <table width="100%" cellspacing="4" cellpadding="4">
+                        <tbody><tr>
+                            <td class="clan-icon-big" width="150" valign="top" align="left">$squadicon</td>
+                            <td align="center">
+                                <table width="80%" cellspacing="2" cellpadding="2">
+                                    <tbody><tr>
+                                        <td style="font-weight:bold; font-size:24px" width="30" valign="middle" align="center">$results_1</td>
+                                        <td style="font-size:16px" width="30" valign="middle" align="center">
+                                            <table width="30" cellspacing="0" cellpadding="0">
+                                                <tbody><tr>                         
+                                                    <td align="center"><b>VS</b></td>
+                                                </tr>
+                                            </tbody></table>
+                                        </td>
+                                        <td style="font-weight:bold; font-size:24px" width="30" valign="middle" align="center">$results_2</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" class="border-bottom"></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" style="font-size: 12px; padding-top:6px;" align="center">$date<br>$results_3</td>
+                                    </tr>
+                                </tbody></table>
+                            </td>
+                            <td class="clan-icon-big" width="150" valign="top" align="right">$opppic</td>
+                        </tr>           
+                    </tbody></table>
+                </div>
+                <div class="col-lg-6 border-start">
+                    <table class="table">
+                        <tbody>
+                        <tr>
+                            <td colspan="5"><i class="bi bi-exclamation-triangle"></i> Bisherige Begegnungen:</td>
+                        </tr>
+<!-- END -->                            
+<!-- clanwars_details_match_content -->
+
+                        <tr>
+                            <td class="text-start">$date</td>
+                            <td class="text-start"><span class="badge bg-secondary">$squad</span> <b>VS</b> <span class="badge bg-secondary">$opponent</span></td>
+                            <td class="text-start">$results_3</td>                        
+                            <td class="text-center">$results_1 : $results_2</td>                     
+                        </tr>
+
+<!-- END -->                            
+<!-- clanwars_details_match_foot --> 
+
+
+
+
+
+
+
+
+                        <!--
+                        <tr>
+                            <td style="color:#FFF" width="150" align="left"><i class="fa fa-trophy"></i> Liga/Turnier:</td>
+                            <td valign="top" align="left"><b><a href="http://$linkpage" target="blank_" style="color:#FFF">$league</a></b></td>
+                        </tr>
+                        <tr>
+                            <td style="color:#FFF" align="left"><i class="bi bi-calendar"></i> Datum:</td>
+                            <td colspan="2" style="color:#FFF" align="left">$date</td>
+                        </tr>
+                        <tr>
+                            <td style="color:#FFF" align="left"><i class="bi bi-pencil-square"></i> Coverage:</td>
+                            <td colspan="2" align="left"><font style="color:#ff8100">keine vorhanden</font></td>
+                        </tr>-->
+                        
+                    </tbody></table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- END -->
+<!-- clanwars_details_content -->
+
+<a class='btn btn-secondary' href='javascript:history.back();reload()'>Go Back</a>
+<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    Match Details
+  </button>
+
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+
+<div class="table-responsive">
+    <table class="table table-striped">
+      <tr>
+            <th style="width: 15%">$lang_report:</th>
+            <td colspan="3">$report</td>
+        </tr>
+        <tr>
+            <th>$lang_game / $lang_squad:</th>
+            <td>$game $squad</td>
+            <th>$lang_date:</th>
+            <td>$date</td>
+        </tr>
+        <tr>
+            <th>$lang_opponent:</th>
+            <td>$opponent</td>
+            <th>$lang_league:</th>
+            <td>$league <a href="http://$linkpage" target="_blank">[$lang_matchlink]</a></td>
+        </tr>
+        <tr>
+            <th>$lang_maps:</th>
+            <td colspan="3">$maps</td>
+        </tr>
+        <tr>
+            <th valign="top">$lang_result:</th>
+            <td colspan="3">
+                <table class="table table-striped">
+                    <tr>
+                        <th>$lang_map</th>
+                        <th colspan="4">$lang_result</th>
+                    </tr>
+                    $extendedresults
+                    <tr>
+                        <td>$lang_total</td>
+                        <td><strong>$results_1</strong></td>
+                        <td><strong>:</strong></td>
+                        <td><strong>$results_2</strong></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <th>$myclantag $lang_team:</th>
+            <td colspan="3">$hometeam</td>
+        </tr>
+        <tr>
+            <th>$opptag $lang_team:</th>
+            <td colspan="3">$oppteam</td>
+        </tr>
+        <tr>
+            <th>$lang_server:</th>
+            <td colspan="3">$server</td>
+        </tr>
+        <tr>
+            <th>$lang_hltv_server:</th>
+            <td colspan="3">$hltv</td>
+        </tr>
+        <tr>
+            <th>$lang_screenshots:</th>
+            <td colspan="3">$screenshots</td>
+        </tr>
+    </table>
+</div>
+</div>
+</div>
+<!-- END -->
+<!-- clanwars_details_match_head -->
+<!--
+<div class="card">
+    <div class="card-body"> 
+        <h4><i class="bi bi-exclamation-triangle"></i> Bisherige Begegnungen</h4>
+        <div class="table-responsive">
+        <table class="table">
+            <thead>    
+            <tr>
+                <th style="width:15%" class="text-start">Date</th>
+                <th style="width:12%" align="left"></th>
+                <th style="width:60%" align="left"></th>                            
+                <th style="width:13%" class="text-start">Results</th>
+            </tr>
+            </thead>
+            <tbody>
+-->
+<!-- END -->                            
+<!-- clanwars_details_match_content -->
+         <!--   <tr>
+                <td class="text-start">$date</td>
+                <td align="left">--><!--<img class="game-icon" src="./images/games/to4.jpg" data-toggle="tooltip" data-placement="top" title="Tactical Operations" alt="Tactical Operations"> <img class="game-icon" src="includes/plugins/league/images/1.png" data-toggle="tooltip" data-placement="top" title="" alt="YOURGAMINGHOSTS LIGA" data-bs-original-title="YOURGAMINGHOSTS LIGA" aria-label="YOURGAMINGHOSTS LIGA"> --><!--</td>
+                <td align="left">$squad vs $opponent</td>                        
+                <td class="text-start">$results_1 : $results_2</td>                     
+            </tr>
+             -->       
+                      
+<!-- END -->                            
+<!-- clanwars_details_match_foot -->   
+<!--            </tbody>
+            </table>
+        </div>
+    </div>
+</div>-->
+<!-- END -->

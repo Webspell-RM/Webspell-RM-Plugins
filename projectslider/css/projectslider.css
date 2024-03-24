@@ -1,0 +1,41 @@
+/* CAROUSEL SETTINGS */
+/* Carousel Styles */
+
+.project-height {
+  /*height: 100vh;
+  min-height: 350px;*/
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.hx-text {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.hx-text h3 {
+  
+  font-weight: 400;
+  font-size: 45px;
+  margin-bottom: 0px;
+  position: relative;
+  top: 0px;
+  opacity: 0;
+  color: #fe821d;
+}
+
+/*.hx-text h1 span {
+  color: #fe821d;
+}*/
+
+.hx-text p {
+  
+  font-size: 13px;
+  margin-bottom: 0px;
+  position: relative;
+  top: 0px;
+  opacity: 0;
+}

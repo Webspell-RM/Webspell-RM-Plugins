@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "history/install.php",
+				"file2": "history/uninstall.php",
+				"file3": "history/history.php"
+			},
+			{
+				"index": "admin",
+				"file1": "history/admin/admin_history.php"
+			},
+			{
+				"index": "languages",
+				"file1": "history/languages/de/history.php",
+				"file2": "history/languages/de/admin_history.php",
+				"file3": "history/languages/en/history.php",
+				"file4": "history/languages/en/admin_history.php",
+				"file5": "history/languages/it/history.php",
+				"file6": "history/languages/it/admin_history.php"
+			},
+			{
+				"index": "templates",
+				"file1": "history/templates/history.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css",
+				"file1": "history/css/history.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

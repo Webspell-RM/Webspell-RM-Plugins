@@ -1,0 +1,48 @@
+<?php
+
+$language_array = Array(
+
+
+  'access_denied'          => 'Accesso Negato',
+  'actions'                => 'Azioni',
+  'add_sponsor'            => 'Aggiungi Sponsor',
+  'back'                   => 'Indietro',
+  'banner'                 => 'Banner',
+  'banner_to_big'          => 'Il Banner è troppo grande',
+  'banner_upload'          => 'Banner Upload',
+  'banner_upload_info'     => 'Per sc_sponsors include',
+  'banner_upload_small'    => 'Banner Upload (piccolo)',
+  'clicks'                 => 'Clic (per giorno)',
+  'current_banner'         => 'Banner Corrente',
+  'current_banner_small'   => 'Banner Corrente (piccolo)',
+  'delete'                 => 'Cancella',
+  'description'            => 'Descrizione',
+  'options'                => 'Opzioni',
+  'edit'                   => 'Edita',
+  'edit_sponsor'           => 'Salva Sponsor',
+  'format_incorrect'       => 'Il formato dell\' immagine non era corretto. Si prega di caricare solo banner in formato .gif, .jpg e .png.',
+  'is_displayed'           => 'Viene visualizzato?',
+  'mainsponsor'            => 'Sponsor principale',
+  'new_sponsor'            => 'Nuovo Sponsor',
+  'no'                     => 'No',
+  'no_upload'              => 'Nessuna immagine caricata',
+  'no_entries'             => 'Nessuna voce',
+  'really_delete'          => 'Davvero eliminare questo banner?',
+  'sort'                   => 'Ordine',
+  'sponsor'                => 'Sponsor',
+  'sponsor_name'           => 'Nome Sponsor',
+  'sponsor_url'            => 'URL Sponsor',
+  'sponsors'               => 'Sponsor',
+  'settings'               => 'Settaggi',
+  'transaction_invalid'    => 'ID transazione non valido',
+  'title'                  => 'Sponsor',
+  'to_sort'                => 'Ordina',
+  'yes'                    => 'Si',
+  'max_sponsors'           => 'Sponsor per pagina:',
+  'tooltip'                => 'Numero massimo di sponsor per pagina',
+  'update'                 => 'Aggiorna',
+  'description'            => 'sc_Informazioni file',
+  'privacy_policy_title'   => '<h4>Informazioni per l\'integrazione manuale del file sc_file. <br> <small> (Alternativa: il controllo widget.) </ small></h4><br>',
+  'privacy_policy_text'    => '<p>Copiare le seguenti righe e incollarle nella posizione desiderata in  index.php.</p>'
+);
+

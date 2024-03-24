@@ -1,0 +1,301 @@
+<!-- clanwars_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- clanwars_head -->
+  <div class="card">
+  <div class="card-body">
+    <section class="matches">
+      <div class="table-responsive">
+        <!--<table id="plu1gini" class="table">-->
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Date:</th>
+              <th>$lang_game:</th>
+              <th>$lang_league:</th>
+              <th>$lang_squad:</th>
+              <th style="text-align: center">Logo:</th>
+              <th></th>
+              <th style="text-align: center">Logo:</th>
+              <th>$lang_opponent:</th>
+              <th style="text-align: center">$lang_result:</th>
+              
+              <th>$lang_details:</th>
+            </tr>
+          </thead>
+         
+<!-- END -->
+
+<!-- clanwars_content -->
+            <tr class="animated $ani_title">
+                <td><h4 style="margin-top: 15px;">$date</h4></td>
+                <td><img class="img-fluid" style="margin-top: 5px;max-height: 50px" src="$gameicon" alt="$game" data-toggle="tooltip" data-bs-html="true" title="$game"></td>
+                <td><h4 style="margin-top: 15px;">$league</h4></td>
+              <td><h4 style="margin-top: 15px;">$squad</h4></td>
+              <td style="text-align: center">$squadicon</td>
+              <td style="text-align: center"><h4 style="margin-top: 15px;">versus</h4></td>
+              <td style="text-align: center">$opppic</td>
+              <td><h4 style="margin-top: 15px;">$opponent</td>
+              <td style="text-align: center"><h4 style="margin-top: 15px;">$results</h4></td>
+              
+              <td style="text-align: center">$details</td>  
+            </tr>
+<!-- END -->
+
+<!-- clanwars_foot -->
+          
+        </table>
+      </div><!-- END TABLE -->
+    </section>
+  </div>
+  </div>
+<!-- END -->
+
+<!-- clanwars_sc_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- clanwars_sc_content -->
+  <div class="row" style="background-image: linear-gradient(to bottom,grey 0%,black 80%),url('$teamicon'); 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-blend-mode:multiply;">
+    <div class="col-md-4" style="text-align: center;margin-top: 95px;">$squadicon<br><h3>$squad</h3></div>
+    <div class="col-md-4" style="text-align: center;"><img class="img-fluid" src="/includes/plugins/clanwars/images/versus.png" alt="" /></div>
+    <div class="col-md-4" style="text-align: center;margin-top: 95px;">$opppic<br><h3>$opponent</h3></div>
+
+
+    <div class="col-md-12" style="margin-top: -55px;">
+   <p style="text-align: center;font-size: 40px;">$date / $time</p>
+
+    <ul class="flip-clock-container flip-2" style="margin-top: -35px;">
+      <li class="test text-center">Seconds</li>
+      <li class="test text-center">Minutes</li>
+      <li class="test text-center">Houre</li>
+      <li class="test text-center">Days</li>
+    </ul>
+    <ul class="flip-clock-container flip-2">
+      <li class="flip-item-seconds">$sec</li>
+      <li class="flip-item-minutes">$min</li>
+      <li class="flip-item-hours">$houre</li>
+      <li class="flip-item-days">$day</li>
+    </ul> <br>
+  </div>
+  <script src="js/flip-clock.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('.flip-3').on('done', function() {
+        console.log('doooooonnnnnee!');
+      });
+      $('.flip-3').on('beforeFlipping', function(e, data) {
+        console.log('beforeFlipping:', data);
+      });
+      $('.flip-3').on('afterFlipping', function(e, data) {
+        console.log('afterFlipping:', data);
+      });
+      
+    });
+  </script>
+ 
+<br>
+
+  </div>
+<!-- END -->
+
+<!-- clanwars_sc_foot -->
+  <div id="paginate-slider1">
+    <div class="row">
+      <div class="col-sm-2 col-xs-2"><a href="#prev" class="prev badge badge-secondary"><i class="bi bi-chevron-double-left"></i> prev</a></div>
+      <div class="col-sm-8 col-xs-8"></div>
+      <div class="col-sm-2 col-xs-2" style="text-align: right;"><a href="#next" class="next badge badge-secondary">next <i class="bi bi-chevron-double-right"></i></a></div>
+    </div>
+  </div>
+<!-- END -->
+
+
+<!-- clanwars_stats_total -->
+<div class="card">
+  <div class="card-body">
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <tr>
+                <td>$total_clanwars:</td>
+                <td class="text-center"><strong>$totaltotal</strong></td>
+            </tr>
+            <tr>
+                <td>$total_won_clanwars:</td>
+                <td class="text-center"><strong class="text-success">$totalwonall</strong></td>
+            </tr>
+            <tr>
+                <td>$total_lost_clanwars:</td>
+                <td class="text-center"><strong class="text-danger">$totalloseall</strong></td>
+            </tr>
+            <tr>
+                <td>$total_draw_clanwars:</td>
+                <td class="text-center"><strong class="text-warning">$totaldrawall</strong></td>
+            </tr>
+            <tr>
+                <td>$total_won_points:</td>
+                <td class="text-center">$totalhome</td>
+            </tr>
+            <tr>
+                <td>$total_lost_points:</td>
+                <td class="text-center">$totalopp</td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="col-md-6">
+        <table class="table">
+            <tr><td>$won</td></tr>
+            <tr><td>$totalwon</td></tr>
+            <tr><td>$lost</td></tr>
+            <tr><td>$totallost</td></tr>
+            <tr><td>$draw</td></tr>
+            <tr><td>$totaldraw</td></tr>
+        </table>
+    </div>
+</div>
+ </div>
+</div>
+
+<!-- END -->
+<!-- clanwars_stats -->
+<div class="card">
+  <div class="card-body">
+<div class="row">
+    <div class="col-sm-6">
+        <table class="table">
+            <tr>
+                <th></th>
+                <th>$squad:</th>
+                <th>$clan insg.:</th>
+                <th>$percent:</th>
+            </tr>
+            <tr>
+                <th>$clanwars:</th>
+                <td><strong>$total</strong></td>
+                <td>$totaltotal</td>
+                <td> $totalperc %</td>
+            </tr>
+            <tr>
+                <th class="text-success">$won_clanwars:</th>
+                <td class="text-success">$wonall</td>
+                <td class="text-success">$totalwonall</td>
+                <td class="text-success">$wonperc %</td>
+            </tr>
+            <tr>
+                <th class="text-danger">$lost_clanwars:</th>
+                <td class="text-danger">$loseall</td>
+                <td class="text-danger">$totalloseall</td>
+                <td class="text-danger">$loseperc %</td>
+            </tr>
+            <tr>
+                <th class="text-warning">$draw_clanwars:</th>
+                <td class="text-warning">$drawall</td>
+                <td class="text-warning">$totaldrawall</td>
+                <td class="text-warning">$drawperc %</td>
+            </tr>
+            <tr>
+                <th>$won_points:</th>
+                <td>$home</td>
+                <td>$totalhome</td>
+                <td>$homeperc %</td>
+            </tr>
+            <tr>
+                <th>$lost_points:</th>
+                <td>$opp</td>
+                <td>$totalopp</td>
+                <td>$oppperc %</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-sm-6">
+        <table class="table">
+            <tr><td>$won</td></tr>
+            <tr><td>$totalwon</td></tr>
+            <tr><td>$lost</td></tr>
+            <tr><td>$totallost</td></tr>
+            <tr><td>$draw</td></tr>
+            <tr><td>$totaldraw</td></tr>
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<!-- END -->
+<!-- clanwars_stats_player_head -->
+<div class="card">
+  <div class="card-body">
+<table class="table">
+    <tr>
+        <td>$nickname:</td>
+        <td>$clanwars:</td>
+        <td>$percent:</td>
+    </tr>
+
+<!-- END -->
+<!-- clanwars_stats_player_content -->
+
+<tr>
+    <td>$member</td>
+    <td>$wars</td>
+    <td>$percpic</td>
+</tr>
+<!-- END -->
+
+<!-- clanwars_sidebar_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- clanwars_sidebar_head -->
+<div class="card">
+    <div class="card-body" style="margin: -12px -12px -17px -12px;">
+
+   
+         
+<!-- END -->
+
+<!-- clanwars_sidebar_content -->
+
+<link href="includes/plugins/clanwars/css/clanwars.css" rel="stylesheet">
+  <div class="clanwars-container" style="padding-right: 6px;padding-left: 6px;">
+    <div class="cw-row">
+      <div class="status $result_map2"></div>
+      <div class="infos">
+        <div>VS. <a href="$league" target="_blank"><small>$opponent</small></a></div>
+        <div><small>$date, $squad</small></div>
+      </div>
+      <div class="result">
+        $results
+      </div>
+    </div>
+    <div class="" style="margin: 15px 0px 15px; border-style:none none solid none; border-width: thin; border-color: #848484"></div>
+  </div>
+<!-- END -->
+
+<!-- clanwars_sidebar_foot -->
+ </div>
+ </div>
+<!-- END -->

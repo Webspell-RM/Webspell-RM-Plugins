@@ -1,0 +1,35 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "memberslist/install.php",
+				"file2": "memberslist/uninstall.php",
+				"file3": "memberslist/memberslist.php",
+				"file4": "memberslist/widget_memberslist_content.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "memberslist/languages/de/memberslist.php",
+				"file2": "memberslist/languages/en/memberslist.php",
+				"file3": "memberslist/languages/it/memberslist.php"
+			},
+			{
+				"index": "templates",
+				"file1": "memberslist/templates/memberslist.html",
+				"file2": "memberslist/templates/widget_memberslist.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css",
+				"file1": "memberslist/css/memberlist.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

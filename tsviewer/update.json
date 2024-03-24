@@ -1,0 +1,36 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "tsviewer/update.php",
+				"file2": "tsviewer/install.php",
+				"file3": "tsviewer/uninstall.php",
+				"file4": "tsviewer/tsviewer.php",
+				"file5": "tsviewer/widget_tsviewer_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "tsviewer/admin/admin_tsviewer.php"
+			},
+			{
+				"index": "languages",
+				"file1": "tsviewer/languages/de/tsviewer.php",
+				"file2": "tsviewer/languages/en/tsviewer.php",
+				"file3": "tsviewer/languages/it/tsviewer.php"
+			},
+			{
+				"index": "templates",
+				"file1": "tsviewer/templates/tsviewer.html"
+			},
+			{
+				"index": "images",
+				"file1": "tsviewer/images/widget_tsviewer_sidebar.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

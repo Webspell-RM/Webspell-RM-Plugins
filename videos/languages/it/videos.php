@@ -1,0 +1,31 @@
+<?php
+
+$language_array = array(
+
+    'title'                   => 'Video',
+    'on'                      => 'il',
+    'back'                    => 'Indietro',
+    'added_by'                => 'Aggiunto da',
+    'view'                    => 'Visualizzazioni',
+    'no_categories'           => '<blockquote>Nessuna categoria creata</blockquote>',
+    'current_media'           => 'MEDIA CORRENTE',
+    'sidebar_media'           => 'MEDIA',
+    'comment'                 => '<a href="$url">[1] Commento</a>,<br> ultimo da $lastposter - $lastdate',
+    'comments'                => '<a href="$url">[$anzcomments] Commenti</a>,<br> ultimo da $lastposter - $lastdate',
+    'no_comment'              => '<a href="$url">Nessun commento</a><br><br>',
+    'no_comments'             => 'Disabilita commenti<br><br>',
+    'off_comments'            => 'Commenti disabilitati<br><br>',
+    'perfect'                 => 'Perfetto',
+    'please_login'            => 'Accedi',
+    'poor'                    => 'Scarso',
+    'rate'                    => 'Vota',
+    'rate_have_to_reg_login'  => 'Vota: devi essere registrato e aver effettuato l\'accesso!',
+    'rate_now'                => 'Vota ora!',
+    'rating'                  => 'Valutazione',
+    'rating_x_of_10'          => 'Voto: %d su 10',
+    'votes'                   => 'Voti',
+    'you_have_already_rated'  => 'Hai già Votato.',
+    'no_banners'              => '<blockquote>Nessun video</blockquote>',
+    'all'                     => 'Tutti',
+    'to_the_video'            => 'Vai al Video',
+);

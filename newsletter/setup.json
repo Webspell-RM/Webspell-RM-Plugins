@@ -1,0 +1,41 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "newsletter/install.php",
+				"file2": "newsletter/uninstall.php",
+				"file3": "newsletter/newsletter.php",
+				"file4": "newsletter/widget_newsletter_sidebar.php",
+				"file5": "newsletter/widget_newsletter_content.php",
+				"file6": "newsletter/widget_newsletter_box.php"
+			},
+			{
+				"index": "admin",
+				"file1": "newsletter/admin/admin_newsletter.php"
+			},
+			{
+				"index": "languages",
+				"file1": "newsletter/languages/de/newsletter.php",
+				"file2": "newsletter/languages/de/admin_newsletter.php",
+				"file3": "newsletter/languages/en/newsletter.php",
+				"file4": "newsletter/languages/en/admin_newsletter.php",
+				"file5": "newsletter/languages/it/newsletter.php",
+				"file6": "newsletter/languages/it/admin_newsletter.php"
+			},
+			{
+				"index": "templates",
+				"file1": "newsletter/templates/newsletter.html"
+			},
+			{
+				"index": "images",
+				"file1": "newsletter/images/widget_newsletter_content.jpg",
+				"file2": "newsletter/images/widget_newsletter_sidebar.jpg"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

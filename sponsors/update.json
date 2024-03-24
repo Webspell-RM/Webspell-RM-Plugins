@@ -1,0 +1,49 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "sponsors/update.php",
+				"file2": "sponsors/install.php",
+				"file3": "sponsors/uninstall.php",
+				"file4": "sponsors/widget_sponsors_sidebar.php",
+				"file5": "sponsors/sponsors.php",
+				"file6": "sponsors/widget_sponsors_content_one.php",
+				"file7": "sponsors/widget_sponsors_content_two.php"
+			},
+			{
+				"index": "admin",
+				"file1": "sponsors/admin/admin_sponsors.php"
+			},
+			{
+				"index": "language",
+				"file1": "sponsors/languages/de/sponsors.php",
+				"file2": "sponsors/languages/de/admin_sponsors.php",
+				"file3": "sponsors/languages/en/sponsors.php",
+				"file4": "sponsors/languages/en/admin_sponsors.php",
+				"file5": "sponsors/languages/it/sponsors.php",
+				"file6": "sponsors/languages/it/admin_sponsors.php"
+			},
+			{
+				"index": "templates",
+				"file1": "sponsors/templates/sponsors_one.html",
+				"file2": "sponsors/templates/sponsors_two.html",
+				"file3": "sponsors/templates/sc_sponsors.html",
+				"file4": "sponsors/templates/sc_sponsors_main.html",
+				"file5": "sponsors/templates/sponsors.html"
+			},
+			{
+				"index": "images",
+				"file1": "sponsors/images/no-image.jpg",
+				"file2": "sponsors/images/widget_sponsors_content_one.jpg",
+				"file3": "sponsors/images/widget_sponsors_content_two.jpg",
+				"file4": "sponsors/images/widget_sponsors_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "sponsors/css/sponsors.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

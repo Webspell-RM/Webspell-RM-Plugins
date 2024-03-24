@@ -1,0 +1,50 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "clanwars/install.php",
+				"file2": "clanwars/uninstall.php",
+				"file3": "clanwars/widget_clanwars_content.php",
+				"file4": "clanwars/clanwars.php",
+				"file5": "clanwars/_functions.php",
+				"file6": "clanwars/widget_clanwars_sidebar.php"
+			},
+			{
+				"index": "admin",
+				"file1": "clanwars/admin/admin_clanwars.php"
+			},
+			{
+				"index": "language",
+				"file1": "clanwars/languages/de/clanwars.php",
+				"file2": "clanwars/languages/en/clanwars.php",
+				"file3": "clanwars/languages/it/clanwars.php"
+			},
+			{
+				"index": "templates",
+				"file1": "clanwars/templates/clanwars.html",
+				"file2": "clanwars/templates/clanwars_details.html"
+			},
+			{
+				"index": "images",
+				"file1": "clanwars/images/versus.png",
+				"file2": "clanwars/images/no-image.jpg",
+				"file3": "clanwars/images/clanwar-screens/no-image.jpg",
+				"file4": "clanwars/images/clanwar-screens/no_screenshots.jpg",
+				"file5": "clanwars/images/widget_clanwars_content.jpg",
+				"file6": "clanwars/images/widget_clanwars_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "clanwars/css/clanwars.css",				
+				"file2": "clanwars/css/flip-clock.css",
+				"file3": "clanwars/css/flip-clock.css.map",
+				"file4": "clanwars/css/flip-clock.scss"
+			},
+			{
+				"index": "js",
+				"file1": "clanwars/js/contentslider.js",
+				"file2": "clanwars/js/clanwars.js",
+				"file3": "clanwars/js/flip-clock.js"
+			}
+		]
+}

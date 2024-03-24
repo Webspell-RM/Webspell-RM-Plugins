@@ -1,0 +1,45 @@
+.stream-widget {
+  background: url(/includes/plugins/streams/images/streams-bg.jpg) center center no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.stream-widget::before {
+  content: "";
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/*.stream-widget .section-title h2 {
+  color: #fff;
+}*/
+
+.stream-widget .container {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .stream-widget {
+    background-attachment: fixed;
+  }
+}
+
+.stream-widget .swiper-pagination {
+  margin-top: 30px;
+  position: relative;
+}
+
+/* Customize twitter service colors */
+  div[data-service="twitch"]{
+    --im-btn-bg: #1DA1F2;
+    margin-bottom: 12px;
+    background-image: url('/includes/plugins/streams/images/twitch_offline.png');
+    background-repeat: no-repeat; 
+    background-size: 20%;
+    background-position-x: center;
+    min-height: 230px;
+  }

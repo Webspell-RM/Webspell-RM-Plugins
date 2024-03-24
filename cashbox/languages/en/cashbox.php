@@ -1,0 +1,43 @@
+<?php
+
+$language_array = array(
+
+    'add_payment'         => 'Add Payment',
+    'edit_payment'        => 'Edit Payment',
+    'amount'              => 'Amount',
+    'bank_account'        => 'Bank Account',
+    'calculate'           => 'Calculate',
+    'cash_box'            => 'Cash Box',
+    'clan'                => 'Clan',
+    'clanmembers_only'    => '<blockquote>Access only for members</blockquote>',
+    'costs_member'        => 'Cost/Member',
+    'ddmmyyyy'            => 'tt.mm.jjjj',
+    'each_squad'          => 'Every team',
+    'enter_costs_member'  => 'You must specify the cost per member.',
+    'enter_date'          => 'You must specify a date',
+    'enter_total_costs'   => 'You must enter the total cost.',
+    'enter_usage'         => 'You must specify a purpose.',
+    'info'                => 'Info',
+    'invalid_request'     => 'Invalid Request',
+    'member'              => 'Member',
+    'new_usage'           => 'New purpose',
+    'no_entries'          => 'No entries',
+    'not_paid'            => 'Not yet Paid',
+    'paid'                => 'Paid',
+    'pay_until'           => 'Pay up to',
+    'saved_on'            => 'Saved on',
+    'squad'               => 'Team',
+    'submit'              => 'Submit',
+    'total_amount'        => 'Total amount in the cash register (complete clan)',
+    'total_costs'         => 'Total Cost',
+    'update'              => 'Confirm deposit',
+    'usage'               => 'Purpose',
+    'edit'                => 'Edit',
+    'delete'              => 'Delete',
+    'payment_delete'      => 'Delete deposit',
+    'really_delete'       => 'Really delete this payment info?',
+    'options'             => 'Options',
+    'total_clan'          => '(All clan members)',
+    'close'               => 'Close'
+);
+

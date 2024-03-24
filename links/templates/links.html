@@ -1,0 +1,101 @@
+<!-- links_head -->
+<div class="head-boxes">
+	<span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+	<span class="head-boxes-title">$title</span>
+</h2>
+	<p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+<!-- links_category -->
+<ol class="breadcrumb">
+	<li class="breadcrumb-item active" aria-current="page">$title_categories ($anzcats $categories)</li>
+</ol>
+
+<!-- END -->
+<!-- links_content_head -->
+<div class="card">
+	<div class="card-body">
+		<div class="row">
+			<div class="col p-2">
+				$title_categories
+			</div>
+			<div class="col-5 d-none d-sm-block p-2">
+				$link_description
+			</div>
+			<div class="col-4 p-2">
+				$link_number
+			</div>
+		</div>
+<!-- END -->
+<!-- links_content -->
+		<div class="row border-top">
+			<div class="col p-2">
+				$linkcatname
+			</div>
+			<div class="col-5 d-none d-sm-block p-2">
+				$description
+			</div>
+			<div class="col-4 p-2">
+				($links: $anzlinks) <i class="bi bi-chevron-double-right"></i>
+			</div>
+		</div>
+<!-- END -->
+<!-- links_content_foot -->
+	</div>
+</div>
+
+<!-- END -->
+<!-- links_details_head -->
+
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a href="index.php?site=links">$title_categories</a></li>
+	<li class="breadcrumb-item active" aria-current="page">$linkcatname</li>
+</ol>
+
+<!-- END -->
+<!-- links_details_header -->
+<div class="row">
+
+<!-- END -->
+<!-- links_details -->
+	<div class="col-md-4">
+		<div class="card">
+			$banner
+			<div class="card-body">
+				<h5 class="card-title">$question</h5>
+				$answer
+			</div>	
+			<div class="card-footer text-muted">
+				<strong>$lang_links:</strong> $link<br>
+				<small>$info $poster $stand $date</small>
+			</div>
+		</div>
+	</div>
+<!-- END -->
+<!-- links_content_details_head -->
+<ol class="breadcrumb">
+	<li class="breadcrumb-item"><a href="index.php?site=links">$title_categories</a></li>
+	<li class="breadcrumb-item"><a href="index.php?site=links&action=show&linkcatID=$linkcatID">$linkcatname</a></li>
+	<li class="breadcrumb-item active" aria-current="page">$question</li>
+</ol>
+
+<!-- END -->
+<!-- links_content_details -->
+	<div class="card">
+		$banner
+		<div class="card-body">
+			<h5 class="card-title">$question</h5>
+			$answer
+		</div>	
+		<div class="card-footer text-muted">
+			<strong>$lang_links:</strong> $link<br>
+		<small>($views $lang_views)</small>
+		<p>$lang_rating: $ratingpic ($votes $lang_votes)<br>$rateform
+			</p><small>$info $poster $stand $date</small>
+		</div>
+	</div>
+<!-- END -->
+<!-- links_details_foot -->
+</div>
+<!-- END -->

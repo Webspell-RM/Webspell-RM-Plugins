@@ -1,0 +1,32 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "awaylist/install.php",
+				"file2": "awaylist/uninstall.php",
+				"file3": "awaylist/awaylist.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "awaylist/languages/de/awaylist.php",
+				"file2": "awaylist/languages/en/awaylist.php",
+				"file3": "awaylist/languages/it/awaylist.php"
+			},
+			{
+				"index": "templates",
+				"file1": "awaylist/templates/awaylist.html"
+			},
+			{
+				"index": "images"
+			},
+			{
+				"index": "css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

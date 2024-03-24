@@ -1,0 +1,197 @@
+.upper-footer {
+	/*padding-left: 35px;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	background-color: #f5f4f4;*/
+}
+.upper-footer .bg {
+	background-color: #f5f4f4;
+	padding: 35px;
+	/*margin-bottom: 20px;
+	margin-top: 20px;*/
+}
+
+.upper-text {
+	padding: 35px;
+}	
+.upper-footer .navbar-brand {
+	padding-right: 25px;
+}
+.upper-footer .nav {
+	padding: 3px;
+	margin-right: 20px;
+	margin-top: 2px;
+}
+.upper-footer .nav .nav-link {
+	padding: 8px 105px;
+	margin-top: 18px;
+	margin: 2px;
+}
+.upper-footer .nav .nav-link:first-child {
+	padding: 8px 105px;
+	margin-top: 0px;
+}
+.upper-footer .nav .nav-link {
+	color: #848484;
+	background-color: transparent;
+	font-size: 14px;
+	font-weight: 600;
+	text-transform: uppercase;
+	border: 1px solid rgba(255,255,255,0.08);
+
+}
+.upper-footer .nav-link.twitch:hover {
+	color: #fff;
+	background-color: #9147ff;
+}
+.upper-footer .nav-link.youtube:hover {
+	color: #fff;
+	background-color: #ff0000;
+}
+.upper-footer .nav-link.facebook:hover {
+	color: #fff;
+	background-color: #3b5998;
+}
+.upper-footer .nav-link.twitter:hover {
+	color: #fff;
+	background-color: #179cf0;
+}
+.upper-footer .nav-link.steam:hover {
+	color: #fff;
+	background-color: #455a64;
+}
+.upper-footer .nav-link.discord:hover {
+	color: #fff;
+	background-color: #7289da;
+}
+
+.nav.flex-column {margin-bottom: 20px}
+
+
+
+
+
+/*-- about--*/
+.about{
+    padding: 0 0 4em 0;
+}
+.welcome{
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 1em;
+	text-align:center;
+}
+.welcome-title h3{
+    font-size: 4em;
+    color: rgba(var(--bs-link-color),1);
+    margin: 0;
+    text-align: center;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+.welcome-title p {
+    font-size: 1em;
+    color: #999;
+    line-height: 1.8em;
+    margin: 1em auto 0;
+    width: 65%;
+} 
+.about-w3lsrow {
+    margin: 4em 0 0 0;
+}
+.about-img {
+    background: url(../images/about-img.jpg)no-repeat 0px 0px;
+    background-size: cover;
+    min-height: 30em;
+    padding: 0;
+	position:relative;
+}
+.about-text {
+    background: #f2f2f2;
+    position: absolute;
+    width: 56%;
+    padding: 3em;
+    right: -30%;
+    top: 27%;
+}
+.about-text h5 {
+    font-size: 2.5em;
+    color: rgba(var(--bs-link-color),1);
+    margin: 0;
+} 
+.about-text p{
+	color:#999999;
+	font-size:.9em;
+	line-height:1.8em;
+	margin:1em 0 0 0;
+}
+/*-- //about--*/
+/*-- responsive --*/
+@media(max-width:1080px){
+	.about-text {
+		width: 63%;
+		right: -35%;
+	}
+}
+@media(max-width:991px){
+	.about-text {
+		width: 89%;
+	}
+}
+@media(max-width:768px){
+	
+}
+@media(max-width:736px){
+	.about-text {
+		width: 60%;
+		right: 0;
+	}
+}
+@media(max-width:600px){
+	.about-text {
+		width: 72%;
+	}
+}
+@media(max-width:480px){
+	.about-text {
+		padding: 2em;
+	}
+	.welcome-title h3{
+    font-size: 4em;
+	}
+}
+@media(max-width:414px){
+	.w3about-img {
+		min-height: 22em;
+	}
+	.about-text {
+		padding: 1em;
+	}
+	.about-text h5 {
+		font-size: 2em;
+	}
+	.about-text {
+		top: 20%;
+	}
+	.about {
+		padding: 2em 0;
+	}
+	.about-w3lsrow {
+		margin: 2em 0 0 0;
+	}
+	.welcome-title h3 {
+        font-size: 3em;
+    }
+}
+@media(max-width:384px){
+	.welcome-title h3 {
+        font-size: 2.5em;
+    }
+}
+@media(max-width:320px){
+	.about-text {
+		width: 87%;
+	}
+	.welcome-title h3 {
+        font-size: 2em;
+    }	
+}		
+/*-- responsive --*/

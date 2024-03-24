@@ -1,0 +1,29 @@
+
+.social-media .container {
+  padding: 40px;
+}
+.ground{
+ background-color: rgba(var(--bs-card-bg-rgb), 1);
+ height: 80px;
+} 
+
+.social-media .social-media-content {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-align-items: center;
+      align-items: center; 
+} 
+ 
+.social-media .social-media-circle {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    padding: 2px;
+    margin: 5px 10px 5px 10px;
+    /*font-size: 1.5em;
+     width: 82px; */ 
+}
+ 

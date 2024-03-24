@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "rss/install.php",
+				"file2": "rss/uninstall.php",
+				"file3": "rss/rss.php",
+				"file4": "rss/widget_rss_sidebar.php",
+				"file5": "rss/feed_reader.php"
+			},
+			{
+				"index": "admin",
+				"file1": "rss/admin/admin_rss.php"
+			},
+			{
+				"index": "languages",
+				"file1": "rss/languages/de/rss.php",
+				"file2": "rss/languages/en/rss.php",
+				"file3": "rss/languages/it/rss.php"
+			},
+			{
+				"index": "templates",
+				"file1": "rss/templates/rss.html"
+			},
+			{
+				"index": "images",
+				"file1": "rss/images/widget_rss_sidebar.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "rss/css/rss.css"
+			},
+			{
+				"index": "js"
+			}
+		]
+}

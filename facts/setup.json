@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "facts/install.php",
+				"file2": "facts/uninstall.php",
+				"file3": "facts/widget_facts_content.php",
+				"file4": "facts/facts_functions.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language",
+				"file1": "facts/languages/de/facts.php",
+				"file2": "facts/languages/en/facts.php",
+				"file3": "facts/languages/it/facts.php"
+			},
+			{
+				"index": "templates",
+				"file1": "facts/templates/facts.html"
+			},
+			{
+				"index": "images",
+				"file1": "facts/images/facts_bg.jpg",
+				"file2": "facts/images/widget_facts_content.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "facts/css/facts.css"
+			},
+			{
+				"index": "js",
+				"file1": "facts/js/facts.js"
+			}
+		]
+}

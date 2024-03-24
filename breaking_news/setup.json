@@ -1,0 +1,37 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "breaking_news/install.php",
+				"file2": "breaking_news/uninstall.php",
+				"file3": "breaking_news/widget_breaking_news_content.php"
+			},
+			{
+				"index": "admin",
+				"file1": "breaking_news/admin/admin_breaking.php"
+			},
+			{
+				"index": "languages",
+				"file1": "breaking_news/languages/de/breaking_news.php",
+				"file2": "breaking_news/languages/en/breaking_news.php",
+				"file3": "breaking_news/languages/it/breaking_news.php"
+			},
+			{
+				"index": "templates",
+				"file1": "breaking_news/templates/breaking_news.html"
+			},
+			{
+				"index": "images",
+				"file1": "breaking_news/images/ticker-caption-bg.png",
+				"file2": "breaking_news/images/widget_breaking_news_content.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "breaking_news/css/ticker.css"
+			},
+			{
+				"index": "js",
+				"file1": "breaking_news/js/ticker.js"
+			}
+		]
+}

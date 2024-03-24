@@ -1,0 +1,400 @@
+<!-- cashbox_title_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- cashbox_top -->
+<div class="row">
+    <div class="col-md-6">$lang_total_amount: $costs</div>
+    <div class="col-md-6 text-right"><p><!--$cashadmin--></p></div>
+</div>
+<!-- END -->
+<!-- cashbox_head -->
+
+    <table class="table">
+    	<thead>
+            <br>
+        <tr>
+            <th>$lang_member:</th>
+            <th>$lang_paid:</th>
+            <th class="text-right">$lang_amount:</th>
+            <th></th>
+        </tr>
+        </thead>
+    <tbody>
+<!-- END -->
+
+<!-- cashbox_content -->
+<tr>
+    <td>$user</td>
+    <td>$payed</td>
+    <td class="text-right">$payment</td>
+    <td></td>
+</tr>
+<!-- END -->
+
+<!-- cashbox_foot -->
+<tr>
+    <td colspan="4" class="text-right"></td>
+</tr>
+</table>
+
+<!-- END -->
+
+<!-- cashbox_usage -->
+<table class="table">
+    <thead>
+    <tr>
+        <th colspan="2">$usage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>Info:</td>
+        <td class="text-right"><strong>$info</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_saved_on:</td>
+        <td class="text-right"><strong>$date</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_total_costs:</td>
+        <td class="text-right"><strong>$totalcosts &#8364;</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_costs_member:</td>
+        <td class="text-right"><strong>$usercosts &#8364;</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_pay_until:</td>
+        <td class="text-right"><strong>$paydate</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_bank_account:</td>
+        <td class="text-right"><strong>$konto</strong></td>
+    </tr>
+    
+    </tbody>
+</table>
+<!-- END -->
+
+<!-- cashbox_new -->
+
+<script>
+    <!--
+    function chkFormular() {
+        if (document.getElementById('usedfor').value === "") {
+            alert("%enter_usage%");
+            document.getElementById('usedfor').focus();
+
+            return false;
+        }
+
+        if (document.getElementById('day').value === "") {
+            alert("%enter_date%");
+            document.getElementById('day').focus();
+
+            return false;
+        }
+
+        if (document.getElementById('month').value === "") {
+            alert("%enter_date%");
+            document.getElementById('month').focus();
+
+            return false;
+        }
+
+        if (document.getElementById('year').value === "") {
+            alert("%enter_date%");
+            document.getElementById('year').focus();
+
+            return false;
+        }
+
+        if (
+                document.getElementById('euro').value === "" ||
+                document.getElementById('euro').value == "0.00"
+        ) {
+            alert("%enter_total_costs%");
+            document.getElementById('euro').focus();
+
+            return false;
+        }
+
+        if (
+                document.getElementById('usereuro').value == "" ||
+                document.getElementById('usereuro').value == "0.00"
+        ) {
+            alert("%enter_costs_member%");
+            document.getElementById('usereuro').focus();
+
+            return false;
+        }
+
+    }
+
+    function berechnen() {
+        var anz = document.getElementById('anz').value,
+            total = document.getElementById('euro').value,
+            user = total / anz,
+            rounduser = Math.round(user);
+
+        document.getElementById('usereuro').value = rounduser;
+
+        document.getElementById('usereuro').focus();
+    }
+    -->
+</script>
+
+
+
+<form name="post" method="post" action="cashbox.php" onsubmit="return chkFormular()" role="form">
+
+    <h3>%new_usage%</h3>
+
+    <div class="form-group">
+        <label for="squad">%squad%</label>
+        <select name="squad" id="squad" class="form-control">$squads</select>
+    </div>
+
+    <div class="form-group">
+        <label for="usedfor">%usage%</label>
+        <input name="usedfor" type="text" id="usedfor" value="" size="55" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="info">%info%</label>
+        <textarea name="info" cols="50" rows="7" id="info" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="konto">%bank_account%</label>
+        <textarea name="konto" cols="50" rows="4" id="konto" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="date">%pay_until%</label>
+
+        <input type="date" name="date" id="date" placeholder="yyyy-mm-dd" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="euro">%total_costs%:</label>
+        <input type="text" dir="rtl" name="euro" id="euro" size="8" value="$euro" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="usereuro">%costs_member%:</label>
+
+        <div class="input-group">
+            <input type="text" dir="rtl" name="usereuro" id="usereuro" size="8" value="$usereuro" class="form-control">
+            <span class="input-group-btn">
+                <input type="button" name="calculate" value="%calculate%" onclick="berechnen()" class="btn btn-info">
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group text-right">
+        <input type="hidden" name="anz" id="anz" value="$anz">
+        <input type="submit" name="save" value="%submit%" class="btn btn-primary">
+    </div>
+
+</form>
+
+<!-- END -->
+
+<!-- cashbox_edit -->
+<script>
+    <!--
+    function chkFormular() {
+        if (document.post.usedfor.value === "") {
+            alert("%enter_usage%");
+            document.post.usedfor.focus();
+
+            return false;
+        }
+
+        if (document.post.day.value === "") {
+            alert("%enter_date%");
+            document.post.day.focus();
+
+            return false;
+        }
+
+        if (document.post.month.value === "") {
+            alert("%enter_date%");
+            document.post.month.focus();
+
+            return false;
+        }
+
+        if (document.post.year.value === "") {
+            alert("%enter_date%");
+            document.post.year.focus();
+
+            return false;
+        }
+
+        if (document.post.euro.value === "" || document.post.euro.value == "0.00") {
+            alert("%enter_total_costs%");
+            document.post.euro.focus();
+
+            return false;
+        }
+
+        if (document.post.usereuro.value === "" || document.post.usereuro.value == "0.00") {
+            alert("%enter_costs_member%");
+            document.post.usereuro.focus();
+
+            return false;
+        }
+
+    }
+
+    function berechnen() {
+        var anz = document.getElementById('anz').value,
+            total = document.getElementById('euro').value,
+            user = total / anz,
+            rounduser = Math.round(user);
+
+        document.getElementById('usereuro').value = rounduser;
+        document.getElementById('usereuro').focus();
+    }
+
+    -->
+</script>
+
+<form name="post" method="post" action="cashbox.php" onsubmit="return chkFormular()">
+
+    <h3>%new_usage%</h3>
+
+    <div class="form-group">
+        <label for="squad">%squad%</label>
+        <select name="squad" id="squad" class="form-control">$squads</select>
+    </div>
+
+    <div class="form-group">
+        <label for="usedfor">%usage%</label>
+        <input name="usedfor" type="text" id="usedfor" value="$usage" size="55" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="info">%info%</label>
+        <textarea name="info" cols="50" rows="7" id="info" class="form-control">$info</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="konto">%bank_account%</label>
+        <textarea name="konto" cols="50" rows="4" id="konto" class="form-control">$bank_account</textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="date">%pay_until%</label>
+
+        <input type="date" name="date" id="date" placeholder="yyyy-mm-dd" value="$date" class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="euro">%total_costs%:</label>
+        <input type="text" dir="rtl" name="euro" id="euro" size="8" value="$totalcosts"
+            class="form-control">
+    </div>
+
+    <div class="form-group">
+        <label for="usereuro">%costs_member%:</label>
+
+        <div class="input-group">
+            <input type="text" dir="rtl" name="usereuro" id="usereuro" size="8" value="$usercosts"
+                class="form-control">
+            <span class="input-group-btn">
+                <input type="button" name="calculate" value="%calculate%" onclick="berechnen()" class="btn btn-info">
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group text-right">
+        <input type="hidden" name="anz" id="anz" value="$anz">
+        <input type="hidden" name="id" value="$id">
+        <input type="submit" name="saveedit" value="%submit%" class="btn btn-primary">
+    </div>
+
+</form>
+<!-- END -->
+
+<!-- cashbox_admin_top -->
+<div class="row">
+    <div class="col-md-6">$lang_total_amount: <strong class="$fontcolor">$costs &#8364;</strong></div>
+    <div class="col-md-6 text-right"><p><!--$cashadmin--></p></div>
+</div>
+<!-- END -->
+<!-- cashbox_admin_head -->
+<form name="post" method="post" action="admincenter.php?site=admin_cashbox">
+    <table class="table">
+        <thead>
+            <br>
+        <tr>
+            <th>$lang_member:</th>
+            <th>$lang_paid:</th>
+            <th>$lang_amount:</th>
+            <th>$lang_amount:</th>
+        </tr>
+        </thead>
+    <tbody>
+<!-- END -->
+
+<!-- cashbox_admin_content -->
+<tr>
+    <td>$user</td>
+    <td>$payed</td>
+    <td>$payment</td>
+    <td>$delete</td>
+</tr>
+<!-- END -->
+
+<!-- cashbox_admin_foot -->
+<tr>
+    <td colspan="3" class="text-right">$admin</td>
+</tr>
+</table>
+</form>
+<!-- END -->
+
+<!-- cashbox_admin_usage -->
+<table class="table">
+    <thead>
+    <tr>
+        <th colspan="2">$usage</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>$lang_saved_on:</td>
+        <td class="text-right"><strong>$date</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_total_costs:</td>
+        <td class="text-right"><strong>$totalcosts &#8364;</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_costs_member:</td>
+        <td class="text-right"><strong>$usercosts &#8364;</strong></td>
+    </tr>
+    <tr>
+        <td>$lang_pay_until:</td>
+        <td class="text-right"><strong>$paydate</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2">$lang_bank_account:</td>
+    </tr>
+    <tr>
+        <td colspan="2">$konto&nbsp;</td>
+    </tr>
+    
+    </tbody>
+</table>
+<!-- END -->
