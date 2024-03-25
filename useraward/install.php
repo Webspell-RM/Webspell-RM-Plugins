@@ -49,6 +49,10 @@ $translate->detectLanguages($str);
 $str = $translate->getTextByLanguage($str);   
 echo "<div class='card'><div class='card-header'>$str Database Installation</div><div class='card-body'>";
 #######################################################################################################################################
+DeleteData("settings_module","modulname","user_award");
+DeleteData("navigation_website_sub","modulname","user_award");
+DeleteData("navigation_dashboard_links","modulname","user_award");
+DeleteData("settings_plugins","modulname","user_award");
 
 add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_user_award` (
   `uwID` int(11) NOT NULL AUTO_INCREMENT,

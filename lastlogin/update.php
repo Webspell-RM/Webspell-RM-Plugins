@@ -49,6 +49,10 @@ $translate->detectLanguages($str);
 $str = $translate->getTextByLanguage($str);
 echo "<div class='card'><div class='card-header'>$str Database Updation</div><div class='card-body'>";
 #######################################################################################################################################
+DeleteData("settings_module","modulname","userrights");
+DeleteData("navigation_website_sub","modulname","userrights");
+DeleteData("navigation_dashboard_links","modulname","userrights");
+DeleteData("settings_plugins","modulname","userrights");
 
 get_add_module_install ();
 get_add_plugin_manager();

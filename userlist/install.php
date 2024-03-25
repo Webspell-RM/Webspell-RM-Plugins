@@ -50,6 +50,11 @@ $str = $translate->getTextByLanguage($str);
 echo "<div class='card'><div class='card-header'>$str Database Installation</div><div class='card-body'>";
 #######################################################################################################################################
 safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_userlist");
+DeleteData("settings_module","modulname","userrights");
+DeleteData("navigation_website_sub","modulname","userrights");
+DeleteData("navigation_dashboard_links","modulname","userrights");
+DeleteData("settings_plugins","modulname","userrights");
+
 add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_userlist` (
   `ruID` int(11) NOT NULL AUTO_INCREMENT,
   `users_list` int(11) NOT NULL DEFAULT '0',

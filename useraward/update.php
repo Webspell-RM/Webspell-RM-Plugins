@@ -51,6 +51,10 @@ echo "<div class='card'><div class='card-header'>$str Database Updation</div><di
 #######################################################################################################################################
 # Versions-Nummer wird upgedatet
 safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname'");
+DeleteData("settings_module","modulname","user_award");
+DeleteData("navigation_website_sub","modulname","user_award");
+DeleteData("navigation_dashboard_links","modulname","user_award");
+DeleteData("settings_plugins","modulname","user_award");
 
 add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_user_award` (
   `uwID` int(11) NOT NULL AUTO_INCREMENT,
