@@ -51,6 +51,7 @@ echo "<div class='card'><div class='card-header'>$str Database Updation</div><di
 #######################################################################################################################################
 # Versions-Nummer wird upgedatet
 safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname'");
+safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_userlist");
 
 add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_userlist` (
   `ruID` int(11) NOT NULL AUTO_INCREMENT,
