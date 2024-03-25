@@ -61,6 +61,7 @@ $language_array = Array(
    'tooltip_6'                        => 'Category per page',
    'tooltip_7'                        => 'Upload individual images via form',
    'tooltip_8'                        => 'Upload multiple images via FTP. All images must be located in the /includes/plugins/gallery/images/pic_update/ folder.',
+   'tooltip_9'                        => 'Number of images next to each other',
    'ftp_info'                         => 'All images must be in the <b>/includes/plugins/gallery/images/pic_update/</b> folder.',
    'update'                           => 'Update',
    'title'                            => 'Gallery Settings',
@@ -81,6 +82,8 @@ $language_array = Array(
    'visitor_comments'                 => 'Enable visitor comments',
    'delete_pic'                       => '<div class="alert alert-danger" role="alert">The image has been removed.</div>',
    'close'                            => 'Close',
-   'no_plugin_squads'                 => 'Plugin Squads not installed!'
+   'no_plugin_squads'                 => 'Plugin Squads not installed!',
+   'page_s'                           => 'Page(s)',
+   'images_per_page'                  => 'Images per Page',
 );
 

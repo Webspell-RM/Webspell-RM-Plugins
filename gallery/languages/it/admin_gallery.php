@@ -61,6 +61,7 @@ $language_array = Array(
    'tooltip_6'                         => 'Categoria per pagina',
    'tooltip_7'                         => 'Carica singole immagini tramite modulo',
    'tooltip_8'                         => 'Carica più immagini tramite FTP. Tutte le immagini devono trovarsi nella cartella /includes/plugins/gallery/images/pic_update/.',
+   'tooltip_9'                         => 'Numero di immagini una accanto all\'altra',
    'ftp_info'                          => 'Tutte le immagini devono trovarsi nella cartella <b>/includes/plugins/gallery/images/pic_update/</b>.',
    'update'                            => 'Aggiorna',
    'title'                             => 'Impostazioni Galleria',
@@ -81,6 +82,8 @@ $language_array = Array(
    'visitor_comments'                  => 'Abilita commenti dei visitatori',
    'delete_pic'                        => '<div class="alert alert-danger" role="alert">L\'immagine è stata rimossa.</div>',
    'close'                             => 'Chiudi',
-   'no_plugin_squads'                  => 'Plugin Squads non installato!'
+   'no_plugin_squads'                  => 'Plugin Squads non installato!',
+   'images_per_page'                   => 'Immagini per Pagina',
+   'page_s'                            => 'Pagina/e',
    
 );
