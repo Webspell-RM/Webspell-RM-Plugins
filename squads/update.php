@@ -5,7 +5,7 @@ global $str,$modulname,$info,$navi_name,$admin_file,$activate,$author,$website,$
 $str                     =   "{[de]}Teams{[en]}Teams{[it]}Squadre";                      // name of the plugin
 $modulname               =   "squads";                      // name to uninstall
 $info                    =   "{[de]}Mit diesem Plugin könnt ihr eure Teams anzeigen lassen.{[en]}With this plugin you can display your teams.{[it]}Con questo plugin puoi visualizzare le tue Squadre con i Membri.";// description of the plugin
-$navi_name               =   "[de]}Teams & Mitglieder{[en]}Teams & Members{[it]}Squadre & Membri";// name of the Webside Navigation / Dashboard Navigation
+$navi_name               =   "{[de]}Teams & Mitglieder{[en]}Teams & Members{[it]}Squadre & Membri";// name of the Webside Navigation / Dashboard Navigation
 $admin_file              =   "admin_squads";                // administration file
 $activate                =   "1";                           // plugin activate 1 yes | 0 no
 $author                  =   "T-Seven";                     // author

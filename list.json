@@ -90,8 +90,8 @@
     "path": "/awaylist/",
     "req": "2.1.4",
     "install_datei": "install",
-    "required": "",
-    "plus_plugin": "n/a"
+    "required": "squads",
+    "plus_plugin": "Squads"
   },
     "name": "PluginBase",
     "item6": {
