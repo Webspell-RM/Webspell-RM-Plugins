@@ -786,7 +786,7 @@ function showboard($board)
         $moderators = '(' . $plugin_language[ 'moderated_by' ] . ': ' . $moderators . ')';
     }
 
-    $actions = '<a href="index.php?site=search" class="btn btn-secondary"><i class="bi bi-search"></i> Search</a>';
+    $actions = '<a href="index.php?site=search" class="btn btn-secondary"><i class="bi bi-search"></i> ' . $plugin_language[ 'search' ] . '</a>';
     if ($loggedin) {
         $mark = '<a href="index.php?site=forum&amp;board=' . $board . '&amp;action=markall">' .
             $plugin_language[ 'mark_topics_read' ] . '</a>';
