@@ -82,6 +82,7 @@ $language_array = array(
     'no_screenshots'       =>'Nessun Screenshots',
     'game'                 =>'Giochi',
     'clanwar_details'      =>'Dettagli',
-    'matchlink'            =>'Collegamento corrispondenza'
+    'matchlink'            =>'Collegamento corrispondenza',
+    'select'               =>'Seleziona',
 
 );

@@ -81,6 +81,7 @@ $language_array = array(
     'game'                   =>'Game',
     'clanwar_details'        =>'Details',
     'matchlink'              =>'Match Link',
-    'time'                   =>'Time'
+    'time'                   =>'Time',
+    'select'                 => 'Select',
 );
 

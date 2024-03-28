@@ -327,7 +327,7 @@ $CAPCLASS = new \webspell\Captcha;
 
    
   $opperg = safe_query("SELECT DISTINCT (opponent) FROM " . PREFIX . "plugins_clanwars");
-  $opps = '<option value="0" selected="selected">--- Bitte ausw&auml;hlen ---</option>';
+  $opps = '<option value="0" selected="selected">' . $plugin_language[ 'select' ] .'</option>';
   while($ds2 = mysqli_fetch_array($opperg)) {
     $opps .= '<option value="'. $ds2['opponent'] .'">' . $ds2['opponent'] . '</option>';
   }
@@ -390,7 +390,7 @@ echo'<form class="form-horizontal" method="post" action="admincenter.php?site=ad
   </div>
 
   <div class="mb-3 row">
-    <label class="col-sm-2 control-label">Gegnerteam:</label>
+    <label class="col-sm-2 control-label">'.$plugin_language['opponent_team'].':</label>
     <div class="col-sm-8">
       '.$oppselect.'
     </div>

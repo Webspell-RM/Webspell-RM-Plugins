@@ -84,6 +84,7 @@ $language_array = array(
     'clanwar_details'       => 'Details',
     'matchlink'             => 'Match Link',
     'time'                  => 'Zeit',
-    'no_maps'               => 'keine Karten'
+    'no_maps'               => 'keine Karten',
+    'select'                => 'Select',
 );
 
