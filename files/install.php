@@ -54,6 +54,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
   `filecatID` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL DEFAULT '',
   `subcatID` int(11) NOT NULL DEFAULT '0',
+  `sort` int(11) NOT NULL,
   PRIMARY KEY (`filecatID`)
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
