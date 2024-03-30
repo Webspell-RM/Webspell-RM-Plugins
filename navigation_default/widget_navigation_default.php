@@ -32,22 +32,21 @@ GLOBAL $logo,$theme_name,$themes,$tpl,$loggedin,$index_language,$modRewrite,$act
 
 $ergebnis=safe_query("SELECT * FROM ".PREFIX."settings_themes WHERE active = 1");
 $ds=mysqli_fetch_array($ergebnis);
-?>
-
+echo'
 <!-- ======= Header ======= -->
 <header id="header" class="sticky-top d-flex align-items-center">
     <div class="container d-flex justify-content-between">
         <div class="logo">
-            <a href="#"><img class="img-fluid" src="../includes/themes/<?php echo $theme_name; ?>/images/<?php echo $ds[ 'logo_pic' ]; ?>" alt=""></a>
+            <a href="#"><img class="img-fluid" src="../includes/themes/'.$ds[ 'pfad' ].'/images/'.$ds[ 'logo_pic' ].'" alt=""></a>
         </div>
         <div class="box">
-            <span class="webspell"><?php echo $ds[ 'logotext1' ];?></span>
-            <span class="slogan"><?php echo $ds[ 'logotext2' ];?></span>
+            <span class="webspell">'.$ds[ 'logotext1' ].'</span>
+            <span class="slogan">'.$ds[ 'logotext2' ].'</span>
         </div>
-        <nav id="navbar" class="navbar <?php echo $ds[ 'nav_text_alignment' ];?>">
-            <ul>
-                <?php include("./includes/modules/navigation.php"); ?>
-                <?php $dx = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "settings_widgets WHERE modulname='topbar' AND themes_modulname='default' AND position='via_navigation_widget'"));
+        <nav id="navbar" class="navbar '.$ds[ 'nav_text_alignment' ].'">
+            <ul>';
+                include("./includes/modules/navigation.php");
+                $dx = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "settings_widgets WHERE modulname='topbar' AND themes_modulname='".$ds['modulname']."' AND position='via_navigation_widget'"));
                 if (@$dx['activate'] == "0") {
                     if($loggedin) {
                         include("./includes/modules/navigation_login.php");
@@ -70,4 +69,4 @@ $ds=mysqli_fetch_array($ergebnis);
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
     </div>
-</header><!-- End Header -->
+</header><!-- End Header -->';
