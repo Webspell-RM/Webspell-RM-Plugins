@@ -360,19 +360,19 @@ echo'<div class="card">
     <div class="mb-3 row">
     <label class="col-sm-2 control-label">'.$plugin_language['homepage_url'].':</label>
     <div class="col-sm-10"><span class="text-muted small"><em>
-      <input type="text" class="form-control" name="url" size="60" value="http://" /></em></span>
+      <input type="text" class="form-control" name="url" size="60" placeholder="https://" /></em></span>
     </div>
   </div>
   <div class="mb-3 row">
     <label class="col-sm-2 control-label">Facebook</label>
     <div class="col-sm-10"><span class="text-muted small"><em>
-      <input type="text" class="form-control" name="facebook" size="60" value="http://" /></em></span>
+      <input type="text" class="form-control" name="facebook" size="60" placeholder="https://" /></em></span>
     </div>
   </div>
   <div class="mb-3 row">
     <label class="col-sm-2 control-label">Twitter</label>
     <div class="col-sm-10"><span class="text-muted small"><em>
-      <input type="text" class="form-control" name="twitter" size="60" value="http://" /></em></span>
+      <input type="text" class="form-control" name="twitter" size="60" placeholder="https://" /></em></span>
     </div>
   </div>
     <div class="mb-3 row">
@@ -453,20 +453,20 @@ echo'<div class="card">
   <div class="mb-3 row">
     <label class="col-sm-2 control-label">'.$plugin_language['homepage_url'].':</label>
     <div class="col-sm-10"><span class="text-muted small"><em>
-      <input type="text" class="form-control" name="url" value="'.getinput($ds['url']).'" /></em></span>
+      <input type="text" class="form-control" name="url" value="'.getinput($ds['url']).'" placeholder="https://"/></em></span>
     </div>
   </div>
 
 <div class="mb-3 row">
     <label class="col-sm-2 control-label">Facebook</label>
     <div class="col-sm-10"><span class="text-muted small"><em>
-      <input type="text" class="form-control" name="facebook" size="60" value="'.getinput($ds['facebook']).'" /></em></span>
+      <input type="text" class="form-control" name="facebook" size="60" value="'.getinput($ds['facebook']).'" placeholder="https://"/></em></span>
     </div>
   </div>
   <div class="mb-3 row">
     <label class="col-sm-2 control-label">Twitter</label>
     <div class="col-sm-10"><span class="text-muted small"><em>
-      <input type="text" class="form-control" name="twitter" size="60" value="'.getinput($ds['twitter']).'" /></em></span>
+      <input type="text" class="form-control" name="twitter" size="60" value="'.getinput($ds['twitter']).'" placeholder="https://"/></em></span>
     </div>
   </div>
    

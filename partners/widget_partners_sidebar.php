@@ -74,7 +74,7 @@ if (mysqli_num_rows($ergebnis)) {
                 $link = '<a href="http://' . htmlspecialchars($db['url']) . '" onclick="setTimeout(function(){window.location.href=\'../includes/modules/out.php?partnerID=' . $db['partnerID'] . '\', 1000})"  target="_blank" rel="nofollow">' . $img_str . '</a>';//http
             }
         } else {
-            $link = $_language->module[ 'n_a' ];
+            $link = $img_str;
         }
         
         $script = '<script> 
