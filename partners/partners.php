@@ -216,6 +216,10 @@ if (mysqli_num_rows($ergebnis)) {
 }, false)   
 </script>'; 
 
+        $translate = new multiLanguage(detectCurrentLanguage());
+        $translate->detectLanguages($info);
+        $info = $translate->getTextByLanguage($info);
+
         $data_array = array();
         if($db['facebook'] != '') $data_array['$facebook'] = '<a class="facebook" href="'.$db['facebook'].'" target="_blank"><i class="bi bi-facebook" style="font-size: 2rem;"></i></a>';
         else $data_array['$facebook'] = '';
