@@ -82,6 +82,12 @@ if($action=="save") {
   if(!(trim($minute))) $error[]=$plugin_language['wrongmin'];
   if(!(trim($contact))) $error[]=$plugin_language['wrongname'];
 
+  if(!(trim($gametype))) $error[]=$plugin_language['wronggametype']; 
+  if(!(trim($squad))) $error[]=$plugin_language['wrongsquad']; 
+  if(!(trim($map))) $error[]=$plugin_language['wrongmap'];
+  if(!(trim($matchtype))) $error[]=$plugin_language['wrongmatchtype'];
+  if(!(trim($spielanzahl))) $error[]=$plugin_language['wrongspielanzahl'];
+
   if($error){
     $gibfehler=implode('<br />&#8226; ',$error);
     $fehler = '<div class="alert alert-danger" role="alert">'.$plugin_language['detailerror'].'<br /> &#8226; '.$gibfehler.'</div><br />';
@@ -96,7 +102,13 @@ if($action=="save") {
     $reg_minute = checksession('minute');     
     $reg_contact = checksession('contact');     
     $reg_messager = checksession('messager');     
-    $reg_fightusmail = checksession('fightusmail'); 
+    $reg_fightusmail = checksession('fightusmail');
+
+    $reg_gametype = checksession('gametype');   
+    $reg_squad = checksession('squad');   
+    $reg_map = checksession('map');  
+    $reg_matchtype = checksession('matchtype');   
+    $reg_spielanzahl = checksession('spielanzahl');  
 
     $make=mktime((int)$hour,(int)$minute,0,(int)$month,(int)$day,(int)$year);
     $type = isset($_GET['type']);
@@ -126,8 +138,8 @@ if($action=="save") {
     }
     $squadss=str_replace('selected="selected"', "", $squads);
     $squadss=str_replace('value="'.$squad.'"', 'value="'.$squad.'" selected="selected"', $squads);
-    if($squad!=="") $squadselect='<select name="squad" class="form-control" onchange="GetMapSelect(this.value) , GetMSelect(this.value), GetGameSelect(this.value), GetMatchSelect(this.value);">'.$squadss.'</select>';
-    else $squadselect='<select name="squad" class="form-control" onchange="GetMapSelect(this.value) , GetMSelect(this.value), GetGameSelect(this.value), GetMatchSelect(this.value);">'.$squads.'</select>';
+    if($squad!=="") $squadselect='<select name="squad" class="form-select" onchange="GetMapSelect(this.value) , GetMSelect(this.value), GetGameSelect(this.value), GetMatchSelect(this.value);">'.$squadss.'</select>';
+    else $squadselect='<select name="squad" class="form-select" onchange="GetMapSelect(this.value) , GetMSelect(this.value), GetGameSelect(this.value), GetMatchSelect(this.value);">'.$squads.'</select>';
     
     unset($matchh);
     $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_matchtype WHERE clanID='$squad' ");
@@ -137,8 +149,8 @@ if($action=="save") {
     }
     $matchh=str_replace('selected="selected"', "", $match);
     $matchh=str_replace('value="'.$matchtype.'"', 'value="'.$matchtype.'" selected="selected"', $match);
-    if($matchtype=="") $matchselect='<div id="matchselect"><select name="matchtype" class="form-control">'.$matchh.'</select></div>';
-    else $matchselect='<div id="matchselect"><select name="matchtype" class="form-control">'.$matchh.'</select></div>';
+    if($matchtype=="") $matchselect='<div id="matchselect"><select name="matchtype" class="form-select">'.$matchh.'</select></div>';
+    else $matchselect='<div id="matchselect"><select name="matchtype" class="form-select">'.$matchh.'</select></div>';
     
     unset($gamet);
     $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_gametype WHERE clanID='$squad' ");
@@ -149,8 +161,8 @@ if($action=="save") {
     $gamett=str_replace('selected="selected"', "", $gamet);
     $gamett=str_replace('value="'.$gametype.'"', 'value="'.$gametype.'" selected="selected"', $gamet);
     
-    if($gametype=="") $gameselect='<div id="gameselect"><select name="gametype" class="form-control">'.$gamett.'</select></div>';
-    else $gameselect='<div id="gameselect"><select name="gametype" class="form-control">'.$gamett.'</select></div>';
+    if($gametype=="") $gameselect='<div id="gameselect"><select name="gametype" class="form-select">'.$gamett.'</select></div>';
+    else $gameselect='<div id="gameselect"><select name="gametype" class="form-select">'.$gamett.'</select></div>';
     
     unset($spielt);
     $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_spieleranzahl WHERE clanID='$squad' ");
@@ -160,8 +172,8 @@ if($action=="save") {
     }
     $spieltt=str_replace('selected="selected"', "", $spielt);
     $spieltt=str_replace('value="'.$spielanzahl.'"', 'value="'.$spielanzahl.'" selected="selected"', $spielt);
-    if($spielanzahl=="") $spieltypselect='<div id="mselect"><select name="spielanzahl" class="form-control">'.$spieltt.'</select></div>';
-    else $spieltypselect='<div id="mselect"><select name="spielanzahl" class="form-control">'.$spieltt.'</select></div>';
+    if($spielanzahl=="") $spieltypselect='<div id="mselect"><select name="spielanzahl" class="form-select">'.$spieltt.'</select></div>';
+    else $spieltypselect='<div id="mselect"><select name="spielanzahl" class="form-select">'.$spieltt.'</select></div>';
     
     unset($mapt);
     $gg = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_squads WHERE squadID='$squad' AND gamesquad='1'"));
@@ -172,8 +184,8 @@ if($action=="save") {
     }
     $maptt=str_replace('selected="selected"', "", $mapt);
     $maptt=str_replace('value="'.$map.'"', 'value="'.$map.'" selected="selected"', $mapt);
-    if($map=="") $mapselect='<div id="mapselect"><select name="map" class="form-control">'.$maptt.'</select></div>';
-    else $mapselect='<div id="mapselect"><select name="map" class="form-control">'.$maptt.'</select></div>';
+    if($map=="") $mapselect='<div id="mapselect"><select name="map" class="form-select">'.$maptt.'</select></div>';
+    else $mapselect='<div id="mapselect"><select name="map" class="form-select">'.$maptt.'</select></div>';
 
     if($reg_fightusmail) $reg_fightusmail='checked';
     else $reg_fightusmail='';
@@ -290,9 +302,9 @@ if($action=="save") {
     }
     if(isset($touser[0]) != "") {
       $email=$email;
-      $message = ''.$plugin_language['fightuspm'].' [url=index.php?site=fightus]index.php?site=fightus[/url]
-      ';
       foreach($touser as $id) {
+      $message = ''.$plugin_language[ 'hello' ].' '.getnickname($id).',<br>'.$plugin_language['fightuspm'].'<br><a href="index.php?site=fightus"><i>'.$plugin_language[ 'click_here' ].' .</i></a>';
+      
         sendmessage($id,''.$plugin_language['newpm'].'',$message,$email);
       }
     }

@@ -47,7 +47,7 @@ if($action == 'getspielselect') {
 	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='".$ds['squadID']."' AND clanID!='' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
-		$mselect = '<select name="spielanzahl" class="form-control"><option value=""  selected="selected">--- Please select ---</option>';
+		$mselect = '<select name="spielanzahl" class="form-select"><option value=""  selected="selected">--- Please select ---</option>';
 		while($row = mysqli_fetch_array($query)) {
 			$mselect .= '<option value="'.$row['spielanzahlID'].'">'.$row['name'].'</option>';
 		}
@@ -65,7 +65,7 @@ elseif($action == 'getgameselect') {
 	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='".$ds['squadID']."' AND clanID!='' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
-		$gameselect = '<select name="gametype" class="form-control"><option value="" selected="selected">--- Please select ---</option>';
+		$gameselect = '<select name="gametype" class="form-select"><option value="" selected="selected">--- Please select ---</option>';
 		while($row = mysqli_fetch_array($query)) {
 			$gameselect .= '<option value="'.$row['gametypeID'].'">'.$row['name'].'</option>';
 		}
@@ -83,7 +83,7 @@ elseif($action == 'getmatchselect') {
 	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='".$ds1['squadID']."' AND clanID!='' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
-		$matchselect = '<select  name="matchtype" class="form-control"><option value="" selected="selected">--- Please select ---</option>';
+		$matchselect = '<select  name="matchtype" class="form-select"><option value="" selected="selected">--- Please select ---</option>';
 		while($row = mysqli_fetch_array($query)) {
 			$matchselect .= '<option value="'.$row['matchtypeID'].'">'.$row['name'].'</option>';
 		}
@@ -99,7 +99,7 @@ elseif($action == 'getmatchselect') {
 	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_maps WHERE tag='".$ds['tag']."' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
-		$mapselect = '<select name="map" class="form-control"><option value="" class="form-group" selected="selected">--- Please select ---</option>';
+		$mapselect = '<select name="map" class="form-select"><option value="" class="form-group" selected="selected">--- Please select ---</option>';
 		while($row = mysqli_fetch_array($query)) {
 			$mapselect .= '<option value="'.$row['mapID'].'">'.$row['name'].'</option>';
 		}
@@ -115,7 +115,7 @@ elseif($action == 'getmapsselect') {
 	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_maps WHERE tag='".$ds['tag']."' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
-		$mapsselect = '<select name="homemap" class="form-control"><option value="" selected="selected">--- Please select ---</option>';
+		$mapsselect = '<select name="homemap" class="form-select"><option value="" selected="selected">--- Please select ---</option>';
 		while($row = mysqli_fetch_array($query)) {
 			$mapsselect .= '<option value="'.$row['mapID'].'">'.$row['name'].'</option>';
 		}
