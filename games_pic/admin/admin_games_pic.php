@@ -386,17 +386,17 @@ if ($action == "add") {
         }
 
     echo'<tr>
-        <th>'.$gameicon.'</th>
-        <th>' . getinput($ds['name']) . '</th>
-        <th>' . getinput($ds['tag']) . '</th>
-        <th><a href="admincenter.php?site=admin_games_pic&amp;action=edit&amp;gameID=' . $ds['gameID'] . '" class="btn btn-warning" type="button">' . $plugin_language[ 'edit' ] . '</a>
+        <td>'.$gameicon.'</td>
+        <td>' . getinput($ds['name']) . '</td>
+        <td>' . getinput($ds['tag']) . '</td>
+        <td><a href="admincenter.php?site=admin_games_pic&amp;action=edit&amp;gameID=' . $ds['gameID'] . '" class="btn btn-warning" type="button">' . $plugin_language[ 'edit' ] . '</a>
 
 <!-- Button trigger modal -->
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete" data-href="admincenter.php?site=admin_games_pic&amp;delete=true&amp;gameID=' . $ds['gameID'] . '&amp;captcha_hash=' . $hash . '">
     ' . $plugin_language['delete'] . '
     </button>
     <!-- Button trigger modal END-->
-
+ </td>
      <!-- Modal -->
 <div class="modal fade" id="confirm-delete" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -416,7 +416,7 @@ if ($action == "add") {
 </div>
 <!-- Modal END -->
 
-       </th>
+      
       </tr>';
       
       

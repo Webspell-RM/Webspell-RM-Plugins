@@ -12,7 +12,7 @@ $author                  =   "T-Seven";                     // author
 $website                 =   "https://webspell-rm.de";      // authors website
 $index_link              =   "";                            // index file (without extension, also no .php)
 $hiddenfiles             =   "";                            // hiddenfiles (background working, no display anywhere)
-$version                 =   "0.1";                         // current version, visit authors website for updates, fixes, ..
+$version                 =   "0.2";                         // current version, visit authors website for updates, fixes, ..
 $path                    =   "includes/plugins/games_pic/"; // plugin files location
 ##### Widget Setting ##################################################################################################################
 $widget_link1            =   "";                            // widget_file (visible as module/box)
@@ -111,7 +111,27 @@ add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plug
 (48, 'wc3_roc', 'Warcraft III: Reign of Chaos'),
 (49, 'wc3_ref', 'Warcraft III: Reforged'),
 (50, 'wot', 'World of Tanks'),
-(51, 'wow', 'World of Warcraft')");
+(51, 'wow', 'World of Warcraft'),
+(52, 'forzah4', 'Forza Horizon 4'),
+(53, 'forzah5', 'Forza Horizon 5'),
+(54, 'cod_ghosts', 'Call of Duty: Ghosts'),
+(55, 'cod_1', 'Call of Duty'),
+(56, 'cod_uo', 'Call of Duty: United Offensive'),
+(57, 'cities_sky', 'Cities: Skylines'),
+(58, 'cod_ww2', 'Call of Duty: WWII'),
+(59, 'ut', 'Unreal Tournament'),
+(60, 'pc_1', 'Project CARS'),
+(61, 'gt_7', 'Gran Turismo 7'),
+(62, 'wows', 'World of Warships'),
+(63, 'mfshead', 'Need for Speed Heat'),
+(64, 'nfshpr', 'Need For Speed: Hot Pursuit Remastered'),
+(65, 'xcomeu', 'XCOM: Enemy Unknown'),
+(66, 'nfsmw2012', 'Need for Speed: Most Wanted'),
+(67, 'nfsub', 'Need for Speed: Unbound'),
+(68, '7dtd', '7 Days to Die'),
+(69, 'nmrih', 'No More Room in Hell'),
+(70, 'pz', 'Project Zomboid'),
+(71, 'vlh', 'Valheim')");
 
 get_add_module_install ();
 get_add_plugin_manager();
