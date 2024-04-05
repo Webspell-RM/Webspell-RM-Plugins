@@ -95,6 +95,11 @@ $language_array = array(
     'close'                             => 'Annulla',
     'clanwar_to'                        => 'Clanwar contro',
     'event'                             => 'Evento',
+    'training'                          => 'Formazione',
+    'number_of_players'                 => 'Numero di giocatori:',
+    'matchtype'                         => 'Tipo di corrispondenza:',
+    'gametype'                          => 'Tipo di gioco:',
+    'hello'                             => 'Ciao',
 
 );
 

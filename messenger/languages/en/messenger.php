@@ -4,7 +4,6 @@ $language_array = array(
 
     'add_buddylist'       => 'Add to buddylist',
     'adminoptions'        => 'Admin options:',
-    'bbcode'              => 'BBCode <b><span class="underline">ON</span></b>',
     'by'                  => 'by',
     'date'                => 'Date:',
     'delete'              => 'Delete',

@@ -97,9 +97,9 @@ $language_array = array(
     'clanwar_to'                    => 'Clanwar zu',
     'event'                         => 'Ereignis:',
     'training'                      => 'Training',
-    'number_of_players'            => 'Spieleranzahl:',
-    'matchtype'            => 'Matchtype:',
-    'gametype'             => 'Gametype:',
-    'hello'             => 'Hallo',
+    'number_of_players'             => 'Spieleranzahl:',
+    'matchtype'                     => 'Matchtype:',
+    'gametype'                      => 'Gametype:',
+    'hello'                         => 'Hallo',
 );
 

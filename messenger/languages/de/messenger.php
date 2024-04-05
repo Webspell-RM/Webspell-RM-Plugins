@@ -4,7 +4,6 @@ $language_array = array(
 
     'add_buddylist'           => 'Zu Freundesliste hinzufügen',
     'adminoptions'            => 'Admin-Optionen:',
-    'bbcode'                  => 'BBCode ist <b><span class="underline">AN</span></b>',
     'by'                      => 'Von',
     'date'                    => 'Datum:',
     'delete'                  => 'Löschen',
@@ -51,6 +50,6 @@ $language_array = array(
     'your_message'            => 'Deine Nachricht:',
     'lastlogin_activ'         => 'Aktiv',
     'lastlogin_inactiv'       => 'Inaktiv',
-    'or'                      => 'or',
-    'sent_by'                 => 'Sesendet von',
+    'or'                      => 'oder',
+    'sent_by'                 => 'Gesendet von',
 );
