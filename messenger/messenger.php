@@ -287,16 +287,24 @@ if (isset($_POST['delete'])) {
             while ($ds = mysqli_fetch_array($ergebnis)) {
                 
                 $date = getformatdatetime($ds['date']);
-
-                if (isonline($ds['fromuser']) == "offline") {
-                    $statuspic = '<span class="label label-danger">'.$_lang[ 'lastlogin_inactiv' ].'</span>';
+                if (trim($ds['fromuser']) != "0") {    
+                    if (isonline($ds['fromuser']) == "offline") {
+                        $statuspic = '<span class="label label-danger">'.$_lang[ 'lastlogin_inactiv' ].'</span>';
+                    } else {
+                        $statuspic = '<span class="label label-success">'.$_lang[ 'lastlogin_activ' ].'</span>';
+                    }
+                } else {                
+                    $statuspic = "";
+                }
+                
+                if (trim($ds['fromuser']) != "0") {
+                    $sender = '<a href="index.php?site=profile&amp;id=' . $ds['fromuser'] . '"><b>' .
+                    getnickname($ds['fromuser']) . '</b></a>';
                 } else {
-                    $statuspic = '<span class="label label-success">'.$_lang[ 'lastlogin_activ' ].'</span>';
+                
+                    $sender = "<b>System</b>";
                 }
 
-                $sender = '<a href="index.php?site=profile&amp;id=' . $ds['fromuser'] . '"><b>' .
-                    getnickname($ds['fromuser']) . '</b></a>';
-                
                 $dx = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "settings_plugins WHERE modulname='squads'"));
                 if (@$dx[ 'modulname' ] != 'squads') {
                     $member = '';

@@ -125,6 +125,9 @@ if ($action === "savewar") {
     $opptag = $_POST['opptag'];
     $opphp = $_POST['opphp'];
     $maps = $_POST['maps'];
+    $matchtype = $_POST['matchtype'];
+    $spielanzahl = $_POST['spielanzahl'];
+    $gametype = $_POST['gametype'];
     $server = $_POST['server'];
     $league = $_POST['league'];
     $leaguehp = $_POST['leaguehp'];
@@ -146,6 +149,9 @@ if ($action === "savewar") {
                 `opptag`,
                 `opphp`,
                 `maps`,
+                `matchtype`,
+                `spielanzahl`,
+                `gametype`,
                 `server`,
                 `league`,
                 `leaguehp`,
@@ -159,6 +165,9 @@ if ($action === "savewar") {
                 '" . $opptag . "',
                 '" . $opphp . "',
                 '" . $maps . "',
+                '" . $matchtype . "',
+                '" . $spielanzahl . "',
+                '" . $gametype . "',
                 '" . $server . "',
                 '" . $league . "',
                 '" . $leaguehp . "',
@@ -179,15 +188,38 @@ if ($action === "savewar") {
             '%league%' => $league,
             '%warinfo%' => $warinfo
         );
-        $ergebnis = safe_query("SELECT userID FROM " . PREFIX . "plugins_squads_members WHERE squadID='$squad'");
-        while ($ds = mysqli_fetch_array($ergebnis)) {
-            $id = $ds['userID'];
+        #$ergebnis = safe_query("SELECT userID FROM " . PREFIX . "plugins_squads_members WHERE squadID='$squad'");
+        #while ($ds = mysqli_fetch_array($ergebnis)) {
+           # $id = $ds['userID'];
+
+
+$ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE squadID='".$squad."'");
+    while($ds=mysqli_fetch_array($ergebnis)) {
+      $touser[]=$ds['userID'];
+    }
+
+       
+    #if(isset($touser[0]) != "") {
+
+    $fromuser = $GLOBALS[ 'ip' ]; 
+      foreach($touser as $id) {
+
+
+
+
+
+
+
+
+
+
             $title = $plugin_language['clanwar_message_title'];
-            $message = $plugin_language['clanwar_message'];
+            $message = ''.$plugin_language[ 'hello' ]. getnickname($id).',<br>'.$plugin_language['clanwar_message'].'';
             $message = str_replace(array_keys($replace), array_values($replace), $message);
             sendmessage($id, $title, $message);
         }
     }
+#}
     header(
         "Location: admincenter.php?site=admin_calendar&tag=" .
         date("j", $date) . "&month=" .
@@ -435,6 +467,9 @@ if ($action === "savewar") {
     $opptag = $_POST['opptag'];
     $opphp = $_POST['opphp'];
     $maps = $_POST['maps'];
+    $matchtype = $_POST['matchtype'];
+    $spielanzahl = $_POST['spielanzahl'];
+    $gametype = $_POST['gametype'];
     $server = $_POST['server'];
     $league = $_POST['league'];
     $leaguehp = $_POST['leaguehp'];
@@ -451,6 +486,9 @@ if ($action === "savewar") {
             `opptag` = '$opptag',
             `opphp` = '$opphp',
             `maps` = '$maps',
+            `matchtype` = '$matchtype',
+            `spielanzahl` = '$spielanzahl',
+            `gametype` = '$gametype',
             `server` = '$server',
             `league` = '$league',
             `leaguehp` = '$leaguehp',
@@ -470,7 +508,7 @@ if ($action === "savewar") {
     if (isclanwarsadmin($userID)) {
         $squads = getgamesquads();
 
-        $opphp = "http://";
+        $opphp = "https://";
 
         $chID = 0;
 
@@ -490,6 +528,9 @@ if ($action === "savewar") {
             );
 
             $map = $ds['map'];
+            $matchtype = $ds['matchtype'];
+            $spielanzahl = $ds['spielanzahl'];
+            $gametype = $ds['gametype'];
             $server = $ds['server'];
             $opponent = $ds['opponent'];
             $league = $ds['league'];
@@ -499,6 +540,9 @@ if ($action === "savewar") {
 
         } else {
             $map = '';
+            $matchtype = '';
+            $spielanzahl = '';
+            $gametype = '';
             $server = '';
             $opponent = '';
             $league = '';
@@ -512,12 +556,16 @@ if ($action === "savewar") {
         $data_array['$squads'] = $squads;
         $data_array['$opponent'] = $opponent;
         $data_array['$opphp'] = $opphp;
-        $data_array['$map'] = $map;
         $data_array['$server'] = $server;
         $data_array['$info'] = $info;
         $data_array['$chID'] = $chID;
         $data_array['$userID'] = $userID;
         $data_array['$league'] = $league;
+
+        $data_array['$map'] = $map;
+        $data_array['$matchtype'] = $matchtype;
+        $data_array['$spielanzahl'] = $spielanzahl;
+        $data_array['$gametype'] = $gametype;
 
 
         $data_array['$lang_new_war']=$plugin_language['new_war'];
@@ -533,6 +581,10 @@ if ($action === "savewar") {
         $data_array['$lang_information']=$plugin_language['information'];
         $data_array['$lang_save_war']=$plugin_language['save_war'];
         $data_array['$lang_send_message']=$plugin_language['send_message'];
+
+        $data_array['$lang_gametype'] = $plugin_language['gametype'];
+        $data_array['$lang_number_of_players'] = $plugin_language['number_of_players'];
+        $data_array['$lang_matchtype'] = $plugin_language['matchtype'];
 
 
         $template = $GLOBALS["_template"]->loadTemplate("admin_calendar","war_new", $data_array, $plugin_path);
@@ -561,9 +613,13 @@ if ($action === "savewar") {
         $opponent = htmlspecialchars($ds['opponent']);
         $opptag = htmlspecialchars($ds['opptag']);
         $opphp = htmlspecialchars($ds['opphp']);
-        $maps = htmlspecialchars($ds['maps']);
         $server = htmlspecialchars($ds['server']);
         $warinfo = htmlspecialchars($ds['warinfo']);
+
+        $maps = htmlspecialchars($ds['maps']);
+        $matchtype = htmlspecialchars($ds['matchtype']);
+        $spielanzahl = htmlspecialchars($ds['spielanzahl']);
+        $gametype = htmlspecialchars($ds['gametype']);
         
 
         $data_array = array();
@@ -574,10 +630,14 @@ if ($action === "savewar") {
         $data_array['$opponent'] = $opponent;
         $data_array['$opptag'] = $opptag;
         $data_array['$opphp'] = $opphp;
-        $data_array['$maps'] = $maps;
         $data_array['$server'] = $server;
         $data_array['$warinfo'] = $warinfo;
         $data_array['$upID'] = $upID;
+
+        $data_array['$maps'] = $maps;
+        $data_array['$matchtype'] = $matchtype;
+        $data_array['$spielanzahl'] = $spielanzahl;
+        $data_array['$gametype'] = $gametype;
         
         $data_array['$lang_edit_war']=$plugin_language['editwar'];
         $data_array['$lang_date_time']=$plugin_language['date_time'];
@@ -591,6 +651,10 @@ if ($action === "savewar") {
         $data_array['$lang_server']=$plugin_language['server'];
         $data_array['$lang_information']=$plugin_language['information'];
         $data_array['$lang_updatewar']=$plugin_language['updatewar'];
+
+        $data_array['$lang_gametype'] = $plugin_language['gametype'];
+        $data_array['$lang_number_of_players'] = $plugin_language['number_of_players'];
+        $data_array['$lang_matchtype'] = $plugin_language['matchtype'];
 
         $template = $GLOBALS["_template"]->loadTemplate("admin_calendar","war_edit", $data_array, $plugin_path);
         echo $template;
@@ -1090,6 +1154,9 @@ if ($action === "savewar") {
                     $opponent = ' <a href="' . $ds['opphp'] . '" target="_blank">' .
                         $ds['opptag'] . ' / ' . $ds['opponent'] . '</a>';
                     $maps = $ds['maps'];
+                    $matchtype = $ds['matchtype'];
+                    $spielanzahl = $ds['spielanzahl'];
+                    $gametype = $ds['gametype'];
                     $server = $ds['server'];
                     $league = '<a href="' . $ds['leaguehp'] . '" target="_blank">' . $ds['league'] .
                         '</a>';
@@ -1191,12 +1258,16 @@ if ($action === "savewar") {
                     $data_array['$squad'] = $squad;
                     $data_array['$opponent'] = $opponent;
                     $data_array['$league'] = $league;
-                    $data_array['$maps'] = $maps;
                     $data_array['$server'] = $server;
                     $data_array['$warinfo'] = $warinfo;
                     $data_array['$announce'] = $announce;
                     $data_array['$players'] = $players;
                     $data_array['$adminaction'] = $adminaction;
+
+                    $data_array['$maps'] = $maps;
+                    $data_array['$matchtype'] = $matchtype;
+                    $data_array['$spielanzahl'] = $spielanzahl;
+                    $data_array['$gametype'] = $gametype;
                     
                     $data_array['$lang_clanwardetails']=$plugin_language['clanwardetails'];
                     $data_array['$lang_date_time']=$plugin_language['date_time'];
@@ -1211,6 +1282,10 @@ if ($action === "savewar") {
                     $data_array['$lang_yes']=$plugin_language['yes'];
                     $data_array['$lang_no']=$plugin_language['no'];
                     $data_array['$lang_perhaps']=$plugin_language['perhaps'];
+
+                    $data_array['$lang_gametype'] = $plugin_language['gametype'];
+                    $data_array['$lang_number_of_players'] = $plugin_language['number_of_players'];
+                    $data_array['$lang_matchtype'] = $plugin_language['matchtype'];
         
                     
                     $template = $GLOBALS["_template"]->loadTemplate("admin_calendar","war_details", $data_array, $plugin_path);

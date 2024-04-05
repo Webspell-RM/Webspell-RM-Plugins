@@ -12,7 +12,8 @@ $language_array = array(
     'apr'                           => 'April',
     'aug'                           => 'August',
     'calendar'                      => 'Kalender',
-    'clanwar_message'               => 'Neuer anstehender Clanwar am %date%:<br><br>Gegner: <a href="%opp_hp%">%opponent%</a> <br>Liga: <a href="%league_hp%">%league%</a> <br>Info: %warinfo%<br><br><a href="/index.php?site=calendar">Link zum Kalender</a>',
+    /*'clanwar_message'               => 'Neuer anstehender Clanwar am %date%:<br><br>Gegner: <a href="%opp_hp%">%opponent%</a> <br>Liga: <a href="%league_hp%">%league%</a> <br>Info: %warinfo%<br><br><a href="/index.php?site=calendar">Link zum Kalender</a>',*/
+    'clanwar_message'               => 'neuer anstehender Clanwar am %date%.<br><a href="/index.php?site=calendar">Klicken Sie hier, um zum Kalender zu gelangen.</a>',
     'clanwar_message_title'         => 'Neuer anstehender Clanwar im Kalender!',
     'clanwardetails'                => 'Clanwardetails',
     'date_time'                     => 'Datum - Zeit',
@@ -35,7 +36,7 @@ $language_array = array(
     'jul'                           => 'Juli',
     'jun'                           => 'Juni',
     'league'                        => 'Liga',
-    'leaguehp'                      => 'Ligenhomepage',
+    'leaguehp'                      => 'Liga Homepage',
     'location'                      => 'Ort:',
     'longtitle'                     => 'Langer Titel',
     'maps'                          => 'Karten',
@@ -94,6 +95,11 @@ $language_array = array(
     'so'                            => 'So.',
     'close'                         => 'Close',
     'clanwar_to'                    => 'Clanwar zu',
-    'event'                         => 'Ereignis',
+    'event'                         => 'Ereignis:',
+    'training'                      => 'Training',
+    'number_of_players'            => 'Spieleranzahl:',
+    'matchtype'            => 'Matchtype:',
+    'gametype'             => 'Gametype:',
+    'hello'             => 'Hallo',
 );
 

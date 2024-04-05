@@ -191,7 +191,7 @@ if($action=="save") {
     else $reg_fightusmail='';
 
     $squadse=str_replace('selected="selected"', "", $squads);
-    $squadse=str_replace('value="'.$ds['squadID'].'"', 'value="'.$ds['squadID'].'" selected="selected"', $squadse);
+    @$squadse=str_replace('value="'.$ds['squadID'].'"', 'value="'.$ds['squadID'].'" selected="selected"', $squads);
     #$countries = getcountries();
 
 
@@ -295,12 +295,16 @@ if($action=="save") {
         }
       }
     }
+    
 
     $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE warmember='1' AND squadID='".$squad."'");
     while($ds=mysqli_fetch_array($ergebnis)) {
       $touser[]=$ds['userID'];
     }
+
+       
     if(isset($touser[0]) != "") {
+
       $email=$email;
       foreach($touser as $id) {
       $message = ''.$plugin_language[ 'hello' ].' '.getnickname($id).',<br>'.$plugin_language['fightuspm'].'<br><a href="index.php?site=fightus"><i>'.$plugin_language[ 'click_here' ].' .</i></a>';
@@ -308,6 +312,8 @@ if($action=="save") {
         sendmessage($id,''.$plugin_language['newpm'].'',$message,$email);
       }
     }
+
+    safe_query("DELETE FROM ".PREFIX."plugins_messenger WHERE userID='0'"); # User 0 wird gelöscht muss noch geprüft werden warum User 0 eine PM bekommt
     
     $date=time();
     $cwdate=mktime((int)$hour,(int)$minute,0,(int)$month,(int)$day,(int)$year);
@@ -333,17 +339,17 @@ if($action=="save") {
         ) values (
           '$date', 
           '$cwdate', 
-          '$squad', 
+          '".getsquadname($squad)."', 
           '".mysqli_escape_string($_database, $opponent)."', 
           '".mysqli_escape_string($_database, $opphp)."', 
           '".mysqli_escape_string($_database, $league)."', 
-          '$map', 
+          '".getmapsname($map)."',
           '".mysqli_escape_string($_database, $server)."', 
           '".mysqli_escape_string($_database, $email)."', 
           '".mysqli_escape_string($_database, $info)."', 
-          '$gametype', 
-          '$matchtype', 
-          '$spielanzahl', 
+          '".getgametypename($gametype)."', 
+          '".getmatchtypename($matchtype)."', 
+          '".getspielanzahlname($spielanzahl)."', 
           '".mysqli_escape_string($_database, $messager)."', 
           '".mysqli_escape_string($_database, $contact)."', 
           '".mysqli_escape_string($_database, $opponents)."'
@@ -495,10 +501,11 @@ if($action=="save") {
         $data_array = array();
         $data_array['$fehler'] = $fehler;
         $data_array['$cwdate'] = date('d.m.Y - H:i', $ds['cwdate']);
-        $data_array['$squad'] = getsquadname($ds['squadID']);
-        $data_array['$matchtype'] = getmatchtypename($ds['matchtype']);
-        $data_array['$map'] = getmapsname($ds['map']);
-        $data_array['$spielanzahl'] = getspielanzahlname($ds['spielanzahl']);
+        $data_array['$squad'] = $ds['squadID'];
+        $data_array['$matchtype'] = $ds['matchtype'];
+        $data_array['$map'] = $ds['map'];
+        $data_array['$gametype'] = $ds['gametype'];
+        $data_array['$spielanzahl'] = $ds['spielanzahl'];
         $data_array['$server'] = $ds['server'];
         $data_array['$opponent'] = $ds['opponent'];
         $data_array['$opponents'] = $ds['opponents'];
@@ -507,9 +514,7 @@ if($action=="save") {
         $data_array['$contact'] = $ds['contact'];
         $data_array['$messager'] = $ds['messager'];
         $data_array['$email'] = '<a href="mailto:'.$ds['email'].'">'.$ds['email'].'</a>';
-        #$data_array['$countries'] = $countries;
         $data_array['$info'] = $ds['info'];
-        $data_array['$gametype'] = getgametypename($ds['gametype']);
         $data_array['$actions'] = $actions;
         $data_array['$cwID'] = $ds['chID'];
 

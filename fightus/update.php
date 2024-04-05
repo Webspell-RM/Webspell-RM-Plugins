@@ -12,7 +12,7 @@ $author                  =   "T-Seven";                     // author
 $website                 =   "https://webspell-rm.de";      // authors website
 $index_link              =   "fightus,admin_fightus";       // index file (without extension, also no .php)
 $hiddenfiles             =   "";                            // hiddenfiles (background working, no display anywhere)
-$version                 =   "0.2";                       // current version, visit authors website for updates, fixes, ..
+$version                 =   "0.3";                       // current version, visit authors website for updates, fixes, ..
 $path                    =   "includes/plugins/fightus/";   // plugin files location
 ##### Widget Setting ##################################################################################################################
 $widget_link1            =   "";                            // widget_file (visible as module/box)

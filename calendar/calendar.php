@@ -308,7 +308,7 @@ if ($action === "saveannounce") {
                             || ($start_date <= $ds['enddate'] && $end_date >= $ds['enddate'])
                         ) {
                             $termin .= '<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-success" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
-                                $year . '#event"><i class="bi bi-calendar-event"></i> Event: ' . $ds['short'] . '</a></div>';
+                                $year . '#event"><i class="bi bi-calendar-event"></i> ' . $plugin_language['event'] . ' ' . $ds['short'] . '</a></div>';
                             $termin .=
                                 '<div class="d-lg-none"><a class="badge rounded-pill text-bg-success" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
                                 $year . '#event"><i class="bi bi-calendar-event"></i></a></div>';    
@@ -319,7 +319,7 @@ if ($action === "saveannounce") {
                             || ($start_date <= $ds['enddate'] && $end_date >= $ds['enddate'])
                         ) {
                             $termin .= '<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-danger" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
-                                $year . '#event"><i class="bi bi-joystick"></i> Training</a></div>';
+                                $year . '#event"><i class="bi bi-joystick"></i> ' . $plugin_language['training'] . ' </a></div>';
 
                             $termin .= '<div class="d-lg-none"><a class="badge rounded-pill text-bg-danger" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
                                 $year . '#event"><i class="bi bi-joystick"></i></a></div>';    
@@ -327,10 +327,14 @@ if ($action === "saveannounce") {
                     } else {
                         if ($ds['date'] >= $start_date && $ds['date'] <= $end_date) {
                             $begin = getformattime($ds['date']);
-                            $termin .= '<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
-                                $year . '"><i class="bi bi-controller"></i>  ' . $begin . ' Clanwar to ' . $ds['opptag'] . '</a></div>';                           
+                            $termin .= '
+
+<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
+                                $year . '"><i class="bi bi-controller"></i>  ' . $begin . ' ' . $plugin_language['clanwar_to'] . ' ' . $ds['opptag'] . '</a></div>';  
+
                             $termin .=
-                                '<div class="d-lg-none"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
+                                '
+</div><div class="d-lg-none"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
                                 $year . '"><i class="bi bi-controller"></i></a></div>';                                     
                         }
                     }
@@ -382,7 +386,8 @@ if ($action === "saveannounce") {
 
             //If date is today, highlight it
             if (($t == date("j")) && ($month == date("n")) && ($year == date("Y"))) {
-                echo '<td style="width:14%;height:80px" class="calendar-day" valign="top"><div><span style="margin-top: 0px">' . $t . '</span> ' . $termin . '</div></td>';
+                #echo '<td style="width:14%;height:80px" class="calendar-day" valign="top"><span style="margin-top: 0px">' . $t . '</span> ' . $termin . '</td>';
+                echo '<td height="40" valign="top" bgcolor="#999999"><span class="badge text-bg-success">' . $t . '</span><br>' . $termin . '</td>';
             } else {
                 //  If the date is absent ie after 31, print space
                 if ($t === ' ') {
@@ -453,6 +458,9 @@ if ($action === "saveannounce") {
                     $opponent = ' <a href="' . $ds['opphp'] . '" target="_blank">' .
                         $ds['opptag'] . ' / ' . $ds['opponent'] . '</a>';
                     $maps = $ds['maps'];
+                    $matchtype = $ds['matchtype'];
+                    $spielanzahl = $ds['spielanzahl'];
+                    $gametype = $ds['gametype'];
                     $server = $ds['server'];
                     $league = '<a href="' . $ds['leaguehp'] . '" target="_blank">' . $ds['league'] .
                         '</a>';
@@ -515,11 +523,15 @@ if ($action === "saveannounce") {
                     $data_array['$squad'] = $squad;
                     $data_array['$opponent'] = $opponent;
                     $data_array['$league'] = $league;
-                    $data_array['$maps'] = $maps;
                     $data_array['$server'] = $server;
                     $data_array['$warinfo'] = $warinfo;
                     $data_array['$announce'] = $announce;
                     $data_array['$players'] = $players;
+
+                    $data_array['$maps'] = $maps;
+                    $data_array['$matchtype'] = $matchtype;
+                    $data_array['$spielanzahl'] = $spielanzahl;
+                    $data_array['$gametype'] = $gametype;
                     
                     $data_array['$lang_clanwardetails']=$plugin_language['clanwardetails'];
                     $data_array['$lang_date_time']=$plugin_language['date_time'];
@@ -534,6 +546,10 @@ if ($action === "saveannounce") {
                     $data_array['$lang_yes']=$plugin_language['yes'];
                     $data_array['$lang_no']=$plugin_language['no'];
                     $data_array['$lang_perhaps']=$plugin_language['perhaps'];
+
+                    $data_array['$lang_gametype'] = $plugin_language['gametype'];
+                    $data_array['$lang_number_of_players'] = $plugin_language['number_of_players'];
+                    $data_array['$lang_matchtype'] = $plugin_language['matchtype'];
         
                     
                     $template = $GLOBALS["_template"]->loadTemplate("calendar","war_details", $data_array, $plugin_path);

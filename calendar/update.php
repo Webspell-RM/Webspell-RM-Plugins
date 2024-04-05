@@ -12,7 +12,7 @@ $author                  =   "T-Seven";                     // author
 $website                 =   "https://webspell-rm.de";      // authors website
 $index_link              =   "calendar,admin_calendar";     // index file (without extension, also no .php)
 $hiddenfiles             =   "";                            // hiddenfiles (background working, no display anywhere)
-$version                 =   "0.2";                         // current version, visit authors website for updates, fixes, ..
+$version                 =   "0.3";                         // current version, visit authors website for updates, fixes, ..
 $path                    =   "includes/plugins/calendar/";  // plugin files location
 ##### Widget Setting ##################################################################################################################
 $widget_link1            =   "widget_calendar_sidebar";     // widget_file (visible as module/box)
@@ -61,6 +61,9 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
   `opptag` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `opphp` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `maps` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `gametype` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `matchtype` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `spielanzahl` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `server` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `league` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `leaguehp` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
