@@ -13,7 +13,7 @@ $language_array = array(
     'aug'                           => 'August',
     'calendar'                      => 'Kalender',
     /*'clanwar_message'               => 'Neuer anstehender Clanwar am %date%:<br><br>Gegner: <a href="%opp_hp%">%opponent%</a> <br>Liga: <a href="%league_hp%">%league%</a> <br>Info: %warinfo%<br><br><a href="/index.php?site=calendar">Link zum Kalender</a>',*/
-    'clanwar_message'               => 'neuer anstehender Clanwar am %date%.<br><a href="/index.php?site=calendar">Klicken Sie hier, um zum Kalender zu gelangen.</a>',
+    'clanwar_message'               => 'ein neuer Clanwar wurde für den %date% eingestellt.<br><a href="/index.php?site=calendar">Klicken Sie hier, um zum Kalender zu gelangen.</a>',
     'clanwar_message_title'         => 'Neuer anstehender Clanwar im Kalender!',
     'clanwardetails'                => 'Clanwardetails',
     'date_time'                     => 'Datum - Zeit',

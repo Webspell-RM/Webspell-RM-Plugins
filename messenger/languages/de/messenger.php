@@ -4,7 +4,7 @@ $language_array = array(
 
     'add_buddylist'           => 'Zu Freundesliste hinzufügen',
     'adminoptions'            => 'Admin-Optionen:',
-    'by'                      => 'Von',
+    'sender'                  => 'Absender',
     'date'                    => 'Datum:',
     'delete'                  => 'Löschen',
     'delete_selected'         => 'Ausgewählte löschen',
@@ -13,8 +13,6 @@ $language_array = array(
     'error'                   => 'Fehler',
     'execute'                 => 'Ausführen',
     'formation'               => 'Formatierung',
-    'from'                    => 'Von:',
-    'html'                    => 'HTML ist <b><span class="underline">AUS</span></b>',
     'ignore'                  => 'Benutzer ignorieren',
     'incoming'                => 'Posteingang',
     'mail_body'               => '<b>Hello %nickname%!</b><br><br>You got a new message at '.PAGETITLE.' (%hp_url%).<br>Click <a href="http://%hp_url%?site=messenger">here</a> to read the PM.<br><br>(C) Webspell-RM',
@@ -43,7 +41,6 @@ $language_array = array(
     'sendeachmember'          => 'Jedem Clanmitglied senden',
     'sendeachuser'            => 'Jedem Benutzer senden',
     'show'                    => 'Zeige',
-    'smilies'                 => 'Smilies sind <b><span class="underline">AN</span></b>',
     'sort'                    => 'Sortierung:',
     'title'                   => 'Betreff',
     'unknown_user'            => 'Unbekannter Benutzer',
@@ -52,4 +49,6 @@ $language_array = array(
     'lastlogin_inactiv'       => 'Inaktiv',
     'or'                      => 'oder',
     'sent_by'                 => 'Gesendet von',
+    'from'                    => 'von',  
+    'from the'                => 'vom',  
 );

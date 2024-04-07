@@ -296,7 +296,8 @@ if($action=="save") {
       }
     }
     
-
+    $ip = $GLOBALS[ 'ip' ];
+    
     $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE warmember='1' AND squadID='".$squad."'");
     while($ds=mysqli_fetch_array($ergebnis)) {
       $touser[]=$ds['userID'];

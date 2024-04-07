@@ -13,7 +13,7 @@
 <form method="post" action="index.php?site=messenger&amp;action=incoming">
     <div class="row">
         <div class="col-md-4">
-            $sorter $page_link
+            $sorter<br><br>$page_link
         
         </div>
        
@@ -41,7 +41,7 @@
         <tr>
             <td></td>
             <th><strong>$message</strong></th>
-            <th><strong>$from</strong></th>
+            <th><strong>$lang_sender</strong></th>
             <th><strong>$date</strong></th>
         </tr>
 <!-- END -->
@@ -84,7 +84,7 @@
 <form method="post" action="index.php?site=messenger&amp;action=outgoing">
     <div class="row">
         <div class="col-md-4">
-            $sorter $page_link
+            $sorter<br><br>$page_link
         </div>
 
         <div class="col-md-6" style="text-align: right; margin-top: 5px">$messages_per_page</div>
@@ -152,7 +152,7 @@
 
     <div class="row">
         <div class="col-md-6"><h4><i class="bi bi-chat-fills"></i> $title</h4></div>
-        <div class="col-md-6 text-end">$date $by $sender</div>
+        <div class="col-md-6 text-end">$date $sender</div>
     </div>
     <div class="" style="background-color: #fff; padding: 10px;border: 1px solid rgb(170,170,170) !important; border-radius: 0px;">
             $message

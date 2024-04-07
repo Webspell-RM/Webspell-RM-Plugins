@@ -7,7 +7,7 @@
   background-color: rgba(63, 73, 83, 0.8);
   overflow: hidden;  
   position: relative;
-  margin-top: -80px;
+  /*margin-top: -80px;*/
 }
 
 #hero .carousel,

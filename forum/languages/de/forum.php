@@ -117,6 +117,7 @@ $language_array = array(
     'thanksto'            => 'Es bedanken sich: ',
     'feedback'            => 'Finden den Beitrag hilfreich',
     'disfeedback'         => 'Finden den Beitrag doch nicht hilfreich!',
-    'squads_error'        => '<blockquote>Squads Plugin nicht installiert!</blockquote>'
+    'squads_error'        => '<blockquote>Squads Plugin nicht installiert!</blockquote>',
+    'search'              => 'Suche',  
 );
 

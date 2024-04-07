@@ -214,7 +214,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
 
             $title = $plugin_language['clanwar_message_title'];
-            $message = ''.$plugin_language[ 'hello' ]. getnickname($id).',<br>'.$plugin_language['clanwar_message'].'';
+            $message = ''.$plugin_language[ 'hello' ].' '.getnickname($id).',<br>'.$plugin_language['clanwar_message'].'';
             $message = str_replace(array_keys($replace), array_values($replace), $message);
             sendmessage($id, $title, $message);
         }
