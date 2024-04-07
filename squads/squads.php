@@ -212,7 +212,11 @@ if($action=="show"){
                     $activity = '<span class="badge bg-warning">' . $plugin_language[ 'inactive' ] . '</span>';
                 }
 
-                $position = $dm[ 'position' ];
+                if ($dm[ 'position' ]) {
+                    $position = $dm[ 'position' ];
+                } else {
+                    $position = 'n/a';
+                }
                 
                 if (file_exists("images/userpics/" . $profilid . ".jpg")) {
                     $userpic = $profilid . ".jpg";
@@ -260,10 +264,12 @@ if($action=="show"){
                 $data_array['$squads_info']=$plugin_language['info'];
                 $data_array['$squads_position']=$plugin_language['position'];
                 $data_array['$squads_status']=$plugin_language['status'];
+                $data_array['$squads_activity']=$plugin_language['activity'];
                 $data_array['$squads_contact']=$plugin_language['contact'];
                 $data_array['$squads_town']=$plugin_language['town'];
                 $data_array['$squads_nickname']=$plugin_language['nickname'];
 				$data_array['$seeprofile']=$plugin_language['profile'];
+                $data_array['$characteristics']=$plugin_language['characteristics'];
 
                 if(!empty(@$dn[ 'squads'] == 1) !== false) {    
 
@@ -464,7 +470,11 @@ if($action=="show"){
                     $activity = '<span class="badge bg-warning">' . $plugin_language[ 'inactive' ] . '</span>';
                 }
 
-                $position = $dm[ 'position' ];
+                if ($dm[ 'position' ]) {
+                    $position = $dm[ 'position' ];
+                } else {
+                    $position = 'n/a';
+                }
                 
                 if (file_exists("images/userpics/" . $profilid . ".jpg")) {
                     $userpic = $profilid . ".jpg";
@@ -527,10 +537,12 @@ if($action=="show"){
                 $data_array['$squads_info']=$plugin_language['info'];
                 $data_array['$squads_position']=$plugin_language['position'];
                 $data_array['$squads_status']=$plugin_language['status'];
+                $data_array['$squads_activity']=$plugin_language['activity'];
                 $data_array['$squads_contact']=$plugin_language['contact'];
                 $data_array['$squads_town']=$plugin_language['town'];
                 $data_array['$squads_nickname']=$plugin_language['nickname'];
-				$data_array['$seeprofile']=$plugin_language['profile'];
+				$data_array['$seeprofile']=$plugin_language['profile'];                
+                $data_array['$characteristics']=$plugin_language['characteristics'];
 
                 if(!empty(@$dn[ 'squads'] == 1) !== false) {    
 

@@ -63,7 +63,7 @@ $language_array = array(
    'member'                           => 'Membro',
    'messenger'                        => 'Sistema di messaggistica',
    'info'                             => 'Informazioni su',
-   'no_description'                   => 'Nessuna descrizione disponibile',
+   'no_description'                   => 'Nessuna descrizione disponibile<br><br>',
    'no_entries'                       => '<blockquote>Nessuna voce disponibile</blockquote>',
    'no_userpic'                       => 'Nessuna immagine dell\'utente disponibile',
    'results'                          => 'Risultati',
@@ -77,6 +77,7 @@ $language_array = array(
    'online'                           => 'on-line',
    'offline'                          => 'offline',
    'profile'                          => 'VEDI PROFILO',
-   'close'                            => 'Chiudi',
+   'close'                            => 'Chiudi',    
+   'characteristics'                  => 'Caratteristiche',
 );
 

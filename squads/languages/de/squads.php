@@ -55,7 +55,6 @@ $language_array = Array(
   'active'                  => 'Aktiv',
   'add_buddy'               => 'Zur Freundesliste hinzufügen',
   'awards'                  => 'Auszeichnungen',
-  'activity'                => 'Aktivität',
   'back_buddy'              => 'Wieder zur Freundesliste',
   'back_squad_overview'     => 'Zurück zur Teamübersicht',
   'challenge'               => 'Herausfordern',
@@ -68,7 +67,7 @@ $language_array = Array(
   'nickname'                => 'Nickname',
   'messenger'               => 'Nachrichtensystem',
   'info'                    => 'Info über',
-  'no_description'          => 'Keine Beschreibung verfügbar',
+  'no_description'          => 'Keine Beschreibung verfügbar<br><br>',
   'no_entries'              => '<blockquote>keine Einträge vorhanden</blockquote>',
   'no_userpic'              => 'Kein Benutzerbild verfügbar',
   'position'                => 'Position',
@@ -84,6 +83,8 @@ $language_array = Array(
   'offline'                 => 'Offline',
   'profile'                 => 'SEE PROFILE',
   'close'                   => 'Close',
+  'characteristics'         => 'Steckbrief',
+  
 );
 
 
