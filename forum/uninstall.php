@@ -17,4 +17,10 @@ safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_posts");
 safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_topics");
 safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_poll");
 safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_votes");
+safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_groups");
+safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_moderators");
+safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_posts_spam");
+safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_ranks");
+safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_topics_spam"); 
+safe_query("DROP TABLE IF EXISTS " . PREFIX . "plugins_".$name."_user_forum_groups");
 ?>

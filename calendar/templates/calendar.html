@@ -62,7 +62,7 @@
             <table class="table">
                 <thead>
                     <tr>
-                        <th colspan="2">$lang_headtrain:</th>
+                        <th colspan="2">$lang_headtrain: $short</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -118,22 +118,39 @@
                         <td>$lang_squad</td>
                         <td>$squad</td>
                     </tr>
-                    <tr>
-                        <td>$lang_opponent</td>
-                        <td>$opponent</td>
-                    </tr>
-                    <tr>
-                        <td>$lang_league</td>
-                        <td>$league</td>
-                    </tr>
+
                     <tr>
                         <td>$lang_maps</td>
                         <td>$maps</td>
                     </tr>
                     <tr>
+                        <td>$lang_maps</td>
+                        <td>$matchtype</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_maps</td>
+                        <td>$gametype</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_maps</td>
+                        <td>$spielanzahl</td>
+                    </tr>
+                    <tr>
+                        <td>$lang_opponent</td>
+                        <td>$opponent</td>
+                    </tr>
+                    <!--<tr>
+                        <td>$lang_league</td>
+                        <td>$league</td>
+                    </tr>-->
+                    <!--<tr>
+                        <td>$lang_maps</td>
+                        <td>$maps</td>
+                    </tr>-->
+                    <!--<tr>
                         <td>$lang_server</td>
                         <td>$server</td>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <td>$lang_information:</td>
                         <td>$warinfo</td>
@@ -194,7 +211,16 @@
         </div>
         <div class="col-md-6 text-end">
             <span class="badge bg-secondary text-end">$date</span>
-        </div>
+        </div>        
+    </div>
+</li>
+<!-- END -->
+<!-- calendar_birthday -->
+
+<li class="list-group-item">
+    <div class="row">
+        
+        $termin
     </div>
 </li>
 <!-- END -->
@@ -281,4 +307,22 @@
         </ul>
     </div>
 </div>
-  <!-- END -->   
+  <!-- END --> 
+
+<!-- calendar_birthday_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<div class="card">
+    <div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+        <ul class="list-group list-group-flush">
+<!-- END -->
+<!-- calendar_birthday_foot -->
+        </ul>
+    </div>
+</div>
+  <!-- END -->      

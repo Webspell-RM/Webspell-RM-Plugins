@@ -101,5 +101,7 @@ $language_array = array(
     'matchtype'                     => 'Matchtype:',
     'gametype'                      => 'Gametype:',
     'hello'                         => 'Hallo',
+    'birthday'                      => 'Geburtstag',
+    'transaction_invalid'           => 'Transaktion ungültig',
 );
 

@@ -319,7 +319,7 @@ if ($action === "saveannounce") {
                             || ($start_date <= $ds['enddate'] && $end_date >= $ds['enddate'])
                         ) {
                             $termin .= '<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-danger" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
-                                $year . '#event"><i class="bi bi-joystick"></i> ' . $plugin_language['training'] . ' </a></div>';
+                                $year . '#event"><i class="bi bi-joystick"></i> ' . $plugin_language['training'] . ' ' . $ds['short'] . '</a></div>';
 
                             $termin .= '<div class="d-lg-none"><a class="badge rounded-pill text-bg-danger" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
                                 $year . '#event"><i class="bi bi-joystick"></i></a></div>';    
@@ -327,14 +327,10 @@ if ($action === "saveannounce") {
                     } else {
                         if ($ds['date'] >= $start_date && $ds['date'] <= $end_date) {
                             $begin = getformattime($ds['date']);
-                            $termin .= '
-
-<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
+                            $termin .= '<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
                                 $year . '"><i class="bi bi-controller"></i>  ' . $begin . ' ' . $plugin_language['clanwar_to'] . ' ' . $ds['opptag'] . '</a></div>';  
 
-                            $termin .=
-                                '
-</div><div class="d-lg-none"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
+                            $termin .= '<div class="d-lg-none"><a class="badge rounded-pill text-bg-info" style="width: 100%" href="index.php?site=calendar&amp;tag=' . $t . '&amp;month=' . $month . '&amp;year=' .
                                 $year . '"><i class="bi bi-controller"></i></a></div>';                                     
                         }
                     }
@@ -349,52 +345,52 @@ if ($action === "saveannounce") {
             $ergebnisgeb = safe_query("SELECT * FROM " . PREFIX . "user");
             $anz3 = mysqli_num_rows($ergebnisgeb);
             if($anz3) {
-              while ($dc = mysqli_fetch_array($ergebnisgeb)) {
-                $geb = explode("-",$dc['birthday']);
-                $start = mktime(0, 0, 0, (int)$geb['1'], (int)$geb['2'], (int)$year);
-                $end2 = mktime(23, 59, 59, (int)$geb['1'], (int)$geb['2'], (int)$year);
+                $birthday = '';
+                while ($dc = mysqli_fetch_array($ergebnisgeb)) {
+                    $geb = explode("-",$dc['birthday']);
+                    $start = mktime(0, 0, 0, (int)$geb['1'], (int)$geb['2'], (int)$year);
+                    $end2 = mktime(23, 59, 59, (int)$geb['1'], (int)$geb['2'], (int)$year);
 
 
-                $res =
-                  safe_query(
-                    "SELECT
-                      TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age
-                    FROM
-                      " . PREFIX . "user
-                    WHERE
-                      userID = '" . (int)$dc['userID']."'"
-                  );
-                $cur = mysqli_fetch_array($res);
-                $birthdayyears = "(".(int)$cur[ 'age' ]." ".$plugin_language['years'].")";
+                    $res =
+                      safe_query(
+                        "SELECT
+                          TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age
+                        FROM
+                          " . PREFIX . "user
+                        WHERE
+                          userID = '" . (int)$dc['userID']."'"
+                      );
+                    $cur = mysqli_fetch_array($res);
+                    $birthdayyears = "(".(int)$cur[ 'age' ]." ".$plugin_language['years'].")";
 
-                if(($start_date<=$start && $end_date>=$start) || ($start_date>=$start && $end_date<=$end2) || ($start_date<=$end2 && $end_date>=$end2)) { 
+                    if(($start_date<=$start && $end_date>=$start) || ($start_date>=$start && $end_date<=$end2) || ($start_date<=$end2 && $end_date>=$end2)) { 
 
-                $settings = safe_query("SELECT * FROM " . PREFIX . "settings");
-                $db = mysqli_fetch_array($settings);
+                    $settings = safe_query("SELECT * FROM " . PREFIX . "settings");
+                    $db = mysqli_fetch_array($settings);
 
-                if ($db[ 'birthday' ] == '1') {
-                    $termin.='<div class="d-none d-lg-block"><a class="badge rounded-pill text-bg-warning" style="width: 100%" href="index.php?site=profile&amp;id='.$dc['userID'].'"><i class="bi bi-cake2"></i> '.getnickname($dc['userID']).' '.$birthdayyears.'</a></div>';
-                    $termin.='<div class="d-lg-none"><a class="badge rounded-pill text-bg-warning" style="width: 100%" href="index.php?site=profile&amp;id='.$dc['userID'].'"><i class="bi bi-cake2"></i></a></div>';
-                } else {
-                    $termin = '';
+                        if ($db[ 'birthday' ] == '1') {
+                             $birthday.='<a class="badge bg-warning text-dark" style="width: 100%" href="index.php?site=profile&amp;id='.$dc['userID'].'"><i class="bi bi-cake2"></i> '.getnickname($dc['userID']).' '.$birthdayyears.'</a>
+                                    <br />';
+                        } else {
+                            $birthday = '';
+                        }
+                    }
                 }
-                }
-              }
             }
             
             // DB ABRUF ENDE
 
             //If date is today, highlight it
             if (($t == date("j")) && ($month == date("n")) && ($year == date("Y"))) {
-                #echo '<td style="width:14%;height:80px" class="calendar-day" valign="top"><span style="margin-top: 0px">' . $t . '</span> ' . $termin . '</td>';
-                echo '<td height="40" valign="top" bgcolor="#999999"><span class="badge text-bg-success">' . $t . '</span><br>' . $termin . '</td>';
+                echo '<td height="40" valign="top" bgcolor="#999999"><span class="badge text-bg-danger">' . $t . '</span><br>' . $termin . ''.$birthday.'</td>';
             } else {
                 //  If the date is absent ie after 31, print space
                 if ($t === ' ') {
-                    echo '<td style="width:14%;height:80px" valign="top">&nbsp;</td>';
+                    echo '<td height="40" bgcolor="#e9e9e9" valign="top">&nbsp;</td>';
                 } else {
                     echo
-                        '<td style="width:14%;height:80px" valign="top">' . $t . ' ' . $termin . '</td>';
+                        '<td height="40" valign="top">' . $t . '<br>' . $termin . ''.@$birthday.'</td>';
                 }
             }
         }
@@ -648,6 +644,7 @@ if ($action === "saveannounce") {
                     $data_array['$announce'] = $announce;
                     $data_array['$players'] = $players;
                     $data_array['$adminaction'] = $adminaction;
+                    $data_array['$short'] = $ds[ 'short' ];
 
                     $data_array['$lang_eventdetails']=$plugin_language['eventdetails'];
                     $data_array['$lang_start_datetime']=$plugin_language['start_datetime'];

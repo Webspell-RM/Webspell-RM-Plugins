@@ -100,6 +100,8 @@ $language_array = array(
     'matchtype'                         => 'Tipo di corrispondenza:',
     'gametype'                          => 'Tipo di gioco:',
     'hello'                             => 'Ciao',
+    'birthday'                          => 'Compleanno',
+    'transaction_invalid'               => 'Transazione non valida',
 
 );
 

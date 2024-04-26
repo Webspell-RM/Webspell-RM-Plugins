@@ -984,7 +984,7 @@ if ($action == "admin_forum_groups_delete") {
         if (!$_GET[ 'fgrID' ]) {
             die('missing fgrID... <a href="admincenter.php?site=admin_forum&amp;action=admin_forum_groups">back</a>');
         }
-        safe_query("ALTER TABLE " . PREFIX . "user_forum_groups DROP `" . $_GET[ 'fgrID' ] . "`");
+        safe_query("ALTER TABLE " . PREFIX . "plugins_forum_user_forum_groups DROP `" . $_GET[ 'fgrID' ] . "`");
         safe_query("DELETE FROM " . PREFIX . "plugins_forum_groups WHERE fgrID='" . $_GET[ 'fgrID' ] . "'");
 
         redirect("admincenter.php?site=admin_forum&amp;action=admin_forum_groups", "", 0);
@@ -1002,9 +1002,9 @@ if ($action == "admin_forum_groups_delete") {
     if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
         safe_query("INSERT INTO " . PREFIX . "plugins_forum_groups ( name ) values( '" . $_POST[ 'name' ] . "' ) ");
         $id = mysqli_insert_id($_database);
-        if (!safe_query("ALTER TABLE " . PREFIX . "user_forum_groups ADD `" . $id . "` INT( 1 ) NOT NULL ; ")) {
-            safe_query("ALTER TABLE " . PREFIX . "user_forum_groups DROP `" . $id . "`");
-            safe_query("ALTER TABLE " . PREFIX . "user_forum_groups ADD `" . $id . "` INT( 1 ) NOT NULL ; ");
+        if (!safe_query("ALTER TABLE " . PREFIX . "plugins_forum_user_forum_groups ADD `" . $id . "` INT( 1 ) NOT NULL ; ")) {
+            safe_query("ALTER TABLE " . PREFIX . "plugins_forum_user_forum_groups DROP `" . $id . "`");
+            safe_query("ALTER TABLE " . PREFIX . "plugins_forum_user_forum_groups ADD `" . $id . "` INT( 1 ) NOT NULL ; ");
         }
 
         redirect("admincenter.php?site=admin_forum&amp;action=admin_forum_groups", "", 0);

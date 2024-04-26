@@ -1353,7 +1353,7 @@ if (isset($_POST['newreply']) && !isset($_POST['preview'])) {
         }
 
         if ($getavatar = getavatar($dr['poster'])) {
-            $avatar = '<img class="avatar" src="images/avatars/' . $getavatar . '" alt="'.$dr['poster'].'">';
+            $avatar = '<img class="avatar img-fluid" src="images/avatars/' . $getavatar . '" alt="'.$dr['poster'].'">';
         } else {
             $avatar = '';
         }

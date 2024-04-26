@@ -2,7 +2,7 @@
 global $userID,$_database,$add_database_install,$add_database_insert;
 global $str,$modulname,$info,$navi_name,$admin_file,$activate,$author,$website,$index_link,$hiddenfiles,$version,$path,$widget_link1,$widget_link2,$widget_link3,$widgetname1,$widgetname2,$widgetname3,$head_activated,$content_head_activated,$content_foot_activated,$head_section_activated,$foot_section_activated,$modul_deactivated,$modul_display,$full_activated,$plugin_settings,$plugin_module,$plugin_widget,$widget1,$widget2,$widget3,$mnavID,$navi_link,$catID,$dashnavi_link,$themes_modulname;
 ##### Install für Plugin und Module ###################################################################################################
-$str                     =   "{[de]}Navigationsstandard{[en]}Navigation Standard{[it]}Barra Standard di Navigazione";          // name of the plugin
+$str                     =   "{[de]}Navigation Default{[en]}Navigation Standard{[it]}Barra Standard di Navigazione";          // name of the plugin
 $modulname               =   "navigation_default";          // name to uninstall
 $info                    =   "{[de]}Mit diesem Plugin könnt ihr euch die Default Navigation anzeigen lassen.{[en]}With this plugin you can display the default navigation.{[it]}Con questo plugin puoi visualizzare la Barra di navigazione predefinita. ";// description of the plugin
 $navi_name               =   "";                            // name of the Webside Navigation / Dashboard Navigation
@@ -50,8 +50,11 @@ $str = $translate->getTextByLanguage($str);
 echo "<div class='card'><div class='card-header'>$str Database Updation</div><div class='card-body'>";
 #######################################################################################################################################
 # Versions-Nummer wird upgedatet
-safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname'");
-            
+#safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname'");
+DeleteData("settings_module","modulname",$modulname);
+DeleteData("settings_plugins","modulname",$modulname);
+
+
 get_add_module_install ();
 get_add_plugin_manager();
 #get_add_navigation();

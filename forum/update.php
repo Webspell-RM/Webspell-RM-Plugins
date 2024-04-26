@@ -45,7 +45,7 @@ $themes_modulname        =   "default";
 #######################################################################################################################################
 
 ##### Install für Plugin und Module ###################################################################################################
-$str_two                     =   "{[de]}Forum Topic{[en]}Forum Topic{[it]}Forum Topic";             // name of the plugin
+$str_two                     =   "Forum Topic";             // name of the plugin
 $modulname_two               =   "forum_topic";             // name to uninstall
 $info_two                    =   "Bestandteil vom Forum!!!";// description of the plugin
 $navi_name_two               =   "";                        // name of the Webside Navigation / Dashboard Navigation
@@ -300,7 +300,16 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_forum_user_forum_groups` (`usfgID`, `userID`, `1`) VALUES
 (1, 1, 1)");
 
+add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_user_forum_groups` (
+  `usfgID` int(11) NOT NULL AUTO_INCREMENT,
+  `userID` int(11) NOT NULL DEFAULT '0',
+  `1` int(1) NOT NULL,
+  PRIMARY KEY (`usfgID`)
+) AUTO_INCREMENT=2
+  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
+add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_user_forum_groups` (`usfgID`, `userID`, `1`) VALUES
+(1, 1, 1)");
 ################ 
 
 add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."settings_module` (`pluginID`, `name`, `modulname`, `themes_modulname`, `activate`, `sidebar`, `head_activated`, `content_head_activated`, `content_foot_activated`, `head_section_activated`, `foot_section_activated`, `modul_display`, `full_activated`, `plugin_settings`, `plugin_module`, `plugin_widget`, `widget1`, `widget2`, `widget3`) VALUES ('', '$str_two', '$modulname_two', 'default', '1', 'activated', '$head_activated_two', '$content_head_activated_two', '$content_foot_activated_two', '$head_section_activated_two', '$foot_section_activated_two', '$modul_display_two', '$full_activated_two', '$plugin_settings_two', '$plugin_module_two', '$plugin_widget_two', '$widget1_two', '$widget2_two', '$widget3_two')");

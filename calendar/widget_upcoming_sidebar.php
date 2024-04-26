@@ -128,4 +128,81 @@ $anzahl='';
         
         echo $plugin_language[ 'no_event' ];
     }
+
+#########################################################
+$settings = safe_query("SELECT * FROM " . PREFIX . "settings");
+$db = mysqli_fetch_array($settings);
+
+if ($db[ 'birthday' ] == '1') {
+
+$cats = safe_query(
+        "SELECT
+            nickname, userID, YEAR(CURRENT_DATE()) -YEAR(birthday) 'age'
+        FROM
+            " . PREFIX . "user
+        WHERE
+            DATE_FORMAT(`birthday`, '%m%d') = DATE_FORMAT(NOW(), '%m%d')"
+    );
+    if (mysqli_num_rows($cats)) { 
+
+
+    $plugin_data= array();
+    $plugin_data['$title']=$plugin_language['birthday'];
+    $plugin_data['$subtitle']='Birthday';  
+$template = $GLOBALS["_template"]->loadTemplate("calendar","birthday_head", $plugin_data, $plugin_path);
+    echo $template;
+
+// TODAY birthdays
+    $ergebnis = safe_query(
+        "SELECT
+            nickname, userID, YEAR(CURRENT_DATE()) -YEAR(birthday) 'age'
+        FROM
+            " . PREFIX . "user
+        WHERE
+            DATE_FORMAT(`birthday`, '%m%d') = DATE_FORMAT(NOW(), '%m%d')"
+    );
+    $n = 0;
+    $birthdays = '';
+    while ($db = mysqli_fetch_array($ergebnis)) {
+        $n++;
+        $years = $db[ 'age' ];
+        if ($n > 1) {
+            $birthdays .= '<br><div class="row"><div class="col-md-8"><a href="index.php?site=profile&amp;id=' . $db[ 'userID' ] . '"><b>' . $db[ 'nickname' ] .
+                '</b></a> (' . $years . ')
+                </div>
+        <div class="col-md-4 text-end">
+            <span class="badge text-bg-warning text-end"><i class="bi bi-cake2"></i> '.$plugin_language['birthday'].'</span>
+        </div></div>';   
+        } else {
+            $birthdays = '<div class="row"><div class="col-md-8"><a href="index.php?site=profile&amp;id=' . $db[ 'userID' ] . '"><b>' . $db[ 'nickname' ] .
+                '</b></a> (' . $years . ')
+                </div>
+        <div class="col-md-4 text-end">
+            <span class="badge text-bg-warning text-end"><i class="bi bi-cake2"></i> '.$plugin_language['birthday'].'</span>
+        </div></div>';       
+        }
+    }
+    if (!$n) {
+        $birthdays = '';
+    }
+
+            	$data_array = array();
+				$data_array['$termin'] = $birthdays;
+
+                $template = $GLOBALS["_template"]->loadTemplate("calendar","birthday", $data_array, $plugin_path);
+    			echo $template;
+    
+    $template = $GLOBALS["_template"]->loadTemplate("calendar","birthday_foot", array(), $plugin_path);
+    echo $template;
+
+
+} else {
+        
+        echo "";
+    }
+} else {
+        
+        echo "";
+    }   
+
 ?>

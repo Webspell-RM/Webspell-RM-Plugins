@@ -24,7 +24,9 @@
 				"file3": "topbar/templates/topbar_three.html"
 			},
 			{
-				"index": "images"
+				"index": "images",
+				"file1": "topbar/images/widget_topbar_one.jpg",
+				"file2": "topbar/images/widget_topbar_two.jpg"
 			},
 			{
 				"index": "css",
