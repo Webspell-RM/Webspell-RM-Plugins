@@ -893,14 +893,25 @@ if (isset($_GET[ 'action' ])) {
                                 LIMIT 0,1"
                             )
                         );
-                    $filename = $filedata[ 'filename' ];
+
+                    if(!isset($filedata[ 'fileID' ])) {
+                        $fileID = '';
+                    }else{
+                        $fileID = $filedata[ 'fileID' ];
+                    }
+                    
+                    if(!isset($filedata[ 'filename' ])) {
+                        $filename = '';
+                    }else{
+                        $filename = $filedata[ 'filename' ];
+                    }
+                    
                     if (mb_strlen($filename) > 20) {
                         $filename = mb_substr($filename, 0, 20);
                         $filename .= '...';
                     }
-                    $lastfile_cat = '<a href="index.php?site=files&amp;file=' . $filedata[ 'fileID' ] . '" title="' .
-                        $filedata[ 'filename' ] . '">' . $filename .
-                        '</a>';
+
+                    $lastfile_cat = '<a href="index.php?site=files&amp;file=' . $fileID . '" title="' . $filename . '">' . $filename . '</a>';
 
                     // output
                     $data_array = array();
