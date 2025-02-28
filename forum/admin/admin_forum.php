@@ -492,7 +492,7 @@ if ($action == "mods") {
             </div>
             <div class="card-body">
     <a href="admincenter.php?site=admin_forum" class="white">' . $plugin_language[ 'boards' ] .
-        '</a> &raquo; ' . $plugin_language[ 'edit_board' ] . '</h4';
+        '</a> &raquo; ' . $plugin_language[ 'edit_board' ] . '';
 
     $boardID = $_GET[ 'boardID' ];
 

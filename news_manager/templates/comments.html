@@ -10,19 +10,16 @@
 <!-- comments_content_area -->
 <div class="card">
     <div class="card-body">
-        <span style="font-size: 16px;font-weight: 900;">$comment:</span> $newscomments <hr>
-        $avatar by $poster <span class="float-end"><small>$date</small><br>$recomm $edit $actions</span>
+        <h4>Comment:</h4> $newscomments <hr>
+        $avatar by $poster | <i class="fas fa-calendar"></i> $date <span class="float-end">$recomm $edit $actions</span>
     </div>
-    <form id="post" name="post" action="index.php?site=news_comments" method="post" onsubmit="return chkFormular()">
     <div style="display: none;" id="rec$cid">
         <div class="card">
             <div class="card-header">
                 $avatar by $poster
             </div>
             <div class="card-body">
-           
-                <span style="font-size: 16px;font-weight: 900;">$your_comment_reply</span>
-
+                <h4>$your_comment_reply</h4>
                 <div class="mb-3">
                     <textarea name="message2" id="message2" class="form-control"></textarea>
                 </div>
@@ -33,22 +30,18 @@
                     <input type="hidden" name="type" value="re">
                     <input type="hidden" name="referer" value="$referer">
                     <input type="submit" name="saverecomment" value="$post_recomment" class="btn btn-primary">
-                </div>            
+                </div>
             </div>
         </div>
-    </div>
-    </form>
- 
-$recomment 
-
+    </div>   
+    $recomment
 </div>
 <!-- END -->
 <!-- comments_foot -->
 <div>$page_link</div>
-        <div  class="text-end mb-3">
+    <div  class="text-end mb-3">
         $submit
     </div>
-
 </form>
 <!-- END -->
 <!-- comments_add_user -->
@@ -106,6 +99,7 @@ $recomment
 </form></div>
 <!-- END --> 
 <!-- comments_edit -->
+
 <script>
     <!--
     function chkFormular() {
@@ -123,24 +117,20 @@ $recomment
     }
     -->
 </script>
-<div class="head-boxes">
-    <h2 class="head-h2">
-        <span class="head-boxes-title">$title_editcomment</span>
-    </h2>
-</div>
+<h2><span><i class="fas fa-comments"></i>&nbsp;$title_editcomment</span></h2>
 <div class="card">
     <div class="card-body">
-        <form id="post" name="post" action="index.php?site=news_manager" method="post" onsubmit="return chkFormular()">
-        <div class="form-group">
-            <textarea name="message" id="message" rows="5" cols="35" class="form-control">$message</textarea>
-        </div>
-        <div>
-            <input type="hidden" name="authorID" value="$authorID">
-            <input type="hidden" name="commentID" value="$id">
-            <input type="hidden" name="referer" value="$referer">
-            <input type="hidden" name="userID" value="$userID">
-            <input type="submit" name="saveeditcomment" value="$edit_comment" class="btn btn-warning">
-        </div>
+        <form id="post" name="post" action="index.php?site=news_comments" method="post" onsubmit="return chkFormular()">
+            <div class="mb-3">
+                <textarea name="message" id="message" rows="5" cols="35" class="form-control">$message</textarea>
+            </div>
+            <div>
+                <input type="hidden" name="authorID" value="$authorID">
+                <input type="hidden" name="commentID" value="$id">
+                <input type="hidden" name="referer" value="$referer">
+                <input type="hidden" name="userID" value="$userID">
+                <input type="submit" name="saveeditcomment" value="$edit_comment" class="btn btn-warning"></td>
+            </div>
         </form>
     </div>
 </div>
