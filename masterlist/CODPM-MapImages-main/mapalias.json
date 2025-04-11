@@ -1,0 +1,111 @@
+{
+    "cod1+coduo": {
+        "de_dust02_night": [
+            "de_dust2_night"
+        ],
+        "wawa_3daim": [
+            "wawa_3daim_american",
+            "wawa_3daim_british",
+            "wawa_3daim_russian"
+        ],
+        "fm_squishydeath": [
+            "fm_squishydeath_easy",
+            "fm_squishydeath_hard"
+        ],
+        "jm_sydneyharbour": [
+            "jm_sydneyharbour_easy",
+            "jm_sydneyharbour_hard"
+        ],
+        "mazeofdeath": [
+            "mazeofdeath_easy",
+            "mazeofdeath_hard",
+            "mazeofdeath_vhard"
+        ],
+        "nm_toybox": [
+            "nm_toybox_easy",
+            "nm_toybox_hard"
+        ],
+        "railyard_jump": [
+            "railyard_jump_hard",
+            "railyard_jump_light",
+            "railyard_jump_ultra"
+        ],
+        "skratch_v2": [
+            "skratch_easy_v2",
+            "skratch_hard_v2",
+            "skratch_medium_v2"
+        ],
+        "jm_caramba": [
+            "jm_caramba_easy",
+            "jm_caramba_hard"
+        ],
+        "mp_carentan": [
+            "mp_uo_carentan"
+        ],
+        "mp_dawnville": [
+            "mp_uo_dawnville"
+        ],
+        "mp_depot": [
+            "mp_uo_depot"
+        ],
+        "mp_hurtgen": [
+            "mp_uo_hurtgen"
+        ],
+        "mp_powcamp": [
+            "mp_uo_powcamp"
+        ],
+        "sadrcity": [
+            "mp_sadrcity",
+            "sadr_city",
+            "rev_sadrcity_uo"
+        ],
+        "moh_stalingrad": [
+            "moh_stalingrad_r"
+        ],
+        "moh_stalingrad_n": [
+            "moh_stalingrad_rn"
+        ],
+        "mice": [
+            "mice_v2"
+        ],
+        "mp_pavlov": [
+            "uo_pavlov_ctf"
+        ],
+        "mp_neuville": [
+            "uo_neuville_ctf"
+        ],
+        "mp_tigertown": [
+            "uo_tigertown_ctf"
+        ],
+        "fun_iceworld": [
+            "fun_iceworld_am",
+            "fun_iceworld_br",
+            "fun_iceworld_ru"
+        ],
+        "mp_wreck": [
+            "mp_wreck2"
+        ],
+        "ghosttown": [
+            "ghosttown_zheck"
+        ],
+        "project": [
+            "project-v2"
+        ],
+        "st-ettiene": [
+            "[vs-uk]st-ettiene"
+        ],
+        "mp_ranville_final": [
+            "mp_ranville"
+        ],
+        "the_rock_final": [
+            "the_rock",
+            "therock_daylight"
+        ],
+        "mp_harbor_extreme": [
+            "mp_harbor(extreme)"
+        ],
+        "ramadi": [
+            "rev_ramadi_uo"
+        ]
+    }
+}

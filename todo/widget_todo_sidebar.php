@@ -54,19 +54,19 @@ if(mysqli_num_rows($q)) {
         $title = $translate->getTextByLanguage($title);
 
 		if($r['percent']<5) {
-			$bar_class = "bg-dark";
+			$bar_class = "bg-dark text-white";
 		} elseif($r['percent'] >=6 && $r['percent']<49) {
-			$bar_class = "bg-danger";
+			$bar_class = "bg-danger text-white";
 		} elseif($r['percent'] >=50 && $r['percent']<74) {
 			$bar_class = "bg-warning text-dark";
 		} elseif($r['percent'] >=75 && $r['percent']<100) {
 			$bar_class = "bg-info text-dark";
 		} else {
-			$bar_class = "bg-success";
+			$bar_class = "bg-success text-white";
 		}
 		$data_array = array();
 		$data_array['$title'] = $title;
-		$data_array['$percent'] = $r['percent']."%";
+		$data_array['$percent'] = $r['percent'];
 		$data_array['$bar_class'] = $bar_class;
 		$data_array['$date'] = date("d.m.Y", $r['date']);
 		$data_array['$nickname'] = getnickname($r['userID']);

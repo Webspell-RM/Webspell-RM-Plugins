@@ -159,3 +159,58 @@ section .section-title {
   object-fit: cover;
   height: auto;
 }
+
+
+
+/*--------------------------------------------------------------
+# Member List
+--------------------------------------------------------------*/
+.member {
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow:0 .46875rem 2.1875rem rgba(90,97,105,0.1),0 .9375rem 1.40625rem rgba(90,97,105,.1),0 .25rem .53125rem rgba(90,97,105,.12),0 .125rem .1875rem rgba(90,97,105,.1);
+  width: 100%;
+}
+
+.member.member-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.member-info {
+  padding: 10px;
+}
+
+.member-info h4 {
+  font-weight: 500;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.mem1ber-info span {
+  display: block;
+  font-size: 12px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.box {
+  padding: 0px;
+  background: #fff;
+  text-align: center;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.12);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.advanced {
+  width: 200px;
+  position: absolute;
+  top: 25px;
+  right: -68px;
+  transform: rotate(45deg);
+  z-index: 1;
+  font-size: 14px;
+  padding: 1px 0 3px 0;
+  /*background: rgba(var(--bs-link-color), 1);*/
+}

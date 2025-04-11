@@ -31,17 +31,17 @@
                     <div class="col-md-4">
                         <div class="row">   
                             <div class="col-4">$server_ip:</div>
-                            <div class="col-8">$ip</div>
+                            <div class="col-8">$ip:$port</div>
                             <div class="col-4">$server_status:</div>
                             <div class="col-8">$status</div>
                             <div class="col-4">$server_game:</div>
                             <div class="col-8">$showgame</div>
                             <div class="col-4">$server_link:</div>
-                            <div class="col-8"><a href="hlsw://$ip">$ip</a></div>
+                            <div class="col-8"><a href="hlsw://$ip">$ip:$port</a></div>
                         </div>
                     </div>
                     <div class="col-md-8 d-none d-sm-block">
-                        <a href="https://www.gametracker.com/server_info/$ip/" target="_blank">$pic</a>
+                        <a href="https://www.gametracker.com/server_info/$ip:$port/" target="_blank">$pic</a>
                     </div>
                     <div class="col-md-12"><b>$server_information:</b>
                         $info
@@ -68,7 +68,7 @@
             </div>
             <div class="col">
                 <a href="index.php?site=servers">$servername</a><br>
-                IP/Link :<a href="steam://connect/$serverip">$serverip</a><br>
+                IP/Link :<a href="steam://connect/$ip:$port">$ip:$port</a><br>
                 $server_status: $status
             </div>
         </div> 
@@ -80,7 +80,7 @@
 
 <!-- servers_gametracker_head_content -->
 <div class="card">
-    <div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+    <div class="card-b1ody widget" style="margin: -5px 0px -15px 7px;"> 
 <!-- END -->
 <!-- servers_gametracker_content -->
         $pic           

@@ -61,15 +61,15 @@ if (isset($_POST[ 'submit' ])) {
 
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
-        if (mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_join_us"))) {
-            safe_query("UPDATE " . PREFIX . "plugins_join_us 
+        if (mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_joinus"))) {
+            safe_query("UPDATE " . PREFIX . "plugins_joinus 
                 SET 
                 `show` = '" . $show . "',
                 `terms_of_use` = '" . $terms_of_use . "',
                 `title` = '" . $title . "',
                 `text` = '" . $text . "'");
         } else {
-            safe_query("INSERT INTO " . PREFIX . "plugins_join_us (show,terms_of_use,title, text) values( '" . $show . "','" . $terms_of_use . "','" . $title . "', '" . $text . "') ");
+            safe_query("INSERT INTO " . PREFIX . "plugins_joinus (show,terms_of_use,title, text) values( '" . $show . "','" . $terms_of_use . "','" . $title . "', '" . $text . "') ");
         }
     } else {
         echo $plugin_language[ 'transaction_invalid' ];
@@ -89,7 +89,7 @@ echo'<div class="card">
             <div class="card-body">';    
 
 
-    $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_join_us");
+    $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_joinus");
     $ds = mysqli_fetch_array($settings);
     $CAPCLASS = new \webspell\Captcha;
     $CAPCLASS->createTransaction();

@@ -1,0 +1,31 @@
+{
+"items": [
+			{
+				"index": "php",
+				"file1": "navigation/install.php",
+				"file2": "navigation/uninstall.php",
+				"file3": "navigation/widget_navigation.php"
+			},
+			{
+				"index": "admin"
+			},
+			{
+				"index": "language"
+			},
+			{
+				"index": "templates"
+			},
+			{
+				"index": "images",
+				"file1": "navigation/images/widget_navigation.jpg"
+			},
+			{
+				"index": "css",
+				"file1": "navigation/css/navigation.css"
+			},
+			{
+				"index": "js",
+				"file1": "navigation/js/navigation.js"
+			}
+		]
+}

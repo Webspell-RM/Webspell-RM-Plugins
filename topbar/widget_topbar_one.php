@@ -285,4 +285,16 @@ if(mysqli_num_rows($ergebnis)){
     	}
     }
 }
+/*
+<div class="social-links d-none d-md-flex align-items-center">
+            <a href="https://discord.gg/qNTgX7B" target="_blank" class="linkedin"><i class="bi bi-discord" style="font-size: 1rem;"></i></a>
+            <a href="https://t.me/dkz_gaming_eu_community" target="_blank" class="linkedin"><i class="bi bi-telegram" style="font-size: 1rem;"></i></a>
+            <a href="https://www.facebook.com/DKZgaming.eu/" target="_blank" class="facebook"><i class="bi bi-facebook" style="font-size: 1rem;"></i></a>
+            <a href="https://instagram.com/digitalkillerz/" target="_blank" class="instagram"><i class="bi bi-instagram" style="font-size: 1rem;"></i></a>
+            <a href="https://www.twitch.tv/slimjjs" target="_blank" class="linkedin"><i class="bi bi-twitch" style="font-size: 1rem;"></i></a>
+            <a href="https://www.youtube.com/user/DigitalKillerZv" target="_blank" class="linkedin"><i class="bi bi-youtube" style="font-size: 1rem;"></i></a>
+            <a href="https://www.tiktok.com/@dkzgaming.eu" target="_blank" class="linkedin"><i class="bi bi-tiktok" style="font-size: 1rem;"></i></a>
+            <a href="https://steamcommunity.com/groups/DKZ_Community" target="_blank" class="linkedin"><i class="bi bi-steam" style="font-size: 1rem;"></i></a>         
+            <a href="https://twitter.com/DKZ_GAMING" target="_blank" class="twitter"><i class="bi bi-twitter-x" style="font-size: 1rem;"></i></a>
+        </div>*/
 ?>

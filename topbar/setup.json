@@ -25,8 +25,8 @@
 			},
 			{
 				"index": "images",
-				"file1": "topbar/images/widget_topbar_one.jpg",
-				"file2": "topbar/images/widget_topbar_two.jpg"
+				"file1": "topbar/images/topbar_one.jpg",
+				"file2": "topbar/images/topbar_two.jpg"
 			},
 			{
 				"index": "css",

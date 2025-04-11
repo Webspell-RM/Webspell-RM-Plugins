@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $language_array = array(
 

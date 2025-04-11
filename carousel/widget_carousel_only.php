@@ -51,7 +51,7 @@ if (mysqli_num_rows($carousel)) {
     while ($db = mysqli_fetch_array($carousel)) {
 
         $title=""; $link=""; $description="";
-        $timesec = ($db['time_pic'] * 1000);
+        $timesec = !empty($db['time_pic']) ? ($db['time_pic'] * 1000) : 10000;
         if($x==1) { echo '<div class="carousel-item active" data-bs-interval="'.$timesec.'">'; } else { echo '<div class="carousel-item" data-bs-interval="'.$timesec.'">'; }
         if (!empty($db['carousel_vid'])) {
             // Se è disponibile un video, visualizzalo

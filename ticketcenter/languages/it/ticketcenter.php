@@ -31,7 +31,7 @@ $language_array = array(
    'new_ticket'                    =>'Nuovo Ticket',
    'normal'                        =>'Normale',
    'not_your_ticket'               =>'Ticket non Tuo',
-   'open_ticket'                   =>'Riapri il Ticket',
+   'open_ticket'                   =>'Apri nuovamente il Ticket',
    'open_tickets'                  =>'Ticket Aperti',
    'open'                          =>'Aperto',
    'pn_antwort'                    =>'Invia un messaggio privato quando gli viene risposto dall\'amministratore?',
@@ -46,7 +46,7 @@ $language_array = array(
    'take_ticket'                   =>'Prendi il Ticket',
    'tickedid'                      =>'ID Ticket',
    'ticket_archived'               =>'Ticket archiviato',
-   'ticket_archivet'               =>'Archivia Ticket',
+   'ticket_archivet'               =>'Ticket d\'archivio',
    'ticket_closed'                 =>'Ticket chiuso',
    'ticket_created'                =>'Ticket creato con successo',
    'ticket_createt'                =>'Ticket creato',
@@ -62,6 +62,6 @@ $language_array = array(
    'userinfo'                      =>'Notifica utente',
    'you_have_to_enter_ticketinfo'  =>'Devi inserire un messaggio',
    'you_have_to_enter_ticketname'  =>'Devi inserire un argomento',
-   'title'                         =>'Supporto Sistema Ticket'
+   'title'                         => 'Supporto Sistema Ticket'
    
 );

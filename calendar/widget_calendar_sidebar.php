@@ -180,7 +180,7 @@
 
             unset($termin);
 
-            $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_upcoming");
+            $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_calendar");
             $anz = mysqli_num_rows($ergebnis);
             if ($anz) {
                 $termin = '';

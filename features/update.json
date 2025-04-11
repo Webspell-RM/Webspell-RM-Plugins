@@ -9,24 +9,27 @@
 			},
 			{
 				"index": "admin",
-				"file1": "features/admin/admin_features_one.php"
+				"file1": "features/admin/admin_features.php"
 			},
 			{
 				"index": "language",
 				"file1": "features/languages/de/admin_features.php",
 				"file2": "features/languages/de/features.php",
-				"file3": "features/languages/de/admin_features.php",
-				"file4": "features/languages/de/features.php",
-				"file5": "features/languages/de/admin_features.php",
-				"file6": "features/languages/de/features.php"
+				"file3": "features/languages/en/admin_features.php",
+				"file4": "features/languages/en/features.php",
+				"file5": "features/languages/it/admin_features.php",
+				"file6": "features/languages/it/features.php"
 			},
 			{
 				"index": "templates",
-				"file1": "features/templates/features_one.html"
+				"file1": "features/templates/features.html"
 			},
 			{
 				"index": "images",
-				"file1": "features/images/widget_features_one_box_content.jpg"
+				"file1": "features/images/widget_features_box_one_content.jpg",
+				"file2": "features/images/widget_features_box_two_content.jpg",
+				"file3": "features/images/widget_features_box_three_content.jpg",
+				"file4": "features/images/widget_features_box_four_content.jpg"
 			},
 			{
 				"index": "css",

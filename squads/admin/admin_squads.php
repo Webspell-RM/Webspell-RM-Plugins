@@ -1,4 +1,5 @@
 <?php
+
 /**
  *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*  
  *                                    Webspell-RM      /                        /   /                                                 *
@@ -26,19 +27,19 @@
  */
 
 # Sprachdateien aus dem Plugin-Ordner laden
-$pm = new plugin_manager(); 
+$pm = new plugin_manager();
 $plugin_language = $pm->plugin_language("squads", $plugin_path);
 
-$ergebnis = safe_query("SELECT * FROM ".PREFIX."navigation_dashboard_links WHERE modulname='squads'");
-    while ($db=mysqli_fetch_array($ergebnis)) {
-      $accesslevel = 'is'.$db['accesslevel'].'admin';
+$ergebnis = safe_query("SELECT * FROM " . PREFIX . "navigation_dashboard_links WHERE modulname='squads'");
+while ($db = mysqli_fetch_array($ergebnis)) {
+    $accesslevel = 'is' . $db['accesslevel'] . 'admin';
 
-if (!$accesslevel($userID) || mb_substr(basename($_SERVER[ 'REQUEST_URI' ]), 0, 15) != "admincenter.php") {
-    die($plugin_language[ 'access_denied' ]);
-}
+    if (!$accesslevel($userID) || mb_substr(basename($_SERVER['REQUEST_URI']), 0, 15) != "admincenter.php") {
+        die($plugin_language['access_denied']);
+    }
 }
 
-$filepath = $plugin_path."images/squadicons/";
+$filepath = $plugin_path . "images/squadicons/";
 
 if (isset($_GET['delete'])) {
     $CAPCLASS = new \webspell\Captcha;
@@ -57,17 +58,17 @@ if (isset($_GET['delete'])) {
         }
         safe_query("DELETE FROM " . PREFIX . "plugins_squads_members WHERE squadID='$squadID' ");
         safe_query("DELETE FROM " . PREFIX . "plugins_squads WHERE squadID='$squadID' ");
-        redirect("admincenter.php?site=admin_squads", "", 0);        
+        redirect("admincenter.php?site=admin_squads", "", 0);
     } else {
-        redirect("admincenter.php?site=admin_squads", $plugin_language[ 'transaction_invalid' ], 3);
+        redirect("admincenter.php?site=admin_squads", $plugin_language['transaction_invalid'], 3);
     }
 }
 
 if (isset($_GET['del_member'])) {
     $CAPCLASS = new \webspell\Captcha;
-    if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
-        $id = $_GET[ 'id' ];
-        $squadID = $_GET[ 'squadID' ];
+    if ($CAPCLASS->checkCaptcha(0, $_GET['captcha_hash'])) {
+        $id = $_GET['id'];
+        $squadID = $_GET['squadID'];
         $squads = mysqli_num_rows(safe_query("SELECT userID FROM " . PREFIX . "plugins_squads_members WHERE userID='$id'"));
         if ($squads < 2 && !issuperadmin($id)) {
             safe_query("DELETE FROM " . PREFIX . "user_groups WHERE userID='$id'");
@@ -76,47 +77,46 @@ if (isset($_GET['del_member'])) {
         safe_query("DELETE FROM " . PREFIX . "plugins_squads_members WHERE userID='$id' AND squadID='$squadID'");
         redirect("admincenter.php?site=admin_squads", "", 0);
     } else {
-        redirect("admincenter.php?site=admin_squads", $plugin_language[ 'transaction_invalid' ], 3);
+        redirect("admincenter.php?site=admin_squads", $plugin_language['transaction_invalid'], 3);
     }
 }
 
 if (isset($_POST['sortieren'])) {
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_POST['captcha_hash'])) {
-        $sort = $_POST['sort'];
-        if (is_array($sort)) {
-            foreach ($sort as $sortstring) {
+
+        if (isset($_POST['squads_sort']) && is_array($_POST['squads_sort'])) {
+            foreach ($_POST['squads_sort'] as $sortstring) {
                 $sorter = explode("-", $sortstring);
-                safe_query("UPDATE " . PREFIX . "plugins_squads SET sort='$sorter[1]' WHERE squadID='$sorter[0]' ");
+                safe_query("UPDATE " . PREFIX . "plugins_squads SET sort='" . (int)$sorter[1] . "' WHERE squadID='" . (int)$sorter[0] . "'");
             }
         }
 
-        if (is_array($sort)) {
-            foreach ($sort as $sortstring) {
+        if (isset($_POST['members_sort']) && is_array($_POST['members_sort'])) {
+            foreach ($_POST['members_sort'] as $sortstring) {
                 $sorter = explode("-", $sortstring);
-                safe_query("UPDATE " . PREFIX . "plugins_squads_members SET sort='$sorter[1]' WHERE sqmID='$sorter[0]' ");
+                safe_query("UPDATE " . PREFIX . "plugins_squads_members SET sort='" . (int)$sorter[1] . "' WHERE sqmID='" . (int)$sorter[0] . "'");
             }
         }
-
     } else {
         echo $plugin_language['transaction_invalid'];
     }
 }
 
-if (isset($_POST[ 'squads_settings_save' ])) {  
+if (isset($_POST['squads_settings_save'])) {
 
     $CAPCLASS = new \webspell\Captcha;
-    if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
+    if ($CAPCLASS->checkCaptcha(0, $_POST['captcha_hash'])) {
         safe_query(
             "UPDATE
                 " . PREFIX . "plugins_squads_settings
             SET
-                squads='" . $_POST[ 'squads' ] . "' "
+                squads='" . $_POST['squads'] . "' "
         );
-        
+
         redirect("admincenter.php?site=admin_squads", "", 0);
     } else {
-        redirect("admincenter.php?site=admin_squads", $plugin_language[ 'transaction_invalid' ], 3);
+        redirect("admincenter.php?site=admin_squads", $plugin_language['transaction_invalid'], 3);
     }
 }
 
@@ -127,8 +127,8 @@ if (isset($_POST['save'])) {
             $games = implode(";", $_POST['games']);
             safe_query(
                 "INSERT INTO " . PREFIX . "plugins_squads ( gamesquad, games, name, info, sort ) VALUES ( '" .
-                $_POST['gamesquad'] . "', '" . $games . "', '" . $_POST['name'] . "', '" . $_POST['message'] .
-                "', '1' )"
+                    $_POST['gamesquad'] . "', '" . $games . "', '" . $_POST['name'] . "', '" . $_POST['message'] .
+                    "', '1' )"
             );
 
             $id = mysqli_insert_id($_database);
@@ -141,7 +141,7 @@ if (isset($_POST['save'])) {
             $upload = new \webspell\HttpUpload('icon');
             if ($upload->hasFile()) {
                 if ($upload->hasError() === false) {
-                    $mime_types = array('image/jpeg', 'image/png', 'image/gif');
+                    $mime_types = array('image/jpeg', 'image/png', 'image/avif', 'image/webp', 'image/gif');
 
                     if ($upload->supportedMimeType($mime_types)) {
                         $imageInformation = getimagesize($upload->getTempFile());
@@ -153,6 +153,12 @@ if (isset($_POST['save'])) {
                                     break;
                                 case 3:
                                     $endung = '.png';
+                                    break;
+                                case 18:
+                                    $endung = '.webp';
+                                    break;
+                                case 19:
+                                    $endung = '.avif';
                                     break;
                                 default:
                                     $endung = '.jpg';
@@ -180,7 +186,7 @@ if (isset($_POST['save'])) {
             $upload = new \webspell\HttpUpload('icon_small');
             if ($upload->hasFile()) {
                 if ($upload->hasError() === false) {
-                    $mime_types = array('image/jpeg', 'image/png', 'image/gif');
+                    $mime_types = array('image/jpeg', 'image/png', 'image/avif', 'image/webp', 'image/gif');
 
                     if ($upload->supportedMimeType($mime_types)) {
                         $imageInformation = getimagesize($upload->getTempFile());
@@ -193,6 +199,12 @@ if (isset($_POST['save'])) {
                                 case 3:
                                     $endung = '.png';
                                     break;
+                                case 18:
+                                    $endung = '.webp';
+                                    break;
+                                case 19:
+                                    $endung = '.avif';
+                                    break;
                                 default:
                                     $endung = '.jpg';
                                     break;
@@ -203,7 +215,7 @@ if (isset($_POST['save'])) {
                                 @chmod($filepath . $file, $new_chmod);
                                 safe_query(
                                     "UPDATE " . PREFIX . "plugins_squads SET icon_small='" . $file .
-                                    "' WHERE squadID='" . $id . "'"
+                                        "' WHERE squadID='" . $id . "'"
                                 );
                             }
                         } else {
@@ -236,10 +248,10 @@ if (isset($_POST['saveedit'])) {
             $games = implode(";", $_POST['games']);
             safe_query(
                 "UPDATE " . PREFIX . "plugins_squads SET gamesquad='" . $_POST['gamesquad'] . "', games='" . $games .
-                "', name='" . $_POST['name'] . "', info='" . $_POST['message'] . "' WHERE squadID='" .
-                $_POST['squadID'] . "' "
+                    "', name='" . $_POST['name'] . "', info='" . $_POST['message'] . "' WHERE squadID='" .
+                    $_POST['squadID'] . "' "
             );
-            
+
             $id = $_POST['squadID'];
 
             $errors = array();
@@ -250,7 +262,7 @@ if (isset($_POST['saveedit'])) {
             $upload = new \webspell\HttpUpload('icon');
             if ($upload->hasFile()) {
                 if ($upload->hasError() === false) {
-                    $mime_types = array('image/jpeg', 'image/png', 'image/gif');
+                    $mime_types = array('image/jpeg', 'image/png', 'image/avif', 'image/webp', 'image/gif');
 
                     if ($upload->supportedMimeType($mime_types)) {
                         $imageInformation = getimagesize($upload->getTempFile());
@@ -262,6 +274,12 @@ if (isset($_POST['saveedit'])) {
                                     break;
                                 case 3:
                                     $endung = '.png';
+                                    break;
+                                case 18:
+                                    $endung = '.webp';
+                                    break;
+                                case 19:
+                                    $endung = '.avif';
                                     break;
                                 default:
                                     $endung = '.jpg';
@@ -289,7 +307,7 @@ if (isset($_POST['saveedit'])) {
             $upload = new \webspell\HttpUpload('icon_small');
             if ($upload->hasFile()) {
                 if ($upload->hasError() === false) {
-                    $mime_types = array('image/jpeg', 'image/png', 'image/gif');
+                    $mime_types = array('image/jpeg', 'image/png', 'image/avif', 'image/webp', 'image/gif');
 
                     if ($upload->supportedMimeType($mime_types)) {
                         $imageInformation = getimagesize($upload->getTempFile());
@@ -302,6 +320,12 @@ if (isset($_POST['saveedit'])) {
                                 case 3:
                                     $endung = '.png';
                                     break;
+                                case 18:
+                                    $endung = '.webp';
+                                    break;
+                                case 19:
+                                    $endung = '.avif';
+                                    break;
                                 default:
                                     $endung = '.jpg';
                                     break;
@@ -312,7 +336,7 @@ if (isset($_POST['saveedit'])) {
                                 @chmod($filepath . $file, $new_chmod);
                                 safe_query(
                                     "UPDATE " . PREFIX . "plugins_squads SET icon_small='" . $file .
-                                    "' WHERE squadID='" . $id . "'"
+                                        "' WHERE squadID='" . $id . "'"
                                 );
                             }
                         } else {
@@ -346,9 +370,9 @@ if (isset($_GET['action'])) {
 
 if ($action == "add") {
 
-  echo'<div class="card">
+    echo '<div class="card">
         <div class="card-header">
-            <i class="bi bi-person-fill-friends"></i> '.$plugin_language['squads'].'
+            <i class="bi bi-people"></i> ' . $plugin_language['squads'] . '
         </div>
             
 <nav aria-label="breadcrumb">
@@ -359,12 +383,12 @@ if ($action == "add") {
 </nav>
      <div class="card-body">';
 
-	$filepath = "../images/squadicons/";
+    $filepath = "../images/squadicons/";
     $sql = safe_query("SELECT * FROM " . PREFIX . "plugins_games_pic ORDER BY name");
     $games = '<select class="form-select" name="games[]">';
     while ($db = mysqli_fetch_array($sql)) {
         $games .= '<option value="' . htmlspecialchars($db['name']) . '">' . htmlspecialchars($db['name']) .
-        '</option>';
+            '</option>';
     }
     $games .= '</select>';
     $CAPCLASS = new \webspell\Captcha;
@@ -380,24 +404,24 @@ if ($action == "add") {
 			}
 		-->
 	</script>';
-  
-	echo '<form method="post" id="post" name="post" action="admincenter.php?site=admin_squads" enctype="multipart/form-data"
+
+    echo '<form method="post" id="post" name="post" action="admincenter.php?site=admin_squads" enctype="multipart/form-data"
 onsubmit="return chkFormular();">
     <div class="row">
     <div class="col-md-6">
 
 
     <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['icon_upload'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['icon_upload'] . ':</label>
     <div class="col-md-8">
       <input class="btn btn-info" name="icon" type="file" size="40" />
     </div>
     </div>
 
     <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['icon_upload_small'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['icon_upload_small'] . ':</label>
     <div class="col-md-8">
-      <input class="btn btn-info" name="icon_small" type="file" size="40" /><br><small>('.$plugin_language['icon_upload_info'].')</small>
+      <input class="btn btn-info" name="icon_small" type="file" size="40" /><br><small>(' . $plugin_language['icon_upload_info'] . ')</small>
     </div>
     </div>
 
@@ -406,37 +430,37 @@ onsubmit="return chkFormular();">
   <div class="col-md-6">
 
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['squad_name'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['squad_name'] . ':</label>
     <div class="col-md-8">
       <input class="form-control" type="text" name="name" />
     </div>
   </div>
 
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['squad_type'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['squad_type'] . ':</label>
     <div class="col-md-8 form-check form-switch" style="padding: 0px 43px;">
       
-        <input class="form-check-input" type="radio" name="gamesquad" value="1" checked="checked" />&nbsp;&nbsp;'.$plugin_language['gaming_squad'].' <br><br> 
-        <input class="form-check-input" type="radio" name="gamesquad" value="0" />&nbsp;&nbsp;'.$plugin_language['non_gaming_squad'].'
+        <input class="form-check-input" type="radio" name="gamesquad" value="1" checked="checked" />&nbsp;&nbsp;' . $plugin_language['gaming_squad'] . ' <br><br> 
+        <input class="form-check-input" type="radio" name="gamesquad" value="0" />&nbsp;&nbsp;' . $plugin_language['non_gaming_squad'] . '
     </div>
   </div>
 
 <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['game'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['game'] . ':</label>
     <div class="col-md-8">
-      '.$games.'
+      ' . $games . '
     </div>
   </div>
 
 </div>
  
 <div class="col-sm-12">
-        '.$plugin_language['squad_info'].':
+        ' . $plugin_language['squad_info'] . ':
         <textarea class="ckeditor" id="ckeditor" rows="5" cols="" name="message" style="width: 100%;"></textarea>
     </div>
 
 <div class="col-sm-12"><br>
-<input type="hidden" name="captcha_hash" value="'.$hash.'" /><button class="btn btn-success" type="submit" name="save" />'.$plugin_language['add_squad'].'</button>
+<input type="hidden" name="captcha_hash" value="' . $hash . '" /><button class="btn btn-success" type="submit" name="save" /><i class="bi bi-save"></i> ' . $plugin_language['add_squad'] . '</button>
     </div>
   </div>
   
@@ -445,7 +469,7 @@ onsubmit="return chkFormular();">
 } elseif ($action == "edit") {
     echo '<div class="card">
         <div class="card-header">
-            <i class="bi bi-person-fill-friends"></i> '.$plugin_language['squads'].'
+            <i class="bi bi-people"></i> ' . $plugin_language['squads'] . '
         </div>
             
 <nav aria-label="breadcrumb">
@@ -470,7 +494,7 @@ onsubmit="return chkFormular();">
             $selected = ' selected="selected"';
         }
         $games .= '<option value="' . htmlspecialchars($db['name']) . '"' . $selected . '>' .
-        htmlspecialchars($db['name']) . '</option>';
+            htmlspecialchars($db['name']) . '</option>';
     }
     $games .= '</select>';
 
@@ -510,34 +534,34 @@ onsubmit="return chkFormular();">
 			}
 		-->
 	</script>';
-  
-	echo '<form method="post" id="post" name="post" action="admincenter.php?site=admin_squads" enctype="multipart/form-data"
+
+    echo '<form method="post" id="post" name="post" action="admincenter.php?site=admin_squads" enctype="multipart/form-data"
     onsubmit="return chkFormular();">
     
 	<div class="row">
 <div class="col-md-6">
     <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['current_icon'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['current_icon'] . ':</label>
     <div class="col-md-8">
-      '.$pic.'
+      ' . $pic . '
     </div>
   </div>
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['current_icon'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['current_icon'] . ':</label>
     <div class="col-md-8">
-      '.$pic_small.'
+      ' . $pic_small . '
     </div>
   </div>
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['icon_upload'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['icon_upload'] . ':</label>
     <div class="col-md-8">
       <input class="btn btn-info" name="icon" type="file" size="40" />
     </div>
   </div>
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['icon_upload_small'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['icon_upload_small'] . ':</label>
     <div class="col-md-8">
-      <input class="btn btn-info" name="icon_small" type="file" size="40" /><br><small>('.$plugin_language['icon_upload_info'].')</small>
+      <input class="btn btn-info" name="icon_small" type="file" size="40" /><br><small>(' . $plugin_language['icon_upload_info'] . ')</small>
     </div>
   </div>
 
@@ -547,23 +571,23 @@ onsubmit="return chkFormular();">
 
 
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['squad_name'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['squad_name'] . ':</label>
     <div class="col-md-8">
-      <input class="form-control" type="text" name="name" value="'.getinput($ds['name']).'" />
+      <input class="form-control" type="text" name="name" value="' . getinput($ds['name']) . '" />
     </div>
   </div>
 
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['squad_type'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['squad_type'] . ':</label>
     <div class="col-md-8 form-check form-switch" style="padding: 0px 43px;">
-      '.$type.'
+      ' . $type . '
     </div>
   </div>
 
   <div class="mb-3 row bt">
-    <label class="col-md-4 control-label">'.$plugin_language['game'].':</label>
+    <label class="col-md-4 control-label">' . $plugin_language['game'] . ':</label>
     <div class="col-md-8">
-      '.$games.'
+      ' . $games . '
     </div>
   </div>
 
@@ -571,30 +595,29 @@ onsubmit="return chkFormular();">
 </div>
  
 <div class="col-sm-12">
-        '.$plugin_language['squad_info'].':
-        <textarea class="ckeditor" id="ckeditor" rows="5" cols="" name="message" style="width: 100%;">'.getinput($ds['info']).'</textarea>
+        ' . $plugin_language['squad_info'] . ':
+        <textarea class="ckeditor" id="ckeditor" rows="5" cols="" name="message" style="width: 100%;">' . getinput($ds['info']) . '</textarea>
     </div>
 
 <div class="col-sm-12"><br>
-      <input type="hidden" name="captcha_hash" value="'.$hash.'" />
-      <input type="hidden" name="squadID" value="'.getforminput($squadID).'" />
-      <button class="btn btn-warning" type="submit" name="saveedit" />'.$plugin_language['edit_squad'].'</button>
+      <input type="hidden" name="captcha_hash" value="' . $hash . '" />
+      <input type="hidden" name="squadID" value="' . getforminput($squadID) . '" />
+      <button class="btn btn-warning" type="submit" name="saveedit" /><i class="bi bi-save"></i> ' . $plugin_language['edit_squad'] . '</button>
     </div>
   </div>
   
   </form></div>
   </div>';
-
 } elseif ($action == "settings") {
 
-echo'<div class="card">
+    echo '<div class="card">
         <div class="card-header">
-            <i class="bi bi-person-fill-friends"></i> '.$plugin_language['squads_members'].'
+            <i class="bi bi-people"></i> ' . $plugin_language['squads_members'] . '
         </div>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_squads">' . $plugin_language[ 'squads_members' ] . '</a></li>
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_squads">' . $plugin_language['squads_members'] . '</a></li>
                 <li class="breadcrumb-item active" aria-current="page">New / Edit</li>
                 </ol>
             </nav>
@@ -604,8 +627,8 @@ echo'<div class="card">
     $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_squads_settings");
     $ds = mysqli_fetch_array($settings);
 
-    
-    
+
+
     if ($ds['squads']) {
         $type = '<div class="col-md-4 form-check form-switch" style="padding: 0px 43px;">
             <input class="form-check-input" type="radio" name="squads" value="1" checked="checked" />&nbsp;&nbsp;' . $plugin_language['squads_view_one'] . '</div>
@@ -616,7 +639,7 @@ echo'<div class="card">
         </div>
 
         <div class="col-md-4 form-check form-switch" style="padding: 0px 43px;">
-            <input class="form-check-input" type="radio" name="squads" value="0" />&nbsp;&nbsp;' . $plugin_language['squads_view_two'].'
+            <input class="form-check-input" type="radio" name="squads" value="0" />&nbsp;&nbsp;' . $plugin_language['squads_view_two'] . '
         </div>
         <div class="col-md-8">
             <div class="alert alert-success" role="alert">
@@ -632,7 +655,7 @@ echo'<div class="card">
             </div>
         </div>
         <div class="col-md-4 form-check form-switch" style="padding: 0px 43px;">
-                 <input class="form-check-input" type="radio" name="squads" value="0" checked="checked" />&nbsp;&nbsp;' . $plugin_language['squads_view_two'].'
+                 <input class="form-check-input" type="radio" name="squads" value="0" checked="checked" />&nbsp;&nbsp;' . $plugin_language['squads_view_two'] . '
         </div>
         <div class="col-md-8">
             <div class="alert alert-success" role="alert">
@@ -644,35 +667,34 @@ echo'<div class="card">
     $CAPCLASS = new \webspell\Captcha;
     $CAPCLASS->createTransaction();
     $hash = $CAPCLASS->getHash();
-    
-echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="multipart/form-data" onsubmit="return chkFormular();">
+
+    echo '<form method="post" action="admincenter.php?site=admin_squads" enctype="multipart/form-data" onsubmit="return chkFormular();">
     <div class="row">
         <div class="col-md-3">
-            '.$plugin_language['squads_view'].':
+            ' . $plugin_language['squads_view'] . ':
         </div>
         <div class="col-md-6 row">
-            '.$type.'
+            ' . $type . '
         </div>
     </div>       
     <br>
     <div class="mb-3">
-        <input type="hidden" name="captcha_hash" value="'.$hash.'"> 
-        <button class="btn btn-primary" type="submit" name="squads_settings_save">'.$plugin_language['update'].'</button>
+        <input type="hidden" name="captcha_hash" value="' . $hash . '"> 
+        <button class="btn btn-primary" type="submit" name="squads_settings_save"><i class="bi bi-save"></i> ' . $plugin_language['update'] . '</button>
     </div>
 
 </form>
 </div>
 </div>';
-
 } else {
 
-  echo'<div class="card">
-        <div class="card-header">
-            <i class="bi bi-person-fill-friends"></i> '.$plugin_language['squads_members'].'
+    echo '<div class="card">
+        <div class="card-header"><i class="bi bi-people"></i> 
+            ' . $plugin_language['squads_members'] . '
         </div>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page">' . $plugin_language[ 'squads_members' ] . '</li>
+    <li class="breadcrumb-item active" aria-current="page"><i class="bi bi-people"></i> ' . $plugin_language['squads_members'] . '</li>
   </ol>
 </nav>
 
@@ -681,33 +703,33 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
 <div class="mb-3 row">
     <label class="col-md-1 control-label">' . $plugin_language['options'] . ':</label>
     <div class="col-md-8">
-      <a href="admincenter.php?site=admin_squads&amp;action=add" class="btn btn-primary" type="button">' . $plugin_language[ 'new_squad' ] . '</a>
-      <a href="admincenter.php?site=users" class="btn btn-primary" type="button">' . $plugin_language[ 'new_users' ] . '</a>
-      <a href="admincenter.php?site=admin_squads&amp;action=settings" class="btn btn-primary" type="button">' . $plugin_language[ 'settings' ] . '</a>
+      <a href="admincenter.php?site=admin_squads&amp;action=add" class="btn btn-primary" type="button"><i class="bi bi-plus-circle"></i> ' . $plugin_language['new_squad'] . '</a>
+      <a href="admincenter.php?site=users" class="btn btn-primary" type="button"><i class="bi bi-person-add"></i> ' . $plugin_language['new_users'] . '</a>
+      <a href="admincenter.php?site=admin_squads&amp;action=settings" class="btn btn-primary" type="button"><i class="bi bi-gear"></i> ' . $plugin_language['settings'] . '</a>
     </div>
   </div>';
 
 
-   #$squads = safe_query("SELECT * FROM " . PREFIX . "plugins_squads ORDER BY sort");
-   # echo '<form method="post" action="admincenter.php?site=admin_squads">';
-   # while ($ds = mysqli_fetch_array($squads)) {
+    #$squads = safe_query("SELECT * FROM " . PREFIX . "plugins_squads ORDER BY sort");
+    # echo '<form method="post" action="admincenter.php?site=admin_squads">';
+    # while ($ds = mysqli_fetch_array($squads)) {
 
 
-###########################################
+    ###########################################
 
 
-	echo'<form method="post" action="admincenter.php?site=admin_squads">
+    echo '<form method="post" action="admincenter.php?site=admin_squads">
   <table class="table">
 <thead>
     <tr>
-      <th><b>'.$plugin_language['squad_name'].'</b></th>
-      <th><b>'.$plugin_language['squad_type'].'</b></th>
-      <th><b>'.$plugin_language['squad_info'].'</b></th>
-      <th><b>'.$plugin_language['actions'].'</b></th>
-      <th><b>'.$plugin_language['sort'].'</b></th>
+      <th><b>' . $plugin_language['squad_name'] . '</b></th>
+      <th><b>' . $plugin_language['squad_type'] . '</b></th>
+      <th><b>' . $plugin_language['squad_info'] . '</b></th>
+      <th><b>' . $plugin_language['actions'] . '</b></th>
+      <th><b>' . $plugin_language['sort'] . '</b></th>
     </tr></thead>';
 
-	$squads = safe_query("SELECT * FROM " . PREFIX . "plugins_squads ORDER BY sort");
+    $squads = safe_query("SELECT * FROM " . PREFIX . "plugins_squads ORDER BY sort");
     $anzsquads = mysqli_num_rows($squads);
     $CAPCLASS = new \webspell\Captcha;
     $CAPCLASS->createTransaction();
@@ -733,21 +755,21 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
                 $type = $plugin_language['non_gaming_squad'];
             }
 
-            $info = $db[ 'info' ];
-    
+            $info = $db['info'];
+
             $translate = new multiLanguage(detectCurrentLanguage());
             $translate->detectLanguages($info);
             $info = $translate->getTextByLanguage($info);
 
             echo '<tr class="table-secondary">
-                <td><a href="../index.php?site=squads&amp;squadID='.$db['squadID'].'" target="_blank">'.getinput($db['name']).'</a></td>
-                <td class="hidden-xs">'.$type.'</td>
-                <td class="hidden-xs">'.$info.'</td>
-                <td><a href="admincenter.php?site=admin_squads&amp;action=edit&amp;squadID='.$db['squadID'].'" class="btn btn-warning" type="button">' . $plugin_language[ 'edit' ] . '</a>
+                <td><a href="../index.php?site=squads&amp;squadID=' . $db['squadID'] . '" target="_blank">' . getinput($db['name']) . '</a></td>
+                <td class="hidden-xs">' . $type . '</td>
+                <td class="hidden-xs">' . $info . '</td>
+                <td><a href="admincenter.php?site=admin_squads&amp;action=edit&amp;squadID=' . $db['squadID'] . '" class="btn btn-warning" type="button"><i class="bi bi-pencil-square"></i> ' . $plugin_language['edit'] . '</a>
 
 
             <!-- Button trigger modal -->
-                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete" data-href="admincenter.php?site=admin_squads&amp;delete=true&amp;squadID='.$db['squadID'].'&amp;captcha_hash=' . $hash . '">
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete" data-href="admincenter.php?site=admin_squads&amp;delete=true&amp;squadID=' . $db['squadID'] . '&amp;captcha_hash=' . $hash . '"><i class="bi bi-trash3"></i> 
                 ' . $plugin_language['delete'] . '
                 </button>
                 <!-- Button trigger modal END-->
@@ -757,8 +779,8 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">'.$db['name'].'</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="' . $plugin_language[ 'close' ] . '"></button>
+        <h5 class="modal-title" id="exampleModalLabel">' . $db['name'] . '</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="' . $plugin_language['close'] . '"></button>
       </div>
 
       <div class="modal-body">
@@ -766,8 +788,8 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
       
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' . $plugin_language[ 'close' ] . '</button>
-        <a class="btn btn-danger btn-ok">' . $plugin_language['delete'] . '</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-square"></i> ' . $plugin_language['close'] . '</button>
+        <a class="btn btn-danger btn-ok"><i class="bi bi-trash3"></i> ' . $plugin_language['delete'] . '</a>
       </div>
     </div>
   </div>
@@ -779,7 +801,7 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
                 
            
                
-<td align="right"><select name="sort[]">';
+<td align="right"><select name="squads_sort[]">';
 
             for ($j = 1; $j <= $anzsquads; $j++) {
                 if ($db['sort'] == $j) {
@@ -793,27 +815,10 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
       </tr>';
 
 
-  #######################################################################
+            #######################################################################
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        /*echo'<div class="card">
+            /*echo'<div class="card">
         <div class="card-header">
             <i class="bi bi-person-fills"></i> ' . $ds[ 'name' ] . ' <span class="small"><em>'.$plugin_language['squads_members'].'</em></span>
         </div>
@@ -822,53 +827,53 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
         <table class="table table-striped">    
         <thead>';*/
 
-        $members = safe_query(
-            "SELECT * FROM " . PREFIX . "plugins_squads_members WHERE squadID='" . $db[ 'squadID' ] . "' ORDER BY sort"
-        );
-        $tmp = mysqli_fetch_assoc(
-            safe_query(
-                "SELECT count(squadID) as cnt
+            $members = safe_query(
+                "SELECT * FROM " . PREFIX . "plugins_squads_members WHERE squadID='" . $db['squadID'] . "' ORDER BY sort"
+            );
+            $tmp = mysqli_fetch_assoc(
+                safe_query(
+                    "SELECT count(squadID) as cnt
                 FROM " . PREFIX . "plugins_squads_members
-                WHERE squadID='" . $db[ 'squadID' ] . "'"
-            )
-        );
-        $anzmembers = $tmp[ 'cnt' ];
+                WHERE squadID='" . $db['squadID'] . "'"
+                )
+            );
+            $anzmembers = $tmp['cnt'];
 
-        echo '<tr>
-          <th>' . $plugin_language[ 'nickname' ] . ':</th>
-          <th>' . $plugin_language[ 'position' ] . ':</th>
-          <th>' . $plugin_language[ 'activity' ] . ':</th>
-          <th>' . $plugin_language[ 'actions' ] . ':</th>
-          <th>' . $plugin_language[ 'sort' ] . ':</th>
+            echo '<tr>
+          <th>' . $plugin_language['nickname'] . ':</th>
+          <th>' . $plugin_language['position'] . ':</th>
+          <th>' . $plugin_language['activity'] . ':</th>
+          <th>' . $plugin_language['actions'] . ':</th>
+          <th>' . $plugin_language['sort'] . ':</th>
             </tr></thead>
           <tbody>';
-        
-        $i = 1;
-        while ($dm = mysqli_fetch_array($members)) {
-            if ($i % 2) {
-                $td = 'td1';
-            } else {
-                $td = 'td2';
-            }
 
-            $nickname = '<a href="../index.php?site=profile&amp;id=' . $dm[ 'userID' ] . '" target="_blank">' .
-                strip_tags(stripslashes(getnickname($dm[ 'userID' ]))) . '</a>';
-            if ($dm[ 'activity' ]) {
-                $activity = '<font color="green">' . $plugin_language[ 'active' ] . '</font>';
-            } else {
-                $activity = '<font color="red">' . $plugin_language[ 'inactive' ] . '</font>';
-            }
-            $referer = "admincenter.php?site=admin_squads";
-            echo '<tr>
+            $i = 1;
+            while ($dm = mysqli_fetch_array($members)) {
+                if ($i % 2) {
+                    $td = 'td1';
+                } else {
+                    $td = 'td2';
+                }
+
+                $nickname = '<a href="../index.php?site=profile&amp;id=' . $dm['userID'] . '" target="_blank">' .
+                    strip_tags(stripslashes(getnickname($dm['userID']))) . '</a>';
+                if ($dm['activity']) {
+                    $activity = '<font color="green">' . $plugin_language['active'] . '</font>';
+                } else {
+                    $activity = '<font color="red">' . $plugin_language['inactive'] . '</font>';
+                }
+                $referer = "admincenter.php?site=admin_squads";
+                echo '<tr>
                 <td>' . $nickname . '</td>
-                <td>' . $dm[ 'position' ] . '</td>
+                <td>' . $dm['position'] . '</td>
                 <td>' . $activity . '</td>
                 <td>
 
-                <a href="admincenter.php?site=user_rights&amp;action=edit&amp;id=' . $dm[ 'userID' ] . '&amp;referer=' . urlencode($referer) . '" class="btn btn-warning" type="button">' . $plugin_language[ 'edit' ] . '</a>
+                <a href="admincenter.php?site=user_rights&amp;action=edit&amp;id=' . $dm['userID'] . '&amp;referer=' . urlencode($referer) . '" class="btn btn-warning" type="button"><i class="bi bi-pencil-square"></i> ' . $plugin_language['edit'] . '</a>
 
                 <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete" data-href="admincenter.php?site=admin_squads&amp;del_member=true&amp;id=' . $dm[ 'userID' ] . '&amp;squadID=' . $dm[ 'squadID' ] . '&amp;captcha_hash=' . $hash . '">
+                    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#confirm-delete" data-href="admincenter.php?site=admin_squads&amp;del_member=true&amp;id=' . $dm['userID'] . '&amp;squadID=' . $dm['squadID'] . '&amp;captcha_hash=' . $hash . '"><i class="bi bi-trash3"></i> 
                     ' . $plugin_language['delete'] . '
                     </button>
 
@@ -883,7 +888,7 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">' . $plugin_language['members'] . '</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="' . $plugin_language[ 'close' ] . '"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="' . $plugin_language['close'] . '"></button>
       </div>
 
       <div class="modal-body">
@@ -891,8 +896,8 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
       
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' . $plugin_language[ 'close' ] . '</button>
-        <a class="btn btn-danger btn-ok">' . $plugin_language['delete'] . '</a>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="bi bi-x-square"></i> ' . $plugin_language['close'] . '</button>
+        <a class="btn btn-danger btn-ok"><i class="bi bi-trash3"></i> ' . $plugin_language['delete'] . '</a>
       </div>
     </div>
   </div>
@@ -900,35 +905,35 @@ echo'<form method="post" action="admincenter.php?site=admin_squads" enctype="mul
 <!-- Modal END -->
          
                 
-                    <td align="right"><select name="sort[]">';
-                        for ($j = 1; $j <= $anzmembers; $j++) {
-                            if ($dm[ 'sort' ] == $j) {
-                                echo '<option value="' . $dm[ 'sqmID' ] . '-' . $j . '" selected="selected">' . $j . '</option>';
-                            } else {
-                                echo '<option value="' . $dm[ 'sqmID' ] . '-' . $j . '">' . $j . '</option>';
-                            }
-                        }
-                        echo '</select></td>
+                    <td align="right"><select name="members_sort[]">';
+                for ($j = 1; $j <= $anzmembers; $j++) {
+                    if ($dm['sort'] == $j) {
+                        echo '<option value="' . $dm['sqmID'] . '-' . $j . '" selected="selected">' . $j . '</option>';
+                    } else {
+                        echo '<option value="' . $dm['sqmID'] . '-' . $j . '">' . $j . '</option>';
+                    }
+                }
+                echo '</select></td>
                     </tr>';
 
                 $i++;
+            }
+
+
+            #echo '<div align="right"><input type="hidden" name="captcha_hash" value="' . $hash .
+            #'" /><input type="submit" name="sortieren" class="btn btn-primary" value="' . $plugin_language[ 'to_sort' ] . '" /></div>';
         }
-
-
-        #echo '<div align="right"><input type="hidden" name="captcha_hash" value="' . $hash .
-        #'" /><input type="submit" name="sortieren" class="btn btn-primary" value="' . $plugin_language[ 'to_sort' ] . '" /></div>';
-    }
-    echo '
+        echo '
         </td>
     </tr>';
 
-       $i++;
-        }
+        $i++;
+    }
     #}
-    
-  echo'<tr>
-      <td colspan="5" align="right"><input type="hidden" name="captcha_hash" value="'.$hash.'" />
-      <input class="btn btn-primary" type="submit" name="sortieren" value="'.$plugin_language['to_sort'].'" /></td>
+
+    echo '<tr>
+      <td colspan="5" align="right"><input type="hidden" name="captcha_hash" value="' . $hash . '" />
+      <button class="btn btn-primary" type="submit" name="sortieren"><i class="bi bi-sort-numeric-up"></i> ' . $plugin_language['to_sort'] . '</button></td>
     </tr>
   </table>
   </form>';

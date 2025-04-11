@@ -40,8 +40,7 @@ $template = $GLOBALS["_template"]->loadTemplate("clanwars","sc_head", $data_arra
 echo $template;
 
 echo'
-  <div class="card">
-    <div class="card-body">
+  <div class="container">
 ';
 
 $slider = 1; // 0 = slider disable, 1 = slider activ
@@ -54,16 +53,14 @@ $now = time();
 $limit = "LIMIT 0,1";
 if($slider=="1") {
   $limit = "";
-  echo'
-    <script type="text/javascript" src="/includes/plugins/clanwars/js/contentslider.js">
+  echo'<script type="text/javascript" src="./includes/plugins/clanwars/js/contentslider.js">
     /***********************************************
       * Featured Content Slider- (c) Dynamic Drive DHTML code library (www.dynamicdrive.com)
-    * This notice MUST stay intact for legal use
-    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
+      * This notice MUST stay intact for legal use
+      * Visit Dynamic Drive at http://www.dynamicdrive.com/ for this script and 100s more
     ***********************************************/
     </script>
-    <div id="slider1" class="sliderwrapper">
-  ';
+    <div id="slider1" class="sliderwrapper">';
 }
 $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_clanwars WHERE date>= ".$now." AND displayed = '1' ORDER BY date ".$limit);
 while($ds=mysqli_fetch_array($ergebnis)) {
@@ -85,6 +82,9 @@ $date = getformatdate($ds[ 'date' ]);
   
   //Berechnet differenz von der Endzeit vom jetzigen Zeitpunkt aus.
   $diffTime = $endTime - $timeNow;
+  //$diffTime = max(0, $endTime - $timeNow);
+
+  
   
  
   //Berechnung für Tage, Stunden, Minuten
@@ -112,27 +112,37 @@ $date = getformatdate($ds[ 'date' ]);
   }
 
   
-        if(file_exists('images/squadicons/'.$ds['squad'].'.jpg')){
-            $teamicon='./images/squadicons/'.$ds['squad'].'.jpg';
-        } elseif(file_exists('images/squadicons/'.$ds['squad'].'.jpeg')){
-            $teamicon='./images/squadicons/'.$ds['squad'].'.jpeg';
-        } elseif(file_exists('images/squadicons/'.$ds['squad'].'.png')){
-            $teamicon='./images/squadicons/'.$ds['squad'].'.png';
-        } elseif(file_exists('images/squadicons/'.$ds['squad'].'.gif')){
-            $teamicon='./images/squadicons/'.$ds['squad'].'.gif';
+        if(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.jpg')){
+            $teamicon='./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.jpg';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.jpeg')){
+            $teamicon='./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.jpeg';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.png')){
+            $teamicon='./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.png';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.gif')){
+            $teamicon='./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.gif';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.avif')){
+            $teamicon='./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.avif';
+		} elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.webp')){
+            $teamicon='./includes/plugins/squads/images/squadicons/'.$ds['squad'].'.webp';
         } else{
            $teamicon='';
         }
 
 
-        if(file_exists('images/squadicons/'.$ds['squad'].'_small.jpg')){
-            $squadicon='<img style="height: 100px" src="./images/squadicons/'.$ds['squad'].'_small.jpg" alt="">';
-        } elseif(file_exists('images/squadicons/'.$ds['squad'].'_small.jpeg')){
-            $squadicon='<img style="height: 100px" src="./images/squadicons/'.$ds['squad'].'_small.jpeg" alt="">';
-        } elseif(file_exists('images/squadicons/'.$ds['squad'].'_small.png')){
-            $squadicon='<img style="height: 100px" src="./images/squadicons/'.$ds['squad'].'_small.png" alt="">';
-        } elseif(file_exists('images/squadicons/'.$ds['squad'].'_small.gif')){
-            $squadicon='<img style="height: 100px" src="./images/squadicons/'.$ds['squad'].'_small.gif" alt="">';
+
+
+        if(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.jpg')){
+            $squadicon='<img style="height: 100px" src="./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.jpg" alt="">';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.jpeg')){
+            $squadicon='<img style="height: 100px" src="./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.jpeg" alt="">';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.png')){
+            $squadicon='<img style="height: 100px" src="./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.png" alt="">';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.gif')){
+            $squadicon='<img style="height: 100px" src="./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.gif" alt="">';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.avif')){
+            $squadicon='<img style="height: 100px" src="./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.avif" alt="">';
+        } elseif(file_exists('./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.webp')){
+            $squadicon='<img style="height: 100px" src="./includes/plugins/squads/images/squadicons/'.$ds['squad'].'_small.webp" alt="">';
         } else{
            $squadicon='<img style="height: 100px" src="./includes/plugins/clanwars/images/no-image.jpg" alt="">';
         }
@@ -174,7 +184,7 @@ $date = getformatdate($ds[ 'date' ]);
   
 
   $template = $GLOBALS["_template"]->loadTemplate("clanwars","sc_content", $data_array, $plugin_path);
-  echo $css . $template;
+  echo $template;
   if($slider=="1") echo'</div>';
 }
 echo'</div>';
@@ -182,8 +192,8 @@ if($slider=="1") {
   
   $template = $GLOBALS["_template"]->loadTemplate("clanwars","sc_foot", array(), $plugin_path);
   echo $template;
-echo'</div></div><br>';
-  echo'
+echo '</div><br>';
+  echo '
     <script type="text/javascript">
       featuredcontentslider.init({
         id: "slider1",  //id of main slider DIV
@@ -199,6 +209,7 @@ echo'</div></div><br>';
        }
      })
    </script>
-  ';
+';
+
 }
 ?>

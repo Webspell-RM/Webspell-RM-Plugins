@@ -2,7 +2,7 @@
 
 $language_array = Array(
 
-  'title'                   => 'Carousel',
+  'title'                   => 'Header Picture',
   'access_denied'           => 'Zugriff verweigert!',
   'actions'                 => 'Aktionen',
   'add_carousel'            => 'Carousel hinzuf&uuml;gen',
@@ -27,8 +27,9 @@ $language_array = Array(
   'carousel_size'           => 'Höhe des Carousel Header',
   'parallax_size'           => 'Höhe des Parallax Header',
   'sticky_size'             => 'Höhe des Sticky Header',
+  'agency_size'             => 'Höhe des Agency Header',
   'size_info'               => 'Wie hoch soll der Header angezeigt werden, ausgerichtet nach dem Viewport? (Angaben in vh! Beispiel: 25vh, 50vh, 75vh, 100vh..)',
-  'settings'                => 'Carousel-Einstellungen',
+  'settings'                => 'Einstellungen',
   'carousel'                => 'Carousel',
   'carousel_link'           => 'Carousel link',
   'carousels'               => 'Carousels',
@@ -45,10 +46,10 @@ $language_array = Array(
   'unsupported_video_type'  => 'Das Videoformat ist falsch. Bitte laden Sie Videos nur in den Formaten *.mp4 und *.mpg hoch.',
   'errors_there'            => 'Error',
   'read_more'               => 'Read More',
-  'parallax'                => 'Parallax Header',
-  'sticky'                  => 'Sticky Header',
-  'carousel_overview'       => 'Carousel Übersicht',
-  'parallax'                => 'Parallax Header',
+  'parallax'                => 'Parallax',
+  'sticky'                  => 'Sticky',
+  'agency'                  => 'Agency',
+  'carousel_overview'       => 'Header Übersicht',
   'header'                  => 'Header',
   'header_upload_info'      => 'Bild upload',
   'new_header'              => 'Neuer Header',
@@ -62,5 +63,9 @@ $language_array = Array(
   'time_info'               => '<i class="bi bi-stopwatch"></i> 1 = 1 Sekunde',
   'carousel_time'           => 'Anzeigezeit in Sek.',
   'edit_breadcrumb'         => 'Diashow bearbeiten',
+  'get_started'             => 'Get Started',
+  'sticky_headers_info'     => '<li>Du möchtest ein Sticky Header</li><li>in der Kopfzeile (über der Navigation) nutzen?</li><li>Hiermit kannst du ein extra Bild hochladen</li><li>und in einem Widgets dargestellen.</li><li>Position auswählen.</li>',
+  'agency_headers_info'     => '<li>Du möchtest ein Agency Header</li><li>in der Kopfzeile (über der Navigation) nutzen?</li><li>Hiermit kannst du ein extra Bild hochladen</li><li>und in einem Widgets dargestellen.</li><li>Position auswählen.<br><br></li>',
+  'no_header'               => 'Es wurde kein Header Bild hochgeladen'
 );
 

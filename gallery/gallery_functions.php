@@ -54,7 +54,7 @@ class Gallery
             } else {
                 $pic['image'] =
                     '<a href="index.php?site=gallery&amp;picID=' . $picID . '">' .
-                    '<img src="images/nopic.gif" width="' . $thumbwidth . '" alt="' .
+                    '<img src="no-image.jpg" width="' . $thumbwidth . '" alt="' .
                     $_language->module['no_thumb'] . '" /></a>';
             }
             $pic['comments'] = mysqli_num_rows(
@@ -268,8 +268,12 @@ class Gallery
             $file = './includes/plugins/gallery/images/large/' . $picID . '.gif';
         } elseif (file_exists('./includes/plugins/gallery/images/large/' . $picID . '.png')) {
             $file = './includes/plugins/gallery/images/large/' . $picID . '.png';
+        } elseif (file_exists('./includes/plugins/gallery/images/large/' . $picID . '.webp')) {
+            $file = './includes/plugins/gallery/images/large/' . $picID . '.webp';
+        } elseif (file_exists('./includes/plugins/gallery/images/large/' . $picID . '.avif')) {
+            $file = './includes/plugins/gallery/images/large/' . $picID . '.avif';
         } else {
-            $file = 'images/nopic.gif';
+            $file = 'images/no-image.jpg';
         }
 
         return $file;
@@ -282,7 +286,7 @@ class Gallery
         if (file_exists('./includes/plugins/gallery/images/thumb/' . $picID . '.jpg')) {
             $file = './includes/plugins/gallery/images/thumb/' . $picID . '.jpg';
         } else {
-            $file = 'images/nopic.gif';
+            $file = 'images/no-image.jpg';
         }
 
         return $file;

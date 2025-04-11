@@ -31,7 +31,7 @@
     $pm = new plugin_manager(); 
     $plugin_language = $pm->plugin_language("joinus", $plugin_path);
 
-$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_join_us");
+$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_joinus");
     $ds = mysqli_fetch_array($ergebnis);
 
             $title = $ds[ 'title' ];

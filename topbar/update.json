@@ -2,9 +2,9 @@
 "items": [
 			{
 				"index": "php",
-				"file1": "carousel/update.php",
-				"file2": "carousel/install.php",
-				"file3": "carousel/uninstall.php",
+				"file1": "topbar/update.php",
+				"file2": "topbar/install.php",
+				"file3": "topbar/uninstall.php",
 				"file4": "topbar/widget_topbar_one.php",
 				"file5": "topbar/widget_topbar_two.php",
 				"file6": "topbar/widget_topbar_three.php"
@@ -26,8 +26,8 @@
 			},
 			{
 				"index": "images",
-				"file1": "topbar/images/widget_topbar_one.jpg",
-				"file2": "topbar/images/widget_topbar_two.jpg"
+				"file1": "topbar/images/topbar_one.jpg",
+				"file2": "topbar/images/topbar_two.jpg"
 			},
 			{
 				"index": "css",

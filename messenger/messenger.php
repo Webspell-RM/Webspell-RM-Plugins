@@ -274,7 +274,7 @@ if (isset($_POST['delete'])) {
         $data_array['$outgoing'] = $_lang[ 'outgoing' ];
         $data_array['$new_message'] = $_lang[ 'new_message' ];
         $data_array['$message'] = $_lang[ 'message' ];
-        $data_array['$lang_sender'] = $_lang[ 'sender' ];
+        $data_array['$from'] = $_lang[ 'from' ];
         $data_array['$date'] = $_lang[ 'date' ];
         $data_array['$show'] = $_lang[ 'show' ];
 
@@ -287,23 +287,16 @@ if (isset($_POST['delete'])) {
             while ($ds = mysqli_fetch_array($ergebnis)) {
                 
                 $date = getformatdatetime($ds['date']);
-                if (trim($ds['fromuser']) != "0") {    
-                    if (isonline($ds['fromuser']) == "offline") {
-                        $statuspic = '<span class="label label-danger">'.$_lang[ 'lastlogin_inactiv' ].'</span>';
-                    } else {
-                        $statuspic = '<span class="label label-success">'.$_lang[ 'lastlogin_activ' ].'</span>';
-                    }
-                } else {                
-                    $statuspic = "";
-                }
-                
-                if (trim($ds['fromuser']) != "0") {
-                    $sender = '<a href="index.php?site=profile&amp;id=' . $ds['fromuser'] . '"><b>' .
-                    getnickname($ds['fromuser']) . '</b></a>';
-                } else {                
-                    $sender = "<b>System</b>";
+
+                if (isonline($ds['fromuser']) == "offline") {
+                    $statuspic = '<span class="label label-danger">'.$_lang[ 'lastlogin_inactiv' ].'</span>';
+                } else {
+                    $statuspic = '<span class="label label-success">'.$_lang[ 'lastlogin_activ' ].'</span>';
                 }
 
+                $sender = '<a href="index.php?site=profile&amp;id=' . $ds['fromuser'] . '"><b>' .
+                    getnickname($ds['fromuser']) . '</b></a>';
+                
                 $dx = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "settings_plugins WHERE modulname='squads'"));
                 if (@$dx[ 'modulname' ] != 'squads') {
                     $member = '';
@@ -537,14 +530,8 @@ if (isset($_POST['delete'])) {
         if ($ds['touser'] == $userID || $ds['fromuser'] == $userID) {
             safe_query("UPDATE " . PREFIX . "plugins_messenger SET viewed='1' WHERE messageID='$id'");
             $date = getformatdatetime($ds['date']);
-            
-            if (trim($ds['fromuser']) != "0") {
-                $sender = ''.$_lang[ 'from' ].' <a href="index.php?site=profile&amp;id=' . $ds['fromuser'] . '"><b>' .
-                getnickname($ds['fromuser']) . '</b></a>';
-            } else {
-                $sender = ''.$_lang[ 'from the' ].'  <b>System</b>';
-            }
-
+            $sender = '<a href="index.php?site=profile&amp;id=' . $ds['fromuser'] . '"><b>' .
+            getnickname($ds['fromuser']) . '</b></a>';
             $message = $ds['message'];
             $title = $ds['title'];
 
@@ -559,6 +546,7 @@ if (isset($_POST['delete'])) {
             $data_array['$outgoing'] = $_lang[ 'outgoing' ];
             $data_array['$new_message'] = $_lang[ 'new_message' ];
             $data_array['$read'] = $_lang[ 'read' ];
+            $data_array['$by'] = $_lang[ 'by' ];
             $data_array['$reply'] = $_lang[ 'reply' ];
             $data_array['$delete'] = $_lang[ 'delete' ];
 
@@ -583,6 +571,7 @@ if (isset($_POST['delete'])) {
         $data_array['$title_head'] = $_lang[ 'title' ];
         $data_array['$your_message'] = $_lang[ 'your_message' ];
         $data_array['$options'] = $_lang[ 'options' ];
+        $data_array['$smilies'] = $_lang[ 'smilies' ];
         $data_array['$send_message'] = $_lang[ 'send_message' ];
 
         $template = $GLOBALS["_template"]->loadTemplate("messenger","new_touser", $data_array, $plugin_path);
@@ -621,6 +610,7 @@ if (isset($_POST['delete'])) {
             $data_array['$title_head'] = $_lang[ 'title' ];
             $data_array['$your_message'] = $_lang[ 'your_message' ];
             $data_array['$options'] = $_lang[ 'options' ];
+            $data_array['$smilies'] = $_lang[ 'smilies' ];
             $data_array['$send_message'] = $_lang[ 'send_message' ];
         
             $template = $GLOBALS["_template"]->loadTemplate("messenger","reply", $data_array, $plugin_path);
@@ -677,6 +667,7 @@ if (isset($_POST['delete'])) {
         $data_array['$enter_username'] = $_lang[ 'enter_username' ];
         $data_array['$your_message'] = $_lang[ 'your_message' ];
         $data_array['$options'] = $_lang[ 'options' ];
+        $data_array['$smilies'] = $_lang[ 'smilies' ];
         $data_array['$send_message'] = $_lang[ 'send_message' ];
         $data_array['$formation'] = $_lang[ 'formation' ];
 		$data_array['$or'] = $_lang[ 'or' ];

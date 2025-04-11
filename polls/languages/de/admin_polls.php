@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 $language_array = Array(
 
@@ -49,4 +49,5 @@ $language_array = Array(
   'yht_enter_endingtime'    => 'Du musst die Endzeit angeben.',
   'yht_enter_title'         => 'Du musst einen Titel eingeben.',
   'close'                   => 'Close',
+  'example'                 => 'Beispiel',
 );

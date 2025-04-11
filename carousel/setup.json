@@ -5,8 +5,10 @@
 				"file1": "carousel/install.php",
 				"file2": "carousel/uninstall.php",
 				"file3": "carousel/widget_carousel_only.php",
-				"file4": "carousel/widget_parallax_header.php",
-				"file5": "carousel/widget_sticky_header.php"
+				"file4": "carousel/widget_carousel_crossfade.php",
+				"file5": "carousel/widget_parallax_header.php",
+				"file6": "carousel/widget_sticky_header.php",
+				"file7": "carousel/widget_agency_header.php"
 			},
 			{
 				"index": "admin",
@@ -21,8 +23,10 @@
 			{
 				"index": "templates",
 				"file1": "carousel/templates/widget_carousel_only.html",
-				"file2": "carousel/templates/parallax_header.html",
-				"file3": "carousel/templates/sticky_header.html"
+				"file2": "carousel/templates/widget_carousel_crossfade.html",
+				"file3": "carousel/templates/parallax_header.html",
+				"file4": "carousel/templates/sticky_header.html",
+				"file5": "carousel/templates/agency_header.html"
 			},
 			{
 				"index": "images",
@@ -34,18 +38,19 @@
 				"file6": "carousel/images/widget_parallax_header.jpg",
 				"file7": "carousel/images/widget_sticky_header.jpg",
 				"file8": "carousel/videos/5.mp4",
-				"file9": "carousel/images/no-image.jpg"
+				"file9": "carousel/images/parallax.jpg",
+				"file10": "carousel/images/sticky.jpg",
+				"file11": "carousel/images/agency.jpg",
+				"file12": "carousel/images/no-image.jpg"
 			},
 			{
 				"index": "css",
 				"file1": "carousel/css/carousel.css",
-				"file2": "carousel/css/parallax_header.css",
-				"file3": "carousel/css/sticky_header.css"			
+				"file2": "carousel/css/style/agency_header.css"			
 			},
 			{
 				"index": "js",
-				"file1": "carousel/js/carousel.js",
-				"file2": "carousel/js/parallax_header.js"
+				"file1": "carousel/js/carousel.js"
 			}
 		]
 }

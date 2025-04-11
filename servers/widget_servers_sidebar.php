@@ -48,53 +48,59 @@ if (mysqli_num_rows($ergebnis)) {
     $n = 1;
     while ($ds = mysqli_fetch_array($ergebnis)) {
 
-        $serverdata = explode(":", $ds[ 'ip' ]);
-        $ip = $serverdata[ 0 ];
-        if (isset($serverdata[ 1 ])) {
-            $port = $serverdata[ 1 ];
-        } else {
-            $port = '';
-        }
+        /*$serverdata = explode(":", $ds[ 'ip' ]);
+            $ip = $serverdata[ 0 ];
+            if (isset($serverdata[ 1 ])) {
+                $port = $serverdata[ 1 ];
+            } else {
+                $port = '';
+            }*/
 
-        $server_timeout = 2;
-        $fp = fsockopen("udp://".$ip, $port, $errno, $errstr);
-        if(!$fp) {
-            $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'not_supported' ] . " ERROR: $errno - $errstr</em></span><br />";
-        } else {
-            @fwrite($fp, "\\xFA\\");
-            stream_set_timeout($fp, 2);
-            $res = fread($fp, 2000);
-            $info = stream_get_meta_data($fp);
-            fclose($fp);
-            if($info['timed_out']) {
-                $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'not_supported' ] . "</em></span>";
-            } elseif($res == '') {
-                $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'timeout' ] . "</em></span>";
-            }  else{
-                $status = "<span class='badge bg-success'>" . $plugin_language[ 'online' ] . "</span>";
+            $ip = $ds[ 'ip' ];
+            $port = $ds[ 'port' ];
+
+            $server_timeout = 2;
+            $fp = fsockopen("udp://".$ip, $port, $errno, $errstr);
+            if(!$fp) {
+                $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'not_supported' ] . " ERROR: $errno - $errstr</em></span><br />";
+            } else {
+                @fwrite($fp, "\\xFA\\");
+                stream_set_timeout($fp, 2);
+                $res = fread($fp, 2000);
+                $info = stream_get_meta_data($fp);
+                fclose($fp);
+                if($info['timed_out']) {
+                    $status = "<span class='badge bg-info'><em>" . $plugin_language[ 'not_supported' ] . "</em></span>";
+                } elseif($res == '') {
+                    $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'timeout' ] . "</em></span>";
+                }  else{
+                    $status = "<span class='badge bg-success'>" . $plugin_language[ 'online' ] . "</span>";
+                }
             }
-        }
-        $servername = $ds[ 'name' ];
-    $serverip = $ds[ 'ip' ];
-    $filepath = "../images/games/";
-    $showgame = getgamename($ds[ 'game' ]);
+            $servername = $ds[ 'name' ];
+            $info = $ds[ 'info' ];
+            #$ip = $ds[ 'ip' ];
+            #$port = $ds[ 'port' ];
+        $filepath = "../images/games/";
+        $showgame = getgamename($ds[ 'game' ]);
 
-    if(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.jpg')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.jpg';
-        } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.jpeg')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.jpeg';
-        } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.png')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.png';
-        } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.gif')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.gif';
+        if(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.jpg')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.jpg';
+        } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.jpeg')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.jpeg';
+        } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.png')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.png';
+        } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.gif')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.gif';
         } else{
-           $gameicon='../includes/plugins/games_pic/images/no-image.jpg';
+           $gameicon='../includes/plugins/squads/images/no-image.jpg';
         }
 
     $data_array= array();    
     $data_array['$status'] = $status;
     $data_array['$gameicon'] = $gameicon;
-    $data_array['$serverip'] = $serverip;
+    $data_array['$ip'] = $ds[ 'ip' ];
+    $data_array['$port'] = $ds[ 'port' ];
     $data_array['$servername'] = $servername;
     $data_array['$server_status']=$plugin_language['status'];
     

@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-# Hero Section
+# carousel
 --------------------------------------------------------------*/
 #hero {
   /*width: 100%;
@@ -7,7 +7,7 @@
   background-color: rgba(63, 73, 83, 0.8);
   overflow: hidden;  
   position: relative;
-  /*margin-top: -80px;*/
+  margin-top: -80px;
 }
 
 #hero .carousel,
@@ -117,7 +117,8 @@
 #hero .carousel-control-next-icon:hover,
 #hero .carousel-control-prev-icon:hover {
   background: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.8);
+  /*color: rgba(255, 255, 255, 0.8);*/
+  color: rgba(var(--bs-carousel_h1_span_color-rgb), 1);
 }
 
 #hero .carousel-indicators li {
@@ -126,8 +127,8 @@
   background: #fff;
   overflow: hidden;
   border: 0;
-  width: 12px;
-  height: 12px;
+  width: 40px;
+  height: 1px;
   border-radius: 50px;
   opacity: 0.6;
   transition: 0.3s;
@@ -215,3 +216,130 @@
   background-color: rgba(var(--bs-carousel_indicators_color-rgb), 1); 
 }
 
+/*--------------------------------------------------------------
+# Parallax Header
+--------------------------------------------------------------*/
+#parallax_header {
+  overflow: hidden;
+  display: block;
+  position: relative;
+    margin-top: -80px;
+} 
+.parallax-image {
+    background-position: 0px -100px;
+    background-size: cover;
+    width: 100%;
+}
+.parallax-image::after {
+    content: '';
+    position: absolute;
+    left: 0; 
+    top: 0;
+    width: 100%; 
+    height: 100%;
+    /*background: radial-gradient(circle, rgba(0,0,0,0.045) 0%, rgba(0,0,0,0.82) 100%);*/
+    background: radial-gradient(circle, rgba(var(--bs-rm-body-bg),0.045) 0%, rgba(var(--bs-rm-body-bg),0.82) 100%);
+}
+.parallax-after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+.parallax-after svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 75px;
+}
+.parallax-after .shape-fill {
+    fill: rgba(var(--bs-rm-body-bg),1);
+}
+
+/*--------------------------------------------------------------
+# Sticky Header
+--------------------------------------------------------------*/
+#sticky_header {
+margin-top: -80px;
+}
+.sticky-image {
+  width: 100%;
+  /*background: url("../img/hero-bg.png");*/
+  position: relative;
+}
+
+.sticky-image .sticky-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.sticky-container .sticky-logo img{
+  margin-bottom: 0px;
+  height: 80px;
+}
+
+.sticky-image h1 {
+  margin: 0 0 30px 0;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+  color: rgba(var(--bs-carousel_h1_color-rgb), 1);
+}
+
+.sticky-image h2 {
+  color: rgba(var(--bs-carousel_text_color-rgb),1);
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.sticky-image .btn-get-started {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 3px;
+  margin: 10px;
+  color: rgba(var(--bs-link-color),1);
+  /*background: #7cc576;*/
+  background: rgba(var(--bs-body-color),1);
+}
+
+.sticky-image .btn-get-started:hover {
+  transition: 0.5s;
+  background: #fff;
+  color: rgba(var(--bs-link-hover-color),1);
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    /*background-attachment: fixed;*/
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    line-height: 22px;
+  }
+}

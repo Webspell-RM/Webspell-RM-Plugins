@@ -20,4 +20,3 @@ $language_array = array(
     'nov'       => 'November',
     'dec'       => 'Dezember',
 );
-

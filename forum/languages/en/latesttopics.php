@@ -2,11 +2,11 @@
 
 $language_array = array(
 
-    'title'     => 'Last contribution',
+    'title'     => 'Latest post',
     'board'     => 'Forum',
-    'last_post' => 'Letzter Beitrag',
-    'replies'   => 'Reply',
-    'reply'     => 'Answer',
+    'last_post' => 'Latest post',
+    'replies'   => 'Replies',
+    'reply'     => 'Reply',
     'jan'       => 'January',
     'feb'       => 'February',
     'mar'       => 'March',
@@ -20,4 +20,3 @@ $language_array = array(
     'nov'       => 'November',
     'dec'       => 'December',
 );
-

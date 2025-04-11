@@ -34,10 +34,12 @@
 			{
 				"index": "images",
 				"file1": "articles/images/rating_0.png",
-				"file2": "articles/images/rating_1.png"
+				"file2": "articles/images/rating_1.png",
+				"file3": "articles/images/article/no-image.jpg"
 			},
 			{
-				"index": "css"
+				"index": "css",
+				"file1": "articles/css/articles.css"
 			},
 			{
 				"index": "js"

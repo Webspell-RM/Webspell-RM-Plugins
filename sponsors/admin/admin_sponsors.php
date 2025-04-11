@@ -86,7 +86,7 @@ echo'<div class="card">
   <div class="mb-3 row">
     <label class="col-sm-4 control-label">'.$plugin_language['sponsor_url'].':</label>
     <div class="col-sm-8"><span class="text-muted small"><em>
-    <input class="form-control" type="text" name="url" maxlength="255" placeholder="https://" /></em></span>
+    <input class="form-control" type="text" name="url" maxlength="255" value="" /></em></span>
     </div>
   </div>
 
@@ -214,7 +214,7 @@ echo'<div class="card">
   <div class="mb-3 row">
     <label class="col-sm-4 control-label">'.$plugin_language['sponsor_url'].':</label>
     <div class="col-sm-8"><span class="text-muted small"><em>
-    <input class="form-control" type="text" name="url" maxlength="255" value="'.getinput($ds['url']).'" placeholder="https://" /></em></span>
+    <input class="form-control" type="text" name="url" maxlength="255" value="'.getinput($ds['url']).'" /></em></span>
     </div>
   </div>
 

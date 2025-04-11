@@ -2,33 +2,34 @@
 "items": [
 			{
 				"index": "php",
-				"file1": "tiktok/install.php",
-				"file2": "tiktok/uninstall.php",
-				"file3": "tiktok/tiktok.php",
-				"file4": "tiktok/widget_tiktok_sidebar.php"
+				"file1": "todo/install.php",
+				"file2": "todo/uninstall.php",
+				"file3": "todo/todo.php",
+				"file4": "todo/widget_todo_sidebar.php"
 			},
 			{
 				"index": "admin",
-				"file1": "tiktok/admin/admin_tiktok.php"
+				"file1": "todo/admin/admin_todo.php"
 			},
 			{
 				"index": "languages",
-				"file1": "tiktok/languages/de/tiktok.php",
-				"file2": "tiktok/languages/en/tiktok.php",
-				"file3": "tiktok/languages/it/tiktok.php"
+				"file1": "todo/languages/de/todo.php",
+				"file2": "todo/languages/de/admin_todo.php",
+				"file3": "todo/languages/en/todo.php",
+				"file4": "todo/languages/en/admin_todo.php",
+				"file5": "todo/languages/it/todo.php",
+				"file6": "todo/languages/it/admin_todo.php"
 			},
 			{
 				"index": "templates",
-				"file1": "tiktok/templates/tiktok.html"
+				"file1": "todo/templates/todo.html"
 			},
 			{
 				"index": "images",
-				"file1": "tiktok/images/tiktok-offline.png",
-				"file2": "tiktok/images/widget_tiktok_sidebar.jpg"
+				"file1": "todo/images/widget_todo_sidebar.jpg"
 			},
 			{
-				"index": "css",
-				"file1": "tiktok/css/tiktok.css"
+				"index": "css"
 			},
 			{
 				"index": "js"

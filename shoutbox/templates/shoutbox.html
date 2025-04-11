@@ -10,102 +10,85 @@
 <!-- shoutbox_loggedin -->
 <div class="card">
     <div class="card-body">
-<script>
-    <!--
+        <script>
+            <!--
 
-    function chkFormularShoutBox() {
-        if (document.getElementById('shoutbox-name').value === "") {
-            alert('$enter_name');
-            document.getElementById('shoutbox-name').focus();
+            function chkFormularShoutBox() {
+                if (document.getElementById('shoutbox-name').value === "") {
+                    alert('$enter_name');
+                    document.getElementById('shoutbox-name').focus();
 
-            return false;
-        }
-        if (document.getElementById('shoutbox-message').value === "" ||
-                document.getElementById('shoutbox-message').value === "Message") {
-            alert('$enter_message');
-            document.getElementById('shoutbox-message').focus();
+                    return false;
+                }
+                if (document.getElementById('shoutbox-message').value === "" ||
+                        document.getElementById('shoutbox-message').value === "Message") {
+                    alert('$enter_message');
+                    document.getElementById('shoutbox-message').focus();
 
-            return false;
-        }
+                    return false;
+                }
 
-        return true;
-    }
-    -->
-</script>
-  <script type="text/javascript">
-      $(document).ready(function() {
-        $("#emoji2").emojioneArea();
-      });
-    </script>
+                return true;
+            }
+            -->
+        </script>
 
-<form name="shout" method="post" action="index.php?site=shoutbox&amp;action=save_shout"
-    onsubmit="return chkFormularShoutBox()">
-
+        <form name="shout" method="post" action="index.php?site=shoutbox&amp;action=save_shout" onsubmit="return chkFormularShoutBox()">
     
-    <div style="margin-top: 10px"></div>
+        <div style="margin-top: 10px"></div>
+        
+            <input type="text" id="shoutbox-name" name="nickname" maxlength="255" class="form-control form-group" $name_settings>
+            <textarea name="message" id="emojionearea1" placeholder="Message" class="form-control form-group" required></textarea>
 
-    <input type="text" id="shoutbox-name" name="nickname" maxlength="255" class="form-control form-group" $name_settings>
-    <textarea name="message" id="emoji2" placeholder="Message" class="form-control form-group" required></textarea>
-
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-success">$shout</button>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">$shout</button>
+        </div>
+        </form>
     </div>
-</form>
-</div>
 </div>
 <!-- END -->
 <!-- shoutbox_notloggedin -->
 <div class="card">
     <div class="card-body">
-<script>
-    <!--
+        <script>
+            <!--
 
-    function chkFormularShoutBox() {
-        if (document.getElementById('shoutbox-name').value === "") {
-            alert('$enter_name');
-            document.getElementById('shoutbox-name').focus();
+            function chkFormularShoutBox() {
+                if (document.getElementById('shoutbox-name').value === "") {
+                    alert('$enter_name');
+                    document.getElementById('shoutbox-name').focus();
 
-            return false;
-        }
-        if (document.getElementById('shoutbox-message').value === "" ||
-                document.getElementById('shoutbox-message').value === "Message") {
-            alert('$enter_message');
-            document.getElementById('shoutbox-message').focus();
+                    return false;
+                }
+                if (document.getElementById('shoutbox-message').value === "" ||
+                        document.getElementById('shoutbox-message').value === "Message") {
+                    alert('$enter_message');
+                    document.getElementById('shoutbox-message').focus();
 
-            return false;
-        }
+                    return false;
+                }
 
-        return true;
-    }
-    -->
-</script>
-  <script type="text/javascript">
-      $(document).ready(function() {
-        $("#emoji3").emojioneArea();
-      });
-    </script>
-     
+                return true;
+            }
+            -->
+        </script>     
 
-<form name="shout" method="post" action="index.php?site=shoutbox&amp;action=save_shout"
-    onsubmit="return chkFormularShoutBox()">
-
+        <form name="shout" method="post" action="index.php?site=shoutbox&amp;action=save_shout" onsubmit="return chkFormularShoutBox()">
     
-    <div style="margin-top: 10px"></div>
+        <div style="margin-top: 10px"></div>
 
-    <input type="text" id="shoutbox-name" name="nickname" maxlength="255" class="form-control form-group" placeholder="Nickname">
-    <textarea name="message" id="emoji3" placeholder="Message" class="form-control form-group" required></textarea>
+            <input type="text" id="shoutbox-name" name="nickname" maxlength="255" class="form-control form-group" placeholder="Nickname">
+            <textarea name="message" id="emojionearea1" placeholder="Message" class="form-control form-group" required></textarea>
 
-    <!-- $captcha_form -->
-    $_captcha
-<br>
-    <div class="form-group">
-        <button type="submit" class="btn btn-success">$shout</button>
+            <!-- $captcha_form -->
+            $_captcha
+            <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">$shout</button>
+        </div>
+        </form>
     </div>
-</form>
 </div>
-</div>
-
 <!-- END -->
 <!-- shoutbox_content -->
 <div class="card">
@@ -121,132 +104,112 @@
 <!-- shoutbox_head -->
 <div class="card">
     <div class="card-body">
-<p>$sorter $page_link</p>
-<form name="form" method="post" action="index.php?site=shoutbox&amp;action=delete">
+        <p>$sorter $page_link</p>
+        <form name="form" method="post" action="index.php?site=shoutbox&amp;action=delete">
 <!-- END -->
-
 <!-- shoutbox_foot -->
-</div></div>
+    </div>
+</div>
 <!-- END -->
-
-
 <!-- shoutbox_sc_loggedin -->
 <div class="card">
     <div class="card-body">
-<script>
-    <!--
+        
+        <script>
+            <!--
+            function chkFormularShoutBox() {
+                if(document.getElementById('shoutbox_name').value == ""){
+                    alert('%enter_name%');
+                    document.getElementById('shoutbox_name').focus();
+                    return false;
+                }
+                if(document.getElementById('shoutbox_message').value == "" || document.getElementById('shoutbox_message').value == "Message"){
+                    alert('%enter_message%');
+                    document.getElementById('shoutbox_message').focus();
+                    return false;
+                }
+                return true;
+            }
+            -->
+        </script> 
+             
+        <form name="shoutv" method="post" action="index.php?site=widget_shoutbox_sidebar&amp;action=save_shout" onsubmit="if(chkFormularShoutBox())+shout();return false;">
+            
+        <div style="margin-top: 10px"></div>
 
-function chkFormularShoutBox() {
-    if(document.getElementById('shoutbox_name').value == ""){
-        alert('%enter_name%');
-        document.getElementById('shoutbox_name').focus();
-        return false;
-    }
-    if(document.getElementById('shoutbox_message').value == "" || document.getElementById('shoutbox_message').value == "Message"){
-        alert('%enter_message%');
-        document.getElementById('shoutbox_message').focus();
-        return false;
-    }
-    return true;
-}
--->
-</script>
-  <script type="text/javascript">
-      $(document).ready(function() {
-        $("#emoji4").emojioneArea();
-      });
-    </script>
-     
-<form name="shoutv" method="post" action="index.php?site=widget_shoutbox_sidebar&amp;action=save_shout" onsubmit="if(chkFormularShoutBox())+shout();return false;">
+            <input type="text" id="shoutbox_name" name="nickname" maxlength="255" class="form-control form-group" $name_settings>
+            <textarea name="message" id="emojionearea1" placeholder="Message" class="form-control form-group" required></textarea>
 
-    
-    <div style="margin-top: 10px"></div>
-
-    <input type="text" id="shoutbox_name" name="nickname" maxlength="255" class="form-control form-group" $name_settings>
-    <textarea name="message" id="emoji4" placeholder="Message" class="form-control form-group" required></textarea>
-
-
-
-
-
-
-    <div class="form-group">
-        <button type="submit" class="btn btn-success">$shout</button>
-        <a class="btn btn-primary" href="index.php?site=shoutbox">$all_message</a>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">$shout</button>
+            <a class="btn btn-primary" href="index.php?site=shoutbox">$all_message</a>
+        </div>
+        </form>
     </div>
-</form>
-</div>
 </div>
 <!-- END -->
 <!-- shoutbox_sc_notloggedin -->
 <div class="card">
     <div class="card-body">
-<script>
-    <!--
+        <script>
+            <!--
 
-    function chkFormularscShoutBox() {
-        if (document.getElementById('sc-shoutbox-name').value === "") {
-            alert('$enter_name');
-            document.getElementById('sc-shoutbox-name').focus();
+            function chkFormularscShoutBox() {
+                if (document.getElementById('sc-shoutbox-name').value === "") {
+                    alert('$enter_name');
+                    document.getElementById('sc-shoutbox-name').focus();
 
-            return false;
-        }
-        if (document.getElementById('sc-shoutbox-message').value === "" ||
-                document.getElementById('sc-shoutbox-message').value === "Message") {
-            alert('$enter_message');
-            document.getElementById('sc-shoutbox-message').focus();
+                    return false;
+                }
+                if (document.getElementById('sc-shoutbox-message').value === "" ||
+                        document.getElementById('sc-shoutbox-message').value === "Message") {
+                    alert('$enter_message');
+                    document.getElementById('sc-shoutbox-message').focus();
 
-            return false;
-        }
+                    return false;
+                }
 
-        return true;
-    }
-    -->
-</script>
-  <script type="text/javascript">
-      $(document).ready(function() {
-        $("#emoji5").emojioneArea();
-      });
-    </script>
-     
-  
+                return true;
+            }
+            -->
+        </script> 
 
-<form name="shout" method="post" action="index.php?site=shoutbox&amp;action=save_shout"
-    onsubmit="return chkFormularscShoutBox()">
-
+        <form name="shout" method="post" action="index.php?site=widget_shoutbox_sidebar&amp;action=save_shout" onsubmit="if(chkFormularShoutBox())+shout();return false;">
     
-    <div style="margin-top: 10px"></div>
+        <div style="margin-top: 10px"></div>
 
-    <input type="text" id="sc-shoutbox-name" name="nickname" maxlength="255" class="form-control form-group" placeholder="Nickname">
-    <textarea name="message" id="emoji5" placeholder="Message" class="form-control form-group" required></textarea>
+            <input type="text" id="sc-shoutbox-name" name="nickname" maxlength="255" class="form-control form-group" placeholder="Nickname">
+            <textarea name="message" id="emojionearea1" placeholder="Message" class="form-control form-group" required></textarea>     
 
-    <!-- $captcha_form -->
-    $_captcha
-<br>
-    <div class="form-group">
-        <button type="submit" class="btn btn-success">$shout</button>
+            <!-- $captcha_form -->
+            $_captcha
+            <br>
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">$shout</button>
+        </div>
+        </form>
     </div>
-</form>
 </div>
-</div>
-
 <!-- END -->
 <!-- shoutbox_sc_content_head -->
-<div class="card" style="margin-bottom: 10px;">
+<div class="card">
+    <div class="card-body" style="margin: 0px -12px 0px -12px;">
   <ul class="list-group list-group-flush">
     <!-- END -->
     <!-- shoutbox_sc_content -->
-    <li class="list-group-item"><div style="border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: #aaa;">$avatar $nickname <small>@ $date $time</small></div>$message</li>
+    <li class="list-group-item">
+        <div style="border-bottom-width: 1px;border-bottom-style: solid;border-bottom-color: #aaa;">
+            $avatar $nickname <small>@ $date $time</small>
+        </div>
+        $message
+    </li>
     <!-- END -->
 <!-- shoutbox_sc_content_foot -->
     </ul>
 </div>
-
+</div>
 <!-- END -->
-
 <!-- shoutbox_sc_content_no -->
     $not_logged
-    <!-- END -->
+<!-- END -->
 

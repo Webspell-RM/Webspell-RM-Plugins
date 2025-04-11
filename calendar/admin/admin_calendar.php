@@ -76,12 +76,12 @@ if (isset($_GET['month'])) {
             $CAPCLASS->createTransaction();
             $hash = $CAPCLASS->getHash();
 
-    $db = mysqli_fetch_assoc(safe_query("SELECT * FROM " . PREFIX . "settings"));
+$db = mysqli_fetch_assoc(safe_query("SELECT * FROM " . PREFIX . "settings"));
 
-    if ($db[ 'birthday' ] == 1) {
-        $birth_day = '<input class="form-check-input" type="checkbox" name="birthday" value="1" checked="checked" />';
+            if ($db[ 'birthday' ] == '1') {
+        $birthday = '<input class="form-check-input" id="activeactive" type="radio" name="radio1" value="birthday" checked="checked" />';
     } else {
-        $birth_day = '<input class="form-check-input" type="checkbox" name="birthday" value="1" />';
+        $birthday = '<input class="form-check-input" id="birthday" type="radio" name="radio1" value="birthday">';
     }
 
 
@@ -101,7 +101,7 @@ if (isset($_GET['month'])) {
             <div class="mb-3 row">
     <label class="col-md-2 control-label text-left">' . $plugin_language['show birthday'] . ':</label>
     <div class="col-md-7 form-check form-switch" style="padding: 0px 43px;">
-'.$birth_day.'&nbsp;&nbsp;
+'.$birthday.'&nbsp;&nbsp;
           <input type="hidden" name="captcha_hash" value="'.$hash.'" />
             <button class="btn btn-success" type="submit" name="save_birthday"  />' . $plugin_language['edit'] . '</button>
             
@@ -141,7 +141,7 @@ if ($action === "savewar") {
 
     safe_query(
         "INSERT INTO
-            " . PREFIX . "plugins_upcoming (
+            " . PREFIX . "plugins_calendar (
                 `date`,
                 `type`,
                 `squad`,
@@ -176,7 +176,7 @@ if ($action === "savewar") {
     );
 
     if (isset($chID) && $chID > 0) {
-        safe_query("DELETE FROM " . PREFIX . "plugins_fight_us_challenge WHERE chID='" . $chID . "'");
+        safe_query("DELETE FROM " . PREFIX . "plugins_fightus_challenge WHERE chID='" . $chID . "'");
     }
 
     if ($messages) {
@@ -233,18 +233,21 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
     }
     $upID = $_GET['upID'];
 
-    safe_query("DELETE FROM " . PREFIX . "plugins_upcoming WHERE upID='$upID'");
-    safe_query("DELETE FROM " . PREFIX . "plugins_upcoming_announce WHERE upID='$upID'");
+    safe_query("DELETE FROM " . PREFIX . "plugins_calendar WHERE upID='$upID'");
+    safe_query("DELETE FROM " . PREFIX . "plugins_calendar_announce WHERE upID='$upID'");
     header("Location: admincenter.php?site=admin_calendar");
 
 } elseif (isset($_POST[ 'save_birthday' ])) {
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
                
-        if (isset($_POST[ "birthday" ])) {
-            $birthday = 1;
+        if(@$_POST['radio1']=="birthday") {
+        $active = 1;
+        $deactivated = 0;
+         
         } else {
-            $birthday = 0;
+        $active = 0;
+        $deactivated = 0;
         }
         
         safe_query(
@@ -252,13 +255,12 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
                 `" . PREFIX . "settings`
             SET
                 
-                `birthday` = '" . $birthday . "'"
+                `birthday` = '" . $active . "'"
         );
 
         redirect("admincenter.php?site=admin_calendar", "", 0);
     } else {
-        echo $plugin_language[ 'transaction_invalid' ];
-        redirect("admincenter.php?site=admin_calendar", "", 1);
+        echo $_language->module[ 'transaction_invalid' ];
     }
 
 } elseif ($action === "saveannounce") {
@@ -269,7 +271,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
     $ds = mysqli_fetch_assoc(
         safe_query(
-            "SELECT date FROM " . PREFIX . "plugins_upcoming WHERE upID=" . (int)$_POST['upID'] . " AND date>" . time()
+            "SELECT date FROM " . PREFIX . "plugins_calendar WHERE upID=" . (int)$_POST['upID'] . " AND date>" . time()
         )
     );
     if (isset($ds['date'])) {
@@ -281,7 +283,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
             "SELECT
                 annID
             FROM
-                " . PREFIX . "plugins_upcoming_announce
+                " . PREFIX . "plugins_calendar_announce
             WHERE
                 upID='" . (int)$_POST['upID'] . "'
             AND
@@ -292,7 +294,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
             $ds = mysqli_fetch_array($ergebnis);
             safe_query(
                 "UPDATE
-                    " . PREFIX . "plugins_upcoming_announce
+                    " . PREFIX . "plugins_calendar_announce
                 SET
                     status='" . $_POST['status'] . "'
                 WHERE
@@ -301,7 +303,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
         } else {
             safe_query(
                 "INSERT INTO
-                    " . PREFIX . "plugins_upcoming_announce (
+                    " . PREFIX . "plugins_calendar_announce (
                         `upID`,
                         `userID`,
                         `status`
@@ -328,7 +330,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
     safe_query(
         "UPDATE
-            " . PREFIX . "plugins_upcoming
+            " . PREFIX . "plugins_calendar
         SET
             date='$date_start',
             enddate='$date_end',
@@ -358,7 +360,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
     safe_query(
         "INSERT INTO
-            " . PREFIX . "plugins_upcoming (
+            " . PREFIX . "plugins_calendar (
                 `date`,
                 `type`,
                 `enddate`,
@@ -398,7 +400,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
     safe_query(
         "INSERT INTO
-            " . PREFIX . "plugins_upcoming (
+            " . PREFIX . "plugins_calendar (
                 `date`,
                 `type`,
                 `enddate`,
@@ -434,7 +436,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
     safe_query(
         "UPDATE
-            " . PREFIX . "plugins_upcoming
+            " . PREFIX . "plugins_calendar
         SET
             date='$date_start',
             enddate='$date_end',
@@ -475,7 +477,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
     safe_query(
         "UPDATE
-            " . PREFIX . "plugins_upcoming
+            " . PREFIX . "plugins_calendar
         SET
             `date` = '$date',
             `type` = 'c',
@@ -514,7 +516,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
         if (isset($_GET['chID'])) {
             $chID = (int)$_GET['chID'];
-            $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_challenge WHERE chID='" . $chID . "'");
+            $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_fightus_challenge WHERE chID='" . $chID . "'");
             $ds = mysqli_fetch_array($ergebnis);
             $date = date("d.m.Y H:i", $ds['cwdate']);
 
@@ -596,7 +598,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
     if (isclanwarsadmin($userID)) {
         
         $upID = $_GET['upID'];
-        $ds = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_upcoming WHERE upID='$upID'"));
+        $ds = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_calendar WHERE upID='$upID'"));
 
         $date = date("d.m.Y H:i", $ds['date']);
 
@@ -692,7 +694,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
     if (isclanwarsadmin($userID)) {
         
         $upID = $_GET['upID'];
-        $ds = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_upcoming WHERE upID='$upID'"));
+        $ds = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_calendar WHERE upID='$upID'"));
 
         $date_start = date("d.m.Y H:i", $ds['date']);
         $date_end = date("d.m.Y H:i", $ds['enddate']);
@@ -763,7 +765,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
     if (isclanwarsadmin($userID)) {
         
         $upID = $_GET['upID'];
-        $ds = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_upcoming WHERE upID='$upID'"));
+        $ds = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_calendar WHERE upID='$upID'"));
 
         $date_start = date("d.m.Y H:i", $ds['date']);
         $date_end = date("d.m.Y H:i", $ds['enddate']);
@@ -1003,7 +1005,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
 
             unset($termin);
 
-            $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_upcoming");
+            $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_calendar");
             $anz = mysqli_num_rows($ergebnis);
             if ($anz) {
                 $termin = '';
@@ -1042,52 +1044,51 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
             $ergebnisgeb = safe_query("SELECT * FROM " . PREFIX . "user");
             $anz3 = mysqli_num_rows($ergebnisgeb);
             if($anz3) {
-                $birthday = '';
-                while ($dc = mysqli_fetch_array($ergebnisgeb)) {
-                    $geb = explode("-",$dc['birthday']);
-                    $start = mktime(0, 0, 0, (int)$geb['1'], (int)$geb['2'], (int)$year);
-                    $end2 = mktime(23, 59, 59, (int)$geb['1'], (int)$geb['2'], (int)$year);
+              while ($dc = mysqli_fetch_array($ergebnisgeb)) {
+                $geb = explode("-",$dc['birthday']);
+                $start = mktime(0, 0, 0, (int)$geb['1'], (int)$geb['2'], (int)$year);
+                $end2 = mktime(23, 59, 59, (int)$geb['1'], (int)$geb['2'], (int)$year);
 
 
-                    $res =
-                      safe_query(
-                        "SELECT
-                          TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age
-                        FROM
-                          " . PREFIX . "user
-                        WHERE
-                          userID = '" . (int)$dc['userID']."'"
-                      );
-                    $cur = mysqli_fetch_array($res);
-                    $birthdayyears = "(".(int)$cur[ 'age' ]." ".$plugin_language['years'].")";
+                $res =
+                  safe_query(
+                    "SELECT
+                      TIMESTAMPDIFF(YEAR, birthday, NOW()) AS age
+                    FROM
+                      " . PREFIX . "user
+                    WHERE
+                      userID = '" . (int)$dc['userID']."'"
+                  );
+                $cur = mysqli_fetch_array($res);
+                $birthdayyears = "(".(int)$cur[ 'age' ]." ".$plugin_language['years'].")";
 
-                    if(($start_date<=$start && $end_date>=$start) || ($start_date>=$start && $end_date<=$end2) || ($start_date<=$end2 && $end_date>=$end2)) { 
+                if(($start_date<=$start && $end_date>=$start) || ($start_date>=$start && $end_date<=$end2) || ($start_date<=$end2 && $end_date>=$end2)) { 
 
-                    $settings = safe_query("SELECT * FROM " . PREFIX . "settings");
-                    $db = mysqli_fetch_array($settings);
+                $settings = safe_query("SELECT * FROM " . PREFIX . "settings");
+                $db = mysqli_fetch_array($settings);
 
-                        if ($db[ 'birthday' ] == '1') {
-                             $birthday.='<a class="badge bg-warning text-dark" style="width: 100%" href="index.php?site=profile&amp;id='.$dc['userID'].'"><i class="bi bi-cake2"></i> '.getnickname($dc['userID']).' '.$birthdayyears.'</a>
-                                    <br />';
-                        } else {
-                            $birthday = '';
-                        }
-                    }
+                if ($db[ 'birthday' ] == '1') {
+                     $termin.='<a class="badge bg-warning text-dark" style="width: 100%" href="index.php?site=profile&amp;id='.$dc['userID'].'"><i class="bi bi-cake2"></i> '.getnickname($dc['userID']).' '.$birthdayyears.'</a>
+                            <br />';
+                } else {
+                    $termin = '';
                 }
+                }
+              }
             }
             
             // DB ABRUF ENDE
 
             //If date is today, highlight it
             if (($t == date("j")) && ($month == date("n")) && ($year == date("Y"))) {
-                echo '<td height="40" valign="top" bgcolor="#999999"><span class="badge text-bg-danger">' . $t . '</span><br>' . $termin . ''.$birthday.'</td>';
+                echo '<td height="40" valign="top" bgcolor="#999999"><span class="badge text-bg-danger">' . $t . '</span><br>' . $termin . '</td>';
             } else {
                 //  If the date is absent ie after 31, print space
                 if ($t === ' ') {
                     echo '<td height="40" bgcolor="#e9e9e9" valign="top">&nbsp;</td>';
                 } else {
                     echo
-                        '<td height="40" valign="top">' . $t . '<br>' . $termin . ''.@$birthday.'</td>';
+                        '<td height="40" valign="top">' . $t . '<br>' . $termin . '</td>';
                 }
             }
         }
@@ -1139,7 +1140,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
     $end_date = mktime(23, 59, 59, $month, $tag, $year);
     unset($termin);
 
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_upcoming");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_calendar");
     $anz = mysqli_num_rows($ergebnis);
     if ($anz) {
         while ($ds = mysqli_fetch_array($ergebnis)) {
@@ -1170,7 +1171,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
                     if (isclanmember($userID) || isanyadmin($userID)) {
                         $anmeldung =
                             safe_query(
-                                "SELECT * FROM " . PREFIX . "plugins_upcoming_announce WHERE upID='" . $ds['upID'] . "'"
+                                "SELECT * FROM " . PREFIX . "plugins_calendar_announce WHERE upID='" . $ds['upID'] . "'"
                             );
                         if (mysqli_num_rows($anmeldung)) {
                             $i = 1;
@@ -1308,7 +1309,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
                     if (isclanmember($userID)) {
                         $anmeldung =
                             safe_query(
-                                "SELECT * FROM " . PREFIX . "plugins_upcoming_announce WHERE upID='" . (int)$ds['upID'] . "'"
+                                "SELECT * FROM " . PREFIX . "plugins_calendar_announce WHERE upID='" . (int)$ds['upID'] . "'"
                             );
                         if (mysqli_num_rows($anmeldung)) {
                             $i = 1;
@@ -1439,7 +1440,7 @@ $ergebnis=safe_query("SELECT userID FROM ".PREFIX."plugins_squads_members WHERE 
                     if (isclanmember($userID)) {
                         $anmeldung =
                             safe_query(
-                                "SELECT * FROM " . PREFIX . "plugins_upcoming_announce WHERE upID='" . (int)$ds['upID'] . "'"
+                                "SELECT * FROM " . PREFIX . "plugins_calendar_announce WHERE upID='" . (int)$ds['upID'] . "'"
                             );
                         if (mysqli_num_rows($anmeldung)) {
                             $i = 1;

@@ -1,20 +1,33 @@
 <?php
 
-$language_array = Array(
+$language_array = array(
 
-    'no_history'          =>'<blockquote>Derzeit keine Informationen verfügbar</blockquote>',
-    'access_denied'       =>'Zugriff verweigert',
-    'title'               =>'History',
-    'title_head'          =>'Überschrift',
-    'history'             =>'Werdegang',
-    'transaction_invalid' =>'Transaktions ID ungültig',
-    'update'              =>'Aktualisieren',
-    'you_can_use_html'    =>'Du kannst HTML-Tags benutzen',
-    'color'               =>'Farbe'
+  'history'             => 'History',
+  'new_history'         => 'Neue History',
+  'no_history'          => '<blockquote>keine History</blockquote>',
+  'access_denied'       => '<h3>Info</h3><div class="alert alert-danger"><span class="sr-only">Error:</span><strong>Zugriff verweigert</strong></div>',
+  'actions'             => 'Aktionen',
+  'add_history'         => 'History hinzufügen',
+  'back'                => 'Zurück',
+  'delete'              => 'Löschen',
+  'description'         => 'Beschreibung',
+  'edit'                => 'Ändern',
+  'edit_history'        => 'History ändern',
+  'is_displayed'        => 'Wird angezeigt?',
+  'new_history'         => 'Neue History',
+  'no'                  => 'Nein',
+  'no_entries'          => 'Keine Einträge',
+  'really_delete'       => 'Diese Info wirklich löschen?',
+  'sort'                => 'Sortierung',
+  'history_name'        => 'Überschrift',
+  'transaction_invalid' => 'Transaktions ID ungültig',
+  'to_sort'             => 'Sortieren',
+  'yes'                 => 'Ja',
+  'title'               => 'History',
+  'options'             => 'Optionen',
+  'settings'            => 'History-Einstellungen',
+  'max_history'         => 'History pro Seite',
+  'tooltip'             => 'Maximale History, welche komplett angezeigt werden',
+  'update'              => 'Ändern',
+  'close'               => 'Schließen',
 );
-
-
-
-
-
-

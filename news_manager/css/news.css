@@ -155,7 +155,7 @@
 
 .headline { color: rgba(var(--bs-body-color),1);}
 
-.card .date_col {margin-bottom: 143px;width: 54px;background-color: rgba(var(--bs-link-color),1);}
+.card .date_col {margin-bottom: 120px;width: 40px;background-color: rgba(var(--bs-link-color),1);}
 
 .date_line {height: 2px;background-color: #000}
 

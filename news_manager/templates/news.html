@@ -1,23 +1,23 @@
 <!-- news_head -->
 <div class="head-boxes">
-    <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
+  <span class="head-boxes-head">$title</span>
+  <h2 class="head-h2">
     <span class="head-boxes-title">$title</span>
-</h2>
-    <p class="head-boxes-foot">$subtitle</p>
+  </h2>
+  <p class="head-boxes-foot">$subtitle</p>
 </div>
-<!-- END --> 
+<!-- END -->
 
 <!-- news_content_area_head -->
 <div class="row news_area_head">
 
-<!-- END --> 
+  <!-- END -->
 
-<!-- news_content_area -->
-<div class="col-md-$switchen news-box">
-  
-  <div class="card">
-    
+  <!-- news_content_area -->
+  <div class="col-md-$switchen news-box">
+
+    <div class="card">
+
       <div class="col-md-12 img-fluid" style="position: relative;min-height: 105px;">
         <div class="badge news-badge-left bg-primary" style="min-width: 75px">
           $date
@@ -25,168 +25,173 @@
         <div class="badge news-badge-right bg-primary">
           $rubrikname
         </div>
-            $rubric_pic
+        $rubric_pic
       </div>
       <div class="card-body">
-      <div class="col-md-12"><h4>$headline</h4></div>
-      <div class="col-md-12 news-poster">$poster - $comments</div>
-      <div class="card-text col-md-12" style="position: relative;min-height: 150px;">
-        $content $related</div>
+        <div class="col-md-12">
+          <h4>$headline</h4>
+        </div>
+        <div class="col-md-12 news-poster">$poster - $comments</div>
+        <div class="card-text col-md-12" style="position: relative;min-height: 150px;">
+          $content $related</div>
       </div>
+    </div>
   </div>
-</div>
-<!-- END --> 
+  <!-- END -->
 
-<!-- news_content_area_foot -->
+  <!-- news_content_area_foot -->
 
 </div>
-<!-- END --> 
+<!-- END -->
 
 <!-- news_headlines -->
-<li data-toggle="tooltip" title="$date - $time"> <a href="index.php?site=news_content&amp;newsID=$news_id&amp;lang=$lang">$headlines</a> </li>
-<!-- END --> 
+<li data-toggle="tooltip" title="$date - $time"> <a
+    href="index.php?site=news_content&amp;newsID=$news_id&amp;lang=$lang">$headlines</a> </li>
+<!-- END -->
 
 <!-- news_category -->
 <table class="table table-striped">
- <thead>
-  <tr>
-   <th>
-    <h3>$title_categories ($anzcats $categories)</h3>
-   </th>
-  </tr>
-  <tr>
-   <th>$category</th>
-   <th>$links</th>
-  </tr>
- </thead>
- <tbody>
-<!-- END --> 
-  
-<!-- news_content -->
-  <tr>
-   <td>$linkcatname</td>
-   <td>$anzlinks</td>
-  </tr>
-<!-- END --> 
-  
-<!-- news_foot -->
+  <thead>
+    <tr>
+      <th>
+        <h3>$title_categories ($anzcats $categories)</h3>
+      </th>
+    </tr>
+    <tr>
+      <th>$category</th>
+      <th>$links</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- END -->
+
+    <!-- news_content -->
+    <tr>
+      <td>$linkcatname</td>
+      <td>$anzlinks</td>
+    </tr>
+    <!-- END -->
+
+    <!-- news_foot -->
   </tbody>
 </table>
-<!-- END --> 
+<!-- END -->
 
 <!-- news_details_head -->
 <ol class="breadcrumb">
- <li><a href="index.php?site=links">$title_categories</a></li>
- <li>$linkcatname</li>
+  <li><a href="index.php?site=links">$title_categories</a></li>
+  <li>$linkcatname</li>
 </ol>
-<!-- END --> 
+<!-- END -->
 
 <!-- news_details_header -->
 <div class="row">
- <div class="col-md-12"> 
-<!-- END --> 
-  
-<!-- news_details -->
-  <div class="col-md-6">
-   <div class="panel panel-default">
-    <div class="panel-heading">
-     <h3 class="panel-title">$name</h3>
+  <div class="col-md-12">
+    <!-- END -->
+
+    <!-- news_details -->
+    <div class="col-md-6">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h3 class="panel-title">$name</h3>
+        </div>
+        <div class="panel-body"> $banner <br>
+          <div class="well"> $info<br>
+            <br>$links:$link
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="panel-body"> $banner <br>
-     <div class="well"> $info<br>
-      <br>$links:$link </div>
-    </div>
-   </div>
-  </div>
-<!-- END --> 
-  
-<!-- news_details_foot --> 
+    <!-- END -->
+
+    <!-- news_details_foot -->
   </div>
 </div>
-<!-- END --> 
+<!-- END -->
 
 <!-- news_admin_details_head -->
 <div class="panel panel-default">
- <div class="panel-heading"> <i class="bi bi-newspaper"></i> $title_categories</a> &raquo; $linkcatname</div>
- <div class="panel-body">
-  <div class="col-md-10 form-group"><a href="admincenter.php?site=admin_links" class="white">$title</a> &raquo; New / Edit</div>
-  <div class="col-md-2 form-group"></div>
-<!-- END --> 
-  
-<!-- news_admin_details_header -->
-  <table class="table table-striped">
-   <thead>
-   <th><b>$linkname</b></th>
-    <th><b>$homepage</b></th>
-    <th class="hidden-xs hidden-sm"><b>$information</b></th>
-    <th><b>$actions</b></th>
-    </thead>
-<!-- END --> 
-    
-<!-- news_admin_details -->
-  <tr>
-    <td class="' . $td . '">$name</td>
-    <td class="' . $td . '">$banner</td>
-    <td class="' . $td . '">$info</td>
-    <td class="' . $td . '">$adminaction</td>
-  </tr>
-   
-<!-- END --> 
-   
-<!-- news_admin_details_foot -->
-   </table>
- </div>
+  <div class="panel-heading"> <i class="bi bi-newspaper"></i> $title_categories</a> &raquo; $linkcatname</div>
+  <div class="panel-body">
+    <div class="col-md-10 form-group"><a href="admincenter.php?site=admin_links" class="white">$title</a> &raquo; New /
+      Edit</div>
+    <div class="col-md-2 form-group"></div>
+    <!-- END -->
+
+    <!-- news_admin_details_header -->
+    <table class="table table-striped">
+      <thead>
+        <th><b>$linkname</b></th>
+        <th><b>$homepage</b></th>
+        <th class="hidden-xs hidden-sm"><b>$information</b></th>
+        <th><b>$actions</b></th>
+      </thead>
+      <!-- END -->
+
+      <!-- news_admin_details -->
+      <tr>
+        <td class="' . $td . '">$name</td>
+        <td class="' . $td . '">$banner</td>
+        <td class="' . $td . '">$info</td>
+        <td class="' . $td . '">$adminaction</td>
+      </tr>
+
+      <!-- END -->
+
+      <!-- news_admin_details_foot -->
+    </table>
+  </div>
 </div>
 <!-- END -->
 
 <!-- news_archive_head -->
 <div class="head-boxes">
-    <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
+  <span class="head-boxes-head">$title</span>
+  <h2 class="head-h2">
     <span class="head-boxes-title">$title</span>
-</h2>
-    <p class="head-boxes-foot">$subtitle</p>
+  </h2>
+  <p class="head-boxes-foot">$subtitle</p>
 </div>
 <div class="card">
-    <div class="card-body">
+  <div class="card-body">
 
-        <div class="row">
-            <div class="col d-none d-sm-block p-2">
-                $lang_rubric
-            </div>
-            <div class="col col-sm-7 p-2">
-                $lang_headline
-            </div>
-            <div class="col-2 d-md-none d-md-block p-2">
-                $lang_date
-            </div>
-            <div class="col-2 d-none d-sm-block p-2">
-                $lang_date / Poster
-            </div>
-        </div>
+    <div class="row">
+      <div class="col d-none d-sm-block p-2">
+        $lang_rubric
+      </div>
+      <div class="col col-sm-7 p-2">
+        $lang_headline
+      </div>
+      <div class="col-2 d-md-none d-md-block p-2">
+        $lang_date
+      </div>
+      <div class="col-2 d-none d-sm-block p-2">
+        $lang_date / $lang_poster
+      </div>
+    </div>
 
-<!-- END -->
+    <!-- END -->
 
-<!-- news_archive_content -->
-        <div class="row border-top">
-            <div class="col-3 d-none d-sm-block p-2">
-                $rubric_pic
-            </div>
-            <div class="col col-sm-7 p-2">
-                <h6>$headlines</h6>
-                <small>$lang_rubric: $rubrikname</small><br>$content
-            </div>
-            <div class="col-2 d-md-none d-md-block p-2">
-                $date
-            </div>
-            <div class="col-2 d-none d-sm-block p-2">
-                $date2 <br>            
-                $poster
-            </div>
-        </div>
-<!-- END -->
+    <!-- news_archive_content -->
+    <div class="row border-top">
+      <div class="col-3 d-none d-sm-block p-2">
+        $rubric_pic
+      </div>
+      <div class="col col-sm-7 p-2">
+        <h6>$headlines</h6>
+        <small>$lang_rubric: $rubrikname</small><br>$content
+      </div>
+      <div class="col-2 d-md-none d-md-block p-2">
+        $date
+      </div>
+      <div class="col-2 d-none d-sm-block p-2">
+        $date2 <br>
+        $poster
+      </div>
+    </div>
+    <!-- END -->
 
-<!-- news_archive_foot -->
-</div>
+    <!-- news_archive_foot -->
+  </div>
 </div>
 <!-- END -->

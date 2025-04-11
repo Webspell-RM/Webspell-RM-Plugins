@@ -4,7 +4,6 @@
 
 <!-- comments_head -->
 <form name="form" method="post" action="index.php?site=news_comments&delete=true">
-    <!--$sorter-->
 <!-- END -->
 
 <!-- comments_content_area -->
@@ -18,8 +17,8 @@
             <div class="card-header">
                 $avatar by $poster
             </div>
-            <div class="card-body">
-                <h4>$your_comment_reply</h4>
+            <div class="card-body">           
+                <span style="font-size: 16px;font-weight: 900;">$your_comment_reply</span>
                 <div class="mb-3">
                     <textarea name="message2" id="message2" class="form-control"></textarea>
                 </div>
@@ -30,7 +29,7 @@
                     <input type="hidden" name="type" value="re">
                     <input type="hidden" name="referer" value="$referer">
                     <input type="submit" name="saverecomment" value="$post_recomment" class="btn btn-primary">
-                </div>
+                </div>            
             </div>
         </div>
     </div>   
@@ -39,67 +38,66 @@
 <!-- END -->
 <!-- comments_foot -->
 <div>$page_link</div>
-    <div  class="text-end mb-3">
+    <div class="text-end mb-3">
         $submit
     </div>
 </form>
 <!-- END -->
 <!-- comments_add_user -->
-
 <div class="card">
     <div class="card-body">
-<script>
-    <!--
-    var comment_submit = false;
+        <script>
+            <!--
+            var comment_submit = false;
 
-    function chkFormular() {
-        if (document.getElementById('message').value === "") {
-            alert('%enter_message%');
-            document.getElementById('message').focus();
+            function chkFormular() {
+                if (document.getElementById('message').value === "") {
+                    alert('%enter_message%');
+                    document.getElementById('message').focus();
 
-            return false;
-        }
-        if (!validbbcode(document.getElementById('message').value)) {
+                    return false;
+                }
+                if (!validbbcode(document.getElementById('message').value)) {
 
-            return false;
-        }
-        if (comment_submit) {
+                    return false;
+                }
+                if (comment_submit) {
 
-            return false;
-        }
-        comment_submit = true;
-    }
-    -->
-</script>
+                    return false;
+                }
+                comment_submit = true;
+            }
+            -->
+        </script>
 
-<form id="post" name="post" action="index.php?site=news_comments" method="post" onsubmit="return chkFormular()">
-    <h4>$title_comment</h4>
+        <form id="post" name="post" action="index.php?site=news_comments" method="post" onsubmit="return chkFormular()">
+            <h4>$title_comment</h4>
 
-    <div class="mb-3">
-        <textarea name="message" id="message" rows="3" class="form-control"></textarea>
+            <div class="mb-3">
+                <textarea name="message" id="message" rows="3" class="form-control"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" name="saveusercomment" value="$post_comment" class="btn btn-primary">
+            </div>
+            <input type="hidden" name="userID" value="$userID">
+            <input type="hidden" name="referer" value="$referer">
+            <input type="hidden" name="parentID" value="$parentID">
+            <input type="hidden" name="type" value="$type">
+        </form>
     </div>
-    <div class="form-group">
-        <input type="submit" name="saveusercomment" value="$post_comment" class="btn btn-primary">
-    </div>
-
-    <input type="hidden" name="userID" value="$userID">
-    <input type="hidden" name="referer" value="$referer">
-    <input type="hidden" name="parentID" value="$parentID">
-    <input type="hidden" name="type" value="$type">
-</form>
-</div></div>
+</div>
 <!-- END -->
 <!-- comments_foot -->
-<table class="table">
-    <tr>
-        <td>$page_link</td>
-        <td class="text-right">$submit</td>
-    </tr>
-</table>
-</form></div>
+    <table class="table">
+        <tr>
+            <td>$page_link</td>
+            <td class="text-right">$submit</td>
+        </tr>
+    </table>
+    </form>
+</div>
 <!-- END --> 
 <!-- comments_edit -->
-
 <script>
     <!--
     function chkFormular() {
@@ -117,20 +115,24 @@
     }
     -->
 </script>
-<h2><span><i class="fas fa-comments"></i>&nbsp;$title_editcomment</span></h2>
+<div class="head-boxes">
+    <h2 class="head-h2">
+        <span class="head-boxes-title">$title_editcomment</span>
+    </h2>
+</div>
 <div class="card">
     <div class="card-body">
-        <form id="post" name="post" action="index.php?site=news_comments" method="post" onsubmit="return chkFormular()">
-            <div class="mb-3">
-                <textarea name="message" id="message" rows="5" cols="35" class="form-control">$message</textarea>
-            </div>
-            <div>
-                <input type="hidden" name="authorID" value="$authorID">
-                <input type="hidden" name="commentID" value="$id">
-                <input type="hidden" name="referer" value="$referer">
-                <input type="hidden" name="userID" value="$userID">
-                <input type="submit" name="saveeditcomment" value="$edit_comment" class="btn btn-warning"></td>
-            </div>
+        <form id="post" name="post" action="index.php?site=news_manager" method="post" onsubmit="return chkFormular()">
+        <div class="form-group">
+            <textarea name="message" id="message" rows="5" cols="35" class="form-control">$message</textarea>
+        </div>
+        <div>
+            <input type="hidden" name="authorID" value="$authorID">
+            <input type="hidden" name="commentID" value="$id">
+            <input type="hidden" name="referer" value="$referer">
+            <input type="hidden" name="userID" value="$userID">
+            <input type="submit" name="saveeditcomment" value="$edit_comment" class="btn btn-warning">
+        </div>
         </form>
     </div>
 </div>
@@ -178,16 +180,11 @@
     <div class="mb-3">
         <textarea name="message" id="message" rows="3" class="form-control"></textarea>
     </div>
-    
-
     <div class="mb-3">
-            
-            <div class="input-group">
-              
-              $_captcha
-           </div>
-            </div>
-
+        <div class="input-group">
+            $_captcha
+        </div>
+    </div>
     <div class="mb-3">
         <input type="submit" name="savevisitorcomment" value="$post_comment" class="btn btn-primary">
     </div>        
@@ -197,7 +194,7 @@
     <input type="hidden" name="type" value="$type">
     <input type="hidden" name="ip" value="$visitorip">
 </form>
-</div></div>
-    
+</div>
+</div>    
 <!-- END --> 
 

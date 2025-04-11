@@ -129,10 +129,8 @@ $button
   </div>
   <div class="col-md-12">
     $completed:&nbsp;
-    <div class="progress">
-      <div class="progress-bar" role="progressbar" aria-valuenow="$prozent" aria-valuemin="0" aria-valuemax="100" style="width:$prozent%">
-        <span>$prozent% Complete</span>
-      </div>
+    <div class="progress" role="progressbar" aria-label="Success example" aria-valuenow="$prozent" aria-valuemin="0" aria-valuemax="100">
+      <div class="progress-bar bg-primary" style="width: $prozent%">$prozent% Complete</div>
     </div>
 
   </div>
@@ -164,3 +162,31 @@ $button
 <!-- projectlist_details_foot -->
 </div>
 <!-- END -->
+
+
+<!-- projectlist_widget_projectlist_head -->
+<div class="card">
+  <div class="card-body widget" style="margin: -12px -12px -12px -12px;"> 
+    <div class="agileits_updates_grid_left_grid">
+   <!-- END -->
+
+<!-- projectlist_widget_content -->
+      <div class="row">
+        <div class="col-3 agileits_updates_grid_left1">
+          <h4>$day <span>$date2 <i>$year.</i></span></h4>
+        </div>
+        <div class="col agileits_updates_grid_left1">
+          <h5>$title</h5>
+          <p>$text</p>
+          <div class="progress">
+            <div class="progress-bar bg-primary text-dark" role="progressbar" aria-valuenow="$progress" aria-valuemin="20" aria-valuemax="100" style="min-width: 2em; width: $progress;">
+            <span>$progress</span>
+          </div> 
+        </div>
+      </div> 
+<!-- END -->
+<!-- projectlist_widget_projectlist_foot -->
+    </div>
+  </div>
+</div>
+  <!-- END -->

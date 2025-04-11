@@ -59,6 +59,7 @@
 <!-- END -->
 
 <!-- clanwars_sc_head -->
+<div class="container">
 <div class="head-boxes">
     <span class="head-boxes-head">$title</span>
 <h2 class="head-h2">
@@ -66,6 +67,7 @@
 </h2>
     <p class="head-boxes-foot">$subtitle</p>
 </div>
+  
 <!-- END -->
 
 <!-- clanwars_sc_content -->
@@ -73,7 +75,8 @@
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
-  background-blend-mode:multiply;">
+  background-blend-mode:multiply;
+  border-radius: var(--bs-border-radius);">
     <div class="col-md-4" style="text-align: center;margin-top: 95px;">$squadicon<br><h3>$squad</h3></div>
     <div class="col-md-4" style="text-align: center;"><img class="img-fluid" src="/includes/plugins/clanwars/images/versus.png" alt="" /></div>
     <div class="col-md-4" style="text-align: center;margin-top: 95px;">$opppic<br><h3>$opponent</h3></div>
@@ -81,6 +84,8 @@
 
     <div class="col-md-12" style="margin-top: -55px;">
    <p style="text-align: center;font-size: 40px;">$date / $time</p>
+   
+
 
     <ul class="flip-clock-container flip-2" style="margin-top: -35px;">
       <li class="test text-center">Seconds</li>
@@ -95,21 +100,9 @@
       <li class="flip-item-days">$day</li>
     </ul> <br>
   </div>
-  <script src="js/flip-clock.js"></script>
-  <script>
-    $(document).ready(function() {
-      $('.flip-3').on('done', function() {
-        console.log('doooooonnnnnee!');
-      });
-      $('.flip-3').on('beforeFlipping', function(e, data) {
-        console.log('beforeFlipping:', data);
-      });
-      $('.flip-3').on('afterFlipping', function(e, data) {
-        console.log('afterFlipping:', data);
-      });
-      
-    });
-  </script>
+
+  
+  
  
 <br>
 
@@ -119,11 +112,12 @@
 <!-- clanwars_sc_foot -->
   <div id="paginate-slider1">
     <div class="row">
-      <div class="col-sm-2 col-xs-2"><a href="#prev" class="prev badge badge-secondary"><i class="bi bi-chevron-double-left"></i> prev</a></div>
+      <div class="col-sm-2 col-xs-2"><a href="#prev" class="prev badge text-bg-secondary"><i class="bi bi-chevron-double-left"></i> prev</a></div>
       <div class="col-sm-8 col-xs-8"></div>
-      <div class="col-sm-2 col-xs-2" style="text-align: right;"><a href="#next" class="next badge badge-secondary">next <i class="bi bi-chevron-double-right"></i></a></div>
+      <div class="col-sm-2 col-xs-2" style="text-align: right;"><a href="#next" class="next badge text-bg-secondary">next <i class="bi bi-chevron-double-right"></i></a></div>
     </div>
   </div>
+</div>
 <!-- END -->
 
 
@@ -278,20 +272,17 @@
 <!-- END -->
 
 <!-- clanwars_sidebar_content -->
-
-<link href="includes/plugins/clanwars/css/clanwars.css" rel="stylesheet">
-  <div class="clanwars-container" style="padding-right: 6px;padding-left: 6px;">
+  <div class="clanwars-container mb-2" style="padding-right: 6px;padding-left: 6px;">
     <div class="cw-row">
       <div class="status $result_map2"></div>
       <div class="infos">
-        <div>VS. <a href="$league" target="_blank"><small>$opponent</small></a></div>
+        <div>VS. <small>$opponent</small></div>
         <div><small>$date, $squad</small></div>
       </div>
       <div class="result">
         $results
       </div>
     </div>
-    <div class="" style="margin: 15px 0px 15px; border-style:none none solid none; border-width: thin; border-color: #848484"></div>
   </div>
 <!-- END -->
 

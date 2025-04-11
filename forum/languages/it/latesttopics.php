@@ -2,16 +2,16 @@
 
 $language_array = array(
 
-    'title'     => 'Ultimi post sul Forum',
+    'title'     => 'Ultimo post',
     'board'     => 'Forum',
-    'last_post' => 'Ultimo contributo',
-    'replies'   => 'Rispondi',
+    'last_post' => 'Ultimo post',
+    'replies'   => 'Risposte',
     'reply'     => 'Risposta',
     'jan'       => 'Gennaio',
     'feb'       => 'Febbraio',
     'mar'       => 'Marzo',
     'apr'       => 'Aprile',
-    'mar'       => 'Maggio',
+    'may'       => 'Maggio',
     'jun'       => 'Giugno',
     'jul'       => 'Luglio',
     'aug'       => 'Agosto',
@@ -20,4 +20,3 @@ $language_array = array(
     'nov'       => 'Novembre',
     'dec'       => 'Dicembre',
 );
-

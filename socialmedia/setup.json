@@ -6,37 +6,52 @@
 				"file2": "socialmedia/uninstall.php",
 				"file3": "socialmedia/widget_follow_us_content.php",
 				"file4": "socialmedia/widget_social-sidebar_content.php",
-				"file5": "socialmedia/widget_socialmedia_content.php"
+				"file5": "socialmedia/widget_socialmedia_content.php",
+				"file6": "socialmedia/discord.php",
+				"file7": "socialmedia/widget_discord_sidebar.php",
+				"file8": "socialmedia/facebook.php",
+				"file9": "socialmedia/widget_facebook_sidebar.php",
+				"file10": "socialmedia/widget_facebook_sidebar_verdux.php"
+
+
 			},
 			{
-				"index": "admin"
+				"index": "admin",
+				"file1": "socialmedia/admin/admin_socialmedia.php"
 			},
 			{
 				"index": "languages",
-				"file1": "socialmedia/languages/de/follow_us.php",
-				"file2": "socialmedia/languages/en/follow_us.php",
-				"file3": "socialmedia/languages/it/follow_us.php"
+				"file1": "socialmedia/languages/de/socialmedia.php",
+				"file2": "socialmedia/languages/en/socialmedia.php",
+				"file3": "socialmedia/languages/it/socialmedia.php"
 			},
 			{
 				"index": "templates",
 				"file1": "socialmedia/templates/sc_follow_us.html",
-				"file2": "socialmedia/templates/socialmedia.html"
+				"file2": "socialmedia/templates/socialmedia.html",
+				"file3": "socialmedia/templates/discord.html",
+				"file4": "socialmedia/templates/facebook.html"
 			},
 			{
 				"index": "images",
 				"file1": "socialmedia/images/bg-topmatch.png",
 				"file2": "socialmedia/images/widget_follow_us_content.jpg",
 				"file3": "socialmedia/images/widget_social-sidebar_content.jpg",
-				"file4": "socialmedia/images/widget_socialmedia_content.jpg"
+				"file4": "socialmedia/images/widget_socialmedia_content.jpg",
+				"file5": "socialmedia/images/discord-logo.jpg",
+				"file6": "socialmedia/images/facebook-logo.jpg",
+				"file7": "socialmedia/images/fb1.png",
+				"file8": "socialmedia/images/fb2.png",
+				"file9": "socialmedia/images/fb3.png",
+				"file10": "socialmedia/images/fb4.png"
 			},
 			{
 				"index": "css",
-				"file1": "socialmedia/css/follow_us.css",
-				"file2": "socialmedia/css/social-sidebar.css",
-				"file3": "socialmedia/css/socialmedia.css"
+				"file1": "socialmedia/css/socialmedia.css"
 			},
 			{
-				"index": "js"
+				"index": "js",
+				"file1": "socialmedia/js/facebook.js"
 			}
 		]
 }

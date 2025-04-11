@@ -51,6 +51,6 @@ $data_array['$usermail'] = $usermail;
 
 $data_array['$register_newsletter'] = $plugin_language[ 'register_newsletter' ];
 $data_array['$submit'] = $plugin_language[ 'submit' ];
-$data_array['$info'] = $plugin_language[ 'info' ];
+$data_array['$info_sidebar'] = $plugin_language[ 'info_sidebar' ];
 $template = $GLOBALS["_template"]->loadTemplate("newsletter","widget_sidebar", $data_array, $plugin_path);
 echo $template;

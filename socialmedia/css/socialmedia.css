@@ -91,3 +91,184 @@
     padding-bottom: 20px;
 }
 }
+
+/*--------------------------------------------------------------
+# Social Media
+--------------------------------------------------------------*/
+.social-media .container {
+  padding: 40px;
+}
+.ground{
+ background-color: rgba(var(--bs-card-bg-rgb), 1);
+ height: 80px;
+} 
+
+.social-media .social-media-content {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-justify-content: space-between;
+      justify-content: space-between;
+      -webkit-align-items: center;
+      align-items: center; 
+} 
+ 
+.social-media .social-media-circle {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    color: #000;
+    padding: 2px;
+    margin: 5px 10px 5px 10px;
+    /*font-size: 1.5em;
+     width: 82px; */ 
+}
+
+/*--------------------------------------------------------------
+# Social Sidebar
+--------------------------------------------------------------*/
+.social {
+  width: 45px;
+  height: auto;
+  position: fixed;
+  top: 30%;
+  z-index: 10;
+  left: 0;
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 0px;
+  perspective: 1000px;
+}
+
+.social li i{
+  color: rgba(var(--bs-link-color),1);
+  color:#000;
+
+} 
+
+.social li a {
+  height: 43px;
+  width: 43px;
+  cursor:  pointer;
+  display:  block;
+  margin-bottom: 2px;
+  font: normal normal normal 19px/42px  'FontAwesome', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  color: #fff;
+  -webkit-font-smoothing: antialiased;
+  padding: 2px;
+  text-decoration: none;
+  text-align: center;
+  transition: background 0.5s ease 0.3ms;
+  background-color: var(--bs-link-color);
+}
+
+.social li a:hover {
+background-color: var(--bs-link-hover-color);
+background-color: #000;
+  
+}
+
+.social li a:focus {
+  background-color: var(--bs-link-hover-color);
+}
+
+.social li:first-child a {
+  /* border-radius: 0 5px 0 0; */
+}
+
+.social li:last-child a {
+ /* border-radius: 0 0 5px 0;*/
+}
+
+li {
+    list-style-type: none;
+}
+
+.social li a div {
+  width: 100%;
+  float: left;
+  text-align: center;
+  /*background: #e1ab06;*/
+  position: absolute;
+  display: table;
+  color: #fff;
+  left: 30px;
+  margin: -43px 40px;
+  padding: 2px;
+  transform-origin: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: rotateY(45deg);
+  border-radius: 5px;
+  transition: all 0.5s ease 0.3ms;
+}
+
+.social li div:after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: -20px;
+  top: 7px;
+  /*border: 10px solid transparent;
+  border-right: 10px solid #e1ab06;*/
+}
+
+.social li a:hover div {
+  visibility: visible;
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+/*--------------------------------------------------------------
+# Facebook
+--------------------------------------------------------------*/
+    div[data-service="facebook"]{
+        --im-btn-bg: #1877f2;
+        background-image: url('/includes/plugins/socialmedia/images/facebook-offline.png');
+        background-repeat: no-repeat; 
+    background-size: 30%;
+    background-position: 50% 0%;
+        /*background-color: #333;*/
+    border-radius: var(--bs-border-radius);
+    }
+
+    div[data-service="facebook-post"]{
+        --im-btn-bg: #1877f2;
+        
+        height: 580px;
+    }
+
+   .fb-p1ost {height: 100%;}
+   .fb_iframe_widget iframe {border-radius: var(--bs-border-radius)!important;}
+
+
+   
+   
+  
+ 
+/*--------------------------------------------------------------
+# Discord
+--------------------------------------------------------------*/
+
+    div[data-service="discord"]{
+        --im-btn-bg: #1DA1F2;
+        background-image: url('/includes/plugins/socialmedia/images/discord-offline.png');
+        background-repeat: no-repeat; 
+    background-size: 30%;
+    background-position: 50% 0%;
+        /*background-color: #333;
+        height: 450px;*/
+border-radius: var(--bs-border-radius);
+    }
+
+    
+
+/* Customize discord service colors */
+    div[data-service="discord_content"]{
+        --im-btn-bg: #1DA1F2;
+        /*background-color: transparent;*/
+        height: 580px;
+    }
+
+ 

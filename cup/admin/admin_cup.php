@@ -1071,7 +1071,7 @@ echo'</div><div>';
                                 <form action="admincenter.php?site=admin_cup" method="post" name="eg1">
                                     <input name="scoreg1" type="text" size="1" maxlength="2" value="<?php echo $clan1_eg; ?>" /> <? echo $plugin_language[ 'to' ] ?> 
                                     <input name="scoreg2" type="text" size="1" maxlength="2" value="<?php echo $clan2_eg; ?>" />
-                                    <button class="btn btn-success" type="submit" name="eg1" value="Submit" data-toggle="tooltip" data-placement="top" title="<?php echo  $plugin_language[ 'tooltip_4' ] ?>"><i class="bi bi-arrow-right-circle-fill"></i> <?php echo  $plugin_language[ 'result_edit' ] ?></button><i class="bi bi-pencil-square"></i>
+                                    <button class="btn btn-success" type="submit" name="eg1" value="Submit" data-toggle="tooltip" data-placement="top" title="<?php echo  $plugin_language[ 'tooltip_4' ] ?>"><i class="bi bi-arrow-right-circle-fill"></i> <?php echo  $plugin_language[ 'result_edit' ] ?></button>
                                 </form>
                             </td>
                             <td class="Bbody" bgcolor="<?=$clan_vor_1_bg?>" style="margin-right: -2px; border:solid 1px;border-right:solid 1px;border-left:solid 1px ;">
@@ -1081,7 +1081,7 @@ echo'</div><div>';
 								echo "";
 							} elseif (isset($clan_vor_1_name)) {
 								echo $clan_vor_1_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_1_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_1_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_1_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_1_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
 							} else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
 							}
@@ -1126,7 +1126,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_halb_1_name)) {
 								echo $clan_halb_1_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_1_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_1_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_1_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_1_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1169,7 +1169,7 @@ echo'</div><div>';
 								echo "";
 							} elseif (isset($clan_vor_2_name)) {
 								echo $clan_vor_2_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_2_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_2_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_2_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_2_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
 							} else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
 							}
@@ -1222,7 +1222,7 @@ echo'</div><div>';
 								echo "";
 							} elseif (isset($clan_fin_1_name)) {
 								echo $clan_fin_1_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=p1&id=".$clan_fin_1_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losef&id=".$clan_fin_1_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=p1&id=".$clan_fin_1_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losef&id=".$clan_fin_1_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
 							} else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
 							}
@@ -1271,7 +1271,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_vor_3_name)) {
 								echo $clan_vor_3_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_3_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_3_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_3_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_3_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1316,7 +1316,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_halb_2_name)) {
 								echo $clan_halb_2_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_2_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_2_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_2_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_2_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
                                 echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1359,7 +1359,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_vor_4_name)) {
 								echo $clan_vor_4_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_4_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_4_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_4_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_4_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1410,7 +1410,7 @@ echo'</div><div>';
 							<?php 
                             if (isset($clan_winner_name)) {
 								echo $clan_winner_name; 
-								echo "  <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losep1&id=".$clan_winner_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losep1&id=".$clan_winner_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1458,7 +1458,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_vor_5_name)) {
 								echo $clan_vor_5_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_5_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_5_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_5_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_5_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1503,7 +1503,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_halb_3_name)) {
 								echo $clan_halb_3_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_3_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_3_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_3_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_3_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
 							} else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
 							}
@@ -1546,7 +1546,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_vor_6_name)){
 								echo $clan_vor_6_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_6_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_6_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_6_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_6_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1599,7 +1599,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_fin_2_name)) {
 								echo $clan_fin_2_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=p1&id=".$clan_fin_2_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losef&id=".$clan_fin_2_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=p1&id=".$clan_fin_2_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losef&id=".$clan_fin_2_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1648,7 +1648,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_vor_7_name)) {
 								echo $clan_vor_7_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_7_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_7_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_7_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_7_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1693,7 +1693,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_halb_4_name)) {
 								echo $clan_halb_4_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_4_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_4_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=finale&id=".$clan_halb_4_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=loseh&id=".$clan_halb_4_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1736,7 +1736,7 @@ echo'</div><div>';
 								echo "";
                             } elseif (isset($clan_vor_8_name)) {
 								echo $clan_vor_8_name;
-								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_8_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_8_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-success' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_3' ]. "' href='admincenter.php?site=admin_cup&do=halb&id=".$clan_vor_8_id."'> ".$plugin_language[ 'win_edit' ] ." <i class='bi bi-arrow-right-circle-fill'></i></a> | <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losev&id=".$clan_vor_8_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
                             } else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
                             }
@@ -1804,7 +1804,7 @@ echo'</div><div>';
 							<?php 
 							if (isset($clan_platz3_winner_name)) {
 								echo $clan_platz3_winner_name; 
-								echo "  <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losep3&id=".$clan_platz3_winner_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='fas fa-arrow-circle-left'></i></a>";
+								echo "  <a class='btn btn-danger' data-toggle='tooltip' data-placement='top' title='".$plugin_language[ 'tooltip_5' ]. "' href='admincenter.php?site=admin_cup&do=losep3&id=".$clan_platz3_winner_id."'> ".$plugin_language[ 'win_undone' ] ." <i class='bi bi-arrow-left-circle-fill'></i></a>";
 							} else {
 								echo "<div style=\"margin-top:6px\"><span>". $plugin_language[ 'game_is_still_pending' ]."</span></div>";
 							}

@@ -24,7 +24,7 @@ $language_array = array(
    'no_icon'                          => 'Nessuna icona disponibile',
    'non_gaming_squad'                 => 'Squadra non di gioco',
    'really_delete'                    => 'Sei sicuro di voler rimuovere questa squadra? <br><br>Tutti gli utenti di questo team verranno eliminati!!!',
-   'sort'                             => 'ordinamento',
+   'sort'                             => 'Ordinamento',
    'squad_info'                       => 'Informazioni sulla squadra',
    'squad_name'                       => 'Nome della squadra',
    'squad_type'                       => 'Tipo di squadra',
@@ -63,7 +63,7 @@ $language_array = array(
    'member'                           => 'Membro',
    'messenger'                        => 'Sistema di messaggistica',
    'info'                             => 'Informazioni su',
-   'no_description'                   => 'Nessuna descrizione disponibile<br><br>',
+   'no_description'                   => 'Nessuna descrizione disponibile',
    'no_entries'                       => '<blockquote>Nessuna voce disponibile</blockquote>',
    'no_userpic'                       => 'Nessuna immagine dell\'utente disponibile',
    'results'                          => 'Risultati',
@@ -77,7 +77,5 @@ $language_array = array(
    'online'                           => 'on-line',
    'offline'                          => 'offline',
    'profile'                          => 'VEDI PROFILO',
-   'close'                            => 'Chiudi',    
-   'characteristics'                  => 'Caratteristiche',
+   'close'                            => 'Chiudi',
 );
-

@@ -11,7 +11,8 @@
 				"file7": "news_manager/news_functions.php",
 				"file8": "news_manager/news_recomments.php",
 				"file9": "news_manager/widget_news_headlines.php",
-				"file10": "news_manager/widget_news_headlines_2.php"
+				"file10": "news_manager/widget_news_headlines_2.php",
+				"file10": "news_manager/widget_breaking_news_content.php"
 
 			},
 			{
@@ -36,7 +37,8 @@
 				"file2": "news_manager/templates/widget_news_content.html",
 				"file3": "news_manager/templates/widget_news_headlines.html",
 				"file4": "news_manager/templates/widget_news_headlines_2.html",
-				"file5": "news_manager/templates/comments.html"
+				"file5": "news_manager/templates/comments.html",
+				"file6": "news_manager/templates/breaking_news.html"
 			},
 			{
 				"index": "images",
@@ -44,14 +46,19 @@
 				"file2": "news_manager/images/news-rubrics/no-image.jpg",
 				"file3": "news_manager/images/style/1.jpg",
 				"file4": "news_manager/images/widget_news_content.jpg",
-				"file5": "news_manager/images/widget_news_headlines.jpg"
+				"file5": "news_manager/images/widget_news_headlines.jpg",
+				"file6": "news_manager/images/widget_news_headlines_2.jpg",
+				"file7": "news_manager/images/ticker-caption-bg.png",
+				"file8": "news_manager/images/widget_breaking_news_content.jpg"
 			},
 			{
 				"index": "css",
-				"file1": "news_manager/css/news.css"
+				"file1": "news_manager/css/news.css",
+				"file2": "news_manager/css/ticker.css"
 			},
 			{
-				"index": "js"
+				"index": "js",
+				"file1": "news_manager/js/ticker.js"
 			}
 		]
 }

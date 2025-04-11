@@ -10,8 +10,15 @@
     /*background: #ececec;*/
     padding: 4em 0 4em 0;
 }
+
+.features{
+    /*background: #ececec;*/
+    margin: -20px 0 0 0;
+    padding: 0 0 15px 0;
+}
+
 .agileits-markets-grids{
-    margin: 2em 0 0 0;
+    margin: 0 0 0 0;
 }
 
 
@@ -19,11 +26,10 @@
     padding: 2em;
     /*background: #FFFFFF;*/
     background: rgba(var(--bs-rm-body-bg),1);
-    box-shadow: 0 0px 1px rgb(107, 107, 107), 0 1px 2px rgba(0,0,0,.24);
+    /*box-shadow: 0 0px 1px rgb(107, 107, 107), 0 1px 2px rgba(0,0,0,.24);*/
+    border: 1px solid rgba(var(--bs-card-border-color-rgb), 1) !important;
     border-radius: var(--bs-border-radius);
-    min-height: 220px
-px
-;
+    min-height: 220px;
 }
 .icon-left{
     float: none;
@@ -38,6 +44,7 @@ px
     color: #FFFFFF;
     font-size: 2em;
 }
+
 .icon-right{
     float: none;
     width: 100%;
@@ -57,8 +64,52 @@ px
     margin: 1em 0 0 0;
     line-height: 1.8em;
 }
+
+
+
+
+.agileits-markets-grids-1{
+}
+
+.icon-left-1{
+    float: none;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding: 1.0em 0 0 0;
+    
+    background: rgba(var(--bs-link-color),1);
+}
+.icon-left-1 i.fa{
+    color: #FFFFFF;
+    font-size: 2em;
+}
+
+.icon-right-1{
+    float: none;
+    width: 70%;
+    text-align: center;
+}
+.icon-right-1 h4{
+    /*color: #212121;*/
+    font-size: 1em;
+    margin: 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+.icon-right-1 p{
+    color: #999999;
+    font-size: .9em;
+    margin: 1em 0 0 0;
+    line-height: 1.8em;
+}
 .w3ls-markets-grid:nth-child(1),.w3ls-markets-grid:nth-child(2),.w3ls-markets-grid:nth-child(3),.w3ls-markets-grid:nth-child(4),.w3ls-markets-grid:nth-child(5),.w3ls-markets-grid:nth-child(6){
     margin:3em 0 0 0;
+}
+
+.w3ls-markets-grid-1:nth-child(1),.w3ls-markets-grid-1:nth-child(2),.w3ls-markets-grid-1:nth-child(3){
+    margin: 0 1em 0 0;
 }
 /*-- //markets --*/
 

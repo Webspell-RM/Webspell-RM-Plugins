@@ -1,51 +1,57 @@
 <!-- forum_topics_title -->
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php?site=forum">$messageboard</a></li>
-    <li class="breadcrumb-item"><a href="index.php?site=forum&amp;cat=$category">$kathname</a></li>
-    <li class="breadcrumb-item"><a href="index.php?site=forum&amp;board=$board">$boardname</a></li>
-    <li class="breadcrumb-item active" aria-current="page">$topicname</li>
-  </ol>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.php?site=forum">$messageboard</a></li>
+        <li class="breadcrumb-item"><a href="index.php?site=forum&amp;cat=$category">$kathname</a></li>
+        <li class="breadcrumb-item"><a href="index.php?site=forum&amp;board=$board">$boardname</a></li>
+        <li class="breadcrumb-item active" aria-current="page">$topicname</li>
+    </ol>
 </nav>
 <!-- END -->
 <!-- forum_topics_head -->
 <div class="card">
     <div class="card-body">
 
-<div class="row">
-    <div class="col-md-6">$page_link</div>
-    <p class="col-md-6 text-end">$actions</p>
-</div>
+        <div class="row">
+            <div class="col-md-6">$page_link</div>
+            <p class="col-md-6 text-end">$actions</p>
+        </div>
 
-<div class="table-responsive">
-<table class="table">
-    <tr>
-        <th>&nbsp;</th>
-        <th>&nbsp;</th>
-        <th>$topic:</th>
-        <th>$author:</th>
-        <th>$replies:</th>
-        <th>$views:</th>
-        <th>$lastpost:</th>
-    </tr>
-<!-- END -->
-<!-- forum_topics_content -->
-<tr>
-    <td>$folder</td>
-    <td>$icon</td>
-    <td width="40%">$voteicon $link <br><br><small>$topicpage_link</small></td>
-    <td>$poster $member</td>    
-    <td>$replys</td>
-    <td>$views</td>
-    <td>$avatar&nbsp;&nbsp;<a href="$postlink">$date</a><br><small>by $lastposter $member</small>
-    </td>
-</tr>
-<!-- END -->
-<!-- forum_topics_foot -->
-</table></div><!--</div></div>-->
-<!-- END -->
-<!-- forum_topics_legend -->
-<!--<br>
+        <div class="table-responsive">
+            <table class="table">
+                <tr>
+                    <th>&nbsp;</th>
+                    <th>&nbsp;</th>
+                    <th>$topic:</th>
+                    <th>$replies / $views:</th>
+                    <th class="text-center" colspan="2">$lastpost:</th>
+                </tr>
+                <!-- END -->
+                <!-- forum_topics_content -->
+                <tr>
+                    <td>$folder</td>
+                    <td>$icon</td>
+                    <td width="60%">$voteicon $link <br>
+                        <small> <i class="bi bi-person"></i> $poster <i class="bi bi-clock"></i> $date $time
+                            $topicpage_link</small>
+                    </td>
+                    <td width="20%"><span style="width:70px;display: inline-block;">$lang_replies:</span><span
+                            style="width:60px;display: inline-block;" class="text-end">$replys</span><br>
+                        <span style="width:70px;display: inline-block;">$lang_views:</span><span
+                            style="width:60px;display: inline-block;" class="text-end">$views</span>
+                    </td>
+                    <td width="10%" class="text-end"><a href="$postlink">$date</a> <br><small>by $lastposter
+                            $member</small> </td>
+
+                    <td width="4%" class="text-end">$avatar</td>
+                </tr>
+                <!-- END -->
+                <!-- forum_topics_foot -->
+            </table>
+        </div><!--</div></div>-->
+        <!-- END -->
+        <!-- forum_topics_legend -->
+        <!--<br>
 <table class="table hidden">
     <tr>
         <td><img src="images/icons/foldericons/newfolder.gif" alt="%new_posts%">
@@ -77,23 +83,35 @@
         <td></td>
     </tr>
 </table>-->
-<!-- END -->
-<!-- forum_topics_actions_head -->
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-5"><p>$sorter $page_link</p></div>
-            <div class="col-md-7 text-end"><p>$topicactions</p></div>
+        <!-- END -->
+        <!-- forum_topics_actions_head -->
+        <div class="card">
+            <div class="card-header border-forum-bottom">
+                <div class="row">
+                    <div class="col-md-5">
+                        <p>$sorter $page_link</p>
+                    </div>
+                    <div class="col-md-7 text-end">
+                        <p>$topicactions</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- END -->
+            <!-- forum_topics_actions_foot -->
+
+            <div class="card-footer border-forum-top">
+
+                <div class="row">
+                    <div class="col-md-5">
+                        <p>$sorter $page_link</p>
+                    </div>
+                    <div class="col-md-7 text-end">
+                        <p>$topicactions</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </div>
-</div>
-<!-- END -->
-<!-- forum_topics_actions_foot -->
-<div class="card">
-    <div class="card-body">
-        <div class="row">
-            <div class="col-md-5"><p>$sorter $page_link</p></div>
-            <div class="col-md-7 text-end"><p>$topicactions</p></div>
-        </div>
-</div></div>
-<!-- END -->
+
+        <!-- END -->

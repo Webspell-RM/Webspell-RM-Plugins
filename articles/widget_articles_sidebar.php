@@ -75,30 +75,28 @@ $qry = safe_query("SELECT * FROM ".PREFIX."plugins_articles WHERE articleID!=0 O
 		$nickname = getnickname($ds['poster']);
 
 		$translate = new multiLanguage(detectCurrentLanguage());
-    		$translate->detectLanguages($question);
-    		$question = $translate->getTextByLanguage($question);
+    	$translate->detectLanguages($question);
+    	$question = $translate->getTextByLanguage($question);
 		
-		$maxblogchars = 28;
-		if(mb_strlen($question)>$maxblogchars) {
-			$question=mb_substr($question, 0, $maxblogchars);
-			$question.='...';
-		}
+		$settings = safe_query("SELECT * FROM " . PREFIX . "plugins_articles_settings");
+        $dn = mysqli_fetch_array($settings);
 
-		$maxblogchars = 25;
-        if(mb_strlen($question)>$maxblogchars) {
-            $question=mb_substr($question, 0, $maxblogchars);
+        $maxarticleschars = 25;
+        if(mb_strlen($question)>$maxarticleschars) {
+            $question=mb_substr($question, 0, $maxarticleschars);
             $question.='...';
         }
 
-        $maxblogchars = 110;
-        if(mb_strlen($answer)>$maxblogchars) {
-            $answer=mb_substr($answer, 0, $maxblogchars);
+        $maxarticleschars = $dn['articleschars'];
+        #$maxblogchars = 110;
+        if(mb_strlen($answer)>$maxarticleschars) {
+            $answer=mb_substr($answer, 0, $maxarticleschars);
             $answer.='...';
         }
 
 		
 
-		$title1 = '<a href="index.php?site=articles&amp;action=watch&amp;articleID=$articleID" data-toggle="tooltip" data-bs-html="true" title="
+		$title1 = '<a href="index.php?site=articles&amp;action=watch&amp;articleID='.$articleID.'" data-toggle="tooltip" data-bs-html="true" title="
         '.$question_lang.'<br>by '.$nickname.'<br>'.$date.'">'.$question.'</a>';
 
 		$data_array = array();

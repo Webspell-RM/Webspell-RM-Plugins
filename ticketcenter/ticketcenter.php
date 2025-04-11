@@ -60,10 +60,10 @@ elseif($action=="newticket") {
                 </ol>
             </nav>';
     function generate_options($ticketcats = '', $offset = '', $subcatID = 0) {
-        $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '".$subcatID."' ORDER BY name");
+        $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '".$subcatID."' ORDER BY name");
         while($dr = mysqli_fetch_array($rubrics)) {
             $ticketcats .= '<option value="'.$dr['ticketcatID'].'">'.$offset.htmlspecialchars($dr['name']).'</option>';
-            if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '".$dr['ticketcatID']."'"))) {
+            if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '".$dr['ticketcatID']."'"))) {
                 $ticketcats .= generate_options("", $offset."- ", $dr['ticketcatID']);
             }
         }
@@ -111,7 +111,7 @@ elseif($action == "save") {
 
     $date = time();
     $qry = "INSERT INTO
-                     " . PREFIX . "plugins_tickets (
+                     " . PREFIX . "plugins_ticketcenter (
                             ticketcatID,
                             poster,
                             date,
@@ -146,13 +146,13 @@ elseif($action=="reopen") {
         
     $date = time();
  
-    $qry = "INSERT INTO " . PREFIX . "plugins_tickets ( masterticketID, poster, date, ticketinfo, admin ) VALUES ( '" . $ticketID . "', '" . $poster . "', '" . $date . "', '".$ticketinfo."', '0' )";
+    $qry = "INSERT INTO " . PREFIX . "plugins_ticketcenter ( masterticketID, poster, date, ticketinfo, admin ) VALUES ( '" . $ticketID . "', '" . $poster . "', '" . $date . "', '".$ticketinfo."', '0' )";
     if(safe_query($qry)) {
 
         
 
 
-        safe_query("UPDATE " . PREFIX . "plugins_tickets SET ticketstatus = '1', userarchiv = '0', adminarchiv = '0' WHERE ticketID='$ticketID'");
+        safe_query("UPDATE " . PREFIX . "plugins_ticketcenter SET ticketstatus = '1', userarchiv = '0', adminarchiv = '0' WHERE ticketID='$ticketID'");
         redirect('index.php?site=ticketcenter&amp;action=show&amp;ticketID='.$ticketID , $_lang['ticket_reopened_re'] ,1);
     }
     else  redirect('index.php?site=ticketcenter&amp;action=show&amp;ticketID='.$ticketID , $_lang['error_repeat'] ,3);
@@ -164,11 +164,11 @@ elseif($action == "archive") {
     $poster = $_POST[ 'poster' ];
     $ticketID = $_POST[ 'ticketID' ];
  
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE ticketID='$ticketID'");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE ticketID='$ticketID'");
     $eh = mysqli_fetch_array($ergebnis);
  
-    if($poster == $eh['poster'])  safe_query("UPDATE " . PREFIX . "plugins_tickets SET userarchiv = '1' WHERE ticketID='$ticketID'");
-    elseif($poster == $eh['admin']) safe_query("UPDATE " . PREFIX . "plugins_tickets SET adminarchiv = '1' WHERE ticketID='$ticketID'");
+    if($poster == $eh['poster'])  safe_query("UPDATE " . PREFIX . "plugins_ticketcenter SET userarchiv = '1' WHERE ticketID='$ticketID'");
+    elseif($poster == $eh['admin']) safe_query("UPDATE " . PREFIX . "plugins_ticketcenter SET adminarchiv = '1' WHERE ticketID='$ticketID'");
  
     if($ergebnis) {
         redirect('index.php?site=ticketcenter&amp;action=show&amp;ticketID='.$ticketID , $_lang['ticket_archived'] ,1);
@@ -186,7 +186,7 @@ elseif($action == "saveantwort") {
  
     $date = time();
  
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE ticketID='$ticketID'");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE ticketID='$ticketID'");
     $eh = mysqli_fetch_array($ergebnis);
  
     if($poster != $eh['poster'] && $eh['notify'] != 0){
@@ -234,12 +234,12 @@ elseif($action == "saveantwort") {
     }
  
     if($closeticket == 1){
-        safe_query("UPDATE " . PREFIX . "plugins_tickets SET ticketstatus = '2' WHERE ticketID='$ticketID'");
+        safe_query("UPDATE " . PREFIX . "plugins_ticketcenter SET ticketstatus = '2' WHERE ticketID='$ticketID'");
         if($ticketinfo == '')  $ticketinfo = '<br><p class="text-center text-danger"><b>'.$_lang['ticket_closed'].'</b></p>';
         else $ticketinfo =   $ticketinfo.'<br><p class="text-center text-danger"><b>'.$_lang['ticket_closed'].'</b></p>';
     }
  
-    $qry = "INSERT INTO " . PREFIX . "plugins_tickets ( masterticketID, poster, date, ticketinfo, admin ) VALUES ( '".$ticketID."', '".$poster."', '".$date."', '".$ticketinfo."', '0')";
+    $qry = "INSERT INTO " . PREFIX . "plugins_ticketcenter ( masterticketID, poster, date, ticketinfo, admin ) VALUES ( '".$ticketID."', '".$poster."', '".$date."', '".$ticketinfo."', '0')";
     if(safe_query($qry)) {
         redirect('index.php?site=ticketcenter&amp;action=show&amp;ticketID='.$ticketID , $_lang['reply_saved'] ,1);
     }
@@ -250,7 +250,7 @@ elseif($action == "saveantwort") {
 // Einzelticket anzeigen
 elseif(($action == "show") && ($ticketID != "")) {
  
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE ticketID='$ticketID'");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE ticketID='$ticketID'");
     $eh = mysqli_fetch_array($ergebnis);
  
     if(($eh['poster'] == $userID) || (isfeedbackadmin($userID))){
@@ -308,12 +308,12 @@ elseif(($action == "show") && ($ticketID != "")) {
         $poster = '<a href="index.php?site=profile&amp;id='.$eh['poster'].'">'.getnickname($eh['poster']).'</a>';
  
         $ticketcatID = $eh['ticketcatID'];
-        $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$ticketcatID."'"));
+        $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$ticketcatID."'"));
         $category = '<nobr>'.$cat['name'].'</nobr>';
         $cat_id = $cat['subcatID'];
  
         while($data_array['$cat_id !'] = 0) {
-            $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$cat_id."'"));
+            $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$cat_id."'"));
             $category = '<nobr>'.$subcat['name'].'</nobr> &raquo; '.$category;
             $cat_id = $subcat['subcatID'];
         }
@@ -369,7 +369,7 @@ elseif(($action == "show") && ($ticketID != "")) {
        echo $template;
         
         // Contentabfrage / Schleife,
-        $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE ticketID='$ticketID' OR masterticketID='$ticketID' ORDER BY date ASC");
+        $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE ticketID='$ticketID' OR masterticketID='$ticketID' ORDER BY date ASC");
         $n = 0;
         while($ds=mysqli_fetch_array($ergebnis)) {
             $n++;
@@ -447,7 +447,7 @@ elseif(($action == "show") && ($ticketID != "")) {
 // Ticket übernehmen
 elseif(($action == "take") && ($ticketID != "")) {
     if((isfeedbackadmin($userID))){
-        safe_query("UPDATE " . PREFIX . "plugins_tickets SET admin = '".$userID."', ticketstatus = '1' WHERE ticketID='$ticketID'");
+        safe_query("UPDATE " . PREFIX . "plugins_ticketcenter SET admin = '".$userID."', ticketstatus = '1' WHERE ticketID='$ticketID'");
         redirect('index.php?site=ticketcenter&amp;action=show&amp;ticketID='.$ticketID , $_lang['ticket_taken'],1);
     }
     else redirect('index.php?site=ticketcenter&amp;action=show&amp;ticketID='.$ticketID , $_lang['error_repeat'] ,3);
@@ -465,7 +465,7 @@ elseif($action == "archiv"){
  
     // Admins sehen ihre archivierten Tickets
    
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE admin='".$userID."' AND masterticketID='0' AND  adminarchiv ='1' ORDER BY date DESC");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE admin='".$userID."' AND masterticketID='0' AND  adminarchiv ='1' ORDER BY date DESC");
     if(mysqli_num_rows($ergebnis)) {
  
         $data_array= array();
@@ -486,12 +486,12 @@ elseif($action == "archiv"){
             $ticketid = $ds['ticketID'];
             $ticketname = $ds['ticketname'];
             $ticketstatus = $ds['ticketstatus'];
-            $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$ticketcatID."'"));
+            $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$ticketcatID."'"));
             $category = '<nobr>'.$cat['name'].'</nobr>';
  
             $cat_id = $cat['subcatID'];
             while($cat_id != 0) {
-                $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$cat_id."'"));
+                $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$cat_id."'"));
                 $category = '<nobr>'.$subcat['name'].'</nobr> &raquo; '.$category;
                 $cat_id = $subcat['subcatID'];
             }
@@ -543,7 +543,7 @@ elseif($action == "archiv"){
 
 
  
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE poster='$userID' AND masterticketID='0' AND userarchiv='1' ORDER BY ticketstatus ASC, date DESC");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE poster='$userID' AND masterticketID='0' AND userarchiv='1' ORDER BY ticketstatus ASC, date DESC");
     if(mysqli_num_rows($ergebnis)) {
 
         $data_array= array();
@@ -611,7 +611,7 @@ else{
             </ol>
           </nav>';
     echo '<div class="btn-group"><input class="btn btn-primary" type="button" onclick=window.open("index.php?site=ticketcenter&amp;action=newticket","_self") value="' . $_lang[ 'create_new_ticket' ] . '">&nbsp;';
-    if((mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE admin='".$userID."' and adminarchiv='1'"))) || (mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE poster='".$userID."' and userarchiv='1'")))){
+    if((mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE admin='".$userID."' and adminarchiv='1'"))) || (mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE poster='".$userID."' and userarchiv='1'")))){
         echo ' <input type="button" onclick=window.open("index.php?site=ticketcenter&amp;action=archiv","_self") value="' . $_lang[ 'show_archiv' ] . '" class="btn btn-primary">';
     }
 
@@ -619,7 +619,7 @@ else{
   #end
    
     // Admins sehen alle offenen Tickets
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE ticketstatus='0' AND poster<>'".$userID."' AND masterticketID='0' ORDER BY priority DESC, date DESC");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE ticketstatus='0' AND poster<>'".$userID."' AND masterticketID='0' ORDER BY priority DESC, date DESC");
     if(isfeedbackadmin($userID) && mysqli_num_rows($ergebnis)) {
  
         $data_array= array();
@@ -636,12 +636,12 @@ else{
         while($ds = mysqli_fetch_array($ergebnis)) {
             
             $ticketcatID = $ds['ticketcatID'];
-            $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$ticketcatID."'"));
+            $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$ticketcatID."'"));
             $category = '<nobr>'.$cat['name'].'</nobr>';
  
             $cat_id = $cat['subcatID'];
             while($cat_id != 0) {
-                $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$cat_id."'"));
+                $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$cat_id."'"));
                 $category = '<nobr>'.$subcat['name'].'</nobr> &raquo; '.$category;
                 $cat_id  = $subcat['subcatID'];
  
@@ -683,8 +683,8 @@ else{
  
     // Admins sehen ihren angenommen Tickets
  
-        if($adminticket = mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE admin='".$userID."' AND adminarchiv ='0'"))){
-        $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE admin='".$userID."' AND masterticketID='0' AND adminarchiv ='0' ORDER BY priority DESC, date DESC");
+        if($adminticket = mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE admin='".$userID."' AND adminarchiv ='0'"))){
+        $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE admin='".$userID."' AND masterticketID='0' AND adminarchiv ='0' ORDER BY priority DESC, date DESC");
  
         $data_array= array();
         $data_array['$my_admin_tickets']=$_lang['my_admin_tickets'];
@@ -701,12 +701,12 @@ else{
         while($ds = mysqli_fetch_array($ergebnis)) {
             
             $ticketcatID = $ds['ticketcatID'];
-            $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$ticketcatID."'"));
+            $cat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$ticketcatID."'"));
             $category = '<nobr>'.$cat['name'].'</nobr>';
  
             $cat_id = $cat['subcatID'];
             while($cat_id != 0) {
-                $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='".$cat_id."'"));
+                $subcat = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='".$cat_id."'"));
                 $category = '<nobr>'.$subcat['name'].'</nobr> &raquo; '.$category;
                 $cat_id = $subcat['subcatID'];
             }
@@ -756,7 +756,7 @@ else{
     }
  
     // eigende Tickets anzeigen
-   $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets WHERE poster='".$userID."' AND masterticketID='0' AND userarchiv='0' ORDER BY ticketstatus ASC, date DESC");
+   $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter WHERE poster='".$userID."' AND masterticketID='0' AND userarchiv='0' ORDER BY ticketstatus ASC, date DESC");
     if(mysqli_num_rows($ergebnis)) {
  
         $data_array= array();

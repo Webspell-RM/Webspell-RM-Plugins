@@ -1,33 +1,32 @@
 <!-- switchsquads_navi -->
+<div class="container">  
 <div class="featured">
     
-        <div class="col-md-12">
-            <h2 class="text-center">TEAM ROSTER</h2></div>
-                <div class="col-md-12 text-center">THE STARS OF US</div>
+        <div class="col-md-12 text-center">
+            <h3>TEAM ROSTER</h3>
+            THE STARS OF US 
                     <div class="col-md-12 text-center">$icon_small</div> 
-                        
+        </div>                  
     </div>  
     <div class="featured">
         <div class="container">
-                
-
-<script>
-    $BgPics
-    function changeViewedSquad(a){
-        var squads = document.getElementsByClassName("switchsquad");
-        for (var i = 0; i < squads.length; i++) {
-          squads[i].style.display = "none";
-        }
-        document.getElementById("squad_"+a).style.display = "";
-        document.getElementById("switchsquads_bg").style.backgroundImage = "url('./images/squadicons/"+BgPics[a]+"')";
-    }
-    document.getElementById("switchsquads_bg").style.backgroundImage = "url('./images/squadicons/$firstsquad.jpg')";
-</script>
+            <script>
+                $BgPics
+                function changeViewedSquad(a){
+                    var squads = document.getElementsByClassName("switchsquad");
+                    for (var i = 0; i < squads.length; i++) {
+                      squads[i].style.display = "none";
+                    }
+                    document.getElementById("squad_"+a).style.display = "";
+                    document.getElementById("switchsquads_bg").style.backgroundImage = "url('./images/squadicons/"+BgPics[a]+"')";
+                }
+                document.getElementById("switchsquads_bg").style.backgroundImage = "url('./images/squadicons/$firstsquad.jpg')";
+            </script>
 <!-- END -->
 <!-- switchsquads_player -->
-<div class="col box_nickname">
-    $userpic
-</div>                   
+            <div class="col box_nickname">
+                $userpic
+            </div>                   
 <!-- END -->
 <!-- switchsquads_foot -->
         <br>
@@ -37,21 +36,21 @@
 <!-- END -->
 
 <!-- switchsquads_content_title -->
-<div class="container-fluid"> 
-        <div class="col-md-12 text-center"><h2>TEAMS</h2><br>THE STARS OF US</div>                  
-<div class="row">   
+<div class="container"> 
+    <div class="col-md-12 text-center"><h3>TEAMS</h3><br>THE STARS OF US</div>                  
+
 <!-- END -->
 <!-- switchsquads_content_head -->
-<div class="col" id="heading$squadID">
-    <div class="squadpic" style="background-image: url($icon)">
-        <h5 class="mb-0">
-            <a class="btn btn-link" type="button" href="index.php?site=squads&action=show&squadID=$squadID"><h4>$name <small>($anzmembers)</small></h4></a>
-        </h5>
-    </div>
-</div>
+        <div class="" id="heading$squadID">
+            <div class="squadpic" style="background-image: url($icon);margin: 26px -11px 26px -11px;">
+                <h5 class="mb-0">
+                    <a class="btn btn-link" type="button" href="index.php?site=squads&action=show&squadID=$squadID"><h4>$name <small>($anzmembers)</small></h4></a>
+                </h5>
+            </div>
+        </div>
 <!-- END -->
 <!-- switchsquads_content_foot -->
-</div></div>
+</div>
 <!-- END -->
 
 <!-- switchsquads_sc_title -->

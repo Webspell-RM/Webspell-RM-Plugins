@@ -24,146 +24,157 @@
 	}
 </script>
 <div class="card">
-            <div class="card-header">
-                            <i class="bi bi-clipboard-data-fill"></i> $polls</div>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_polls">$polls</a></li>
-                <li class="breadcrumb-item active" aria-current="page">$edit_poll</li>
-                </ol>
-            </nav> 
-                        <div class="card-body">
-
-	<form action="admincenter.php?site=admin_polls" 
-            method="post"
-            enctype="multipart/form-data"
-            onsubmit="return formcheckOnsend('linkname');"
-            role="form"
-            class="form-horizontal">
-		<div class="row">
-		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_title:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-    		<input type="text" class="form-control" id="PollTitle" placeholder="$placeholder_title" name="title" value="$input_title"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_description:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      	  <textarea class="ckeditor" id="ckeditor" name="description" rows="3">$description</textarea></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$endingtime:</label>
-    		<div class="col-sm-2"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="PollEndingDateTime" name="runtime" value="$runtime"> zB: (27.09.2022 12:00)</em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 1:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt1" name="op1" value="$input_o1"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 2:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt2" name="op2" value="$input_o2"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 3:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt3" name="op3" value="$input_o3"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 4:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt4" name="op4" value="$input_o4"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 5:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt5" name="op5" value="$input_o5"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 6:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt6" name="op6" value="$input_o6"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 7:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt7" name="op7" value="$input_o7"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 8:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt8" name="op8" value="$input_o8"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 9:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt9" name="op9" value="$input_o9"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 10:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt10" name="op10" value="$input_o10"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_comments:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<select class="form-select" id="PollComments" name="comments">
-				$comments
-			</select></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_intern:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<select class="form-select" id="PollIntern" name="intern">
-				$intern
-			</select></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$reset_votes:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<select class="form-select" id="PollReset" name="reset">
-				<option value="0">$no</option>
-				<option value="1">$yes</option>
-			</select></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_published:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<select class="form-select" name="published" id="newsPublished">
-      			$published
-      		</select></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-  			<label class="col-sm-2 control-label"></label>
-    		<div class="col-md-10">
-    		<input type="hidden" name="captcha_hash" value="$hash" /><input type="hidden" name="pollID" value="$pollID" />
-			<button class="btn btn-warning" type="submit" name="saveedit"  />$edit_poll</button>
-			</div>
-  		</div>
+	<div class="card-header">
+		<i class="bi bi-clipboard-data-fill"></i> $polls
 	</div>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="admincenter.php?site=admin_polls">$polls</a></li>
+			<li class="breadcrumb-item active" aria-current="page">$edit_poll</li>
+		</ol>
+	</nav>
+	<div class="card-body">
+
+		<form action="admincenter.php?site=admin_polls" method="post" enctype="multipart/form-data"
+			onsubmit="return formcheckOnsend('linkname');" role="form" class="form-horizontal">
+			<div class="row">
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_title:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="PollTitle" placeholder="$placeholder_title"
+									name="title" value="$input_title"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_description:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<textarea class="ckeditor" id="ckeditor" name="description"
+									rows="3">$description</textarea></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$endingtime:</label>
+					<div class="col-sm-2"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="PollEndingDateTime" name="runtime"
+									value="$runtime"> $example: (27.09.2022 12:00)</em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 1:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt1" name="op1"
+									value="$input_o1"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 2:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt2" name="op2"
+									value="$input_o2"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 3:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt3" name="op3"
+									value="$input_o3"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 4:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt4" name="op4"
+									value="$input_o4"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 5:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt5" name="op5"
+									value="$input_o5"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 6:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt6" name="op6"
+									value="$input_o6"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 7:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt7" name="op7"
+									value="$input_o7"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 8:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt8" name="op8"
+									value="$input_o8"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 9:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt9" name="op9"
+									value="$input_o9"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 10:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt10" name="op10"
+									value="$input_o10"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_comments:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<select class="form-select" id="PollComments" name="comments">
+									$comments
+								</select></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_intern:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<select class="form-select" id="PollIntern" name="intern">
+									$intern
+								</select></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$reset_votes:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<select class="form-select" id="PollReset" name="reset">
+									<option value="0">$no</option>
+									<option value="1">$yes</option>
+								</select></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_published:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<select class="form-select" name="published" id="newsPublished">
+									$published
+								</select></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label"></label>
+					<div class="col-md-10">
+						<input type="hidden" name="captcha_hash" value="$hash" /><input type="hidden" name="pollID"
+							value="$pollID" />
+						<button class="btn btn-warning" type="submit" name="saveedit" />$edit_poll</button>
+					</div>
+				</div>
+			</div>
 
 
-	</form>
-</div>
+		</form>
+	</div>
 </div>
 <!-- END -->
 <!-- admin_polls_add -->
@@ -192,183 +203,192 @@
 	}
 </script>
 <div class="card">
-            <div class="card-header">
-                            <i class="bi bi-clipboard-data-fill"></i> $polls</div>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_polls">$polls</a></li>
-                <li class="breadcrumb-item active" aria-current="page">$add_poll</li>
-                </ol>
-            </nav> 
-                        <div class="card-body">
-
-	<form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_polls" onsubmit="return chkFormular();">	
-		<div class="row">
-		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_title:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="PollTitle" placeholder="$placeholder_title" name="title"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_description:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<textarea class="ckeditor" id="ckeditor" name="description" rows="3"></textarea></em></span></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$endingtime:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<input type="text" class="form-control datepicker-time" id="PollEndingDateTime" name="runtime" placeholder="dd.mm.yyyy hh:mm"> zB: (27.09.2022 12:00)</em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 1:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt1" name="op1"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 2:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt2" name="op2"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 3:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt3" name="op3"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 4:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt4" name="op4"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 5:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt5" name="op5"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 6:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt6" name="op6"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 7:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt7" name="op7"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 8:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt8" name="op8"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 9:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt9" name="op9"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$option 10:</label>
-    		<div class="col-sm-8"><span class="text-muted small"><em>
-      		<input type="text" class="form-control" id="opt10" name="op10"></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_comments:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<select class="form-select" id="PollComments" name="comments">
-				$comments
-				</select></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_intern:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<select class="form-select" id="PollIntern" name="intern">
-					<option value="0">$no</option>
-					<option value="1">$yes</option>
-				</select></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-    		<label class="col-sm-2 control-label">$lang_published:</label>
-    		<div class="col-sm-3"><span class="text-muted small"><em>
-      		<select class="form-select" name="published" id="newsPublished">$published</select></em></span>
-    		</div>
-  		</div>
-  		<div class="mb-3 row">
-  			<label class="col-sm-2 control-label"></label>
-    		<div class="col-md-10">
-    		<input type="hidden" name="captcha_hash" value="$hash" />
-			<button class="btn btn-success" type="submit" name="save"  />$add_poll</button>
-			</div>
-  		</div>
+	<div class="card-header">
+		<i class="bi bi-clipboard-data-fill"></i> $polls
 	</div>
-	</form>
-</div>
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="admincenter.php?site=admin_polls">$polls</a></li>
+			<li class="breadcrumb-item active" aria-current="page">$add_poll</li>
+		</ol>
+	</nav>
+	<div class="card-body">
+
+		<form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_polls"
+			onsubmit="return chkFormular();">
+			<div class="row">
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_title:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="PollTitle" placeholder="$placeholder_title"
+									name="title"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_description:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<textarea class="ckeditor" id="ckeditor" name="description"
+									rows="3"></textarea></em></span></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$endingtime:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<input type="text" class="form-control datepicker-time" id="PollEndingDateTime"
+									name="runtime" placeholder="dd.mm.yyyy hh:mm"> $example: (27.09.2022
+								12:00)</em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 1:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt1" name="op1"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 2:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt2" name="op2"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 3:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt3" name="op3"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 4:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt4" name="op4"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 5:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt5" name="op5"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 6:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt6" name="op6"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 7:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt7" name="op7"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 8:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt8" name="op8"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 9:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt9" name="op9"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$option 10:</label>
+					<div class="col-sm-8"><span class="text-muted small"><em>
+								<input type="text" class="form-control" id="opt10" name="op10"></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_comments:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<select class="form-select" id="PollComments" name="comments">
+									$comments
+								</select></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_intern:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<select class="form-select" id="PollIntern" name="intern">
+									<option value="0">$no</option>
+									<option value="1">$yes</option>
+								</select></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label">$lang_published:</label>
+					<div class="col-sm-3"><span class="text-muted small"><em>
+								<select class="form-select" name="published"
+									id="newsPublished">$published</select></em></span>
+					</div>
+				</div>
+				<div class="mb-3 row">
+					<label class="col-sm-2 control-label"></label>
+					<div class="col-md-10">
+						<input type="hidden" name="captcha_hash" value="$hash" />
+						<button class="btn btn-success" type="submit" name="save" />$add_poll</button>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
 </div>
 <!-- END -->
 <!-- admin_polls_head -->
 <div class="card">
-            <div class="card-header">
-                            <i class="bi bi-clipboard-data-fill"></i> $polls</div>
+	<div class="card-header">
+		<i class="bi bi-clipboard-data-fill"></i> $polls
+	</div>
 
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_polls">$polls</a></li>
-                <li class="breadcrumb-item active" aria-current="page">New / Edit</li>
-                </ol>
-            </nav>  
-                        <div class="card-body">
+	<nav aria-label="breadcrumb">
+		<ol class="breadcrumb">
+			<li class="breadcrumb-item"><a href="admincenter.php?site=admin_polls">$polls</a></li>
+			<li class="breadcrumb-item active" aria-current="page">New / Edit</li>
+		</ol>
+	</nav>
+	<div class="card-body">
 
-<div class="mb-3 row row">
-    <label class="col-md-1 control-label">$options:</label>
-    <div class="col-md-8">
-      <a href="admincenter.php?site=admin_polls&amp;action=add" class="btn btn-primary" type="button">$new_poll</a>
-    </div>
-  </div>
+		<div class="mb-3 row row">
+			<label class="col-md-1 control-label">$options:</label>
+			<div class="col-md-8">
+				<a href="admincenter.php?site=admin_polls&amp;action=add" class="btn btn-primary"
+					type="button">$new_poll</a>
+			</div>
+		</div>
 
-<form role="form" method="post" id="post" name="post" action="admincenter.php?site=polls">
-            <table class="table table-bordered table-dynamic">
-                <thead>
-                    <tr>
-                        <th style="width: 10%; padding-left:5px;">$endingtime</th>
-                        <th style="width: 45%; padding-left:5px;">$title</th>
-                        <th style="width: 10%; text-align: center;">$votes</th>
+		<form role="form" method="post" id="post" name="post" action="admincenter.php?site=polls">
+			<table class="table table-bordered table-dynamic">
+				<thead>
+					<tr>
+						<th style="width: 10%; padding-left:5px;">$endingtime</th>
+						<th style="width: 45%; padding-left:5px;">$title</th>
+						<th style="width: 10%; text-align: center;">$votes</th>
 						<th style="width: 10%; text-align: center;">$published:</th>
-                        <th style="width: 25%; text-align: center;">$actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-<!-- END -->
-<!-- admin_polls_content -->
-<tr>
-                        <td>$laufzeit</td>
-                        <td>$title</td>
-                        <td style="text-align: center;">$gesamtstimmen</td>
+						<th style="width: 25%; text-align: center;">$actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<!-- END -->
+					<!-- admin_polls_content -->
+					<tr>
+						<td>$laufzeit</td>
+						<td>$title</td>
+						<td style="text-align: center;">$gesamtstimmen</td>
 						<td style="padding-left:5px; text-align: center;"><strong>$published</strong></td>
-                        <td style="text-align: right;">$actions $button_edit $button_delete</td>
-                    </tr>
-<!-- END -->
-<!-- admin_polls_content-no -->
-<tr>
-                        <td colspan="4">$no_entries</td>
-                    </tr>
-<!-- END -->
-<!-- admin_polls_foot -->
+						<td style="text-align: right;">$actions $button_edit $button_delete</td>
+					</tr>
+					<!-- END -->
+					<!-- admin_polls_content-no -->
+					<tr>
+						<td colspan="4">$no_entries</td>
+					</tr>
+					<!-- END -->
+					<!-- admin_polls_foot -->
 
 				</tbody>
-            </table>
-        </form>
-    </div>
+			</table>
+		</form>
+	</div>
 </div>
 <!-- END -->

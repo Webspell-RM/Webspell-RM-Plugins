@@ -27,71 +27,60 @@
  *                                                                                                           *
  *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
 */
-# Sprachdateien aus dem Plugin-Ordner laden
-	$pm = new plugin_manager(); 
-	$plugin_language = $pm->plugin_language("streams", $plugin_path);
 
-		
-		$data_array = array(); 
-		$data_array['$title'] = $plugin_language[ 'streams' ];
-		$data_array['$subtitle']='Streams';
+// Sprachdateien aus dem Plugin-Ordner laden
+$pm = new plugin_manager(); 
+$plugin_language = $pm->plugin_language("streams", $plugin_path);
 
-		$template = $GLOBALS["_template"]->loadTemplate("streams","title", $data_array, $plugin_path);
-    	echo $template;
+$data_array = array(); 
+$data_array['$title'] = $plugin_language['streams'];
+$data_array['$subtitle'] = 'Streams';
 
-		echo'Stream<br>';
+$template = $GLOBALS["_template"]->loadTemplate("streams", "title", $data_array, $plugin_path);
+echo $template;
 
-		$online = $GLOBALS["_template"]->loadTemplate("streams","row_head", $data_array, $plugin_path);
-		echo $online;
-		
-	$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_streams WHERE displayed = '1' AND provider = '1' ORDER BY `sort`");
-	if (mysqli_num_rows($ergebnis)) {
-		echo'<div class="row">';
-		while ($ds = mysqli_fetch_array($ergebnis)) {
-			$name = $ds['link'];
+echo 'Stream<br>';
 
-			echo'<div class="col">
-			<div data-service="twitch" data-id="channel='.$name.'" data-title="Twitch channel stream" data-widget
-			data-placeholder></div>
-			</div>	';
-		}
-	echo'</div>';
+$online = $GLOBALS["_template"]->loadTemplate("streams", "row_head", $data_array, $plugin_path);
+echo $online;
 
-	} else {
-		echo $plugin_language['no_stream'];
-		echo'<div class="col-md-12"><br></div>';
-	}
+$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_streams WHERE displayed = '1' AND provider = '1' ORDER BY `sort`");
 
-	$online = $GLOBALS["_template"]->loadTemplate("streams","row_foot", $data_array, $plugin_path);
-	echo $online;
+if (mysqli_num_rows($ergebnis)) {
+    while ($ds = mysqli_fetch_array($ergebnis)) {
+        $name = $ds['link'];
+        echo '<div class="col-4" style="padding: 0px;">
+                <div data-service="twitch" data-id="channel='.$name.'" data-title="Twitch channel stream" data-widget data-placeholder></div>
+              </div>';
+    }
+} else {
+    echo $plugin_language['no_stream'];
+    echo '<div class="col-md-12"><br></div>';
+}
 
-	echo'Videos<br>';
-	
-	$online = $GLOBALS["_template"]->loadTemplate("streams","row_head", $data_array, $plugin_path);
-	echo $online;
-		
-	$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_streams WHERE displayed = '1' AND provider = '0' ORDER BY `sort`");
-	if (mysqli_num_rows($ergebnis)) {
-		echo'<div class="row">';
-		while ($ds = mysqli_fetch_array($ergebnis)) {			
-			$name = $ds['link'];
+$online = $GLOBALS["_template"]->loadTemplate("streams", "row_foot", $data_array, $plugin_path);
+echo $online;
 
-			echo'<div class="col">
-			<div data-service="twitch" data-id="video='.$name.'" data-title="Twitch channel stream" data-widget></div>
-			</div>	';
-			
-		}
-	echo'</div>';
-	$online = $GLOBALS["_template"]->loadTemplate("streams","row_foot", $data_array, $plugin_path);
-	echo $online;
+echo 'Videos<br>';
 
-	} else {
-		echo $plugin_language['no_video'];
-	}
+$online = $GLOBALS["_template"]->loadTemplate("streams", "row_head", $data_array, $plugin_path);
+echo $online;
 
-	$online = $GLOBALS["_template"]->loadTemplate("streams","row_foot", $data_array, $plugin_path);
-	echo $online;
+$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_streams WHERE displayed = '1' AND provider = '0' ORDER BY `sort`");
 
- ?>
+if (mysqli_num_rows($ergebnis)) {
+    echo '<div class="row">';
+    while ($ds = mysqli_fetch_array($ergebnis)) {
+        $name = $ds['link'];
+        echo '<div class="col" style="margin-left: -12px; background-color: #fff">
+                <div data-service="twitch" data-id="video='.$name.'" data-title="Twitch channel stream" data-widget></div>
+              </div>';
+    }
+    echo '</div>';
+} else {
+    echo $plugin_language['no_video'];
+}
 
-
+$online = $GLOBALS["_template"]->loadTemplate("streams", "row_foot", $data_array, $plugin_path);
+echo $online;
+?>

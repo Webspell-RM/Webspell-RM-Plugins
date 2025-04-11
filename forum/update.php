@@ -1,99 +1,14 @@
 ﻿<?php
-global $userID,$_database,$add_database_install,$add_database_insert,$add_plugin_manager_two;
-global $str,$str_two,$modulname,$info,$navi_name,$admin_file,$activate,$author,$website,$index_link,$hiddenfiles,$version,$path,$widget_link1,$widget_link2,$widget_link3,$widgetname1,$widgetname2,$widgetname3,$head_activated,$content_head_activated,$content_foot_activated,$head_section_activated,$foot_section_activated,$modul_deactivated,$modul_display,$full_activated,$plugin_settings,$plugin_module,$plugin_widget,$widget1,$widget2,$widget3,$mnavID,$navi_link,$catID,$dashnavi_link,$themes_modulname,$str_two;
-##### Install für Plugin und Module ###################################################################################################
-$str                     =   "Forum";                       // name of the plugin
-$modulname               =   "forum";                       // name to uninstall
-$info                    =   "{[de]}Mit diesem Plugin könnt ihr euch das Forum anzeigen lassen.{[en]}With this plugin you can display the forum.";// description of the plugin
-$navi_name               =   "{[de]}Forum{[en]}Forum{[it]}Forum";// name of the Webside Navigation / Dashboard Navigation
-$admin_file              =   "admin_forum";                 // administration file
-$activate                =   "1";                           // plugin activate 1 yes | 0 no
-$author                  =   "T-Seven";                     // author
-$website                 =   "https://webspell-rm.de";      // authors website
-$index_link              =   "forum,forum_topic";                       // index file (without extension, also no .php)
-$hiddenfiles             =   "";                            // hiddenfiles (background working, no display anywhere)
-$version                 =   "0.2";                         // current version, visit authors website for updates, fixes, ..
-$path                    =   "includes/plugins/forum/";     // plugin files location
-##### Widget Setting ##################################################################################################################
-$widget_link1            =   "widget_forum_sidebar";        // widget_file (visible as module/box)
-$widget_link2            =   "";                            // widget_file (visible as module/box)
-$widget_link3            =   "";                            // widget_file (visible as module/box)
-$widgetname1             =   "Forum Sidebar";               // widget_name (visible as module/box)
-$widgetname2             =   "";                            // widget_name (visible as module/box)
-$widgetname3             =   "";                            // widget_name (visible as module/box)
-##### Modul Setting activate yes/no ###################################################################################################
-$head_activated          =   "0";                           //Modul activate 1 yes | 0 no 
-$content_head_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$content_foot_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$head_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$foot_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$modul_deactivated       =   "0";                           //Modul activate 1 yes | 0 no
-$modul_display           =   "1";                           //Modul activate 1 yes | 0 no
-$full_activated          =   "0";                           //Modul activate 1 yes | 0 no
-$plugin_settings         =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_module           =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_widget           =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$widget1                 =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$widget2                 =   "0";                           //Modulsetting activate 1 yes | 0 no 
-$widget3                 =   "0";                           //Modulsetting activate 1 yes | 0 no 
-##### Navigation Link #################################################################################################################
-$mnavID                  =   "3";                           // navigation category
-$navi_link               =   "forum";                       // navigation link file (index.php?site=...)
-$catID                   =   "7";                           // dashboard_navigation category
-$dashnavi_link           =   "admin_forum";                 // dashboard_navigation link file  (admincenter.php?site==...)
-$themes_modulname        =   "default";
-#######################################################################################################################################
-
-##### Install für Plugin und Module ###################################################################################################
-$str_two                     =   "Forum Topic";             // name of the plugin
-$modulname_two               =   "forum_topic";             // name to uninstall
-$info_two                    =   "Bestandteil vom Forum!!!";// description of the plugin
-$navi_name_two               =   "";                        // name of the Webside Navigation / Dashboard Navigation
-$admin_file_two              =   "";                        // administration file
-$activate_two                =   "1";                       // plugin activate 1 yes | 0 no
-$author_two                  =   "";                        // author
-$website_two                 =   "";                        // authors website
-$index_link_two              =   "";                        // index file (without extension, also no .php)
-$hiddenfiles_two             =   "";                        // hiddenfiles (background working, no display anywhere)
-$version_two                 =   "";                        // current version, visit authors website for updates, fixes, ..
-$path_two                    =   "";                        // plugin files location
-##### Widget Setting ##################################################################################################################
-$widget_link_two1            =   "";                        // widget_file (visible as module/box)
-$widget_link_two2            =   "";                        // widget_file (visible as module/box)
-$widget_link_two3            =   "";                        // widget_file (visible as module/box)
-$widgetname_two1             =   "";                        // widget_name (visible as module/box)
-$widgetname_two2             =   "";                        // widget_name (visible as module/box)
-$widgetname_two3             =   "";                        // widget_name (visible as module/box)
-##### Modul Setting activate yes/no ###################################################################################################
-$head_activated_two          =   "0";                       //Modul activate 1 yes | 0 no 
-$content_head_activated_two  =   "0";                       //Modul activate 1 yes | 0 no 
-$content_foot_activated_two  =   "0";                       //Modul activate 1 yes | 0 no 
-$head_section_activated_two  =   "0";                       //Modul activate 1 yes | 0 no 
-$foot_section_activated_two  =   "0";                       //Modul activate 1 yes | 0 no 
-$modul_deactivated_two       =   "0";                       //Modul activate 1 yes | 0 no
-$modul_display_two           =   "0";                       //Modul activate 1 yes | 0 no
-$full_activated_two          =   "0";                       //Modul activate 1 yes | 0 no
-$plugin_settings_two         =   "0";                       //Modulsetting activate 1 yes | 0 no 
-$plugin_module_two           =   "0";                       //Modulsetting activate 1 yes | 0 no 
-$plugin_widget_two           =   "0";                       //Modulsetting activate 1 yes | 0 no 
-$widget1_two                 =   "0";                       //Modulsetting activate 1 yes | 0 no 
-$widget2_two                 =   "0";                       //Modulsetting activate 1 yes | 0 no 
-$widget3_two                 =   "0";                       //Modulsetting activate 1 yes | 0 no 
-#######################################################################################################################################
-if(!ispageadmin($userID)) { echo ("Access denied!"); return false; }
-$translate = new multiLanguage(detectCurrentLanguage());
-$translate->detectLanguages($str);
-$str = $translate->getTextByLanguage($str);
+global $str,$modulname,$modulname_2,$version;
+$modulname='forum';
+$modulname_2='forum_topic';
+$version='0.2';
+$str='Forum';
 echo "<div class='card'><div class='card-header'>$str Database Updation</div><div class='card-body'>";
 #######################################################################################################################################
-# Versions-Nummer wird upgedatet
-safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname'");
-safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname_two'");
+$transaction = '';
 
-DeleteData("settings_plugins","modulname",$modulname);
-DeleteData("settings_plugins","modulname",$modulname_two);
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_announcements` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_announcements` (
   `announceID` int(11) NOT NULL AUTO_INCREMENT,
   `boardID` int(11) NOT NULL DEFAULT '0',
   `readgrps` text COLLATE utf8_unicode_ci NOT NULL,
@@ -105,8 +20,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_boards` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_boards` (
   `boardID` int(11) NOT NULL AUTO_INCREMENT,
   `category` int(11) NOT NULL DEFAULT '0',
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -120,12 +34,11 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=3
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_forum_boards` (`boardID`, `category`, `name`, `info`, `readgrps`, `writegrps`, `sort`, `topics`, `posts`) VALUES
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_forum_boards` (`boardID`, `category`, `name`, `info`, `readgrps`, `writegrps`, `sort`, `topics`, `posts`) VALUES
 (1, 1, 'Main Board', 'The general public board', '', '', 1, 0, 0),
 (2, 2, 'Main Board', 'The general intern board', '1', '', 2, 0, 0)");
 
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_categories` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_categories` (
   `catID` int(11) NOT NULL AUTO_INCREMENT,
   `readgrps` text COLLATE utf8_unicode_ci NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -135,12 +48,11 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=3
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_forum_categories` (`catID`, `readgrps`, `name`, `info`, `sort`) VALUES 
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_forum_categories` (`catID`, `readgrps`, `name`, `info`, `sort`) VALUES 
 (1, '', 'Public Boards', '', 1),
 (2, '1', 'Intern Boards', '', 2)");
 
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_notify` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_notify` (
   `notifyID` int(11) NOT NULL AUTO_INCREMENT,
   `topicID` int(11) NOT NULL DEFAULT '0',
   `userID` int(11) NOT NULL DEFAULT '0',
@@ -148,7 +60,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_posts` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_posts` (
   `postID` int(11) NOT NULL AUTO_INCREMENT,
   `boardID` int(11) NOT NULL DEFAULT '0',
   `topicID` int(11) NOT NULL DEFAULT '0',
@@ -160,8 +72,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_topics` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_topics` (
   `topicID` int(11) NOT NULL AUTO_INCREMENT,
   `boardID` int(11) NOT NULL DEFAULT '0',
   `icon` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -183,8 +94,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_poll` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_poll` (
   `topicID` int(11) NOT NULL AUTO_INCREMENT,
   `enddate` bigint(20) NOT NULL,
   `poll` int(1) NOT NULL,
@@ -196,10 +106,9 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
   `value5` char(50) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`topicID`)
 ) AUTO_INCREMENT=1
-  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");  
+  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_votes` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_votes` (
   `voteID` int(11) NOT NULL AUTO_INCREMENT,
   `topicID` int(11) NOT NULL DEFAULT '0',
   `userID` int(11) NOT NULL DEFAULT '0',
@@ -210,11 +119,11 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
   `value5` int(1) NOT NULL,
   PRIMARY KEY (`voteID`)
 ) AUTO_INCREMENT=1
-  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci"); 
+  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
 ##################
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_posts_spam` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_posts_spam` (
   `postID` int(11) NOT NULL AUTO_INCREMENT,
   `boardID` int(11) NOT NULL DEFAULT '0',
   `topicID` int(11) NOT NULL DEFAULT '0',
@@ -226,7 +135,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_topics_spam` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_topics_spam` (
   `topicID` int(11) NOT NULL AUTO_INCREMENT,
   `boardID` int(11) NOT NULL,
   `userID` int(11) NOT NULL,
@@ -241,7 +150,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_ranks` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_ranks` (
   `rankID` int(11) NOT NULL AUTO_INCREMENT,
   `rank` varchar(255) NOT NULL default '',
   `pic` varchar(255) NOT NULL default '',
@@ -253,7 +162,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_forum_ranks` (`rankID`, `rank`, `pic`, `postmin`, `postmax`, `special`) VALUES 
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_forum_ranks` (`rankID`, `rank`, `pic`, `postmin`, `postmax`, `special`) VALUES 
   (1, 'Rank 0', 'rank0.png', 0, 9, 0),
   (2, 'Rank 1', 'rank1.png', 10, 29, 0),    
   (3, 'Rank 2', 'rank2.png', 30, 49, 0),
@@ -271,16 +180,16 @@ add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plug
   (15, 'Moderator', 'moderator.png', 0, 0, 1)");
 
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_groups` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_groups` (
   `fgrID` int(11) NOT NULL auto_increment,
   `name` varchar(32) NOT NULL default '0',
   PRIMARY KEY  (`fgrID`)
   ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_forum_groups` ( `fgrID` , `name` ) VALUES ('1', 'Intern board users')");
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_forum_groups` ( `fgrID` , `name` ) VALUES ('1', 'Intern board users')");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_moderators` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_moderators` (
   `modID` int(11) NOT NULL AUTO_INCREMENT,
   `boardID` int(11) NOT NULL DEFAULT '0',
   `userID` int(11) NOT NULL DEFAULT '0',
@@ -288,50 +197,38 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_user_forum_groups` (
-  `usfgID` int(11) NOT NULL AUTO_INCREMENT,
-  `userID` int(11) NOT NULL DEFAULT '0',
-  `1` int(1) NOT NULL,
-  PRIMARY KEY (`usfgID`)
-) AUTO_INCREMENT=2
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_forum_settings_widgets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modulname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `themes_modulname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `widgetname` varchar(255) NOT NULL DEFAULT '',
+  `widgetdatei` varchar(255) NOT NULL DEFAULT '',
+  `activated` int(1) DEFAULT 1,
+  `sort` int(11) DEFAULT 1,
+PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_forum_user_forum_groups` (`usfgID`, `userID`, `1`) VALUES
-(1, 1, 1)");
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_forum_settings_widgets` (`id`, `position`, `modulname`, `themes_modulname`, `widgetname`, `widgetdatei`, `activated`, `sort`) VALUES
+('1', 'navigation_widget', 'navigation', 'default', 'Navigation', 'widget_navigation', 1, 1),
+('2', 'footer_widget', 'footer', 'default', 'Footer Easy', 'widget_footer_easy', 1, 1)");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_user_forum_groups` (
-  `usfgID` int(11) NOT NULL AUTO_INCREMENT,
-  `userID` int(11) NOT NULL DEFAULT '0',
-  `1` int(1) NOT NULL,
-  PRIMARY KEY (`usfgID`)
-) AUTO_INCREMENT=2
-  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
+## SYSTEM #####################################################################################################################################
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_user_forum_groups` (`usfgID`, `userID`, `1`) VALUES
-(1, 1, 1)");
-################ 
+$transaction .= add_insert_plugin("INSERT IGNORE INTO `" . PREFIX . "settings_plugins` (`pluginID`, `name`, `modulname`, `info`, `admin_file`, `activate`, `author`, `website`, `index_link`, `hiddenfiles`, `version`, `path`, `status_display`, `plugin_display`, `widget_display`, `delete_display`, `sidebar`) VALUES
+('', 'Forum', 'forum', '{[de]}Mit diesem Plugin könnt ihr euch das Forum anzeigen lassen.{[en]}With this plugin you can display the forum.', 'admin_forum', 1, 'T-Seven', 'https://webspell-rm.de', 'forum,forum_topic', '', '0.2', 'includes/plugins/forum/', 1, 1, 1, 1, 'deactivated')");
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."settings_module` (`pluginID`, `name`, `modulname`, `themes_modulname`, `activate`, `sidebar`, `head_activated`, `content_head_activated`, `content_foot_activated`, `head_section_activated`, `foot_section_activated`, `modul_display`, `full_activated`, `plugin_settings`, `plugin_module`, `plugin_widget`, `widget1`, `widget2`, `widget3`) VALUES ('', '$str_two', '$modulname_two', 'default', '1', 'activated', '$head_activated_two', '$content_head_activated_two', '$content_foot_activated_two', '$head_section_activated_two', '$foot_section_activated_two', '$modul_display_two', '$full_activated_two', '$plugin_settings_two', '$plugin_module_two', '$plugin_widget_two', '$widget1_two', '$widget2_two', '$widget3_two')");
+$transaction .= add_insert_plugins_widget("INSERT IGNORE INTO `" . PREFIX . "settings_plugins_widget` (`id`, `modulname`, `widgetname`, `widgetdatei`, `area`) VALUES
+('', 'forum', 'Forum Sidebar', 'widget_forum_sidebar', 4)");
 
-add_plugin_manager_two($add_plugin_manager_two = "INSERT IGNORE INTO `".PREFIX."settings_plugins` (`pluginID`, `name`, `modulname`, `info`, `admin_file`, `activate`, `author`, `website`, `index_link`, `hiddenfiles`, `version`, `path`, `widgetname1`, `widgetname2`, `widgetname3`, `widget_link1`, `widget_link2`, `widget_link3`, `modul_display`) VALUES ('', '$str_two', '$modulname_two', '$info_two', '$admin_file_two', '$activate_two', '$author_two', '$website_two', '$index_link_two', '$hiddenfiles_two', '$version_two', '$path_two', '$widgetname_two1', '$widgetname_two2', '$widgetname_two3', '$widget_link_two1', '$widget_link_two2', '$widget_link_two3', '$modul_display_two')");
+## NAVIGATION #####################################################################################################################################
 
-get_add_module_install ();
-get_add_plugin_manager();
-get_add_navigation();
-get_add_dashboard_navigation ();
+$transaction .= add_insert_navi_dashboard("INSERT IGNORE INTO `".PREFIX."navigation_dashboard_links` (`linkID`, `catID`, `name`, `modulname`, `url`, `accesslevel`, `sort`) VALUES
+('', 7, '{[de]}Forum{[en]}Forum{[it]}Forum', 'forum', 'admincenter.php?site=admin_forum', 'page', 1)");
 
-// Löscht die fonts.zip Datei vom Server
-    $datei = '../components/ckeditor/config.js';
-
-    if ( @ unlink ( $datei ) )
-    {
-      echo '<div class="alert alert-success" role="alert">Die Datei ' . $datei . ' wurde erfolgreich gelöscht!</div>';
-    }
-    else
-    {
-      echo '<div class="alert alert-danger" role="alert">Konnte die Datei ' . $datei . ' nicht löschen!</div>';
-    }          
+$transaction .= add_insert_navigation("INSERT IGNORE INTO `".PREFIX."navigation_website_sub` (`snavID`, `mnavID`, `name`, `modulname`, `url`, `sort`, `indropdown`, `themes_modulname`) VALUES
+('', 3, '{[de]}Forum{[en]}Forum{[it]}Forum', 'forum', 'index.php?site=forum', 1, 1, 'default')");
 
 #######################################################################################################################################
 

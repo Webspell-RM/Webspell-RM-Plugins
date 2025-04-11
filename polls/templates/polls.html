@@ -1,62 +1,64 @@
 <!-- polls_title -->
 <div class="head-boxes">
     <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
-    <span class="head-boxes-title">$title</span>
-</h2>
+    <h2 class="head-h2">
+        <span class="head-boxes-title">$title</span>
+    </h2>
     <p class="head-boxes-foot">$subtitle</p>
 </div>
 <!-- END -->
 <!-- polls_head -->
 <div class="card">
-	<div class="card-body">
+    <div class="card-body">
 
-    
 
-    <div class="row">
-        <div class="col-md-8"><h3>$title $isintern</h3>
-            $gesamtstimmen $votes
+
+        <div class="row">
+            <div class="col-md-8">
+                <h3>$title $isintern</h3>
+                $gesamtstimmen $votes
+            </div>
+            <div class="col-md-4 text-right">
+                $time_left: <strong>$timeleft</strong>
+            </div>
         </div>
-        <div class="col-md-4 text-right">
-            $time_left: <strong>$timeleft</strong>
+
+        <hr>
+        <ul class="list-group">
+            <!-- END -->
+            <!-- polls_content -->
+            <li class="list-group-item">
+                <div class="row">
+
+                    <div class="col-md-3">
+                        <p>$option</p>
+                    </div>
+                    <div class="col-md-1">
+                        <p><i class="bi bi-clipboard-data-fill" style="font-size: 2rem;"></i> $stimmen</p>
+                    </div>
+
+                    <div class="col-md-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: $perc%;" aria-valuenow="25"
+                                aria-valuemin="0" aria-valuemax="100">$perc%</div>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+
+            <!-- END -->
+            <!-- polls_foot -->
+        </ul>
+        <div class="row">
+            <div class="col-md-6">
+                <!--$comments-->
+            </div>
+            <div class="col-md-6">
+                <!--$adminactions-->
+            </div>
         </div>
     </div>
-
-<hr>
-<ul class="list-group">
-<!-- END -->
-<!-- polls_content -->
-<li class="list-group-item">
-	 <div class="row">
-        
-	 <div class="col-md-3">
-<p>$option</p>
-</div>
-     <div class="col-md-1">
-<p><i class="bi bi-clipboard-data-fill" style="font-size: 2rem;"></i> $stimmen</p>
-</div>
-
-    <div class="col-md-8">
-        <div class="progress">
-			<div class="progress-bar" role="progressbar" style="width: $perc%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">$perc%</div>
-		</div>
-	</div>
-
-</div>
-</li>	
-
-<!-- END -->
-<!-- polls_foot -->
-</ul>
-<div class="row">
-    <div class="col-md-6">
-        <!--$comments-->
-    </div>
-    <div class="col-md-6">
-        <!--$adminactions-->
-    </div>
-</div>
-</div>
 </div>
 
 <!-- END -->
@@ -67,7 +69,7 @@
         <div class="row">
             <div class="col-12 d-md-none d-md-block p-2">
                 $title / $votes / $endingtime
-            </div>    
+            </div>
             <div class="col-6 d-none d-sm-block p-2">
                 $title
             </div>
@@ -78,27 +80,29 @@
                 $endingtime
             </div>
         </div>
-<!-- END -->
-<!-- polls_all_content -->
+        <!-- END -->
+        <!-- polls_all_content -->
 
         <div class="row border-top">
             <div class="col-sm col-md-6 p-2">
-                <h3><a href="index.php?site=polls&amp;pollID=$pollID">$title</a>  <small>$isintern</small> </h3>$description
+                <h3><a href="index.php?site=polls&amp;pollID=$pollID">$title</a> <small>$isintern</small> </h3>
+                $description
             </div>
             <div class="col-sm col-md-3 p-2">
-                $gesamtstimmen abgegebene Stimmen<br><a  class="btn btn-primary" href="index.php?site=polls&amp;pollID=$pollID">$result</a>
+                $gesamtstimmen $votes_cast<br><a class="btn btn-primary"
+                    href="index.php?site=polls&amp;pollID=$pollID">$result</a>
             </div>
             <div class="col-sm col-md-3 p-2">
                 $timeleft
             </div>
         </div>
-<!-- END -->
-<!-- polls_all_content-no -->
+        <!-- END -->
+        <!-- polls_all_content-no -->
         <!--<div class="alert alert-danger" role="alert">-->
-            $no_entries
+        $no_entries
         <!--</div>-->
-<!-- END -->
-<!-- polls_all_foot -->        
+        <!-- END -->
+        <!-- polls_all_foot -->
     </div>
 </div>
 <!-- END -->
@@ -106,15 +110,15 @@
 <!-- polls_widget_all_head -->
 <div class="card">
     <div class="card-body widget" style="margin: -12px -12px -12px -12px;">
-<!-- END -->
-<!-- polls_widget_all_content -->
+        <!-- END -->
+        <!-- polls_widget_all_content -->
         <div>
             <a href="index.php?site=polls&amp;pollID=$pollID">$title</a><br>
             $votes: <span class="badge bg-secondary" style="margin-bottom: 6px;">$gesamtstimmen</span>
             $timeleft
-        </div>                    
-<!-- END -->
-<!-- polls_widget_all_foot -->
+        </div>
+        <!-- END -->
+        <!-- polls_widget_all_foot -->
     </div>
 </div>
 <!-- END -->

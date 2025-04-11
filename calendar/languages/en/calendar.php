@@ -96,13 +96,5 @@ $language_array = array(
     'close'                     => 'Close',
     'clanwar_to'                => 'Clanwar to',
     'event'                     => 'Event',
-    'training'                  => 'Training',
-    'number_of_players'         => 'Number of players:',
-    'matchtype'                 => 'Matchtype:',
-    'gametype'                  => 'Gametype:',
-    'hello'                     => 'Hello',    
-    'birthday'                  => 'Birthday',
-    'transaction_invalid'       => 'Transaction invalid',
-    
 );
 

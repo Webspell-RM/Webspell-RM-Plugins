@@ -43,8 +43,8 @@ if (isset($_GET[ 'action' ])) {
 if($action=="show"){
 
   $plugin_data= array();
-  $plugin_data['$title']=$plugin_language['server'];
-  $plugin_data['$subtitle']='Game Server';
+  $plugin_data['$title']=$plugin_language['title'];
+  $plugin_data['$subtitle']='Servers on COD:UO v1.51';
 
   $template = $GLOBALS["_template"]->loadTemplate("game_server","head", $plugin_data, $plugin_path);
   echo $template;
@@ -90,7 +90,7 @@ require ("./includes/plugins/game_server/func/lgsl_class.php");
   //------------------------------------------------------------------------------------------------------------//
 
     $output .= "
-    <div style='margin:auto; text-align:center'>
+    <div style='margin-bottom:15px;'>
       <!--<div class='spacer'></div>-->";
 
   //------------------------------------------------------------------------------------------------------------//
@@ -99,49 +99,123 @@ require ("./includes/plugins/game_server/func/lgsl_class.php");
     $c_port = ($server['b']['c_port'] > 1 ? $server['b']['c_port'] : '--');
     $q_port = ($server['b']['q_port'] > 1 ? $server['b']['q_port'] : '--');
 
-    $output .= " <div class='card'>
+  if(file_exists('./includes/plugins/squads/images/games/'.$server['b']['type'].'.jpg')){
+    $gameicon='../includes/plugins/squads/images/games/'.$server['b']['type'].'.jpg';
+  } elseif(file_exists('./includes/plugins/squads/images/games/'.$server['b']['type'].'.jpeg')){
+    $gameicon='../includes/plugins/squads/images/games/'.$server['b']['type'].'.jpeg';
+  } elseif(file_exists('./includes/plugins/squads/images/games/'.$server['b']['type'].'.png')){
+    $gameicon='../includes/plugins/squads/images/games/'.$server['b']['type'].'.png';
+  } elseif(file_exists('./includes/plugins/squads/images/games/'.$server['b']['type'].'.gif')){
+    $gameicon='../includes/plugins/squads/images/games/'.$server['b']['type'].'.gif';
+  } else{
+   $gameicon='../includes/plugins/squads/images/games/no-image.jpg';
+  }
+$output .= "
+
+<style type='text/css'>
+.gametracker {
+    display: block;
+    margin-left: auto;
+    margin-right: auto }
+.table {border-color: #333}    
+</style>
 
 
-
-
-    <div id='servername_{$misc['text_status']}'> <h2>{$server['s']['name']}</h2> </div>
-      <div class='details_info'>
-        <div class='details_info_column'>
-          <a id='gamelink' href='{$misc['software_link']}'>{$lgsl_config['text']['slk']}</a>
-          <div class='details_info_row'>
-            <div class='details_info_scolumn'>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['sts']}:</div><div class='details_info_ceil'>{$lgsl_config['text'][$misc['text_status']]}</div></div>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['adr']}:</div><div class='details_info_ceil'>{$server['b']['ip']}</div></div>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['cpt']}:</div><div class='details_info_ceil'>{$c_port}</div></div>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['qpt']}:</div><div class='details_info_ceil'>{$q_port}</div></div></div>
-            <div class='details_info_scolumn'>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['typ']}:</div><div class='details_info_ceil'>{$server['b']['type']}</div></div>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['gme']}:</div><div class='details_info_ceil'>{$server['s']['game']}</div></div>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['map']}:</div><div class='details_info_ceil'>{$server['s']['map']}</div></div>
-              <div class='details_info_srow'>
-                <div class='details_info_ceil'>{$lgsl_config['text']['plr']}:</div><div class='details_info_ceil'>{$server['s']['players']} / {$server['s']['playersmax']}</div></div>
+      <div class='row'>
+            <div class='col-md-8 text-start'>
+                <h4>{$server['s']['name']}</h4>
             </div>
-          </div>
-          <div class='details_info_row'>
-              {$lgsl_config['text']['lst']}: " . Date($lgsl_config['text']['tzn'], $server['s']['cache_time']) . "
-          </div>
-        </div>
-        <div class='details_info_column zone{$server['o']['zone']}' style='background-image: url({$misc['image_map']});'>
-          <span class='details_location_image' style='background-image: url({$misc['icon_location']});' title='{$misc['text_location']}'></span>
-          <span class='details_password_image zone{$server['o']['zone']}' style='background-image: url({$misc['image_map_password']});' title='{$lgsl_config['text']['map']}: {$server['s']['map']}'></span>
-          <span class='details_game_image' style='background-image: url({$misc['icon_game']});' title='{$misc['text_type_game']}'></span>
-        </div>
+            <div class='col-md-4 text-end'>
+                <small>{$lgsl_config['text']['lst']}: " . Date($lgsl_config['text']['tzn'], $server['s']['cache_time']) . "</small>
+            </div>
       </div>
-        
-      
+
+
+
+      <div class='row' style='margin-bottom:15px;margin-top:15px;'>
+            <div class='col-md-3'>
+                <img class='img-fluid' style='height:200px' src='$gameicon' alt='game'>
+            </div>
+            <div class='col-md-9'>
+
+
+              <div class='details_info'>
+                <div class='details_info_column text-center'>
+                  <a id='gamelink' href='{$misc['software_link']}'>{$lgsl_config['text']['slk']}</a>
+                  <div class='details_info_row'>
+                    <div class='details_info_scolumn'>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['sts']}:</div><div class='details_info_ceil'>{$lgsl_config['text'][$misc['text_status']]}</div></div>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['adr']}:</div><div class='details_info_ceil'>{$server['b']['ip']}</div></div>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['cpt']}:</div><div class='details_info_ceil'>{$c_port}</div></div>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['qpt']}:</div><div class='details_info_ceil'>{$q_port}</div></div></div>
+                    <div class='details_info_scolumn'>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['typ']}:</div><div class='details_info_ceil'>{$server['b']['type']}</div></div>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['gme']}:</div><div class='details_info_ceil'>{$server['s']['game']}</div></div>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['map']}:</div><div class='details_info_ceil'>{$server['s']['map']}</div></div>
+                      <div class='details_info_srow'>
+                        <div class='details_info_ceil'>{$lgsl_config['text']['plr']}:</div><div class='details_info_ceil'>{$server['s']['players']} / {$server['s']['playersmax']}</div></div>
+                    </div>
+                  </div>
+                  
+                </div>
+                <div class='details_info_column zone{$server['o']['zone']}' style='background-image: url({$misc['image_map']});'>
+                  <span class='details_location_image' style='background-image: url({$misc['icon_location']});' title='{$misc['text_location']}'></span>
+                  <span class='details_password_image zone{$server['o']['zone']}' style='background-image: url({$misc['image_map_password']});' title='{$lgsl_config['text']['map']}: {$server['s']['map']}'></span>
+                  <span class='details_game_image' style='background-image: url({$misc['icon_game']});' title='{$misc['text_type_game']}'></span>
+                </div>
+              </div>
+            </div>
       </div>";
+
+
+  //------------------------------------------------------------------------------------------------------------//
+  // SHOW THE PLAYERS
+
+    $output .= "<div class='row'>
+    <div class='ca1rd col-6' id='deta1ils_playerlist'>";
+
+    if (empty($server['p']) || !is_array($server['p'])) {
+      $output .= "<div class='noinfo'>{$lgsl_config['text']['npi']}</div>";
+    } else {
+      $output .= "
+      <table  class='table table-striped'>
+      <thead>
+        <tr>";
+
+        foreach ($fields as $field) {
+          $field = ucfirst($lgsl_config['text'][substr(strtolower($field), 0, 3)]);
+          $output .= "<td> {$field} </td>";
+        }
+
+        $output .= "
+        </tr></thead>
+  <tbody>";
+
+        foreach ($server['p'] as $player_key => $player) {
+          $output .= "
+          <tr>";
+
+          foreach ($fields as $field) {
+            $output .= "<td> {$player[$field]} </td>";
+          }
+
+          $output .= "
+          </tr>";
+        }
+
+      $output .= "
+      </tbody></table>";
+    }
+
+    $output .= "
+    </div>";
 
   //------------------------------------------------------------------------------------------------------------//
 
@@ -195,47 +269,7 @@ require ("./includes/plugins/game_server/func/lgsl_class.php");
       else {$output .= "<div id='invalid_server_id'> Error while trying to display userbar: GD library not loaded (see php.ini) </div>";}
     }
 
-  //------------------------------------------------------------------------------------------------------------//
-  // SHOW THE PLAYERS
-
-    $output .= "
-    <div class='card' id='deta1ils_playerlist'>";
-
-    if (empty($server['p']) || !is_array($server['p'])) {
-      $output .= "<div class='noinfo'>{$lgsl_config['text']['npi']}</div>";
-    } else {
-      $output .= "
-      <table  class='table table-striped'>
-      <thead>
-        <tr>";
-
-        foreach ($fields as $field) {
-          $field = ucfirst($lgsl_config['text'][substr(strtolower($field), 0, 3)]);
-          $output .= "<td> {$field} </td>";
-        }
-
-        $output .= "
-        </tr></thead>
-  <tbody>";
-
-        foreach ($server['p'] as $player_key => $player) {
-          $output .= "
-          <tr>";
-
-          foreach ($fields as $field) {
-            $output .= "<td> {$player[$field]} </td>";
-          }
-
-          $output .= "
-          </tr>";
-        }
-
-      $output .= "
-      </tbody></table>";
-    }
-
-    $output .= "
-    </div>";
+  
 
   //------------------------------------------------------------------------------------------------------------//
 
@@ -247,21 +281,21 @@ require ("./includes/plugins/game_server/func/lgsl_class.php");
     if (empty($server['e']) || !is_array($server['e'])) {
       $output .= "<div class='noinfo'>{$lgsl_config['text']['nei']} </div>";
     } else {
-      $hide_options = count($server['e']) > 40;
+      $hide_options = count($server['e']) > 10;
       if ($hide_options) {
-         $output .= "
+         $output .= "<div class='ca1rd col-6'>
+         
         <details>
-          <summary style='margin-bottom: 12px;'>
-            {$lgsl_config['text']['ctb']}
+          <summary style='margin-bottom: 0px;'>
+          {$lgsl_config['text']['ctb']}<hr>
           </summary>
-          <div>
          ";
       }
-      $output .= "<div class='card'>
-      <table  class='table table-striped'>
+      $output .= "
+      <table class='table table-striped' style='margin-top: -16px;'>
       <thead>
         <tr>
-          <th> {$lgsl_config['text']['ehs']} </th>
+          <th>{$lgsl_config['text']['ehs']} </th>
           <th> {$lgsl_config['text']['ehv']} </th>
         </tr>
         </thead>
@@ -283,8 +317,8 @@ require ("./includes/plugins/game_server/func/lgsl_class.php");
 </table>";
       if ($hide_options) {
         $output .= "
-        </div>
-        </details>";
+       
+        </details> </div>";
       }
     }
 
@@ -293,7 +327,7 @@ require ("./includes/plugins/game_server/func/lgsl_class.php");
     #$output .= "<div class='spacer'></div>";
 
     $output .= "
-    </div>";
+    </div></div>";
   }
   else {
     $output .= "<div id='invalid_server_id'> {$lgsl_config['text']['mid']} </div>";
@@ -315,8 +349,8 @@ if ($lgsl_config['preloader']) {
 
 
   $plugin_data= array();
-  $plugin_data['$title']=$plugin_language['server'];
-  $plugin_data['$subtitle']='Game Server';
+  $plugin_data['$title']=$plugin_language['title'];
+  $plugin_data['$subtitle']='Servers on COD:UO v1.51';
 
   $template = $GLOBALS["_template"]->loadTemplate("game_server","head", $plugin_data, $plugin_path);
   echo $template;
@@ -349,12 +383,13 @@ global $output;
   }
 
   $output .= "
-  <table class='table table-striped'>
+  <table id='plugini' class='table table-striped'>
   <thead>
     <tr>
+    <th class='status_cell'>{$lgsl_config['text']['sts']}:</th>
       <th class='status_cell'>{$lgsl_config['text']['sts']}:</th>
-      <th class='connectlink_cell'>{$lgsl_config['text']['adr']}:</th>
       <th class='servername_cell'>{$lgsl_config['text']['tns']}:</th>
+      <th class='connectlink_cell'>{$lgsl_config['text']['adr']}:</th>
       <th class='map_cell'>{$lgsl_config['text']['map']}:</th>
       <th class='players_cell'>{$lgsl_config['text']['plr']}:</th>
       <th class='details_cell'>{$lgsl_config['text']['dtl']}:</th>
@@ -374,40 +409,51 @@ global $output;
     <tr class='server_{$misc['text_status']}'>
 
       <td class='status_cell'>
+      <img alt='{$misc['name_filtered']}' src='{$misc['icon_game']}' title='{$misc['text_type_game']}' class='game_icon' />
+      </td>
+      <td class='status_cell'>
         <span title='{$lgsl_config['text'][$misc['text_status']]} | {$lgsl_config['text']['lst']}: {$lastupd}' class='status_icon_{$misc['text_status']}'></span>
-        <a href='{$gamelink}'>
+        <!--<a href='{$gamelink}'>
           <img alt='{$misc['name_filtered']}' src='{$misc['icon_game']}' title='{$misc['text_type_game']}' class='game_icon' />
-        </a>
+        </a>-->
+        <img alt='{$misc['text_location']}' src='{$misc['icon_location']}' title='{$misc['text_location']}' class='contry_icon' />
       </td>
 
-      <td title='{$lgsl_config['text']['slk']}' class='connectlink_cell'>
-        <a href='{$misc['software_link']}'>
-          {$misc['connect_filtered']}
-        </a>
-      </td>
-
-      <td title='{$server['s']['name']}' class='servername_cell'>
+      <td >
         <div class='servername_nolink'>
           {$misc['name_filtered']}
         </div>
         <div class='servername_link'>
-          <a href='".lgsl_link($server['b']['ip'], $server['b']['c_port'])."'>
+          <!--<a href='".lgsl_link($server['b']['ip'], $server['b']['c_port'])."'>
             {$misc['name_filtered']}
-          </a>
+          </a>-->
         </div>
       </td>
+
+      <td title='{$lgsl_config['text']['slk']}' class='connectlink_cell'>
+        <!--<a href='{$misc['software_link']}'>-->
+          {$misc['connect_filtered']}
+        <!--</a>-->
+      </td>
+
+      
 
       <td class='map_cell' data-path='{$misc['image_map']}'>
         {$server['s']['map']}
       </td>
 
       <td class='players_cell'>
-        <div class='outer_bar'>
+      <span class='players_numeric'>{$server['s']['players']}/{$server['s']['playersmax']}</span>
+        <!--<div class='outer_bar'>
           <div class='inner_bar' style='width:{$percent}%;'>
-            <span class='players_numeric'>{$server['s']['players']}/{$server['s']['playersmax']}</span>
+            <span class='players_numeric'></span>
             <span class='players_percent{$percent}'>{$percent}%</span>
           </div>
-        </div>
+        </div>-->
+
+        <div class='progress' style='height: 4px;'>
+  <div class='progress-bar inner_bar' role='progressbar' aria-label='Example with label' style='width: {$percent}%;' aria-valuenow='{$percent}' aria-valuemin='0' aria-valuemax='100'></div>
+</div>
       </td>
 
       <td class='details_cell'>";
@@ -415,7 +461,7 @@ global $output;
       if ($lgsl_config['locations']) {
         $output .= "
         <a href='".lgsl_location_link($server['o']['location'])."' target='_blank' class='contry_link'>
-          <img alt='{$misc['text_location']}' src='{$misc['icon_location']}' title='{$misc['text_location']}' class='contry_icon' />
+          <!--<img alt='{$misc['text_location']}' src='{$misc['icon_location']}' title='{$misc['text_location']}' class='contry_icon' />-->
         </a>";
       }
 

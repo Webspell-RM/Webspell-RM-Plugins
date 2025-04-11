@@ -32,11 +32,7 @@
 				"file5": "sponsors/templates/sponsors.html"
 			},
 			{
-				"index": "images",
-				"file1": "sponsors/images/no-image.jpg",
-				"file2": "sponsors/images/widget_sponsors_content_one.jpg",
-				"file3": "sponsors/images/widget_sponsors_content_two.jpg",
-				"file4": "sponsors/images/widget_sponsors_sidebar.jpg"
+				"index": "images"
 			},
 			{
 				"index": "css",

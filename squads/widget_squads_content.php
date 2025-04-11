@@ -28,78 +28,80 @@
 |                       webspell-rm.de                              |
 \__________________________________________________________________*/
 # Sprachdateien aus dem Plugin-Ordner laden
-    $pm = new plugin_manager(); 
-    $plugin_language = $pm->plugin_language("squads", $plugin_path);
+$pm = new plugin_manager();
+$plugin_language = $pm->plugin_language("squads", $plugin_path);
 
-    $data_array['$title']=$plugin_language[ 'title' ];
-    $data_array['$subtitle']='Squads';
+$data_array['$title'] = $plugin_language['title'];
+$data_array['$subtitle'] = 'Squads';
 
-    $template = $GLOBALS["_template"]->loadTemplate("switchsquads","content_title", $data_array, $plugin_path);
-    echo $template;
-
-
-if (isset($_GET[ 'action' ])) {
-        $action = $_GET[ 'action' ];
-    } else {
-        $action = "";
-    }
+$template = $GLOBALS["_template"]->loadTemplate("switchsquads", "content_title", $data_array, $plugin_path);
+echo $template;
 
 
-    if (isset($_POST[ 'squadID' ])) {
-        $onesquadonly = 'WHERE squadID="' . (int)$_POST[ 'squadID' ] . '"';
-        $visible = "block";
-    } elseif (isset($_GET[ 'squadID' ])) {
-        $onesquadonly = 'WHERE squadID="' . (int)$_GET[ 'squadID' ] . '"';
-        $visible = "block";
-    } else {
-        $visible = "none";
-        $onesquadonly = '';
-    }
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+} else {
+    $action = "";
+}
 
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_squads " . $onesquadonly . " ORDER BY sort");
-    if (mysqli_num_rows($ergebnis)) {
-        while ($ds = mysqli_fetch_array($ergebnis)) {
-            $anzmembers = mysqli_num_rows(
-                safe_query(
-                    "SELECT
+
+if (isset($_POST['squadID'])) {
+    $onesquadonly = 'WHERE squadID="' . (int)$_POST['squadID'] . '"';
+    $visible = "block";
+} elseif (isset($_GET['squadID'])) {
+    $onesquadonly = 'WHERE squadID="' . (int)$_GET['squadID'] . '"';
+    $visible = "block";
+} else {
+    $visible = "none";
+    $onesquadonly = '';
+}
+
+$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_squads " . $onesquadonly . " ORDER BY sort");
+if (mysqli_num_rows($ergebnis)) {
+    while ($ds = mysqli_fetch_array($ergebnis)) {
+        $anzmembers = mysqli_num_rows(
+            safe_query(
+                "SELECT
                         sqmID
                     FROM
                         " . PREFIX . "plugins_squads_members
-                    WHERE squadID='" . $ds[ 'squadID' ] . "'"
-                )
-            );
-            
-            $name = '<b>' . $ds[ 'name' ] . '</b>';    
+                    WHERE squadID='" . $ds['squadID'] . "'"
+            )
+        );
 
-            if ($ds[ 'icon' ]) {
-                $icon = '/includes/plugins/squads/images/squadicons/' . $ds[ 'icon' ] . '';
-            } else {
-                $icon = '/includes/plugins/squads/images/squadicons/no-image.jpg';
-            }
-            
-            $squadID = $ds[ 'squadID' ];
+        $name = '<b>' . $ds['name'] . '</b>';
 
-            if ($anzmembers == 1) {
-                $anzmembers = $anzmembers . ' ' . $plugin_language[ 'member' ];
-            } else {
-                $anzmembers = $anzmembers . ' ' . $plugin_language[ 'members' ];
-            }
-
-            $data_array = array();
-            $data_array['$squadID'] = $squadID;
-            $data_array['$icon'] = $icon;
-            $data_array['$name'] = $name;
-            $data_array['$anzmembers'] = $anzmembers;
-            
-
-            $template = $GLOBALS["_template"]->loadTemplate("switchsquads","content_head", $data_array, $plugin_path);
-            echo $template;    
-
+        if ($ds['icon']) {
+            $icon = '/includes/plugins/squads/images/squadicons/' . $ds['icon'] . '';
+        } else {
+            $icon = '/includes/plugins/squads/images/squadicons/no-image.jpg';
         }
+
+        $squadID = $ds['squadID'];
+
+        if ($anzmembers == 1) {
+            $anzmembers = $anzmembers . ' ' . $plugin_language['member'];
+        } else {
+            $anzmembers = $anzmembers . ' ' . $plugin_language['members'];
+        }
+
         $data_array = array();
-        $template = $GLOBALS["_template"]->loadTemplate("switchsquads","content_foot", $data_array, $plugin_path);
-        echo $template;   
-        
-    } else {
-        echo ($plugin_language['no_team']);
+        $data_array['$squadID'] = $squadID;
+        $data_array['$icon'] = $icon;
+        $data_array['$name'] = $name;
+        $data_array['$anzmembers'] = $anzmembers;
+
+
+        $template = $GLOBALS["_template"]->loadTemplate("switchsquads", "content_head", $data_array, $plugin_path);
+        echo $template;
     }
+    $data_array = array();
+    $template = $GLOBALS["_template"]->loadTemplate("switchsquads", "content_foot", $data_array, $plugin_path);
+    echo $template;
+} else {
+
+    $data_array = array();
+    echo ($plugin_language['no_entries']);
+    $template = $GLOBALS["_template"]->loadTemplate("switchsquads", "content_foot", $data_array, $plugin_path);
+    echo $template;
+}

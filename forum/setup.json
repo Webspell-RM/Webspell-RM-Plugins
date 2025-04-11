@@ -60,7 +60,9 @@
 			},
 			{
 				"index": "js",
-				"file1": "forum/js/forum.js"
+				"file1": "forum/js/forum.js",
+				"file2": "forum/js/print.js",
+				"file3": "forum/js/popover.js"
 			}
 
 		]

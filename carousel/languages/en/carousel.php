@@ -48,10 +48,9 @@ $language_array = Array(
   'unsupported_video_type'  => 'The video format is incorrect. Please upload Videos only in *.mp4 and *.mpg formats.',
   'errors_there'            => 'Error',
   'read_more'               => 'Read More',
-  'parallax'                => 'Parallax Headers',
-  'sticky'                  => 'Sticky Headers',
+  'parallax'                => 'Parallax',
+  'sticky'                  => 'Sticky',
   'carousel_overview'       => 'Carousel Overview',
-  'parallax'                => 'Parallax Headers',
   'header'                  => 'Headers',
   'header_upload_info'      => 'Image upload',
   'new_header'              => 'New Header',
@@ -62,5 +61,8 @@ $language_array = Array(
   'no_upload_vid'           => 'No Video Uploaded',
   'carousel_time'           => 'Viewing Time in Sec.',
   'edit_breadcrumb'         => 'Edit Slideshow',
+  'get_started'             => 'Get Started',
+  'sticky_headers_info'     => '<li>You want to use a sticky header</li><li>in the header (above the navigation)?</li><li>You can use this to upload an extra image</li><li>and in a widget shown.</li><li>Select position.</li>',
+  'no_header'               => 'No header image was uploaded'
 );
 

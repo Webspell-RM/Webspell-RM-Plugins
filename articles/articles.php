@@ -115,23 +115,44 @@ if ($action == "show" && is_numeric($_GET[ 'articlecatID' ])) {
 
             $question = $ds[ 'question' ];
             $answer = $ds[ 'answer' ];
-            $date = getformatdatetime($ds[ 'date' ]);
+            $day = date("d", $ds['date']);
+
+            $monate = array(1=>$plugin_language[ 'jan' ],
+                            2=>$plugin_language[ 'feb' ],
+                            3=>$plugin_language[ 'mar' ],
+                            4=>$plugin_language[ 'apr' ],
+                            5=>$plugin_language[ 'mar' ],
+                            6=>$plugin_language[ 'jun' ],
+                            7=>$plugin_language[ 'jul' ],
+                            8=>$plugin_language[ 'aug' ],
+                            9=>$plugin_language[ 'sep' ],
+                           10=>$plugin_language[ 'oct' ],
+                           11=>$plugin_language[ 'nov' ],
+                           12=>$plugin_language[ 'dec' ]);
+
+            $monat = date("n", $ds['date']);
 
             
             $poster = '<a href="index.php?site=profile&amp;id=' . $ds[ 'poster' ] . '">
             <strong>' . getnickname($ds[ 'poster' ]) . '</strong>
         </a>';
 
-            #if (mb_strlen($answer) > $maxarticleschars) {
-            #$answer = mb_substr($answer, 0, $maxarticleschars);
-            #$answer .= '<b class="text-primary">[...]</b><br><div class="text-right"> <a href="index.php?site=articles&action=content&articleID=' . $ds[ 'articleID' ] . '" class="btn btn-primary text-right">READMORE</a></div>';
-            #}
+            $banner=$ds['banner'];
+
+            if($ds['banner']) {
+
+                $image='<img class="card-img img-fluid" style="height: auto;width: 320px;" src="/includes/plugins/articles/images/article/'.$banner.'" alt="">';
+            }
+            else {
+                $image='<div class="py-3 px-4 border-end text-center"><div class="card-img-wrapper overlay-rounded-top">
+              <img class="card-img-top" style="height: 220px;width: auto;" src="/includes/plugins/articles/images/article/no-image.jpg" alt="">
+            </div></div>';
+            }
 
             $maxarticleschars = $dn[ 'articleschars' ];
             if (empty($maxarticleschars)) {
             $maxarticleschars = 200;
             }
-
 
             $translate = new multiLanguage(detectCurrentLanguage());
             $translate->detectLanguages($question);
@@ -149,12 +170,15 @@ if ($action == "show" && is_numeric($_GET[ 'articlecatID' ])) {
 
             $answer = preg_replace("//", "", substr( $answer, 0, $maxarticleschars  ) ) . ' ... <div class="text-end"> <a href="index.php?site=articles&action=watch&articleID=' . $ds[ 'articleID' ] . '" class="btn btn-dark btn-sm">' . $plugin_language[ 'read_more' ] . ' <i class="bi bi-chevron-double-right"></i></a></div>';
                 
-
+            
             $data_array = array();
             $data_array['$question'] = $question;
             $data_array['$answer'] = $answer;
             $data_array['$poster'] = $poster;
             $data_array['$date'] = $date;
+            $data_array['$image'] = $image;
+            $data_array['$day'] = $day;
+            $data_array['$date2'] = $monate[$monat];
             
 
             $data_array['$lang_rating'] = $plugin_language['rating'];
@@ -163,6 +187,8 @@ if ($action == "show" && is_numeric($_GET[ 'articlecatID' ])) {
             $data_array['$link'] = $plugin_language['link'];
             $data_array['$info'] = $plugin_language['info'];
             $data_array['$stand'] = $plugin_language['stand'];
+            $data_array['$by'] = $plugin_language['by'];
+            $data_array['$on'] = $plugin_language['on'];
             
             
             $template = $GLOBALS["_template"]->loadTemplate("articles","details", $data_array, $plugin_path);
@@ -182,8 +208,6 @@ if ($action == "show" && is_numeric($_GET[ 'articlecatID' ])) {
 echo'<br>';
    if(@$pages>1) echo $page_link;
 
-
-#} elseif (isset($_GET[ 'articleID' ])) {
 
 } elseif($action=="watch" && is_numeric($_GET[ 'articleID' ])) {
 
@@ -298,7 +322,17 @@ echo'<br>';
         }
 
         while ($ds = mysqli_fetch_array($ergebnis)) {
-        $views = $ds[ 'views' ];
+
+            $banner=$ds['banner'];
+
+            if($ds['banner']) {
+                $image="/includes/plugins/articles/images/article/".$banner;
+            }
+            else {
+                $image="/includes/plugins/articles/images/no-image.jpg";
+            }
+
+            $views = $ds[ 'views' ];
 
             $question = $ds[ 'question' ];
             $answer = $ds[ 'answer' ];
@@ -306,6 +340,12 @@ echo'<br>';
             
             $poster = '<a href="index.php?site=profile&amp;id=' . $ds[ 'poster' ] . '"><strong>' . getnickname($ds[ 'poster' ]) . '</strong></a>';
             
+            if($ds['url']) {
+                $link = '<a href="' . $ds[ 'url' ] . '" target="_blank">' . $ds[ 'url' ] . '</a>';
+            } else {
+                $link = $plugin_language['no_link'];
+            }
+
             $translate = new multiLanguage(detectCurrentLanguage());
             $translate->detectLanguages($question);
             $question = $translate->getTextByLanguage($question);
@@ -322,11 +362,13 @@ echo'<br>';
             $data_array['$votes'] = $votes;
             $data_array['$rateform'] = $rateform;
             $data_array['$views'] = $views;
+            $data_array['$image'] = $image;
+            $data_array['$link'] = $link;
 
             $data_array['$lang_rating'] = $plugin_language['rating'];
             $data_array['$lang_votes'] = $plugin_language['votes'];
 
-            $data_array['$link'] = $plugin_language['link'];
+            $data_array['$lang_link'] = $plugin_language['link'];
             $data_array['$info'] = $plugin_language['info'];
             $data_array['$stand'] = $plugin_language['stand'];
             $data_array['$lang_views'] = $plugin_language['views'];
@@ -450,11 +492,13 @@ echo'<br>';
                         articlecatID='" . $ds[ 'articlecatID' ] . "'"
                 )
             );
-            $articlecatname =
-                '<a href="index.php?site=articles&amp;action=show&amp;articlecatID=' . $ds[ 'articlecatID' ] . '"><strong style="font-size: 16px">' .
-                $ds[ 'articlecatname' ] . '</strong></a>';
-                
+
             $description = $ds[ 'description' ];
+            $articlecatname =
+                '<li class="nav-item" style="margin: 0 20px 0 20px">
+                    <a data-toggle="tooltip" data-placement="bottom" data-bs-html="true" title="'.$description.'" href="index.php?site=articles&amp;action=show&amp;articlecatID=' . $ds[ 'articlecatID' ] . '"><strong style="font-size: 16px">' . $ds[ 'articlecatname' ] . '</strong></a></li>';    
+                
+            
 
             $data_array = array();
             $data_array['$articlecatname'] = $articlecatname;
@@ -468,6 +512,88 @@ echo'<br>';
 
         $template = $GLOBALS["_template"]->loadTemplate("articles","content_foot", $data_array, $plugin_path);
         echo $template;
+
+       
+        $template = $GLOBALS["_template"]->loadTemplate("articles","content_slider_head", $data_array, $plugin_path);
+        echo $template;                       
+
+    $ergebnis = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles` ORDER BY `date` DESC LIMIT 3");
+    if (mysqli_num_rows($ergebnis)) {
+        $ds = mysqli_fetch_array(
+            safe_query(
+                "SELECT * FROM `" . PREFIX . "plugins_articles`"
+            )
+        );
+
+
+
+
+        while ($ds = mysqli_fetch_array($ergebnis)) {
+
+            $articleID = $ds['articleID'];
+            $date = date("d", $ds['date']);
+
+            $monate = array(1=>$plugin_language[ 'jan' ],
+                            2=>$plugin_language[ 'feb' ],
+                            3=>$plugin_language[ 'mar' ],
+                            4=>$plugin_language[ 'apr' ],
+                            5=>$plugin_language[ 'mar' ],
+                            6=>$plugin_language[ 'jun' ],
+                            7=>$plugin_language[ 'jul' ],
+                            8=>$plugin_language[ 'aug' ],
+                            9=>$plugin_language[ 'sep' ],
+                           10=>$plugin_language[ 'oct' ],
+                           11=>$plugin_language[ 'nov' ],
+                           12=>$plugin_language[ 'dec' ]);
+
+            $monat = date("n", $ds['date']);
+            $banner=$ds['banner'];
+
+            if($ds['banner']) {
+                $image="/includes/plugins/articles/images/article/".$banner;
+            }
+            else {
+                $image="/includes/plugins/articles/images/no-image.jpg";
+            }
+
+            $nickname = getnickname($ds[ 'poster' ]);
+
+            $question = $ds[ 'question' ];
+            $answer = $ds[ 'answer' ];
+
+            $maxblogchars = 20;
+            if(mb_strlen($question)>$maxblogchars) {
+                $question=mb_substr($question, 0, $maxblogchars);
+                $question.='...';
+            }
+            
+            $translate = new multiLanguage(detectCurrentLanguage());
+            $translate->detectLanguages($question);
+            $question = $translate->getTextByLanguage($question);
+            $translate->detectLanguages($answer);
+            $answer = $translate->getTextByLanguage($answer);
+            
+
+            $data_array = array();
+            $data_array['$question'] = $question;
+            $data_array['$answer'] = $answer;
+            $data_array['$date'] = $date;
+            $data_array['$image'] = $image;
+            $data_array['$date'] = $date;
+            $data_array['$date2'] = $monate[$monat];
+            $data_array['$nickname'] = $nickname;
+            $data_array['$articleID'] = $articleID;
+            $data_array['$by'] = $plugin_language['by'];
+            
+            $template = $GLOBALS["_template"]->loadTemplate("articles","content_slider", $data_array, $plugin_path);
+            echo $template;
+        }
+    }
+
+
+        $template = $GLOBALS["_template"]->loadTemplate("articles","content_slider_foot", $data_array, $plugin_path);
+        echo $template;
+                       
                 
     } else {
         

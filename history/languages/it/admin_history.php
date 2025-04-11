@@ -1,22 +1,33 @@
 <?php
 
-$language_array = Array(
+$language_array = array(
 
-
-  'no_history'         =>'<blockquote>Nessuna informazione disponibile al momento</blockquote>',
-  'access_denied'      =>'Accesso negato',
-  'title'              =>'La nostra Storia',
-  'history'            =>'La nostra Storia',
-  'transaction_invalid'=>'ID transazione non valido',
-  'update'             =>'Aggiorna',
-  'you_can_use_html'   =>'È possibile utilizzare i tag HTML',
-  'color'              =>'Colori',
-  'title_head'         =>'Titolo',
-  'info'               =>'<div class="alert alert-warning" role="alert"><b>Applicazione Linguistica:</b><br>Il titolo e il testo devono avere un tag di lingua corrispondente, che assomiglia a questo.<br>{[de]} Überschrift und Text in deutscher Sprache.<br>{[en]} Heading and text in English.<br>{[it]} Intestazione e testo in Italiano.</div>'
+  'history'             => 'Storia',
+  'new_history'         => 'Nuova cronologia',
+  'no_history'          => '<blockquote>nessuna cronologia</blockquote>',
+  'access_denied'       => '<h3>Informazioni</h3><div class="alert alert-danger"><span class="sr-only">Errore:</span><strong>Accesso negato</strong></div >',
+  'actions'             => 'Azioni',
+  'add_history'         => 'Aggiungi cronologia',
+  'back'                => 'Indietro',
+  'delete'              => 'Elimina',
+  'description'         => 'Descrizione',
+  'edit'                => 'Cambia',
+  'edit_history'        => 'Cronologia modifiche',
+  'is_displayed'        => 'Mostrato?',
+  'new_history'         => 'Nuova cronologia',
+  'no'                  => 'No',
+  'no_entries'          => 'Nessuna voce',
+  'really_delete'       => 'Cancellare davvero queste informazioni?',
+  'sort'                => 'Ordinamento',
+  'history_name'        => 'Titolo',
+  'transaction_invalid' => 'ID transazione non valido',
+  'to_sort'             => 'Ordina',
+  'yes'                 => 'Sì',
+  'title'               => 'Storia',
+  'options'             => 'Opzioni',
+  'settings'            => 'Impostazioni cronologia',
+  'max_history'         => 'Cronologia per pagina',
+  'tooltip'             => 'Cronologia massima che può essere visualizzata completamente',
+  'update'              => 'Cambia',
+  'close'               => 'Chiudi',
 );
-
-
-
-
-
-

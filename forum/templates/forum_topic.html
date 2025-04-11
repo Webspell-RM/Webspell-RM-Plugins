@@ -1,163 +1,197 @@
 <!-- forum_topic_head -->
-<div class="card">
- <h4 class="text-center pt-3 pb-2">Thema: $topicname</h4>
+<div class="card-body forum-header">
+    <h4 class="">Topic: $topicname</h4>
+
+
+    <span> <i class="bi bi-person"></i> $poster <i class="bi bi-clock"></i> $date $time</span>
 </div>
+
 <form method="post" name="form" action="index.php?site=forum">
-    <div>
-           
-<!-- END -->
-<!-- forum_topic_title -->
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active" aria-current="page"><a href="index.php?site=forum">$messageboard</a></li>
-  </ol>
-</nav>
-<!-- END -->
-<!-- forum_topic_content -->
-<div class="card">
-   <div class="card-body">
-    <div class="row">
-     <div class="col-md-3 mb-1 mt-1">
-      <div class="text-center pt-4 pl-4 pr-4 pb-2 border border-secondary">$avatar
-       <h6 class="mb-0 mt-2">$username $member</h6>
-       <p class="mb-0 font-weight-bold">$usertype</p>
-       <p class="mb-0">$rang        
-       $specialrang</p>
-       <p class="mb-0">$statuspic</p>
-       <p class="mb-0">$post $posts</p>
-       <p class="mb-0">$pm $email</p>
-       <p class="mb-0"><i class="bi bi-unlock"></i> $registered</p>
-      </div>
-     </div>
-     
-     <div class="col-md-9 grey-forum img-ckeditor text-justify pr-4 mb-1 mt-1"> $message</div>
-    </div>
-    <div class="card-foot">
-     <hr>
-            <div class="row">
-                <div class="col-md-3">
-                    $quote $actions
+
+    <!-- END -->
+    <!-- forum_topic_title -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item active" aria-current="page"><a href="index.php?site=forum">$messageboard</a>
+            </li>
+        </ol>
+    </nav>
+    <!-- END -->
+    <!-- forum_topic_content -->
+    <div class="card-body border-forum-top">
+        <div class="row">
+            <div class="col-md-2 mb-1 mt-1">
+                <div class="text-center pt-4 pl-4 pr-4 pb-2 border-end border-primary p-2 border-opacity-75">
+                    $avatar
+                    <h6 class="mb-0 mt-2">$username $member</h6>
+                    <p class="mb-0">$rang $specialrang</p>
+                    <p class="mb-0">$post $posts</p>
+                    $banned
                 </div>
-                <div class="col-md-7"><small>$signatur</small></div>
-                <div class="col-md-2" style="text-align: right;margin-top: 10px;"><em><i class="bi bi-calendar-plus"></i> $date | $time</em></div>
-            
+            </div>
+            <div class="col-md-10 grey-forum img-ckeditor text-justify pr-4 mb-1 mt-1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <i class="bi bi-calendar-plus"></i> $date | $time
+                    </div>
+                    <div class="col-md-6 text-end" style="margin-top: -10px;">
+                        $quote $actions
+                    </div>
+                </div>
+                <hr>
+                $message
+            </div>
+
+            <hr>
+            <div class="row">
+                <div class="col-md-2">
+                    <!--$quote $actions-->
+                </div>
+                <div class="col-md-10 text-center"><small>$signatur</small></div>
+                <!--<div class="col-md-2" style="text-align: right;margin-top: 10px;"><em><i class="bi bi-calendar-plus"></i> $date | $time</em></div>-->
                 <div class="col-md-9"><small>$forum_thank</small></div>
                 <div class="col-md-3" style="text-align: right;"><em>$danke</em></div>
             </div>
-    </div>
-  </div>
-</div>
-<!-- END -->
-<!-- forum_topic_foot -->
-</div>
-<!-- END -->
-<!-- forum_topic_newtopic_iconlist -->
-<ul class="nav nav-pills nav-justified">
-    <li>
-        <input type="radio" name="icon" value="bi bi-exclamation-triangle"> <i class="bi bi-exclamation-triangle" style="font-size: 2rem;"></i>
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-info-circle"> <i class="bi bi-info-circle" style="font-size: 2rem;"></i>
-
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-question-circle"> <i class="bi bi-question-circle" style="font-size: 2rem;"></i>
-
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-heart"> <i class="bi bi-heart" style="font-size: 2rem;"></i>
-
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-file-check"> <i class="bi bi-file-check" style="font-size: 2rem;"></i>
-
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-lightbulb"> <i class="bi bi-lightbulb" style="font-size: 2rem;"></i>
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-clock"> <i class="bi bi-clock" style="font-size: 2rem;"></i>
-
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-check-circle"> <i class="bi bi-check-circle" style="font-size: 2rem;"></i>
-
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="0"> <i class="" style="font-size: 2rem;"></i>
-        $no_icon
-    </li>
-    </ul>
-<!-- END -->
-<!-- forum_topic_poll_head -->
-<h2>$poll_head</h2>
-
-<div class="card">
-    <div class="card-body">
-        <div class="row" id="ForumVoteIt">
-            <h3>$poll_titel: $title</h3>
         </div>
- 
-<!-- END -->
-<!-- forum_topic_vote -->
+    </div>
+    <!-- END -->
+    <!-- forum_topic_foot -->
 
-        <div class="row">
-            <div class="col-md-5">
-                <ul class="list-groupp list-group-flush">
-                    <li class="list-group text-center">$value </li>
-                </ul>
-            </div> 
-            <div class="col-md-1">
-                <i class="bi bi-bar-chart-fill" style="font-size: 2rem;"></i> $points
+    <!-- END -->
+    <!-- forum_topic_newtopic_iconlist -->
+    <ul class="nav nav-pills nav-justified">
+        <li>
+            <input type="radio" name="icon" value="bi bi-exclamation-triangle"> <i class="bi bi-exclamation-triangle"
+                style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="bi bi-info-circle"> <i class="bi bi-info-circle"
+                style="font-size: 2rem;"></i>
+
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="bi bi-question-circle"> <i class="bi bi-question-circle"
+                style="font-size: 2rem;"></i>
+
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="bi bi-heart"> <i class="bi bi-heart" style="font-size: 2rem;"></i>
+
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="bi bi-file-check"> <i class="bi bi-file-check"
+                style="font-size: 2rem;"></i>
+
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="bi bi-lightbulb"> <i class="bi bi-lightbulb"
+                style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="bi bi-clock"> <i class="bi bi-clock" style="font-size: 2rem;"></i>
+
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="bi bi-check-circle"> <i class="bi bi-check-circle"
+                style="font-size: 2rem;"></i>
+
+        </li>
+        <li style="width:30px"></li>
+        <li>
+            <input type="radio" name="icon" value="0"> <i class="" style="font-size: 2rem;"></i>
+            $no_icon
+        </li>
+    </ul>
+    <!-- END -->
+    <!-- forum_topic_poll_head -->
+    <h2>$poll_head</h2>
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row" id="ForumVoteIt">
+                <h3>$poll_titel: $title</h3>
             </div>
-            <div class="col-md-6">
-                <div class="progress">
-		          <div class="progress-bar" role="progressbar" style="width: $bar%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">$bar%</div>
-		        </div>
-            </div>    
-	    </div>
-<hr>
 
-<!-- END -->
-<!-- forum_topic_poll_vote -->
-<script src="./includes/plugins/forum/js/forum.js"></script>
-<div class="head-boxes">
-<h2 class="head-h2">
-    <span class="head-boxes-title">$poll_head</span>
-</h2>
-</div>
-<div class="card">
-    <div class="card-body" id="ForumVoteIt">
-        <h3>Titel: $title</h3>
-        <hr>
-        <ul class="list-group">
-            <li class="list-group-item">
-                <div class="row">
-                    <div class="col-md-3">
-                        $value1
-            	        $value2
-           	            $value3
-            	        $value4
-            	        $value5
-                    </div>
-                    <div class="col-md-8">
-                        <div>$poll_select</div>
+            <!-- END -->
+            <!-- forum_topic_vote -->
+
+            <div class="row">
+                <div class="col-md-5">
+                    <ul class="list-groupp list-group-flush">
+                        <li class="list-group text-center">$value </li>
+                    </ul>
+                </div>
+                <div class="col-md-1">
+                    <i class="bi bi-bar-chart-fill" style="font-size: 2rem;"></i> $points
+                </div>
+                <div class="col-md-6">
+                    <div class="progress">
+                        <div class="progress-bar" role="progressbar" style="width: $bar%;" aria-valuenow="25"
+                            aria-valuemin="0" aria-valuemax="100">$bar%</div>
                     </div>
                 </div>
-            </li>
-        </ul>
+            </div>
+            <hr>
+            <!-- END -->
+            <!-- forum_topic_vote_foot -->
+        </div>
     </div>
+    <!-- END -->
+    <!-- forum_topic_poll_vote -->
+    <script src="./includes/plugins/forum/js/forum.js"></script>
+    <div class="head-boxes">
+        <h2 class="head-h2">
+            <span class="head-boxes-title">$poll_head</span>
+        </h2>
+    </div>
+    <div class="card">
+        <div class="card-body" id="ForumVoteIt">
+            <h3>$poll_titel: $title</h3>
+            <hr>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-3">
+                            $value1
+                            $value2
+                            $value3
+                            $value4
+                            $value5
+                        </div>
+                        <div class="col-md-8">
+                            <div>$poll_select
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- END -->
+    <!-- forum_topic_poll_foot -->
+
+    </div>
+    <!-- END -->
+
+
+<!-- forum_topic_head_head -->
+
+<!-- END -->
+<!-- forum_topic_head_edit -->
 </div>
 <!-- END -->
-<!-- forum_topic_poll_foot -->
-   </div>
-</div>
+<!-- forum_topic_foot_foot -->
+
+<!-- END -->
+
+<!-- forum_topic_foot_head -->
+
+<div class="card">
 <!-- END -->

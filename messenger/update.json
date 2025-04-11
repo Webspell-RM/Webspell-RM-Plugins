@@ -12,7 +12,6 @@
 			},
 			{
 				"index": "languages",
-				"index": "languages",
 				"file1": "messenger/languages/de/messenger.php",
 				"file2": "messenger/languages/en/messenger.php",
 				"file3": "messenger/languages/it/messenger.php"

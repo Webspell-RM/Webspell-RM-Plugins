@@ -10,44 +10,27 @@
 <!-- articles_category -->
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
-
+  	<li class="breadcrumb-item"><a href="index.php?site=articles">$title_categories</a></li>
 	<li class="breadcrumb-item active" aria-current="page">$title_categories ($anzcats $categories)</li>
   </ol>
 </nav>
 <!-- END -->
 <!-- articles_content_head -->
-<div class="card">
-	<div class="card-body">
-
-<div class="row">
-			<div class="col p-2">
-				$title_categories
-			</div>
-			<div class="col-5 d-none d-sm-block p-2">
-				$article_description
-			</div>
-			<div class="col-4 p-2">
-				$articles_number
-			</div>
-		</div>
+<section id="portfolio" class="portfolio">
+    <div class="container" data-aos="fade-up">
+        <div class="row" data-aos="fade-up" data-aos-delay="100">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul class="nav">
 <!-- END -->
 <!-- articles_content -->
-
-<div class="row border-top">
-			<div class="col p-2">
-				$articlecatname
-			</div>
-			<div class="col-5 d-none d-sm-block p-2">
-				$description
-			</div>
-			<div class="col-4 p-2">
-				($articles: $anzarticles) <i class="bi bi-chevron-double-right"></i>
-			</div>
-		</div>
+    				$articlecatname
 <!-- END -->
 <!-- articles_content_foot -->
-	</div>
-</div>
+				</ul>
+            </div> 
+        </div>
+    </div>
+</section>
 <!-- END -->
 <!-- articles_details_head -->
 <nav aria-label="breadcrumb">
@@ -62,13 +45,21 @@
 
 <!-- END -->
 <!-- articles_details -->
-<div class="card">
-	<div class="card-body">
-		<h4>$question</h4>
-		$answer
-		<hr>
-		<small>$info $poster $stand $date</small>
-	</div>
+<div class="card">  
+    <div class="card-body">
+      	<h3>$question</h3>
+      	$by $poster $on <span class="text-primary mb-0"><b>$day</b></span> $date2
+      	<hr>
+      
+		<div class="row">
+       		<div class="col-lg-4 col-md-6 col-sm-6 border-e1nd py-3 px-4">
+          		$image   
+          	</div>
+          	<div class="col-lg-8 col-md-6 col-sm-6 py-3 px-4">
+            	$answer
+          	</div>
+    	</div>
+  	</div>
 </div>
 <!-- END -->
 <!-- articles_content_details_head -->
@@ -84,7 +75,10 @@
 <div class="card">
 	<div class="card-body">
 		<h4>$question</h4>
+		<img class="img-art" style="height: 350px;width: 100%;" src="$image" alt="">
 		$answer
+		<br><br>
+		$lang_link: $link
 		<hr>
 		<small>($views $lang_views)</small>
 		$lang_rating: $ratingpic ($votes $lang_votes)<br><br>$rateform
@@ -92,6 +86,38 @@
 	</div>
 </div>
 <!-- END -->
+<!-- articles_content_slider_head -->
+<div class="row">
+    <div class="col-sm-12 text-center mb-4">
+        <h2>Artikel</h2>
+    </div> 
+<!-- END -->
+
+<!-- articles_content_slider -->
+	<div class="col-lg-4 col-md-6 col-sm-6">
+        <div class="card card-2">
+            <div class="card-img-wrapper overlay-rounded-top">
+                <img class="card-img-top" style="height: 220px;width: 100%;" src="$image" alt="">
+            </div>
+            <div class="card-body p-0">
+                <div class="d-flex">
+                    <div class="py-3 px-4 border-end text-center">
+                        <h4 class="text-primary mb-0">$date</h4>
+                        <p class="mb-0"></p>$date2
+                    </div>
+                    <div class="p-3">
+    	                <a href="index.php?site=articles&action=watch&articleID=$articleID" class="h5 font-primary">$question</a>
+                        <p>$by $nickname</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>			
+<!-- END -->
+<!-- articles_content_slider_foot -->
+</div>
+<!-- END -->
+
 <!-- articles_content_details_foot -->
 
 <!-- END -->

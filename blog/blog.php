@@ -406,7 +406,7 @@ elseif(isset($_GET['delete'])){
 			else {
 				#$image="";
                 $image='<div class="py-3 px-4 border-end text-center"><div class="card-img-wrapper overlay-rounded-top">
-              <img class="card-img-top"style="height: 220px;width: auto;" src="/includes/plugins/blog/images/no-image.jpg" alt="">
+              <img class="card-img" style="height: 220px;width: auto;" src="/includes/plugins/blog/images/no-image.jpg" alt="">
             </div></div>';
 			}
 

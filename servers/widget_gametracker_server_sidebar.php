@@ -39,31 +39,31 @@
     $template = $GLOBALS["_template"]->loadTemplate("servers","head", $data_array, $plugin_path);
     echo $template;
 
-    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_servers WHERE provider = '0' AND displayed = '1' ORDER BY sort");
+    $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_servers WHERE provider = '0' AND displayed = '1'");
 
   if (mysqli_num_rows($ergebnis)) {
     $template = $GLOBALS["_template"]->loadTemplate("servers","gametracker_head_content", $data_array, $plugin_path);
     echo $template;
-    
+   
     $n = 1;
     while ($ds = mysqli_fetch_array($ergebnis)) {
+        $id=$ds['ip'];
+        $port=$ds['port'];
 
-    $gttsadress=$ds['ip'];
+        if(isset($_COOKIE['im_server'])) {
 
-    if(isset($_COOKIE['im_server'])) {
-
-        $pic='<p align="center"><div class="">
-            <div data-service="server"
-            data-id="'.$gttsadress.'"
-            style="height: 541px;"
-            data-widget></div></div></p>';
+            $pic='<p align="center"><div class="">
+                    <div data-service="server"
+                    data-id="'.$id.':'.$port.'"
+                    style="height: 541px;"
+                    data-widget></div></div></p>';
         } else {
-            $pic = '<div data-service="server" data-id="'.$gttsadress.'" data-width="380" data-title="Gametracker" style="height: 240px; width: 328px;" data-autoscale data-widget></div>';
+            $pic = '<div data-service="server" data-id="'.$id.':'.$port.'" data-width="380" data-title="Gametracker" style="height: 240px; width: 328px;" data-autoscale data-widget></div>';
         }
 
         $data_array = array();
         $data_array['$pic'] = $pic;
-    
+        
         $template = $GLOBALS["_template"]->loadTemplate("servers","gametracker_content", $data_array, $plugin_path);
         echo $template;
         $n++;
@@ -72,7 +72,6 @@
     $template = $GLOBALS["_template"]->loadTemplate("servers","gametracker_foot_content", $data_array, $plugin_path);
     echo $template;  
     
-} else {
-    
+} else {    
     echo $plugin_language['no_server'];
 }

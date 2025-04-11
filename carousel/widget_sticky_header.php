@@ -76,5 +76,5 @@ GLOBAL $theme_name;
             $i++;
         }
     } else {
-        echo $plugin_language['no_header'];
+        echo'<div class="alert alert-danger" role="alert">'.$plugin_language['no_header'].'</div>';
 }

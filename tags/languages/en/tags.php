@@ -36,13 +36,12 @@ $language_array = array(
     'security_code'        => 'Security code',
     'sort_options'         => 'Sorting',
     'start_search'         => 'Start search',
+    'static'               => 'Post',
+    'static_link'          => '<b>Link to a Post</b>',
     'submit'               => 'Submit',
     'text_contains'        => 'Text contains',
     'title_contains'       => 'Title contains',
     'too_short'            => 'Search term too short. At least %min_chars% Characters',
-    'wrong_securitycode'   => 'The security code is incorrect',
     'toptags'              => 'Top Tags',
-    'static'               => 'Beitrag',
-    'static_link'          => '<b>Link zu einem Beitrag</b>',
+    'wrong_securitycode'   => 'The security code is incorrect',
 );
-

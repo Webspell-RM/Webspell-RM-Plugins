@@ -59,6 +59,19 @@ $language_array = Array(
     'link_number'                  =>'Projektanzahl',
     'no_access'                    =>'Keine Zugriffsberechtigung.',
     'no_categories'                =>'<blockquote>keine Kategorien vorhanden</blockquote>',
-    'no_links'                     =>'<blockquote>keine Projekt verfügbar</blockquote>'
+    'no_links'                     =>'<blockquote>keine Projekt verfügbar</blockquote>',
+
+    'jan'                       => 'Januar',
+    'feb'                       => 'Februar',
+    'mar'                       => 'März',
+    'apr'                       => 'April',
+    'may'                       => 'Mai',
+    'jun'                       => 'Juni',
+    'jul'                       => 'Juli',
+    'aug'                       => 'August',
+    'sep'                       => 'September',
+    'oct'                       => 'Oktober',
+    'nov'                       => 'November',
+    'dec'                       => 'Dezember',
 );
 ?>

@@ -1,66 +1,91 @@
 <!-- gallery_head -->
 <div class="head-boxes">
     <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
-    <span class="head-boxes-title">$title</span>
-</h2>
+    <h2 class="head-h2">
+        <span class="head-boxes-title">$title</span>
+    </h2>
     <p class="head-boxes-foot">$subtitle</p>
 </div>
+
 <!-- END -->
 <!-- gallery_gallery_head -->
+
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_gallery</a></li>
-    <li class="breadcrumb-item">$group</li>
-    <li class="breadcrumb-item active" aria-current="page">$title <small>($pics $lang_pictures)</small></li>
-  </ol>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_title</a></li>
+        <li class="breadcrumb-item">$lang_group: $group</li>
+        <li class="breadcrumb-item active" aria-current="page">$lang_gallery: $title <small>($pics
+                $lang_pictures)</small></li>
+    </ol>
 </nav>
 
 <small>$pages $lang_page_s</small>
 
 <!-- Start Slideshow -->
-<div style="text-align: right;margin-top: -28px;"><a class="btn btn-primary"  data-fancybox-trigger="trigger-element-gallery" href="javascript:;" data-type="image"><i class="bi bi-film"></i> $diashow</a>
-</div>
+$diashow
 <!-- End Slideshow -->
- 
-	<div class="card">
+<div class="card">
     <div class="card-body">
-    <div class="card-columns-gal">
 
 
-<!-- END -->
+        <div class="col-12">
+            $lang_description $text
+        </div>
+        <main class="container py-5">
+            <div class="row" data-masonry='{"percentPosition": true }'>
+                <!-- END -->
 
-<!-- gallery_diashow -->
-    <a data-fancybox="trigger-element-gallery" href="$dir">
-    <img class="img-fluid gallery rounded shadow-lg" style="width: 350px;margin: 5px;min-width: 120px;" src="$dir"></a>
-<!-- END -->
+                <!-- gallery_diashow -->
+                <!--<a data-fancybox="trigger-element-gallery" href="$dir">
+    gallery_diashow</a>-->
+                <!-- END -->
 
+                <!-- gallery_showlist_pic -->
 
-<!-- gallery_showlist -->
+                <div class="col-sm-6 col-lg-$gal_img_per_page_row mb-$gal_img_per_page_row ">
+                    <div class="card bildmitbildunterschrift">
+                        <a class="" href="index.php?site=gallery&amp;picID=$picID">
+                            <img class="img-fluid gal1lery" src="$dir" alt="$name">
+                            <span><b>$lang_pic_name:</b> $name<br>
+                                <b>$lang_views:</b> $views / <b>$lang_comments:</b> $comments</span>
+                        </a>
+                    </div>
+                </div>
 
-<div class="col card bildmitbildunterschrift" style="margin: 0px -6px 12px -6px;">
-    <a class="" href="index.php?site=gallery&amp;picID=$picID">
-                                    <img class="img-fluid gallery" src="$dir" alt="$name">
-                                 </a>
-<span><b>$lang_pic_name:</b> $name<br>
-        <b>$lang_views:</b> $views / <b>$lang_comments:</b> $comments</span>
-       
+                <!-- END -->
+
+                <!-- gallery_showlist_video -->
+
+                <div class="col-sm-6 col-lg-$gal_img_per_page_row mb-$gal_img_per_page_row ">
+                    <div class="card bildmitbildunterschrift">
+                        <a href="index.php?site=gallery&amp;picID=$picID">
+                            <img class="card-img-top" src="$preview" alt="$name"
+                                style="border-top-left-radius: 0px;border-top-right-radius: 0px;">
+                            <span><b>$lang_pic_name:</b>
+                                <spam class="text-primary">$name</spam><br>
+                                <b>$lang_views:</b> $views / <b>$lang_comments:</b> $comments
+                            </span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- END -->
+                <!-- gallery_gallery_foot -->
+
+            </div>
+        </main>
+    </div>
 </div>
+$pagelink
 
 <!-- END -->
-<!-- gallery_gallery_foot -->
-</div>
-</div>
 
-</div>$pagelink
-
-<!-- END -->
 <!-- gallery_group_head -->
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_gallery</a></li>
-    <li class="breadcrumb-item active" aria-current="page">$group</li>
-  </ol>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_title</a></li>
+        <li class="breadcrumb-item active" aria-current="page">$lang_group: $group</li>
+    </ol>
 </nav>
 
 
@@ -68,34 +93,66 @@
 <div class="card">
     <div class="card-body">
 
-<div class="card-columns">
-<!-- END -->
-<!-- gallery_user_group_head -->
-<nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_gallery</a></li>
-    <li class="breadcrumb-item active" aria-current="page">$group</li>
-  </ol>
-</nav>
-<!-- END -->
-<!-- gallery_showlist_group -->
+        <main class="container py-5">
+            <div class="row" data-masonry='{"percentPosition": true }'>
+                <!-- END -->
+                <!-- gallery_user_group_head -->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_title</a></li>
+                        <li class="breadcrumb-item" aria-current="page">$lang_category: $group</li>
+                    </ol>
+                </nav>
+                <!-- END -->
+                <!-- gallery_showlist_group_pic -->
 
-<div class="col card bildmitbildunterschrift" style="margin: 0px -5px 10px -5px;">
-    $picture
-<span><b>
-       $gallery
-    </b>
- 
- <b>$lang_pictures:</b> $count<br>
- <b>$lang_date:</b> $date</span>
-       
-</div>
+                <div class="col-sm-6 col-lg-$gallery_per_page_row mb-$gallery_per_page_row">
+                    <div class="card bildmitbildunterschrift">
+                        $picture
+                        <span>
+                            <b>$lang_gallery:</b> $gallery
+                            <b>$lang_pictures:</b> $count<br>
+                            <b>$lang_date:</b> $date
+                        </span>
+                    </div>
+                </div>
 
-<!-- END -->
-<!-- gallery_group_foot -->
-</div>
-</div>
-</div>
+                <!-- END -->
+
+                <!-- gallery_showlist_group_user -->
+
+                <div class="col-sm-6 col-lg-$gallery_per_page_row mb-$gallery_per_page_row">
+                    <div class="card bildmitbildunterschrift">
+                        $picture
+                        <span>$lang_usergallery_by $nickname<br>
+                            <b>$lang_gallery:</b> $gallery
+                            <b>$lang_pictures:</b> $count<br>
+                            <b>$lang_date:</b> $date
+                        </span>
+                    </div>
+                </div>
+
+                <!-- END -->
+
+                <!-- gallery_showlist_group_video -->
+
+                <div class="col-sm-6 col-lg-$gallery_per_page_row mb-$gallery_per_page_row">
+                    <div class="card bildmitbildunterschrift">
+                        $video
+                        <span>
+                            <b>$lang_gallery:</b> $gallery
+                            <b>$lang_videos:</b> $count<br>
+                            <b>$lang_date:</b> $date
+                        </span>
+                    </div>
+                </div>
+
+                <!-- END -->
+
+                <!-- gallery_group_foot -->
+            </div>
+        </main>
+    </div>
 </div>
 $pagelink
 <!-- END -->
@@ -104,91 +161,172 @@ $pagelink
 </div>
 </div>
 <!-- END -->
-<!-- gallery_comments_head -->
+<!-- gallery_comments_head_pic -->
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_gallery</a></li>
-    <li class="breadcrumb-item" aria-current="page">$group</li>
-    <li class="breadcrumb-item" aria-current="page">$gallery</li>
-    <li class="breadcrumb-item active" aria-current="page">$picturename</li>
-  </ol>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_title</a></li>
+        <li class="breadcrumb-item" aria-current="page">$lang_category: $group</li>
+        <li class="breadcrumb-item" aria-current="page">$lang_gallery: $gallery</li>
+        <li class="breadcrumb-item active" aria-current="page">$picturename</li>
+    </ol>
 </nav>
 <div class="card">
     <div class="card-body">
-<!-- END -->
-<!-- gallery_comments_details_header -->
-<div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog mod1al-xl"  style="max-width: 80%;" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h4 class="modal-title" id="image-gallery-title"></h4>
-            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&#10006;</span><span class="sr-only">Close</span>
-            </button>
-            </div>
-            <div class="modal-body">
+        <!-- END -->
+        <!-- gallery_comments_head_video -->
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_title</a></li>
+                <li class="breadcrumb-item" aria-current="page">$lang_category: $group</li>
+                <li class="breadcrumb-item" aria-current="page">$lang_gallery: $gallery</li>
+                <li class="breadcrumb-item active" aria-current="page">$videoname</li>
+            </ol>
+        </nav>
+        <div class="card">
+            <div class="card-body">
+                <!-- END -->
+
+
+                <!-- gallery_comments_details_header -->
+                <div class="modal fade" id="image-gallery" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl" style="max-width: 80%;" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="image-gallery-title"></h4>
+                                <button type="button" class="close" data-dismiss="modal"><span
+                                        aria-hidden="true">&#10006;</span><span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                $pic
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- END -->
+
+                <!-- gallery_comments_pic -->
+
                 $banner
+
+                <div>
+                    <br>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-12">
+                        <h4>$lang_info</h4>
+                    </div>
+
+
+                    <div class="col-md-5 row">
+                        <div class="col-md-5">$lang_pic_name:</div>
+                        <div class="col-md-7">$picturename</div>
+                        <div class="col-md-5">$lang_views:</div>
+                        <div class="col-md-7">$views $lang_views</div>
+                        <div class="col-md-5">$lang_date_uploaded:</div>
+                        <div class="col-md-7">$dateupload</div>
+                        <div><br></div>
+                    </div>
+                    <div class="col-md-5 row">
+                        <div class="col-md-5">$lang_pic_size:</div>
+                        <div class="col-md-7">$xsizex$ysizepx</div>
+                        <div class="col-md-5">$lang_file_size:</div>
+                        <div class="col-md-7">$filesize kByte</div>
+                        <div class="col-md-5"></div>
+                        <div class="col-md-7"></div>
+                        <div><br></div>
+                    </div>
+                    <hr>
+                    <div class="col-md-12">
+                        <h4>$lang_image_description</h4>
+                        <p>$comment</p>
+                    </div>
+                    <hr>
+                    <div class="col-md-12">
+                        <h4>$lang_rating</h4>
+                    </div>
+                    <p>$lang_rating: $ratingpic ($votes $lang_votes)<br>$rateform</p>
+
+                    <div class="col-md-12 text-end">
+                        $adminaction<br><br>
+                    </div>
+
+                    <div class="col-md-6 text-start">
+                        $backward
+                    </div>
+                    <div class="col-md-6 text-end">
+                        $forward
+                    </div>
+
+                </div>
             </div>
-            <div class="modal-footer">
+        </div>
+        <!-- END -->
+
+        <!-- gallery_comments_video -->
+
+        $video
+
+        <div>
+            <br>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12">
+                <h4>$lang_info</h4>
             </div>
+
+
+            <div class="col-md-5 row">
+                <div class="col-md-5">$lang_video_name:</div>
+                <div class="col-md-7">$videoname</div>
+                <div class="col-md-5">$lang_views:</div>
+                <div class="col-md-7">$views $lang_views</div>
+                <div class="col-md-5">$lang_date_uploaded:</div>
+                <div class="col-md-7">$dateupload</div>
+                <div><br></div>
+            </div>
+
+            <hr>
+            <div class="col-md-12">
+                <h4>$lang_video_description</h4>
+                <p>$comment</p>
+            </div>
+            <hr>
+            <div class="col-md-12">
+                <h4>$lang_rating</h4>
+            </div>
+            <p>$lang_rating: $ratingpic ($votes $lang_votes)<br>$rateform</p>
+
+            <div class="col-md-12 text-end">
+                $adminaction<br><br>
+            </div>
+
+            <div class="col-md-6 text-start">
+                $backward
+            </div>
+            <div class="col-md-6 text-end">
+                $forward
+            </div>
+
         </div>
     </div>
 </div>
-
-
 <!-- END -->
 
-<!-- gallery_comments -->
-
-$banner
-
-<div>
-    <br>
-</div>
-
-<div class="row">
-
-    <div class="col-md-12"><h4>$lang_info</h4></div>
-
-
-    <div class="col-md-5 row">
-        <div class="col-md-5">$lang_pic_name:</div><div class="col-md-7">$picturename</div>
-        <div class="col-md-5">$lang_views:</div><div class="col-md-7">$views $lang_views</div>
-        <div class="col-md-5">$lang_date_uploaded:</div><div class="col-md-7">$dateupload</div>
-        <div><br></div>
-    </div>
-    <div class="col-md-5 row">
-        <div class="col-md-5">$lang_pic_size:</div> <div class="col-md-7">$xsizex$ysizepx</div>
-        <div class="col-md-5">$lang_file_size:</div> <div class="col-md-7">$filesize kByte</div>
-        <div class="col-md-5"></div> <div class="col-md-7"></div>
-        <div><br></div>
-    </div>
-<hr>     
-    <div class="col-md-12"><h4>$lang_image_description</h4>
-        <p>$comment</p>
-    </div>    
-<hr> 
-    <div class="col-md-12"><h4>$lang_rating</h4></div>
-    <p>$lang_rating: $ratingpic ($votes $lang_votes)<br>$rateform</p>
-
-<div class="col-md-12 text-end">
-$adminaction<br><br>
-</div>
-
-<div class="col-md-6 text-start">
-     $backward
-</div>
-<div class="col-md-6 text-end">
-$forward
-</div>
-
-</div>
-</div></div>
-<!-- END -->
 <!-- gallery_content_categorys_head -->
 <nav aria-label="breadcrumb">
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_gallery</a></li>
-  </ol>
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="index.php?site=gallery">$lang_title</a></li>
+    </ol>
 </nav>
 
 $usergalleries
@@ -198,23 +336,46 @@ $usergalleries
 <div class="card">
     <div class="card-body">
 
-<b>$lang_category: <a href="index.php?site=gallery&amp;groupID=$groupID">$title</a></b> <small>($gallerys $lang_galleries / $pics $lang_pictures)</small>
-<div class="card-columns">
-<!-- END -->
-<!-- gallery_content_showlist -->
-<div class="col card bildmitbildunterschrift" style="margin: 0px -5px 10px -5px;">
-    $picture
-<span><b>
-       $gallery
-    </b><b>$lang_pictures:</b> $count<br>
- <b>$lang_date:</b> $date</span>
-       
-</div>
+        <!--<b>$lang_category: <a href="index.php?site=gallery&amp;groupID=$groupID">$title</a></b> <small>($gallerys $lang_galleries / $pics $lang_pictures)</small>-->
+        $cat_info_pic / $cat_info_video
 
-<!-- END -->
-<!-- gallery_content_categorys_foot -->
-</div>
-</div>
+        <main class="container py-5">
+            <!--<div class="row" data-masonry='{"percentPosition": true }'>-->
+            <div class="row">
+                <!-- END -->
+                <!-- gallery_content_showlist_pic -->
+
+                <div class="col-sm-6 col-lg-$gallery_per_page_row mb-$gallery_per_page_row">
+                    <div class="card bildmitbildunterschrift">
+                        $picture
+                        <span>
+                            <b>$lang_gallery:</b> $gallery
+                            <b>$lang_pictures:</b> $count<br>
+                            <b>$lang_date:</b> $date
+                        </span>
+                    </div>
+                </div>
+
+                <!-- END -->
+
+                <!-- gallery_content_showlist_video -->
+
+                <div class="col-sm-6 col-lg-$gallery_per_page_row mb-$gallery_per_page_row">
+                    <div class="card bildmitbildunterschrift">
+                        $video
+                        <span>
+                            <b>$lang_gallery:</b> $gallery
+                            <b>$lang_videos:</b> $count<br>
+                            <b>$lang_date:</b> $date
+                        </span>
+                    </div>
+                </div>
+
+                <!-- END -->
+                <!-- gallery_content_categorys_foot -->
+            </div>
+        </main>
+    </div>
 </div>
 
 <!-- END -->
@@ -227,188 +388,241 @@ $usergalleries
     </h4>
 </div>
 <!-- END -->
-<!-- gallery_edit -->
+<!-- gallery_edit_pic -->
 <div class="card">
     <div class="card-body">
 
-<form action="index.php?site=gallery" method="post"
-            enctype="multipart/form-data"
-            onsubmit="return formcheckOnsend('linkname');"
-            role="form"
-            class="form-horizontal">    
-    <table class="table">
-        <tr>
-            <th class="text-center">$lang_edit_picture</th>
-        </tr>
-        <tr>
-                        <td class="text-right">$lang_name:</td>
-                        <td><input class="form-control" name="name" type="text" value="$name" size="35"></td>
-                    </tr>
+        <form action="index.php?site=gallery" method="post" enctype="multipart/form-data"
+            onsubmit="return formcheckOnsend('linkname');" role="form" class="form-horizontal">
+            <table class="table">
+                <tr>
+                    <th colspan="2">$lang_edit_picture</th>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_name:</td>
+                    <td><input class="form-control" name="name" type="text" value="$name" size="35"></td>
+                </tr>
 
-                    <tr>
-                        <td class="text-right">$lang_picture:</td>
-                        <td>$pic</td>
-                    </tr>
+                <tr>
+                    <td class="text-right">$lang_picture:</td>
+                    <td>$pic</td>
+                </tr>
 
-                    <tr>
-                        <td class="text-right">$lang_pic_upload_info:</td>
-                        <td><input class="btn btn-info" name="banner" type="file" size="40" /></td>
-                    </tr>
-                    <tr>
-                        <td class="text-right">$lang_comment:</td>
-                        <td><textarea class="form-control" name="comment" cols="70" rows="2">$comment</textarea></td>
-                    </tr>
-                    <tr>
-                        <td class="text-right">$lang_comments:</td>
-                        <td><select class="form-control" name="comments">$comments</select></td>
-                    </tr>
-                    <tr>
-                        <td class="text-right">$lang_reset_views</td>
-                        <td class="text-left"><input type="checkbox" name="reset" value="1"></td>
-                    </tr>
-                    <tr>
-                        <td class="text-right"><input type="hidden" name="picID" value="$picID"></td>
-                        
-                        <td><button class="btn btn-warning" type="submit" name="saveedit"  />$lang_update_picture</button></td>
-                    </tr>
-    </table>
-</form>
-</div></div>
+                <tr>
+                    <td class="text-right">$lang_pic_upload_info:</td>
+                    <td><input class="btn btn-info" name="banner" type="file" size="40" /></td>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_comment:</td>
+                    <td><textarea class="form-control" name="comment" cols="70" rows="2">$comment</textarea></td>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_comments:</td>
+                    <td><select class="form-control" name="comments">$comments</select></td>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_reset_views</td>
+                    <td class="text-left"><input type="checkbox" name="reset" value="1"></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><input type="hidden" name="picID" value="$picID"></td>
+
+                    <td><button class="btn btn-warning" type="submit"
+                            name="saveedit_pic" />$lang_update_picture</button></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+<!-- END -->
+
+<!-- gallery_edit_video -->
+<div class="card">
+    <div class="card-body">
+
+        <form action="index.php?site=gallery" method="post" enctype="multipart/form-data"
+            onsubmit="return formcheckOnsend('linkname');" role="form" class="form-horizontal">
+            <table class="table">
+                <tr>
+                    <th colspan="2">$lang_edit_video</th>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_name:</td>
+                    <td><input class="form-control" name="name" type="text" value="$name" size="35"></td>
+                </tr>
+
+                <tr>
+                    <td class="text-right">$lang_video:</td>
+                    <td>$video</td>
+                </tr>
+
+                <tr>
+                    <td class="text-right">$lang_youtubecode</td>
+                    <td><input type="text" name="youtube" class="form-control" value="$youtube"></td>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_comment:</td>
+                    <td><textarea class="form-control" name="comment" cols="70" rows="2">$comment</textarea></td>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_comments:</td>
+                    <td><select class="form-control" name="comments">$comments</select></td>
+                </tr>
+                <tr>
+                    <td class="text-right">$lang_reset_views</td>
+                    <td class="text-left"><input type="checkbox" name="reset" value="1"></td>
+                </tr>
+                <tr>
+                    <td class="text-right"><input type="hidden" name="picID" value="$picID"></td>
+
+                    <td><button class="btn btn-warning" type="submit" name="saveedit_video" />$lang_edit_video</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
 <!-- END -->
 <!-- gallery_user_head -->
 <div class="head-boxes">
     <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
-    <span class="head-boxes-title">$title</span>
-</h2>
+    <h2 class="head-h2">
+        <span class="head-boxes-title">$title</span>
+    </h2>
     <p class="head-boxes-foot">$subtitle</p>
 </div>
 <!-- END -->
 <!-- gallery_user_user_head -->
 <div class="card">
     <div class="card-body">
-<div class="row">
+        <div class="row">
 
-    <div class="col-md-6">
-        <a href="index.php?site=usergallery&action=add" class="btn btn-primary">$lang_new_gallery</a>
-    </div>
+            <div class="col-md-6">
+                <a href="index.php?site=usergallery&action=add" class="btn btn-success">$lang_new_gallery</a>
+            </div>
 
-    <div class="col-md-6 text-right">
-        $space_max_in_user
-    </div>
+            <div class="col-md-6 text-right">
+                $space_max_in_user
+            </div>
 
-</div>
+        </div>
 
-<hr>
+        <hr>
 
-<form method="post" name="ws_gallery" action="index.php?site=usergallery">
-    <table class="table">
-        <thead>
-        <tr>
-            <th>$lang_gallery_name</th>
-            <th>$lang_actions</th>
-        </tr>
-        </thead>
-        <tbody>
-<!-- END -->
-<!-- gallery_user_gallery -->
-<tr>
-    <td>
-        <a href="index.php?site=gallery&amp;galleryID=$galleryID"><strong>$name</strong></a>
-    </td>
-    <td>
-        <a href="index.php?site=usergallery&amp;action=upload&amp;upload=form&amp;galleryID=$galleryID"
-            class="btn btn-primary">$lang_add_img</a>
-        <a href="index.php?site=usergallery&amp;action=edit&amp;galleryID=$galleryID"
-            class="btn btn-warning">$lang_edit</a>
-        <input type="button" onclick="MM_confirm(
+        <form method="post" name="ws_gallery" action="index.php?site=usergallery">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>$lang_gallery_name</th>
+                        <th>$lang_actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- END -->
+                    <!-- gallery_user_gallery -->
+                    <tr>
+                        <td>
+                            <a href="index.php?site=gallery&amp;galleryID=$galleryID"><strong>$name</strong></a>
+                        </td>
+                        <td>
+                            <a href="index.php?site=usergallery&amp;action=upload&amp;upload=form&amp;galleryID=$galleryID"
+                                class="btn btn-success">$lang_add_img</a>
+                            <a href="index.php?site=usergallery&amp;action=edit&amp;galleryID=$galleryID"
+                                class="btn btn-warning">$lang_edit</a>
+                            <input type="button" onclick="MM_confirm(
                 '$lang_really_delete_gallery',
-                'index.php?site=usergallery&amp;delete=true&amp;galleryID=$galleryID')"
-            value="$lang_delete" class="btn btn-danger">
-    </td>
-</tr>
-<!-- END -->
-<!-- gallery_user_foot -->
-</tbody></table></form>
-</div></div>
+                'index.php?site=usergallery&amp;delete=true&amp;galleryID=$galleryID')" value="$lang_delete"
+                                class="btn btn-danger">
+                        </td>
+                    </tr>
+                    <!-- END -->
+                    <!-- gallery_user_foot -->
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
 <!-- END -->
 <!-- gallery_user_edit -->
 <div class="card">
     <div class="card-body">
-<form method="post" action="index.php?site=usergallery">
-    <table class="table">
-        <tr>
-            <td>$lang_gallery_name:</td>
-            <td><input type="text" name="name" value="$name" class="form-control"></td>
-        </tr>
-        <tr>
-            <td>$lang_group:</td>
-            <td><i>$lang_user_gallery</i></td>
-        </tr>
-        <tr>
-            <td><input type="hidden" name="galleryID" value="$galleryID"></td>
-            <td><input type="submit" name="saveedit" value="$lang_update" class="btn btn-primary"></td>
-        </tr>
-    </table>
-</form>
-</div></div>
+        <form method="post" action="index.php?site=usergallery">
+            <table class="table">
+                <tr>
+                    <td>$lang_gallery_name:</td>
+                    <td><input type="text" name="name" value="$name" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>$lang_group:</td>
+                    <td><i>$lang_user_gallery</i></td>
+                </tr>
+                <tr>
+                    <td><input type="hidden" name="galleryID" value="$galleryID"></td>
+                    <td><input type="submit" name="saveedit" value="$lang_update" class="btn btn-warning"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
 <!-- END -->
 <!-- gallery_user_add -->
 <div class="card">
     <div class="card-body">
-<form method="post" action="index.php?site=usergallery">
-    <table class="table">
-        <tr>
-            <td>$lang_gallery_name:</td>
-            <td><input type="text" name="name" class="form-control"></td>
-        </tr>
-        <tr>
-            <td>$lang_group:</td>
-            <td><i>$lang_user_gallery</i></td>
-        </tr>
-        <tr>
-            <td>&nbsp;</td>
-            <td><input type="submit" name="save" value="$lang_add_gallery" class="btn btn-primary"></td>
-        </tr>
-    </table>
-</form>
-</div></div>
+        <form method="post" action="index.php?site=usergallery">
+            <table class="table">
+                <tr>
+                    <td>$lang_gallery_name:</td>
+                    <td><input type="text" name="name" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>$lang_group:</td>
+                    <td><i>$lang_user_gallery</i></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>
+                    <td><input type="submit" name="save" value="$lang_add_gallery" class="btn btn-success"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
 <!-- END -->
 <!-- gallery_user_update -->
 <div class="card">
     <div class="card-body">
-<form method="post" action="index.php?site=usergallery" enctype="multipart/form-data">
+        <form method="post" action="index.php?site=usergallery" enctype="multipart/form-data">
 
-    <div class="form-group">
-        <label for="galleryname">$lang_name</label>
-        <input type="text" name="name" id="galleryname" class="form-control">
-    </div>
+            <div class="mb-3">
+                <label for="galleryname">$lang_name</label>
+                <input type="text" name="name" id="galleryname" class="form-control">
+            </div>
 
-    <div class="form-group">
-        <label for="galleryname">$lang_comment</label>
-        <input type="text" name="comment" size="50" maxlength="255" class="form-control">
-    </div>
+            <div class="mb-3">
+                <label for="galleryname">$lang_comment</label>
+                <input type="text" name="comment" size="50" maxlength="255" class="form-control">
+            </div>
 
-    <div class="form-group">
-        <label for="gallerycomments">$lang_visitor_comments</label>
-        <select name="comments" id="gallerycomments" class="form-control">
-            <option value="0">$lang_disable_comments</option>
-            <option value="1">$lang_enable_user_comments</option>
-            <option value="2" selected="selected">$lang_enable_visitor_comments</option>
-        </select>
-    </div>
+            <div class="mb-3">
+                <label for="gallerycomments">$lang_visitor_comments</label>
+                <select name="comments" id="gallerycomments" class="form-select">
+                    <option value="0">$lang_disable_comments</option>
+                    <option value="1">$lang_enable_user_comments</option>
+                    <option value="2" selected="selected">$lang_enable_visitor_comments</option>
+                </select>
+            </div>
 
-    <div class="form-group">
-        <label for="galleryname">$lang_picture</label>
-        <input name="picture" type="file" class="form-control">
-    </div>
+            <div class="mb-3">
+                <label for="galleryname">$lang_picture</label><br>
+                <input name="picture" type="file" class="btn btn-info" size="40">
+            </div>
 
-    <div class="text-right">
-        <input type="hidden" name="galleryID" value="$id">
-        <input type="submit" name="saveform" value="$lang_add_picture" class="btn btn-primary">
+            <div class="text-right">
+                <input type="hidden" name="galleryID" value="$id">
+                <input type="submit" name="saveform" value="$lang_add_picture" class="btn btn-success">
+            </div>
+        </form>
     </div>
-</form>
-</div></div>
+</div>
 
 <!-- END -->
 
@@ -420,24 +634,76 @@ $usergalleries
 </div>-->
 <div class="head-boxes">
     <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
-    <span class="head-boxes-title">$title</span>
-</h2>
+    <h2 class="head-h2">
+        <span class="head-boxes-title">$title</span>
+    </h2>
     <p class="head-boxes-foot">$subtitle</p>
 </div>
 <!-- END -->
 
 <!-- gallery_widget_gallery -->
-<div class="card bildmitbildunterschrift">
+<div class="card bildmitbild1unterschrift">
     $banner
-    <!--<div class="ro1w" style="margin-top: 25px;margin-bottom: 0px;margin-left: 0px;margin-right: 0px">
-        <div class="text-center">
-            $banner
-        </div>
-        <div class="col-md" style="margin-left: 10px;margin-right: 0px">
-            $lang_date: $day$ger_monat $year / $lang_views $views</i><br>
-        <i style="font-size:11px; color:#333; font-weight:bold;">$gallerys $lang_galleries / $pics $lang_pictures</i><br />
-    </div>
-    </div>-->
 </div>
+<!-- END -->
+<!-- gallery_widget_slider -->
+$link
+<!-- END -->
+
+<!-- gallery_portfolio_title_head -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+    <h2 class="head-h2">
+        <span class="head-boxes-title">$title</span>
+    </h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<!-- END -->
+
+<!-- gallery_widget_portfolio_title_head -->
+<div class="portfolio" id="gallery">
+    <div class="container">
+        <div class="portfolio-title text-center">
+            <h3>Our Games</h3>
+        </div>
+        <!-- END -->
+        <!-- gallery_portfolio_cat_all_head -->
+        <section id="portfolio" class="portfolio">
+            <div class="container" data-aos="fade-up">
+                <div class="row" data-aos="fade-up" data-aos-delay="100">
+                    <div class="col-lg-12 d-flex justify-content-center">
+                        <ul id="portfolio-flters">
+                            $allportfoliocatname
+                            <!-- END -->
+
+                            <!-- gallery_portfolio_cat_button -->
+                            $portfoliocatname
+
+                            <!-- END -->
+
+                            <!-- gallery_portfolio_cat_all_foot -->
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- END -->
+
+                <!-- gallery_portfolio_content_head -->
+                <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+                    <!-- END -->
+
+                    <!-- gallery_portfolio_content -->
+                    $banner
+                    <!-- END -->
+
+                    <!-- gallery_portfolio_content_foot -->
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<!-- END -->
+
+<!-- gallery_portfolio_foot -->
+
 <!-- END -->

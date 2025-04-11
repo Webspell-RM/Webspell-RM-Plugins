@@ -1,59 +1,14 @@
 <?php
-global $userID,$_database,$add_database_install,$add_database_insert;
-global $str,$modulname,$info,$navi_name,$admin_file,$activate,$author,$website,$index_link,$hiddenfiles,$version,$path,$widget_link1,$widget_link2,$widget_link3,$widgetname1,$widgetname2,$widgetname3,$head_activated,$content_head_activated,$content_foot_activated,$head_section_activated,$foot_section_activated,$modul_deactivated,$modul_display,$full_activated,$plugin_settings,$plugin_module,$plugin_widget,$widget1,$widget2,$widget3,$mnavID,$navi_link,$catID,$dashnavi_link,$themes_modulname;
-##### Install für Plugin und Module ###################################################################################################
-$str                     =   "{[de]}Slideshow{[en]}Carousel{[it]}Carosello Immagini";                    // name of the plugin
-$modulname               =   "carousel";                    // name to uninstall
-$info                    =   "{[de]}Webspell-RM Carousel ist das leistungsstärkste und benutzerfreundlichste Webspell-RM Carousel-Plugin zum Erstellen schöner Karussells mit Bildern. Mit diesem Plugin können Sie einfach Bilder hochladen und auswählen. Es ist vollständig reaktionsschnell, hochgradig anpassbar und funktioniert reibungslos auf iPhone, iPad, Android, Firefox, Chrome, Safari, Opera und Edge.{[en]}Webspell-RM Carousel is the most powerful and easy-to-use Webspell-RM Carousel plugin to create beautiful carousels with images. With this plugin you can easily upload and select images. It`s fully responsive, highly customizable, and works seamlessly on iPhone, iPad, Android, Firefox, Chrome, Safari, Opera, and Edge.{[it]}Webspell-RM Carousel è il plug-in Webspell-RM Carousel più potente e facile da usare per creare splendidi caroselli con immagini. Con questo plugin puoi caricare e selezionare facilmente le immagini. È completamente reattivo, altamente personalizzabile e funziona perfettamente su iPhone, iPad, Android, Firefox, Chrome, Safari, Opera ed Edge.";   // description of the plugin
-$navi_name               =   "{[de]}Slideshow{[en]}Carousel{[it]}Carosello Immagini";// name of the Webside Navigation / Dashboard Navigation
-$admin_file              =   "admin_carousel";              // administration file
-$activate                =   "1";                           // plugin activate 1 yes | 0 no
-$author                  =   "T-Seven";                     // author
-$website                 =   "https://webspell-rm.de";      // authors website
-$index_link              =   "";                            // index file (without extension, also no .php)
-$hiddenfiles             =   "";                            // hiddenfiles (background working, no display anywhere)
-$version                 =   "0.1";                         // current version, visit authors website for updates, fixes, ..
-$path                    =   "includes/plugins/carousel/";  // plugin files location
-##### Widget Setting ##################################################################################################################
-$widget_link1            =   "widget_carousel_only";        // widget_file (visible as module/box)
-$widget_link2            =   "widget_parallax_header";      // widget_file (visible as module/box)
-$widget_link3            =   "widget_sticky_header";        // widget_file (visible as module/box)
-$widgetname1             =   "Carousel Only";               // widget_name (visible as module/box)
-$widgetname2             =   "Parallax Header";             // widget_name (visible as module/box)
-$widgetname3             =   "Sticky Header";               // widget_name (visible as module/box)
-##### Modul Setting activate yes/no ###################################################################################################
-$head_activated          =   "0";                           //Modul activate 1 yes | 0 no 
-$content_head_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$content_foot_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$head_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$foot_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$modul_deactivated       =   "0";                           //Modul activate 1 yes | 0 no
-$modul_display           =   "1";                           //Modul activate 1 yes | 0 no
-$full_activated          =   "0";                           //Modul activate 1 yes | 0 no
-$plugin_settings         =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_module           =   "0";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_widget           =   "1";                           //Modulsetting activate 1 yes | 0 no
-$widget1                 =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$widget2                 =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$widget3                 =   "1";                           //Modulsetting activate 1 yes | 0 no 
-##### Navigation Link #################################################################################################################
-$mnavID                  =   "";                            // navigation category
-$navi_link               =   "";                            // navigation link file (index.php?site=...)
-$catID                   =   "9";                           // dashboard_navigation category
-$dashnavi_link           =   "admin_carousel";              // dashboard_navigation link file  (admincenter.php?site==...)
-$themes_modulname        =   "default";
-#######################################################################################################################################
-if(!ispageadmin($userID)) { echo ("Access denied!"); return false; }
-$translate = new multiLanguage(detectCurrentLanguage());
-$translate->detectLanguages($str);
-$str = $translate->getTextByLanguage($str);
+global $str,$modulname,$version;
+$modulname='carousel';
+$version='0.3';
+$str='Carusel';
 echo "<div class='card'><div class='card-header'>$str Database Updation</div><div class='card-body'>";
 #######################################################################################################################################
-# Versions-Nummer wird upgedatet
-safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname'");
-            
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel` (
-   `carouselID` int(11) NOT NULL AUTO_INCREMENT,
+$transaction = '';
+
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel` (
+  `carouselID` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   `ani_title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `link` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
@@ -69,7 +24,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=4
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel_parallax` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel_parallax` (
   `parallaxID` int(11) NOT NULL AUTO_INCREMENT,
   `parallax_pic` varchar(255) NOT NULL DEFAULT '',
   `text` varchar(255) NOT NULL,
@@ -77,7 +32,10 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel_sticky` (
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_carousel_parallax` (`parallaxID`, `parallax_pic`, `text`) VALUES
+(1, 'parallax.jpg', 'parallax')");
+
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel_sticky` (
   `stickyID` int(11) NOT NULL AUTO_INCREMENT,
   `sticky_pic` varchar(255) NOT NULL DEFAULT '',
   `title` varchar(255) NOT NULL,
@@ -87,24 +45,55 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel_settings` (
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_carousel_sticky` (`stickyID`, `sticky_pic`, `title`, `description`, `link`) VALUES
+(1, 'sticky.jpg', 'The Best <span>Games</span> Out There', 'The Bootstrap Carousel in Webspell? No way?! Yes we did it!', 'https://www.webspell-rm.de')");
+
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel_agency` (
+  `agencyID` int(11) NOT NULL AUTO_INCREMENT,
+  `agency_pic` varchar(255) NOT NULL DEFAULT '',
+  `title` varchar(255) NOT NULL,
+  `description` varchar(255) NOT NULL,
+  `link` varchar(255) NOT NULL,
+  PRIMARY KEY (`agencyID`)
+) AUTO_INCREMENT=1
+  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
+
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_carousel_agency` (`agencyID`, `agency_pic`, `title`, `description`, `link`) VALUES
+(1, 'agency.jpg', 'The Best <span>Games</span> Out There', 'The Bootstrap Carousel in Webspell? No way?! Yes we did it!', 'https://www.webspell-rm.de')");
+
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_carousel_settings` (
   `carouselID` int(11) NOT NULL AUTO_INCREMENT,
   `carousel_height` varchar(255) NOT NULL DEFAULT '0',
   `parallax_height` varchar(255) NOT NULL DEFAULT '0',
   `sticky_height` varchar(255) NOT NULL DEFAULT '0',
+  `agency_height` varchar(255) NOT NULL DEFAULT '0',
   PRIMARY KEY (`carouselID`)
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_carousel_settings` (`carouselID`, `carousel_height`, `parallax_height`, `sticky_height`) VALUES
-(1, '100vh', '100vh', '100vh')");
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_carousel_settings` (`carouselID`, `carousel_height`, `parallax_height`, `sticky_height`, `agency_height`) VALUES
+(1, '75vh', '75vh', '75vh', '75vh')");
 
-get_add_module_install ();
-get_add_plugin_manager();
-get_add_dashboard_navigation ();
+## SYSTEM #####################################################################################################################################
+
+$transaction .= add_insert_plugin("INSERT IGNORE INTO `" . PREFIX . "settings_plugins` (`pluginID`, `name`, `modulname`, `info`, `admin_file`, `activate`, `author`, `website`, `index_link`, `hiddenfiles`, `version`, `path`, `status_display`, `plugin_display`, `widget_display`, `delete_display`, `sidebar`) VALUES
+('', 'Carousel', 'carousel', '{[de]}Mit diesem Plugin könnt ihr ein Carousel in die Webseite einbinden.{[en]}With this plugin you can integrate a carousel into your website.{[it]}Con questo plugin puoi integrare un carosello nel sito web.', 'admin_carousel', 1, 'T-Seven', 'https://webspell-rm.de', '', '', '0.1', 'includes/plugins/carousel/', 1, 1, 0, 1, 'deactivated')");
+
+$transaction .= add_insert_plugins_widget("INSERT IGNORE INTO `" . PREFIX . "settings_plugins_widget` (`id`, `modulname`, `widgetname`, `widgetdatei`, `area`) VALUES
+('', 'carousel', 'Sticky Header', 'widget_sticky_header', 1),
+
+('', 'carousel', 'Carousel Crossfade', 'widget_carousel_crossfade', 3),
+('', 'carousel', 'Carousel Only', 'widget_carousel_only', 3),
+('', 'carousel', 'Parallax Header', 'widget_parallax_header', 3),
+('', 'carousel', 'Agency Header', 'widget_agency_header', 3)");
+
+## NAVIGATION #####################################################################################################################################
+
+$transaction .= add_insert_navi_dashboard("INSERT IGNORE INTO `".PREFIX."navigation_dashboard_links` (`linkID`, `catID`, `name`, `modulname`, `url`, `accesslevel`, `sort`) VALUES
+('', 9, '{[de]}Carousel{[en]}Carousel{[it]}Carosello Immagini', 'carousel', 'admincenter.php?site=admin_carousel', 'page', 1)");
 
 #######################################################################################################################################
 
 echo "</div></div>";
-    
+  
  ?>

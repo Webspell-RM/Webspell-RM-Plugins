@@ -626,7 +626,7 @@ echo '<form method="post" action="admincenter.php?site=admin_cashbox">';
                 $fontcolor = "text-success";
                 }
 
-                $costs_squad = ' (<strong class="'.$fontcolor.'">' . $costs_squad . '</strong> ???)';
+                $costs_squad = ' (<strong class="'.$fontcolor.'">' . $costs_squad . '</strong>)';
                 $usersquad = $plugin_language[ 'squad' ] . ": " . getsquadname($squadID);
             }
 
@@ -660,6 +660,7 @@ echo '<form method="post" action="admincenter.php?site=admin_cashbox">';
                 $bezahlen = safe_query("SELECT * FROM " . PREFIX . "plugins_cashbox_payed WHERE cashID='$id' AND payed='1' ");
                 $payed = mysqli_num_rows($bezahlen);
                 $konto = $ds[ 'konto' ];
+                $info = $ds[ 'info' ];
 
                 $usage = $ds[ 'usedfor' ];
                 
@@ -670,6 +671,7 @@ echo '<form method="post" action="admincenter.php?site=admin_cashbox">';
                 $data_array['$usercosts'] = $ds['usercosts'];
                 $data_array['$paydate'] = $paydate;
                 $data_array['$konto'] = $konto;
+                $data_array['$info'] = $info;
                 
                 $data_array['$lang_saved_on']=$plugin_language[ 'saved_on' ];
                 $data_array['$lang_total_costs']=$plugin_language[ 'total_costs' ];
@@ -753,11 +755,11 @@ echo '<form method="post" action="admincenter.php?site=admin_cashbox">';
                         }
                         else {
                             if($du['costs']) {
-                                $costs='<strong>' . $du[ 'costs' ] . ' ???</strong>';
+                                $costs='<strong>' . $du[ 'costs' ] . '</strong>';
                                 
                             }
                             else {
-                                $costs='<span class="text-danger">0.00 ???</span>';
+                                $costs='<span class="text-danger">0.00</span>';
                                 
                             }
                             $payment=$costs;
@@ -901,7 +903,7 @@ echo '<div class="mb-3 row">
             $fontcolor = "text-success";
         }
 
-        $costs = ' (<strong class="'.$fontcolor.'">' . $costs . '</strong> ???)';
+        $costs = ' (<strong class="'.$fontcolor.'">' . $costs . '</strong>)';
 
         
 

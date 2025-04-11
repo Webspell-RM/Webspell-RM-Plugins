@@ -25,6 +25,7 @@ $language_array = array(
     'you_are_already_registered'  => 'Du bist schon registriert.',
     'your_mail_adress'            => 'Deine E-Mail Adresse',
     'your_mail_adress_deleted'    => 'Deine E-Mail Adresse wurde aus der Liste entfernt.',
-    'info'                        => '<h2>Abonnieren Sie unseren Newsletter</h2>Mit unseren Newslettern erhalten Sie regelmäßig per E-Mail alle Neuigkeiten der bpb sowie Hinweise zu neuen Produkten und Angeboten.'
+    'info'                        => '<h2>Abonnieren Sie unseren Newsletter</h2>Mit unseren Newslettern erhalten Sie regelmäßig per E-Mail alle Neuigkeiten, sowie Hinweise zu neuen Projekten.',
+    'info_sidebar'                => '<h5>Abonnieren Sie unseren Newsletter</h5>Mit unseren Newslettern erhalten Sie regelmäßig per E-Mail alle Neuigkeiten, sowie Hinweise zu neuen Projekten.'
 );
 

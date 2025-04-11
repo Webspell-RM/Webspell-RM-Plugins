@@ -34,7 +34,9 @@
 			},
 			{
 				"index": "js",
-				"file1": "shoutbox/js/emojionearea.min.js"
+				"file1": "shoutbox/js/a_jquery.min.js",
+				"file2": "shoutbox/js/emojionearea.min.js",
+				"file3": "shoutbox/js/shoutbox_emoji.js"
 			}
 		]
 }

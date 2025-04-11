@@ -131,28 +131,28 @@ if (isset($_POST['save'])) {
 
             $squadID = $id;		
             if(!$_POST['spielart']==""){
-              safe_query("DELETE FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='$squadID'");
+              safe_query("DELETE FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='$squadID'");
               if(is_array($spielart)) {
 	        foreach($spielart as $id) {
-                  safe_query("INSERT INTO ".PREFIX."plugins_fight_us_spieleranzahl (name, clanID) values ('$id','$squadID' ) ");
+                  safe_query("INSERT INTO ".PREFIX."plugins_fightus_spieleranzahl (name, clanID) values ('$id','$squadID' ) ");
 	        }
               }
             }
 	
             if(!$_POST['matchtype']==""){
-              safe_query("DELETE FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='$squadID'");
+              safe_query("DELETE FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID='$squadID'");
               if(is_array($matchtype)) {
                 foreach($matchtype as $id2) {
-                  safe_query("INSERT INTO ".PREFIX."plugins_fight_us_matchtype (name, clanID) values ('$id2','$squadID' ) ");
+                  safe_query("INSERT INTO ".PREFIX."plugins_fightus_matchtype (name, clanID) values ('$id2','$squadID' ) ");
                 }
               }
             }
 	
             if(!$_POST['gametype']==''){
-              safe_query("DELETE FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='$squadID'");
+              safe_query("DELETE FROM ".PREFIX."plugins_fightus_gametype WHERE clanID='$squadID'");
               if(is_array($gametype)) {
                 foreach($gametype as $id1) {
-                  safe_query("INSERT INTO ".PREFIX."plugins_fight_us_gametype (name, clanID) values ('$id1','".$_POST['squadID']."' ) ");
+                  safe_query("INSERT INTO ".PREFIX."plugins_fightus_gametype (name, clanID) values ('$id1','".$_POST['squadID']."' ) ");
                 }
               }
             } 
@@ -265,28 +265,28 @@ if (isset($_POST['saveedit'])) {
 
             $squadID = $_POST['squadID'];		
             if(!$_POST['spielart']==""){
-              safe_query("DELETE FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='$squadID'");
+              safe_query("DELETE FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='$squadID'");
               if(is_array($spielart)) {
 	        foreach($spielart as $id) {
-                  safe_query("INSERT INTO ".PREFIX."plugins_fight_us_spieleranzahl (name, clanID) values ('$id','$squadID' ) ");
+                  safe_query("INSERT INTO ".PREFIX."plugins_fightus_spieleranzahl (name, clanID) values ('$id','$squadID' ) ");
 	        }
               }
             }
 	
             if(!$_POST['matchtype']==""){
-              safe_query("DELETE FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='$squadID'");
+              safe_query("DELETE FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID='$squadID'");
               if(is_array($matchtype)) {
                 foreach($matchtype as $id2) {
-                  safe_query("INSERT INTO ".PREFIX."plugins_fight_us_matchtype (name, clanID) values ('$id2','$squadID' ) ");
+                  safe_query("INSERT INTO ".PREFIX."plugins_fightus_matchtype (name, clanID) values ('$id2','$squadID' ) ");
                 }
               }
             }
 	
             if(!$_POST['gametype']==''){
-              safe_query("DELETE FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='$squadID'");
+              safe_query("DELETE FROM ".PREFIX."plugins_fightus_gametype WHERE clanID='$squadID'");
               if(is_array($gametype)) {
                 foreach($gametype as $id1) {
-                  safe_query("INSERT INTO ".PREFIX."plugins_fight_us_gametype (name, clanID) values ('$id1','".$_POST['squadID']."' ) ");
+                  safe_query("INSERT INTO ".PREFIX."plugins_fightus_gametype (name, clanID) values ('$id1','".$_POST['squadID']."' ) ");
                 }
               }
             } 
@@ -478,7 +478,7 @@ if ($action == "add") {
                   '.$plugin_language['matchtinfo'].'
                   '.$plugin_language['infosmall'].'
                   <select name="matchtype[]" multiple size="10" class="form-control">';
-                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='' ORDER by name");
+                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID='' ORDER by name");
                     while($dmz = mysqli_fetch_array($erb)) {
                       echo'<option value="'.$dmz['name'].'">'.$dmz['name'].'</option>';
                     }
@@ -488,7 +488,7 @@ if ($action == "add") {
                   '.$plugin_language['gametinfo'].'
                   '.$plugin_language['infosmall'].'
                   <select name="gametype[]" multiple size="10" class="form-control">';
-                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID=''");
+                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE clanID=''");
                     while($dmz=mysqli_fetch_array($erb)) {
                       echo'<option value="'.$dmz['name'].'">'.$dmz['name'].'</option>';  
                     }
@@ -498,7 +498,7 @@ if ($action == "add") {
                   '.$plugin_language['spieltinfo'].'
                   '.$plugin_language['infosmall'].'
                   <select name="spielart[]" multiple size="10" class="form-control">';
-                    $erg = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='' ORDER by name");
+                    $erg = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='' ORDER by name");
                     while($dmz = mysqli_fetch_array($erg)) {
                       echo'<option value="'.$dmz['name'].'">'.$dmz['name'].'</option>';  
                     }
@@ -658,9 +658,9 @@ if ($action == "add") {
                   '.$plugin_language['matchtinfo'].'
                   '.$plugin_language['infosmall'].'
                   <select name="matchtype[]" multiple size="10" class="form-control">';
-                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID=''");
+                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID=''");
                     while($dmz = mysqli_fetch_array($erb)) {
-                      $get = mysqli_num_rows(safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='".$squadID."' AND name='".$dmz['name']."'"));
+                      $get = mysqli_num_rows(safe_query("SELECT * FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID='".$squadID."' AND name='".$dmz['name']."'"));
                       if($get) echo'<option value="'.$dmz['name'].'" selected="selected">'.$dmz['name'].'</option>';
                       else echo'<option value="'.$dmz['name'].'">'.$dmz['name'].'</option>';
                     }
@@ -670,10 +670,10 @@ if ($action == "add") {
                   '.$plugin_language['gametinfo'].'
                   '.$plugin_language['infosmall'].'
                   <select name="gametype[]" multiple size="10" class="form-control">';
-                    $get = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='".$squadID."'"));
-                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID=''");
+                    $get = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE clanID='".$squadID."'"));
+                    $erb = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE clanID=''");
                     while($dmz = mysqli_fetch_array($erb)) {
-                      $get = mysqli_num_rows(safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='".$squadID."' AND name='".$dmz['name']."'"));
+                      $get = mysqli_num_rows(safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE clanID='".$squadID."' AND name='".$dmz['name']."'"));
                       if($get) echo'<option value="'.$dmz['name'].'" selected="selected">'.$dmz['name'].'</option>';
                       else echo'<option value="'.$dmz['name'].'">'.$dmz['name'].'</option>';  
                     }
@@ -683,10 +683,10 @@ if ($action == "add") {
                   '.$plugin_language['spieltinfo'].'
                   '.$plugin_language['infosmall'].'
                   <select name="spielart[]" multiple size="10" class="form-control">';
-                    $get = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='".$squadID."'"));
-                    $erg = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='' ORDER by name");
+                    $get = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='".$squadID."'"));
+                    $erg = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='' ORDER by name");
                     while($dmz = mysqli_fetch_array($erg)) {
-                      $get = mysqli_num_rows(safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='".$squadID."' AND name='".$dmz['name']."'"));
+                      $get = mysqli_num_rows(safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='".$squadID."' AND name='".$dmz['name']."'"));
                       if($get) echo'<option value="'.$dmz['name'].'" selected="selected">'.$dmz['name'].'</option>';
                       else echo'<option value="'.$dmz['name'].'">'.$dmz['name'].'</option>';  
                     }
@@ -861,7 +861,7 @@ if(isset($_POST['fightus_gametype_save'])) {
   if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
     safe_query("
       INSERT INTO 
-        ".PREFIX."plugins_fight_us_gametype ( 
+        ".PREFIX."plugins_fightus_gametype ( 
           name,
           abkuerzung 
         ) values ( 
@@ -879,7 +879,7 @@ elseif(isset($_POST['fightus_gametype_saveedit'])) {
   if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
     if(intval($_POST['gametypeID'])){
       safe_query("
-        UPDATE ".PREFIX."plugins_fight_us_gametype SET 
+        UPDATE ".PREFIX."plugins_fightus_gametype SET 
           name='".mysqli_real_escape_string($_database, $_POST['name'])."',
           abkuerzung='".mysqli_real_escape_string($_database, $_POST['abkuerzung'])."' 
         WHERE 
@@ -897,7 +897,7 @@ elseif(isset($_GET['fightus_gametype_delete'])) {
   $CAPCLASS = new \webspell\Captcha;
   if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
     if(intval($_GET['gametypeID'])){
-      safe_query("DELETE FROM ".PREFIX."plugins_fight_us_gametype WHERE gametypeID='".intval($_GET['gametypeID'])."'");
+      safe_query("DELETE FROM ".PREFIX."plugins_fightus_gametype WHERE gametypeID='".intval($_GET['gametypeID'])."'");
       header("Location: admincenter.php?site=admin_fightus&action=admin_fightus_gametype");
     }else{
 
@@ -950,7 +950,7 @@ elseif($getaction == 'admin_fightus_gametype_edit') {
     $hash = $CAPCLASS->getHash();
 
     $gametypeID =  intval($_GET['gametypeID']);
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE gametypeID='".$gametypeID."'");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE gametypeID='".$gametypeID."'");
     $ds=mysqli_fetch_array($ergebnis);
     
     echo'
@@ -1012,7 +1012,7 @@ $plugin_language = $pm->plugin_language("admin_fightus", $plugin_path);
           <tbody>
   ';
 
-  $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='0' ORDER BY name");
+  $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE clanID='0' ORDER BY name");
   while($ds=mysqli_fetch_array($ergebnis)) {
     $CAPCLASS = new \webspell\Captcha;
     $CAPCLASS->createTransaction();
@@ -1078,7 +1078,7 @@ if(isset($_POST['fightus_maps_save'])) {
   if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
     $name = $_POST['name'];
     $error_true='';
-    $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_maps WHERE name = '".$name."' ");
+    $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_maps WHERE name = '".$name."' ");
     $num = mysqli_num_rows($ergebnis);
     if($num) $error_true[]='<div>'.$plugin_language['duplimap'].'</div>';
 
@@ -1107,7 +1107,7 @@ if(isset($_POST['fightus_maps_save'])) {
 
       ';
     } else {
-      safe_query("INSERT INTO ".PREFIX."plugins_fight_us_maps ( name ) values( '".$name."')");
+      safe_query("INSERT INTO ".PREFIX."plugins_fightus_maps ( name ) values( '".$name."')");
       $id=mysqli_insert_id($_database);
       header("Location: admincenter.php?site=admin_fightus&action=admin_fightus_maps");
     }
@@ -1120,7 +1120,7 @@ if(isset($_POST['fightus_maps_save'])) {
     if(intval($_POST['mapID'])){
       $name = $_POST['name'];
       safe_query("
-        UPDATE ".PREFIX."plugins_fight_us_maps SET 
+        UPDATE ".PREFIX."plugins_fightus_maps SET 
           name='".mysqli_escape_string($_database, $_POST['name'])."'
         WHERE 
           mapID='".intval($_POST['mapID'])."'
@@ -1136,7 +1136,7 @@ elseif(isset($_GET['fightus_maps_delete'])) {
   $CAPCLASS = new \webspell\Captcha;
   if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
     if(intval($_GET['mapID'])){
-      safe_query("DELETE FROM ".PREFIX."plugins_fight_us_maps WHERE mapID='".$_GET['mapID']."'");
+      safe_query("DELETE FROM ".PREFIX."plugins_fightus_maps WHERE mapID='".$_GET['mapID']."'");
       header("Location: admincenter.php?site=admin_fightus&action=admin_fightus_maps");
     }
   } else {
@@ -1178,7 +1178,7 @@ elseif(isset($_GET['fightus_maps_delete'])) {
     $hash = $CAPCLASS->getHash();
 
     $mapID=intval($_GET['mapID']);
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_maps WHERE mapID='".$mapID."'");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_maps WHERE mapID='".$mapID."'");
     $ds=mysqli_fetch_array($ergebnis);
     echo'
       <form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_fightus&action=admin_fightus_maps_edit">
@@ -1223,7 +1223,7 @@ elseif(isset($_GET['fightus_maps_delete'])) {
     <br /><br />'; 
           echo'<a type="button" class="btn btn-primary" href="admincenter.php?site=admin_fightus&action=admin_fightus_maps_add">'.$plugin_language['map'].' '.$plugin_language['add'].'</a><br /><br />';
 
-          $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_maps");
+          $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_maps");
   if(mysqli_num_rows($ergebnis)){
           echo'<table class="table table-striped">
             <thead>
@@ -1294,7 +1294,7 @@ if(isset($_POST['fightus_matchtype_save'])) {
   if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
     safe_query("
       INSERT INTO 
-        ".PREFIX."plugins_fight_us_matchtype ( 
+        ".PREFIX."plugins_fightus_matchtype ( 
           name
         ) values ( 
           '".mysqli_real_escape_string($_database, $_POST['name'])."'
@@ -1310,7 +1310,7 @@ elseif(isset($_POST['fightus_matchtype_saveedit'])) {
   if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
     if(intval($_POST['matchtypeID'])){
       safe_query("
-        UPDATE ".PREFIX."plugins_fight_us_matchtype SET 
+        UPDATE ".PREFIX."plugins_fightus_matchtype SET 
           name='".mysqli_real_escape_string($_database, $_POST['name'])."' 
         WHERE 
           matchtypeID='".intval($_POST['matchtypeID'])."'
@@ -1327,7 +1327,7 @@ elseif(isset($_GET['fightus_matchtype_delete'])) {
   $CAPCLASS = new \webspell\Captcha;
   if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
     if(intval($_GET['matchtypeID'])){
-      safe_query("DELETE FROM ".PREFIX."plugins_fight_us_matchtype WHERE matchtypeID='".intval($_GET['matchtypeID'])."'");
+      safe_query("DELETE FROM ".PREFIX."plugins_fightus_matchtype WHERE matchtypeID='".intval($_GET['matchtypeID'])."'");
       header("Location: admincenter.php?site=admin_fightus&action=admin_fightus_matchtype");
     }else{
 
@@ -1374,7 +1374,7 @@ elseif($getaction == 'admin_fightus_matchtype_edit') {
     $hash = $CAPCLASS->getHash();
 
     $matchtypeID =  intval($_GET['matchtypeID']);
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE matchtypeID='".$matchtypeID."'");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_matchtype WHERE matchtypeID='".$matchtypeID."'");
     $ds=mysqli_fetch_array($ergebnis);
     
     echo'
@@ -1427,7 +1427,7 @@ elseif($getaction == 'admin_fightus_matchtype_edit') {
           <tbody>
   ';
 
-  $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='0' ORDER BY name");
+  $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID='0' ORDER BY name");
   while($ds=mysqli_fetch_array($ergebnis)) {
     $CAPCLASS = new \webspell\Captcha;
     $CAPCLASS->createTransaction();
@@ -1492,7 +1492,7 @@ if(isset($_POST['fightus_spieleranzahl_save'])) {
   if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
     safe_query("
       INSERT INTO 
-        ".PREFIX."plugins_fight_us_spieleranzahl ( 
+        ".PREFIX."plugins_fightus_spieleranzahl ( 
           name
         ) values ( 
           '".mysqli_real_escape_string($_database, $_POST['name'])."'
@@ -1508,7 +1508,7 @@ elseif(isset($_POST['fightus_spieleranzahl_saveedit'])) {
   if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
     if(intval($_POST['spielanzahlID'])){
       safe_query("
-        UPDATE ".PREFIX."plugins_fight_us_spieleranzahl SET 
+        UPDATE ".PREFIX."plugins_fightus_spieleranzahl SET 
           name='".mysqli_real_escape_string($_database, $_POST['name'])."' 
         WHERE 
           spielanzahlID='".intval($_POST['spielanzahlID'])."'
@@ -1525,7 +1525,7 @@ elseif(isset($_GET['fightus_spieleranzahl_delete'])) {
   $CAPCLASS = new \webspell\Captcha;
   if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
     if(intval($_GET['spielanzahlID'])){
-      safe_query("DELETE FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE spielanzahlID='".intval($_GET['spielanzahlID'])."'");
+      safe_query("DELETE FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE spielanzahlID='".intval($_GET['spielanzahlID'])."'");
       header("Location: admincenter.php?site=admin_fightus&action=admin_fightus_spieleranzahl");
     }else{
 
@@ -1572,7 +1572,7 @@ elseif($getaction == 'admin_fightus_spieleranzahl_edit') {
     $hash = $CAPCLASS->getHash();
 
     $spielanzahlID =  intval($_GET['spielanzahlID']);
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE spielanzahlID='".$spielanzahlID."'");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE spielanzahlID='".$spielanzahlID."'");
     $ds=mysqli_fetch_array($ergebnis);
     
     echo'
@@ -1624,7 +1624,7 @@ elseif($getaction == 'admin_fightus_spieleranzahl_edit') {
           <tbody>
   ';
 
-  $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='0' ORDER BY name");
+  $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='0' ORDER BY name");
   while($ds=mysqli_fetch_array($ergebnis)) {
     $CAPCLASS = new \webspell\Captcha;
     $CAPCLASS->createTransaction();

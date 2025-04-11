@@ -5,7 +5,8 @@
 				"file1": "streams/install.php",
 				"file2": "streams/uninstall.php",
 				"file3": "streams/streams.php",
-				"file4": "streams/widget_streams_content.php"
+				"file4": "streams/widget_streams_content.php",
+				"file5": "streams/widget_stream_sidebar"
 			},
 			{
 				"index": "admin",

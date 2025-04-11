@@ -4,7 +4,8 @@ $language_array = array(
 
     'add_buddylist'        => 'Aggiungi a Lista Amici',
     'adminoptions'         => 'Opzioni di Amministrazione:',
-    'sender'               => 'Mittente',
+    'bbcode'               => 'BBCode <b><span class = "underline">Attivo</span> </b>',
+    'by'                   => 'di',
     'date'                 => 'Data:',
     'delete'               => 'Cancella',
     'delete_selected'      => 'Elimina selezionato',
@@ -13,6 +14,8 @@ $language_array = array(
     'error'                => 'Errore',
     'execute'              => 'Esegui',
     'formation'            => 'Formattazione',
+    'from'                 => 'Mittente:',
+    'html'                 => 'HTML <b><span class = "underline">Disattivato</span> </ b>',
     'ignore'               => 'Ignora utente',
     'incoming'             => 'Messaggi in Entrata',
     'mail_body'            => '<b>Ciao %nickname%! </b><br><br>Hai un nuovo messaggio in' .PAGETITLE. ' (%hp_url%).<br>Fai clic <a href="http://%hp_url%?site=messenger">qui</a> per leggere il PM.<br><br>(C) Webspell-RM ',
@@ -41,6 +44,7 @@ $language_array = array(
     'sendeachmember'       => 'Invia ad ogni Membro del Clan ',
     'sendeachuser'         => 'Invia ad ogni Utente registrato ',
     'show'                 => 'Visualizza',
+    'smilies'              => 'Faccine <b><span class = "underline">Attive</span> </ b>',
     'sort'                 => 'Ordina:',
     'title'                => 'Titolo',
     'unknown_user'         => 'Utente sconosciuto',
@@ -49,7 +53,5 @@ $language_array = array(
     'lastlogin_inactiv'    => 'Inattivo',
     'or'                   => 'o Seleziona Utente',
     'sent_by'              => 'Inviato da',
-    'from'                 => 'da',  
-    'from the'             => 'dal',
 
 );

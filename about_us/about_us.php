@@ -10,7 +10,7 @@
  *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
  * @version         webspell-rm                                                                              *
  *                                                                                                           *
- * @copyright       2018-2023 by webspell-rm.de                                                              *
+ * @copyright       2018-2025 by webspell-rm.de                                                              *
  * @support         For Support, Plugins, Templates and the Full Script visit webspell-rm.de                 *
  * @website         <https://www.webspell-rm.de>                                                             *
  * @forum           <https://www.webspell-rm.de/forum.html>                                                  *
@@ -32,41 +32,48 @@
     $pm = new plugin_manager(); 
     $plugin_language = $pm->plugin_language("about", $plugin_path);
 
-$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_about_us");
+$ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_about_us"); 
 if (mysqli_num_rows($ergebnis)) {
+    // Hole die Daten aus der Datenbank
     $ds = mysqli_fetch_array($ergebnis);
 
-        $title = $ds[ 'title' ];
-            
-        $translate = new multiLanguage(detectCurrentLanguage());
-        $translate->detectLanguages($title);
-        $title = $translate->getTextByLanguage($title);
-                
-        $data_array = array();
-        $data_array['$title'] = $title;
-        $data_array['$subtitle'] = 'About Us';
-            
-    $template = $GLOBALS["_template"]->loadTemplate("about","head", $data_array, $plugin_path);
+    // Übersetze den Titel und den Text
+    $translate = new multiLanguage(detectCurrentLanguage());
+    $translate->detectLanguages($ds['title']);
+    $title = $translate->getTextByLanguage($ds['title']);
+    
+    $translate->detectLanguages($ds['text']);
+    $text = $translate->getTextByLanguage($ds['text']);
+
+    // Daten für das "head"-Template vorbereiten
+    $plugin_data = array();
+    $plugin_data['$title'] = $plugin_language['title'];
+    $plugin_data['$subtitle'] = 'About Us';
+
+    // Lade und gebe das Template "head" aus
+    $template = $GLOBALS["_template"]->loadTemplate("about", "head", $plugin_data, $plugin_path);
     echo $template;
 
-        $text = $ds[ 'text' ];
-    
-        $translate->detectLanguages($text);
-        $text = $translate->getTextByLanguage($text);
-    
-        $data_array = array();
-        $data_array['$text'] = $text;
+    // Daten für das "content"-Template vorbereiten
+    $data_array = array();
+    $data_array['$title'] = $title;
+    $data_array['$text'] = $text;
 
-    $template = $GLOBALS["_template"]->loadTemplate("about","content", $data_array, $plugin_path);
+    // Lade und gebe das Template "content" aus
+    $template = $GLOBALS["_template"]->loadTemplate("about", "content", $data_array, $plugin_path);
     echo $template;
-        
 } else {
-        $plugin_data= array();
-        $plugin_data['$title']=$plugin_language['title'];
+    // Wenn keine Daten in der Datenbank vorhanden sind
+    $plugin_data = array();
+    $plugin_data['$title'] = $plugin_language['title'];
+    $plugin_data['$subtitle'] = 'About Us';
 
-    $template = $GLOBALS["_template"]->loadTemplate("about","head", $plugin_data, $plugin_path);
+    // Lade und gebe das Template "head" aus
+    $template = $GLOBALS["_template"]->loadTemplate("about", "head", $plugin_data, $plugin_path);
     echo $template;
-    echo $plugin_language[ 'no_about' ];
+
+    // Zeige die Nachricht, dass keine "About"-Daten vorhanden sind
+    echo $plugin_language['no_about'];
 }
 
 

@@ -8,7 +8,9 @@
 				"file4": "servers/servers.php",
 				"file5": "servers/widget_servers_sidebar.php",
 				"file6": "servers/widget_gametracker_server_sidebar.php",
-				"file7": "servers/widget_gametracker_ts_sidebar.php"
+				"file7": "servers/widget_gametracker_ts_sidebar.php",
+				"file8": "servers/widget_ts3viewer_content.php",
+				"file9": "servers/widget_tsviewer_sidebar.php"
 			},
 			{
 				"index": "admin",
@@ -22,7 +24,27 @@
 			},
 			{
 				"index": "templates",
-				"file1": "servers/templates/servers.html"
+				"file1": "servers/templates/servers.html",
+				"file2": "servers/libraries/TeamSpeak3/Exception.php",
+				"file3": "servers/libraries/TeamSpeak3/TeamSpeak3.php",
+				"file4": "servers/libraries/TeamSpeak3/Adapter/Abstract.php",
+				"file5": "servers/libraries/TeamSpeak3/Adapter/Exception.php",
+				"file6": "servers/libraries/TeamSpeak3/Adapter/ServerQuery.php",
+				"file7": "servers/libraries/TeamSpeak3/Adapter/ServerQuery/Exception.php",
+				"file8": "servers/libraries/TeamSpeak3/Adapter/ServerQuery/Reply.php",
+				"file9": "servers/libraries/TeamSpeak3/Helper/Profiler.php",
+				"file10": "servers/libraries/TeamSpeak3/Helper/Signal.php",
+				"file11": "servers/libraries/TeamSpeak3/Helper/String.php",
+				"file12": "servers/libraries/TeamSpeak3/Helper/Uri.php",
+				"file13": "servers/libraries/TeamSpeak3/Helper/Profiler/Timer.php",
+				"file14": "servers/libraries/TeamSpeak3/Node/Abstract.php",
+				"file15": "servers/libraries/TeamSpeak3/Node/Host.php",
+				"file16": "servers/libraries/TeamSpeak3/Node/Server.php",
+				"file17": "servers/libraries/TeamSpeak3/Transport/Abstract.php",
+				"file18": "servers/libraries/TeamSpeak3/Transport/Exception.php",
+				"file19": "servers/libraries/TeamSpeak3/Transport/TCP.php",
+				"file20": "servers/templates/ts3viewer.html",
+				"file21": "servers/templates/tsviewer.html"
 			},
 			{
 				"index": "images",
@@ -30,7 +52,9 @@
 				"file2": "servers/images/server-offline.jpg",
 				"file3": "servers/images/gametracker_offline.png",
 				"file4": "servers/images/widget_gametracker_server_sidebar.jpg",
-				"file5": "servers/images/widget_gametracker_ts_sidebar.jpg"
+				"file5": "servers/images/widget_gametracker_ts_sidebar.jpg",
+				"file6": "servers/images/widget_ts3viewer_content.jpg",
+				"file7": "servers/images/widget_tsviewer_sidebar.jpg"
 			},
 			{
 				"index": "css",

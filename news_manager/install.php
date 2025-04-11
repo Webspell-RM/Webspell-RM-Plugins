@@ -1,61 +1,14 @@
 <?php
-global $userID,$_database,$add_database_install,$add_database_insert,$add_two_navigation;
-global $str,$modulname,$info,$navi_name,$admin_file,$activate,$author,$website,$index_link,$hiddenfiles,$version,$path,$widget_link1,$widget_link2,$widget_link3,$widgetname1,$widgetname2,$widgetname3,$head_activated,$content_head_activated,$content_foot_activated,$head_section_activated,$foot_section_activated,$modul_deactivated,$modul_display,$full_activated,$plugin_settings,$plugin_module,$plugin_widget,$widget1,$widget2,$widget3,$mnavID,$navi_link,$catID,$dashnavi_link,$themes_modulname,$two_modulname;
-##### Install für Plugin und Module ###################################################################################################
-$str                     =   "{[de]}News{[en]}News{[it]}Notizie";                 // name of the plugin
-$modulname               =   "news_manager";                 // name to uninstall
-$info                    =   "{[de]}News Manager ist ein komplettes News-Management-Plugin für Webspell-RM. Es ermöglicht Ihnen das Hinzufügen, Verwalten und Anzeigen von Nachrichten auf Ihrer Webspell-RM-Seite, einschließlich Datumsarchiven, Nachrichtenkategorien, Nachrichtentags und mehreren Nachrichten-Widgets.{[en]}News Manager is a complete news management plugin for Webspell RM. It allows you to add, manage and view news on your Webspell RM page including date archives, news categories, news tags and multiple news widgets.{[it]}News Manager è un plug-in completo di gestione delle notizie per Webspell RM. Ti consente di aggiungere, gestire e visualizzare le notizie sulla tua pagina Webspell RM inclusi archivi di date, categorie di notizie, tag di notizie e più widget di notizie.";         // description of the plugin
-$navi_name               =   "{[de]}Nachrichtenmanager{[en]}News Manager{[it]}Notizie";// name of the Webside Navigation / Dashboard Navigation
-$admin_file              =   "admin_news_manager";          // administration file
-$activate                =   "1";                           // plugin activate 1 yes | 0 no
-$author                  =   "T-Seven";                     // author
-$website                 =   "https://webspell-rm.de";      // authors website
-$index_link              =   "news_manager,news_archive,news_comments,news_contents";     // index file (without extension, also no .php)
-$hiddenfiles             =   "";                            // hiddenfiles (background working, no display anywhere)
-$version                 =   "0.1";                         // current version, visit authors website for updates, fixes, ..
-$path                    =   "includes/plugins/news_manager/";// plugin files location
-##### Widget Setting ##################################################################################################################
-$widget_link1            =   "widget_news_content";         // widget_file (visible as module/box)
-$widget_link2            =   "widget_news_headlines";       // widget_file (visible as module/box)
-$widget_link3            =   "widget_news_headlines_2";     // widget_file (visible as module/box)
-$widgetname1             =   "News Content";                // widget_name (visible as module/box)
-$widgetname2             =   "News Headlines";              // widget_name (visible as module/box)
-$widgetname3             =   "News Headlines 2";            // widget_name (visible as module/box)
-##### Modul Setting activate yes/no ###################################################################################################
-$head_activated          =   "0";                           //Modul activate 1 yes | 0 no 
-$content_head_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$content_foot_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$head_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$foot_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$modul_deactivated       =   "0";                           //Modul activate 1 yes | 0 no
-$modul_display           =   "1";                           //Modul activate 1 yes | 0 no
-$full_activated          =   "0";                           //Modul activate 1 yes | 0 no
-$plugin_settings         =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_module           =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_widget           =   "1";                           //Modulsetting activate 1 yes | 0 no
-$widget1                 =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$widget2                 =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$widget3                 =   "1";                           //Modulsetting activate 1 yes | 0 no 
-##### Navigation Link #################################################################################################################
-$mnavID                  =   "1";                           // navigation category
-$navi_link               =   "news_manager";                // navigation link file (index.php?site=...)
-$catID                   =   "7";                           // dashboard_navigation category
-$dashnavi_link           =   "admin_news_manager";          // dashboard_navigation link file  (admincenter.php?site==...)
-$themes_modulname        =   "default";
-
-$two_str                 =   "News Archive";                        // name of the plugin
-$two_navi_name           =   "{[de]}News Archive{[en]}News Archive{[it]}Archivio Notizie";// name of the Webside Navigation / Dashboard Navigation
-$two_navi_link           =   "news_manager&action=news_archive";    // navigation link file (index.php?site=...)
-$two_modulname           =   "news_manager_archive";                // name to uninstall
-#######################################################################################################################################
-if(!ispageadmin($userID)) { echo ("Access denied!"); return false; }
-$translate = new multiLanguage(detectCurrentLanguage());
-$translate->detectLanguages($str);
-$str = $translate->getTextByLanguage($str);   
+global $str,$modulname,$modulname_2,$version;
+$modulname='news_manager';
+$modulname_2='news_archive';
+$version='0.1';
+$str='News Manager';
 echo "<div class='card'><div class='card-header'>$str Database Installation</div><div class='card-body'>";
 #######################################################################################################################################
+$transaction = '';
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_manager` (
   `newsID` int(11) NOT NULL AUTO_INCREMENT,
   `rubric` int(11) NOT NULL DEFAULT '0',
   `date` int(14) NOT NULL DEFAULT '0',
@@ -77,7 +30,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_rubrics` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_manager_rubrics` (
   `rubricID` int(11) NOT NULL AUTO_INCREMENT,
   `rubric` varchar(255) NOT NULL,
   `pic` varchar(255) NOT NULL,
@@ -86,7 +39,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_settings` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_manager_settings` (
   `newssetID` int(11) NOT NULL AUTO_INCREMENT,
   `admin_news` int(11) NOT NULL DEFAULT '0',
   `news` int(11) NOT NULL DEFAULT '0',
@@ -101,9 +54,9 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");  
 
-add_database_install($add_database_install = "INSERT IGNORE INTO `".PREFIX."plugins_news_settings` (`newssetID`, `admin_news`, `news`, `newsarchiv`, `headlines`, `newschars`, `headlineschars`, `topnewschars`, `feedback`, `switchen`) VALUES (1, 5, 3, 10, 4, 700, 200, 200, 5, 12)");
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_news_manager_settings` (`newssetID`, `admin_news`, `news`, `newsarchiv`, `headlines`, `newschars`, `headlineschars`, `topnewschars`, `feedback`, `switchen`) VALUES (1, 5, 3, 10, 4, 700, 200, 200, 5, 12)");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_comments` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_manager_comments` (
   `commentID` int(11) NOT NULL AUTO_INCREMENT,
   `parentID` int(11) NOT NULL DEFAULT '0',
   `type` char(2) NOT NULL DEFAULT '',
@@ -121,7 +74,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci"); 
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_comments_recomment` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_manager_comments_recomment` (
   `recoID` int(11) NOT NULL AUTO_INCREMENT,
   `comment_id` int(11) NOT NULL DEFAULT '0',
   `user_id` int(11) NOT NULL DEFAULT '0',
@@ -133,26 +86,45 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci"); 
 
-get_add_module_install ();
-get_add_plugin_manager();
-get_add_navigation();
-get_add_dashboard_navigation ();
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_news_manager_settings_widgets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modulname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `themes_modulname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `widgetname` varchar(255) NOT NULL DEFAULT '',
+  `widgetdatei` varchar(255) NOT NULL DEFAULT '',
+  `activated` int(1) DEFAULT 1,
+  `sort` int(11) DEFAULT 1,
+PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1
+  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-#Prüft ob die Kategorie vorhanden ist
-$dx = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "navigation_website_main WHERE mnavID='1'"));
-if (@$dx[ 'mnavID' ] != '1') {
-add_navigation($add_navigation = "INSERT INTO `".PREFIX."navigation_website_main` (`mnavID`, `name`, `url`, `default`, `sort`, `isdropdown`, `windows`) VALUES
-(1, '{[de]}HAUPT{[en]}MAIN{[pl]}STRONA GÅÃ“WNA{[it]}PRINCIPALE', '#', 1, 1, 1, 1);");
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_news_manager_settings_widgets` (`id`, `position`, `modulname`, `themes_modulname`, `widgetname`, `widgetdatei`, `activated`, `sort`) VALUES
+('1', 'navigation_widget', 'navigation', 'default', 'Navigation', 'widget_navigation', 1, 1),
+('2', 'footer_widget', 'footer', 'default', 'Footer Easy', 'widget_footer_easy', 1, 1)");
 
-add_two_navigation($add_two_navigation = "INSERT IGNORE INTO `".PREFIX."navigation_website_sub` (`mnavID`, `name`, `modulname`, `url`, `sort`, `indropdown`, `themes_modulname`) 
-          VALUES ('1','$two_navi_name', '$two_modulname', 'index.php?site=$two_navi_link', '1', '1', '$themes_modulname');"); 
+## SYSTEM #####################################################################################################################################
 
-} else {
+$transaction .= add_insert_plugin("INSERT IGNORE INTO `" . PREFIX . "settings_plugins` (`pluginID`, `name`, `modulname`, `info`, `admin_file`, `activate`, `author`, `website`, `index_link`, `hiddenfiles`, `version`, `path`, `status_display`, `plugin_display`, `widget_display`, `delete_display`, `sidebar`) VALUES
+('', 'News Manager', 'news_manager', '{[de]}Mit diesem Plugin könnt ihr euch eure News anzeigen lassen.{[en]}With this plugin you can display your news.{[it]}Con questo plugin puoi visualizzare le tue notizie.', 'admin_news_manager', 1, 'T-Seven', 'https://webspell-rm.de', 'news_manager,news_comments,news_contents', '', '0.1', 'includes/plugins/news_manager/', 1, 1, 1, 1, 'deactivated')");
 
-add_two_navigation($add_two_navigation = "INSERT IGNORE INTO `".PREFIX."navigation_website_sub` (`mnavID`, `name`, `modulname`, `url`, `sort`, `indropdown`, `themes_modulname`) 
-          VALUES ('1','$two_navi_name', '$two_modulname', 'index.php?site=$two_navi_link', '1', '1', '$themes_modulname');"); 
-}
-# END
+$transaction .= add_insert_plugins_widget("INSERT IGNORE INTO `" . PREFIX . "settings_plugins_widget` (`id`, `modulname`, `widgetname`, `widgetdatei`, `area`) VALUES
+('', 'news_manager', 'News Content', 'widget_news_content', 3),
+('', 'news_manager', 'News Headlines', 'widget_news_headlines', 3),
+('', 'news_manager', 'News Headlines 2', 'widget_news_headlines_2', 3),
+('', 'news_manager', 'Breaking News Content', 'widget_breaking_news_content', 3)");
+
+## NAVIGATION #####################################################################################################################################
+
+$transaction .= add_insert_navi_dashboard("INSERT IGNORE INTO `".PREFIX."navigation_dashboard_links` (`linkID`, `catID`, `name`, `modulname`, `url`, `accesslevel`, `sort`) VALUES
+('', 7, '{[de]}News{[en]}News{[it]}Notizie', 'news_manager', 'admincenter.php?site=admin_news_manager', 'page', 1)");
+
+#####################################################
+$transaction .= add_insert_navigation("INSERT IGNORE INTO `".PREFIX."navigation_website_sub` (`snavID`, `mnavID`, `name`, `modulname`, `url`, `sort`, `indropdown`, `themes_modulname`) VALUES
+('', 1, '{[de]}News{[en]}News{[it]}Notizie', 'news_manager', 'index.php?site=news_manager', 1, 1, 'default')");
+
+$transaction .= add_insert_navigation_2("INSERT IGNORE INTO `".PREFIX."navigation_website_sub` (`snavID`, `mnavID`, `name`, `modulname`, `url`, `sort`, `indropdown`, `themes_modulname`) VALUES
+('', 1, '{[de]}News Archive{[en]}News Archive{[it]}Archivio Notizie', 'news_manager', 'index.php?site=news_manager&action=news_archive', 1, 1, 'default')");
 
 #######################################################################################################################################
 

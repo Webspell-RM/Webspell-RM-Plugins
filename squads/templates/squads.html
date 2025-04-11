@@ -37,7 +37,7 @@
                             <div class="card">
                                 <div class="card-body text-center">
                                     <p><img class="rounded-circle featured-image" src="images/userpics/$userpic" alt="Userpic"></p>
-                                    <h4 class="card-title">$nickname</h4>
+                                    <h4 class="card-title"><strong>$squads_nickname: </strong>$nickname</h4>
                                     <strong>$squads_position: </strong>$position<br>
                                     <i class="bi bi-plus"></i>
                                 </div>
@@ -45,32 +45,18 @@
                         </div>
                         <div class="backside">
                             <div class="card">
-                                <div class="card-body mt-4">
-                                    <h4 class="text-center">$characteristics</h4>    
-
-                                    <ul class="pl-0 d-inline-block float-sm-left mr-sm-5 list-unstyled">
-                                        <li class="font-secondary text-color mb-10"> <i class="text-primary mr-2 bi bi-arrow-right-circle"></i> <strong>$squads_nickname: </strong></li>
-                                        <li class="font-secondary text-color mb-10"> <i class="text-primary mr-2 bi bi-arrow-right-circle"></i> <strong>$squads_activity: </strong></li>
-                                        <li class="font-secondary text-color mb-10"> <i class="text-primary mr-2 bi bi-arrow-right-circle"></i> <strong>$squads_status: </strong></li>
-                                        <li class="font-secondary text-color mb-10"> <i class="text-primary mr-2 bi bi-arrow-right-circle"></i> <strong>$squads_contact: </strong></li>
-                                        <li class="font-secondary text-color mb-10"> <i class="text-primary mr-2 bi bi-arrow-right-circle"></i> <strong>Discord: </strong></li>
-                                        <li class="font-secondary text-color mb-10"> <i class="text-primary mr-2 bi bi-arrow-right-circle"></i> <strong>$squads_position: </strong></li>
-                                        <li class="font-secondary text-color mb-10"> <i class="text-primary mr-2 bi bi-arrow-right-circle"></i> <strong>$squads_info:</strong>
-                                    </ul>
-                                    <ul class="d-inline-block pl-0 list-unstyled">
-                                        <li class="font-secondary text-color mb-10"> $nickname</li>
-                                        <li class="font-secondary text-color mb-10"> $activity</li>
-                                        <li class="font-secondary text-color mb-10"> $statuspic</li>
-                                        <li class="font-secondary text-color mb-10"> $email $pm</li>
-                                        <li class="font-secondary text-color mb-10"> $discord</li>
-                                        <li class="font-secondary text-color mb-10"> $position</li>
-                                        <li class="font-secondary text-color mb-10">&nbsp;<br></li>
-                                    </ul>
-                                    <p style="margin-top: -20px;">$userdescription</p>
-                                    <div class="text-center"><a  href="/index.php?site=squads&action=show&squadID=$squadID"><img src="$pic" alt="" class="img-fluid rounded" style="height: 80px"></a><br><br>
-                                    <a href="/index.php?site=profile&id=$memberID" class="btn btn-primary btn-sm" role="button">$seeprofile <i class="bi bi-person-fill"></i></a></div>
+                                <div class="card-body text-center mt-4">
+                                    <h4 class="card-ti1tle"><strong>$squads_nickname: </strong>$nickname</h4>
+                                    <strong>$squads_status: </strong>$activity $statuspic<br>
+                                    <strong>$squads_contact: $email $pm</strong><br>
+                                    <strong>Discord: $discord</strong><br>
+                                    <strong>$squads_position: </strong>$position<br>
+                                    <a  href="/index.php?site=squads&action=show&squadID=$squadID"><img src="$pic" alt="" class="img-fluid rounded" style="height: 120px"></a><br><br>
+                                    <a  href="/index.php?site=profile&id=$memberID" class="badge bg-primary">$seeprofile <i class="bi bi-person-fill"></i></a>
+                                    <br>
+        <strong>$squads_info $nickname:</strong><br>$userdescription
                                 </div>
-                            </div>
+               </div>
                         </div>
                     </div>
                 </div>
@@ -132,11 +118,73 @@
 <!-- squads_content_foot --> 
 </div></div></div>
 <!-- END -->
-
-
 <!-- squads_foot -->
 </div>
-
-
 <!-- END -->
 
+
+
+
+
+
+<!-- squads_memberslist_title -->
+<div class="head-boxes">
+    <span class="head-boxes-head">$title</span>
+<h2 class="head-h2">
+    <span class="head-boxes-title">$title</span>
+</h2>
+    <p class="head-boxes-foot">$subtitle</p>
+</div>
+<div class="card card-body">
+<!-- END -->
+
+<!-- squads_memberslist_head_head -->
+<div class="py-5 team1">
+            <div class="container">
+                <div class="row justify-content-center mb-3">
+                    <div class="col-md-7 text-center">
+                        <h3 class="mb-3">
+                        $name <small>($anzmembers)</small></h3>
+                        <h6 class="subtitle font-weight-normal">$info</h6>
+                    </div>
+                </div>
+                <div class="row">   
+
+             
+<!-- END -->
+
+<!-- squads_memberslist_head -->
+
+        <div class="row">
+<!-- END -->
+
+<!-- squads_memberslist_content -->
+                    <div class="col d-flex align-items-stretch mb-3">
+            <div class="member box"><span class="advanced">$activity</span>
+              <div class="member-img"style="background:url($avatar) no-repeat center center / cover;height: 250px;">
+                
+              </div>
+              <div class="member-info">
+                <h6>$nickname $member</h6>
+                <span>$squads_position: $position<br>        
+                    $squads_squad: $name</span>
+              </div>
+            </div>
+          </div>
+<!-- END -->
+
+
+
+<!-- squads_memberslist_content_foot --> 
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<!-- END -->
+
+
+<!-- squads_memberslist_foot -->
+</div>
+<!-- END -->

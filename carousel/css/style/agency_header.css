@@ -1,0 +1,103 @@
+
+#header {
+    height: 80px;
+    box-shadow:0 .46875rem 2.1875rem rgba(90,97,105,0.1),0 .9375rem 1.40625rem rgba(90,97,105,.1),0 .25rem .53125rem rgba(90,97,105,.12),0 .125rem .1875rem rgba(90,97,105,.1);
+    background-image: linear-gradient(rgba(var(--bs-nav-bg-rgb),1),rgba(var(--bs-nav-sec-bg-rgb),1)); 
+    border-bottom: 1px solid rgba(var(--bs-card-border-color-rgb), .3) !important;
+}
+
+#header.header-transparent {
+    background: transparent;
+    height: 120px;
+    box-shadow: none;
+    border-bottom: 0px solid rgba(var(--bs-card-border-color-rgb), .3) !important;
+}
+#header.header-transparent.header-scrolled {
+    height: 80px;    
+    box-shadow:0 .46875rem 2.1875rem rgba(90,97,105,0.1),0 .9375rem 1.40625rem rgba(90,97,105,.1),0 .25rem .53125rem rgba(90,97,105,.12),0 .125rem .1875rem rgba(90,97,105,.1);
+    background-image: linear-gradient(rgba(var(--bs-nav-bg-rgb),.9),rgba(var(--bs-nav-sec-bg-rgb),.9));
+    border-bottom: 1px solid rgba(var(--bs-card-border-color-rgb), .3) !important;
+    backdrop-filter: blur(5px);
+}
+
+#agency_header  {
+    margin-top: -120px;
+}
+
+.agency-image {
+  width: 100%;
+  /*background: url("../img/hero-bg.png");*/
+  position: relative;
+}
+
+.agency-image .agency-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+}
+
+.agency-container .agency-logo img{
+  margin-bottom: 0px;
+  height: 80px;
+}
+
+.agency-image h1 {
+  margin: 0 0 30px 0;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 56px;
+  color: rgba(var(--bs-carousel_h1_color-rgb), 1);
+}
+
+.agency-image h2 {
+  color: rgba(var(--bs-carousel_text_color-rgb),1);
+  margin-bottom: 30px;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.agency-image .btn-get-started {
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 3px;
+  margin: 10px;
+  color: #fff;
+  background: #7cc576;
+}
+
+.agency-image .btn-get-started:hover {
+  transition: 0.5s;
+  background: #fff;
+  color: #7cc576;
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    /*background-attachment: fixed;*/
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  #hero h2 {
+    line-height: 22px;
+  }
+}

@@ -32,7 +32,7 @@ $language_array = Array(
    'new_gallery'                       => 'Nuova Galleria',
    'new_gallery_pic'                   => 'Nuova Galleria/Immagini',
    'new_group'                         => 'Nuova Categoria',
-   'per_form'                          => 'Tramite Modulo',
+   'per_form'                          => 'Tramite Caricamento',
    'per_ftp'                           => 'Tramite FTP',
    'picture'                           => 'Immagine',
    'pic_upload'                        => 'Caricamento immagine',
@@ -62,6 +62,7 @@ $language_array = Array(
    'tooltip_7'                         => 'Carica singole immagini tramite modulo',
    'tooltip_8'                         => 'Carica più immagini tramite FTP. Tutte le immagini devono trovarsi nella cartella /includes/plugins/gallery/images/pic_update/.',
    'tooltip_9'                         => 'Numero di immagini una accanto all\'altra',
+   'tooltip_10'                        => 'Numero di immagini nel Portfolio',
    'ftp_info'                          => 'Tutte le immagini devono trovarsi nella cartella <b>/includes/plugins/gallery/images/pic_update/</b>.',
    'update'                            => 'Aggiorna',
    'title'                             => 'Impostazioni Galleria',
@@ -85,5 +86,9 @@ $language_array = Array(
    'no_plugin_squads'                  => 'Plugin Squads non installato!',
    'images_per_page'                   => 'Immagini per Pagina',
    'page_s'                            => 'Pagina/e',
+   'yes'                               => 'Si',
+   'no'                                => 'No',
+   'is_displayed'                      => 'Visualizzato?',
+   'portfolio'                         => 'Portfolio',
    
 );

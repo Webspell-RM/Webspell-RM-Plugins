@@ -62,6 +62,7 @@ $language_array = Array(
    'tooltip_7'                        => 'Upload individual images via form',
    'tooltip_8'                        => 'Upload multiple images via FTP. All images must be located in the /includes/plugins/gallery/images/pic_update/ folder.',
    'tooltip_9'                        => 'Number of images next to each other',
+   'tooltip_10'                       => 'Number of images in Portfolio',
    'ftp_info'                         => 'All images must be in the <b>/includes/plugins/gallery/images/pic_update/</b> folder.',
    'update'                           => 'Update',
    'title'                            => 'Gallery Settings',
@@ -85,5 +86,9 @@ $language_array = Array(
    'no_plugin_squads'                 => 'Plugin Squads not installed!',
    'page_s'                           => 'Page(s)',
    'images_per_page'                  => 'Images per Page',
+   'yes'                              => 'Yes',
+   'no'                               => 'No',
+   'is_displayed'                     => 'Is it displayed?',
+   'portfolio'                        => 'Number of images in portfolio'
 );
 

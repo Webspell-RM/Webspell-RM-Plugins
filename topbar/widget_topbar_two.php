@@ -241,7 +241,7 @@ if(mysqli_num_rows($ergebnis)){
             };    
 
         if($loggedin) {
-            $login = '<div class="col-3 text-center border-start">
+            $login = '<div class="col border-start">
                         <div class="topbarElements d-inline-flex align-items-center">
                             <div><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></div>
                             <div class="text-start d-md-block d-none">
@@ -253,34 +253,20 @@ if(mysqli_num_rows($ergebnis)){
                         </div>
                     </div>';
         } else {
-           $login = '<div class="col-3 text-center border-start">
+           $login = '<div class="col border-start">
                         <div class="topbarElements d-inline-flex align-items-center">
                             <div><i class="bi bi-box-arrow-in-right" style="font-size: 2rem;"></i></div>
                             <div class="text-start d-md-block d-none">
                                 <h5 class="p-0 m-0 text-uppercase">Login</h5>
                                 <p class="p-0 m-0 text-secondary">
-                                    <!--<a href="index.php?site=register"> REGISTER</a> |  
-                                    <a href="index.php?site=login"> LOGIN</a>-->
-<a href="#" data-bs-toggle="modal" data-bs-target="#modal-register"> REGISTER</a> | 
-<a href="#" data-bs-toggle="modal" data-bs-target="#modal-login"> LOGIN</a>
-
-
-
-
-
-
-
+                                    <a href="index.php?site=register"> REGISTER</a> |  
+                                    <a href="index.php?site=login"> LOGIN</a>
                                     | '.$de_languages.''.$en_languages.''.$it_languages.'
                                 </p>
                             </div>
                         </div>
                     </div>';
-        include "./includes/plugins/topbar/register.php";
-        include "./includes/plugins/topbar/login.php";            
-                    
         }
-
-        $db = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_footer"));
 
 		$data_array['$twitch'] = $twitch;
         $data_array['$facebook'] = $facebook;
@@ -294,10 +280,6 @@ if(mysqli_num_rows($ergebnis)){
         $data_array['$steam'] = $steam;
         $data_array['$discord'] = $discord;
         $data_array['$login'] = $login;
-        $data_array['$mail'] = $db['email'];
-        $data_array['$telefon'] = $db['telefon'];
-        $data_array['$name'] = $db['name'];
-        $data_array['$strasse'] = $db['strasse'];
 	
         $template = $GLOBALS["_template"]->loadTemplate("topbar_two","content", $data_array, $plugin_path);
         echo $template;

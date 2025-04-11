@@ -9,7 +9,10 @@
 				"file5": "gallery/gallery_functions.php",
 				"file6": "gallery/usergallery.php",
 				"file7": "gallery/gallery_rating.php",
-				"file8": "gallery/widget_gallery_sidebar.php"
+				"file8": "gallery/widget_gallery_sidebar.php",
+				"file9": "gallery/widget_gallery_content.php",
+				"file10": "gallery/portfolio.php",
+				"file11": "gallery/widget_portfolio_content.php"
 			},
 			{
 				"index": "admin",
@@ -43,7 +46,9 @@
 				"file4": "gallery/icons/rating_1.png",
 				"file5": "gallery/icons/no-image.jpg",
 				"file6": "gallery/images/widget_gallery_sidebar.jpg",
-				"file7": "gallery/images/pic_update/index.php"
+				"file7": "gallery/images/pic_update/index.php",
+				"file8": "gallery/images/widget_portfolio_content.jpg",
+				"file9": "gallery/images/widget_gallery_content.jpg"
 			},
 			{
 				"index": "css",
@@ -51,7 +56,10 @@
 			},
 			{
 				"index": "js",
-				"file1": "gallery/js/jquery.fancybox.js"
+				"file1": "gallery/js/jquery.fancybox.js",
+				"file2": "gallery/js/owl.carousel.js",
+				"file3": "gallery/js/isotope.pkgd.min.js",
+				"file4": "gallery/js/main.js"
 			}
 		]
 }

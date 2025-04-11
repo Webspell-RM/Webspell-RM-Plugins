@@ -2,7 +2,7 @@
 
 $language_array = array(
 
-  'title'               =>'Game Server List',
+  'title'               =>'Master List',
   'game'                =>'Spiel',
   'information'         =>'Informationen',
   'ip'                  =>'IP',

@@ -44,7 +44,7 @@ if(isset($_POST['action'])){
 
 if($action == 'getspielselect') {
 	$ds = mysqli_fetch_array(mysqli_query($link,"SELECT * FROM " . PREFIX . "plugins_squads WHERE squadID='".$_POST['game']."'"));
-	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='".$ds['squadID']."' AND clanID!='' ORDER BY name");
+	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='".$ds['squadID']."' AND clanID!='' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
 		$mselect = '<select name="spielanzahl" class="form-select"><option value=""  selected="selected">--- Please select ---</option>';
@@ -62,7 +62,7 @@ if($action == 'getspielselect') {
 elseif($action == 'getgameselect') {
 	
 	$ds = mysqli_fetch_array(mysqli_query($link,"SELECT * FROM " . PREFIX . "plugins_squads WHERE squadID='".$_POST['game']."'"));
-	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='".$ds['squadID']."' AND clanID!='' ORDER BY name");
+	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE clanID='".$ds['squadID']."' AND clanID!='' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
 		$gameselect = '<select name="gametype" class="form-select"><option value="" selected="selected">--- Please select ---</option>';
@@ -80,7 +80,7 @@ elseif($action == 'getgameselect') {
 elseif($action == 'getmatchselect') {
 	
 	$ds1 = mysqli_fetch_array(mysqli_query($link,"SELECT * FROM " . PREFIX . "plugins_squads WHERE squadID='".$_POST['game']."'"));
-	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='".$ds1['squadID']."' AND clanID!='' ORDER BY name");
+	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID='".$ds1['squadID']."' AND clanID!='' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
 		$matchselect = '<select  name="matchtype" class="form-select"><option value="" selected="selected">--- Please select ---</option>';
@@ -96,7 +96,7 @@ elseif($action == 'getmatchselect') {
 	
 } elseif($action == 'getmapselect') {
 	$ds = mysqli_fetch_array(mysqli_query($link,"SELECT * FROM " . PREFIX . "plugins_squads WHERE squadID='".$_POST['game']."'"));
-	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_maps WHERE tag='".$ds['tag']."' ORDER BY name");
+	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fightus_maps WHERE tag='".$ds['tag']."' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
 		$mapselect = '<select name="map" class="form-select"><option value="" class="form-group" selected="selected">--- Please select ---</option>';
@@ -112,7 +112,7 @@ elseif($action == 'getmatchselect') {
 }
 elseif($action == 'getmapsselect') {
 	$ds = mysqli_fetch_array(mysqli_query($link,"SELECT * FROM " . PREFIX . "plugins_squads WHERE squadID='".$_POST['game']."'"));
-	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fight_us_maps WHERE tag='".$ds['tag']."' ORDER BY name");
+	$query = mysqli_query($link,"SELECT * FROM ".PREFIX."plugins_fightus_maps WHERE tag='".$ds['tag']."' ORDER BY name");
 	$num = mysqli_num_rows($query);
 	if($num) {
 		$mapsselect = '<select name="homemap" class="form-select"><option value="" selected="selected">--- Please select ---</option>';
@@ -162,7 +162,7 @@ function checksession($value) {
 }
 
 function getgametype() {
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype");
     while($ds=mysqli_fetch_array($ergebnis)) {
         if($gametype==$ds['gametypeID']) $gametype.='<option value="'.$ds["gametypeID"].'" selected="selected">'.$ds["name"].'</option>';
         else $gametype.='<option value="'.$ds["gametypeID"].'">'.$ds["name"].'</option>';
@@ -171,7 +171,7 @@ function getgametype() {
 }
 
 function getgametype_ajax($clanID) {
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_gametype WHERE clanID='$clanID' ORDER BY name");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_gametype WHERE clanID='$clanID' ORDER BY name");
     while($ds=mysqli_fetch_array($ergebnis)) {
         if($gametype==$ds['gametypeID']) $gametype.='<option value="'.$ds["gametypeID"].'" selected="selected">'.$ds["name"].'</option>';
         else $gametype.='<option value="'.$ds["gametypeID"].'">'.$ds["name"].'</option>';
@@ -180,7 +180,7 @@ function getgametype_ajax($clanID) {
 }
 
 function getmaps() {
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_maps");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_maps");
     while($ds=mysqli_fetch_array($ergebnis)) {
         if($map==$ds['mapID']) $map.='<option value="'.$ds["pic"].'" selected="selected">'.$ds["name"].'</option>';
         else $map.='<option value="'.$ds["pic"].'">'.$ds["name"].'</option>';
@@ -189,12 +189,12 @@ function getmaps() {
 }
 
 function getgametypename($gametypeID) {
-    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fight_us_gametype WHERE gametypeID='$gametypeID'"));
+    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fightus_gametype WHERE gametypeID='$gametypeID'"));
     return $ds['name'];
 }
 
 function getmatchtype() {
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_matchtype");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_matchtype");
     while($ds=mysqli_fetch_array($ergebnis)) {
         if($gametype==$ds['matchtypeID']) $matchtype.='<option value="'.$ds["matchtypeID"].'" selected="selected">'.$ds["name"].'</option>';
         else $matchtype.='<option value="'.$ds["matchtypeID"].'">'.$ds["name"].'</option>';
@@ -202,7 +202,7 @@ function getmatchtype() {
     return $matchtype;
 }
 function getmatchtype_ajax($clanID) {
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_matchtype WHERE clanID='$clanID' ORDER BY name");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_matchtype WHERE clanID='$clanID' ORDER BY name");
     while($ds=mysqli_fetch_array($ergebnis)) {
         if($gametype==$ds['matchtypeID']) $matchtype.='<option value="'.$ds["matchtypeID"].'" selected="selected">'.$ds["name"].'</option>';
         else $matchtype.='<option value="'.$ds["matchtypeID"].'">'.$ds["name"].'</option>';
@@ -212,12 +212,12 @@ function getmatchtype_ajax($clanID) {
 
 
 function getmatchtypename($matchtypeID) {
-    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fight_us_matchtype WHERE matchtypeID='$matchtypeID'"));
+    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fightus_matchtype WHERE matchtypeID='$matchtypeID'"));
     return $ds['name'];
 }
 
 function getspielanzahl() {
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl");
     while($ds=mysqli_fetch_array($ergebnis)) {
         if($spielanzahl==$ds['spielanzahlID']) $spielanzahl.='<option value="'.$ds["spielanzahlID"].'" selected="selected">'.$ds["name"].'</option>';
         else $spielanzahl.='<option value="'.$ds["spielanzahlID"].'">'.$ds["name"].'</option>';
@@ -225,7 +225,7 @@ function getspielanzahl() {
     return $spielanzahl;
 }
 function getspielanzahl_ajax($clanID) {
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE clanID='$clanID' ORDER BY name");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE clanID='$clanID' ORDER BY name");
     while($ds=mysqli_fetch_array($ergebnis)) {
         if($spielanzahl==$ds['spielanzahlID']) $spielanzahl.='<option value="'.$ds["spielanzahlID"].'" selected="selected">'.$ds["name"].'</option>';
         else $spielanzahl.='<option value="'.$ds["spielanzahlID"].'">'.$ds["name"].'</option>';
@@ -234,12 +234,12 @@ function getspielanzahl_ajax($clanID) {
 }
 
 function getspielanzahlname($spielanzahlID) {
-    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fight_us_spieleranzahl WHERE spielanzahlID='$spielanzahlID'"));
+    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fightus_spieleranzahl WHERE spielanzahlID='$spielanzahlID'"));
     return $ds['name'];
 }
 
 function getmapsname($mapID) {
-    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fight_us_maps WHERE mapID='$mapID'"));
+    $ds=mysqli_fetch_array(safe_query("SELECT name FROM ".PREFIX."plugins_fightus_maps WHERE mapID='$mapID'"));
     return $ds['name'];
 }
 ?>

@@ -1,39 +1,40 @@
 <!-- widget_news_headlines_2_head -->
 <div class="news" id="news">
     <div class="container">
-        <div class="news-title"> 
-            <h3>Headlines</h3> 
+        <div class="news-title text-center">
+            <h3>News</h3>
         </div>
-        <div class="agileits-news-grids row">
+        <div class="row">
 
-<!-- END -->
-<!-- widget_news_headlines_2_content -->
-<div class="col-lg-4 col-sm-6 mb-4">
-            <div class="card card-2">
-                <div class="card-img-wrapper overlay-rounded-top">
-                    $rubricpic
-                </div>
-                <div class="card-body p-0 d-flex border-bottom">
-                        <div class="py-3 px-4 border-end text-center">
+            <!-- END -->
+            <!-- widget_news_headlines_2_content -->
+            <div class="col-md-6 col-sm-12 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-img-wrapper">
+                        $rubricpic
+                    </div>
+                    <div class="card-body d-flex flex-column flex-md-row border-bottom">
+                        <div class="text-center px-3 py-2 border-end flex-shrink-0"
+                            style="min-width: 70px; max-width: 90px;">
                             <h4 class="text-primary mb-0">$date2</h4>
-                            <p class="mb-0">$date1</p>
-                            <p class="mb-0">$date3</p>
+                            <p class="small text-muted mb-0">$date1</p>
+                            <p class="small text-muted">$date3</p>
                         </div>
-                        <div class="p-3">
-                            $headline
-                        <p>$content</p></div>
-                </div>
-                    <div class="d-flex">
-                        <div class="p-3">
-                        <p>by $poster / $comments</p>                    
+                        <div class="p-3 flex-grow-1 mt-0">
+                            <h5 class="mt-1">$headline</h5>
+                            <p class="mb-0">$content</p>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted small">
+                        <p class="mb-0">by $poster / $comments</p>
                     </div>
                 </div>
             </div>
-</div>                              
-<!-- END -->
+            <!-- END -->
 
-<!-- widget_news_headlines_2_foot -->
+            <!-- widget_news_headlines_2_foot -->
+        </div>
+    </div>
 </div>
-</div></div>
 <br>
 <!-- END -->

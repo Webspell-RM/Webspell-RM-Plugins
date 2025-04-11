@@ -142,7 +142,7 @@ if($action=="save") {
     else $squadselect='<select name="squad" class="form-select" onchange="GetMapSelect(this.value) , GetMSelect(this.value), GetGameSelect(this.value), GetMatchSelect(this.value);">'.$squads.'</select>';
     
     unset($matchh);
-    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_matchtype WHERE clanID='$squad' ");
+    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fightus_matchtype WHERE clanID='$squad' ");
     $match = '<option value="" selected="selected">'.$plugin_language['plsselect'].'</option>';
     while($ds = mysqli_fetch_array($ma)) {
       $match .= '<option   value="'. $ds['matchtypeID'] .'">' . $ds['name'] . '</option>';
@@ -153,7 +153,7 @@ if($action=="save") {
     else $matchselect='<div id="matchselect"><select name="matchtype" class="form-select">'.$matchh.'</select></div>';
     
     unset($gamet);
-    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_gametype WHERE clanID='$squad' ");
+    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fightus_gametype WHERE clanID='$squad' ");
     $gamet = '<option value="" selected="selected">'.$plugin_language['plsselect'].'</option>';
     while($ds = mysqli_fetch_array($ma)) {
       $gamet .= '<option   value="'. $ds['gametypeID'] .'">' . $ds['name'] . '</option>';
@@ -165,7 +165,7 @@ if($action=="save") {
     else $gameselect='<div id="gameselect"><select name="gametype" class="form-select">'.$gamett.'</select></div>';
     
     unset($spielt);
-    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_spieleranzahl WHERE clanID='$squad' ");
+    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fightus_spieleranzahl WHERE clanID='$squad' ");
     $spielt = '<option value="" selected="selected">'.$plugin_language['plsselect'].'</option>';
     while($ds = mysqli_fetch_array($ma)) {
       $spielt .= '<option   value="'. $ds['spielanzahlID'] .'">' . $ds['name'] . '</option>';
@@ -177,7 +177,7 @@ if($action=="save") {
     
     unset($mapt);
     $gg = mysqli_fetch_array(safe_query("SELECT * FROM " . PREFIX . "plugins_squads WHERE squadID='$squad' AND gamesquad='1'"));
-    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fight_us_maps WHERE name='$gg[name]' ");
+    $ma = safe_query("SELECT * FROM " . PREFIX . "plugins_fightus_maps WHERE name='$gg[name]' ");
     $mapt = '<option value="" selected="selected">'.$plugin_language['plsselect'].'</option>';
     while($ds = mysqli_fetch_array($ma)) {
       $mapt .= '<option   value="'. $ds['mapID'] .'">' . $ds['name'] . '</option>';
@@ -320,7 +320,7 @@ if($action=="save") {
     $cwdate=mktime((int)$hour,(int)$minute,0,(int)$month,(int)$day,(int)$year);
     safe_query("
       INSERT INTO
-        ".PREFIX."plugins_fight_us_challenge ( 
+        ".PREFIX."plugins_fightus_challenge ( 
           date,
           cwdate,
           squadID, 
@@ -367,7 +367,7 @@ if($action=="save") {
   if(intval($_GET['chID'])){
     if(isclanwarsadmin($userID)){
       $chID = $_GET['chID'];
-      safe_query("DELETE FROM ".PREFIX."plugins_fight_us_challenge WHERE chID='$chID'");
+      safe_query("DELETE FROM ".PREFIX."plugins_fightus_challenge WHERE chID='$chID'");
       redirect(
         'index.php?site=fightus',
         generateSuccessBox(''.$plugin_language['deleted'].''),
@@ -477,7 +477,7 @@ if($action=="save") {
   echo $template;
 
   if($loggedin) {
-    $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_fight_us_challenge ORDER BY date");
+    $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_fightus_challenge ORDER BY date");
     $anz=mysqli_num_rows($ergebnis);
     echo'<div id="accordion">';
     if($anz) {

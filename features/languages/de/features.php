@@ -18,6 +18,9 @@ $language_array = array(
     'no_videos'         => '<blockquote>Kein Video</blockquote>',
     'no_gallery'        => '<blockquote>Kein Bild</blockquote>',
     'our_services'      => 'Unsere Dienstleistungen',
+    'no_files'        => '<blockquote>Plugin deaktiviert oder nicht installiert</blockquote>',
+    'no_news'        => '<blockquote>Plugin deaktiviert oder nicht installiert</blockquote>',
+    'no_forum'        => '<blockquote>Plugin deaktiviert oder nicht installiert</blockquote>',
 
 );
 

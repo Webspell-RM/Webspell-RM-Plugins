@@ -1,4 +1,5 @@
 <?php
+
 /**
  *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
  *                  Webspell-RM      /                        /   /                                          *
@@ -26,7 +27,7 @@
  * @copyright       2005-2011 by webspell.org / webspell.info                                                *
  *                                                                                                           *
  *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
-*/
+ */
 
 namespace webspell;
 
@@ -125,7 +126,7 @@ class Tags
                 content,
                 headline
             FROM
-                " . PREFIX . "plugins_news
+                " . PREFIX . "plugins_news_manager
             
             WHERE
                 newsID = " . (int)$newsID
@@ -133,15 +134,20 @@ class Tags
         if ($result->num_rows) {
             $ds = mysqli_fetch_array($result);
             $content = $ds['content'];
-            if (strlen($ds['content']) > 255) {
-                $string = wordwrap($ds['content'], 255);
-                $string = substr($ds['content'], 0, strpos($ds['content'], "\n")) . '...';
-            } else {
-                $string = $ds['content'];
-            }
+            $string = preg_replace('/[,]/', ',', substr($content, 0, 255));
 
+            // Inizio codice per il linguaggio dal Plugin Tags
+            $plugin_language_path = './includes/plugins/tags/languages/';
+            $language_file = $plugin_language_path . $_SESSION['language'] . '/tags.php';
             $_language = new \webspell\Language();
-            $_language->readModule('tags');    
+            $_language->language = $_SESSION['language'];
+            include $language_file;
+            $_language->module = array_merge($_language->module, $language_array);
+            $_language->readModule('tags', false, false, $plugin_language_path);
+            // Fine codice
+
+
+
             return array(
                 'date' => time(),
                 'type' => 'News',
@@ -159,7 +165,7 @@ class Tags
     public static function getArticle($articleID)
     {
         global $userID;
-        
+
         $get = safe_query(
             "SELECT
                 articleID,
@@ -170,20 +176,23 @@ class Tags
             FROM
                 " . PREFIX . "plugins_articles
             WHERE
-                articleID = " . (int)$articleID 
+                articleID = " . (int)$articleID
         );
         if ($get->num_rows) {
             $ds = mysqli_fetch_array($get);
             $answer = $ds['answer'];
-            if (mb_strlen($answer) > 255) {
-                $string = wordwrap($answer, 255);
-                $string = substr($answer, 0, strpos($answer, "\n")) . '...';
-            } else {
-                $string = $answer;
-            }
+            $string = preg_replace('/[,]/', ',', substr($answer, 0, 255));
 
+            // Inizio codice per il linguaggio dal Plugin Tags
+            $plugin_language_path = './includes/plugins/tags/languages/';
+            $language_file = $plugin_language_path . $_SESSION['language'] . '/tags.php';
             $_language = new \webspell\Language();
-            $_language->readModule('tags');
+            $_language->language = $_SESSION['language'];
+            include $language_file;
+            $_language->module = array_merge($_language->module, $language_array);
+            $_language->readModule('tags', false, false, $plugin_language_path);
+            // Fine codice
+
             return array(
                 'date' => $ds['date'],
                 'type' => 'Artikel',
@@ -222,15 +231,19 @@ class Tags
                     break;
             }
             if ($allowed) {
-                if (strlen($ds['content']) > 255) {
-                    $string = wordwrap($ds['content'], 255);
-                    $string = substr($ds['content'], 0, strpos($ds['content'], "\n")) . '...';
-                } else {
-                    $string = $ds['content'];
-                }
+                $content = $ds['content'];
+                $string = preg_replace('/[,]/', ',', substr($content, 0, 255));
 
+                // Inizio codice per il linguaggio dal Plugin Tags
+                $plugin_language_path = './includes/plugins/tags/languages/';
+                $language_file = $plugin_language_path . $_SESSION['language'] . '/tags.php';
                 $_language = new \webspell\Language();
-                $_language->readModule('tags');
+                $_language->language = $_SESSION['language'];
+                include $language_file;
+                $_language->module = array_merge($_language->module, $language_array);
+                $_language->readModule('tags', false, false, $plugin_language_path);
+                // Fine codice
+
                 return array(
                     'date' => time(),
                     'type' => 'StaticPage',
@@ -247,7 +260,6 @@ class Tags
             return false;
         }
     }
-
 
     public static function getFaq($faqID)
     {
@@ -267,15 +279,18 @@ class Tags
         if ($get->num_rows) {
             $ds = mysqli_fetch_array($get);
             $answer = $ds['answer'];
-            if (mb_strlen($answer) > 255) {
-                $string = wordwrap($answer, 255);
-                $string = substr($answer, 0, strpos($answer, "\n")) . '...';
-            } else {
-                $string = $answer;
-            }
+            $string = preg_replace('/[,]/', ',', substr($answer, 0, 255));
 
+            // Inizio codice per il linguaggio dal Plugin Tags
+            $plugin_language_path = './includes/plugins/tags/languages/';
+            $language_file = $plugin_language_path . $_SESSION['language'] . '/tags.php';
             $_language = new \webspell\Language();
-            $_language->readModule('tags');
+            $_language->language = $_SESSION['language'];
+            include $language_file;
+            $_language->module = array_merge($_language->module, $language_array);
+            $_language->readModule('tags', false, false, $plugin_language_path);
+            // Fine codice
+
             return array(
                 'date' => $ds['date'],
                 'type' => 'FAQ',

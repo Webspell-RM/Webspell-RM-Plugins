@@ -299,7 +299,7 @@ if (isset($_GET[ 'action' ])) {
 if ($action == "new") {
     echo '<div class="card">
     <div class="card-header">
-                            <i class="bi bi-award" style="font-size: 1rem;"></i> ' . $plugin_language[ 'awards' ] . '
+                            <i class="bi bi-award"></i> ' . $plugin_language[ 'awards' ] . '
                         </div>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -367,7 +367,7 @@ if ($action == "new") {
 
     echo '<div class="card">
     <div class="card-header">
-                            <i class="bi bi-award" style="font-size: 1rem;"></i> ' . $plugin_language[ 'awards' ] . '
+                            <i class="bi bi-award"></i> ' . $plugin_language[ 'awards' ] . '
                         </div>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -534,11 +534,11 @@ if ($action == "new") {
         if ($type == "ASC") {
             echo '<a href="admincenter.php?site=admin_awards&amp;action=showsquad&amp;squadID=' . $squadID . '&amp;page=' . $page .
                 '&amp;sort=' . $sort . '&amp;type=DESC">' . $plugin_language[ 'sort' ] .
-                ':</a> <i class="bi bi-chevron-down" style="font-size: 1rem;"></i>&nbsp;&nbsp;&nbsp;';
+                ':</a> <i class="bi bi-chevron-down"></i>&nbsp;&nbsp;&nbsp;';
         } else {
             echo '<a href="admincenter.php?site=admin_awards&amp;action=showsquad&amp;squadID=' . $squadID . '&amp;page=' . $page .
                 '&amp;sort=' . $sort . '&amp;type=ASC">' . $plugin_language[ 'sort' ] .
-                ':</a> <i class="bi bi-chevron-up" style="font-size: 1rem;"></i>&nbsp;&nbsp;&nbsp;';
+                ':</a> <i class="bi bi-chevron-up"></i>&nbsp;&nbsp;&nbsp;';
         }
 
         echo $page_link;
@@ -597,7 +597,7 @@ if ($action == "new") {
 
       echo'<div class="card">
             <div class="card-header">
-                            <i class="bi bi-award" style="font-size: 1rem;"></i> ' . $plugin_language[ 'award' ] . '</div>
+                            <i class="bi bi-award"></i> ' . $plugin_language[ 'award' ] . '</div>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -664,10 +664,10 @@ if ($action == "new") {
     if ($gesamt) {
         if ($type == "ASC") {
             echo '<a href="admincenter.php?site=admin_awards&amp;page=' . $page . '&amp;sort=' . $sort . '&amp;type=DESC">' .
-                $plugin_language[ 'sort' ] . ':</a> <i class="bi bi-chevron-down" style="font-size: 1rem;"></i>';
+                $plugin_language[ 'sort' ] . ':</a> <i class="bi bi-chevron-down"></i>';
         } else {
             echo '<a href="admincenter.php?site=admin_awards&amp;page=' . $page . '&amp;sort=' . $sort . '&amp;type=ASC">' .
-                $plugin_language[ 'sort' ] . ':</a> <i class="bi bi-chevron-up style="font-size: 1rem;""></i>';
+                $plugin_language[ 'sort' ] . ':</a> <i class="bi bi-chevron-up"></i>';
         }
 
         echo $page_link;

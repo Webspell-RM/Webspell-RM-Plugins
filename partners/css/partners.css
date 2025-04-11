@@ -5,7 +5,7 @@
 /* Slider */
 
 .slick-slide {
-    margin: 0px 20px;
+    /*margin: 0px 20px;*/
 }
 
 .slick-slider {
@@ -114,8 +114,11 @@
 
 #partners-bar {
     padding: 10px; 
-    background-color: rgba(var(--bs-rm-foot-bg-rgb), 1);
+    /*background-color: rgba(var(--bs-rm-foot-bg-rgb), 1);*/
+    background-color: transparent;
     border-top:1px solid rgba(var(--bs-card-border-color-rgb), 1);
+    border-bottom:1px solid rgba(var(--bs-card-border-color-rgb), 1);
+
 }
 
 #partners-bar img {
@@ -125,6 +128,7 @@
     -webkit-filter: grayscale(100%);
     /* Chrome, Safari, Opera */
     filter: grayscale(100%);
+    margin: 0px 20px;
     
      }
 

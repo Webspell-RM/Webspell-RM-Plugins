@@ -68,47 +68,52 @@ if($action=="show"){
         $filepath = "../images/games/";
         #$gameicon = ''.$filepath.'' . $ds[ 'game' ] . '';
 
-        if(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.jpg')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.jpg';
-        } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.jpeg')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.jpeg';
-        } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.png')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.png';
-        } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.gif')){
-            $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.gif';
+        if(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.jpg')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.jpg';
+        } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.jpeg')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.jpeg';
+        } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.png')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.png';
+        } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.gif')){
+            $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.gif';
         } else{
-           $gameicon='../includes/plugins/games_pic/images/no-image.jpg';
+           $gameicon='../includes/plugins/squads/images/no-image.jpg';
         }
 
-        $serverdata = explode(":", $ds[ 'ip' ]);
-        $ip = $serverdata[ 0 ];
-        if (isset($serverdata[ 1 ])) {
-            $port = $serverdata[ 1 ];
-        } else {
-            $port = '';
-        }
+        /*$serverdata = explode(":", $ds[ 'ip' ]);
+            $ip = $serverdata[ 0 ];
+            if (isset($serverdata[ 1 ])) {
+                $port = $serverdata[ 1 ];
+            } else {
+                $port = '';
+            }*/
 
-        $server_timeout = 2;
-        $fp = fsockopen("udp://".$ip, $port, $errno, $errstr);
-        if(!$fp) {
-            $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'not_supported' ] . " ERROR: $errno - $errstr</em></span><br />";
-        } else {
-            @fwrite($fp, "\\xFA\\");
-            stream_set_timeout($fp, 2);
-            $res = fread($fp, 2000);
-            $info = stream_get_meta_data($fp);
-            fclose($fp);
-            if($info['timed_out']) {
-                $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'not_supported' ] . "</em></span>";
-            } elseif($res == '') {
-                $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'timeout' ] . "</em></span>";
-            }  else{
-                $status = "<span class='badge bg-success'>" . $plugin_language[ 'online' ] . "</span>";
+            $ip = $ds[ 'ip' ];
+            $port = $ds[ 'port' ];
+
+            $server_timeout = 2;
+            $fp = fsockopen("udp://".$ip, $port, $errno, $errstr);
+            if(!$fp) {
+                $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'not_supported' ] . " ERROR: $errno - $errstr</em></span><br />";
+            } else {
+                @fwrite($fp, "\\xFA\\");
+                stream_set_timeout($fp, 2);
+                $res = fread($fp, 2000);
+                $info = stream_get_meta_data($fp);
+                fclose($fp);
+                if($info['timed_out']) {
+                    $status = "<span class='badge bg-info'><em>" . $plugin_language[ 'not_supported' ] . "</em></span>";
+                } elseif($res == '') {
+                    $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'timeout' ] . "</em></span>";
+                }  else{
+                    $status = "<span class='badge bg-success'>" . $plugin_language[ 'online' ] . "</span>";
+                }
             }
-        }
-        $servername = $ds[ 'name' ];
-        $info = $ds[ 'info' ];
-        $ip = $ds[ 'ip' ];
+            $servername = $ds[ 'name' ];
+            $info = $ds[ 'info' ];
+            #$ip = $ds[ 'ip' ];
+            #$port = $ds[ 'port' ];
+        
 
         $translate = new multiLanguage(detectCurrentLanguage());
         $translate->detectLanguages($servername);
@@ -181,17 +186,17 @@ if(isset($_GET['page'])) $page=(int)$_GET['page'];
         else $page_link='';
 
     if ($page == "1") {
-        $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_servers WHERE displayed = '1' ORDER BY date DESC LIMIT 0,$max");
+        $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_servers WHERE displayed = '1' ORDER BY sort LIMIT 0,$max");
         $n=1;
     }
     else {
         $start=$page*$max-$max;
-        $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_servers WHERE displayed = '1' ORDER BY date DESC LIMIT $start,$max");
+        $ergebnis = safe_query("SELECT * FROM ".PREFIX."plugins_servers WHERE displayed = '1' ORDER BY sort LIMIT $start,$max");
         $n = ($gesamt+1)-$page*$max+$max;
     } 
 
 
-    $ds = safe_query("SELECT * FROM `" . PREFIX . "plugins_servers` ORDER BY `date`");
+    $ds = safe_query("SELECT * FROM `" . PREFIX . "plugins_servers` ORDER BY `sort`");
     $anzcats = mysqli_num_rows($ds);
     if ($anzcats) {
 
@@ -199,34 +204,31 @@ if(isset($_GET['page'])) $page=(int)$_GET['page'];
 
         while ($ds = mysqli_fetch_array($ergebnis)) {
 
-            if ($ds[ 'game' ] == "CS") {
-                $game = "HL";
-            } else {
-                $game = $ds[ 'game' ];
-            }
-
             $showgame = getgamename($ds[ 'game' ]);
             $filepath = "../images/games/";
 
-            if(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.jpg')){
-                $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.jpg';
-            } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.jpeg')){
-                $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.jpeg';
-            } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.png')){
-                $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.png';
-            } elseif(file_exists('./includes/plugins/games_pic/images/'.$ds['game'].'.gif')){
-                $gameicon='../includes/plugins/games_pic/images/'.$ds['game'].'.gif';
+            if(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.jpg')){
+                $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.jpg';
+            } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.jpeg')){
+                $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.jpeg';
+            } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.png')){
+                $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.png';
+            } elseif(file_exists('./includes/plugins/squads/images/games/'.$ds['game'].'.gif')){
+                $gameicon='../includes/plugins/squads/images/games/'.$ds['game'].'.gif';
             } else{
-               $gameicon='../includes/plugins/games_pic/images/no-image.jpg';
+               $gameicon='../includes/plugins/squads/images/no-image.jpg';
             }
 
-            $serverdata = explode(":", $ds[ 'ip' ]);
+            /*$serverdata = explode(":", $ds[ 'ip' ]);
             $ip = $serverdata[ 0 ];
             if (isset($serverdata[ 1 ])) {
                 $port = $serverdata[ 1 ];
             } else {
                 $port = '';
-            }
+            }*/
+
+            $ip = $ds[ 'ip' ];
+            $port = $ds[ 'port' ];
 
             $server_timeout = 2;
             $fp = fsockopen("udp://".$ip, $port, $errno, $errstr);
@@ -239,7 +241,7 @@ if(isset($_GET['page'])) $page=(int)$_GET['page'];
                 $info = stream_get_meta_data($fp);
                 fclose($fp);
                 if($info['timed_out']) {
-                    $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'not_supported' ] . "</em></span>";
+                    $status = "<span class='badge bg-info'><em>" . $plugin_language[ 'not_supported' ] . "</em></span>";
                 } elseif($res == '') {
                     $status = "<span class='badge bg-danger'><em>" . $plugin_language[ 'timeout' ] . "</em></span>";
                 }  else{
@@ -248,7 +250,8 @@ if(isset($_GET['page'])) $page=(int)$_GET['page'];
             }
             $servername = $ds[ 'name' ];
             $info = $ds[ 'info' ];
-            $ip = $ds[ 'ip' ];
+            #$ip = $ds[ 'ip' ];
+            #$port = $ds[ 'port' ];
 
             $translate = new multiLanguage(detectCurrentLanguage());
             $translate->detectLanguages($servername);
@@ -257,7 +260,7 @@ if(isset($_GET['page'])) $page=(int)$_GET['page'];
             $info = $translate->getTextByLanguage($info);
 
             if(isset($_COOKIE['im_server'])) {
-                $pic = '<a href="https://www.gametracker.com/server_info/'.$ip.'/" target="_blank"><img src="https://cache.gametracker.com/server_info/'.$ip.'/b_560_95_1.png" border="0" width="560" height="95" alt=""/></a>';
+                $pic = '<a href="https://www.gametracker.com/server_info/'.$ip.':'.$port.'/" target="_blank"><img src="https://cache.gametracker.com/server_info/'.$ip.':'.$port.'/b_560_95_1.png" border="0" width="560" height="95" alt=""/></a>';
             } else {
                 $pic = '<div data-service="server_offline" style="height: 95px; width: 560px"></div>';
             }
@@ -266,6 +269,7 @@ if(isset($_GET['page'])) $page=(int)$_GET['page'];
             $data_array['$game'] = $ds[ 'game' ];
             $data_array['$gameicon'] = $gameicon;
             $data_array['$ip'] = $ds[ 'ip' ];
+            $data_array['$port'] = $ds[ 'port' ];
             $data_array['$servername'] = $servername;
             $data_array['$status'] = $status;
             $data_array['$showgame'] = $showgame;

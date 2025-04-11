@@ -21,6 +21,6 @@ $language_array = array(
     'vote'           => 'Abstimmen',
     'vote_now'       => 'Jetzt abstimmen',
     'votes'          => 'Stimmen',
-    'result'         => 'Ergebnis'
+    'result'         => 'Ergebnis',
+    'votes_cast'     => 'Abgegebene Stimmen',
 );
-

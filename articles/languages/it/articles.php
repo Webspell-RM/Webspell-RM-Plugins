@@ -39,5 +39,8 @@ $language_array = array(
     'oct'                     => 'Ottobre',
     'nov'                     => 'Novembre',
     'dec'                     => 'Dicembre',
+    'by'                      => 'by',
+    'on'                      => 'il',
+    'no_link'                 => '<i>Nessun Link!</i>',
 );
 

@@ -1,63 +1,13 @@
 <?php
-global $userID,$_database,$add_database_install,$add_database_insert;
-global $str,$modulname,$info,$navi_name,$admin_file,$activate,$author,$website,$index_link,$hiddenfiles,$version,$path,$widget_link1,$widget_link2,$widget_link3,$widgetname1,$widgetname2,$widgetname3,$head_activated,$content_head_activated,$content_foot_activated,$head_section_activated,$foot_section_activated,$modul_deactivated,$modul_display,$full_activated,$plugin_settings,$plugin_module,$plugin_widget,$widget1,$widget2,$widget3,$mnavID,$navi_link,$catID,$dashnavi_link,$themes_modulname;
-##### Install für Plugin und Module ###################################################################################################
-$str                     =   "{[de]}Ticketcenter{[en]}Ticketcenter{[it]}Ticket di Supporto";                // name of the plugin
-$modulname               =   "ticketcenter";                // name to uninstall
-$info                    =   "{[de]}Mit diesem Plugin könnt ihr eur Ticketcenter anzeigen lassen.{[en]}With this plugin you can display your ticket center.{[it]}Con questo plugin puoi visualizzare il tuo centro ticket di supporto. ";// description of the plugin
-$navi_name               =   "{[de]}Ticketcenter{[en]}Ticketcenter{[it]}Ticket di Supporto";// name of the Webside Navigation / Dashboard Navigation
-$admin_file              =   "admin_ticketcategorys";       // administration file
-$activate                =   "1";                           // plugin activate 1 yes | 0 no
-$author                  =   "T-Seven";                     // author
-$website                 =   "https://webspell-rm.de";      // authors website
-$index_link              =   "ticketcenter,admin_ticketcategorys";// index file (without extension, also no .php)
-$hiddenfiles             =   "";                            // hiddenfiles (background working, no display anywhere)
-$version                 =   "0.1";                       	// current version, visit authors website for updates, fixes, ..
-$path                    =   "includes/plugins/ticketcenter/";  // plugin files location
-##### Widget Setting ##################################################################################################################
-$widget_link1            =   "";     												// widget_file (visible as module/box)
-$widget_link2            =   "";     												// widget_file (visible as module/box)
-$widget_link3            =   "";                            // widget_file (visible as module/box)
-$widgetname1             =   "";            								// widget_name (visible as module/box)
-$widgetname2             =   "";            								// widget_name (visible as module/box)
-$widgetname3             =   "";                            // widget_name (visible as module/box)
-##### Modul Setting activate yes/no ###################################################################################################
-$head_activated          =   "0";                           //Modul activate 1 yes | 0 no 
-$content_head_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$content_foot_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$head_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$foot_section_activated  =   "0";                           //Modul activate 1 yes | 0 no 
-$modul_deactivated       =   "0";                           //Modul activate 1 yes | 0 no
-$modul_display           =   "1";                           //Modul activate 1 yes | 0 no
-$full_activated          =   "0";                           //Modul activate 1 yes | 0 no
-$plugin_settings         =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_module           =   "1";                           //Modulsetting activate 1 yes | 0 no 
-$plugin_widget           =   "0";                           //Modulsetting activate 1 yes | 0 no 
-$widget1                 =   "0";                           //Modulsetting activate 1 yes | 0 no 
-$widget2                 =   "0";                           //Modulsetting activate 1 yes | 0 no 
-$widget3                 =   "0";                           //Modulsetting activate 1 yes | 0 no 
-##### Navigation Link #################################################################################################################
-$mnavID                  =   "1";                           // navigation category
-$navi_link               =   "ticketcenter";                // navigation link file (index.php?site=...)
-$catID                   =   "7";                           // dashboard_navigation category
-$dashnavi_link           =   "admin_ticketcategorys";       // dashboard_navigation link file  (admincenter.php?site==...)
-$themes_modulname        =   "default";
-#######################################################################################################################################
-if(!ispageadmin($userID)) { echo ("Access denied!"); return false; }
-$translate = new multiLanguage(detectCurrentLanguage());
-$translate->detectLanguages($str);
-$str = $translate->getTextByLanguage($str);
+global $str,$modulname,$version;
+$modulname='ticketcenter';
+$version='0.1';
+$str='Ticketcenter';
 echo "<div class='card'><div class='card-header'>$str Database Updation</div><div class='card-body'>";
 #######################################################################################################################################
-# Versions-Nummer wird upgedatet
-safe_query("UPDATE `".PREFIX."settings_plugins` SET version = '$version' WHERE `modulname` = '$modulname'");
+$transaction = '';
 
-DeleteData("settings_plugins","modulname","tickets");
-DeleteData("settings_module","modulname","tickets");
-DeleteData("navigation_dashboard_links","modulname","tickets");
-DeleteData("navigation_website_sub","modulname","tickets");
-            
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_tickets_categories` (
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_ticketcenter_categories` (
 		`ticketcatID` int(11) NOT NULL AUTO_INCREMENT,
 		`name` varchar(255) NOT NULL,
 		`subcatID` int(11) NOT NULL,
@@ -65,7 +15,7 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 ) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_tickets` (	
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_ticketcenter` (	
 		`ticketID` int(11) NOT NULL AUTO_INCREMENT,
 		`masterticketID` int(11) NOT NULL,
 		`ticketcatID` int(11) NOT NULL,
@@ -81,15 +31,40 @@ add_database_install($add_database_install = "CREATE TABLE IF NOT EXISTS`" . PRE
 		`adminarchiv` int(11) NOT NULL,
 		PRIMARY KEY (`ticketID`)
 ) AUTO_INCREMENT=1
+  DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");        
+
+$transaction .= addtable("CREATE TABLE IF NOT EXISTS`" . PREFIX . "plugins_ticketcenter_settings_widgets` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `position` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `modulname` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `themes_modulname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '',
+  `widgetname` varchar(255) NOT NULL DEFAULT '',
+  `widgetdatei` varchar(255) NOT NULL DEFAULT '',
+  `activated` int(1) DEFAULT 1,
+  `sort` int(11) DEFAULT 1,
+PRIMARY KEY (`id`)
+) AUTO_INCREMENT=1
   DEFAULT CHARSET=utf8 DEFAULT COLLATE utf8_unicode_ci");
 
-get_add_module_install ();
-get_add_plugin_manager();
-get_add_navigation();
-get_add_dashboard_navigation ();
+$transaction .= add_insert_table("INSERT IGNORE INTO `" . PREFIX . "plugins_ticketcenter_settings_widgets` (`id`, `position`, `modulname`, `themes_modulname`, `widgetname`, `widgetdatei`, `activated`, `sort`) VALUES
+('1', 'navigation_widget', 'navigation', 'default', 'Navigation', 'widget_navigation', 1, 1),
+('2', 'footer_widget', 'footer', 'default', 'Footer Easy', 'widget_footer_easy', 1, 1)");
+
+## SYSTEM #####################################################################################################################################
+
+$transaction .= add_insert_plugin("INSERT IGNORE INTO `" . PREFIX . "settings_plugins` (`pluginID`, `name`, `modulname`, `info`, `admin_file`, `activate`, `author`, `website`, `index_link`, `hiddenfiles`, `version`, `path`, `status_display`, `plugin_display`, `widget_display`, `delete_display`, `sidebar`) VALUES
+('', 'Ticketcenter', 'ticketcenter', '{[de]}Mit diesem Plugin könnt ihr eure Ticketcenter anzeigen lassen.{[en]}With this plugin you can display your ticketcenter.{[it]}Con questo plugin è possibile mostrare gli Articoli sul sito web.', 'admin_ticketcategorys', 1, 'T-Seven', 'https://webspell-rm.de', 'ticketcenter', '', '0.1', 'includes/plugins/ticketcenter/', 1, 1, 1, 1, 'deactivated')");
+
+## NAVIGATION #####################################################################################################################################
+
+$transaction .= add_insert_navi_dashboard("INSERT IGNORE INTO `".PREFIX."navigation_dashboard_links` (`linkID`, `catID`, `name`, `modulname`, `url`, `accesslevel`, `sort`) VALUES
+('', 7, '{[de]}Ticketcenter{[en]}Ticketcenter{[it]}Ticket di Supporto', 'ticketcenter', 'admincenter.php?site=admin_ticketcategorys', 'page', 1)");
+
+$transaction .= add_insert_navigation("INSERT IGNORE INTO `".PREFIX."navigation_website_sub` (`snavID`, `mnavID`, `name`, `modulname`, `url`, `sort`, `indropdown`, `themes_modulname`) VALUES
+('', 1, '{[de]}Ticketcenter{[en]}Ticketcenter{[it]}Ticket di Supporto', 'ticketcenter', 'index.php?site=ticketcenter', 1, 1, 'default')");
 
 #######################################################################################################################################
-
 echo "</div></div>";
-    
+
+  
  ?>

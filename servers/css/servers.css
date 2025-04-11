@@ -15,3 +15,107 @@
         background-position: 50% -10%;
         
     }
+
+
+/******* sc_tsviewer ********/
+/*----------tsviewer---------------*/
+.clear { clear:both; display:block; overflow:hidden; visibility:hidden; height:0px;}
+#sc_tsviewer {
+    font-size:13px;
+    color: rgba(var(--bs-primary-rgb), 1);
+    background-color: rgba(var(--bs-rm-foot-bg-rgb), 1);
+    border-top:1px solid rgba(var(--bs-card-border-color-rgb), 1);
+    padding-top: 20px;
+}
+#sc_tsviewer-icon {
+    float:left;
+    padding:25px 0 0 0;
+}
+
+#sc_tsviewer-headline {
+    color: var(--bs-white);--over 
+    padding:28px 0 0 0px;
+}
+.sc_tsviewer-info {
+    float:left;
+    padding:20px 0 0 30px;
+}
+.sc_tsviewer-info .fa-stack {
+    height:50px;
+    width:50px;
+}
+.sc_tsviewer-info .fa-stack i {
+    font-size:52px;
+}
+.sc_tsviewer-info .fa-stack i.fa-inverse {
+    color:#fff;
+    font-size:20px;
+    line-height:52px;
+}
+.sc_tsviewer-infotitle {
+    color: rgba(var(--bs-primary-rgb), 1);--over
+    float:left;
+    text-transform:uppercase;
+    padding:40px 0 0 5px;
+}
+#sc_tsviewer-button {
+    float:left;
+    padding:30px 0 0 30px;
+}
+.sc_tsviewer-icon i {
+    margin-top: -15px;
+
+}
+
+@media only screen and (max-width: 1200px) {
+#sc_tsviewer-headline {
+    font-size:24px;
+    padding:24px 0 0 20px;
+}
+}
+
+@media only screen and (max-width: 992px) {
+#sc_tsviewer {
+    text-align:center;
+}
+#sc_tsviewer-icon {
+    float:none;
+    padding:15px 0 0 0;
+}
+#sc_tsviewer-headline {
+    float:none;
+    padding:15px 0 0 0;
+}
+.sc_tsviewer-info {
+    display:inline-block;
+    float:none;
+    padding:15px 0 0 30px;
+}
+.sc_tsviewer-infotitle {
+    display:inline-block;
+    float:none;
+    padding:30px 0 0 5px;
+}
+#sc_tsviewer-button {
+    float:none;
+    padding:35px 0 0;
+}
+}
+@media only screen and (max-width: 640px) {
+#sc_tsviewer-headline {
+    float:left;
+}
+.sc_tsviewer-info {
+    display:block;
+    padding:0 0 10px 0;
+}
+.sc_tsviewer-infotitle {
+    display:block;
+    padding:10px 30px 0 30px;
+}
+#sc_tsviewer-button {
+    float:none;
+    padding:30px 0 0;
+}
+}
+

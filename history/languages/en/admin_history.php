@@ -1,20 +1,33 @@
 <?php
 
-$language_array = Array(
+$language_array = array(
 
-  'no_history'          =>'<blockquote>No information available at this time</blockquote>',
-  'access_denied'       =>'Access denied',
-  'title'               =>'History',
-  'history'             =>'History',
-  'transaction_invalid' =>'Transaction ID invalid',
-  'update'              =>'Update',
-  'you_can_use_html'    =>'You can use HTML-Tags',
-  'color'               =>'Color',
-  'title_head'          =>'Heading'
+  'history'             => 'History',
+  'new_history'         => 'New History',
+  'no_history'          => '<blockquote>no history</blockquote>',
+  'access_denied'       => '<h3>Info</h3><div class="alert alert-danger"><span class="sr-only">Error:</span><strong>Access denied</strong></div>',
+  'actions'             => 'Actions',
+  'add_history'         => 'Add History',
+  'back'                => 'Back',
+  'delete'              => 'Delete',
+  'description'         => 'Description',
+  'edit'                => 'Change',
+  'edit_history'        => 'Change History',
+  'is_displayed'        => 'Is it displayed?',
+  'new_history'         => 'New History',
+  'no'                  => 'No',
+  'no_entries'          => 'No entries',
+  'really_delete'       => 'Are you sure you want to delete this info?',
+  'sort'                => 'Sorting',
+  'history_name'        => 'Headline',
+  'transaction_invalid' => 'Transaction ID invalid',
+  'to_sort'             => 'Sort',
+  'yes'                 => 'Yes',
+  'title'               => 'History',
+  'options'             => 'Options',
+  'settings'            => 'History settings',
+  'max_history'         => 'History per page',
+  'tooltip'             => 'Maximum history that is displayed in full',
+  'update'              => 'Change',
+  'close'               => 'Close',
 );
-
-
-
-
-
-

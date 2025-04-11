@@ -2,12 +2,12 @@
 "items": [
 			{
 				"index": "php",
-				"file1": "partners/update.php",
-				"file2": "partners/install.php",
-				"file3": "partners/uninstall.php",
-				"file4": "partners/partners.php",
-				"file5": "partners/widget_partners_sidebar.php",
-				"file6": "partners/widget_partners_content.php"
+				"file1": "partners/install.php",
+				"file2": "partners/uninstall.php",
+				"file3": "partners/partners.php",
+				"file4": "partners/widget_partners_sidebar.php",
+				"file5": "partners/widget_partners_content.php",
+				"file6": "partners/update.php"
 			},
 			{
 				"index": "admin",

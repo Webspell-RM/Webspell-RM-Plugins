@@ -15,10 +15,13 @@
 				"index": "language",
 				"file1": "fightus/languages/de/admin_fightus.php",
 				"file2": "fightus/languages/de/fightus.php",
-				"file3": "fightus/languages/en/admin_fightus.php",
-				"file4": "fightus/languages/en/fightus.php",
-				"file5": "fightus/languages/it/admin_fightus.php",
-				"file6": "fightus/languages/it/fightus.php"
+				"file3": "fightus/languages/de/admin_squads.php",
+				"file4": "fightus/languages/en/admin_fightus.php",
+				"file5": "fightus/languages/en/fightus.php",
+				"file6": "fightus/languages/en/admin_squads.php",
+				"file7": "fightus/languages/it/admin_fightus.php",
+				"file8": "fightus/languages/it/fightus.php",
+				"file9": "fightus/languages/it/admin_squads.php"
 			},
 			{
 				"index": "templates",

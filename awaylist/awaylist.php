@@ -82,8 +82,6 @@ if(!issuperadmin($userID)) {
 	$data_array['$away_from']=$plugin_language['away_from'];
 	$data_array['$your_reason']=$plugin_language['your_reason'];
 	$data_array['$send']=$plugin_language['send'];
-	
-	
 	$data_array['$start']=$plugin_language['start'];
 	$data_array['$end']=$plugin_language['end'];
 
@@ -151,13 +149,13 @@ elseif($action=="show") {
 	$id=$ds['userID'];
 	$awayid=$ds['awayID'];
 	$nickname='<a href="index.php?site=profile&id='.$ds['userID'].'"><b>'.getnickname($ds['userID']).'</b></a>';
-	$action='<tr><td>'.$plugin_language['action'].':</td><td valign="right" align="right">';
+	$action='<tr><td>Action:</td><td valign="right" align="right">';
 	if($userID!=$ds['userID']) $action.='<a class="btn btn-warning" href="index.php?site=awaylist&action=edit&id='.$ds['awayID'].'" class="input">' . $plugin_language[ 'edit' ] . '</a>
 
-<a class="btn btn-danger" href="javascript:void(0)" onclick="MM_confirm(\''.$plugin_language['really_delete'].'\', \'index.php?site=awaylist&action&amp;delete=true&amp;awayID='.$ds['awayID'].'&amp;captcha_hash=' . $hash . '\')"><i class="bi bi-trash"  style="font-size: 1rem;"></i> '.$plugin_language['delete'].'</a>';
+<a class="btn btn-danger" href="javascript:void(0)" onclick="MM_confirm(\''.$plugin_language['really_delete'].'\', \'index.php?site=awaylist&action&amp;delete=true&amp;awayID='.$ds['awayID'].'&amp;captcha_hash=' . $hash . '\')"><i class="fa fa-trash-o"></i> '.$plugin_language['delete'].'</a>';
 	elseif(ispageadmin($userID)) $action.='<a class="btn btn-warning" href="index.php?site=awaylist&action=edit&id='.$ds['awayID'].'" class="input">' . $plugin_language[ 'edit' ] . '</a>
 
-<a class="btn btn-danger" href="javascript:void(0)" onclick="MM_confirm(\''.$plugin_language['really_delete'].'\', \'index.php?site=awaylist&action&amp;delete=true&amp;awayID='.$ds['awayID'].'&amp;captcha_hash=' . $hash . '\')"><i class="bi bi-trash"  style="font-size: 1rem;"></i> '.$plugin_language['delete'].'</a>';
+<a class="btn btn-danger" href="javascript:void(0)" onclick="MM_confirm(\''.$plugin_language['really_delete'].'\', \'index.php?site=awaylist&action&amp;delete=true&amp;awayID='.$ds['awayID'].'&amp;captcha_hash=' . $hash . '\')"><i class="fa fa-trash-o"></i> '.$plugin_language['delete'].'</a>';
 	$action.='</td></tr>';	
 	
 	$data_array = array();
@@ -173,7 +171,6 @@ elseif($action=="show") {
 	$data_array['$lang_from']=$plugin_language['from'];
 	$data_array['$lang_to']=$plugin_language['to'];
 	$data_array['$lang_your_reason']=$plugin_language['your_reason'];
-	
 
 	$template = $GLOBALS["_template"]->loadTemplate("awaylist","show", $data_array, $plugin_path);
 	echo $template;
@@ -287,7 +284,7 @@ elseif(isset($_GET['delete'])){
 	    $template = $GLOBALS["_template"]->loadTemplate("awaylist","head", $data_array, $plugin_path);
 		echo $template;
 
-		echo'<a class="btn btn-success" href="index.php?site=awaylist&action=add"><i class="bi bi-plus" style="font-size: 1rem;"></i> '. $plugin_language[ 'set_me_away' ] . '</a><br><br>';
+		echo'<a class="btn btn-success" href="index.php?site=awaylist&action=add"><i class="fa fa-plus"></i> '. $plugin_language[ 'set_me_away' ] . '</a><br><br>';
 
 		$n=1;
 		while($ds=mysqli_fetch_array($ergebnis)) {
@@ -296,7 +293,7 @@ elseif(isset($_GET['delete'])){
 			$nickname='<a href="index.php?site=profile&id='.$ds['userID'].'"><b>'.getnickname($ds['userID']).'</b></a>';
 			
 			if (isclanmember($userID)) {
-                $member = '  <i class="bi bi-person" style="font-size: 1rem;color: #5cb85c" title="Clanmember"></i>';
+                $member = '  <i class="fa fa-user" style="color: #5cb85c" title="Clanmember"></i>';
             } else {
                 $member = '';
             }
@@ -310,7 +307,7 @@ elseif(isset($_GET['delete'])){
 
 			$pm = '';
         	if ($loggedin && $ds[ 'userID' ] != $userID) {
-            	$pm = '<a href="index.php?site=messenger&amp;action=touser&amp;touser=' . $ds[ 'userID' ] . '"><i class="bi bi-chat" style="font-size: 1rem;"></i></a>';
+            	$pm = '<a href="index.php?site=messenger&amp;action=touser&amp;touser=' . $ds[ 'userID' ] . '"><i class="fas fa-comments"></i></a>';
             } else {
         		$pm = "n/a";
         
@@ -323,11 +320,11 @@ elseif(isset($_GET['delete'])){
 			$end = $ds[ 'endaway' ];
 			$endaway = date('d.m.Y', strtotime(str_replace('-','/', $end))); 
 
-			$action='<a class="btn btn-info" href="index.php?site=awaylist&action=show&id='.$ds['awayID'].'" class="input">' . $plugin_language[ 'show' ] . '</a> ';
+			$action='<a class="btn btn-info" href="index.php?site=awaylist&action=show&id='.$ds['awayID'].'" class="input">show</a> ';
 			if($userID==$ds['userID'] or ispageadmin($userID)) 
 				$action.='<a class="btn btn-warning" href="index.php?site=awaylist&action=edit&id='.$ds['awayID'].'" class="input">' . $plugin_language[ 'edit' ] . '</a>
 
-<a class="btn btn-danger" href="javascript:void(0)" onclick="MM_confirm(\''.$plugin_language['really_delete'].'\', \'index.php?site=awaylist&action&amp;delete=true&amp;awayID='.$ds['awayID'].'&amp;captcha_hash=' . $hash . '\')"><i class="bi bi-trash" style="font-size: 1rem;"></i> '.$plugin_language['delete'].'</a>';
+<a class="btn btn-danger" href="javascript:void(0)" onclick="MM_confirm(\''.$plugin_language['really_delete'].'\', \'index.php?site=awaylist&action&amp;delete=true&amp;awayID='.$ds['awayID'].'&amp;captcha_hash=' . $hash . '\')"><i class="fa fa-trash-o"></i> '.$plugin_language['delete'].'</a>';
 		
 			$data_array = array();
 
@@ -351,7 +348,7 @@ elseif(isset($_GET['delete'])){
     	$template = $GLOBALS["_template"]->loadTemplate("awaylist","foot", $data_array, $plugin_path);
 		echo $template;
 
-	}else{ echo'<a class="btn btn-success" href="index.php?site=awaylist&action=add"><i class="bibi-plus" style="font-size: 1rem;"></i> '. $plugin_language[ 'set_me_away' ] . '</a><br><br>'.$plugin_language['no_members_are_away'].'';
+	}else{ echo'<a class="btn btn-success" href="index.php?site=awaylist&action=add"><i class="fa fa-plus"></i> '. $plugin_language[ 'set_me_away' ] . '</a><br><br>'.$plugin_language['no_members_are_away'].'';
 }
 }
 }

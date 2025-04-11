@@ -8,8 +8,11 @@
 				"file4": "about_us/about_us.php",
 				"file5": "about_us/widget_about_sidebar.php",
 				"file6": "about_us/widget_about_content.php",
-				"file7": "about_us/widget_about_sidebar_verdux.php"
-			},
+				"file7": "about_us/widget_about_sidebar_verdux.php",
+				"file8": "about_box/widget_about_sponsor_content.php",
+				"file9": "about_box/widget_about_us_box.php",
+				"file10": "about_box/widget_about_us_box_content.php"
+				},
 			{
 				"index": "admin",
 				"file1": "about_us/admin/admin_about_us.php"
@@ -26,7 +29,10 @@
 			},
 			{
 				"index": "templates",
-				"file1": "about_us/templates/about.html"
+				"file1": "about_us/templates/about.html",				
+				"file2": "about_us/templates/about_sponsor.html",
+				"file3": "about_us/templates/about_us_box.html",
+				"file4": "about_us/templates/about_us_box_content.html"
 			},
 			{
 				"index": "images",
@@ -34,7 +40,10 @@
 				"file2": "about_us/images/about_left.jpg",
 				"file3": "about_us/images/widget_about_content.jpg",
 				"file4": "about_us/images/widget_about_sidebar.jpg",
-				"file5": "about_us/images/widget_about_sidebar_verdux.jpg"
+				"file5": "about_us/images/widget_about_sidebar_verdux.jpg",
+				"file6": "about_us/images/about-img.jpg",
+				"file7": "about_us/images/widget_about_sponsor_content.jpg",
+				"file8": "about_us/images/widget_about_us_box.jpg"
 			},
 			{
 				"index": "css",

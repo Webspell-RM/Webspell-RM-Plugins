@@ -5,7 +5,7 @@ $language_array = Array(
     'title'                 => 'Features Box',
     'about_title'           => 'Über uns',
     'no_about'              => '<blockquote>Derzeit ist keine Beschreibung verfügbar.</blockquote>',
-    'nor_box'               => 'Features Box',
+    'features_box'               => 'Features Box',
     'description'           => 'Beschreibung',
     'access_denied'         => '<div class="alert alert-danger" role="alert">Zugriff verweigert</div>',
     'transaction_invalid'   => '<div class="alert alert-danger" role="alert">Transaktions ID ungültig</div>',
@@ -21,5 +21,7 @@ $language_array = Array(
     'box_five'              => 'Box Fünf',
     'box_six'               => 'Box Sechs',
     'max_sc'                => 'max Textlänge Widget-Datei',
+    'name' =>'Widget Name',
+    'actions' => 'Aktionen'
     
 );

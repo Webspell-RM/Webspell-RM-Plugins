@@ -51,7 +51,7 @@ if (isset($_GET[ 'action' ])) {
 if ($action == "add") {
 
   @$progress .= "<option value='0'>Nobody</option>";
-  $squadmemberqry = safe_query("SELECT `userID` FROM `".PREFIX."squads_members`");
+  $squadmemberqry = safe_query("SELECT `userID` FROM `".PREFIX."plugins_squads_members`");
   while($sq = mysqli_fetch_array($squadmemberqry)) {
    $progress .= "<option value='" . $sq[ 'userID' ] . "'>".getnickname($sq[ 'userID' ])."</option>";
   }
@@ -157,7 +157,7 @@ if ($action == "add") {
     }
 
   @$progress .= "<option value='0'>Nobody</option>";
-  $squadmemberqry = safe_query("SELECT `userID` FROM `".PREFIX."squads_members`");
+  $squadmemberqry = safe_query("SELECT `userID` FROM `".PREFIX."plugins_squads_members`");
   while($sq = mysqli_fetch_array($squadmemberqry)) {
     
     if($ds[ 'progress_by' ] == $sq[ 'userID' ]) { 

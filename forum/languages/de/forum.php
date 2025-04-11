@@ -118,6 +118,9 @@ $language_array = array(
     'feedback'            => 'Finden den Beitrag hilfreich',
     'disfeedback'         => 'Finden den Beitrag doch nicht hilfreich!',
     'squads_error'        => '<blockquote>Squads Plugin nicht installiert!</blockquote>',
-    'search'              => 'Suche',  
+    'search'              => 'Suche',
+    'dislike'             => 'Gefällt mir nicht',  
+    'like'                => 'Gefällt mir',
+    'is_banned'           => 'Dieser Benutzer ist gebannt!', 
+    'no_topic'            => 'Du musst einen neues Thema eingeben!',
 );
-

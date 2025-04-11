@@ -74,13 +74,13 @@ if($action == 'delete') {
     if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
 
         $awardID = $_GET['awardID'];
-        $ds = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_user_award_list WHERE uawardID='$awardID'"));
+        $ds = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_useraward_list WHERE uawardID='$awardID'"));
 
         if(file_exists($filepath.$ds['image'])) @unlink($filepath.$ds['image']);
         if(file_exists($specialfilepath.$ds['image'])) @unlink($specialfilepath.$ds['image']);
 
-        safe_query(" DELETE FROM ".PREFIX."plugins_user_award WHERE awardID='$awardID'");
-        safe_query("DELETE FROM ".PREFIX."plugins_user_award_list WHERE uawardID='$awardID' ");
+        safe_query(" DELETE FROM ".PREFIX."plugins_useraward WHERE awardID='$awardID'");
+        safe_query("DELETE FROM ".PREFIX."plugins_useraward_list WHERE uawardID='$awardID' ");
         redirect('admincenter.php?site=admin_user_awards', '<div class=\'alert alert-success\' role=\'alert\'>'.$plugin_language[ 'del_okay' ].'</div>', '1');
     } else {
         #echo $plugin_language[ 'transaction_invalid' ];
@@ -95,7 +95,7 @@ if($action == 'delete') {
         $awardrequirepoints = isset($_POST['special']) ? $_POST['special'] : '0';
 
         safe_query("
-            INSERT INTO ".PREFIX."plugins_user_award_list
+            INSERT INTO ".PREFIX."plugins_useraward_list
                 (name, info,awardrequirepoints,awardrequire)
             values
                 ('$name', '$info', '$awardrequirepoints', '$points')
@@ -132,7 +132,7 @@ if($action == 'delete') {
                         if ($upload->saveAs($filepath . $file, true)) {
                             @chmod($filepath . $file, $new_chmod);
                             safe_query(
-                                "UPDATE ".PREFIX."plugins_user_award_list SET image='".$file."' WHERE uawardID='".$id."'"
+                                "UPDATE ".PREFIX."plugins_useraward_list SET image='".$file."' WHERE uawardID='".$id."'"
                             );
                         }
                     } else {
@@ -165,7 +165,7 @@ if($action == 'delete') {
         $awardID = isset($_POST['awardID']) ? $_POST['awardID'] : '';
         $awardrequirepoints = isset($_POST['special']) ? $_POST['special'] : '0';
 
-        safe_query("UPDATE ".PREFIX."plugins_user_award_list SET name='$name', info='$info', awardrequirepoints='$awardrequirepoints', awardrequire='$points' WHERE uawardID='$awardID' ");
+        safe_query("UPDATE ".PREFIX."plugins_useraward_list SET name='$name', info='$info', awardrequirepoints='$awardrequirepoints', awardrequire='$points' WHERE uawardID='$awardID' ");
 
         if($awardrequirepoints == '0') {
             $filepath = $filepath;
@@ -197,7 +197,7 @@ if($action == 'delete') {
                         if ($upload->saveAs($filepath . $file, true)) {
                             @chmod($filepath . $file, $new_chmod);
                             safe_query(
-                                "UPDATE ".PREFIX."plugins_user_award_list SET image='".$file."' WHERE uawardID='".$awardID."'"
+                                "UPDATE ".PREFIX."plugins_useraward_list SET image='".$file."' WHERE uawardID='".$awardID."'"
                             );
                         }
                     } else {
@@ -225,7 +225,7 @@ if($action == 'delete') {
     if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
         $uwID = isset($_GET['uwID']) ? $_GET['uwID'] : '';
         $awardID = isset($_GET['awardID']) ? $_GET['awardID'] : '';
-        safe_query(" DELETE FROM ".PREFIX."plugins_user_award WHERE uwID='$uwID' ");
+        safe_query(" DELETE FROM ".PREFIX."plugins_useraward WHERE uwID='$uwID' ");
         redirect('admincenter.php?site=admin_user_awards&action=userawarding&awardID='.$awardID.'', '<div class=\'alert alert-success\' role=\'alert\'>'.$plugin_language[ 'del_okay' ].'</div>', '3');
     } else {
         echo $plugin_language[ 'transaction_invalid' ];
@@ -238,7 +238,7 @@ if($action == 'delete') {
         $user = isset($_POST['user']) ? $_POST['user'] : '';
   
         safe_query("
-            INSERT INTO ".PREFIX."plugins_user_award 
+            INSERT INTO ".PREFIX."plugins_useraward 
                 ( userID, awardID )
             values
               ( '$user', '$awardID' )
@@ -253,7 +253,7 @@ if($action == 'delete') {
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
         safe_query(
-            "UPDATE ".PREFIX."plugins_user_award_settings SET allaward='1'"
+            "UPDATE ".PREFIX."plugins_useraward_settings SET allaward='1'"
         );
         redirect('admincenter.php?site=admin_user_awards', '<div class=\'alert alert-success\' role=\'alert\'>OK - Bitte warten... || OK - Please wait...</div>', '1');
     } else {
@@ -264,7 +264,7 @@ if($action == 'delete') {
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
         safe_query(
-            "UPDATE ".PREFIX."plugins_user_award_settings SET allaward='0'"
+            "UPDATE ".PREFIX."plugins_useraward_settings SET allaward='0'"
         );
         redirect('admincenter.php?site=admin_user_awards', '<div class=\'alert alert-success\' role=\'alert\'>OK - Bitte warten... || OK - Please wait...</div>', '1');
     } else {
@@ -426,7 +426,7 @@ if($action == 'delete') {
     ';
 } elseif($action == 'edit') {
     $awardID = isset($_GET['awardID']) ? $_GET['awardID'] : '';
-    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_user_award_list WHERE uawardID='$awardID'");
+    $ergebnis=safe_query("SELECT * FROM ".PREFIX."plugins_useraward_list WHERE uawardID='$awardID'");
     $ds=mysqli_fetch_array($ergebnis);
 
     $CAPCLASS = new \webspell\Captcha;
@@ -532,7 +532,7 @@ if($action == 'delete') {
     ';
 } elseif($action == 'userawarding') {
     $awardID = isset($_GET['awardID']) ? $_GET['awardID'] : '';
-    $ds = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_user_award_list WHERE uawardID = '$awardID' ORDER BY name"));
+    $ds = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_useraward_list WHERE uawardID = '$awardID' ORDER BY name"));
     echo'
         <div class="card">
             <div class="card-header">
@@ -554,7 +554,7 @@ if($action == 'delete') {
                     </thead>
     ';
 			 
-    $opponents=safe_query("SELECT * FROM ".PREFIX."plugins_user_award WHERE awardID='$awardID' ORDER BY userID");
+    $opponents=safe_query("SELECT * FROM ".PREFIX."plugins_useraward WHERE awardID='$awardID' ORDER BY userID");
     $CAPCLASS = new \webspell\Captcha;
     $CAPCLASS->createTransaction();
     $hash = $CAPCLASS->getHash();
@@ -612,7 +612,7 @@ if($action == 'delete') {
 
     $translate = new multiLanguage(detectCurrentLanguage());
 
-    $ds1 = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_user_award_settings"));
+    $ds1 = mysqli_fetch_array(safe_query("SELECT * FROM ".PREFIX."plugins_useraward_settings"));
     if($ds1['allaward'] == '0'){
         $status='<i class="bi bi-x-circle" title="'.$plugin_language['show'].'"></i>';
     } else {
@@ -654,7 +654,7 @@ if($action == 'delete') {
                         <th class="title">'.$plugin_language[ 'actions' ].':</th>
                     </thead>
     ';
-    $opponentss = safe_query("SELECT * FROM ".PREFIX."plugins_user_award_list WHERE awardrequirepoints = '-1' ORDER BY name");
+    $opponentss = safe_query("SELECT * FROM ".PREFIX."plugins_useraward_list WHERE awardrequirepoints = '-1' ORDER BY name");
     while($dbs=mysqli_fetch_array($opponentss)) {
         $awardID = $dbs['uawardID'];
         $translate->detectLanguages($dbs['name']);
@@ -703,7 +703,7 @@ if($action == 'delete') {
         ';
     }
 			 
-    $opponents=safe_query("SELECT * FROM ".PREFIX."plugins_user_award_list WHERE awardrequirepoints != '-1' ORDER BY name");
+    $opponents=safe_query("SELECT * FROM ".PREFIX."plugins_useraward_list WHERE awardrequirepoints != '-1' ORDER BY name");
     while($db=mysqli_fetch_array($opponents)) {
         $awardID = $db['uawardID'];
         $del = '';

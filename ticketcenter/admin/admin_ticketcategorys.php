@@ -43,7 +43,7 @@ if (!$accesslevel($userID) || mb_substr(basename($_SERVER[ 'REQUEST_URI' ]), 0, 
 function generate_overview($ticketcats = '', $offset = '', $subcatID = 0) {
 
   global $plugin_language;
-  $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '" . $subcatID . "' ORDER BY name");
+  $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '" . $subcatID . "' ORDER BY name");
     
     $i=1;
     $CAPCLASS = new \webspell\Captcha;
@@ -91,7 +91,7 @@ function generate_overview($ticketcats = '', $offset = '', $subcatID = 0) {
         
         $i++;
   
-    if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '" . $ds[ 'ticketcatID' ] . "'"))) {
+    if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '" . $ds[ 'ticketcatID' ] . "'"))) {
       $ticketcats .= generate_overview("", $offset.getinput($ds[ 'name' ])." &raquo; ", $ds[ 'ticketcatID' ]);
       }
   }
@@ -100,13 +100,13 @@ function generate_overview($ticketcats = '', $offset = '', $subcatID = 0) {
 }
 
 function delete_category($ticketcat){
-  $rubrics = safe_query("SELECT ticketcatID FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '" . $ticketcat . "' ORDER BY name");
+  $rubrics = safe_query("SELECT ticketcatID FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '" . $ticketcat . "' ORDER BY name");
   if(mysqli_num_rows($rubrics)){
     while($ds = mysqli_fetch_assoc($rubrics)){
       delete_category($ds[ 'ticketcatID' ]);
     }
   }
-  safe_query("DELETE FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID='" . $ticketcat . "'");
+  safe_query("DELETE FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID='" . $ticketcat . "'");
 }
 
 /* start processing */
@@ -115,7 +115,7 @@ if(isset($_POST['save'])) {
   if(mb_strlen($_POST['name'])>0){
     $CAPCLASS = new \webspell\Captcha;
         if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
-      safe_query("INSERT INTO " . PREFIX . "plugins_tickets_categories ( name, subcatID ) values( '" . $_POST[ 'name' ] . "', '".$_POST[ 'subcat' ] . "' ) ");
+      safe_query("INSERT INTO " . PREFIX . "plugins_ticketcenter_categories ( name, subcatID ) values( '" . $_POST[ 'name' ] . "', '".$_POST[ 'subcat' ] . "' ) ");
     } else echo $_language->module[ 'transaction_invalid' ];
   }
   else{
@@ -127,7 +127,7 @@ elseif(isset($_POST[ 'saveedit' ])) {
   if(mb_strlen($_POST[ 'name' ])>0){
     $CAPCLASS = new \webspell\Captcha;
         if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
-      safe_query("UPDATE " . PREFIX . "plugins_tickets_categories SET name='" . $_POST[ 'name' ] . "', subcatID = '" . $_POST[ 'subcat' ] . "' WHERE ticketcatID='" . $_POST[ 'ticketcatID' ] . "'");
+      safe_query("UPDATE " . PREFIX . "plugins_ticketcenter_categories SET name='" . $_POST[ 'name' ] . "', subcatID = '" . $_POST[ 'subcat' ] . "' WHERE ticketcatID='" . $_POST[ 'ticketcatID' ] . "'");
     } else echo $_language->module[ 'transaction_invalid' ];
   }
   else{
@@ -150,10 +150,10 @@ if(!isset($_GET[ 'action' ])) {
 if($_GET[ 'action' ] == "add") {
   
   function generate_options($ticketcats = '', $offset = '', $subcatID = 0) {
-    $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '" . $subcatID . "' ORDER BY name");
+    $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '" . $subcatID . "' ORDER BY name");
     while($dr = mysqli_fetch_array($rubrics)) {
       $ticketcats .= '<option value="' . $dr[ 'ticketcatID' ] . '">' . $offset . getinput($dr[ 'name' ]) . '</option>';
-      if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '" . $dr[ 'ticketcatID' ] . "'"))) {
+      if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '" . $dr[ 'ticketcatID' ] . "'"))) {
         $ticketcats .= generate_options("", $offset."- ", $dr[ 'ticketcatID' ]);
       }
     }
@@ -200,16 +200,16 @@ echo'<form method="post" action="admincenter.php?site=admin_ticketcategorys">
 elseif($_GET[ 'action' ]== "edit") {
 
   $ticketcatID = $_GET[ 'ticketcatID' ];
-  $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE ticketcatID=' $ticketcatID '");
+  $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE ticketcatID=' $ticketcatID '");
   $ds = mysqli_fetch_array($ergebnis);
 
   function generate_options($ticketcats = '', $offset = '', $subcatID = 0) {
   
     global $ticketcatID;
-    $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '" . $subcatID . "' AND (ticketcatID !='" . $ticketcatID . "' AND subcatID !='" . $ticketcatID . "')  ORDER BY name");
+    $rubrics = safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '" . $subcatID . "' AND (ticketcatID !='" . $ticketcatID . "' AND subcatID !='" . $ticketcatID . "')  ORDER BY name");
     while($dr = mysqli_fetch_array($rubrics)) {
       $ticketcats .= '<option value="' . $dr[ 'ticketcatID' ] . '">' . $offset.getinput($dr[ 'name' ]) . '</option>';
-      if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_tickets_categories WHERE subcatID = '" . $dr[ 'ticketcatID' ] . "'"))) {
+      if(mysqli_num_rows(safe_query("SELECT * FROM " . PREFIX . "plugins_ticketcenter_categories WHERE subcatID = '" . $dr[ 'ticketcatID' ] . "'"))) {
         $ticketcats .= generate_options("", $offset."- ", $dr[ 'ticketcatID' ]);
       }
     }

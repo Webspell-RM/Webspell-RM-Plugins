@@ -7,33 +7,61 @@
 				"file3": "forum/uninstall.php",
 				"file4": "forum/forum.php",
 				"file5": "forum/forum_topic.php",
-				"file6": "/../modules/myprofile.php",
-				"file7": "/../../system/functions.php",
-				"file8": "/../../system/ckeditor.php",
-				"file9": "/../../components/ckeditor/user_config.js",
-				"file10": "/../../components/ckeditor/admin_config.js",
-				"file11": "forum/widget_forum_sidebar.php"
-
+				"file6": "forum/widget_forum_sidebar.php"
 			},
 			{
-				"index": "admin"
+				"index": "admin",
+				"file1": "forum/admin/admin_forum.php"
 			},
 			{
-				"index": "language"
+				"index": "language",
+				"file1": "forum/languages/de/admin_forum.php",
+				"file2": "forum/languages/de/forum.php",
+				"file3": "forum/languages/de/latesttopics.php",
+				"file4": "forum/languages/en/admin_forum.php",
+				"file5": "forum/languages/en/forum.php",
+				"file6": "forum/languages/en/latesttopics.php",
+				"file7": "forum/languages/it/admin_forum.php",
+				"file8": "forum/languages/it/forum.php",
+				"file9": "forum/languages/it/latesttopics.php"
 			},
 			{
 				"index": "templates",
-				"file1": "forum/templates/widget_forum_sidebar.html"
+				"file1": "forum/templates/forum.html",
+				"file2": "forum/templates/forum_topic.html",
+				"file3": "forum/templates/forum_topics.html",
+				"file4": "forum/templates/widget_forum_sidebar.html"
 			},
 			{
-				"index": "images"
+				"index": "images",
+				"file1": "forum/images/icons/ranks/admin.png",
+				"file2": "forum/images/icons/ranks/moderator.png",
+				"file3": "forum/images/icons/ranks/rank0.png",
+				"file4": "forum/images/icons/ranks/rank1.png",
+				"file5": "forum/images/icons/ranks/rank2.png",
+				"file6": "forum/images/icons/ranks/rank3.png",
+				"file7": "forum/images/icons/ranks/rank4.png",
+				"file8": "forum/images/icons/ranks/rank5.png",
+				"file9": "forum/images/icons/ranks/rank6.png",
+				"file10": "forum/images/icons/ranks/rank7.png",
+				"file11": "forum/images/icons/ranks/rank8.png",
+				"file12": "forum/images/icons/ranks/rank9.png",
+				"file13": "forum/images/icons/ranks/rank10.png",
+				"file14": "forum/images/icons/ranks/rank11.png",
+				"file15": "forum/images/icons/ranks/rank12.png",
+				"file16": "forum/images/icons/lade.gif",
+				"file17": "forum/images/widget_forum_sidebar.jpg"
 
 			},
 			{
-				"index": "css"
+				"index": "css",
+				"file1": "forum/css/forum.css"
 			},
 			{
-				"index": "js"
+				"index": "js",
+				"file1": "forum/js/forum.js",
+				"file2": "forum/js/print.js",
+				"file3": "forum/js/popover.js"
 			}
 
 		]

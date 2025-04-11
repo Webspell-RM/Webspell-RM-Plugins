@@ -44,7 +44,7 @@ function checkCommentsAllow($type, $parentID)
 {
 global $userID;
     $moduls = array();
-    $moduls['ga'] = array("gallery","galleryID","comments");
+    $moduls['bl'] = array("gallery","galleryID","comments");
     $allowed = 0;
     $modul = $moduls[$type];
     $get = safe_query("SELECT ".$modul[2]." FROM ".PREFIX.$modul[0]." WHERE ".$modul[1]."='".$parentID."'");
@@ -167,7 +167,7 @@ $name = getnickname($userID, $id);
 } else { $name = ''.$plugin_language[ 'a_guest' ].'' ; }
  
     $msgfrom= array();
-    $msgfrom[ 'ga' ] = ''.$plugin_language[ 'to_an_image' ].'';
+    $msgfrom[ 'bl' ] = ''.$plugin_language[ 'to_an_image' ].'';
     if (isset($msgfrom[$_POST['type']])) {
         $_message_from = $msgfrom[$_POST['type']];
     } else {
@@ -231,7 +231,7 @@ $name = getnickname($userID, $id);
 } else { $name = ''.$plugin_language[ 'a_guest' ].'' ; }
  
     $msgfrom= array();
-    $msgfrom[ 'ga' ] = ''.$plugin_language[ 'to_an_image' ].'';
+    $msgfrom[ 'bl' ] = ''.$plugin_language[ 'to_an_image' ].'';
     if (isset($msgfrom[$_POST['type']])) {
         $_message_from = $msgfrom[$_POST['type']];
     } else {
@@ -258,7 +258,6 @@ sendmessage($id,''.$plugin_language[ 'new_comment' ].' ' . $_message_from . '',$
         safe_query("DELETE FROM " . PREFIX . "plugins_gallery_comments WHERE commentID='" . (int)$id."'");
     }
     header("Location: " . $_POST[ 'referer' ]);
-
 } else {
     
     
@@ -484,14 +483,14 @@ sendmessage($id,''.$plugin_language[ 'new_comment' ].' ' . $_message_from . '',$
             
             if (isfeedbackadmin($userID) || iscommentposter($userID, $ds[ 'commentID' ])) {
                 $edit = '<a class="badge text-bg-warning" href="index.php?site=gallery&action=editcomment&id=' . $ds[ 'commentID' ] . '&amp;ref=' .
-                    urlencode($referer) . '" title="' . $plugin_language[ 'edit_comment' ] . '">' . $plugin_language[ 'edit_comment' ] . '</a>';        
+                    urlencode($referer) . '" title="' . $plugin_language[ 'edit_comment' ] . '">' . $plugin_language[ 'edit_comment' ] . '</a>';    
             } else {
                 $edit = '';
             }
  
             if (isfeedbackadmin($userID)) {
                 $actions =
-                    '<input class="input" type="checkbox" name="commentID[]" value="' . $ds[ 'commentID' ] . '">';
+                    '<div class="form-switch d-flex justify-content-end"><input class="form-check-input" type="checkbox" name="commentID[]" value="' . $ds[ 'commentID' ] . '"></div>';
             } else {
                 $actions = '';
             }
@@ -536,8 +535,8 @@ sendmessage($id,''.$plugin_language[ 'new_comment' ].' ' . $_message_from . '',$
                             $CAPCLASS->createTransaction();
                             $hash = $CAPCLASS->getHash();
             $submit = '<input type="hidden" name="referer" value="' . $referer . '">
-                    <input class="input" type="checkbox" name="ALL" value="ALL" onclick="SelectAll(this.form);"> ' .
-                    $plugin_language[ 'select_all' ] . '
+                    <div class="form-check form-switch d-flex justify-content-end"><input class="form-check-input mx-2" type="checkbox" name="ALL" value="ALL" onclick="SelectAll(this.form);"> ' .
+                    $plugin_language[ 'select_all' ] . '</div>
                     <input type="submit" value="' . $plugin_language[ 'delete_selected' ] . '" class="btn btn-danger">';
         } else {
             $submit = '';
@@ -658,5 +657,5 @@ sendmessage($id,''.$plugin_language[ 'new_comment' ].' ' . $_message_from . '',$
         echo $plugin_language[ 'comments_disabled' ];
     }
 
-    }
+}
 

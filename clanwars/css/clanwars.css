@@ -7,7 +7,7 @@ div.clanwars-container {
 }
 
 div.clanwars-container + div.clanwars-container {
-    border-top: 1px solid #2a3037;
+    border-top: 1px solid rgba(var(--bs-card-border-color-rgb), 1) !important;
     padding: 16px 0 0;
     margin: 16px 0 0;
 }

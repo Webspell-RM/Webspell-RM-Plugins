@@ -10,7 +10,7 @@
  *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
  * @version         webspell-rm                                                                              *
  *                                                                                                           *
- * @copyright       2018-2023 by webspell-rm.de                                                              *
+ * @copyright       2018-2025 by webspell-rm.de                                                              *
  * @support         For Support, Plugins, Templates and the Full Script visit webspell-rm.de                 *
  * @website         <https://www.webspell-rm.de>                                                             *
  * @forum           <https://www.webspell-rm.de/forum.html>                                                  *
@@ -35,48 +35,36 @@ $plugin_language = $pm->plugin_language("about", $plugin_path);
 $ergebnis = safe_query("SELECT * FROM " . PREFIX . "plugins_about_us");
 if (mysqli_num_rows($ergebnis)) {
     $ds = mysqli_fetch_array($ergebnis);
-        $title = $ds[ 'title' ];
-        $text = $ds[ 'text' ];
+    $title = $ds['title'];
+    $text = $ds['text'];
+    $maxaboutchars = $ds['aboutchars'] ?: 200;
+
+    $translate = new multiLanguage(detectCurrentLanguage());
+    $translate->detectLanguages($title);
+    $title = $translate->getTextByLanguage($title);
     
-            
-        $translate = new multiLanguage(detectCurrentLanguage());
-        $translate->detectLanguages($title);
-        $title = $translate->getTextByLanguage($title);
-                
-        $translate->detectLanguages($text);
-        $text = $translate->getTextByLanguage($text);
+    $translate->detectLanguages($text);
+    $text = $translate->getTextByLanguage($text);
 
-        $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_about_us");
-        $dx = mysqli_fetch_array($settings);
-    
-        $maxaboutchars = $dx['aboutchars'];
-        if (empty($maxaboutchars )) {
-        $maxaboutchars  = 200;
-        } 
+    // Maximale Zeichenanzahl aus den Einstellungen holen
+    $maxaboutchars = !empty($ds['aboutchars']) ? $ds['aboutchars'] : 200;  // Default auf 200, wenn leer
 
-        $text = preg_replace("/<div>/", "", $text);
-        $text = preg_replace("/<p>/", "", $text);
-        $text = preg_replace("/<strong>/", "", $text);
-        $text = preg_replace("/<em>/", "", $text);
-        $text = preg_replace("/<s>/", "", $text);
-        $text = preg_replace("/<u>/", "", $text);
-        $text = preg_replace("/<blockquote>/", "", $text);
+    // Entfernen von HTML-Tags
+    $text = preg_replace("/<(div|p|strong|em|s|u|blockquote|img|span)[^>]*>/", "", $text);
 
-        $text = preg_replace("//", "", substr( $text, 0, $maxaboutchars  ) ) . ' ... <div class="text-end"> <a href="index.php?site=about_us" class="btn btn-dark btn-sm">READ MORE <i class="bi bi-chevron-double-right"></i></a></div>';
+    // Text kürzen und "Weiterlesen"-Link hinzufügen
+    $text = substr($text, 0, $maxaboutchars) . ' ... <br><br><div class="text-end"><a href="index.php?site=about_us" class="btn btn-dark btn-sm">READ MORE <i class="bi bi-chevron-double-right"></i></a></div>';
 
-        $data_array = array();
-        $data_array['$title'] = $title;
-        $data_array['$text'] = $text;
+    // Template für den Inhalt laden
+    $data_array = array();
+    $data_array['$title'] = $title;
+    $data_array['$text'] = $text;
 
-        $about_sponsor = $GLOBALS["_template"]->loadTemplate("about","widget_content_content", $data_array, $plugin_path);
-        echo $about_sponsor;
-
+    $about_sponsor = $GLOBALS["_template"]->loadTemplate("about", "widget_content_content", $data_array, $plugin_path);
+    echo $about_sponsor;
 } else {
-
-        $plugin_data= array();
-        $plugin_data['$title']=$plugin_language['title'];
-
-    $template = $GLOBALS["_template"]->loadTemplate("about","widget_head", $plugin_data, $plugin_path);
+    $plugin_data = ['title' => $plugin_language['title']];
+    $template = $GLOBALS["_template"]->loadTemplate("about", "widget_head", $plugin_data, $plugin_path);
     echo $template;
-    echo $plugin_language[ 'no_about' ];
+    echo $plugin_language['no_about'];
 }

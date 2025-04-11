@@ -5,7 +5,6 @@
 				"file1": "guestbook/install.php",
 				"file2": "guestbook/uninstall.php",
 				"file3": "guestbook/guestbook.php"
-
 			},
 			{
 				"index": "admin"

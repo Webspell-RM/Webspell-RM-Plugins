@@ -48,5 +48,6 @@ $language_array = Array(
   'yht_enter_2_options'     => 'È necessario immettere almeno 2 opzioni.',
   'yht_enter_endingtime'    => 'È necessario specificare l\'ora di fine.',
   'yht_enter_title'         => 'È necessario immettere un titolo.',
-  'close'                   => 'Chiudi',  
+  'close'                   => 'Chiudi',
+  'example'                 => 'Esempio',
 );

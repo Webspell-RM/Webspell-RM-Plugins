@@ -1,54 +1,60 @@
 <!-- forum_title -->
 <div class="head-boxes">
-    <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
+  <span class="head-boxes-head">$title</span>
+  <h2 class="head-h2">
     <span class="head-boxes-title">$title</span>
-</h2>
-    <p class="head-boxes-foot">$subtitle</p>
+  </h2>
+  <p class="head-boxes-foot">$subtitle</p>
 </div>
 <!-- END -->
 <!-- forum_main_head -->
 <div class="card">
-    <div class="card-body">
-        <div class="card_forum">
-            <div class="table-responsive">
-<table class="table">
-    <thead>
-    <tr>
-        <th>&nbsp;</th>
-        <th>$board:</th>
-        <th>$topics:</th>
-        <th>$posts:</th>
-        <th>$latest_post:</th>
-    </tr>
-    </thead>
-    <tbody>
-<!-- END -->
-<!-- forum_main_kath -->
-<tr>
-    <td colspan="6" class="kathcolor">
-        <h4>$kathname</h4>
-            <small>$info</small>
-        
-    </td>
-</tr>
-<!-- END -->
-<!-- forum_main_board -->
-<tr>
-    <td>$icon</td>
-    <td style="width: 50%">$boardname<br>
-        <small>$boardinfo<br><br>$moderators</small>
-    </td>
-    <td>$topic: $anztopics</td>
-    <td>$posts: $anzposts</td>
-    <td>$noentry</td>
-</tr>
-<!-- END -->
-<!-- forum_main_foot -->
-</tbody></table></div>
-<!-- END -->
-<!-- forum_main_legend -->
-<!--<table class="table hidden"">
+  <div class="card-body">
+    <div class="card_forum">
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>&nbsp;</th>
+              <th>$board:</th>
+              <th>$topics / $posts:</th>
+              <th class="text-center" colspan="2">$latest_post:</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- END -->
+            <!-- forum_main_kath -->
+            <tr>
+              <td colspan="6" class="kathcolor">
+                <h4>$kathname</h4>
+                <small>$info</small>
+
+              </td>
+            </tr>
+            <!-- END -->
+            <!-- forum_main_board -->
+            <tr>
+              <td>$icon</td>
+              <td style="width: 50%">$boardname<br>
+                <small>$boardinfo<br><br>$moderators</small>
+              </td>
+              <td width="20%"><span style="width:70px;display: inline-block;">$topic:</span><span
+                  style="width:60px;display: inline-block;" class="text-end">$anztopics</span><br>
+                <span style="width:70px;display: inline-block;">$posts:</span><span
+                  style="width:60px;display: inline-block;" class="text-end">$anzposts</span>
+              </td>
+
+
+              $noentry
+            </tr>
+            <!-- END -->
+            <!-- forum_main_foot -->
+          </tbody>
+        </table>
+      </div>
+      <!-- END -->
+      <!-- forum_main_legend -->
+      <!--<table class="table hidden"">
     <tr>
         <td><img src="/includes/plugins/forum/images/icons/boardicons/on.gif" alt="new posts">
             <small>$new_posts</small>
@@ -66,59 +72,66 @@
         </td>
     </tr>
 </table>-->
-<p class="text-end">
-    <a href="index.php?site=forum&amp;action=markall">$mark_all_read</a>
-</p>
-<!-- END -->
-<!-- forum_actions -->
-<!--<div class="card">
-    <div class="card-body">-->
-<div class="row">
-    <div class="col-md-6">$page_link $mark</div>
-    <div class="col-md-6 text-end">$actions</div>
+      <p class="text-end">
+        <a href="index.php?site=forum&amp;action=markall">$mark_all_read</a>
+      </p>
+      <!-- END -->
+      <!-- forum_actions_head -->
+      <div class="card">
+        <div class="card-body">
+          <h4>$no_topic</h4>
+          <!-- END -->
+          <!-- forum_actions -->
+          <div class="row">
+            <div class="col-md-6">$page_link $mark</div>
+            <div class="col-md-6 text-end">$actions</div>
+          </div>
+        </div>
+      </div>
+      <!-- END -->
+      <!-- forum_stats -->
+    </div>
+    <div class="table-responsive">
+      <div class="card_forum">
+        <table class="table">
+          <tr>
+            <th>$happy_birthday</th>
+          </tr>
+          <tr>
+            <td>
+              <small>$today: $birthdays<br>$next_7_days: $birthweek</small>
+            </td>
+          </tr>
+          <tr>
+            <th>$whos_online</th>
+          </tr>
+          <tr>
+            <td>
+              $now_online: $user_on $and $guests_on ($maximum_online: $maxonline)
+              <br>$user_names<br><br>
+
+              <span class="badge bg-danger">$admin</span>
+              <span class="badge bg-warning text-dark">$moderator</span>
+              <span class="badge bg-success">$clanmember</span>
+              $whoisonline
+
+            </td>
+          </tr>
+          <tr>
+            <th>$stats:</th>
+          </tr>
+          <tr>
+            <td>
+              <strong>$posts</strong> $posts_in <strong>$topics</strong> $topic<br>
+              $registered_users: <strong>$registered</strong><br>
+              $newest_member: $newestmember
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
 </div>
-</div></div>
-<!-- END -->
-<!-- forum_stats -->
-</div>
-<div class="table-responsive">
-<div class="card_forum">
-<table class="table">
-    <tr>
-        <th>$happy_birthday</th>
-    </tr>
-    <tr>
-        <td>
-            <small>$today: $birthdays<br>$next_7_days: $birthweek</small>
-        </td>
-    </tr>
-    <tr>
-        <th>$whos_online</th>
-    </tr>
-    <tr>
-        <td>
-            $now_online: $user_on $and $guests_on ($maximum_online: $maxonline)
-            <br>$user_names<br><br>
-            
-                <span class="badge bg-danger">$admin</span>
-                <span class="badge bg-warning text-dark">$moderator</span>
-                <span class="badge bg-success">$clanmember</span>
-            $whoisonline
-            
-        </td>
-    </tr>
-    <tr>
-        <th>$stats:</th>
-    </tr>
-    <tr>
-        <td>
-            <strong>$posts</strong> $posts_in <strong>$topics</strong> $topic<br>
-            $registered_users: <strong>$registered</strong><br>
-            $newest_member: $newestmember
-        </td>
-    </tr>
-</table>
-</div></div></div></div>
 <!-- END -->
 <!-- forum_head -->
 <nav aria-label="breadcrumb">
@@ -130,16 +143,24 @@
 </nav>
 
 <div class="text-end">
-    <small>$moderators</small>
+  <small>$moderators</small>
 </div>
 <!-- END -->
+<!-- forum_head_head -->
+<div class="card">
+<!-- END -->
+
+<!-- forum_foot_foot -->
+</div>
+<!-- END -->
+
 <!-- forum_move_topic -->
 <div class="head-boxes">
-    <span class="head-boxes-head">$title</span>
-<h2 class="head-h2">
+  <span class="head-boxes-head">$title</span>
+  <h2 class="head-h2">
     <span class="head-boxes-title">$title</span>
-</h2>
-    <p class="head-boxes-foot">$subtitle</p>
+  </h2>
+  <p class="head-boxes-foot">$subtitle</p>
 </div>
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -147,507 +168,549 @@
     <li class="breadcrumb-item active" aria-current="page">$move_topic</li>
   </ol>
 </nav>
-    <div class="card">
-    <div class="card-body">
-<form action="index.php?site=forum&amp;board=$board" method="post">
-<div>
-        
- <div class="mb-3 row row">
-  <label class="col-md-4" for="usr">$move_topic_board:</label>
-  <div class="col-sm-5">
-  <select class="form-control" name="toboard">$boards</select>
-</div>
-</div>
-    <input class="form-check-input" type="checkbox" name="movelink" value="1" checked="checked">
-    $leave_shadowtopic
-    <br><br>
-    <input class="d-none" name="admaction" value="movetopic">
-    <input class="d-none" name="topicID" value="$topicID">
-    <input class="d-none" name="board" value="$board">
-    <input type="submit" name="movetopic" value="$move_topic" class="btn btn-warning">
-</div>
-    
-</form>
-</div>
+<div class="card">
+  <div class="card-body">
+    <form action="index.php?site=forum&amp;board=$board" method="post">
+      <div>
+
+        <div class="mb-3 row row">
+          <label class="col-md-4" for="usr">$move_topic_board:</label>
+          <div class="col-sm-5">
+            <select class="form-control" name="toboard">$boards</select>
+          </div>
+        </div>
+        <input class="form-check-input" type="checkbox" name="movelink" value="1" checked="checked">
+        $leave_shadowtopic
+        <br><br>
+        <input class="d-none" name="admaction" value="movetopic">
+        <input class="d-none" name="topicID" value="$topicID">
+        <input class="d-none" name="board" value="$board">
+        <input type="submit" name="movetopic" value="$move_topic" class="btn btn-warning">
+      </div>
+
+    </form>
+  </div>
 </div>
 <!-- END -->
 <!-- forum_newtopic -->
 <script>
-    <!--
-    var topic_submit = false;
+  < !-
+  var topic_submit = false;
 
-    function chkFormular() {
-        if (document.getElementById('topicname').value === "") {
-            alert("%enter_topic%");
-            document.getElementById('topicname').focus();
+  function chkFormular() {
+    if (document.getElementById('topicname').value === "") {
+      alert("%enter_topic%");
+      document.getElementById('topicname').focus();
 
-            return false;
-        }
-
-        if (document.getElementById('message').value === "") {
-            alert("%enter_text%");
-            document.getElementById('message').focus();
-
-            return false;
-        }
-
-        if (!validbbcode(document.getElementById('message').value)) {
-
-            return false;
-        }
-
-        if (topic_submit) {
-
-            return false;
-        }
-
-        topic_submit = true;
+      return false;
     }
 
-    function ChangeFormAction() {
-        if (document.getElementById('preview').checked) {
-            document.post.action = "index.php?site=forum&addtopic=true";
-        } else {
-            document.post.action = "index.php?site=forum";
-        }
+    if (document.getElementById('message').value === "") {
+      alert("%enter_text%");
+      document.getElementById('message').focus();
+
+      return false;
     }
-    -->
+
+    if (!validbbcode(document.getElementById('message').value)) {
+
+      return false;
+    }
+
+    if (topic_submit) {
+
+      return false;
+    }
+
+    topic_submit = true;
+  }
+
+  function ChangeFormAction() {
+    if (document.getElementById('preview').checked) {
+      document.post.action = "index.php?site=forum&addtopic=true";
+    } else {
+      document.post.action = "index.php?site=forum";
+    }
+  }
+  ->
 </script>
 <div class="card">
-        <div class="card-body">
-<form action="index.php?site=forum" method="post" id="post" name="post" onsubmit="return chkFormular()">
+  <div class="card-body">
+    <form action="index.php?site=forum" method="post" id="post" name="post" onsubmit="return chkFormular()">
 
-    <h3>$new_topic</h3>
-    <strong>$topic_icon:</strong>
+      <h3>$new_topic</h3>
+      <strong>$topic_icon:</strong>
 
-    <ul class="nav nav-pills nav-justified">
-    <li>
-        <input type="radio" name="icon" value="bi bi-exclamation-triangle"> <i class="bi bi-exclamation-triangle" style="font-size: 2rem;"></i>
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-info-circle"> <i class="bi bi-info-circle" style="font-size: 2rem;"></i>
+      <ul class="nav nav-pills nav-justified">
+        <li>
+          <input type="radio" name="icon" value="bi bi-exclamation-triangle"> <i class="bi bi-exclamation-triangle"
+            style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="bi bi-info-circle"> <i class="bi bi-info-circle"
+            style="font-size: 2rem;"></i>
 
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-question-circle"> <i class="bi bi-question-circle" style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="bi bi-question-circle"> <i class="bi bi-question-circle"
+            style="font-size: 2rem;"></i>
 
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-heart"> <i class="bi bi-heart" style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="bi bi-heart"> <i class="bi bi-heart" style="font-size: 2rem;"></i>
 
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-file-check"> <i class="bi bi-file-check" style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="bi bi-file-check"> <i class="bi bi-file-check"
+            style="font-size: 2rem;"></i>
 
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-lightbulb"> <i class="bi bi-lightbulb" style="font-size: 2rem;"></i>
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-clock"> <i class="bi bi-clock" style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="bi bi-lightbulb"> <i class="bi bi-lightbulb"
+            style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="bi bi-clock"> <i class="bi bi-clock" style="font-size: 2rem;"></i>
 
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="bi bi-check-circle"> <i class="bi bi-check-circle" style="font-size: 2rem;"></i>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="bi bi-check-circle"> <i class="bi bi-check-circle"
+            style="font-size: 2rem;"></i>
 
-    </li>
-    <li style="width:30px"></li>
-    <li>
-        <input type="radio" name="icon" value="0"> <i class="" style="font-size: 2rem;"></i>
-        $no_icon
-    </li>
-    </ul>
+        </li>
+        <li style="width:30px"></li>
+        <li>
+          <input type="radio" name="icon" value="0"> <i class="" style="font-size: 2rem;"></i>
+          $no_icon
+        </li>
+      </ul>
 
-    <div class="mb-3 row">
+      <div class="mb-3 row">
         <label for="topicname">$subject:</label>
         <input name="topicname" type="text" id="topicname" value="$topicname" class="form-control" required="required">
-    </div>
+      </div>
 
-    <!-- -------------poll------------------------ -->
-<hr>
+      <!-- -------------poll------------------------ -->
+      <hr>
 
-<div class="mb-3 row">
-  <div class="row">
-    <div class="col-md-6">
-
-      <fieldset class="mb-3 row">
+      <div class="mb-3 row">
         <div class="row">
-          <legend class="col-form-label col-sm-4 pt-0">$insert_survey:</legend>
-          <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
-            <div class="form-check">
-              <input type="radio" class="form-check-input" value="1" name="poll">
-              <label class="form-check-label" for="gridRadios2">
-                $yes
-              </label>
+          <div class="col-md-6">
+
+            <fieldset class="mb-3 row">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">$insert_survey:</legend>
+                <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="1" name="poll">
+                    <label class="form-check-label" for="gridRadios2">
+                      $yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="0" name="poll" checked="checked">
+                    <label class="form-check-label" for="gridRadios2">
+                      $no
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="mb-3 row">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">$clear_results:</legend>
+                <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="1" name="vote_del">
+                    <label class="form-check-label" for="gridRadios2">
+                      $yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="0" name="vote_del" checked="checked">
+                    <label class="form-check-label" for="gridRadios2">
+                      $no
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$subject:</label>
+              <div class="col-sm-6">
+                <input type="text" name="head" class="form-control">
+              </div>
             </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" value="0" name="poll" checked="checked">
-              <label class="form-check-label" for="gridRadios2">
-                $no
-              </label>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$end:</label>
+              <div class="col-sm-2">
+                <input size="3" maxlength="2" type="text" name="day" class="form-control" />
+              </div>
+              <div class="col-sm-2">
+                <input size="3" maxlength="2" type="text" name="month" class="form-control" />
+              </div>
+              <div class="col-sm-2">
+                <input size="4" maxlength="4" type="text" name="year" class="form-control" />
+              </div>
             </div>
+
+          </div>
+          <div class="col-md-6">
+
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 1:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value1" class="form-control" placeholder="">
+              </div>
+            </div>
+
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 2:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value2" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 3:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value3" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 4:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value4" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 5:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value5" class="form-control" placeholder="">
+              </div>
+            </div>
+
           </div>
         </div>
-      </fieldset>
-      <fieldset class="mb-3 row">
-        <div class="row">
-          <legend class="col-form-label col-sm-4 pt-0">$clear_results:</legend>
-          <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
-            <div class="form-check">
-              <input type="radio" class="form-check-input" value="1" name="vote_del">
-              <label class="form-check-label" for="gridRadios2">
-                $yes
-              </label>
-            </div>
-            <div class="form-check">
-              <input type="radio" class="form-check-input" value="0" name="vote_del" checked="checked">
-              <label class="form-check-label" for="gridRadios2">
-              $no
-              </label>
-            </div>
-          </div>
-        </div>
-      </fieldset>
+      </div>
+      <hr>
+      <!-- -------------poll-END----------------------- -->
 
-      <div class="mb-3 row row">
-        <label class="col-sm-2 col-form-label">$subject:</label>
-        <div class="col-sm-6">
-        <input type="text" name="head" class="form-control">
-        </div>
-      </div>
-      <div class="mb-3 row row">
-        <label class="col-sm-2 col-form-label">$end:</label>
-        <div class="col-sm-2">
-        <input size="3" maxlength="2" type="text" name="day" class="form-control" />
-        </div>
-        <div class="col-sm-2">
-        <input size="3" maxlength="2" type="text" name="month" class="form-control" />
-        </div>
-        <div class="col-sm-2">
-        <input size="4" maxlength="4" type="text" name="year" class="form-control" />
-        </div>
-      </div>
-
-    </div> 
-    <div class="col-md-6">
-
-    <div class="mb-3 row row">
-      <label class="col-sm-2 col-form-label">$option 1:</label>
-      <div class="col-sm-10">
-      <input type="text" name="value1" class="form-control" placeholder="">
-      </div>
-    </div>
-
-    <div class="mb-3 row row">
-      <label class="col-sm-2 col-form-label">$option 2:</label>
-      <div class="col-sm-10">
-      <input type="text" name="value2" class="form-control" placeholder="">
-      </div>
-    </div>
-    <div class="mb-3 row row">
-      <label class="col-sm-2 col-form-label">$option 3:</label>
-      <div class="col-sm-10">
-      <input type="text" name="value3" class="form-control" placeholder="">
-      </div>
-    </div>
-    <div class="mb-3 row row">
-      <label class="col-sm-2 col-form-label">$option 4:</label>
-      <div class="col-sm-10">
-      <input type="text" name="value4" class="form-control" placeholder="">
-      </div>
-    </div>
-    <div class="mb-3 row row">
-      <label class="col-sm-2 col-form-label">$option 5:</label>
-      <div class="col-sm-10">
-      <input type="text" name="value5" class="form-control" placeholder="">
-      </div>
-    </div>
-
-    </div> 
-  </div>
-</div>
-<hr>
-     <!-- -------------poll-END----------------------- -->
-
-   <div class="mb-3 row">
+      <div class="mb-3 row">
         <p class="lead emoji-picker-container">
-          <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message" autofocus required="required">$message</textarea>
+          <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message"
+            autofocus required="required">$message</textarea>
         </p>
-    </div>
+      </div>
 
-    <div class="mb-3 row text-end">
-    <div class="col-sm-offset-2 col-sm-12">
-        <input type="checkbox" name="notify" value="1" $notify> $notif |
-        <input type="checkbox" name="preview" id="preview" value="1" onclick="ChangeFormAction()">
-        $preview | $chk_sticky
-        <input class="d-none" name="board" value="$board">
-        <input class="d-none" name="userID" value="$userID">
-        <input class="d-none" name="addtopic" value="true">
-        <input name="newtopic" type="submit" value="$post_new_topic" class="btn btn-primary">
-    </div>
-</div>    
-</form>
-</div>
+
+
+      <div class="d-flex justify-content-between align-self-center">
+        <div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="notify" value="1">
+            <label class="form-check-label" for="flexSwitchCheckDefault">$notif</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="preview" id="preview" value="1"
+              onclick="ChangeFormAction()">
+            <label class="form-check-label" for="flexSwitchCheckDefault">$preview</label>
+          </div>
+          $chk_sticky
+        </div>
+        <div>
+          <input class="d-none" name="board" value="$board">
+          <input class="d-none" name="userID" value="$userID">
+          <input class="d-none" name="addtopic" value="true">
+
+          <input name="newtopic" type="submit" value="$post_new_topic" class="btn btn-primary mt-1">
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>
 <!-- END -->
 <!-- forum_edittopic -->
 <script>
-    <!--
-    function chkFormular() {
-        if (document.getElementById('topicname').value === "") {
-            alert("%enter_topic%");
-            document.getElementById('topicname').focus();
-            return false;
-        }
+  < !-
+     function chkFormular() {
+       if (document.getElementById('topicname').value === "") {
+         alert("%enter_topic%");
+         document.getElementById('topicname').focus();
+         return false;
+       }
 
-        if (document.getElementById('message').value === "") {
-            alert("%enter_text%");
-            document.getElementById('message').focus();
-            return false;
-        }
-        if (!validbbcode(document.getElementById('message').value)) {
-            return false;
-        }
-    }
+       if (document.getElementById('message').value === "") {
+         alert("%enter_text%");
+         document.getElementById('message').focus();
+         return false;
+       }
+       if (!validbbcode(document.getElementById('message').value)) {
+         return false;
+       }
+     }
 
-    -->
+     ->
 </script>
 <div class="card">
-    <div class="card-body">
-<form action="index.php?site=forum_topic&amp;topic=$board&amp;topic=$topic" method="post" id="post" name="post"
-    onsubmit="return chkFormular()">
-    <h3>$edit_topic</h3>
-    <strong>$topic_icon:</strong>
-    $iconlist
+  <div class="card-body">
+    <form action="index.php?site=forum_topic&amp;topic=$board&amp;topic=$topic" method="post" id="post" name="post"
+      onsubmit="return chkFormular()">
+      <h3>$edit_topic</h3>
+      <strong>$topic_icon:</strong>
+      $iconlist
 
-    <div class="mb-3 row">
+      <div class="mb-3 row">
         <label for="topicname">$subject:</label>
         <input name="topicname" type="text" id="topicname" value="$topicname" class="form-control">
-    </div>
-<hr>
-
-<div class="mb-3 row">
-
-<div class="row">
-    <div class="col-md-6">
-
-  <fieldset class="mb-3 row">
-    <div class="row">
-      <legend class="col-form-label col-sm-4 pt-0">$insert_survey:</legend>
-      <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
-        <div class="form-check">
-          <input type="radio" class="form-check-input" value="1" name="poll" $poll1>
-          <label class="form-check-label" for="gridRadios2">
-            $yes
-          </label>
-        </div>
-        <div class="form-check">
-          <input type="radio" class="form-check-input" value="0" name="poll" $poll2>
-          <label class="form-check-label" for="gridRadios2">
-            $no
-          </label>
-        </div>
       </div>
-    </div>
-  </fieldset>
-  <fieldset class="mb-3 row">
-    <div class="row">
-      <legend class="col-form-label col-sm-4 pt-0">$clear_results:</legend>
-      <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
-        <div class="form-check">
-          <input type="radio" class="form-check-input" value="1" name="vote_del">
-          <label class="form-check-label" for="gridRadios2">
-            $yes
-          </label>
+      <hr>
+
+      <div class="mb-3 row">
+
+        <div class="row">
+          <div class="col-md-6">
+
+            <fieldset class="mb-3 row">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">$insert_survey:</legend>
+                <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="1" name="poll" $poll1>
+                    <label class="form-check-label" for="gridRadios2">
+                      $yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="0" name="poll" $poll2>
+                    <label class="form-check-label" for="gridRadios2">
+                      $no
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="mb-3 row">
+              <div class="row">
+                <legend class="col-form-label col-sm-4 pt-0">$clear_results:</legend>
+                <div class="col-sm-6 form-check form-switch" style="padding: 0px 43px;">
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="1" name="vote_del">
+                    <label class="form-check-label" for="gridRadios2">
+                      $yes
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" class="form-check-input" value="0" name="vote_del" checked="checked">
+                    <label class="form-check-label" for="gridRadios2">
+                      $no
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$subject:</label>
+              <div class="col-sm-6">
+                <input type="text" value="$title" name="head" class="form-control" placeholder="Titel">
+              </div>
+            </div>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$end:</label>
+              <div class="col-sm-2">
+                <input size="3" maxlength="2" value="$day" type="text" name="day" class="form-control" />
+              </div>
+              <div class="col-sm-2">
+                <input size="3" maxlength="2" value="$month" type="text" name="month" class="form-control" />
+              </div>
+              <div class="col-sm-2">
+                <input size="4" maxlength="4" value="$year" type="text" name="year" class="form-control" />
+              </div>
+            </div>
+
+          </div>
+          <div class="col-md-6">
+
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 1:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value1" value="$value1" class="form-control" placeholder="">
+              </div>
+            </div>
+
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 2:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value2" value="$value2" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 3:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value3" value="$value3" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 4:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value4" value="$value4" class="form-control" placeholder="">
+              </div>
+            </div>
+            <div class="mb-3 row row">
+              <label class="col-sm-2 col-form-label">$option 5:</label>
+              <div class="col-sm-10">
+                <input type="text" name="value5" value="$value5" class="form-control" placeholder="">
+              </div>
+            </div>
+
+          </div>
+
         </div>
-        <div class="form-check">
-          <input type="radio" class="form-check-input" value="0" name="vote_del" checked="checked">
-          <label class="form-check-label" for="gridRadios2">
-            $no
-          </label>
-        </div>
+
+        <hr>
       </div>
-    </div>
-  </fieldset>
-
-  <div class="mb-3 row row">
-    <label class="col-sm-2 col-form-label">$subject:</label>
-    <div class="col-sm-6">
-      <input type="text" value="$title" name="head" class="form-control" placeholder="Titel">
-    </div>
-  </div>
-  <div class="mb-3 row row">
-    <label class="col-sm-2 col-form-label">$end:</label>
-    <div class="col-sm-2">
-      <input size="3" maxlength="2" value="$day" type="text" name="day" class="form-control" />
-    </div>
-    <div class="col-sm-2">
-      <input size="3" maxlength="2" value="$month" type="text" name="month" class="form-control" />
-    </div>
-    <div class="col-sm-2">
-      <input size="4" maxlength="4" value="$year" type="text" name="year" class="form-control" />
-    </div>
-  </div>
-
-</div> 
-<div class="col-md-6">
-
-  <div class="mb-3 row row">
-    <label class="col-sm-2 col-form-label">$option 1:</label>
-    <div class="col-sm-10">
-      <input type="text" name="value1" value="$value1" class="form-control" placeholder="">
-    </div>
-  </div>
-
-  <div class="mb-3 row row">
-    <label class="col-sm-2 col-form-label">$option 2:</label>
-    <div class="col-sm-10">
-      <input type="text" name="value2" value="$value2" class="form-control" placeholder="">
-    </div>
-  </div>
-  <div class="mb-3 row row">
-    <label class="col-sm-2 col-form-label">$option 3:</label>
-    <div class="col-sm-10">
-      <input type="text" name="value3" value="$value3" class="form-control" placeholder="">
-    </div>
-  </div>
-  <div class="mb-3 row row">
-    <label class="col-sm-2 col-form-label">$option 4:</label>
-    <div class="col-sm-10">
-      <input type="text" name="value4" value="$value4" class="form-control" placeholder="">
-    </div>
-  </div>
-  <div class="mb-3 row row">
-    <label class="col-sm-2 col-form-label">$option 5:</label>
-    <div class="col-sm-10">
-      <input type="text" name="value5" value="$value5" class="form-control" placeholder="">
-    </div>
-  </div>
-
-</div> 
-
-</div>
-
-<hr>    </div>
-    <div class="mb-3 row">
+      <div class="mb-3 row">
         <p class="lead emoji-picker-container">
-          <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message" autofocus>$message</textarea>
-        </p> 
-    </div>
+          <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message"
+            autofocus>$message</textarea>
+        </p>
+      </div>
 
-    <div class="mb-3 row text-end">
-    <div class="col-sm-offset-2 col-sm-12">
-        $notify | $chk_sticky
-        <input class="d-none" name="post" value="$post">
-        <input class="d-none" name="saveedittopic" value="true">
-        <input name="updatetopic" type="submit" value="$edit_topic" class="btn btn-primary">
-    </div></div>
-</form>
-</div>
+      <div class="d-flex justify-content-between align-self-center">
+        <div>
+          $notify
+          $chk_sticky
+        </div>
+        <div>
+          <input class="d-none" name="post" value="$post">
+          <input class="d-none" name="saveedittopic" value="true">
+          <input name="updatetopic" type="submit" value="$edit_topic" class="btn btn-primary">
+        </div>
+      </div>
+
+    </form>
+  </div>
 </div>
 <!-- END -->
 <!-- forum_newreply -->
 <script>
-    <!--
-    var post_submit = false;
-    function chkFormular() {
-        if (document.getElementById('message').value == "") {
-            alert("%enter_text%");
-            document.getElementById('message').focus();
+  < !-
+  var post_submit = false;
+  function chkFormular() {
+    if (document.getElementById('message').value == "") {
+      alert("%enter_text%");
+      document.getElementById('message').focus();
 
-            return false;
-        }
-
-        if (!validbbcode(document.getElementById('message').value)) {
-
-            return false;
-        }
-
-        if (post_submit) {
-
-            return false;
-        }
-
-        post_submit = true;
+      return false;
     }
 
-    function ChangeFormAction() {
-        if (document.getElementById('preview').checked) {
-            document.post.action = "index.php?site=forum_topic";
-        } else {
-            document.post.action = "index.php?site=forum_topic";
-        }
+    if (!validbbcode(document.getElementById('message').value)) {
 
+      return false;
     }
-    -->
+
+    if (post_submit) {
+
+      return false;
+    }
+
+    post_submit = true;
+  }
+
+  function ChangeFormAction() {
+    if (document.getElementById('preview').checked) {
+      document.post.action = "index.php?site=forum_topic";
+    } else {
+      document.post.action = "index.php?site=forum_topic";
+    }
+
+  }
+  ->
 </script>
 <div class="card">
-    <div class="card-body">    
-<form action="index.php?site=forum_topic" method="post" id="post" name="post" onsubmit="return chkFormular()">
-    <h3>$new_reply</h3>
-    <div class="mb-3 row">
+  <div class="card-body">
+    <form action="index.php?site=forum_topic" method="post" id="post" name="post" onsubmit="return chkFormular()">
+      <h3>$new_reply</h3>
+      <div class="mb-3 row">
         <p class="lead emoji-picker-container">
-          <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message" autofocus>$message</textarea>
-        </p>        
-    </div>
+          <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message"
+            autofocus>$message</textarea>
+        </p>
+      </div>
 
-    <div class="text-end">
-        <input style="margin-top: 10px;" class="form-check-input" type="checkbox" name="notify" value="1" $notify> $notify_reply |
-        <input style="margin-top: 10px;" class="form-check-input" type="checkbox" name="preview" id="preview" value="1"
-            onclick="ChangeFormAction()"> $preview_post | $chk_sticky 
-        <input class="d-none" name="userID" value="$userID">
-        <input class="d-none" name="board" value="$board">
-        <input class="d-none" name="topic" value="$topic">
-        <input class="d-none" name="page" value="$page">
-        <input class="d-none" name="addreply" value="true">
-        <input name="newreply" type="submit" value="$post_new_reply" class="btn btn-primary">
-    </div>
-</form>
-</div>
+      <div class="d-flex justify-content-between align-self-center">
+        <div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="notify" value="1" $notify>
+            <label class="form-check-label" for="flexSwitchCheckDefault">$notify_reply</label>
+          </div>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" name="preview" id="preview" value="1"
+              onclick="ChangeFormAction()">
+            <label class="form-check-label" for="flexSwitchCheckDefault">$preview_post</label>
+          </div>
+          $chk_sticky
+        </div>
+        <div>
+          <input class="d-none" name="userID" value="$userID">
+          <input class="d-none" name="board" value="$board">
+          <input class="d-none" name="topic" value="$topic">
+          <input class="d-none" name="page" value="$page">
+          <input class="d-none" name="addreply" value="true">
+          <input name="newreply" type="submit" value="$post_new_reply" class="btn btn-primary">
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <!-- END -->
 <!-- forum_editpost -->
 <script>
-    <!--
+  < !-
     function chkFormular() {
-        if (document.getElementById('message').value === "") {
-            alert("%enter_text%");
-            document.getElementById('message').focus();
+      if (document.getElementById('message').value === "") {
+        alert("%enter_text%");
+        document.getElementById('message').focus();
 
-            return false;
-        }
-        if (!validbbcode(document.getElementById('message').value)) {
+        return false;
+      }
+      if (!validbbcode(document.getElementById('message').value)) {
 
-            return false;
-        }
+        return false;
+      }
 
     }
-    -->
+    ->
 </script>
 <div class="card">
-        <div class="card-body">
-<form action="index.php?site=forum_topic&amp;topic=$board&amp;topic=$topic" method="post" id="post" name="post"
-    onsubmit="return chkFormular()">
-    <h3>$edit_reply</h3>
-    <div class="mb-3">        
-          <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message" autofocus>$message</textarea>        
-    </div>
-
-    <div class="text-end">
-        $notify | $chk_sticky
-
-        <input class="d-none" name="page" value="$page">
-        <input class="d-none" name="id" value="$id">
-        <input type="submit" name="editreply" value="$edit_reply" class="btn btn-primary forum">
-    </div>
-</form>
-</div>
+  <div class="card-body">
+    <form action="index.php?site=forum_topic&amp;topic=$board&amp;topic=$topic" method="post" id="post" name="post"
+      onsubmit="return chkFormular()">
+      <h3>$edit_reply</h3>
+      <div class="mb-3">
+        <textarea class="ckeditor" id="ckeditor" cols="30" rows="15" placeholder="" name="message" id="message"
+          autofocus>$message</textarea>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div class="col-md-7">
+          $notify $chk_sticky
+        </div>
+        <div class="col-md-5 text-end">
+          <input class="d-none" name="page" value="$page">
+          <input class="d-none" name="id" value="$id">
+          <input type="submit" name="editreply" value="$edit_reply" class="btn btn-primary forum">
+        </div>
+      </div>
+    </form>
+  </div>
 </div>
 <!-- END -->

@@ -65,15 +65,15 @@
 }
 
 .btn-like-success:hover {
-  color: #fff;
+  color: #19692b;
   background-color: transparent;
-  border-color: #28a745;
+  border-color: #19692b;
 }
 
 .btn-like-success:focus, .btn-like-success.focus {
   box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.5);
   background-color: transparent;
-  border-color: #28a745;
+  border-color: #19692b;
 }
 
 .btn-like-danger {
@@ -82,48 +82,49 @@
 }
 
 .btn-like-danger:hover {
-  color: #fff;
+  color: #991a26;
   background-color: transparent;
-  border-color: #dc3545;
+  border-color: #991a26;
 }
 
 .btn-like-danger:focus, .btn-like-danger.focus {
   box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.5);
   background-color: transparent;
+  border-color: #991a26;
 }
 
 
 /*-- widget sidebar --*/
 .agileits_updates_grids {
-    margin: 5em 0 0 0;
+    margin: 0 0 0 0;
 }
 .agileits_updates_grid_left h4,.agileits_updates_grid_right h4{
     font-family: 'Poppins', sans-serif;
-    margin: .5em 0;
+    margin: 0 0 0 0;
 }
 .agileits_updates_grid_left_grid:nth-child(3) {
     margin: 1em 0;
 }
 .agileits_updates_grid_left1 h4{
-    width: 50px;
-    height: 120px;
+    width: 60px;
+    height: 80px;
     background-color: rgba(var(--bs-rm-body-bg),1);
     font-size: 2em;
     color: rgba(var(--bs-link-color),1);
     text-align: center;
     border-radius: var(--bs-border-radius);
-    padding:.8em 0 0;
+    padding:0 0 0 0;
     border: 1px solid rgba(var(--bs-card-border-color-rgb), 1) !important;
 }
 .agileits_updates_grid_left1 h4 span{
     display: block;
     font-size: .4em;
-    margin: .5em 0 0;
+    margin: 0 0 0 0;
     color: #999;
 }
 .agileits_updates_grid_left1 h4 span i{
   display:block;
-  margin: .5em 0 0;
+  margin: 0 0 0 0;
 }
 .agileits_updates_grid_left1 h5 a{
     font-size: .7em;
@@ -138,11 +139,27 @@
 }
 .agileits_updates_grid_left1 p{
     color: #999;
-    margin: 1em 0 0;
+    margin: 0 0 0 0;
     line-height: 1.8em;
     font-size: .875em;
 }
 .agileits_updates_grid_left1:nth-child(2) {
-    margin: 1.5em 0 0;
+    margin: 0 0 0 0;
 }
 /*--widget sidebar--*/
+.popover {
+    max-width: 450px;
+  }
+
+.forum-header {
+  color: rgba(var(--bs-rm-nav-link-color-rgb),1);
+  background-image: linear-gradient(rgba(var(--bs-nav-bg-rgb),1),rgba(var(--bs-nav-sec-bg-rgb),1));
+}
+
+.border-forum-top {
+  border-top: 1px solid rgba(var(--bs-card-border-color-rgb), 1) !important;
+}
+
+.border-forum-bottom {
+  border-bottom: 1px solid rgba(var(--bs-card-border-color-rgb), 1) !important;
+}

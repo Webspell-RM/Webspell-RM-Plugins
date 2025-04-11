@@ -40,6 +40,8 @@ if (!$accesslevel($userID) || mb_substr(basename($_SERVER[ 'REQUEST_URI' ]), 0, 
 }
 }
 
+$filepath = $plugin_path."images/article/";
+
 if (isset($_GET[ 'action' ])) {
     $action = $_GET[ 'action' ];
 } else {
@@ -47,45 +49,38 @@ if (isset($_GET[ 'action' ])) {
 }
 
 if (isset($_GET[ 'delete' ])) {
-    $articleID = $_GET[ 'articleID' ];
+
+   $filepath = $plugin_path."images/article/";
+ 
+
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
-        safe_query(
-            "DELETE FROM
-                `" . PREFIX . "plugins_articles`
-            WHERE
-                `articleID` = '" . $articleID . "'"
-        );
-        \webspell\Tags::removeTags('articles', $articleID);
-    } else {
-        echo $plugin_language[ 'transaction_invalid' ];
-    }
-
-} elseif (isset($_GET[ 'delete' ])) {
-    $CAPCLASS = new \webspell\Captcha;
-    if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
-        $get = safe_query("SELECT * FROM " . PREFIX . "plugins_articles WHERE articleID='" . $_GET[ "articleID" ] . "'");
-        $data = mysqli_fetch_assoc($get);
-
-        if (safe_query("DELETE FROM " . PREFIX . "plugins_articles WHERE articleID='" . $_GET[ "articleID" ] . "'")) {
-           
-            redirect("admincenter.php?site=admin_articles", "", 0);
-        } else {
-            redirect("admincenter.php?site=admin_articles", "", 0);
+    
+        $filepath = $plugin_path."images/article/";
+        if (file_exists($filepath . $_GET['articleID'] . '.gif')) {
+            @unlink($filepath . $_GET['articleID'] . '.gif');
         }
-    } else {
-        print_r($plugin_language); return false;
-        $_language->readModule('formvalidation', true);  
-        echo $_language->module[ 'transaction_invalid' ];
+        if (file_exists($filepath . $_GET['articleID'] . '.jpg')) {
+            @unlink($filepath . $_GET['articleID'] . '.jpg');
+        }
+        if (file_exists($filepath . $_GET['articleID'] . '.png')) {
+            @unlink($filepath . $_GET['articleID'] . '.png');
+        }
+
+        safe_query("DELETE FROM " . PREFIX . "plugins_articles WHERE articleID='" . $_GET[ "articleID" ] . "'");
+
+
+            redirect("admincenter.php?site=admin_articles", "", 0);
     }
+   
 
 } elseif (isset($_POST[ 'sortieren' ])) {
-    $sortarticles = $_POST[ 'sortarticles' ];
+    $sortlinks = $_POST[ 'sortlinks' ];
 
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
-        if (is_array($sortarticles)) {
-            foreach ($sortarticles as $sortstring) {
+        if (is_array($sortlinks)) {
+            foreach ($sortlinks as $sortstring) {
                 $sorter = explode("-", $sortstring);
                 safe_query("UPDATE `" . PREFIX . "plugins_articles` SET `sort` = '$sorter[1]' WHERE `articleID` = '" . $sorter[0] . "'");
             }
@@ -94,96 +89,216 @@ if (isset($_GET[ 'delete' ])) {
         echo $plugin_language[ 'transaction_invalid' ];
     }
 } elseif (isset($_POST[ 'save' ])) {
-    $articlescat = $_POST[ 'articlescat' ];
-    $question = $_POST[ 'question' ];
-    $answer = $_POST[ 'message' ];
-    $comments = $_POST[ 'comments' ];
-    if (isset($_POST[ "displayed" ])) {
-        $displayed = 1;
-    } else {
-        $displayed = 0;
-    }
-    if (!$displayed) {
-        $displayed = 0;
-    }
-
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
-        if (checkforempty(array('question', 'message'))) {
-            if ($articlescat == "") {
-                redirect('admincenter.php?site=admin_articles', $plugin_language[ 'no_articles_selected' ], 3);
-                exit;
-            }
-            safe_query(
-                "INSERT INTO
-                    `" . PREFIX . "plugins_articles` (
+        $linkscat = $_POST[ 'linkscat' ];
+        $question = $_POST[ 'question' ];
+        $answer = $_POST[ 'message' ];
+        $url = $_POST[ "url" ];
+
+
+        if (isset($_POST[ "displayed" ])) {
+            $displayed = 1;
+        } else {
+            $displayed = 0;
+        }
+        
+        
+        safe_query(
+            "INSERT INTO
+                `" . PREFIX . "plugins_articles` (
                         `articlecatID`,
                         `date`,
                         `question`,
                         `answer`,
                         `poster`,
+                        `url`,
                         `displayed`,
-                        `comments`,
                         `sort`
                     )
                 VALUES (
-                    '$articlescat',
+                    '$linkscat',
                     '" . time() . "',
                     '$question',
                     '$answer',
                     '" . $userID . "',
+                    '" . $url . "',
                     '" . $displayed . "',
-                    '" . $comments . "',
                     '1'
+
+
                 )"
-            );
-            $id = mysqli_insert_id($_database);
-            \webspell\Tags::setTags('articles', $id, $_POST[ 'tags' ]);
-        } else {
-            echo $plugin_language[ 'information_incomplete' ];
+        );
+        $id = mysqli_insert_id($_database);
+        \webspell\Tags::setTags('articles', $id, $_POST[ 'tags' ]);
+
+        $filepath = $plugin_path."images/article/";
+
+        //TODO: should be loaded from root language folder
+        $_language->readModule('formvalidation',true, true);
+        
+        $upload = new \webspell\HttpUpload('banner');
+
+        if ($upload->hasFile()) {
+            if ($upload->hasError() === false) {
+                $mime_types = array('image/jpeg','image/png','image/gif');
+                if ($upload->supportedMimeType($mime_types)) {
+                    $imageInformation =  getimagesize($upload->getTempFile());
+
+                    if (is_array($imageInformation)) {
+                        if ($imageInformation[0] < 1921 && $imageInformation[1] < 1081) {
+                            switch ($imageInformation[ 2 ]) {
+                                case 1:
+                                    $endung = '.gif';
+                                    break;
+                                case 3:
+                                    $endung = '.png';
+                                    break;
+                                default:
+                                    $endung = '.jpg';
+                                    break;
+                            }
+                            $file = $id.$endung;
+
+                            if (file_exists($filepath . $id . '.gif')) {
+                                unlink($filepath . $id . '.gif');
+                            }
+                            if (file_exists($filepath . $id . '.jpg')) {
+                                unlink($filepath . $id . '.jpg');
+                            }
+                            if (file_exists($filepath . $id . '.png')) {
+                                unlink($filepath . $id . '.png');
+                            }
+
+                            if ($upload->saveAs($filepath.$file)) {
+                                @chmod($filepath.$file, $new_chmod);
+                                safe_query(
+                                    "UPDATE " . PREFIX . "plugins_articles
+                                    SET banner='" . $file . "' WHERE articleID='" . $id . "'"
+                                );
+                            }
+                        } else {
+                            echo generateErrorBox(sprintf($plugin_language[ 'image_too_big' ], 1920, 1080));
+                        }
+                    } else {
+                        echo generateErrorBox($plugin_language[ 'broken_image' ]);
+                    }
+                } else {
+                    echo generateErrorBox($plugin_language[ 'unsupported_image_type' ]);
+                }
+            } else {
+                echo  generateErrorBox($upload->translateError());
+            }
         }
     } else {
-        echo $plugin_language[ 'transaction_invalid' ];
+        echo  $plugin_language[ 'transaction_invalid' ];
     }
+
+
 } elseif (isset($_POST[ 'saveedit' ])) {
-    $articlescat = $_POST[ 'articlescat' ];
+    $CAPCLASS = new \webspell\Captcha;
+    if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
+
+    $linkscat = $_POST[ 'linkscat' ];
     $question = $_POST[ 'question' ];
     $answer = $_POST[ 'message' ];
     $articleID = $_POST[ 'articleID' ];
-    $comments = $_POST[ 'comments' ];
+    $url = $_POST[ 'url' ];
 
-    if (isset($_POST[ "displayed" ])) {
-        $displayed = 1;
-    } else {
-        $displayed = 0;
-    }
 
-    $CAPCLASS = new \webspell\Captcha;
-    if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
-        if (checkforempty(array('question', 'message'))) {
-            safe_query(
-                "UPDATE
-                    `" . PREFIX . "plugins_articles`
-                SET
-                    `articlecatID` = '$articlescat',
-                    `date` = '" . time() . "',
-                    `question` = '$question',
-                    `answer` = '$answer',
-                    `displayed` = '" . $displayed . "',
-                    `comments` = '" . $comments . "'
-                WHERE
-                    `articleID` = '$articleID'"
-            );
-            \webspell\Tags::setTags('articles', $articleID, $_POST[ 'tags' ]);
+        if (isset($_POST[ "displayed" ])) {
+            $displayed = 1;
         } else {
-            echo $plugin_language[ 'information_incomplete' ];
+            $displayed = 0;
+        }
+        
+
+        $articleID = (int)$_POST[ 'articleID' ];
+        $id = $articleID;
+
+        
+
+        safe_query(
+            "UPDATE
+                `" . PREFIX . "plugins_articles`
+                SET
+                    `articlecatID` = '" . $linkscat . "',
+                    `date` = '" . time() . "',
+                    `question` = '" . $question . "',
+                    `answer` = '" . $answer . "',
+                    `url` = '" . $url . "',
+                    `poster` = '" . $userID . "',
+                    `displayed` = '" . $displayed . "'
+                WHERE
+                    `articleID` = '" . $articleID . "'"
+        );
+
+        \webspell\Tags::setTags('articles', $id, $_POST[ 'tags' ]);
+
+        $filepath = $plugin_path."images/article/";
+
+        //TODO: should be loaded from root language folder
+        $_language->readModule('formvalidation', true, true);
+
+        $upload = new \webspell\HttpUpload('banner');
+
+        if ($upload->hasFile()) {
+            if ($upload->hasError() === false) {
+                $mime_types = array('image/jpeg','image/png','image/gif');
+                if ($upload->supportedMimeType($mime_types)) {
+                    $imageInformation =  getimagesize($upload->getTempFile());
+
+                    if (is_array($imageInformation)) {
+                        if ($imageInformation[0] < 1921 && $imageInformation[1] < 1081) {
+                            switch ($imageInformation[ 2 ]) {
+                                case 1:
+                                    $endung = '.gif';
+                                    break;
+                                case 3:
+                                    $endung = '.png';
+                                    break;
+                                default:
+                                    $endung = '.jpg';
+                                    break;
+                            }
+                            $file = $id.$endung;
+
+                            if (file_exists($filepath . $id . '.gif')) {
+                                unlink($filepath . $id . '.gif');
+                            }
+                            if (file_exists($filepath . $id . '.jpg')) {
+                                unlink($filepath . $id . '.jpg');
+                            }
+                            if (file_exists($filepath . $id . '.png')) {
+                                unlink($filepath . $id . '.png');
+                            }
+
+                            if ($upload->saveAs($filepath.$file)) {
+                                @chmod($filepath.$file, $new_chmod);
+                                safe_query(
+                                    "UPDATE " . PREFIX . "plugins_articles
+                                    SET banner='" . $file . "' WHERE articleID='" . $id . "'"
+                                );
+                            }
+                        } else {
+                            echo generateErrorBox(sprintf($plugin_language[ 'image_too_big' ], 1920, 1080));
+                        }
+                    } else {
+                        echo generateErrorBox($plugin_language[ 'broken_image' ]);
+                    }
+                } else {
+                    echo generateErrorBox($plugin_language[ 'unsupported_image_type' ]);
+                }
+            } else {
+                echo generateErrorBox($upload->translateError());
+            }
         }
     } else {
         echo $plugin_language[ 'transaction_invalid' ];
     }
 
 
-} elseif (isset($_POST[ 'articles_settings_save' ])) {  
+} elseif (isset($_POST[ 'links_settings_save' ])) {  
 
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_POST[ 'captcha_hash' ])) {
@@ -202,13 +317,17 @@ if (isset($_GET[ 'delete' ])) {
 }
 
 if ($action == "add") {
-    if ($_GET[ 'action' ] == "add") {
+
+        $CAPCLASS = new \webspell\Captcha;
+        $CAPCLASS->createTransaction();
+        $hash = $CAPCLASS->getHash();
+
         $ergebnis = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles_categories` ORDER BY `sort`");
-        $articlescats = '<select class="form-select" name="articlescat">';
+        $linkscats = '<select class="form-control" name="linkscat">';
         while ($ds = mysqli_fetch_array($ergebnis)) {
-            $articlescats .= '<option value="' . $ds[ 'articlecatID' ] . '">' . getinput($ds[ 'articlecatname' ]) . '</option>';
+            $linkscats .= '<option value="' . $ds[ 'articlecatID' ] . '">' . getinput($ds[ 'articlecatname' ]) . '</option>';
         }
-        $articlescats .= '</select>';
+        $linkscats .= '</select>';
 
         if (isset($_GET[ 'answer' ])) {
             echo '<span style="color: red">' . $plugin_language[ 'no_category_selected' ] . '</span>';
@@ -217,47 +336,31 @@ if ($action == "add") {
         } else {
             $question = "";
             $answer = "";
-        }
-
-        $comments = '<option value="0">' . $plugin_language[ 'no_comments' ] . '</option>
-                     <option value="1">' . $plugin_language[ 'user_comments' ] . '</option>
-                     <option value="2" selected="selected">' . $plugin_language[ 'visitor_comments' ] . '</option>';
-
-        $CAPCLASS = new \webspell\Captcha;
-        $CAPCLASS->createTransaction();
-        $hash = $CAPCLASS->getHash();
+        }        
 
 echo'<div class="card">
             <div class="card-header">
-                            <i class="bi bi-card-list"></i> ' . $plugin_language[ 'articles' ] . '</div>
+                            <i class="bi bi-card-list"></i> ' . $plugin_language[ 'title' ] . '</div>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'articles' ] . '</a></li>
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'title' ] . '</a></li>
                 <li class="breadcrumb-item active" aria-current="page">'.$plugin_language['add_articles'].'</li>
                 </ol>
             </nav>  
                         <div class="card-body">';
 
 
-        echo '<script>
-            function chkFormular() {
-                if(!validbbcode(document.getElementById(\'message\').value, \'admin\')){
-                    return false;
-                }
-            }
-        </script>';
-		
-    echo'<form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_articles" onsubmit="return chkFormular();">
+    echo'<form class="form-horizontal" method="post" action="admincenter.php?site=admin_articles" enctype="multipart/form-data">
      <div class="row">
 	 <div class="mb-3 row">
     <label class="col-sm-2 control-label">'.$plugin_language['category'].'</label>
     <div class="col-sm-8"><span class="text-muted small"><em>
-      '.$articlescats.'</em></span>
+      '.$linkscats.'</em></span>
     </div>
   </div>
   <div class="mb-3 row">
-    <label class="col-sm-2 control-label">'.$plugin_language['articles'].'</label>
+    <label class="col-sm-2 control-label">'.$plugin_language['name'].'</label>
     <div class="col-sm-8"><span class="text-muted small"><em>
 		<input class="form-control" type="text" name="question" value="'.$question.'" size="97" /></em></span>
     </div>
@@ -275,19 +378,26 @@ echo'<div class="card">
     </div>
   </div>
 
+  <div class="mb-3 row">
+    <label class="col-sm-2 control-label">'.$plugin_language['homepage'].':</label>
+    <div class="col-sm-8"><span class="text-muted small"><em>
+        <input type="url" name="url" class="form-control" id="input-url" value=""></em></span>
+    </div>
+  </div>
+
+   <div class="mb-3 row">
+    <label class="col-sm-2 control-label">'.$plugin_language['banner'].':</label>
+    <div class="col-sm-10"><span class="text-muted small"><em>
+      <input class="btn btn-info" name="banner" type="file" size="40" /> <small>(max. 1000x500)</small></em></span>
+    </div>
+  </div>
+
 <div class="mb-3 row">
     <label class="col-sm-2 control-label">' . $plugin_language[ 'is_displayed' ] . ':</label>
   <div class="col-sm-8 form-check form-switch" style="padding: 0px 43px;">
   <input class="form-check-input" type="checkbox" name="displayed" value="1" checked="checked" />
     </div>
   </div>
-
-  <div class="mb-3 row">
-    <label class="col-sm-2 control-label">' . $plugin_language[ 'comments' ] . ':</label>
-    <div class="col-sm-3"><span class="text-muted small"><em>
-    <select class="form-select" name="comments">'.$comments.'</select></em></span>
-    </div>
-    </div>
 
 <div class="mb-3 row">
     <div class="col-sm-offset-2 col-sm-10">
@@ -298,78 +408,67 @@ echo'<div class="card">
   </div>
     </form></div>
   </div>';
-}
+
 } elseif ($action == "edit") {
-        $articleID = $_GET[ 'articleID' ];
-
-        $ergebnis = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles` WHERE `articleID` = '$articleID'");
-        $ds = mysqli_fetch_array($ergebnis);
-
-        $articlescategory = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles_categories` ORDER BY `sort`");
-        $articlescats = '<select class="form-select" name="articlescat">';
-        while ($dc = mysqli_fetch_array($articlescategory)) {
-            $selected = '';
-            if ($dc[ 'articlecatID' ] == $ds[ 'articlecatID' ]) {
-                $selected = ' selected="selected"';
-            }
-            $articlescats .= '<option value="' . $dc[ 'articlecatID' ] . '"' . $selected . '>' . getinput($dc[ 'articlecatname' ]) .
-                '</option>';
-        }
-        $articlescats .= '</select>';
-
-        $tags = \webspell\Tags::getTags('articles', $articleID);
-
         $CAPCLASS = new \webspell\Captcha;
         $CAPCLASS->createTransaction();
         $hash = $CAPCLASS->getHash();
 
-        if ($ds[ 'displayed' ] == 1) {
+        $articleID = $_GET[ 'articleID' ];
+        $ergebnis = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles` WHERE `articleID` = '$articleID'");
+        $ds = mysqli_fetch_array($ergebnis);
+
+        $linkscategory = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles_categories` ORDER BY `sort`");
+        $linkscats = '<select class="form-select" name="linkscat">';
+        while ($dc = mysqli_fetch_array($linkscategory)) {
+            $selected = '';
+            if ($dc[ 'articlecatID' ] == $ds[ 'articlecatID' ]) {
+                $selected = ' selected="selected"';
+            }
+            $linkscats .= '<option value="' . $dc[ 'articlecatID' ] . '"' . $selected . '>' . getinput($dc[ 'articlecatname' ]) .
+                '</option>';
+        }
+        $linkscats .= '</select>';
+
+        $tags = \webspell\Tags::getTags('links', $articleID);        
+
+        $url = htmlspecialchars($ds[ 'url' ]);
+
+    if (!empty($ds[ 'banner' ])) {
+        $pic = '<img id="img-upload" class="img-thumbnail" style="width: 100%; max-width: 150px" src="../' . $filepath . $ds[ 'banner' ] . '" alt="">';
+    } else {
+        $pic = '<img id="img-upload" class="img-thumbnail" style="width: 100%; max-width: 150px" src="../' . $filepath . 'no-image.jpg" alt="">';
+    }
+
+    if ($ds[ 'displayed' ] == '1') {
         $displayed = '<input class="form-check-input" type="checkbox" name="displayed" value="1" checked="checked" />';
     } else {
         $displayed = '<input class="form-check-input" type="checkbox" name="displayed" value="1" />';
-    }
-
-    $comments = '<option value="0">' . $plugin_language[ 'no_comments' ] . '</option>
-                     <option value="1">' . $plugin_language[ 'user_comments' ] . '</option>
-                     <option value="2">' . $plugin_language[ 'visitor_comments' ] . '</option>';
-        $comments =
-        str_replace(
-            'value="' . $ds[ 'comments' ] . '"',
-            'value="' . $ds[ 'comments' ] . '" selected="selected"',
-            $comments
-        );
+    }  
 
        
 echo'<div class="card">
             <div class="card-header">
-                            <i class="bi bi-card-list"></i> ' . $plugin_language[ 'articles' ] . '</div>
+                            <i class="bi bi-card-list"></i> ' . $plugin_language[ 'title' ] . '</div>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'articles' ] . '</a></li>
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'title' ] . '</a></li>
                 <li class="breadcrumb-item active" aria-current="page">'.$plugin_language['edit_articles'].'</li>
                 </ol>
             </nav>  
                         <div class="card-body">';
 
-        echo '<script>
-            function chkFormular() {
-                if(!validbbcode(document.getElementById(\'message\').value, \'admin\')){
-                    return false;
-                }
-            }
-        </script>';
-		
-    echo '<form class="form-horizontal" method="post" id="post" name="post" action="admincenter.php?site=admin_articles" onsubmit="return chkFormular();">
+   echo'<form class="form-horizontal" method="post" action="admincenter.php?site=admin_articles" enctype="multipart/form-data">
     <div class="row">
 	 <div class="mb-3 row">
     <label class="col-sm-2 control-label">'.$plugin_language['category'].':</label>
     <div class="col-sm-8"><span class="text-muted small"><em>
-      '.$articlescats.'</em></span>
+      '.$linkscats.'
     </div>
   </div>
   <div class="mb-3 row">
-    <label class="col-sm-2 control-label">'.$plugin_language['articles'].':</label>
+    <label class="col-sm-2 control-label">'.$plugin_language['name'].':</label>
     <div class="col-sm-8"><span class="text-muted small"><em>
 		<input class="form-control" type="text" name="question" value="'.getinput($ds['question']).'" size="97" /></em></span>
     </div>
@@ -389,6 +488,27 @@ echo'<div class="card">
   </div>
 
   <div class="mb-3 row">
+    <label class="col-sm-2 control-label">'.$plugin_language['homepage'].':</label>
+    <div class="col-sm-8"><span class="text-muted small"><em>
+        <input type="text" class="form-control" name="url" value="'.getinput($ds['url']).'" /></em></span>
+    </div>
+  </div>
+
+   <div class="mb-3 row">
+    <label class="col-sm-2 control-label">'.$plugin_language['current_banner'].':</label>
+    <div class="col-sm-10">
+      '.$pic.'
+    </div>
+  </div>
+
+  <div class="mb-3 row">
+    <label class="col-sm-2 control-label">'.$plugin_language['banner'].':</label>
+    <div class="col-sm-10"><span class="text-muted small"><em>
+      <input class="btn btn-info" name="banner" type="file" size="40" /> <small>(max. 1000x500)</small></em></span>
+    </div>
+  </div>
+
+  <div class="mb-3 row">
     <label class="col-sm-2 control-label">' . $plugin_language[ 'is_displayed' ] . ':</label>
   <div class="col-sm-8 form-check form-switch" style="padding: 0px 43px;">
   ' . $displayed . '
@@ -396,13 +516,6 @@ echo'<div class="card">
   </div>
 
   <div class="mb-3 row">
-    <label class="col-sm-2 control-label">' . $plugin_language[ 'comments' ] . ':</label>
-    <div class="col-sm-3"><span class="text-muted small"><em>
-    <select class="form-select" name="comments">'.$comments.'</select></em></span>
-    </div>
-    </div>
-
-<div class="mb-3 row">
     <div class="col-sm-offset-2 col-sm-10">
 		<input type="hidden" name="captcha_hash" value="'.$hash.'" /><input type="hidden" name="articleID" value="'.$articleID.'" />
 		<button class="btn btn-warning" type="submit" name="saveedit"  />'.$plugin_language['edit_articles'].'</button>
@@ -413,8 +526,7 @@ echo'<div class="card">
     </form></div>
   </div>';
 	
-} 
-    
+}
 
 if (isset($_POST[ 'articles_categorys_save' ])) {
 
@@ -462,22 +574,51 @@ $articlecatname = $_POST[ 'articlecatname' ];
         echo $plugin_language[ 'transaction_invalid' ];
     } 
 
-
 } elseif (isset($_GET[ 'articles_categorys_delete' ])) {  
 
     $CAPCLASS = new \webspell\Captcha;
     if ($CAPCLASS->checkCaptcha(0, $_GET[ 'captcha_hash' ])) {
+        
+
+
+        $ds = mysqli_fetch_array(
+        safe_query(
+            "SELECT
+                `articleID`
+            FROM
+                `" . PREFIX . "plugins_articles`
+            WHERE
+                `articlecatID` = '" . (int)$_GET['articlecatID'] . "'"
+        )
+    );
+
+    
+    $ergebnis = safe_query(
+                    "SELECT articleID FROM " . PREFIX . "plugins_articles WHERE articlecatID='" .
+                    $_GET[ 'articlecatID' ] . "'"
+                );
+    while ($ds = mysqli_fetch_array($ergebnis)) {
+    
+        $filepath = $plugin_path."images/article/";
+        if (file_exists($filepath . $ds[ 'articleID' ] . '.gif')) {
+            @unlink($filepath . $ds[ 'articleID' ] . '.gif');
+        }
+        if (file_exists($filepath . $ds[ 'articleID' ] . '.jpg')) {
+            @unlink($filepath . $ds[ 'articleID' ] . '.jpg');
+        }
+        if (file_exists($filepath . $ds[ 'articleID' ] . '.png')) {
+            @unlink($filepath . $ds[ 'articleID' ] . '.png');
+        }
+    }
+
         safe_query("DELETE FROM " . PREFIX . "plugins_articles_categories WHERE articlecatID='" . $_GET[ 'articlecatID' ] . "'");
         safe_query("DELETE FROM " . PREFIX . "plugins_articles WHERE articlecatID='" . $_GET[ 'articlecatID' ] . "'");
-        
+
     } else {
-        print_r($plugin_language); return false;
-        $_language->readModule('formvalidation', true);  
-        echo $_language->module[ 'transaction_invalid' ];
+        echo $plugin_language[ 'transaction_invalid' ];
     }
 
 }
-
 
 
 if ($action == "admin_articles_categorys_add") {
@@ -492,7 +633,7 @@ echo'<div class="card">
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'articles' ] . '</a></li>
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'title' ] . '</a></li>
                 <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles&action=admin_articles_categorys">' . $plugin_language[ 'articles_categorys' ] . '</a></li>
                 <li class="breadcrumb-item active" aria-current="page">'.$plugin_language['add_category'].'</li>
                 </ol>
@@ -547,7 +688,7 @@ echo'<div class="card">
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'articles' ] . '</a></li>
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'title' ] . '</a></li>
                 <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles&action=admin_articles_categorys">' . $plugin_language[ 'articles_categorys' ] . '</a></li>
                 <li class="breadcrumb-item active" aria-current="page">'.$plugin_language['edit_category'].'</li>
                 </ol>
@@ -585,8 +726,6 @@ echo '<script language="JavaScript" type="text/javascript">
     </form>
     </div>
   </div>';
-    
-
 
 } elseif ($action == "admin_articles_categorys") {
 
@@ -596,7 +735,7 @@ echo '<script language="JavaScript" type="text/javascript">
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'articles' ] . '</a></li>
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'title' ] . '</a></li>
                 <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles&action=admin_articles_categorys">' . $plugin_language[ 'articles_categorys' ] . '</a></li>
                 <li class="breadcrumb-item active" aria-current="page">New / Edit</li>
                 </ol>
@@ -667,21 +806,21 @@ echo'<form method="post" action="admincenter.php?site=admin_articles&action=admi
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">' . $plugin_language[ 'articles_categorys' ] . '</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="' . $plugin_language[ 'close' ] . '"></button>
       </div>
       <div class="modal-body"><p>' . $plugin_language['really_delete_cat'] . '</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' . $plugin_language[ 'close' ] . '</button>
         <a class="btn btn-danger btn-ok">' . $plugin_language['delete'] . '</a>
       </div>
     </div>
   </div>
 </div>
 <!-- Modal END -->
-          
+      
      </td>
-      <td><select name="sortarticlescat[]">';
+      <td><select name="sortlinkscat[]">';
         
     for ($n = 1; $n <= $anz; $n++) {
             if ($ds[ 'sort' ] == $n) {
@@ -696,21 +835,18 @@ echo'<form method="post" action="admincenter.php?site=admin_articles&action=admi
     
     $i++;
     }
-    
     echo'<tr>
       <td class="td_head" colspan="4" align="right"><input type="hidden" name="captcha_hash" value="'.$hash.'" /><input class="btn btn-primary" type="submit" name="sortieren" value="'.$plugin_language['to_sort'].'" /></td>
     </tr>
   </table>
   </form>';
-#}
+
 echo '</div></div>';
 
 } elseif ($action == "admin_articles_settings") {
-
  
     $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_articles_settings");
     $ds = mysqli_fetch_array($settings);
-
     
   $maxshownarticles = $ds[ 'articles' ];
 if (empty($maxshownarticles)) {
@@ -732,7 +868,7 @@ echo'<form method="post" action="admincenter.php?site=admin_articles&action=admi
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'articles' ] . '</a></li>
+                <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles">' . $plugin_language[ 'title' ] . '</a></li>
                 <li class="breadcrumb-item"><a href="admincenter.php?site=admin_articles&action=admin_articles_settings">' . $plugin_language[ 'settings' ] . '</a></li>
                 <li class="breadcrumb-item active" aria-current="page">New / Edit</li>
                 </ol>
@@ -745,7 +881,7 @@ echo'<form method="post" action="admincenter.php?site=admin_articles&action=admi
 
                         <div class="row bt">
                             <div class="col-md-6">
-                                '.$plugin_language['max_articles'].':
+                                '.$plugin_language['articles'].':
                             </div>
 
                             <div class="col-md-6">
@@ -769,22 +905,20 @@ echo'<form method="post" action="admincenter.php?site=admin_articles&action=admi
                     </div>
                </div>
                 <br>
-             <div class="mb-3 row">
-             <div class="col-sm-offset-2 col-sm-10">
+             <div class="mb-3">
             <input type="hidden" name="captcha_hash" value="'.$hash.'"> 
-            <button class="btn btn-primary" type="submit" name="articles_settings_save">'.$plugin_language['update'].'</button>
-            </div></div>
+            <button class="btn btn-primary" type="submit" name="links_settings_save">'.$plugin_language['update'].'</button>
+            </div>
 
             </div>
             </div>
     </form>';
 
-
 } elseif ($action == "") {    
 
 echo'<div class="card">
             <div class="card-header">
-                            <i class="bi bi-newspaper"></i> ' . $plugin_language[ 'title' ] . '</div>
+                            <i class="bi bi-link"></i> ' . $plugin_language[ 'title' ] . '</div>
 
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -808,7 +942,7 @@ echo'<div class="card">
   <table class="table table-striped">
     <thead>
       <th width="" class="title"><b>' . $plugin_language['articles'] . '</b></th>
-      <th width="" class="title"><b>' . $plugin_language['description'] . '</b></th>
+      <th width="" class="title"><b>' . $plugin_language['name'] . '</b></th>
       <th width="15%" class="title"><b>' . $plugin_language[ 'is_displayed' ] . '</b></th>
       <th width="20%" class="title"><b>' . $plugin_language['actions'] . '</b></th>
       <th width="8%" class="title"><b>' . $plugin_language['sort'] . '</b></th>
@@ -845,16 +979,16 @@ echo'<div class="card">
             </td>
         </tr>';
 
-       $articles = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles` WHERE `articlecatID` = $ds[articlecatID] ORDER BY `sort`");
+       $links = safe_query("SELECT * FROM `" . PREFIX . "plugins_articles` WHERE `articlecatID` = $ds[articlecatID] ORDER BY `sort`");
         $tmp = mysqli_fetch_assoc(
             safe_query(
                 "SELECT count(articleID) as cnt FROM `" . PREFIX . "plugins_articles` WHERE `articlecatID` = $ds[articlecatID]"
             )
         );
-        $anzarticles = $tmp[ 'cnt' ];
+        $anzlinks = $tmp[ 'cnt' ];
 
         $i = 1;
-        while ($db = mysqli_fetch_array($articles)) {
+        while ($db = mysqli_fetch_array($links)) {
             if ($i % 2) {
                 $td = 'td1';
             } else {
@@ -874,6 +1008,7 @@ echo'<div class="card">
             $data_array = array();
             $data_array['$question'] = $question;
 
+
             echo '<tr>
         <td colspan="2"><b>- '.$question.'</b></td>
         <td>' . $displayed . '</td>
@@ -891,12 +1026,12 @@ echo'<div class="card">
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">' . $plugin_language[ 'title' ] . '</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="' . $plugin_language[ 'close' ] . '"></button>
       </div>
-      <div class="modal-body"><p>' . $plugin_language['really_delete_articles'] . '</p>
+      <div class="modal-body"><p>' . $plugin_language['really_delete_links'] . '</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">' . $plugin_language[ 'close' ] . '</button>
         <a class="btn btn-danger btn-ok">' . $plugin_language['delete'] . '</a>
       </div>
     </div>
@@ -904,10 +1039,9 @@ echo'<div class="card">
 </div>
 <!-- Modal END -->
 
-
         </td>
-        <td><select name="sortarticles[]">';
-            for ($j = 1; $j <= $anzarticles; $j++) {
+        <td><select name="sortlinks[]">';
+            for ($j = 1; $j <= $anzlinks; $j++) {
                 if ($db[ 'sort' ] == $j) {
                     echo '<option value="' . $db[ 'articleID' ] . '-' . $j . '" selected="selected">' . $j .
                     '</option>';
@@ -919,7 +1053,6 @@ echo'<div class="card">
       
       $i++;
 		}
-        
 	}
 
 	echo'<tr>

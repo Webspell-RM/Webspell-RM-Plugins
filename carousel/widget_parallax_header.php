@@ -51,5 +51,5 @@ $plugin_language = $pm->plugin_language("carousel", $plugin_path);
             $i++;
         }
     } else {
-        echo $plugin_language['no_header'];
+        echo'<div class="alert alert-danger" role="alert">'.$plugin_language['no_header'].'</div>';
 }

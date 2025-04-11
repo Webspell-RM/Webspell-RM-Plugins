@@ -1,72 +1,73 @@
 <?php
-/*¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯\
-| _    _  ___  ___  ___  ___  ___  __    __      ___   __  __       |
-|( \/\/ )(  _)(  ,)/ __)(  ,\(  _)(  )  (  )    (  ,) (  \/  )      |
-| \    /  ) _) ) ,\\__ \ ) _/ ) _) )(__  )(__    )  \  )    (       |
-|  \/\/  (___)(___/(___/(_)  (___)(____)(____)  (_)\_)(_/\/\_)      |
-|                       ___          ___                            |
-|                      |__ \        / _ \                           |
-|                         ) |      | | | |                          |
-|                        / /       | | | |                          |
-|                       / /_   _   | |_| |                          |
-|                      |____| (_)   \___/                           |
-\___________________________________________________________________/
-/                                                                   \
-|        Copyright 2005-2018 by webspell.org / webspell.info        |
-|        Copyright 2018-2019 by webspell-rm.de                      |
-|                                                                   |
-|        - Script runs under the GNU GENERAL PUBLIC LICENCE         |
-|        - It's NOT allowed to remove this copyright-tag            |
-|        - http://www.fsf.org/licensing/licenses/gpl.html           |
-|                                                                   |
-|               Code based on WebSPELL Clanpackage                  |
-|                 (Michael Gruber - webspell.at)                    |
-\___________________________________________________________________/
-/                                                                   \
-|                     WEBSPELL RM Version 2.0                       |
-|           For Support, Mods and the Full Script visit             |
-|                       webspell-rm.de                              |
-\__________________________________________________________________*/
+
+/**
+ *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
+ *                  Webspell-RM      /                        /   /                                          *
+ *                  -----------__---/__---__------__----__---/---/-----__---- _  _ -                         *
+ *                   | /| /  /___) /   ) (_ `   /   ) /___) /   / __  /     /  /  /                          *
+ *                  _|/_|/__(___ _(___/_(__)___/___/_(___ _/___/_____/_____/__/__/_                          *
+ *                               Free Content / Management System                                            *
+ *                                           /                                                               *
+ *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
+ * @version         webspell-rm                                                                              *
+ *                                                                                                           *
+ * @copyright       2018-2023 by webspell-rm.de                                                              *
+ * @support         For Support, Plugins, Templates and the Full Script visit webspell-rm.de                 *
+ * @website         <https://www.webspell-rm.de>                                                             *
+ * @forum           <https://www.webspell-rm.de/forum.html>                                                  *
+ * @wiki            <https://www.webspell-rm.de/wiki.html>                                                   *
+ *                                                                                                           *
+ *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
+ * @license         Script runs under the GNU GENERAL PUBLIC LICENCE                                         *
+ *                  It's NOT allowed to remove this copyright-tag                                            *
+ *                  <http://www.fsf.org/licensing/licenses/gpl.html>                                         *
+ *                                                                                                           *
+ *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
+ * @author          Code based on WebSPELL Clanpackage (Michael Gruber - webspell.at)                        *
+ * @copyright       2005-2011 by webspell.org / webspell.info                                                *
+ *                                                                                                           *
+ *¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*
+ */
 # Sprachdateien aus dem Plugin-Ordner laden
-    $pm = new plugin_manager(); 
-    $plugin_language = $pm->plugin_language("latesttopics", $plugin_path);
+$pm = new plugin_manager();
+$plugin_language = $pm->plugin_language("latesttopics", $plugin_path);
 
 global $maxposts;
 if (isset($site)) {
     $_language->readModule('latesttopics');
 }
 
-    $data_array = array();
-    $data_array['$title']=$plugin_language[ 'title' ];
-    $data_array['$subtitle']='Latest topics';
-    $template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar","head", $data_array, $plugin_path);
-    echo $template;
+$data_array = array();
+$data_array['$title'] = $plugin_language['title'];
+$data_array['$subtitle'] = 'Latest topics';
+$template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar", "head", $data_array, $plugin_path);
+echo $template;
 
 
 
 $usergroups = array();
 
 $userallowedreadgrps = array();
-$userallowedreadgrps[ 'boardIDs' ] = array();
-$userallowedreadgrps[ 'catIDs' ] = array();
+$userallowedreadgrps['boardIDs'] = array();
+$userallowedreadgrps['catIDs'] = array();
 $get = safe_query("SELECT boardID FROM " . PREFIX . "plugins_forum_boards WHERE readgrps = ''");
 while ($ds = mysqli_fetch_assoc($get)) {
-    $userallowedreadgrps[ 'boardIDs' ][ ] = $ds[ 'boardID' ];
+    $userallowedreadgrps['boardIDs'][] = $ds['boardID'];
 }
 $get = safe_query("SELECT catID FROM " . PREFIX . "plugins_forum_categories WHERE readgrps = ''");
 while ($ds = mysqli_fetch_assoc($get)) {
-    $userallowedreadgrps[ 'catIDs' ][ ] = $ds[ 'catID' ];
+    $userallowedreadgrps['catIDs'][] = $ds['catID'];
 }
 
-if (empty($userallowedreadgrps[ 'catIDs' ])) {
-    $userallowedreadgrps[ 'catIDs' ][ ] = 0;
+if (empty($userallowedreadgrps['catIDs'])) {
+    $userallowedreadgrps['catIDs'][] = 0;
 }
-if (empty($userallowedreadgrps[ 'boardIDs' ])) {
-    $userallowedreadgrps[ 'boardIDs' ][ ] = 0;
+if (empty($userallowedreadgrps['boardIDs'])) {
+    $userallowedreadgrps['boardIDs'][] = 0;
 }
 
 $ergebnis = safe_query(
-        "SELECT t.*, u.nickname, b.name FROM " . PREFIX . "plugins_forum_topics t
+    "SELECT t.*, u.nickname, b.name FROM " . PREFIX . "plugins_forum_topics t
     LEFT JOIN
         " . PREFIX . "user u
     ON
@@ -78,17 +79,17 @@ $ergebnis = safe_query(
         WHERE
         b.category
     IN
-        (" . implode(",", $userallowedreadgrps[ 'catIDs' ]) . ")
+        (" . implode(",", $userallowedreadgrps['catIDs']) . ")
         AND
         t.boardID
     IN
-        (" . implode(",", $userallowedreadgrps[ 'boardIDs' ]) . ")
+        (" . implode(",", $userallowedreadgrps['boardIDs']) . ")
     AND
         t.moveID = '0'
     ORDER BY
         t.lastdate
     DESC
-       LIMIT 0,5 " 
+       LIMIT 0,5 "
 );
 
 $anz = mysqli_num_rows($ergebnis);
@@ -96,13 +97,13 @@ if ($anz) {
     #$data_array = array();
     #$data_array['$title']=$plugin_language[ 'title' ];
     #$data_array['$subtitle']='Latest topics';
-    $template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar","head_head", $data_array, $plugin_path);
+    $template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar", "head_head", $data_array, $plugin_path);
     echo $template;
-    
+
     $n = 1;
     while ($ds = mysqli_fetch_array($ergebnis)) {
-        if ($ds[ 'readgrps' ] != "") {
-            $usergrps = explode(";", $ds[ 'readgrps' ]);
+        if ($ds['readgrps'] != "") {
+            $usergrps = explode(";", $ds['readgrps']);
             $usergrp = 0;
             foreach ($usergrps as $value) {
                 if (isinusergrp($value, $userID)) {
@@ -110,19 +111,19 @@ if ($anz) {
                     break;
                 }
             }
-            if (!$usergrp && !ismoderator($userID, $ds[ 'boardID' ])) {
+            if (!$usergrp && !ismoderator($userID, $ds['boardID'])) {
                 continue;
             }
         }
-        
-        $topictitle_full = $ds[ 'topic' ];
+
+        $topictitle_full = $ds['topic'];
         $topictitle = $topictitle_full;
 
         #@$maxlatesttopicchars = $ds[ 'latesttopicchars' ];
         $maxblogchars = 25;
-        if(mb_strlen($topictitle)>$maxblogchars) {
-            $topictitle=mb_substr($topictitle, 0, $maxblogchars);
-            $topictitle.='...';
+        if (mb_strlen($topictitle) > $maxblogchars) {
+            $topictitle = mb_substr($topictitle, 0, $maxblogchars);
+            $topictitle .= '...';
         }
 
         /*$maxblogchars = 60;
@@ -133,61 +134,63 @@ if ($anz) {
 
         $topictitle = htmlspecialchars($topictitle);
 
-        $last_poster = $ds[ 'nickname' ];
-        $board = $ds[ 'name' ];
-        $date = getformatdatetime($ds[ 'lastdate' ]);
-        $small_date = date('d.m H:i', $ds[ 'lastdate' ]);
+        $last_poster = $ds['nickname'];
+        $board = $ds['name'];
+        $date = getformatdatetime($ds['lastdate']);
+        $small_date = date('d.m H:i', $ds['lastdate']);
         $replys = $ds['replys'];
 
         $replys_text = ($replys == 1) ? $plugin_language['reply'] : $plugin_language['replies'];
 
-        $latesticon = '<img src="images/icons/' . $ds[ 'icon' ] . '" width="15" height="15" alt="">';
-        $boardlink = '<a href="index.php?site=forum&amp;board=' . $ds[ 'boardID' ] . '">' . $board . '</a>';
-        $topiclink  =   '<li class="list-group-item"><i class="bi bi-chat-text"></i> <a class="" href="index.php?site=forum_topic&amp;topic='.$ds['topicID'].'&amp;type=ASC&amp;page='.ceil(($ds['replys']+1)/$maxposts).'"  data-toggle="tooltip" data-bs-html="true" title="
-        <b>'.$topictitle.'</b><br>
-        '.$plugin_language['board'].': '.$board.'<br>
-        <small>('.$replys.' '.$replys_text.')</small><br>
-        <small>'.$plugin_language['last_post'].': '.$last_poster.' '.$date.'</small>">
+        $latesticon = '<img src="images/icons/' . $ds['icon'] . '" width="15" height="15" alt="">';
+        $boardlink = '<a href="index.php?site=forum&amp;board=' . $ds['boardID'] . '">' . $board . '</a>';
+        $topiclink  =   '<li class="list-group-item"><i class="bi bi-chat-text"></i> <a class="" href="index.php?site=forum_topic&amp;topic=' . $ds['topicID'] . '&amp;type=ASC&amp;page=' . ceil(($ds['replys'] + 1) / $maxposts) . '"  data-toggle="tooltip" data-bs-html="true" title="
+        <b>' . $topictitle . '</b><br>
+        ' . $plugin_language['board'] . ': ' . $board . '<br>
+        <small>(' . $replys . ' ' . $replys_text . ')</small><br>
+        <small>' . $plugin_language['last_post'] . ': ' . $last_poster . ' ' . $date . '</small>">
 
-        <b>'.$topictitle.'</b></a><br>'.$date.'</li>
+        <b>' . $topictitle . '</b></a><br>' . $date . '</li>
 
         ';
 
-        $day = date("d", $ds[ 'lastdate' ]);
-        $year = date("Y", $ds[ 'lastdate' ]);
+        $day = date("d", $ds['lastdate']);
+        $year = date("Y", $ds['lastdate']);
 
-        $monate = array(1=>$plugin_language[ 'jan' ],
-                            2=>$plugin_language[ 'feb' ],
-                            3=>$plugin_language[ 'mar' ],
-                            4=>$plugin_language[ 'apr' ],
-                            5=>$plugin_language[ 'mar' ],
-                            6=>$plugin_language[ 'jun' ],
-                            7=>$plugin_language[ 'jul' ],
-                            8=>$plugin_language[ 'aug' ],
-                            9=>$plugin_language[ 'sep' ],
-                           10=>$plugin_language[ 'oct' ],
-                           11=>$plugin_language[ 'nov' ],
-                           12=>$plugin_language[ 'dec' ]);
+        $monate = array(
+            1 => $plugin_language['jan'],
+            2 => $plugin_language['feb'],
+            3 => $plugin_language['mar'],
+            4 => $plugin_language['apr'],
+            5 => $plugin_language['may'],
+            6 => $plugin_language['jun'],
+            7 => $plugin_language['jul'],
+            8 => $plugin_language['aug'],
+            9 => $plugin_language['sep'],
+            10 => $plugin_language['oct'],
+            11 => $plugin_language['nov'],
+            12 => $plugin_language['dec']
+        );
 
 
-            $monat = date("n", $ds[ 'lastdate' ]);
+        $monat = date("n", $ds['lastdate']);
 
 
-        $title = '<a class="" href="index.php?site=forum_topic&amp;topic='.$ds['topicID'].'&amp;type=ASC&amp;page='.ceil(($ds['replys']+1)/$maxposts).'"  data-toggle="tooltip" data-bs-html="true" title="
-        <b>'.$topictitle.'</b><br>
-        '.$plugin_language['board'].': '.$board.'<br>
-        <small>('.$replys.' '.$replys_text.')</small><br>
-        <small>'.$plugin_language['last_post'].': '.$last_poster.' '.$date.'</small>">
+        $title = '<a class="" href="index.php?site=forum_topic&amp;topic=' . $ds['topicID'] . '&amp;type=ASC&amp;page=' . ceil(($ds['replys'] + 1) / $maxposts) . '"  data-toggle="tooltip" data-bs-html="true" title="
+        <b>' . $topictitle . '</b><br>
+        ' . $plugin_language['board'] . ': ' . $board . '<br>
+        <small>(' . $replys . ' ' . $replys_text . ')</small><br>
+        <small>' . $plugin_language['last_post'] . ': ' . $last_poster . ' ' . $date . '</small>">
 
-        <b>'.$topictitle.'</b></a>';
+        <b>' . $topictitle . '</b></a>';
 
         $replys = $ds['replys'];
-        $text = '<small>('.$replys.' '.$replys_text.')</small><br>
-        <small>'.$plugin_language['last_post'].': '.$last_poster.'</small>';
+        $text = '<small>(' . $replys . ' ' . $replys_text . ')</small><br>
+        <small>' . $plugin_language['last_post'] . ': ' . $last_poster . '</small>';
         $date1 = $small_date;
 
-        
-        
+
+
         $data_array = array();
         $data_array['$topiclink'] = $topiclink;
         $data_array['$title'] = $title;
@@ -196,14 +199,13 @@ if ($anz) {
         $data_array['$day'] = $day;
         $data_array['$date2'] = $monate[$monat];
         $data_array['$year'] = $year;
-        
-        $template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar","content", $data_array, $plugin_path);
-        echo $template; 
+
+        $template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar", "content", $data_array, $plugin_path);
+        echo $template;
         $n++;
     }
-    
+
     $data_array = array();
-    $template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar","foot", $data_array, $plugin_path);
+    $template = $GLOBALS["_template"]->loadTemplate("widget_forum_sidebar", "foot", $data_array, $plugin_path);
     echo $template;
 }
-

@@ -43,7 +43,7 @@ try {
 
 //options
 
-    $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_join_us");
+    $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_joinus");
     $dn = mysqli_fetch_array($settings);
 
 
@@ -264,7 +264,7 @@ if ($show === true) {
             $info = '';
         }
 
-        $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_join_us");
+        $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_joinus");
         $dn = mysqli_fetch_array($settings);
 
         if ($dn[ 'terms_of_use' ] == '1') {
@@ -362,7 +362,7 @@ if ($show === true) {
         }
 
 
-        $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_join_us");
+        $settings = safe_query("SELECT * FROM " . PREFIX . "plugins_joinus");
         $dn = mysqli_fetch_array($settings);
 
         if ($dn[ 'terms_of_use' ] == '1') {

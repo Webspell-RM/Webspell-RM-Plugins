@@ -6,7 +6,8 @@
 				"file2": "tags/uninstall.php",
 				"file3": "tags/tags.php",
 				"file4": "tags/widget_tags_sidebar.php",
-				"file5": "tags/widget_tags_button_sidebar.php"
+				"file5": "tags/widget_tags_button_sidebar.php",
+				"file6": "tags/tags_functions.php"
 			},
 			{
 				"index": "admin"

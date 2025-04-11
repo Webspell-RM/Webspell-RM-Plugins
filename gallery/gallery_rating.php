@@ -29,20 +29,20 @@
 \¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯*/
 
 # Sprachdateien aus dem Plugin-Ordner laden
-$pm = new plugin_manager(); 
+$pm = new plugin_manager();
 $plugin_language = $pm->plugin_language("gallery", $plugin_path);
 
 if (!$userID) {
-    die($plugin_language[ 'no_access' ]);
+    die($plugin_language['no_access']);
 }
 
-$rating = $_POST[ 'rating' ];
+$rating = $_POST['rating'];
 settype($rating, "integer");
 if ($rating > 10 || $rating < 0) {
-    die($plugin_language[ 'just_rate_between_0_10' ]);
+    die($plugin_language['just_rate_between_0_10']);
 }
-$type = $_POST[ 'type' ];
-$id = $_POST[ 'id' ];
+$type = $_POST['type'];
+$id = $_POST['id'];
 
 
 $table = "gallery_pictures";
@@ -55,16 +55,16 @@ if (isset($table) && isset($key)) {
         FROM
             " . PREFIX . "user
         WHERE
-            userID='" . (int)$userID."'"
+            userID='" . (int)$userID . "'"
     );
     if (mysqli_num_rows($getarticles)) {
         $ga = mysqli_fetch_array($getarticles);
         $go = false;
-        if ($ga[ $table ] == "") {
+        if ($ga[$table] == "") {
             $array = array();
             $go = true;
         } else {
-            $string = $ga[ $table ];
+            $string = $ga[$table];
             $array = explode(":", $string);
             if (!in_array($id, $array)) {
                 $go = true;
@@ -79,20 +79,19 @@ if (isset($table) && isset($key)) {
                     votes=votes+1,
                     points=points+" . $rating . "
                 WHERE
-                picID = '" . (int)$id."'"
+                picID = '" . (int)$id . "'"
             );
             $ergebnis = safe_query(
-                "SELECT votes, points FROM " . PREFIX . "plugins_gallery_pictures WHERE picID = '" . (int)$id."'"
+                "SELECT votes, points FROM " . PREFIX . "plugins_gallery_pictures WHERE picID = '" . (int)$id . "'"
             );
             $ds = mysqli_fetch_array($ergebnis);
-            $rate = round($ds[ 'points' ] / $ds[ 'votes' ]);
+            $rate = round($ds['points'] / $ds['votes']);
             safe_query(
-                "UPDATE " . PREFIX . "plugins_gallery_pictures SET rating='" . $rate . "' WHERE picID='" . (int)$id."'"
+                "UPDATE " . PREFIX . "plugins_gallery_pictures SET rating='" . $rate . "' WHERE picID='" . (int)$id . "'"
             );
             $array[] = $id;
             $string_new = implode(":", $array);
-            safe_query("UPDATE ".PREFIX."user SET gallery_pictures='".$string_new."' WHERE userID='".(int)$userID."'");
-            
+            safe_query("UPDATE " . PREFIX . "user SET gallery_pictures='" . $string_new . "' WHERE userID='" . (int)$userID . "'");
         }
     }
 
@@ -100,10 +99,9 @@ if (isset($table) && isset($key)) {
         case "gallery_pictures":
             $table = "gallery&picID=" . $id;
             break;
-        
     }
 
-    header("Location: index.php?site=gallery&picID=" . $id."");
+    header("Location: index.php?site=gallery&picID=" . $id . "");
 } else {
     header("Location: index.php");
 }

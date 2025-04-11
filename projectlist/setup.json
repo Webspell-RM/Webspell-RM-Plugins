@@ -5,7 +5,8 @@
 				"file1": "projectlist/install.php",
 				"file2": "projectlist/uninstall.php",
 				"file3": "projectlist/projectlist.php",
-				"file4": "projectlist/projectlist_rating.php"
+				"file4": "projectlist/projectlist_rating.php",
+				"file5": "projectlist/widget_projectlist_sidebar"
 			},
 			{
 				"index": "admin",
@@ -25,7 +26,8 @@
 				"file1": "projectlist/templates/projectlist.html"
 			},
 			{
-				"index": "css"		
+				"index": "css",
+				"file1": "projectlist/css/projectlist.css"		
 			},
 			{
 				"index": "images",
